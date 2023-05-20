@@ -23,7 +23,7 @@
    2. [Funciones con argumentos](#52-funciones-con-argumentos)
    3. [Argumentos por defecto](#53-argumentos-por-defecto)
    4. [Argumentos posicionales y argumentos nombrados](#54-argumentos-posicionales-y-argumentos-nombrados)
-   5. [Nº indeterminado de argumentos](#55-nº-indeterminado-de-argumentos)
+   5. [Número indeterminado de argumentos](#55-nº-indeterminado-de-argumentos)
    6. [Funciones anónimas](#56-funciones-anónimas)
 7. [Excepciones](#6-excepciones)
 8. [Clases](#7-clases)
@@ -42,7 +42,7 @@
 11. [Empaquetado y desempaquetado](#10-empaquetado-y-desempaquetado)
     1. [Empaquetado y desempaquetado en funciones](#101-empaquetado-y-desempaquetado-en-funciones)
 12. [Convenciones de estilo](#11-convenciones-de-estilo)
-    1. [CamelCase y snake_case](#111-camelcase-y-snake_case)
+    1. [PascalCase y snake_case](#111-pascalcase-y-snake_case)
     2. [Nombres privados](#112-nombres-privados)
     3. [Nombres ya existentes](#113-nombres-ya-existentes)
 
@@ -1575,7 +1575,7 @@ Y los argumentos a la derecha de `*` se tendrán que pasar como argumentos nombr
 
 <br>
 
-### 5.5. Nº indeterminado de argumentos
+### 5.5. Número indeterminado de argumentos
 
 Cuando definimos nuestra función podemos diseñarla para aceptar un número indeterminado de argumentos, incluso infinitos (si es que alguien lo consigue):
 
@@ -3198,9 +3198,9 @@ Ana
 
 Las normas de estilo se rigen por https://peps.python.org/pep-0008/.
 
-### 11.1. CamelCase y snake_case
+### 11.1. PascalCase y snake_case
 
-- Clases: CamelCase.
+- Clases: PascalCase.
 ```python
 class Dog:
     pass

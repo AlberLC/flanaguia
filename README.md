@@ -739,6 +739,8 @@ Cómo concatenar/fusionar varios diccionarios:
 
 Nótese que si se introducen varios valores para una misma clave, el último sobrescribirá los anteriores.
 
+<br>
+
 ## 2. Entrada y salida
 
 ### 2.1. Consola
@@ -837,6 +839,7 @@ Escribir bytes:
 pathlib.Path('file.png').write_bytes(b'\x45\x44\x50\x52\x45\x53\x53\x4f')
 ```
 
+<br>
 
 ## 3. Condicionales
 
@@ -903,6 +906,8 @@ match number, name:
     case _:  # default case
         ...
 ```
+
+<br>
 
 ## 4. Bucles
 
@@ -1220,6 +1225,8 @@ Salida:
 ```
 [0, 2, 4]
 ```
+
+<br>
 
 ## 5. Funciones
 
@@ -1660,6 +1667,8 @@ Salida
 
 Este es un buen caso donde se ve con claridad que es más cómodo crear una función anónima que definir una función normal, que no vamos a necesitar nunca más, y luego pasarla como argumento a otra función.
 
+<br>
+
 ## 6. Excepciones
 
 Si no especificamos una excepcion después de la cláusula `except`, capturará todo (no recomendado):
@@ -1780,6 +1789,8 @@ else:
 finally:
     print('always')
 ```
+
+<br>
 
 ## 7. Clases
 
@@ -2829,6 +2840,8 @@ I am tired now.
 
 Ahora imprime "on four legs". Hemos accedido al `sprint()` de `C` desde `D`.
 
+<br>
+
 ## 8. Importaciones
 
 En Python se llaman módulos a los archivos `.py`, es decir, al código fuente. A los directorios se les llama paquetes. Los proyectos se van a estructurar en una serie de módulos que pueden estar contenidos en paquetes, pudiendo haber paquetes dentro otros de paquetes.
@@ -2897,6 +2910,8 @@ from package_1.internal_package.internal_module import a as b, function_a as bet
 print(b)
 print(better_name_for_function(3))
 ```
+
+<br>
 
 ## 9. Anotaciones de tipos
 
@@ -2997,6 +3012,8 @@ hello
 ```
 
 > En el ejemplo anterior hemos usado las [funciones integradas](https://docs.python.org/3/library/functions.html) `next()`, `iter()`, `range()`y `print()`.
+
+<br>
 
 ## 10. Empaquetado y desempaquetado
 
@@ -3149,6 +3166,8 @@ Ana
 25
 {'cat_name': 'Midna', 'dog_name': 'Tingle'}
 ```
+
+<br>
 
 ## 11. Convenciones de estilo
 

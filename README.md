@@ -770,6 +770,8 @@ thank you
 
 Nótese que input recibe siempre texto (string).
 
+<br>
+
 ### 2.2. Archivos
 
 Para abrir archivos podemos usar `open()`, una [función integrada](https://docs.python.org/3/library/functions.html).

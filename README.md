@@ -15,7 +15,7 @@
    1. [Consola](#21-consola)
    2. [Archivos](#22-archivos)
 3. [Condicionales](#3-condicionales)
-   1. [Sentencia `match`](#31-sentencia-match)
+   1. [Sentencia match](#31-sentencia-match)
 5. [Bucles](#4-bucles)
    1. [Listas por comprensión](#41-listas-por-comprensión)
 6. [Funciones](#5-funciones)

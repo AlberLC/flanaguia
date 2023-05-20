@@ -15,17 +15,18 @@
    1. [Consola](#21-consola)
    2. [Archivos](#22-archivos)
 3. [Condicionales](#3-condicionales)
-4. [Bucles](#4-bucles)
+   1. [Sentencia `match`](#31-sentencia-match)
+5. [Bucles](#4-bucles)
    1. [Listas por comprensión](#41-listas-por-comprensión)
-5. [Funciones](#5-funciones)
+6. [Funciones](#5-funciones)
    1. [Funciones sin argumentos](#51-funciones-sin-argumentos)
    2. [Funciones con argumentos](#52-funciones-con-argumentos)
    3. [Argumentos por defecto](#53-argumentos-por-defecto)
    4. [Argumentos posicionales y argumentos nombrados](#54-argumentos-posicionales-y-argumentos-nombrados)
    5. [Nº indeterminado de argumentos](#55-nº-indeterminado-de-argumentos)
    6. [Funciones anónimas](#56-funciones-anónimas)
-6. [Excepciones](#6-excepciones)
-7. [Clases](#7-clases)
+7. [Excepciones](#6-excepciones)
+8. [Clases](#7-clases)
    1. [Atributos](#71-atributos)
       1. [Propiedades](#711-propiedades)
       2. [Atributos estáticos](#712-atributos-estáticos)
@@ -36,11 +37,11 @@
    3. [Herencia](#73-herencia)
       1. [Clases abstractas](#731-clases-abstractas)
       2. [Herencia múltiple](#732-herencia-múltiple)
-8. [Importaciones](#8-importaciones)
-9. [Anotaciones de tipos](#9-anotaciones-de-tipos)
-10. [Empaquetado y desempaquetado](#10-empaquetado-y-desempaquetado)
+9. [Importaciones](#8-importaciones)
+10. [Anotaciones de tipos](#9-anotaciones-de-tipos)
+11. [Empaquetado y desempaquetado](#10-empaquetado-y-desempaquetado)
     1. [Empaquetado y desempaquetado en funciones](#101-empaquetado-y-desempaquetado-en-funciones)
-11. [Convenciones de estilo](#11-convenciones-de-estilo)
+12. [Convenciones de estilo](#11-convenciones-de-estilo)
     1. [CamelCase y snake_case](#111-camelcase-y-snake_case)
     2. [Nombres privados](#112-nombres-privados)
     3. [Nombres ya existentes](#113-nombres-ya-existentes)
@@ -885,6 +886,26 @@ No es necesario poner paréntesis en las condiciones:
 ❌ `if (n<2):`
 
 ✅ `if n<2:`
+
+<br>
+
+Los `if` en una línea se escriben así:
+
+```python
+number = 82
+text = 'hello' if number == 82 else 'world'
+print(text)
+print(1 if number in [1, 5, 8, 6] else 8)
+```
+Salida:
+```
+'hello'
+8
+```
+
+<br>
+
+### 3.1. Sentencia `match`
 
 Hasta hace poco no existía una cláusula parecida a los `switch` de otros lenguajes. Python tiene una herramienta mucho más potente llamada [Structural Pattern Matching](https://peps.python.org/pep-0636/) en la cual no se entrará en detalle pero que puede usarse como un `switch` tradicional.
 

@@ -23,7 +23,7 @@
    2. [Funciones con argumentos](#52-funciones-con-argumentos)
    3. [Argumentos por defecto](#53-argumentos-por-defecto)
    4. [Argumentos posicionales y argumentos nombrados](#54-argumentos-posicionales-y-argumentos-nombrados)
-   5. [Número indeterminado de argumentos](#55-nº-indeterminado-de-argumentos)
+   5. [Número indeterminado de argumentos](#55-número-indeterminado-de-argumentos)
    6. [Funciones anónimas](#56-funciones-anónimas)
 7. [Excepciones](#6-excepciones)
 8. [Clases](#7-clases)

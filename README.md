@@ -793,7 +793,7 @@ with open('file.txt') as file:
 # file is closed here
 ```
 
-No entraremos en detalle pero básicamente la palabra reservada `with` define un gestor de contexto. En este caso mantiene el archivo abierto hasta que sale del bloque y si ocurre cualquier error o sale el programa, Python se encargará de cerrar el archivo correctamente antes de salir.
+No entraremos en detalle, pero básicamente la palabra reservada `with` define un gestor de contexto. En este caso mantiene el archivo abierto hasta que sale del bloque y si ocurre cualquier error o sale el programa, Python se encargará de cerrar el archivo correctamente antes de salir.
 
 `open()` tiene varios [parámetros](https://docs.python.org/3/library/functions.html#open), pero los más importantes son `file`, que es el cual indica la ubicación del archivo, y `mode`, con el que le decimos en que modo queremos que abra el archivo (lectura, escritura, texto, bytes, etc.). Si no especificamos el parámetro `mode` por defecto se abrirá en modo lectura de texto.
 
@@ -818,6 +818,8 @@ with open('file.png', 'wb') as file:
     file.write(b'\x45\x44\x50\x52\x45\x53\x53\x4f')
 ```
 
+<br>
+
 Finalmente vamos a ver la última alternativa. Es igual de segura que usar los gestores de contexto vistos arriba.
 
 Importamos `pathlib`:
@@ -830,7 +832,7 @@ text = pathlib.Path('file.txt').read_text()
 ```
 Leer bytes:
 ```python
-text = pathlib.Path('file.png').read_bytes()
+data = pathlib.Path('file.png').read_bytes()
 ```
 Escribir texto:
 ```python
@@ -856,7 +858,7 @@ if number == 82:  # compares the value of two objects
     print('a')
 elif number != 82:
     print('b')
-elif number is condition_1:  # checks memory reference of two objects
+elif number is condition_1:  # compares the memory reference of two objects
     print('c')
 elif number in numbers:
     print('d')

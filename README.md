@@ -760,7 +760,7 @@ def do_something(color: str):
 
 Vamos a tener que pasarle una cadena para indicar el color, sin embargo, esto tiene muchos problemas. Para empezar, si usamos cadenas podemos cometer errores ortográficos y escribir `bleu` en vez de `blue` ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
 
-Las enumeraciones no son más que clases que heredan de `Enum`:
+Las enumeraciones no son más que clases que [heredan](#73-herencia) de `Enum`:
 
 ```python
 from enum import Enum

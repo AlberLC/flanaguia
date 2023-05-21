@@ -2272,7 +2272,7 @@ La [función integrada](https://docs.python.org/3/library/functions.html) `str()
 > >>> str('hello')
 > hello
 > >>> repr('hello')
-> 'he clases que heredan llo'
+> 'hello'
 > ```
 > Podemos cambiar la representación predeterminada de nuestras clases redefiniendo el método `__repr()__`:
 > ```python

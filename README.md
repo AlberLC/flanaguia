@@ -758,9 +758,9 @@ def do_something(color: str):
     ...
 ```
 
-Vamos a tener que pasarle una cadena para indicar el color, sin embargo, esto tiene muchos problemas. Para empezar, si usamos cadenas podemos cometer errores ortográficos y escribir `bleu` en vez de `blue` ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
+Vamos a tener que pasarle una cadena para indicar el color, sin embargo, esto tiene muchos problemas. Para empezar, si usamos cadenas podemos cometer errores ortográficos y escribir `bleu` en vez de `blue`, ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
 
-Las enumeraciones no son más que clases que [heredan](#73-herencia) de `Enum`:
+Las enumeraciones no son más que [clases](#7-clases) que [heredan](#73-herencia) de `Enum`:
 
 ```python
 from enum import Enum
@@ -782,7 +782,7 @@ def do_something(color: Color):
     ...
 ```
 
-Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de definir valores que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los valores de la enumeración. Además, si en un futuro queremos cambiar los valores de la enumeración, no hay que ir buscando en todas las partes del código donde se usan cadenas 'red', 'blue' y 'green' para actualizarlas y mantener la consistencia.
+Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar valores que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los valores de la enumeración. Además, si en un futuro queremos cambiar los valores de la enumeración, no hay que ir buscando en todas las partes del código donde se usan cadenas 'red', 'blue' y 'green' para actualizarlas y mantener la consistencia.
 
 Las `Enum` relacionan un nombre con un valor. En nuestro último ejemplo relacionamos `RED` con el valor 1, `GREEN` con el 2 y `BLUE` con el 3. Podemos generar valores automáticos de la siguiente manera:
 
@@ -796,7 +796,7 @@ class Color(Enum):
     BLUE = auto()
 ```
 
-`auto()` genera valors predeterminados. Tiene como primer valor 1 y los siguientes irán incrementándose. Obtenemos el mismo resultado que antes: `RED` = 1, `GREEN` = 2 y `BLUE` = 3.
+`auto()` genera valores predeterminados. Tiene como primer valor 1 y los siguientes irán incrementándose. En este caso obtenemos el mismo resultado que antes: `RED` = 1, `GREEN` = 2 y `BLUE` = 3.
 
 <br>
 
@@ -2253,7 +2253,43 @@ Ana (35)
 
 La [función integrada](https://docs.python.org/3/library/functions.html) `str()` llama al método `__str__()` de los objetos. Y, si nos fijamos, nos daremos cuenta que cuando imprimimos el objeto con `print()` se aplica implícitamente `str()`.
 
-Verificamos la igualdad de dos `Person` con el mismo `name` y `age`:
+> A veces vamos a ver que redefinir el método `__str__()` no va a ser suficiente para imprimir como queremos nuestro objeto:
+> ```python
+> juan = Person('Juan', 32)
+> ana = Person('Ana', 35)
+> people = [juan, ana]
+> 
+> print(juan)
+> print(people)
+> ```
+> Salida:
+> ```
+> Juan (32)
+> [<__main__.Person object at 0x0000024CA54A3DF0>, <__main__.Person object at 0x0000024CA54A3D90>]
+> ```
+> En estos casos, Python no llama automáticamente a `__str__()`, solo está representando el objeto. Esta representación suele ser más técnica:
+> ```python
+> >>> str('hello')
+> hello
+> >>> repr('hello')
+> 'he clases que heredan llo'
+> ```
+> Podemos cambiar la representación predeterminada de nuestras clases redefiniendo el método `__repr()__`:
+> ```python
+> def __repr__(self):
+>     return str(self)
+> ```
+> Salida:
+> ```
+> Juan (32)
+> [Juan (32), Ana (35)]
+> ```
+> Hemos aprovechado que ya tenemos redefinido `__str__()` para llamarlo desde `__repr__()`.
+> > Si no esta definido `__str__()`, cuando vayamos a imprimir un objeto, se llamará a `__repr__()` automáticamente. Que es lo que pasaba cuando imprimíamos nuestro objeto antes de redefinir `__str__()`.
+
+<br>
+
+Verificamos la igualdad de dos `Person` con el mismo `name` y `age` gracias a `__eq__()`:
 
 ```python
 print(ana == ana_2)
@@ -2654,7 +2690,7 @@ class Person(Animal):
 
 Llamábamos directamente al constructor `__init__()` del padre, con la diferencia de que le estábamos pasando argumentos a la función (`move()` no necesitaba argumentos). Con esto conseguíamos delegar el trabajo de definir e inicializar las variables `name` y `age` a la clase padre.
 
-Al fin y al cabo, redifinir un método en la clase hija y usar `super()` es como decir "me interesaba lo que hacías, pero ahora vamos a hacer lo tuyo y, además, lo que programe a continuación".
+Al fin y al cabo, redefinir un método en la clase hija y usar `super()` es como decir "me interesaba lo que hacías, pero ahora vamos a hacer lo tuyo y, además, lo que programe a continuación".
 
 <br>
 
@@ -2854,7 +2890,7 @@ Sprinting on two legs.
 
 <br>
 
-Teniendo esto claro, vamos a redifinir `sprint()` en `D` y vamos a usar `super()`:
+Teniendo esto claro, vamos a redefinir `sprint()` en `D` y vamos a usar `super()`:
 
 ```python
 class A:

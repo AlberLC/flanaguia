@@ -2285,7 +2285,7 @@ La [función integrada](https://docs.python.org/3/library/functions.html) `str()
 > [Juan (32), Ana (35)]
 > ```
 > Hemos aprovechado que ya tenemos redefinido `__str__()` para llamarlo desde `__repr__()`.
-> > Si no esta definido `__str__()`, cuando vayamos a imprimir un objeto, se llamará a `__repr__()` automáticamente. Que es lo que pasaba cuando imprimíamos nuestro objeto antes de redefinir `__str__()`.
+> > Si no está definido `__str__()`, cuando vayamos a imprimir un objeto, se llamará a `__repr__()` automáticamente. Que es lo que pasaba cuando imprimíamos nuestro objeto antes de redefinir `__str__()`.
 
 <br>
 

@@ -2274,7 +2274,7 @@ La [función integrada](https://docs.python.org/3/library/functions.html) `str()
 > >>> repr('hello')
 > 'hello'
 > ```
-> Podemos cambiar la representación predeterminada de nuestras clases redefiniendo el método `__repr()__`:
+> Podemos cambiar la representación predeterminada de nuestras clases redefiniendo el método `__repr__()`:
 > ```python
 > def __repr__(self):
 >     return str(self)

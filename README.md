@@ -1102,7 +1102,7 @@ world
 Juan
 bye
 ```
-Acabamos de usar la [función integrada](https://docs.python.org/3/library/functions.html) `range`.
+Acabamos de usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
 
 ```python
 >>> range(10)
@@ -1671,7 +1671,7 @@ Salida:
 
 En vez de `args` podemos poner el nombre que queramos pero se usa siempre ese por convenio.
 
-Vamos a hacer otro ejemplo usando la [función integrada](https://docs.python.org/3/library/functions.html) `sum`, que suma todos los elementos de un iterable.
+Vamos a hacer otro ejemplo usando la [función integrada](https://docs.python.org/3/library/functions.html) `sum()`, que suma todos los elementos de un iterable.
 
 ```python
 def sum_numbers(*args):

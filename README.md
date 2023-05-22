@@ -1927,6 +1927,31 @@ None
 
 Como se muestra, accedemos a los atributos del objeto con el operador `.`.
 
+Los atributos de un objeto residen en un diccionario que crea Python internamente. Podemos acceder a él con la [función integrada](https://docs.python.org/3/library/functions.html) `vars()`. Esta función devuelve un diccionario:
+
+```python
+print(vars(juan))
+```
+Salida:
+```
+{'name': 'Juan', 'age': 25, 'phone': '123456789', 'dog_name': 'Milo', 'dog_age': None}
+```
+
+Pero hay que tener cuidado porque este diccionario es una referencia directa a los datos del objeto, es su "memoria".
+
+```python
+attributes = vars(juan)
+print(attributes)
+attributes['name'] = 'HELLO'
+del attributes['age']
+print(attributes)
+```
+Salida:
+```
+{'name': 'Juan', 'age': 25, 'phone': '123456789', 'dog_name': 'Milo', 'dog_age': None}
+{'name': 'HELLO', 'phone': '123456789', 'dog_name': 'Milo', 'dog_age': None}
+```
+
 <br>
 
 #### 7.1.1. Propiedades

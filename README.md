@@ -1716,6 +1716,8 @@ Mario
 
 Igual que con `args`, podemos usar cualquier nombre en vez de `kwags`, pero este es el que se usa por convenio.
 
+<br>
+
 ### 5.6. Funciones anónimas
 
 Para entender este tipos de funciones vamos a ver varios ejemplos. Este primero que viene a continuación no es el mejor, pero nos va a servir para entender ciertos detalles:

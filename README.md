@@ -42,7 +42,7 @@
 10. [Empaquetado y desempaquetado](#10-empaquetado-y-desempaquetado)
     1. [Empaquetado y desempaquetado en funciones](#101-empaquetado-y-desempaquetado-en-funciones)
 11. [Convenciones de estilo](#11-convenciones-de-estilo)
-    1. [PascalCase y snake_case](#111-pascalcase-y-snakecase)
+    1. [PascalCase y snake_case](#111-pascalcase-y-snake_case)
     2. [Nombres privados](#112-nombres-privados)
     3. [Nombres ya existentes](#113-nombres-ya-existentes)
 

@@ -356,9 +356,9 @@ Hello! My name is Juan and I am 1400 years old.
 
 ### 1.4. Tuplas
 
-Las tuplas son colecciones de elementos inmutables menos potentes y flexibles que las listas, esto le permite un manejo más eficiente de la memoria en la mayoría de los casos. Aunque usar una tupla en vez de una lista en Python sería una microptimización superflua con un impacto despreciable no está de más pensar en usar una tupla cuando definimos una colección de elementos que sabemos que no va a ser alterada nunca más ya que nos sobraría toda la sobrecarga que aportan las listas.
+Las tuplas son colecciones de elementos inmutables menos potentes y flexibles que las listas, esto le permite un manejo más eficiente de la memoria en la mayoría de los casos. Aunque usar una tupla en vez de una lista en Python sería una microptimización superflua con un impacto despreciable, no está de más pensar en usar una tupla cuando definimos una colección de elementos que sabemos que no va a ser alterada nunca más, ya que nos sobraría toda la sobrecarga que aportan las listas.
 
-Se crean con los paréntesis `(` `)`. Pero hay que tener en cuenta que este carácter también se usa para agrupar operaciones: `()` es una tupla vacía pero cuando escribimos `(1)` no estamos creando una tupla, sino un entero `1`. Igual que `(1+2)` se interpreta así: `(1+2) -> (3) -> 3`. Para solucionar esto usamos la `,`:
+Se crean con los paréntesis `(` `)`. Pero hay que tener en cuenta que este carácter también se usa para agrupar operaciones: `()` es una tupla vacía, pero cuando escribimos `(1)` no estamos creando una tupla, sino un entero `1`. Igual que `(1+2)` se interpreta así: `(1+2) -> (3) -> 3`. Para solucionar esto usamos la `,`:
 
 ```python
 >>> elements = ()
@@ -425,7 +425,9 @@ Funciones de las tuplas:
 
 ### 1.5. Listas
 
-Las listas son una de las colecciones más útiles del lenguaje, se usan continuamente y estarán presentas en prácticamente cualquier programa Python. Funcionan en base al almacenamiento de objetos en bloques contiguos de memoria, por ello este tipo de estructura permite el acceso eficiente de los elementos mediante un índice que indica la posicion relativa dentro de la lista.  
+Las listas son una de las colecciones más útiles del lenguaje, se usan continuamente y estarán presentas en prácticamente cualquier programa Python. Funcionan en base al almacenamiento de objetos en bloques contiguos de memoria, por ello este tipo de estructura permite el acceso eficiente de los elementos mediante un índice que indica la posicion relativa dentro de la lista.
+
+Las [cadenas](#13-cadenas-strings) y las [tuplas](#14-tuplas) también almacenan datos de forma contigua en memoria, pero las primeras, almacenan carácteres y, las segundas, aunque almacenan objetos, son colecciones inmutables y más simples. Las listas tienen muchas más herramientas y métodos predefinidos, esto hace que sea algo menos eficientes en memoria en la mayoría de los casos, pero como dijimos en el apartado de las tuplas, sería despreciable.
 
 ```python
 >>> elements = [0, 1, 2, 3, 'four', 5, 6, 'seven', 8, 9, 9, 9]
@@ -540,7 +542,7 @@ Cómo concatenar/fusionar varias listas:
 
 ### 1.6. Conjuntos
 
-Los conjuntos (`set`) son estructuras de datos cuyos elementos se almacenan a través del cáclulo de hashes. Los elementos que contienen se organizan según su hash, el cual indica en qué posición se guarda en la estructura, por lo tanto el orden de los elementos es arbitrario: por ejemplo, no mantienen el orden de entrada como las listas.
+Los conjuntos (`set`) son estructuras de datos cuyos elementos se almacenan a través del cáclulo de [hashes](https://es.wikipedia.org/wiki/Funci%C3%B3n_hash). Los elementos que contienen se organizan según su hash, el cual indica en qué posición se guarda en la estructura, por lo tanto el orden de los elementos es arbitrario: por ejemplo, no mantienen el orden de entrada como las listas.
 
 Se crean con las llaves `{` `}`. Pero hay que tener en cuenta que este carácter también se usa para crear diccionarios así que cuando escribimos `{}` no estamos creando un conjunto vacío, sino un diccionario vacío.
 
@@ -561,7 +563,17 @@ Si queremos construir un conjunto vacío tendremos que recurrir a su constructor
 <class 'set'>
 ```
 
-Los conjuntos **no contienen elementos repetidos**, son estructuras pensadas para comprobar rápida y eficientemente si un elemento está o no en la estructura. Si se añade un elemento que ya existe no ocurrirá nada ni se producirá un error.
+Los conjuntos **no contienen elementos repetidos**, son estructuras pensadas para comprobar rápida y eficientemente si un elemento está o no en la estructura. No vamos a poder acceder a los elementos mediante un índice como pasaba en las listas.
+
+```python
+>>> elements = {1, 2, 3}
+>>> elements[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object is not subscriptable
+```
+
+Si se añade un elemento que ya existe no ocurrirá nada ni se producirá un error.
 
 ```python
 >>> elements = {'five', (1, 2), 4, 3, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -637,7 +649,12 @@ Cómo concatenar/fusionar varios conjuntos:
 
 ### 1.7. Diccionarios
 
-Los diccionarios, junto a las listas, son las colecciones más importantes y útiles del lenguaje. Casi siempre la gestión de elementos se va a hacer mediante el uso de listas cuando tenemos aquellos valores en sí y no nos interesa aportar más información y, diccionarios, cuando nos sea útil relacionar un valor con un nombre o clave. Además funcionan mediante hashes, como los conjuntos, consiguiendo con ello un acceso eficiente a los datos mediante la clave, la cual debe ser hasheable (los valores asociados a dichas claves no tienen que serlo).
+Los diccionarios, junto a las listas, son las colecciones más importantes y útiles del lenguaje. La gestión de elementos se va a hacer, casi siempre, mediante el uso de listas o diccionarios:
+
+- **listas:** cuando únicamente nos interese los valores en sí.
+- **diccionarios:** cuando nos sea útil relacionar un valor con un nombre o clave.
+
+Los diccionarios, además, funcionan mediante hashes, como los conjuntos, consiguiendo con ello un acceso eficiente a los datos mediante la clave, la cual debe ser hasheable (los valores asociados a dichas claves no tienen que serlo).
 
 ```python
 >>> elements = {'first': 1, 'second': 2.2, 3: 'third', 4: 4}
@@ -660,8 +677,8 @@ KeyError: 'x'
 ```python
 >>> elements.get('x')
 None
->>> elements.get('x', 'YES')
-'YES'
+>>> elements.get('x', 'NOP')
+'NOP'
 ```
 ```python
 >>> elements['second'] = "now it's me, Mario!"
@@ -701,9 +718,9 @@ dict_items([('first', 1), (3, 'third'), (4, 4)])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'x'
->>> element = elements.pop('x', 'YESSS')
+>>> element = elements.pop('x', 'NOOOOP')
 >>> element
-'YESSS'
+'NOOOOP'
 >>> elements
 {3: 'third'}
 ```

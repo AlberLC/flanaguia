@@ -3337,6 +3337,8 @@ Ana
 
 Las normas de estilo se rigen por https://peps.python.org/pep-0008/.
 
+<br>
+
 ### 11.1. PascalCase y snake_case
 
 - Clases: PascalCase.

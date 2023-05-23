@@ -563,17 +563,7 @@ Si queremos construir un conjunto vacío tendremos que recurrir a su constructor
 <class 'set'>
 ```
 
-Los conjuntos **no contienen elementos repetidos**, son estructuras pensadas para comprobar rápida y eficientemente si un elemento está o no en la estructura. No vamos a poder acceder a los elementos mediante un índice como pasaba en las listas.
-
-```python
->>> elements = {1, 2, 3}
->>> elements[0]
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: 'set' object is not subscriptable
-```
-
-Si se añade un elemento que ya existe no ocurrirá nada ni se producirá un error.
+Los conjuntos **no contienen elementos repetidos**, son estructuras pensadas para comprobar rápida y eficientemente si un elemento está o no en la estructura. Si se añade un elemento que ya existe no ocurrirá nada ni se producirá un error.
 
 ```python
 >>> elements = {'five', (1, 2), 4, 3, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -582,6 +572,16 @@ Si se añade un elemento que ya existe no ocurrirá nada ni se producirá un err
 >>> elements.add('five')
 >>> elements
 {0, 1, 2, 3, (1, 2), 'five', 4}
+```
+
+No vamos a poder acceder a los elementos mediante un índice como pasaba en las listas.
+
+```python
+>>> elements = {1, 2, 3}
+>>> elements[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object is not subscriptable
 ```
 
 Como funcionan mediante hashes solo pueden contener elementos hasheables que mantengan ese valor hash durante toda su vida, es decir, elementos que sean inmutables, ya que si se alteran también alterarían su hash (su "firma") y ocuparían otra posición dentro del conjunto como si fueran otro objeto.
@@ -651,7 +651,7 @@ Cómo concatenar/fusionar varios conjuntos:
 
 Los diccionarios, junto a las listas, son las colecciones más importantes y útiles del lenguaje. La gestión de elementos se va a hacer, casi siempre, mediante el uso de listas o diccionarios:
 
-- **listas:** cuando únicamente nos interese los valores en sí.
+- **listas:** cuando únicamente nos interesen los valores en sí.
 - **diccionarios:** cuando nos sea útil relacionar un valor con un nombre o clave.
 
 Los diccionarios, además, funcionan mediante hashes, como los conjuntos, consiguiendo con ello un acceso eficiente a los datos mediante la clave, la cual debe ser hasheable (los valores asociados a dichas claves no tienen que serlo).

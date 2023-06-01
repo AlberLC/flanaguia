@@ -1402,11 +1402,11 @@ El generador es consumido para generar una lista. Si intentamos volver a consumi
 >```
 > Hemos pasado un generador a la [función integrada](https://docs.python.org/3/library/functions.html) `tuple()` para crear una tupla.
 > 
-> En este caso también podemos observar que los paréntesis no son necesarios No hacemos:
+> En este caso también podemos observar que los paréntesis no son necesarios. No hacemos:
 > ```python
 > tuple((i ** 2 for i in elements))
 > ```
-> sino
+> sino:
 > ```python
 > tuple(i ** 2 for i in elements)
 > ```

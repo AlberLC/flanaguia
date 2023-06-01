@@ -1350,7 +1350,7 @@ Salida:
 
 ### 4.2. Generadores
 
-¿Cómo podemos definir una sucesión de elementos sin almacenarlos en memoria en una lista u otra estructura? Imaginemos que queremos iterar 1 millón de elementos, pero crear una lista con 1 millón de elementos para iterarlos es demasiado costoso. En estos casos vamos a necesitar generadores, que no son más que "normas" que definen sucesiones de elementos u objetos.
+¿Cómo podemos definir una sucesión de elementos sin almacenarlos en memoria en una lista u otra estructura? Imaginemos que queremos iterar 1 millón de elementos, pero crear una lista con 1 millón de elementos para iterarlos es demasiado costoso. En estos casos vamos a necesitar generadores, que no son más que "normas" o "reglas" que definen sucesiones de elementos u objetos.
 
 Por ejemplo `range()` te devuelve un generador:
 

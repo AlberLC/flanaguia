@@ -1359,7 +1359,7 @@ Por ejemplo `range()` te devuelve un generador:
 range(0, 1000000)
 ```
 
-> En python, los números se pueden separar con `_` por comodidad, no tienen ningún efecto.
+> En python, los números se pueden separar con `_` por legibilidad. No tienen ningún efecto.
 > ```python
 > >>> 5_746_2341.15_44
 > 57462341.1544

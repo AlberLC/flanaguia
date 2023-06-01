@@ -1401,6 +1401,16 @@ El generador es consumido para generar una lista. Si intentamos volver a consumi
 > (1, 25, 64, 16, 81, 16)
 >```
 > Hemos pasado un generador a la [función integrada](https://docs.python.org/3/library/functions.html) `tuple()` para crear una tupla.
+> 
+> En este caso también podemos observar que los paréntesis no son necesarios No hacemos:
+> ```python
+> tuple((i ** 2 for i in elements))
+> ```
+> sino
+> ```python
+> tuple(i ** 2 for i in elements)
+> ```
+> Realmente el generador es lo que hay dentro de los paréntesis. Si ya está agrupado en unos, no hace falta poner otros.
 
 Podemos iterar manualmente un generador (y cualquier iterable) con la [función integrada](https://docs.python.org/3/library/functions.html) `next()`:
 

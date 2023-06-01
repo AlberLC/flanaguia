@@ -1878,7 +1878,7 @@ filtered_people = filter_people(people, lambda person: person['age'] >= 30)
 for filtered_person in filtered_people:
     print(filtered_person)
 ```
-Salida
+Salida:
 ```
 {'id': 21, 'name': 'Elena', 'age': 400}
 {'id': 705, 'name': 'Alberto', 'age': 72}

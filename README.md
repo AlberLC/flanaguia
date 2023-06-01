@@ -18,6 +18,7 @@
 3. [Condicionales](#3-condicionales)
 4. [Bucles](#4-bucles)
    1. [Listas por comprensión](#41-listas-por-comprensión)
+   2. [Generadores](#42-generadores)
 5. [Funciones](#5-funciones)
    1. [Funciones sin argumentos](#51-funciones-sin-argumentos)
    2. [Funciones con argumentos](#52-funciones-con-argumentos)
@@ -25,6 +26,7 @@
    4. [Argumentos posicionales y argumentos nombrados](#54-argumentos-posicionales-y-argumentos-nombrados)
    5. [Número indeterminado de argumentos](#55-número-indeterminado-de-argumentos)
    6. [Funciones anónimas](#56-funciones-anónimas)
+   7. [Funciones generadoras](#57-funciones-generadoras)
 6. [Excepciones](#6-excepciones)
 7. [Clases](#7-clases)
    1. [Atributos](#71-atributos)
@@ -1346,6 +1348,97 @@ Salida:
 
 <br>
 
+### 4.2. Generadores
+
+¿Cómo podemos definir una sucesión de elementos sin almacenarlos en memoria en una lista u otra estructura? Imaginemos que queremos iterar 1 millón de elementos, pero crear una lista con 1 millón de elementos para iterarlos es demasiado costoso. En estos casos vamos a necesitar generadores, que no son más que "normas" que definen sucesiones de elementos u objetos.
+
+Por ejemplo `range()` te devuelve un generador:
+
+```python
+>>> range(1_000_000)
+range(0, 1000000)
+```
+
+> En python, los números se pueden separar con `_` por comodidad, no tienen ningún efecto.
+> ```python
+> >>> 5_746_2341.15_44
+> 57462341.1544
+> ```
+
+Un generador de pocos elementos va a ocupar en memoria lo mismo que un generador de muchos elementos, ya que solo son líneas de codigo o lógica que especifican una sucesión, no los elementos en sí.
+
+Recordemos las listas por comprensión calculando los cuadrados de unos elementos:
+
+```python
+>>> elements = [1, 5, 8, 4, 9, 4]
+>>> new_elements = [i ** 2 for i in elements]
+>>> new_elements
+[1, 25, 64, 16, 81, 16]
+```
+
+Si usamos paréntesis `(` `)` en vez de corchetes `[` `]`, obtenemos un generador:
+
+```python
+>>> elements = [1, 5, 8, 4, 9, 4]
+>>> generator = (i ** 2 for i in elements)
+>>> generator
+<generator object <genexpr> at 0x00000180F51304A0>
+>>> list(generator)
+[1, 25, 64, 16, 81, 16]
+```
+
+El generador es consumido para generar una lista. Si intentamos volver a consumir el generador consumido:
+
+```python
+>>> list(generator)
+[]
+```
+
+> Podríamos esperar que al hacer una lista por comprensión con paréntesis `(` `)` en vez de corchetes `[` `]`, obtuviéramos una tupla por comprensión en vez de un generador, pero no es así. Si queremos crear una tupla por comprensión podríamos hacer esto:
+> ```python
+> >>> elements = [1, 5, 8, 4, 9, 4]
+> >>> tuple(i ** 2 for i in elements)
+> (1, 25, 64, 16, 81, 16)
+>```
+> Hemos pasado un generador a la función `tuple()` para crear una tupla.
+
+Podemos iterar manualmente un generador (y cualquier iterable) con la [función integrada](https://docs.python.org/3/library/functions.html) `next()`:
+
+```python
+>>> elements = [1, 5, 8, 4, 9, 4]
+>>> generator = (i ** 2 for i in elements)
+>>> next(generator)
+1
+>>> next(generator)
+25
+>>> next(generator)
+64
+>>> next(generator)
+16
+>>> next(generator)
+81
+>>> next(generator)
+16
+>>> next(generator)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+```
+
+> Podemos crear un iterador manual de cualquier iterable con la [función integrada](https://docs.python.org/3/library/functions.html) `iter()`:
+> ```python
+> >>> elements = [1, 5, 8, 4, 9, 4]
+> >>> iter(elements)
+> <list_iterator object at 0x00000180F515AFE0>
+> >>> next(iter(elements))
+> 1
+> ```
+> Un generador es un iterador. Ver el diagrama del apartado [tipos más usados](#11-tipos-más-usados).
+
+Más tarde veremos las [funciones generadoras](#57-funciones-generadoras).
+
+<br>
+
 ## 5. Funciones
 
 Las funciones sirven para agrupar código que se va a ejecutar en distintos lugares. Siempre hay que evitar repetir código y, al usar funciones y mantener todo en un mismo lugar, podremos hacer cambios una sola vez y producir un impacto en esos otros lugares donde se llama a la función.
@@ -1754,10 +1847,7 @@ Ahora vamos a ver un uso realista de tipo de funciones. Vamos a crear una funci�
 
 
 ```python
-from collections.abc import Callable
-
-
-def filter_people(people_: list[dict], condition: Callable):
+def filter_people(people_, condition):
     filtered_people_ = []
     for person in people_:
         if condition(person):
@@ -1789,6 +1879,57 @@ Este es un buen caso donde se ve con claridad que es más cómodo crear una func
 
 <br>
 
+### 5.7. Funciones generadoras
+
+Si simplemente usamos la sentencia `yield`, hacemos que una función se convierta en una función generadora:
+
+```python
+def something():
+    yield 'hola'
+    yield 45
+    yield [1, 2]
+
+
+print(something)
+print(something())
+print(list(something()))
+```
+Salida:
+```
+<function something at 0x00000183F13FF6D0>
+<generator object something at 0x00000183F1396110>
+['hola', 45, [1, 2]]
+```
+
+<br>
+
+```python
+def squares(elements_):
+    for element in elements_:
+        yield element ** 2
+
+
+elements = [1, 5, 8, 4, 9, 4]
+
+print(squares(elements))
+for square in squares(elements):
+    print(square)
+print(list(squares(elements)))
+```
+Salida:
+```
+<generator object squares at 0x0000026A9DBB6030>
+1
+25
+64
+16
+81
+16
+[1, 25, 64, 16, 81, 16]
+```
+
+<br>
+
 ## 6. Excepciones
 
 Si no especificamos una excepcion después de la cláusula `except`, capturará todo (no recomendado):
@@ -1800,12 +1941,12 @@ try:
 except:
     print('error')
 
-print('- end- ')
+print('- end -')
 ```
 Salida:
 ```
 error
-- end- 
+- end -
 ```
 
 Si queremos trabajar con la excepción que se ha lanzado, la capturamos y creamos un alias con `as`:
@@ -1818,13 +1959,13 @@ except Exception as e:
     print(e)
     print(type(e))
 
-print('- end- ')
+print('- end -')
 ```
 Salida:
 ```
 list index out of range
 <class 'IndexError'>
-- end- 
+- end -
 ```
 
 Pero volvemos a capturar un excepción demasiado genérica, nunca vamos a querer eso. Tenemos que intentar capturar siempre la única excepción que esperamos para que no pasen desapercibidos otros errores.
@@ -1839,13 +1980,13 @@ except IndexError as e:
     print(e)
     print(type(e))
 
-print('- end- ')
+print('- end -')
 ```
 Salida:
 ```
 list index out of range
 <class 'IndexError'>
-- end- 
+- end -
 ```
 
 Podemos concatenar cláusulas `except`:

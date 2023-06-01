@@ -1400,7 +1400,7 @@ El generador es consumido para generar una lista. Si intentamos volver a consumi
 > >>> tuple(i ** 2 for i in elements)
 > (1, 25, 64, 16, 81, 16)
 >```
-> Hemos pasado un generador a la función `tuple()` para crear una tupla.
+> Hemos pasado un generador a la [función integrada](https://docs.python.org/3/library/functions.html) `tuple()` para crear una tupla.
 
 Podemos iterar manualmente un generador (y cualquier iterable) con la [función integrada](https://docs.python.org/3/library/functions.html) `next()`:
 

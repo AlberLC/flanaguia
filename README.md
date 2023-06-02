@@ -1938,6 +1938,31 @@ Salida:
 [1, 25, 64, 16, 81, 16]
 ```
 
+Podemos usar la sentencia `yield from` para ayudarnos a devolver valores de otro iterable, ahorrándonos las sentencias `for` y `yield`:
+
+```python
+def yield_something(elements_):
+    yield from elements_[2]
+    yield from elements_[3]
+
+
+elements = [0, 1, ['a', 'b', 'c'], 'hello']
+
+for element in yield_something(elements):
+    print(element)
+```
+Salida:
+```
+a
+b
+c
+h
+e
+l
+l
+o
+```
+
 <br>
 
 ## 6. Excepciones

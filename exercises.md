@@ -215,7 +215,36 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
+4. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la partida. El juego continuará para siempre.
+
+   <details>
+   <summary>Solución</summary>
+   
+   ```python
+   import random
+   
+   options = ('piedra', 'papel', 'tijeras')
+   
+   while True:
+       human_play = input('Elige tu jugada (piedra/papel/tijeras): ')
+       if human_play not in options:
+           continue
+   
+       ai_play = random.choice(options)
+   
+       if human_play == ai_play:
+           print(f'La IA eligió {ai_play}. Empate.')
+       elif options[(options.index(human_play) + 1) % 3] == ai_play:
+           print(f'La IA eligió {ai_play}. Perdiste.')
+       else:
+           print(f'La IA eligió {ai_play}. ¡Ganaste!')
+   ```
+   
+   </details>
+
+<br>
+
+5. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
    ```
    "El 18 de junio de 1998 cumpliste 1 año."
@@ -292,7 +321,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Escribir un programa que pida por consola nombres de asingaturas continuamente hasta que se introduzca "fin". Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+6. Escribir un programa que pida por consola nombres de asingaturas continuamente hasta que se introduzca "fin". Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
    <details>
    <summary>Solución</summary>
@@ -317,36 +346,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-6. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la partida. El juego continuará para siempre.
-
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   import random
-   
-   options = ('piedra', 'papel', 'tijeras')
-   
-   while True:
-       human_play = input('Elige tu jugada (piedra/papel/tijeras): ')
-       if human_play not in options:
-           continue
-   
-       ai_play = random.choice(options)
-   
-       if human_play == ai_play:
-           print(f'La IA eligió {ai_play}. Empate.')
-       elif options[(options.index(human_play) + 1) % 3] == ai_play:
-           print(f'La IA eligió {ai_play}. Perdiste.')
-       else:
-           print(f'La IA eligió {ai_play}. ¡Ganaste!')
-   ```
-   
-   </details>
-
-<br>
-
-7. Hacer un programa que imprima por consola el nº de veces que aparece cada palabra en el siguiente texto:
+7. <a id="occurrences"></a>Hacer un programa que imprima por consola el nº de veces que aparece cada palabra en el siguiente texto:
 
    ```
    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
@@ -395,27 +395,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. Basándonos en el ejercicio anterior: ordenar los `items` según el nº de apariciones en el texto de mayor a menor usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse`.
-
-   > `key` espera una función anónima para ordenar los elementos de forma que devuelva el valor a comparar.
-   
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   from collections import Counter
-   
-   text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
-   
-   items = Counter(text.split()).items()
-   print(sorted(items, key=lambda item: item[1], reverse=True))
-   ```
-   
-   </details>
-
-<br>
-
-9. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento, para el lote descolorido. Luego pedir por consola el nº de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
+8. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento, para el lote descolorido. Luego pedir por consola el nº de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
    <details>
    <summary>Solución</summary>
@@ -462,6 +442,28 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
+### Ejercicios:
+
+1. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado de [bucles](#bcles): ordenar los `items` según el nº de apariciones en el texto de mayor a menor usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse`.
+
+   > `key` espera una función anónima para ordenar los elementos de forma que devuelva el valor a comparar.
+   
+   <details>
+   <summary>Solución</summary>
+   
+   ```python
+   from collections import Counter
+   
+   text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+   
+   items = Counter(text.split()).items()
+   print(sorted(items, key=lambda item: item[1], reverse=True))
+   ```
+   
+   </details>
+
+<br>
+
 ## Clases
 
 ### Ejercicios:
@@ -491,6 +493,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
       13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
       14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
    4. Crear un vehículo cualquiera, intentar añadirle más personas del máximo, controlar el error e imprimir algo por consola indicando que se ha controlado con éxito.
+
+<br>
 
    <details>
    <summary>Solución</summary>

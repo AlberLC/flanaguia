@@ -517,8 +517,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
    class Vehicle:
        ...                            ⬇️
        def __add__(self, other) -> 'Vehicle':
-           ...
-   
+           ...   
    '''
    
    import random

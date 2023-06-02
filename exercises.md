@@ -191,241 +191,241 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 3. Pedir por consola la longitud de un lado de un triángulo e imprimir uno por consola. Por ejemplo: para longitud 5:
 
-   ```
-   1 
-   3 1 
-   5 3 1 
-   7 5 3 1 
-   9 7 5 3 1 
-   ```
+    ```
+    1 
+    3 1 
+    5 3 1 
+    7 5 3 1 
+    9 7 5 3 1 
+    ```
    
-   <details>
-   <summary>Solución</summary>
+    <details>
+    <summary>Solución</summary>
    
-   ```python
-   height = int(input('Introduce la altura del triángulo: '))
+    ```python
+    height = int(input('Introduce la altura del triángulo: '))
+    
+    for i in range(1, height * 2, 2):
+        for j in range(i, 0, -2):
+            print(j, end=' ')
+        print()
+    ```
    
-   for i in range(1, height * 2, 2):
-       for j in range(i, 0, -2):
-           print(j, end=' ')
-       print()
-   ```
-   
-   </details>
+    </details>
 
 <br>
 
 4. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la partida. El juego continuará para siempre.
 
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   import random
-   
-   options = ('piedra', 'papel', 'tijeras')
-   
-   while True:
-       human_play = input('Elige tu jugada (piedra/papel/tijeras): ')
-       if human_play not in options:
-           continue
-   
-       ai_play = random.choice(options)
-   
-       if human_play == ai_play:
-           print(f'La IA eligió {ai_play}. Empate.')
-       elif options[(options.index(human_play) + 1) % 3] == ai_play:
-           print(f'La IA eligió {ai_play}. Perdiste.')
-       else:
-           print(f'La IA eligió {ai_play}. ¡Ganaste!')
-   ```
-   
-   </details>
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    import random
+    
+    options = ('piedra', 'papel', 'tijeras')
+    
+    while True:
+        human_play = input('Elige tu jugada (piedra/papel/tijeras): ')
+        if human_play not in options:
+            continue
+    
+        ai_play = random.choice(options)
+    
+        if human_play == ai_play:
+            print(f'La IA eligió {ai_play}. Empate.')
+        elif options[(options.index(human_play) + 1) % 3] == ai_play:
+            print(f'La IA eligió {ai_play}. Perdiste.')
+        else:
+            print(f'La IA eligió {ai_play}. ¡Ganaste!')
+    ```
+    
+    </details>
 
 <br>
 
 5. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
-   ```
-   "El 18 de junio de 1998 cumpliste 1 año."
-   "El 18 de junio de 1999 cumpliste 2 años."
-   ...
-   ```
-   
-   Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
-   
-   <details>
-   <summary>Solución</summary>
-   
-   a)
-   ```python
-   date = input('Fecha de nacimiento: ')
-   day, month, first_year = (int(number) for number in date.split('/'))
-   
-   if first_year < 1000:
-       if first_year >= 23:
-           first_year += 1900
-       else:
-           first_year += 2000
-   
-   month_names = [
-       'enero',
-       'febrero',
-       'marzo',
-       'abril',
-       'mayo',
-       'junio',
-       'julio',
-       'agosto',
-       'septiembre',
-       'octubre',
-       'noviembre',
-       'diciembre'
-   ]
-   
-   for i, year in enumerate(range(first_year + 1, 2024), start=1):
-       print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
-   ```
-   b)
-   ```python
-   import datetime
-   
-   date = input('Fecha de nacimiento: ')
-   day, month, first_year = (int(number) for number in date.split('/'))
-   
-   try:
-       first_year = datetime.datetime.strptime(date, '%d/%m/%y').year
-   except ValueError:
-       first_year = datetime.datetime.strptime(date, '%d/%m/%Y').year
-   
-   month_names = [
-       'enero',
-       'febrero',
-       'marzo',
-       'abril',
-       'mayo',
-       'junio',
-       'julio',
-       'agosto',
-       'septiembre',
-       'octubre',
-       'noviembre',
-       'diciembre'
-   ]
-   
-   for i, year in enumerate(range(first_year + 1, 2024), start=1):
-       print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
-   ```
-   
-   </details>
+    ```
+    "El 18 de junio de 1998 cumpliste 1 año."
+    "El 18 de junio de 1999 cumpliste 2 años."
+    ...
+    ```
+    
+    Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
+    
+    <details>
+    <summary>Solución</summary>
+    
+    a)
+    ```python
+    date = input('Fecha de nacimiento: ')
+    day, month, first_year = (int(number) for number in date.split('/'))
+    
+    if first_year < 1000:
+        if first_year >= 23:
+            first_year += 1900
+        else:
+            first_year += 2000
+    
+    month_names = [
+        'enero',
+        'febrero',
+        'marzo',
+        'abril',
+        'mayo',
+        'junio',
+        'julio',
+        'agosto',
+        'septiembre',
+        'octubre',
+        'noviembre',
+        'diciembre'
+    ]
+    
+    for i, year in enumerate(range(first_year + 1, 2024), start=1):
+        print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
+    ```
+    b)
+    ```python
+    import datetime
+    
+    date = input('Fecha de nacimiento: ')
+    day, month, first_year = (int(number) for number in date.split('/'))
+    
+    try:
+        first_year = datetime.datetime.strptime(date, '%d/%m/%y').year
+    except ValueError:
+        first_year = datetime.datetime.strptime(date, '%d/%m/%Y').year
+    
+    month_names = [
+        'enero',
+        'febrero',
+        'marzo',
+        'abril',
+        'mayo',
+        'junio',
+        'julio',
+        'agosto',
+        'septiembre',
+        'octubre',
+        'noviembre',
+        'diciembre'
+    ]
+    
+    for i, year in enumerate(range(first_year + 1, 2024), start=1):
+        print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
+    ```
+    
+    </details>
 
 <br>
 
 6. Escribir un programa que pida por consola nombres de asingaturas continuamente hasta que se introduzca "fin". Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   subject = input('Introduce una asignatura ("fin" para terminar): ')
-   subjects = []
-   while subject != 'fin':
-       subjects.append(subject)
-       subject = input('Introduce una asignatura ("fin" para terminar): ')
-   
-   failed_subjects = []
-   for subject in subjects:
-       grade = float(input(f'Introduce la nota de {subject}: '))
-       if grade < 5:
-           failed_subjects.append(subject)
-   
-   print(f"Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.")
-   ```
-   
-   </details>
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    subject = input('Introduce una asignatura ("fin" para terminar): ')
+    subjects = []
+    while subject != 'fin':
+        subjects.append(subject)
+        subject = input('Introduce una asignatura ("fin" para terminar): ')
+    
+    failed_subjects = []
+    for subject in subjects:
+        grade = float(input(f'Introduce la nota de {subject}: '))
+        if grade < 5:
+            failed_subjects.append(subject)
+    
+    print(f"Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.")
+    ```
+    
+    </details>
 
 <br>
 
 7. <a id="occurrences"></a>Hacer un programa que imprima por consola el nº de veces que aparece cada palabra en el siguiente texto:
 
-   ```
-   Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-   ```
-   
-   <details>
-   <summary>Solución</summary>
-   
-   a)
-   ```python
-   text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
-   
-   word_occurrences = {}
-   
-   for word in text.split():
-       if word in word_occurrences:
-           word_occurrences[word] += 1
-       else:
-           word_occurrences[word] = 1
-   
-   print(word_occurrences)
-   ```
-   b)
-   ```python
-   from collections import defaultdict
-   
-   text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
-   
-   word_occurrences = defaultdict(int)
-   
-   for word in text.split():
-       word_occurrences[word] += 1
-   
-   print(word_occurrences)
-   ```
-   c)
-   ```python
-   from collections import Counter
-   
-   text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
-   
-   print(Counter(text.split()))
-   ```
-   
-   </details>
+    ```
+    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+    ```
+    
+    <details>
+    <summary>Solución</summary>
+    
+    a)
+    ```python
+    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    
+    word_occurrences = {}
+    
+    for word in text.split():
+        if word in word_occurrences:
+            word_occurrences[word] += 1
+        else:
+            word_occurrences[word] = 1
+    
+    print(word_occurrences)
+    ```
+    b)
+    ```python
+    from collections import defaultdict
+    
+    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    
+    word_occurrences = defaultdict(int)
+    
+    for word in text.split():
+        word_occurrences[word] += 1
+    
+    print(word_occurrences)
+    ```
+    c)
+    ```python
+    from collections import Counter
+    
+    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    
+    print(Counter(text.split()))
+    ```
+    
+    </details>
 
 <br>
 
 8. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento, para el lote descolorido. Luego pedir por consola el nº de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   ball_price = float(input('Precio de una pelota: '))
-   discount = float(input('% de descuento para pelota descolorida: '))
-   normal_balls = int(input('Nº de pelotas normales: '))
-   colorless_balls = int(input('Nº de pelotas descoloridas: '))
-   
-   discounted_price = ball_price * discount / 100
-   
-   while normal_balls or colorless_balls:
-       option = input('¿Quieres una pelota normal o descolorida? (N/D): ')
-   
-       if option.upper() == 'N':
-           if normal_balls:
-               print(f'Te va a costar {ball_price} €')
-               normal_balls -= 1
-               print(f'Quedan {normal_balls} pelotas normales.')
-           else:
-               print('No quedan pelotas normales.')
-       else:
-           if colorless_balls:
-               print(f'Te va a costar {discounted_price} €')
-               colorless_balls -= 1
-               print(f'Quedan {colorless_balls} pelotas descoloridas.')
-   ```
-   
-   </details>
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    ball_price = float(input('Precio de una pelota: '))
+    discount = float(input('% de descuento para pelota descolorida: '))
+    normal_balls = int(input('Nº de pelotas normales: '))
+    colorless_balls = int(input('Nº de pelotas descoloridas: '))
+    
+    discounted_price = ball_price * discount / 100
+    
+    while normal_balls or colorless_balls:
+        option = input('¿Quieres una pelota normal o descolorida? (N/D): ')
+    
+        if option.upper() == 'N':
+            if normal_balls:
+                print(f'Te va a costar {ball_price} €')
+                normal_balls -= 1
+                print(f'Quedan {normal_balls} pelotas normales.')
+            else:
+                print('No quedan pelotas normales.')
+        else:
+            if colorless_balls:
+                print(f'Te va a costar {discounted_price} €')
+                colorless_balls -= 1
+                print(f'Quedan {colorless_balls} pelotas descoloridas.')
+    ```
+    
+    </details>
 
 <br>
 
@@ -446,21 +446,21 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de mayor a menor usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse`.
 
-   > `key` espera una función anónima para ordenar los elementos de forma que devuelva el valor a comparar.
-   
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   from collections import Counter
-   
-   text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
-   
-   items = Counter(text.split()).items()
-   print(sorted(items, key=lambda item: item[1], reverse=True))
-   ```
-   
-   </details>
+    > `key` espera una función anónima para ordenar los elementos de forma que devuelva el valor a comparar.
+    
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    from collections import Counter
+    
+    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    
+    items = Counter(text.split()).items()
+    print(sorted(items, key=lambda item: item[1], reverse=True))
+    ```
+    
+    </details>
 
 <br>
 
@@ -494,139 +494,139 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
       14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
    4. Crear un vehículo cualquiera, intentar añadirle más personas del máximo, controlar el error e imprimir algo por consola indicando que se ha controlado con éxito.
 
-<br>
+    <br>
 
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   from __future__ import annotations
-   
-   '''
-   ⬆️
-   In some future version this import will not be necessary. This is needed for now to be able to use a class as a type hint within
-   itself (before it was defined):
-   
-   class Vehicle:
-       ...                           ⬇️
-       def __add__(self, other) -> Vehicle:
-           ...
-   
-   If not, they can be indicated with quotes:
-   
-   class Vehicle:
-       ...                            ⬇️
-       def __add__(self, other) -> 'Vehicle':
-           ...   
-   '''
-   
-   import random
-   from abc import ABC, abstractmethod
-   from collections.abc import Callable
-   from enum import Enum, auto
-   from typing import Iterator
-   
-   
-   class WheelDrive(Enum):
-       FRONT = auto()
-       REAR = auto()
-   
-   
-   class Person:
-       def __init__(self, name: str, age: int):
-           self.name = name.capitalize()
-           self.age = age
-   
-       def __repr__(self) -> str:
-           return str(self)
-   
-       def __str__(self) -> str:
-           return f'{self.name} ({self.age})'
-   
-   
-   class Vehicle(ABC):
-       @abstractmethod
-       def __init__(self, max_passengers: int, plate: str = None):
-           self.max_passengers = max_passengers
-           self.plate = plate if plate else str(random.randint(1111, 9999))
-           self._passengers = set()
-   
-       def __add__(self, other) -> Vehicle:
-           new_vehicle = type(self)(**{k: v for k, v in vars(self).items() if k not in ('plate', '_passengers')})
-           for passenger in self.empty() | other.empty():
-               new_vehicle.add_passenger(passenger)
-   
-           return new_vehicle
-   
-       def __iter__(self) -> Iterator[Person]:
-           yield from self.passengers
-   
-       def __len__(self) -> int:
-           return len(self.passengers)
-   
-       def __str__(self) -> str:
-           return f'{type(self).__name__} ({self.plate}). Passengers: {self.passengers}'
-   
-       def add_passenger(self, passenger: Person):
-           if len(self.passengers) >= self.max_passengers:
-               raise ValueError('Full vehicle')
-   
-           self._passengers.add(passenger)
-   
-       def first_passenger(self, condition: Callable) -> Person:
-           return next(passenger for passenger in self.passengers if condition(passenger))
-   
-       def empty(self) -> set[Person]:
-           passengers = self.passengers.copy()
-           self._passengers.clear()
-           return passengers
-   
-       @property
-       def passengers(self) -> set[Person]:
-           return self._passengers
-   
-       def remove_passenger(self, passenger: Person):
-           self._passengers.discard(passenger)
-   
-       def remove_passenger_by_name(self, name: str):
-           try:
-               self.remove_passenger(self.first_passenger(lambda passenger: passenger.name.lower() == name.lower()))
-           except StopIteration:
-               pass
-   
-   
-   class Car(Vehicle):
-       def __init__(self, doors: int, airbags: int, wheel_drive: WheelDrive, max_passengers: int, plate: str = None):
-           super().__init__(max_passengers, plate)
-           self.doors = doors
-           self.airbags = airbags
-           self.wheel_drive = wheel_drive
-   
-   
-   class Train(Vehicle):
-       def __init__(self, wagons: int, max_passengers: int, plate: str = None):
-           super().__init__(max_passengers, plate)
-           self.wagons = wagons
-   
-   
-   jorge = Person('Jorge', 24)
-   victoria = Person('Victoria', 21)
-   javier = Person('Javier', 77)
-   elena = Person('Elena', 42)
-   
-   car = Car(5, 2, WheelDrive.FRONT, 3)
-   
-   car.add_passenger(jorge)
-   car.add_passenger(victoria)
-   car.add_passenger(javier)
-   
-   try:
-       car.add_passenger(elena)
-   except ValueError:
-       print('ValueError controlado con éxito.')
-   ```
-   
-   </details>
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    from __future__ import annotations
+    
+    '''
+    ⬆️
+    In some future version this import will not be necessary. This is needed for now to be able to use a class as a type hint within
+    itself (before it was defined):
+    
+    class Vehicle:
+        ...                           ⬇️
+        def __add__(self, other) -> Vehicle:
+            ...
+    
+    If not, they can be indicated with quotes:
+    
+    class Vehicle:
+        ...                            ⬇️
+        def __add__(self, other) -> 'Vehicle':
+            ...   
+    '''
+    
+    import random
+    from abc import ABC, abstractmethod
+    from collections.abc import Callable
+    from enum import Enum, auto
+    from typing import Iterator
+    
+    
+    class WheelDrive(Enum):
+        FRONT = auto()
+        REAR = auto()
+    
+    
+    class Person:
+        def __init__(self, name: str, age: int):
+            self.name = name.capitalize()
+            self.age = age
+    
+        def __repr__(self) -> str:
+            return str(self)
+    
+        def __str__(self) -> str:
+            return f'{self.name} ({self.age})'
+    
+    
+    class Vehicle(ABC):
+        @abstractmethod
+        def __init__(self, max_passengers: int, plate: str = None):
+            self.max_passengers = max_passengers
+            self.plate = plate if plate else str(random.randint(1111, 9999))
+            self._passengers = set()
+    
+        def __add__(self, other) -> Vehicle:
+            new_vehicle = type(self)(**{k: v for k, v in vars(self).items() if k not in ('plate', '_passengers')})
+            for passenger in self.empty() | other.empty():
+                new_vehicle.add_passenger(passenger)
+    
+            return new_vehicle
+    
+        def __iter__(self) -> Iterator[Person]:
+            yield from self.passengers
+    
+        def __len__(self) -> int:
+            return len(self.passengers)
+    
+        def __str__(self) -> str:
+            return f'{type(self).__name__} ({self.plate}). Passengers: {self.passengers}'
+    
+        def add_passenger(self, passenger: Person):
+            if len(self.passengers) >= self.max_passengers:
+                raise ValueError('Full vehicle')
+    
+            self._passengers.add(passenger)
+    
+        def first_passenger(self, condition: Callable) -> Person:
+            return next(passenger for passenger in self.passengers if condition(passenger))
+    
+        def empty(self) -> set[Person]:
+            passengers = self.passengers.copy()
+            self._passengers.clear()
+            return passengers
+    
+        @property
+        def passengers(self) -> set[Person]:
+            return self._passengers
+    
+        def remove_passenger(self, passenger: Person):
+            self._passengers.discard(passenger)
+    
+        def remove_passenger_by_name(self, name: str):
+            try:
+                self.remove_passenger(self.first_passenger(lambda passenger: passenger.name.lower() == name.lower()))
+            except StopIteration:
+                pass
+    
+    
+    class Car(Vehicle):
+        def __init__(self, doors: int, airbags: int, wheel_drive: WheelDrive, max_passengers: int, plate: str = None):
+            super().__init__(max_passengers, plate)
+            self.doors = doors
+            self.airbags = airbags
+            self.wheel_drive = wheel_drive
+    
+    
+    class Train(Vehicle):
+        def __init__(self, wagons: int, max_passengers: int, plate: str = None):
+            super().__init__(max_passengers, plate)
+            self.wagons = wagons
+    
+    
+    jorge = Person('Jorge', 24)
+    victoria = Person('Victoria', 21)
+    javier = Person('Javier', 77)
+    elena = Person('Elena', 42)
+    
+    car = Car(5, 2, WheelDrive.FRONT, 3)
+    
+    car.add_passenger(jorge)
+    car.add_passenger(victoria)
+    car.add_passenger(javier)
+    
+    try:
+        car.add_passenger(elena)
+    except ValueError:
+        print('ValueError controlado con éxito.')
+    ```
+    
+    </details>
 
 <br>
 
@@ -649,376 +649,378 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
    9. Método `insert(...)` para insertar un elemento en una posición concreta. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
    10. Método `clear(...)` para vaciar la lista enlazada.
 
-Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+    <br>
 
-```python
-def run_tests():
-    ll = LinkedList()
-    assert str(ll) == '<>'
-    assert len(ll) == 0
+    Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+    
+    ```python
+    def run_tests():
+        ll = LinkedList()
+        assert str(ll) == '<>'
+        assert len(ll) == 0
+    
+        ll.add(1)
+        assert str(ll) == '<1>'
+        ll.add(2)
+        assert str(ll) == '<1, 2>'
+        ll.add(3)
+        assert str(ll) == '<1, 2, 3>'
+        assert len(ll) == 3
+    
+        assert 1 in ll
+        assert 2 in ll
+        assert 3 in ll
+        assert 4 not in ll
+    
+        try:
+            ll.delete(-1)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.delete(3)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.delete(24)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        ll.delete(2)
+        assert str(ll) == '<1, 2>'
+        assert len(ll) == 2
+    
+        ll.add('aasdasd')
+        assert str(ll) == '<1, 2, aasdasd>'
+    
+        assert ll.get(1) == 2
+        assert ll.get(2) == 'aasdasd'
+        try:
+            ll.get(-1)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.get(3)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.get(24)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+    
+        ll.add(('5', 5))
+        assert str(ll) == "<1, 2, aasdasd, ('5', 5)>"
+        assert len(ll) == 4
+        ll.delete(1)
+        assert str(ll) == "<1, aasdasd, ('5', 5)>"
+        ll.delete(0)
+        assert str(ll) == "<aasdasd, ('5', 5)>"
+        ll.delete(0)
+        assert str(ll) == "<('5', 5)>"
+        assert len(ll) == 1
+        ll.delete(0)
+        assert str(ll) == "<>"
+        assert len(ll) == 0
+        ll.clear()
+        assert str(ll) == "<>"
+        assert len(ll) == 0
+        ll.add(5)
+        ll.add(5)
+        ll.add(5)
+        assert str(ll) == "<5, 5, 5>"
+        assert len(ll) == 3
+        ll.clear()
+        assert str(ll) == "<>"
+        assert len(ll) == 0
+    
+        ll.insert(-1, 'a')
+        assert str(ll) == "<a>"
+        assert len(ll) == 1
+        ll.clear()
+        assert len(ll) == 0
+        ll.insert(24, 'b')
+        assert str(ll) == "<b>"
+        assert len(ll) == 1
+        ll.clear()
+        ll.insert(0, 'c')
+        assert str(ll) == "<c>"
+        assert len(ll) == 1
+        ll.clear()
+        ll.add('hola')
+        ll.insert(-1, 'x')
+        assert str(ll) == "<x, hola>"
+        assert len(ll) == 2
+        ll.delete(0)
+        ll.insert(24, 'y')
+        assert str(ll) == "<hola, y>"
+        assert len(ll) == 2
+        ll.delete(1)
+        ll.insert(0, 'z')
+        assert str(ll) == "<z, hola>"
+        assert len(ll) == 2
+        ll.add(1)
+        ll.add(2)
+        ll.add(3)
+        ll.insert(2, 'adios')
+        assert str(ll) == "<z, hola, adios, 1, 2, 3>"
+        assert len(ll) == 6
+        ll.insert(len(ll), 'ultimo')
+        ll.insert(len(ll) - 1, 'penultimo')
+        ll.insert(len(ll) - 2, 'antepenultimo')
+        assert str(ll) == "<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert len(ll) == 9
+        ll.insert(4, {1, 2})
+        assert str(ll) == "<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert len(ll) == 10
+        ll.insert(1, range(5))
+        assert str(ll) == "<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert len(ll) == 11
+    
+        print('OK')
+    ```
 
-    ll.add(1)
-    assert str(ll) == '<1>'
-    ll.add(2)
-    assert str(ll) == '<1, 2>'
-    ll.add(3)
-    assert str(ll) == '<1, 2, 3>'
-    assert len(ll) == 3
-
-    assert 1 in ll
-    assert 2 in ll
-    assert 3 in ll
-    assert 4 not in ll
-
-    try:
-        ll.delete(-1)
-    except IndexError:
-        pass
-    else:
-        raise Exception('No lanza IndexError')
-    try:
-        ll.delete(3)
-    except IndexError:
-        pass
-    else:
-        raise Exception('No lanza IndexError')
-    try:
-        ll.delete(24)
-    except IndexError:
-        pass
-    else:
-        raise Exception('No lanza IndexError')
-    ll.delete(2)
-    assert str(ll) == '<1, 2>'
-    assert len(ll) == 2
-
-    ll.add('aasdasd')
-    assert str(ll) == '<1, 2, aasdasd>'
-
-    assert ll.get(1) == 2
-    assert ll.get(2) == 'aasdasd'
-    try:
-        ll.get(-1)
-    except IndexError:
-        pass
-    else:
-        raise Exception('No lanza IndexError')
-    try:
-        ll.get(3)
-    except IndexError:
-        pass
-    else:
-        raise Exception('No lanza IndexError')
-    try:
-        ll.get(24)
-    except IndexError:
-        pass
-    else:
-        raise Exception('No lanza IndexError')
-
-    ll.add(('5', 5))
-    assert str(ll) == "<1, 2, aasdasd, ('5', 5)>"
-    assert len(ll) == 4
-    ll.delete(1)
-    assert str(ll) == "<1, aasdasd, ('5', 5)>"
-    ll.delete(0)
-    assert str(ll) == "<aasdasd, ('5', 5)>"
-    ll.delete(0)
-    assert str(ll) == "<('5', 5)>"
-    assert len(ll) == 1
-    ll.delete(0)
-    assert str(ll) == "<>"
-    assert len(ll) == 0
-    ll.clear()
-    assert str(ll) == "<>"
-    assert len(ll) == 0
-    ll.add(5)
-    ll.add(5)
-    ll.add(5)
-    assert str(ll) == "<5, 5, 5>"
-    assert len(ll) == 3
-    ll.clear()
-    assert str(ll) == "<>"
-    assert len(ll) == 0
-
-    ll.insert(-1, 'a')
-    assert str(ll) == "<a>"
-    assert len(ll) == 1
-    ll.clear()
-    assert len(ll) == 0
-    ll.insert(24, 'b')
-    assert str(ll) == "<b>"
-    assert len(ll) == 1
-    ll.clear()
-    ll.insert(0, 'c')
-    assert str(ll) == "<c>"
-    assert len(ll) == 1
-    ll.clear()
-    ll.add('hola')
-    ll.insert(-1, 'x')
-    assert str(ll) == "<x, hola>"
-    assert len(ll) == 2
-    ll.delete(0)
-    ll.insert(24, 'y')
-    assert str(ll) == "<hola, y>"
-    assert len(ll) == 2
-    ll.delete(1)
-    ll.insert(0, 'z')
-    assert str(ll) == "<z, hola>"
-    assert len(ll) == 2
-    ll.add(1)
-    ll.add(2)
-    ll.add(3)
-    ll.insert(2, 'adios')
-    assert str(ll) == "<z, hola, adios, 1, 2, 3>"
-    assert len(ll) == 6
-    ll.insert(len(ll), 'ultimo')
-    ll.insert(len(ll) - 1, 'penultimo')
-    ll.insert(len(ll) - 2, 'antepenultimo')
-    assert str(ll) == "<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>"
-    assert len(ll) == 9
-    ll.insert(4, {1, 2})
-    assert str(ll) == "<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
-    assert len(ll) == 10
-    ll.insert(1, range(5))
-    assert str(ll) == "<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
-    assert len(ll) == 11
-
-    print('OK')
-```
-
-   <details>
-   <summary>Solución</summary>
-   
-   ```python
-   from typing import Any, Iterator
-   
-   
-   class Node:
-       def __init__(self, value):
-           self.value: Any = value
-           self.next: Node | None = None
-   
-   
-   class LinkedList:
-       def __init__(self):
-           self.root: Node | None = None
-           self.last: Node | None = self.root
-           self._length = 0
-   
-       def __iter__(self) -> Iterator[Node]:
-           node = self.root
-           while node:
-               yield node.value
-               node = node.next
-   
-       def __len__(self) -> int:
-           return self._length
-   
-       def __str__(self) -> str:
-           return f"<{', '.join(str(value) for value in self)}>"
-   
-       def _get_node(self, index: int) -> Node:
-           if index >= self._length:
-               return self.last
-   
-           node = self.root
-           for _ in range(index):
-               node = node.next
-           return node
-   
-       def add(self, value: Any):
-           if self.last is None:
-               self.root = Node(value)
-               self.last = self.root
-           else:
-               self.last.next = Node(value)
-               self.last = self.last.next
-           self._length += 1
-   
-       def clear(self):
-           self.root = None
-           self.last = self.root
-           self._length = 0
-   
-       def delete(self, index: int):
-           if not 0 <= index < self._length:
-               raise IndexError
-   
-           if index == 0:
-               try:
-                   self.root = self.root.next
-               except AttributeError:
-                   self.root = None
-                   self.last = self.root
-               self._length -= 1
-           else:
-               previous_node = self._get_node(index - 1)
-               if previous_node.next and previous_node.next.next:
-                   previous_node.next = previous_node.next.next
-               else:
-                   previous_node.next = None
-                   self.last = previous_node
-               self._length -= 1
-   
-       def get(self, index: int) -> Any:
-           if not 0 < index < self._length:
-               raise IndexError
-   
-           return self._get_node(index).value
-   
-       def insert(self, index: int, value: Any):
-           if self._length == 0:
-               self.add(value)
-           else:
-               if index <= 0:
-                   node = Node(value)
-                   node.next = self.root
-                   self.root = node
-               else:
-                   node = self._get_node(index - 1)
-                   next_node = node.next
-                   node.next = Node(value)
-                   node.next.next = next_node
-               self._length += 1
-   
-   
-   def run_tests():
-       ll = LinkedList()
-       assert str(ll) == '<>'
-       assert len(ll) == 0
-   
-       ll.add(1)
-       assert str(ll) == '<1>'
-       ll.add(2)
-       assert str(ll) == '<1, 2>'
-       ll.add(3)
-       assert str(ll) == '<1, 2, 3>'
-       assert len(ll) == 3
-   
-       assert 1 in ll
-       assert 2 in ll
-       assert 3 in ll
-       assert 4 not in ll
-   
-       try:
-           ll.delete(-1)
-       except IndexError:
-           pass
-       else:
-           raise Exception('No lanza IndexError')
-       try:
-           ll.delete(3)
-       except IndexError:
-           pass
-       else:
-           raise Exception('No lanza IndexError')
-       try:
-           ll.delete(24)
-       except IndexError:
-           pass
-       else:
-           raise Exception('No lanza IndexError')
-       ll.delete(2)
-       assert str(ll) == '<1, 2>'
-       assert len(ll) == 2
-   
-       ll.add('aasdasd')
-       assert str(ll) == '<1, 2, aasdasd>'
-   
-       assert ll.get(1) == 2
-       assert ll.get(2) == 'aasdasd'
-       try:
-           ll.get(-1)
-       except IndexError:
-           pass
-       else:
-           raise Exception('No lanza IndexError')
-       try:
-           ll.get(3)
-       except IndexError:
-           pass
-       else:
-           raise Exception('No lanza IndexError')
-       try:
-           ll.get(24)
-       except IndexError:
-           pass
-       else:
-           raise Exception('No lanza IndexError')
-   
-       ll.add(('5', 5))
-       assert str(ll) == "<1, 2, aasdasd, ('5', 5)>"
-       assert len(ll) == 4
-       ll.delete(1)
-       assert str(ll) == "<1, aasdasd, ('5', 5)>"
-       ll.delete(0)
-       assert str(ll) == "<aasdasd, ('5', 5)>"
-       ll.delete(0)
-       assert str(ll) == "<('5', 5)>"
-       assert len(ll) == 1
-       ll.delete(0)
-       assert str(ll) == "<>"
-       assert len(ll) == 0
-       ll.clear()
-       assert str(ll) == "<>"
-       assert len(ll) == 0
-       ll.add(5)
-       ll.add(5)
-       ll.add(5)
-       assert str(ll) == "<5, 5, 5>"
-       assert len(ll) == 3
-       ll.clear()
-       assert str(ll) == "<>"
-       assert len(ll) == 0
-   
-       ll.insert(-1, 'a')
-       assert str(ll) == "<a>"
-       assert len(ll) == 1
-       ll.clear()
-       assert len(ll) == 0
-       ll.insert(24, 'b')
-       assert str(ll) == "<b>"
-       assert len(ll) == 1
-       ll.clear()
-       ll.insert(0, 'c')
-       assert str(ll) == "<c>"
-       assert len(ll) == 1
-       ll.clear()
-       ll.add('hola')
-       ll.insert(-1, 'x')
-       assert str(ll) == "<x, hola>"
-       assert len(ll) == 2
-       ll.delete(0)
-       ll.insert(24, 'y')
-       assert str(ll) == "<hola, y>"
-       assert len(ll) == 2
-       ll.delete(1)
-       ll.insert(0, 'z')
-       assert str(ll) == "<z, hola>"
-       assert len(ll) == 2
-       ll.add(1)
-       ll.add(2)
-       ll.add(3)
-       ll.insert(2, 'adios')
-       assert str(ll) == "<z, hola, adios, 1, 2, 3>"
-       assert len(ll) == 6
-       ll.insert(len(ll), 'ultimo')
-       ll.insert(len(ll) - 1, 'penultimo')
-       ll.insert(len(ll) - 2, 'antepenultimo')
-       assert str(ll) == "<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>"
-       assert len(ll) == 9
-       ll.insert(4, {1, 2})
-       assert str(ll) == "<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
-       assert len(ll) == 10
-       ll.insert(1, range(5))
-       assert str(ll) == "<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
-       assert len(ll) == 11
-   
-       print('OK')
-   
-   
-   run_tests()
-   ```
-   
-   </details>
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    from typing import Any, Iterator
+    
+    
+    class Node:
+        def __init__(self, value):
+            self.value: Any = value
+            self.next: Node | None = None
+    
+    
+    class LinkedList:
+        def __init__(self):
+            self.root: Node | None = None
+            self.last: Node | None = self.root
+            self._length = 0
+    
+        def __iter__(self) -> Iterator[Node]:
+            node = self.root
+            while node:
+                yield node.value
+                node = node.next
+    
+        def __len__(self) -> int:
+            return self._length
+    
+        def __str__(self) -> str:
+            return f"<{', '.join(str(value) for value in self)}>"
+    
+        def _get_node(self, index: int) -> Node:
+            if index >= self._length:
+                return self.last
+    
+            node = self.root
+            for _ in range(index):
+                node = node.next
+            return node
+    
+        def add(self, value: Any):
+            if self.last is None:
+                self.root = Node(value)
+                self.last = self.root
+            else:
+                self.last.next = Node(value)
+                self.last = self.last.next
+            self._length += 1
+    
+        def clear(self):
+            self.root = None
+            self.last = self.root
+            self._length = 0
+    
+        def delete(self, index: int):
+            if not 0 <= index < self._length:
+                raise IndexError
+    
+            if index == 0:
+                try:
+                    self.root = self.root.next
+                except AttributeError:
+                    self.root = None
+                    self.last = self.root
+                self._length -= 1
+            else:
+                previous_node = self._get_node(index - 1)
+                if previous_node.next and previous_node.next.next:
+                    previous_node.next = previous_node.next.next
+                else:
+                    previous_node.next = None
+                    self.last = previous_node
+                self._length -= 1
+    
+        def get(self, index: int) -> Any:
+            if not 0 < index < self._length:
+                raise IndexError
+    
+            return self._get_node(index).value
+    
+        def insert(self, index: int, value: Any):
+            if self._length == 0:
+                self.add(value)
+            else:
+                if index <= 0:
+                    node = Node(value)
+                    node.next = self.root
+                    self.root = node
+                else:
+                    node = self._get_node(index - 1)
+                    next_node = node.next
+                    node.next = Node(value)
+                    node.next.next = next_node
+                self._length += 1
+    
+    
+    def run_tests():
+        ll = LinkedList()
+        assert str(ll) == '<>'
+        assert len(ll) == 0
+    
+        ll.add(1)
+        assert str(ll) == '<1>'
+        ll.add(2)
+        assert str(ll) == '<1, 2>'
+        ll.add(3)
+        assert str(ll) == '<1, 2, 3>'
+        assert len(ll) == 3
+    
+        assert 1 in ll
+        assert 2 in ll
+        assert 3 in ll
+        assert 4 not in ll
+    
+        try:
+            ll.delete(-1)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.delete(3)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.delete(24)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        ll.delete(2)
+        assert str(ll) == '<1, 2>'
+        assert len(ll) == 2
+    
+        ll.add('aasdasd')
+        assert str(ll) == '<1, 2, aasdasd>'
+    
+        assert ll.get(1) == 2
+        assert ll.get(2) == 'aasdasd'
+        try:
+            ll.get(-1)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.get(3)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+        try:
+            ll.get(24)
+        except IndexError:
+            pass
+        else:
+            raise Exception('No lanza IndexError')
+    
+        ll.add(('5', 5))
+        assert str(ll) == "<1, 2, aasdasd, ('5', 5)>"
+        assert len(ll) == 4
+        ll.delete(1)
+        assert str(ll) == "<1, aasdasd, ('5', 5)>"
+        ll.delete(0)
+        assert str(ll) == "<aasdasd, ('5', 5)>"
+        ll.delete(0)
+        assert str(ll) == "<('5', 5)>"
+        assert len(ll) == 1
+        ll.delete(0)
+        assert str(ll) == "<>"
+        assert len(ll) == 0
+        ll.clear()
+        assert str(ll) == "<>"
+        assert len(ll) == 0
+        ll.add(5)
+        ll.add(5)
+        ll.add(5)
+        assert str(ll) == "<5, 5, 5>"
+        assert len(ll) == 3
+        ll.clear()
+        assert str(ll) == "<>"
+        assert len(ll) == 0
+    
+        ll.insert(-1, 'a')
+        assert str(ll) == "<a>"
+        assert len(ll) == 1
+        ll.clear()
+        assert len(ll) == 0
+        ll.insert(24, 'b')
+        assert str(ll) == "<b>"
+        assert len(ll) == 1
+        ll.clear()
+        ll.insert(0, 'c')
+        assert str(ll) == "<c>"
+        assert len(ll) == 1
+        ll.clear()
+        ll.add('hola')
+        ll.insert(-1, 'x')
+        assert str(ll) == "<x, hola>"
+        assert len(ll) == 2
+        ll.delete(0)
+        ll.insert(24, 'y')
+        assert str(ll) == "<hola, y>"
+        assert len(ll) == 2
+        ll.delete(1)
+        ll.insert(0, 'z')
+        assert str(ll) == "<z, hola>"
+        assert len(ll) == 2
+        ll.add(1)
+        ll.add(2)
+        ll.add(3)
+        ll.insert(2, 'adios')
+        assert str(ll) == "<z, hola, adios, 1, 2, 3>"
+        assert len(ll) == 6
+        ll.insert(len(ll), 'ultimo')
+        ll.insert(len(ll) - 1, 'penultimo')
+        ll.insert(len(ll) - 2, 'antepenultimo')
+        assert str(ll) == "<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert len(ll) == 9
+        ll.insert(4, {1, 2})
+        assert str(ll) == "<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert len(ll) == 10
+        ll.insert(1, range(5))
+        assert str(ll) == "<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert len(ll) == 11
+    
+        print('OK')
+    
+    
+    run_tests()
+    ```
+    
+    </details>

@@ -1,3 +1,5 @@
+# Ejercicios de Python
+
 ## Variables, tipos, entrada/salida
 
 ### Ideas:

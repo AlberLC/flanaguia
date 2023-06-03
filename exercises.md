@@ -200,10 +200,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     7 5 3 1 
     9 7 5 3 1 
     ```
-   
+    
     <details>
     <summary>Solución</summary>
    
+    a)
     ```python
     height = int(input('Introduce la altura del triángulo: '))
     
@@ -212,7 +213,14 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             print(j, end=' ')
         print()
     ```
-   
+    b)
+    ```python
+    height = int(input('Introduce la altura del triángulo: '))
+    
+    for i in range(1, height * 2, 2):
+        print(' '.join(str(j) for j in range(i, 0, -2)))
+    ```
+    
     </details>
 
 <br>

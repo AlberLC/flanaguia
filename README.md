@@ -1412,7 +1412,7 @@ El generador es consumido para generar una lista. Si intentamos volver a consumi
 > ```
 > Realmente el generador es lo que hay dentro de los paréntesis. Si ya está agrupado en unos, no hace falta poner otros.
 
-Podemos iterar manualmente un generador (y cualquier iterable) con la [función integrada](https://docs.python.org/3/library/functions.html) `next()`:
+Podemos iterar manualmente un generador (o iterador) con la [función integrada](https://docs.python.org/3/library/functions.html) `next()`:
 
 ```python
 >>> elements = [1, 5, 8, 4, 9, 4]
@@ -1435,7 +1435,7 @@ Traceback (most recent call last):
 StopIteration
 ```
 
-> Podemos crear un iterador manual de cualquier iterable con la [función integrada](https://docs.python.org/3/library/functions.html) `iter()`:
+> Podemos crear un iterador de cualquier iterable con la [función integrada](https://docs.python.org/3/library/functions.html) `iter()`:
 > ```python
 > >>> elements = [1, 5, 8, 4, 9, 4]
 > >>> iter(elements)

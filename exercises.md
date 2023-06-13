@@ -463,7 +463,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-2. Crear una función que devuelva el factorial de un número dado como argumento **usando bucles**. El factorial de de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+2. Crear una función que devuelva el factorial de un número dado como argumento **usando bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -506,7 +506,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-3. Crear una función que devuelva el factorial de un número dado como argumento **sin usar bucles**. El factorial de de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+3. Crear una función que devuelva el factorial de un número dado como argumento **sin usar bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
 
     <details>
     <summary>Solución</summary>

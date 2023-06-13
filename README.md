@@ -1488,7 +1488,7 @@ Salida:
 29
 ```
 
-Ahora imaginemos que nuestro jefe nos dice que buscar las personas por su nombre es inapropiado porque dos personas pueden tener el mismo nombre y nos pide que busquemos por id. Ahora tendríamos que ir a todas las partes del código donde busquemos por nombre y cambiarlo por id. Este caso es muy sencillo, pero si lo aplicáramos a una aplicación real, acabaríamos con varias zonas del código que debieran hacer lo mismo y resulta que no porque a alguien se le olvidó cambiar una parte. Es en estos momentos cuando tenemos que usar funciones.
+Ahora imaginemos que nuestro jefe nos dice que buscar las personas por su nombre es inapropiado porque dos personas pueden tener el mismo nombre y nos pide que busquemos por id. Ahora tendríamos que ir a todas las partes del código donde busquemos por nombre y cambiarlo por id. Este caso es muy sencillo, pero si lo aplicáramos a una aplicación real, acabaríamos con varias zonas del código que debieran hacer lo mismo y resulta que no, porque a alguien se le olvidó cambiar una parte. Es en estos momentos cuando tenemos que usar funciones.
 
 Si queremos devolver un valor en una función usamos `return`. Esta sentencia rompe su ejecución y devuelve lo que tenga a su derecha. Toda función devuelve algo, si no se especifica un `return`, se devuelve `None` automáticamente.
 

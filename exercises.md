@@ -1,5 +1,3 @@
-# Ejercicios de Python
-
 ## Variables, tipos, entrada/salida
 
 ### Ideas:
@@ -200,11 +198,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     7 5 3 1 
     9 7 5 3 1 
     ```
-    
+   
     <details>
     <summary>Solución</summary>
    
-    a)
     ```python
     height = int(input('Introduce la altura del triángulo: '))
     
@@ -213,14 +210,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             print(j, end=' ')
         print()
     ```
-    b)
-    ```python
-    height = int(input('Introduce la altura del triángulo: '))
-    
-    for i in range(1, height * 2, 2):
-        print(' '.join(str(j) for j in range(i, 0, -2)))
-    ```
-    
+   
     </details>
 
 <br>
@@ -444,7 +434,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 ### Ideas:
 
 - Módulo de un vector.
-- Factorial.
 - Área de un círculo y otra el volúmen de un cilindro usando la anterior.
 - Media de una lista.
 - Recibir una lista y una función. Devolver la lista tras aplicar a cada elemento dicha función. Números, booleanos, aprobados/suspensos...
@@ -468,6 +457,162 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     items = Counter(text.split()).items()
     print(sorted(items, key=lambda item: item[1], reverse=True))
+    ```
+    
+    </details>
+
+<br>
+
+2. Crear una función que devuelva el factorial de un número dado como argumento **usando bucles**. El factorial de de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+
+    <details>
+    <summary>Solución</summary>
+    
+    a)
+    ```python
+    def factorial(number: int) -> int:
+        if number < 0:
+            raise ValueError
+    
+        result = 1
+        while number > 1:
+            result *= number
+            number -= 1
+    
+        return result
+    
+    
+    print(factorial(4))
+    print(factorial(-1))
+    ```
+    b)
+    ```python
+    def factorial(number: int) -> int:
+        if number < 0:
+            raise ValueError
+    
+        result = 1
+        for i in range(2, number + 1):
+            result *= i
+    
+        return result
+    
+    
+    print(factorial(4))
+    print(factorial(-1))
+    ```
+    
+    </details>
+
+<br>
+
+3. Crear una función que devuelva el factorial de un número dado como argumento **sin usar bucles**. El factorial de de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    def factorial(number: int) -> int:
+        if number < 0:
+            raise ValueError
+        if number <= 1:
+            return 1
+    
+        return number * factorial(number - 1)
+    
+    
+    print(factorial(7))
+    print(factorial(-1))
+    ```
+    
+    </details>
+
+<br>
+
+4. Crear una funcion que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+
+    - `fibonacci_sequence(0, ',')` ➡️ 
+    - `fibonacci_sequence(1, ', ')` ➡️ `0`
+    - `fibonacci_sequence(3, ', ')` ➡️ `0, 1, 1`
+    - `fibonacci_sequence(5, ' - ')` ➡️ `0 - 1 - 1 - 2 - 3`
+    - `fibonacci_sequence(11, ' | ')` ➡️ `0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55`
+    
+    La sucesión de Fibonacci para `n` negativo debe lanzar un `ValueError`.
+    
+    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
+    > ```python
+    > >>> ', '.join(['one', 'two', 'three', 'four'])
+    > 'one, two, three, four'
+    > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
+    > 'one-YEAH-two-YEAH-three-YEAH-four'
+    > ```
+    
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    def fibonacci(number: int) -> int:
+        if number == 0:
+            return 0
+        if number == 1:
+            return 1
+    
+        return fibonacci(number - 2) + fibonacci(number - 1)
+    
+    
+    def fibonacci_sequence(n: int, separator: str):
+        if n < 0:
+            raise ValueError
+    
+        print(separator.join(str(fibonacci(i)) for i in range(n)))
+    
+    
+    fibonacci_sequence(0, ', ')
+    fibonacci_sequence(1, ', ')
+    fibonacci_sequence(3, ', ')
+    fibonacci_sequence(5, ' - ')
+    fibonacci_sequence(11, ' | ')
+    fibonacci_sequence(-1, ' | ')
+    ```
+    
+    </details>
+
+<br>
+
+5. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
+
+    - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
+    - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
+    - `[[0], [[[1]]], 2]` ➡️ `[0, 1, 2]`
+    - `(0, [1], (2, ('three', [4.0, {'five'}])))` ➡️ `[0, 1, 2, 'three', 4.0, 'five']`
+    - `range(6)` ➡️ `[0, 1, 2, 3, 4, 5]`
+    
+    La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
+    
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    from collections.abc import Iterable
+    
+    
+    def flatten(elements: Iterable) -> list:
+        new_elements = []
+    
+        for element in elements:
+            if isinstance(element, Iterable) and not isinstance(element, str):
+                new_elements += flatten(element)
+            else:
+                new_elements.append(element)
+    
+        return new_elements
+    
+    
+    print(flatten([0, 1, 2, [3, 4, 5]]))
+    print(flatten([{'hello', 'bye'}, 45, 'text']))
+    print(flatten([0, 1, 2, [3, 4, 5]]))
+    print(flatten((0, [1], (2, ('three', [4.0, {'five'}])))))
+    print(flatten(range(6)))
     ```
     
     </details>

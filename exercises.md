@@ -657,7 +657,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ```python
     from __future__ import annotations
     
-    '''
+    """
     ⬆️
     In some future version this import will not be necessary. This is needed for now to be able to use a class as a type hint within
     itself (before it was defined):
@@ -673,7 +673,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         ...                            ⬇️
         def __add__(self, other) -> 'Vehicle':
             ...   
-    '''
+    """
     
     import random
     from abc import ABC, abstractmethod

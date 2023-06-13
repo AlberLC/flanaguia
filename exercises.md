@@ -529,7 +529,47 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Crear una funcion que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+4. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
+
+    - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
+    - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
+    - `[[0], [[[1]]], 2]` ➡️ `[0, 1, 2]`
+    - `(0, [1], (2, ('three', [4.0, {'five'}])))` ➡️ `[0, 1, 2, 'three', 4.0, 'five']`
+    - `range(6)` ➡️ `[0, 1, 2, 3, 4, 5]`
+    
+    La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
+    
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    from collections.abc import Iterable
+    
+    
+    def flatten(elements: Iterable) -> list:
+        new_elements = []
+    
+        for element in elements:
+            if isinstance(element, Iterable) and not isinstance(element, str):
+                new_elements += flatten(element)
+            else:
+                new_elements.append(element)
+    
+        return new_elements
+    
+    
+    print(flatten([0, 1, 2, [3, 4, 5]]))
+    print(flatten([{'hello', 'bye'}, 45, 'text']))
+    print(flatten([0, 1, 2, [3, 4, 5]]))
+    print(flatten((0, [1], (2, ('three', [4.0, {'five'}])))))
+    print(flatten(range(6)))
+    ```
+    
+    </details>
+
+<br>
+
+5. Crear una funcion que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ',')` ➡️ 
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
@@ -573,46 +613,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     fibonacci_sequence(5, ' - ')
     fibonacci_sequence(11, ' | ')
     fibonacci_sequence(-1, ' | ')
-    ```
-    
-    </details>
-
-<br>
-
-5. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
-
-    - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
-    - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
-    - `[[0], [[[1]]], 2]` ➡️ `[0, 1, 2]`
-    - `(0, [1], (2, ('three', [4.0, {'five'}])))` ➡️ `[0, 1, 2, 'three', 4.0, 'five']`
-    - `range(6)` ➡️ `[0, 1, 2, 3, 4, 5]`
-    
-    La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
-    
-    <details>
-    <summary>Solución</summary>
-    
-    ```python
-    from collections.abc import Iterable
-    
-    
-    def flatten(elements: Iterable) -> list:
-        new_elements = []
-    
-        for element in elements:
-            if isinstance(element, Iterable) and not isinstance(element, str):
-                new_elements += flatten(element)
-            else:
-                new_elements.append(element)
-    
-        return new_elements
-    
-    
-    print(flatten([0, 1, 2, [3, 4, 5]]))
-    print(flatten([{'hello', 'bye'}, 45, 'text']))
-    print(flatten([0, 1, 2, [3, 4, 5]]))
-    print(flatten((0, [1], (2, ('three', [4.0, {'five'}])))))
-    print(flatten(range(6)))
     ```
     
     </details>

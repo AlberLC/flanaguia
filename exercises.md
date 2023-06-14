@@ -602,7 +602,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 5. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de mayor a menor usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse`.
 
-    > `key` espera una función anónima para ordenar los elementos de forma que devuelva el valor a comparar.
+    > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#56-funciones-anónimas).
     
     <details>
     <summary>Solución</summary>

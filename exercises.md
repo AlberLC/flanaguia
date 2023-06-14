@@ -164,7 +164,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-2. Pedir por consola la longitud de un lado de un rombo e imprimir uno por consola. Por ejemplo: para longitud 4:
+2. Pedir por consola la longitud de un lado de un rombo e imprimir uno por consola siguiendo el formato dado a continuación. Por ejemplo: para longitud 4:
 
     ```
        *
@@ -190,7 +190,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-3. Pedir por consola la longitud de un lado de un triángulo e imprimir uno por consola. Por ejemplo: para longitud 5:
+3. Pedir por consola la longitud de un lado de un triángulo e imprimir uno por consola siguiendo el formato dado a continuación. Por ejemplo: para longitud 5:
 
     ```
     1 

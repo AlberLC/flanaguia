@@ -444,27 +444,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de mayor a menor usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse`.
-
-    > `key` espera una función anónima para ordenar los elementos de forma que devuelva el valor a comparar.
-    
-    <details>
-    <summary>Solución</summary>
-    
-    ```python
-    from collections import Counter
-    
-    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
-    
-    items = Counter(text.split()).items()
-    print(sorted(items, key=lambda item: item[1], reverse=True))
-    ```
-    
-    </details>
-
-<br>
-
-2. Crear una función que devuelva el factorial de un número dado como argumento **usando bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+1. Crear una función que devuelva el factorial de un número dado como argumento **usando bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -507,7 +487,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-3. Crear una función que devuelva el factorial de un número dado como argumento **sin usar bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+2. Crear una función que devuelva el factorial de un número dado como argumento **sin usar bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -530,7 +510,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
+3. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
 
     - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
     - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
@@ -570,7 +550,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. 🔥 Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+4. 🔥 Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ',')` ➡️ 
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
@@ -614,6 +594,26 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     fibonacci_sequence(5, ' - ')
     fibonacci_sequence(11, ' | ')
     fibonacci_sequence(-1, ' | ')
+    ```
+    
+    </details>
+
+<br>
+
+5. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de mayor a menor usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse`.
+
+    > `key` espera una función anónima para ordenar los elementos de forma que devuelva el valor a comparar.
+    
+    <details>
+    <summary>Solución</summary>
+    
+    ```python
+    from collections import Counter
+    
+    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    
+    items = Counter(text.split()).items()
+    print(sorted(items, key=lambda item: item[1], reverse=True))
     ```
     
     </details>

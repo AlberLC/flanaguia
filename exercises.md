@@ -134,10 +134,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 ### Ideas:
 
 - Iterar cadena o colecciones y contar o imprimir.
-- Cifrar un mensaje.
-- Máximo/mínimo manualmente.
+- Sumar sin usar `*` y potencia sin usar `**` o módulos como math.
 - Sumar números de una lista.
+- Máximo/mínimo manualmente.
 - Convertir una lista de números a sus cuadrados.
+- Cifrar un mensaje.
 - Pedir contraseña hasta que sea la correcta.
 - Números impares hasta x.
 - Número es primo/números primos hasta x.

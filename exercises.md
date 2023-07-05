@@ -52,7 +52,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. El programa debe preguntar al usuario la edad del cliente y mostrar el precio de una entrada. Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años debe pagar 5 € y si es mayor de 18 años, 10 €.
+1. El programa debe preguntar al usuario la edad del cliente y mostrar el precio de una entrada. Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años (inclusive) debe pagar 5 € y si es mayor de 18 años, 10 €.
 
     <details>
     <summary>Solución</summary>

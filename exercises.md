@@ -1193,7 +1193,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. ☠️☠️ Rascacielos.
+1. ☠️☠️☠️ Rascacielos.
 
    Este ejercicio se basa en el famoso juego de los rascacielos. Este juego tipo puzle tiene similitudes con el sudoku a la hora de colocar los rascacielos en cada celda pero también juega con la perspectiva, es decir, es importante tener en cuenta la cantidad de rascacielos que se pueden ver desde cada lado del tablero.
 

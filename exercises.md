@@ -199,10 +199,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     7 5 3 1 
     9 7 5 3 1 
     ```
-   
+
     <details>
     <summary>Solución</summary>
-   
+
     ```python
     height = int(input('Introduce la altura del triángulo: '))
     
@@ -211,7 +211,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             print(j, end=' ')
         print()
     ```
-   
+
     </details>
 
 <br>
@@ -220,7 +220,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     import random
     
@@ -240,7 +240,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         else:
             print(f'La IA eligió {ai_play}. ¡Ganaste!')
     ```
-    
+
     </details>
 
 <br>
@@ -252,12 +252,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     "El 18 de junio de 1999 cumpliste 2 años."
     ...
     ```
-    
+
     Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
-    
+
     <details>
     <summary>Solución</summary>
-    
+
     a)
     ```python
     date = input('Fecha de nacimiento: ')
@@ -317,7 +317,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     for i, year in enumerate(range(first_year + 1, 2024), start=1):
         print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
     ```
-    
+
     </details>
 
 <br>
@@ -326,7 +326,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     subject = input('Introduce una asignatura ("fin" para terminar): ')
     subjects = []
@@ -342,7 +342,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     print(f"Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.")
     ```
-    
+
     </details>
 
 <br>
@@ -352,10 +352,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ```
     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
     ```
-    
+
     <details>
     <summary>Solución</summary>
-    
+
     a)
     ```python
     text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
@@ -391,7 +391,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     print(Counter(text.split()))
     ```
-    
+
     </details>
 
 <br>
@@ -400,7 +400,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     ball_price = float(input('Precio de una pelota: '))
     discount = float(input('% de descuento para pelota descolorida: '))
@@ -425,7 +425,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 colorless_balls -= 1
                 print(f'Quedan {colorless_balls} pelotas descoloridas.')
     ```
-    
+
     </details>
 
 <br>
@@ -448,7 +448,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <details>
     <summary>Solución</summary>
-    
+
     a)
     ```python
     def factorial(number: int) -> int:
@@ -482,7 +482,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     print(factorial(4))
     print(factorial(-1))
     ```
-    
+
     </details>
 
 <br>
@@ -491,7 +491,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     def factorial(number: int) -> int:
         if number < 0:
@@ -505,7 +505,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     print(factorial(7))
     print(factorial(-1))
     ```
-    
+
     </details>
 
 <br>
@@ -517,12 +517,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - `[[0], [[[1]]], 2]` ➡️ `[0, 1, 2]`
     - `(0, [1], (2, ('three', [4.0, {'five'}])))` ➡️ `[0, 1, 2, 'three', 4.0, 'five']`
     - `range(6)` ➡️ `[0, 1, 2, 3, 4, 5]`
-    
+
     La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
-    
+
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     from collections.abc import Iterable
     
@@ -545,7 +545,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     print(flatten((0, [1], (2, ('three', [4.0, {'five'}])))))
     print(flatten(range(6)))
     ```
-    
+
     </details>
 
 <br>
@@ -557,9 +557,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - `fibonacci_sequence(3, ', ')` ➡️ `0, 1, 1`
     - `fibonacci_sequence(5, ' - ')` ➡️ `0 - 1 - 1 - 2 - 3`
     - `fibonacci_sequence(11, ' | ')` ➡️ `0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55`
-    
+
     La sucesión de Fibonacci para `n` negativo debe lanzar un `ValueError`.
-    
+
     > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
     > ```python
     > >>> ', '.join(['one', 'two', 'three', 'four'])
@@ -567,10 +567,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
     > 'one-YEAH-two-YEAH-three-YEAH-four'
     > ```
-    
+
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     def fibonacci(number: int) -> int:
         if number == 0:
@@ -595,7 +595,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     fibonacci_sequence(11, ' | ')
     fibonacci_sequence(-1, ' | ')
     ```
-    
+
     </details>
 
 <br>
@@ -603,10 +603,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 5. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de **mayor a menor** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse` y mostrar el resultado por consola.
 
     > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#56-funciones-anónimas).
-    
+
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     from collections import Counter
     
@@ -615,7 +615,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     items = Counter(text.split()).items()
     print(sorted(items, key=lambda item: item[1], reverse=True))
     ```
-    
+
     </details>
 
 <br>
@@ -624,7 +624,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. ☠️ Construir con clases el siguiente escenario:
+1. ☠️ Vehículos.
+
+   Construir con clases el siguiente escenario:
+
    1. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
    2. Una clase `Person`:
       1. Atributo `name` que siempre tiene que tener la primera en mayúscula y el resto en minúscula aunque el usuario introduzca el nombre mal.
@@ -654,7 +657,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     from __future__ import annotations
     
@@ -781,7 +784,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     except ValueError:
         print('ValueError controlado con éxito.')
     ```
-    
+
     </details>
 
 <br>
@@ -790,7 +793,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. ☠️ Crear una lista enlazada con clases:
+1. ☠️ Lista enlazada.
+
+   Crear una lista enlazada con clases:
+
    1. Llamar a la clase `LinkedList`.
    2. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
    3. Sobrecargar los métodos necesarios para imprimir bonitas las listas listas enlazadas según el siguiente formato:
@@ -808,7 +814,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <br>
 
     Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
-    
+
     ```python
     def run_tests():
         ll = LinkedList()
@@ -947,7 +953,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <details>
     <summary>Solución</summary>
-    
+
     ```python
     from typing import Any, Iterator
     
@@ -1178,5 +1184,317 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     run_tests()
     ```
-    
+
+    </details>
+
+<br>
+
+## Algoritmos avanzados
+
+### Ejercicios:
+
+1. ☠️☠️ Rascacielos.
+
+   Este ejercicio se basa en el famoso juego de los rascacielos. Este juego tipo puzle tiene similitudes con el sudoku a la hora de colocar los rascacielos en cada celda pero también juega con la perspectiva, es decir, es importante tener en cuenta la cantidad de rascacielos que se pueden ver desde cada lado del tablero.
+
+   La siguiente imagen muestra el inicio del juego, el tablero sin resolver:
+
+   ![skyscraper.png](resources/skyscraper.png)
+
+   En este caso la partida es de `4x4` pero podría tener cualquier tamaño `nxn`. Al ser de tamaño `4`, los rascacielos que podremos colocar tendrán una altura entre `1` y `4` (inclusive).
+
+   No podremos colocar dos rascacielos de la misma altura en una misma fila o columna.
+
+   Los números que aparecen fuera del tablero indican el número de rascacielos que se verían desde esa posición. Vamos a ver la solución de este tablero para tenerlo más claro:
+
+   ![skyscraper_solution.png](resources/skyscraper_solution.png)
+
+   Los rascacielos altos tapan a los más bajos cuando los miramos desde cierto lado.
+
+   Fijémonos en la tercera columna: como arriba tiene un `4` (el número fuera del tablero), eso significa que en esa columna, desde arriba hacia abajo, se pueden ver todos los rascacielos desde altura `1` hasta `4`, o sea, cuatro rascacielos. Y si miramos en el número de abajo de la misma columna nos daremos cuenta de que es un `1`, porque solo podríamos ver un rascacielos, el de altura `4`, tapando los de altura `3`, `2` y `1`.
+
+   Entonces, cumpliendo las reglas indicadas en el exterior de tablero y teniendo en cuenta que no se pueden colocar dos rascacielos de misma altura en una misma fila o columna: crear una función `skyscrapers(...)` que reciba las reglas de cada lado del tablero de cualquier tamaño `nxn` en el orden **arriba**, **abajo**, **izquierda** y **derecha** mediante cuatro listas como argumentos y que devuelva una lista de listas representando el tablero resuelto relleno con los números que simbolizan los rascacielos de altura `1` hasta `n`. En el caso de no existir solución posible al tablero con las reglas propuestas, la función debe devolver `None`.
+
+   Con el tablero del ejemplo sería así:
+
+   `skyscrapers([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])` ➡️ `[[2, 3, 1, 4], [3, 4, 2, 1], [4, 1, 3, 2], [1, 2, 4, 3]]`
+
+   Si cambiáramos en las reglas el primer `3` por un `2`, la partida no tendría solución, entonces:
+
+   `skyscrapers([2, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])` ➡️ `None`
+
+   <br>
+
+    A continuación se proporcionará una función que ejecuta casos de pruebas desde tableros de tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+
+    ```python
+   def run_tests():
+       def _1(_11, _1001, _1100101, _0011):
+           def _10(_00011):
+               _0101011 = range
+               _010111 = reversed
+   
+               def _10101(_1011001):
+                   _101 = 0
+                   _111000 = 0
+                   for _10110 in _1011001:
+                       if _10110 > _101:
+                           _111000 += 1
+                           _101 = _10110
+                   return _111000
+   
+               _010101 = enumerate
+               _000101 = len
+               for _01100, _01 in _010101(_00011):
+                   for _1011, _00011110 in _010101(_01):
+                       _11110 = 0
+                       for _111 in _0101011(_000101(_00011)):
+                           if _111 != _1011 and _00011[_01100][_111] == _00011110 or _111 != _01100 and _00011[_111][_1011] == _00011110:
+                               _11110 = 1
+                               break
+                       _11000 = [_000[_1011] for _000 in _00011]
+                       _011001 = ((0 in _11000 or _10101(_11000) == _11[_1011] and _10101(_010111(_11000)) == _1001[_1011]) and
+                                  (0 in _00011[_01100] or _10101(_00011[_01100]) == _1100101[_01100] and _10101(_010111(_00011[_01100])) == _0011[_01100]))
+                       if _11110 or not _011001:
+                           return 0
+               return 1
+   
+           if (_0111000 := skyscrapers(_11, _1001, _1100101, _0011)) is None:
+               raise ValueError(f'skyscrapers returns None with rules {_11} {_1001} {_1100101} {_0011}')
+           assert _10(_0111000)
+   
+       _1([1], [1], [1], [1])
+       assert skyscrapers([1], [1], [2], [1]) is None
+       _1([2, 1], [1, 2], [2, 1], [1, 2])
+       assert skyscrapers([2, 1], [1, 2], [1, 2], [2, 1]) is None
+       _1([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])
+       assert skyscrapers([3, 2, 4, 1], [2, 2, 2, 2], [3, 2, 1, 3], [1, 3, 3, 2]) is None
+       _1([3, 2, 1, 2, 3], [1, 2, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3])
+       assert skyscrapers([3, 1, 1, 2, 3], [1, 1, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3]) is None
+       _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
+       assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
+       
+       print('OK')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+   from collections.abc import Iterable
+   
+   
+   def calculate_solution(
+       row_index: int,
+       column_index: int,
+       up_rules: list[int],
+       down_rules: list[int],
+       left_rules: list[int],
+       right_rules: list[int],
+       board: list[list[int]]
+   ) -> bool:
+       if not (position := next_available_position(row_index, column_index, board)):
+           return True
+   
+       row_index, column_index = position
+   
+       for i in range(1, len(board) + 1):
+           board[row_index][column_index] = i
+           if (
+               not number_in_cross(i, row_index, column_index, board)
+               and check_rules(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board)
+           ):
+               if calculate_solution(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board):
+                   return True
+   
+       board[row_index][column_index] = 0
+       return False
+   
+   
+   def check_rules(
+       row_index: int,
+       column_index: int,
+       up_rules: list[int],
+       down_rules: list[int],
+       left_rules: list[int],
+       right_rules: list[int],
+       board: list[list[int]]
+   ) -> bool:
+       column = get_column(column_index, board)
+       return (
+           (
+               0 in column
+               or
+               n_sees(column) == up_rules[column_index]
+               and
+               n_sees(reversed(column)) == down_rules[column_index]
+           )
+           and
+           (
+               0 in board[row_index]
+               or
+               n_sees(board[row_index]) == left_rules[row_index]
+               and
+               n_sees(reversed(board[row_index])) == right_rules[row_index]
+           )
+       )
+   
+   
+   def get_column(column_index: int, board: list[list[int]]) -> list[int]:
+       return [row[column_index] for row in board]
+   
+   
+   def fill_column_decrement(column_index: int, board: list[list[int]]):
+       for i, row in enumerate(board):
+           row[column_index] = len(board) - i
+   
+   
+   def fill_column_increment(column_index: int, board: list[list[int]]):
+       for i, row in enumerate(board, start=1):
+           row[column_index] = i
+   
+   
+   def n_sees(numbers: Iterable[int]) -> int:
+       max_ = 0
+       n_sees_ = 0
+       for number in numbers:
+           if number > max_:
+               n_sees_ += 1
+               max_ = number
+   
+       return n_sees_
+   
+   
+   def next_available_position(row_index: int, column_index: int, board: list[list[int]]) -> tuple[int, int] | None:
+       i = row_index
+       j = column_index
+       while i < len(board):
+           while j < len(board):
+               if not board[i][j]:
+                   return i, j
+               j += 1
+           i += 1
+           j = 0
+   
+   
+   def number_in_cross(number: int, row_index: int, column_index: int, board: list[list[int]]):
+       for i in range(len(board)):
+           if i != column_index and board[row_index][i] == number or i != row_index and board[i][column_index] == number:
+               return True
+   
+       return False
+   
+   
+   def put_init_values(up_rules, down_rules, left_rules, right_rules, board):
+       for i in range(len(board)):
+           if up_rules[i] == 1:
+               board[0][i] = len(board)
+           if up_rules[i] == len(board):
+               fill_column_increment(i, board)
+           if down_rules[i] == 1:
+               board[len(board) - 1][i] = len(board)
+           if down_rules[i] == len(board):
+               fill_column_decrement(i, board)
+           if left_rules[i] == 1:
+               board[i][0] = len(board)
+           if left_rules[i] == len(board):
+               board[i] = list(range(1, len(board) + 1))
+           if right_rules[i] == 1:
+               board[i][len(board) - 1] = len(board)
+           if right_rules[i] == len(board):
+               board[i] = list(range(len(board), 0, -1))
+   
+   
+   def skyscrapers(
+       up_rules: list[int],
+       down_rules: list[int],
+       left_rules: list[int],
+       right_rules: list[int]
+   ) -> list[list[int]] | None:
+       board = [[0] * len(up_rules) for _ in range(len(up_rules))]
+   
+       put_init_values(up_rules, down_rules, left_rules, right_rules, board)
+   
+       if not valid_board(up_rules, down_rules, left_rules, right_rules, board):
+           return
+   
+       if calculate_solution(0, 0, up_rules, down_rules, left_rules, right_rules, board):
+           return board
+   
+   
+   def valid_board(
+       up_rules: list[int],
+       down_rules: list[int],
+       left_rules: list[int],
+       right_rules: list[int],
+       board: list[list[int]]
+   ):
+       for i, row in enumerate(board):
+           for j, number in enumerate(row):
+               if (
+                   number
+                   and
+                   (
+                       number_in_cross(number, i, j, board)
+                       or
+                       not check_rules(i, j, up_rules, down_rules, left_rules, right_rules, board)
+                   )
+               ):
+                   return False
+   
+       return True
+   
+   
+   def run_tests():
+       def _1(_11, _1001, _1100101, _0011):
+           def _10(_00011):
+               _0101011 = range
+               _010111 = reversed
+   
+               def _10101(_1011001):
+                   _101 = 0
+                   _111000 = 0
+                   for _10110 in _1011001:
+                       if _10110 > _101:
+                           _111000 += 1
+                           _101 = _10110
+                   return _111000
+   
+               _010101 = enumerate
+               _000101 = len
+               for _01100, _01 in _010101(_00011):
+                   for _1011, _00011110 in _010101(_01):
+                       _11110 = 0
+                       for _111 in _0101011(_000101(_00011)):
+                           if _111 != _1011 and _00011[_01100][_111] == _00011110 or _111 != _01100 and _00011[_111][_1011] == _00011110:
+                               _11110 = 1
+                               break
+                       _11000 = [_000[_1011] for _000 in _00011]
+                       _011001 = ((0 in _11000 or _10101(_11000) == _11[_1011] and _10101(_010111(_11000)) == _1001[_1011]) and
+                                  (0 in _00011[_01100] or _10101(_00011[_01100]) == _1100101[_01100] and _10101(_010111(_00011[_01100])) == _0011[_01100]))
+                       if _11110 or not _011001:
+                           return 0
+               return 1
+   
+           if (_0111000 := skyscrapers(_11, _1001, _1100101, _0011)) is None:
+               raise ValueError(f'skyscrapers returns None with rules {_11} {_1001} {_1100101} {_0011}')
+           assert _10(_0111000)
+   
+       _1([1], [1], [1], [1])
+       assert skyscrapers([1], [1], [2], [1]) is None
+       _1([2, 1], [1, 2], [2, 1], [1, 2])
+       assert skyscrapers([2, 1], [1, 2], [1, 2], [2, 1]) is None
+       _1([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])
+       assert skyscrapers([3, 2, 4, 1], [2, 2, 2, 2], [3, 2, 1, 3], [1, 3, 3, 2]) is None
+       _1([3, 2, 1, 2, 3], [1, 2, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3])
+       assert skyscrapers([3, 1, 1, 2, 3], [1, 1, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3]) is None
+       _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
+       assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
+   
+       print('OK')
+   
+   
+   run_tests()
+    ```
+
     </details>

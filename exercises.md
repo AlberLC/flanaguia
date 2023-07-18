@@ -1228,273 +1228,273 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     A continuación se proporcionará una función que ejecuta casos de pruebas desde tableros de tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
-   def run_tests():
-       def _1(_11, _1001, _1100101, _0011):
-           def _10(_00011):
-               _0101011 = range
-               _010111 = reversed
-   
-               def _10101(_1011001):
-                   _101 = 0
-                   _111000 = 0
-                   for _10110 in _1011001:
-                       if _10110 > _101:
-                           _111000 += 1
-                           _101 = _10110
-                   return _111000
-   
-               _010101 = enumerate
-               _000101 = len
-               for _01100, _01 in _010101(_00011):
-                   for _1011, _00011110 in _010101(_01):
-                       _11110 = 0
-                       for _111 in _0101011(_000101(_00011)):
-                           if _111 != _1011 and _00011[_01100][_111] == _00011110 or _111 != _01100 and _00011[_111][_1011] == _00011110:
-                               _11110 = 1
-                               break
-                       _11000 = [_000[_1011] for _000 in _00011]
-                       _011001 = ((0 in _11000 or _10101(_11000) == _11[_1011] and _10101(_010111(_11000)) == _1001[_1011]) and
-                                  (0 in _00011[_01100] or _10101(_00011[_01100]) == _1100101[_01100] and _10101(_010111(_00011[_01100])) == _0011[_01100]))
-                       if _11110 or not _011001:
-                           return 0
-               return 1
-   
-           if (_0111000 := skyscrapers(_11, _1001, _1100101, _0011)) is None:
-               raise ValueError(f'skyscrapers returns None with rules {_11} {_1001} {_1100101} {_0011}')
-           assert _10(_0111000)
-   
-       _1([1], [1], [1], [1])
-       assert skyscrapers([1], [1], [2], [1]) is None
-       _1([2, 1], [1, 2], [2, 1], [1, 2])
-       assert skyscrapers([2, 1], [1, 2], [1, 2], [2, 1]) is None
-       _1([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])
-       assert skyscrapers([3, 2, 4, 1], [2, 2, 2, 2], [3, 2, 1, 3], [1, 3, 3, 2]) is None
-       _1([3, 2, 1, 2, 3], [1, 2, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3])
-       assert skyscrapers([3, 1, 1, 2, 3], [1, 1, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3]) is None
-       _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
-       assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
-       
-       print('OK')
+    def run_tests():
+        def _1(_11, _1001, _1100101, _0011):
+            def _10(_00011):
+                _0101011 = range
+                _010111 = reversed
+    
+                def _10101(_1011001):
+                    _101 = 0
+                    _111000 = 0
+                    for _10110 in _1011001:
+                        if _10110 > _101:
+                            _111000 += 1
+                            _101 = _10110
+                    return _111000
+    
+                _010101 = enumerate
+                _000101 = len
+                for _01100, _01 in _010101(_00011):
+                    for _1011, _00011110 in _010101(_01):
+                        _11110 = 0
+                        for _111 in _0101011(_000101(_00011)):
+                            if _111 != _1011 and _00011[_01100][_111] == _00011110 or _111 != _01100 and _00011[_111][_1011] == _00011110:
+                                _11110 = 1
+                                break
+                        _11000 = [_000[_1011] for _000 in _00011]
+                        _011001 = ((0 in _11000 or _10101(_11000) == _11[_1011] and _10101(_010111(_11000)) == _1001[_1011]) and
+                                   (0 in _00011[_01100] or _10101(_00011[_01100]) == _1100101[_01100] and _10101(_010111(_00011[_01100])) == _0011[_01100]))
+                        if _11110 or not _011001:
+                            return 0
+                return 1
+    
+            if (_0111000 := skyscrapers(_11, _1001, _1100101, _0011)) is None:
+                raise ValueError(f'skyscrapers returns None with rules {_11} {_1001} {_1100101} {_0011}')
+            assert _10(_0111000)
+    
+        _1([1], [1], [1], [1])
+        assert skyscrapers([1], [1], [2], [1]) is None
+        _1([2, 1], [1, 2], [2, 1], [1, 2])
+        assert skyscrapers([2, 1], [1, 2], [1, 2], [2, 1]) is None
+        _1([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])
+        assert skyscrapers([3, 2, 4, 1], [2, 2, 2, 2], [3, 2, 1, 3], [1, 3, 3, 2]) is None
+        _1([3, 2, 1, 2, 3], [1, 2, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3])
+        assert skyscrapers([3, 1, 1, 2, 3], [1, 1, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3]) is None
+        _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
+        assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
+        
+        print('OK')
     ```
 
     <details>
     <summary>Solución</summary>
 
     ```python
-   from collections.abc import Iterable
-   
-   
-   def calculate_solution(
-       row_index: int,
-       column_index: int,
-       up_rules: list[int],
-       down_rules: list[int],
-       left_rules: list[int],
-       right_rules: list[int],
-       board: list[list[int]]
-   ) -> bool:
-       if not (position := next_available_position(row_index, column_index, board)):
-           return True
-   
-       row_index, column_index = position
-   
-       for i in range(1, len(board) + 1):
-           board[row_index][column_index] = i
-           if (
-               not number_in_cross(i, row_index, column_index, board)
-               and check_rules(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board)
-           ):
-               if calculate_solution(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board):
-                   return True
-   
-       board[row_index][column_index] = 0
-       return False
-   
-   
-   def check_rules(
-       row_index: int,
-       column_index: int,
-       up_rules: list[int],
-       down_rules: list[int],
-       left_rules: list[int],
-       right_rules: list[int],
-       board: list[list[int]]
-   ) -> bool:
-       column = get_column(column_index, board)
-       return (
-           (
-               0 in column
-               or
-               n_sees(column) == up_rules[column_index]
-               and
-               n_sees(reversed(column)) == down_rules[column_index]
-           )
-           and
-           (
-               0 in board[row_index]
-               or
-               n_sees(board[row_index]) == left_rules[row_index]
-               and
-               n_sees(reversed(board[row_index])) == right_rules[row_index]
-           )
-       )
-   
-   
-   def get_column(column_index: int, board: list[list[int]]) -> list[int]:
-       return [row[column_index] for row in board]
-   
-   
-   def fill_column_decrement(column_index: int, board: list[list[int]]):
-       for i, row in enumerate(board):
-           row[column_index] = len(board) - i
-   
-   
-   def fill_column_increment(column_index: int, board: list[list[int]]):
-       for i, row in enumerate(board, start=1):
-           row[column_index] = i
-   
-   
-   def n_sees(numbers: Iterable[int]) -> int:
-       max_ = 0
-       n_sees_ = 0
-       for number in numbers:
-           if number > max_:
-               n_sees_ += 1
-               max_ = number
-   
-       return n_sees_
-   
-   
-   def next_available_position(row_index: int, column_index: int, board: list[list[int]]) -> tuple[int, int] | None:
-       i = row_index
-       j = column_index
-       while i < len(board):
-           while j < len(board):
-               if not board[i][j]:
-                   return i, j
-               j += 1
-           i += 1
-           j = 0
-   
-   
-   def number_in_cross(number: int, row_index: int, column_index: int, board: list[list[int]]):
-       for i in range(len(board)):
-           if i != column_index and board[row_index][i] == number or i != row_index and board[i][column_index] == number:
-               return True
-   
-       return False
-   
-   
-   def put_init_values(up_rules, down_rules, left_rules, right_rules, board):
-       for i in range(len(board)):
-           if up_rules[i] == 1:
-               board[0][i] = len(board)
-           if up_rules[i] == len(board):
-               fill_column_increment(i, board)
-           if down_rules[i] == 1:
-               board[len(board) - 1][i] = len(board)
-           if down_rules[i] == len(board):
-               fill_column_decrement(i, board)
-           if left_rules[i] == 1:
-               board[i][0] = len(board)
-           if left_rules[i] == len(board):
-               board[i] = list(range(1, len(board) + 1))
-           if right_rules[i] == 1:
-               board[i][len(board) - 1] = len(board)
-           if right_rules[i] == len(board):
-               board[i] = list(range(len(board), 0, -1))
-   
-   
-   def skyscrapers(
-       up_rules: list[int],
-       down_rules: list[int],
-       left_rules: list[int],
-       right_rules: list[int]
-   ) -> list[list[int]] | None:
-       board = [[0] * len(up_rules) for _ in range(len(up_rules))]
-   
-       put_init_values(up_rules, down_rules, left_rules, right_rules, board)
-   
-       if not valid_board(up_rules, down_rules, left_rules, right_rules, board):
-           return
-   
-       if calculate_solution(0, 0, up_rules, down_rules, left_rules, right_rules, board):
-           return board
-   
-   
-   def valid_board(
-       up_rules: list[int],
-       down_rules: list[int],
-       left_rules: list[int],
-       right_rules: list[int],
-       board: list[list[int]]
-   ):
-       for i, row in enumerate(board):
-           for j, number in enumerate(row):
-               if (
-                   number
-                   and
-                   (
-                       number_in_cross(number, i, j, board)
-                       or
-                       not check_rules(i, j, up_rules, down_rules, left_rules, right_rules, board)
-                   )
-               ):
-                   return False
-   
-       return True
-   
-   
-   def run_tests():
-       def _1(_11, _1001, _1100101, _0011):
-           def _10(_00011):
-               _0101011 = range
-               _010111 = reversed
-   
-               def _10101(_1011001):
-                   _101 = 0
-                   _111000 = 0
-                   for _10110 in _1011001:
-                       if _10110 > _101:
-                           _111000 += 1
-                           _101 = _10110
-                   return _111000
-   
-               _010101 = enumerate
-               _000101 = len
-               for _01100, _01 in _010101(_00011):
-                   for _1011, _00011110 in _010101(_01):
-                       _11110 = 0
-                       for _111 in _0101011(_000101(_00011)):
-                           if _111 != _1011 and _00011[_01100][_111] == _00011110 or _111 != _01100 and _00011[_111][_1011] == _00011110:
-                               _11110 = 1
-                               break
-                       _11000 = [_000[_1011] for _000 in _00011]
-                       _011001 = ((0 in _11000 or _10101(_11000) == _11[_1011] and _10101(_010111(_11000)) == _1001[_1011]) and
-                                  (0 in _00011[_01100] or _10101(_00011[_01100]) == _1100101[_01100] and _10101(_010111(_00011[_01100])) == _0011[_01100]))
-                       if _11110 or not _011001:
-                           return 0
-               return 1
-   
-           if (_0111000 := skyscrapers(_11, _1001, _1100101, _0011)) is None:
-               raise ValueError(f'skyscrapers returns None with rules {_11} {_1001} {_1100101} {_0011}')
-           assert _10(_0111000)
-   
-       _1([1], [1], [1], [1])
-       assert skyscrapers([1], [1], [2], [1]) is None
-       _1([2, 1], [1, 2], [2, 1], [1, 2])
-       assert skyscrapers([2, 1], [1, 2], [1, 2], [2, 1]) is None
-       _1([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])
-       assert skyscrapers([3, 2, 4, 1], [2, 2, 2, 2], [3, 2, 1, 3], [1, 3, 3, 2]) is None
-       _1([3, 2, 1, 2, 3], [1, 2, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3])
-       assert skyscrapers([3, 1, 1, 2, 3], [1, 1, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3]) is None
-       _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
-       assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
-   
-       print('OK')
-   
-   
-   run_tests()
+    from collections.abc import Iterable
+    
+    
+    def calculate_solution(
+        row_index: int,
+        column_index: int,
+        up_rules: list[int],
+        down_rules: list[int],
+        left_rules: list[int],
+        right_rules: list[int],
+        board: list[list[int]]
+    ) -> bool:
+        if not (position := next_available_position(row_index, column_index, board)):
+            return True
+    
+        row_index, column_index = position
+    
+        for i in range(1, len(board) + 1):
+            board[row_index][column_index] = i
+            if (
+                not number_in_cross(i, row_index, column_index, board)
+                and check_rules(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board)
+            ):
+                if calculate_solution(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board):
+                    return True
+    
+        board[row_index][column_index] = 0
+        return False
+    
+    
+    def check_rules(
+        row_index: int,
+        column_index: int,
+        up_rules: list[int],
+        down_rules: list[int],
+        left_rules: list[int],
+        right_rules: list[int],
+        board: list[list[int]]
+    ) -> bool:
+        column = get_column(column_index, board)
+        return (
+            (
+                0 in column
+                or
+                n_sees(column) == up_rules[column_index]
+                and
+                n_sees(reversed(column)) == down_rules[column_index]
+            )
+            and
+            (
+                0 in board[row_index]
+                or
+                n_sees(board[row_index]) == left_rules[row_index]
+                and
+                n_sees(reversed(board[row_index])) == right_rules[row_index]
+            )
+        )
+    
+    
+    def get_column(column_index: int, board: list[list[int]]) -> list[int]:
+        return [row[column_index] for row in board]
+    
+    
+    def fill_column_decrement(column_index: int, board: list[list[int]]):
+        for i, row in enumerate(board):
+            row[column_index] = len(board) - i
+    
+    
+    def fill_column_increment(column_index: int, board: list[list[int]]):
+        for i, row in enumerate(board, start=1):
+            row[column_index] = i
+    
+    
+    def n_sees(numbers: Iterable[int]) -> int:
+        max_ = 0
+        n_sees_ = 0
+        for number in numbers:
+            if number > max_:
+                n_sees_ += 1
+                max_ = number
+    
+        return n_sees_
+    
+    
+    def next_available_position(row_index: int, column_index: int, board: list[list[int]]) -> tuple[int, int] | None:
+        i = row_index
+        j = column_index
+        while i < len(board):
+            while j < len(board):
+                if not board[i][j]:
+                    return i, j
+                j += 1
+            i += 1
+            j = 0
+    
+    
+    def number_in_cross(number: int, row_index: int, column_index: int, board: list[list[int]]):
+        for i in range(len(board)):
+            if i != column_index and board[row_index][i] == number or i != row_index and board[i][column_index] == number:
+                return True
+    
+        return False
+    
+    
+    def put_init_values(up_rules, down_rules, left_rules, right_rules, board):
+        for i in range(len(board)):
+            if up_rules[i] == 1:
+                board[0][i] = len(board)
+            if up_rules[i] == len(board):
+                fill_column_increment(i, board)
+            if down_rules[i] == 1:
+                board[len(board) - 1][i] = len(board)
+            if down_rules[i] == len(board):
+                fill_column_decrement(i, board)
+            if left_rules[i] == 1:
+                board[i][0] = len(board)
+            if left_rules[i] == len(board):
+                board[i] = list(range(1, len(board) + 1))
+            if right_rules[i] == 1:
+                board[i][len(board) - 1] = len(board)
+            if right_rules[i] == len(board):
+                board[i] = list(range(len(board), 0, -1))
+    
+    
+    def skyscrapers(
+        up_rules: list[int],
+        down_rules: list[int],
+        left_rules: list[int],
+        right_rules: list[int]
+    ) -> list[list[int]] | None:
+        board = [[0] * len(up_rules) for _ in range(len(up_rules))]
+    
+        put_init_values(up_rules, down_rules, left_rules, right_rules, board)
+    
+        if not valid_board(up_rules, down_rules, left_rules, right_rules, board):
+            return
+    
+        if calculate_solution(0, 0, up_rules, down_rules, left_rules, right_rules, board):
+            return board
+    
+    
+    def valid_board(
+        up_rules: list[int],
+        down_rules: list[int],
+        left_rules: list[int],
+        right_rules: list[int],
+        board: list[list[int]]
+    ):
+        for i, row in enumerate(board):
+            for j, number in enumerate(row):
+                if (
+                    number
+                    and
+                    (
+                        number_in_cross(number, i, j, board)
+                        or
+                        not check_rules(i, j, up_rules, down_rules, left_rules, right_rules, board)
+                    )
+                ):
+                    return False
+    
+        return True
+    
+    
+    def run_tests():
+        def _1(_11, _1001, _1100101, _0011):
+            def _10(_00011):
+                _0101011 = range
+                _010111 = reversed
+    
+                def _10101(_1011001):
+                    _101 = 0
+                    _111000 = 0
+                    for _10110 in _1011001:
+                        if _10110 > _101:
+                            _111000 += 1
+                            _101 = _10110
+                    return _111000
+    
+                _010101 = enumerate
+                _000101 = len
+                for _01100, _01 in _010101(_00011):
+                    for _1011, _00011110 in _010101(_01):
+                        _11110 = 0
+                        for _111 in _0101011(_000101(_00011)):
+                            if _111 != _1011 and _00011[_01100][_111] == _00011110 or _111 != _01100 and _00011[_111][_1011] == _00011110:
+                                _11110 = 1
+                                break
+                        _11000 = [_000[_1011] for _000 in _00011]
+                        _011001 = ((0 in _11000 or _10101(_11000) == _11[_1011] and _10101(_010111(_11000)) == _1001[_1011]) and
+                                   (0 in _00011[_01100] or _10101(_00011[_01100]) == _1100101[_01100] and _10101(_010111(_00011[_01100])) == _0011[_01100]))
+                        if _11110 or not _011001:
+                            return 0
+                return 1
+    
+            if (_0111000 := skyscrapers(_11, _1001, _1100101, _0011)) is None:
+                raise ValueError(f'skyscrapers returns None with rules {_11} {_1001} {_1100101} {_0011}')
+            assert _10(_0111000)
+    
+        _1([1], [1], [1], [1])
+        assert skyscrapers([1], [1], [2], [1]) is None
+        _1([2, 1], [1, 2], [2, 1], [1, 2])
+        assert skyscrapers([2, 1], [1, 2], [1, 2], [2, 1]) is None
+        _1([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])
+        assert skyscrapers([3, 2, 4, 1], [2, 2, 2, 2], [3, 2, 1, 3], [1, 3, 3, 2]) is None
+        _1([3, 2, 1, 2, 3], [1, 2, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3])
+        assert skyscrapers([3, 1, 1, 2, 3], [1, 1, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3]) is None
+        _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
+        assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
+    
+        print('OK')
+    
+    
+    run_tests()
     ```
 
     </details>

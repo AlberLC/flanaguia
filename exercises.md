@@ -1282,8 +1282,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     ```python
     from collections.abc import Iterable
-    
-    
+
+
     def calculate_solution(
         row_index: int,
         column_index: int,
@@ -1302,10 +1302,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             board[row_index][column_index] = i
             if (
                 not number_in_cross(i, row_index, column_index, board)
-                and check_rules(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board)
+                and
+                check_rules(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board)
+                and
+                calculate_solution(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board)
             ):
-                if calculate_solution(row_index, column_index, up_rules, down_rules, left_rules, right_rules, board):
-                    return True
+                return True
     
         board[row_index][column_index] = 0
         return False
@@ -1415,10 +1417,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
         put_init_values(up_rules, down_rules, left_rules, right_rules, board)
     
-        if not valid_board(up_rules, down_rules, left_rules, right_rules, board):
-            return
-    
-        if calculate_solution(0, 0, up_rules, down_rules, left_rules, right_rules, board):
+        if (
+            valid_board(up_rules, down_rules, left_rules, right_rules, board)
+            and
+            calculate_solution(0, 0, up_rules, down_rules, left_rules, right_rules, board)
+        ):
             return board
     
     

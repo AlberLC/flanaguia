@@ -1225,7 +1225,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
    <br>
 
-    A continuación se proporcionará una función que ejecuta casos de pruebas desde tableros de tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+    A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
     def run_tests():

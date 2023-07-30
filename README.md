@@ -429,7 +429,7 @@ Funciones de las tuplas:
 
 Las listas son una de las colecciones más útiles del lenguaje, se usan continuamente y estarán presentas en prácticamente cualquier programa Python. Funcionan en base al almacenamiento de objetos en bloques contiguos de memoria, por ello este tipo de estructura permite el acceso eficiente de los elementos mediante un índice que indica la posicion relativa dentro de la lista.
 
-Las [cadenas](#13-cadenas-strings) y las [tuplas](#14-tuplas) también almacenan datos de forma contigua en memoria, pero las primeras, almacenan carácteres y, las segundas, aunque almacenan objetos, son colecciones inmutables y más simples. Las listas tienen muchas más herramientas y métodos predefinidos, esto hace que sea algo menos eficientes en memoria en la mayoría de los casos, pero como dijimos en el apartado de las tuplas, sería despreciable.
+Las [cadenas](#13-cadenas-strings) y las [tuplas](#14-tuplas) también almacenan datos de forma contigua en memoria, pero las primeras, almacenan carácteres y, las segundas, aunque almacenan objetos, son colecciones inmutables y más simples. Las listas tienen muchas más herramientas y métodos predefinidos, esto hace que sea algo menos eficientes en memoria en la mayoría de los casos pero, como dijimos en el apartado de las tuplas, sería despreciable.
 
 ```python
 >>> elements = [0, 1, 2, 3, 'four', 5, 6, 'seven', 8, 9, 9, 9]
@@ -994,7 +994,7 @@ print('always')
 
 En Python todos los bloques se indican con el nivel de tabulaciones después de "**:**".
 
-En el código anterior `print('else')` está dentro de la cláusula o bloque `else` porque tiene 1 tabulación (4 espacios es lo más usado). En cambio `print('always')` está fuera del `else` y se ejecutará siempre sin importar las condicionales. 
+En el código anterior `print('i')` está dentro de la cláusula o bloque `else` porque tiene 1 tabulación (4 espacios es lo más usado). En cambio `print('always')` está fuera del `else` y se ejecutará siempre sin importar las condicionales. 
 
 No es necesario poner paréntesis en las condiciones: 
 

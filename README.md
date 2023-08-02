@@ -1057,7 +1057,7 @@ Hay que tener en cuenta que los `for` en Python se podrían comparar con los `fo
 `for`
 ```cs
 string[] words = {"hello", "world", "Juan", "bye"};
-for(int i = 0; i < words.Length; i++)
+for (int i = 0; i < words.Length; i++)
 {
     Console.WriteLine(words[i]);
 }
@@ -1075,7 +1075,7 @@ bye
 `foreach`
 ```cs
 string[] words = {"hello", "world", "Juan", "bye"};
-foreach(string word in words)
+foreach (string word in words)
 {
     Console.WriteLine(word);
 }

@@ -129,8 +129,9 @@
 ### Ideas:
 
 - Iterar cadena o colecciones y contar o imprimir.
-- Sumar sin usar `*` y potencia sin usar `**` o módulos como math.
+- Añadir palabras a una lista hasta "fin" e imprimirla.
 - Sumar números de una lista.
+- Multiplicar sin usar `*` y potencia sin usar `**` o módulos como math.
 - Máximo/mínimo manualmente.
 - Convertir una lista de números a sus cuadrados.
 - Cifrar un mensaje.

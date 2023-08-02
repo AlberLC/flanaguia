@@ -42,7 +42,6 @@
 ### Ideas:
 
 - Calculadora
-- Un menú con lista de diccionarios de clientes. Añadir, eliminar, mostrar, listar por x.
 
 <br>
 
@@ -144,6 +143,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 - Número es primo/números primos hasta x.
 - Iterar diccionario de datos de alumnos y actualizar estado según nota.
 - Matrices. Imprimir la diagonal. Hacer producto vectorial, etc.
+- Un menú con lista de diccionarios de clientes. Añadir, eliminar, mostrar, listar por x.
 
 <br>
 

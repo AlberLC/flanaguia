@@ -88,7 +88,7 @@
 
 <br>
 
-3. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás este año (2023). Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro.
+3. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás el año 2023. Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro.
 
     <details>
     <summary>Solución</summary>

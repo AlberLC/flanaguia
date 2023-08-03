@@ -129,19 +129,19 @@
 ### Ideas:
 
 - Iterar cadena o colecciones y contar o imprimir.
+- Pedir contraseña hasta que sea la correcta.
 - Añadir palabras a una lista hasta "fin" e imprimirla.
 - Sumar números de una lista.
 - Multiplicar sin usar `*` y potencia sin usar `**` o módulos como math.
 - Máximo/mínimo manualmente.
 - Convertir una lista de números a sus cuadrados.
+- Números impares hasta x.
+- Número es primo/números primos hasta x.
 - Cifrar un mensaje.
-- Pedir contraseña hasta que sea la correcta.
 - Programa que traduzca palabras del siguiente texto. Se introduce por teclado `<palabra>,<traducción>` hasta "fin". Texto:
 ```
 Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.
 ```
-- Números impares hasta x.
-- Número es primo/números primos hasta x.
 - Iterar diccionario de datos de alumnos y actualizar estado según nota.
 - Matrices. Imprimir la diagonal. Hacer producto vectorial, etc.
 - Un menú con lista de diccionarios de clientes. Añadir, eliminar, mostrar, listar por x.

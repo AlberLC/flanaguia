@@ -341,7 +341,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         if grade < 5:
             failed_subjects.append(subject)
     
-    print(f"Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.")
+    if len(failed_subjects) > 1:
+        print(f"Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.")
+    else:
+        print(f"Asignaturas suspensas: {failed_subjects[0]}.")
     ```
 
     </details>

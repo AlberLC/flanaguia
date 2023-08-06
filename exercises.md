@@ -137,7 +137,6 @@
 - Convertir una lista de números a sus cuadrados.
 - Números impares hasta x.
 - Número es primo/números primos hasta x.
-- Cifrar un mensaje.
 - Programa que traduzca palabras del siguiente texto. Se introduce por teclado `<palabra>,<traducción>` hasta "fin". Texto:
 ```
 Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.
@@ -554,7 +553,54 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. 🔥 Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+4. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+
+    `encode('abc', 1)` ➡️ `'bcd'`
+
+    Si lo ciframos con desplazamiento `2`:
+
+    `encode('abc', 2)` ➡️ `'cde'`
+
+    En el ejercicio vamos a usar únicamente los [carácteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+
+    Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
+
+    `decode(encode(text, offset), offset) == text` ➡️ `True`
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    FIRST_CHARACTER_INDEX = 32
+    ALPHABET_LENGHT = 95
+    
+    
+    def encode(text: str, offset: int) -> str:
+        new_characters = [
+            chr(ord(character) - FIRST_CHARACTER_INDEX + offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
+            for character in text
+        ]
+        return ''.join(new_characters)
+    
+    
+    def decode(text: str, offset: int) -> str:
+        new_characters = [
+            chr(ord(character) - FIRST_CHARACTER_INDEX - offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
+            for character in text
+        ]
+        return ''.join(new_characters)
+    
+    
+    offset = 12
+    text = 'asdASD0123456789!"·!"·"$%&/()=?¿¡\'09876.,:;-_´`+çÇ^¨*{}[]@#54321 sdfklwd'
+    print(decode(encode(text, offset), offset) == text)
+    ```
+
+    </details>
+
+<br>
+
+5. 🔥 Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️ 
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
@@ -604,7 +650,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de **mayor a menor** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse` y mostrar el resultado por consola.
+6. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de **mayor a menor** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse` y mostrar el resultado por consola.
 
     > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#56-funciones-anónimas).
 

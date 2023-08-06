@@ -132,7 +132,6 @@
 - Pedir contraseña hasta que sea la correcta.
 - Añadir palabras a una lista hasta "fin" e imprimirla.
 - Sumar números de una lista.
-- Multiplicar sin usar `*` y potencia sin usar `**` o módulos como math.
 - Máximo/mínimo manualmente.
 - Convertir una lista de números a sus cuadrados.
 - Números impares hasta x.
@@ -439,6 +438,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 - Módulo de un vector.
 - Área de un círculo y otra el volúmen de un cilindro usando la anterior.
+- Multiplicar sin usar `*` y potencia sin usar `**` o módulos como math.
 - Media de una lista.
 - Recibir una lista y una función. Devolver la lista tras aplicar a cada elemento dicha función. Números, booleanos, aprobados/suspensos...
 - Que reciba un diccionario y una función y devuelva el diccionario filtrado tras aplicar la función a los valores. Quizás asignaturas aprobadas. O filtrar por `<=`, `>`...

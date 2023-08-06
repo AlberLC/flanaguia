@@ -553,54 +553,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
-
-    `encode('abc', 1)` ➡️ `'bcd'`
-
-    Si lo ciframos con desplazamiento `2`:
-
-    `encode('abc', 2)` ➡️ `'cde'`
-
-    En el ejercicio vamos a usar únicamente los [carácteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
-
-    Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
-
-    `decode(encode(text, offset), offset) == text` ➡️ `True`
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    FIRST_CHARACTER_INDEX = 32
-    ALPHABET_LENGHT = 95
-    
-    
-    def encode(text: str, offset: int) -> str:
-        new_characters = [
-            chr(ord(character) - FIRST_CHARACTER_INDEX + offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
-            for character in text
-        ]
-        return ''.join(new_characters)
-    
-    
-    def decode(text: str, offset: int) -> str:
-        new_characters = [
-            chr(ord(character) - FIRST_CHARACTER_INDEX - offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
-            for character in text
-        ]
-        return ''.join(new_characters)
-    
-    
-    offset = 12
-    text = 'asdASD0123456789!"·!"·"$%&/()=?¿¡\'09876.,:;-_´`+çÇ^¨*{}[]@#54321 sdfklwd'
-    print(decode(encode(text, offset), offset) == text)
-    ```
-
-    </details>
-
-<br>
-
-5. 🔥 Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+4. 🔥 Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️ 
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
@@ -644,6 +597,53 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     fibonacci_sequence(5, ' - ')
     fibonacci_sequence(11, ' | ')
     fibonacci_sequence(-1, ' | ')
+    ```
+
+    </details>
+
+<br>
+
+5. 🔥 Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+
+    `encode('abc', 1)` ➡️ `'bcd'`
+
+    Si lo ciframos con desplazamiento `2`:
+
+    `encode('abc', 2)` ➡️ `'cde'`
+
+    En el ejercicio vamos a usar únicamente los [carácteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+
+    Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
+
+    `decode(encode(text, offset), offset) == text` ➡️ `True`
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    FIRST_CHARACTER_INDEX = 32
+    ALPHABET_LENGHT = 95
+    
+    
+    def encode(text: str, offset: int) -> str:
+        new_characters = [
+            chr(ord(character) - FIRST_CHARACTER_INDEX + offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
+            for character in text
+        ]
+        return ''.join(new_characters)
+    
+    
+    def decode(text: str, offset: int) -> str:
+        new_characters = [
+            chr(ord(character) - FIRST_CHARACTER_INDEX - offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
+            for character in text
+        ]
+        return ''.join(new_characters)
+    
+    
+    offset = 12
+    text = 'asdASD0123456789!"·!"·"$%&/()=?¿¡\'09876.,:;-_´`+çÇ^¨*{}[]@#54321 sdfklwd'
+    print(decode(encode(text, offset), offset) == text)
     ```
 
     </details>

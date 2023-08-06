@@ -553,7 +553,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. 🔥 Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+4. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️ 
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
@@ -603,7 +603,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. 🔥 Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+5. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
 
     `encode('abc', 1)` ➡️ `'bcd'`
 
@@ -650,7 +650,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-6. 🔥 Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de **mayor a menor** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse` y mostrar el resultado por consola.
+6. Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de **mayor a menor** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse` y mostrar el resultado por consola.
 
     > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#56-funciones-anónimas).
 

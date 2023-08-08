@@ -180,9 +180,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     ```python
     length = int(input('Introduce la longitud del lado del rombo: '))
-
+    
     for i in range(-length + 1, length):
-        print(f"{' ' * (abs(i))}{'*' * ((length - 1 - abs(i)) * 2 + 1)}")
+        print(f"{' ' * (abs(i))}{'*' * ((length - abs(i)) * 2 - 1)}")
     ```
 
     </details>

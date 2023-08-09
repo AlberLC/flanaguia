@@ -142,7 +142,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 ```
 - Iterar diccionario de datos de alumnos y actualizar estado según nota.
 - Matrices. Imprimir la diagonal. Hacer producto vectorial, etc.
-- Un menú con lista de diccionarios de clientes. Añadir, eliminar, mostrar, listar por x.
 
 <br>
 
@@ -444,6 +443,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 - Media de una lista.
 - Recibir una lista y una función. Devolver la lista tras aplicar a cada elemento dicha función. Números, booleanos, aprobados/suspensos...
 - Que reciba un diccionario y una función y devuelva el diccionario filtrado tras aplicar la función a los valores. Quizás asignaturas aprobadas. O filtrar por `<=`, `>`...
+- Un menú con lista de diccionarios de clientes. Añadir, eliminar, mostrar, listar por x.
 
 <br>
 

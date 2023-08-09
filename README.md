@@ -1851,7 +1851,7 @@ Salida:
 3
 ```
 
-Las funciones anónimas se definen en una sola línea con la palabra reservada `lambda`, usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Aunque, como explicabamos antes, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
+Las funciones anónimas se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, como explicabamos antes, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
 
 Ahora vamos a ver un uso realista de tipo de funciones. Vamos a crear una función que busque y devuelva el primer elemento de un iterable `people` que cumpla una condición. Esta condición va a ser aplicada a cada elemento, por lo tanto va a ser una función.
 

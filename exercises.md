@@ -349,7 +349,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-7. <a id="occurrences"></a>Hacer un programa que imprima por consola el nº de veces que aparece cada palabra en el siguiente texto:
+7. Hacer un programa que imprima por consola el nº de veces que aparece cada palabra en el siguiente texto:
 
     ```
     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
@@ -650,7 +650,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-6. Basándonos en el [ejercicio 7](#occurrences) del apartado [Bucles](#bucles): ordenar los `items` según el nº de apariciones en el texto de **mayor a menor** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` y sus parámetros `key` y `reverse` y mostrar el resultado por consola.
+6. Sea:
+
+    ```python
+    elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
+    ```
+
+     Ordenar `elements` por el segundo elemento de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
 
     > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#56-funciones-anónimas).
 
@@ -658,12 +664,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <summary>Solución</summary>
 
     ```python
-    from collections import Counter
+    elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]
     
-    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
-    
-    items = Counter(text.split()).items()
-    print(sorted(items, key=lambda item: item[1], reverse=True))
+    print(sorted(elements, key=lambda item: item[1], reverse=True))
     ```
 
     </details>

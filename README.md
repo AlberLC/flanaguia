@@ -1460,8 +1460,8 @@ people = [
     {'id': 1, 'name': 'Juan', 'age': 25},
     {'id': 21, 'name': 'Elena', 'age': 400},
     {'id': 452, 'name': 'Ana', 'age': 4},
-    {'id': 705, 'name': 'Alberto', 'age': 72},
-    {'id': 621, 'name': 'Mario', 'age': 30}
+    {'id': 621, 'name': 'Alberto', 'age': 72},
+    {'id': 705, 'name': 'Mario', 'age': 30}
 ]
 
 name = 'Juan'

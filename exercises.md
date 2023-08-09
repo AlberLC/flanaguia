@@ -436,7 +436,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ideas:
 
+- Filtrar los números de una lista que son múltiplos de 2 y, luego, los que son múltiplos de 3.
 - Módulo de un vector.
+- Suma de vetores.
 - Área de un círculo y otra el volúmen de un cilindro usando la anterior.
 - Multiplicar sin usar `*` y potencia sin usar `**` o módulos como math.
 - Media de una lista.

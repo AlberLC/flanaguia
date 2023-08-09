@@ -1460,8 +1460,8 @@ people = [
     {'id': 1, 'name': 'Juan', 'age': 25},
     {'id': 21, 'name': 'Elena', 'age': 400},
     {'id': 452, 'name': 'Ana', 'age': 4},
-    {'id': 621, 'name': 'Alberto', 'age': 72},
-    {'id': 705, 'name': 'Mario', 'age': 30}
+    {'id': 75, 'name': 'Alberto', 'age': 72},
+    {'id': 68, 'name': 'Mario', 'age': 30}
 ]
 
 name = 'Juan'
@@ -1503,8 +1503,8 @@ people = [
     {'id': 1, 'name': 'Juan', 'age': 25},
     {'id': 21, 'name': 'Elena', 'age': 400},
     {'id': 452, 'name': 'Ana', 'age': 4},
-    {'id': 705, 'name': 'Alberto', 'age': 72},
-    {'id': 621, 'name': 'Mario', 'age': 30}
+    {'id': 75, 'name': 'Alberto', 'age': 72},
+    {'id': 68, 'name': 'Mario', 'age': 30}
 ]
 
 person_found_1 = find_person('Juan')
@@ -1870,8 +1870,8 @@ people = [
     {'id': 1, 'name': 'Juan', 'age': 25},
     {'id': 21, 'name': 'Elena', 'age': 400},
     {'id': 452, 'name': 'Ana', 'age': 4},
-    {'id': 705, 'name': 'Alberto', 'age': 72},
-    {'id': 621, 'name': 'Mario', 'age': 30}
+    {'id': 75, 'name': 'Alberto', 'age': 72},
+    {'id': 68, 'name': 'Mario', 'age': 30}
 ]
 
 filtered_people = filter_people(people, lambda person: person['age'] >= 30)
@@ -1881,8 +1881,8 @@ for filtered_person in filtered_people:
 Salida:
 ```
 {'id': 21, 'name': 'Elena', 'age': 400}
-{'id': 705, 'name': 'Alberto', 'age': 72}
-{'id': 621, 'name': 'Mario', 'age': 30}
+{'id': 75, 'name': 'Alberto', 'age': 72}
+{'id': 68, 'name': 'Mario', 'age': 30}
 ```
 
 Este es un buen caso donde se ve con claridad que es más cómodo crear una función anónima que definir una función normal, que no vamos a necesitar nunca más, y luego pasarla como argumento a otra función.
@@ -3331,8 +3331,8 @@ people = [
     {'id': 1, 'name': 'Juan', 'age': 25},
     {'id': 21, 'name': 'Elena', 'age': 400},
     {'id': 452, 'name': 'Ana', 'age': 4},
-    {'id': 705, 'name': 'Alberto', 'age': 72},
-    {'id': 621, 'name': 'Mario', 'age': 30}
+    {'id': 75, 'name': 'Alberto', 'age': 72},
+    {'id': 68, 'name': 'Mario', 'age': 30}
 ]
 
 print(find(people, lambda person: person['name'] == 'Ana'))

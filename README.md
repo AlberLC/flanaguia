@@ -3693,8 +3693,8 @@ Hemos llamado a la variable local `elements` de la función igual que una variab
 ```python
 def reverse_elements(elements_):
     elements_ = list(reversed(elements_))
-    print(f'Original elements: {elements_}')
-    print(f'Reversed elements: {elements}')  # we lost the reference to the outside elements
+    print(f'Original elements: {elements}')
+    print(f'Reversed elements: {elements_}')
 
 
 elements = [0, 1, 2, 3]
@@ -3702,6 +3702,6 @@ reverse_elements(elements)
 ```
 Salida:
 ```
-Original elements: [3, 2, 1, 0]
-Reversed elements: [0, 1, 2, 3]
+Original elements: [0, 1, 2, 3]
+Reversed elements: [3, 2, 1, 0]
 ```

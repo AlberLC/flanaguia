@@ -1840,7 +1840,23 @@ Igual que con `args`, podemos usar cualquier nombre en vez de `kwags`, pero este
 
 ### 5.6. Funciones anónimas
 
-Para entender este tipos de funciones vamos a ver varios ejemplos. Este primero que viene a continuación no es el mejor, pero nos va a servir para entender ciertos detalles:
+Fijémonos en la siguiente función:
+
+```python
+def func(x):
+    return x + 1
+
+
+print(func(2))
+```
+Salida:
+```
+3
+```
+
+<br>
+
+Ahora vamos a crear nuestra primera **función anónima**, equivalente a la anterior:
 
 ```python
 func = lambda x: x + 1
@@ -1851,7 +1867,7 @@ Salida:
 3
 ```
 
-Las funciones anónimas se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, como explicabamos antes, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
+Las **funciones anónimas** se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, como explicabamos antes, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
 
 Ahora vamos a ver un uso realista de este tipo de funciones. Vamos a crear una función que busque y devuelva el primer elemento de un iterable `people` que cumpla una condición. Esta condición va a ser aplicada a cada elemento, por lo tanto va a ser una función.
 

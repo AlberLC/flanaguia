@@ -1840,7 +1840,7 @@ Igual que con `args`, podemos usar cualquier nombre en vez de `kwags`, pero este
 
 ### 5.6. Funciones anónimas
 
-Fijémonos en la siguiente función:
+Hasta ahora hemos definido nuestras funciones así:
 
 ```python
 def func(x):

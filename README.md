@@ -134,6 +134,10 @@ Realmente no transformamos los datos pero podemos servirnos de las [funciones in
 '45'
 >>> float(number)
 45.0
+>>> ord('a')  # to unicode
+97
+>>> chr(97)  # from unicode
+'a'
 >>> list('hello world')
 ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
 >>> elements = ('tuple', 'elements', ';)')
@@ -146,6 +150,54 @@ Realmente no transformamos los datos pero podemos servirnos de las [funciones in
 >>> keys_values = [(1, 'one'), (2, 'two'), ('a', 'b')]
 >>> dict(keys_values)
 {1: 'one', 2: 'two', 'a': 'b'}
+```
+
+Valores que se evalúan a `True`:
+
+```python
+>>> bool(1)
+True
+>>> bool(4984)
+True
+>>> bool(-12)
+True
+>>> bool(0.1)
+True
+>>> bool('a')
+True
+>>> bool('hello')
+True
+>>> bool(' ')  # space
+True
+>>> bool((1,2))
+True
+>>> bool([1,2])
+True
+>>> bool({1,2})
+True
+>>> bool({1: 2})
+True
+```
+
+Valores que se evalúan a `False`:
+
+```python
+>>> bool()
+False
+>>> bool(0)
+False
+>>> bool(0.0)
+False
+>>> bool('')
+False
+>>> bool(())
+False
+>>> bool([])
+False
+>>> bool(set())
+False
+>>> bool({})
+False
 ```
 
 <br>

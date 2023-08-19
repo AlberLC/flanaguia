@@ -123,7 +123,7 @@ name = {1: 2, 'hello': 'world', 'a': 48.34, 48.34: 'a'}  # dictionary
 
 ### 1.2. Tranformación de tipos
 
-Realmente no transformamos los datos pero podemos servirnos de las [funciones integradas](https://docs.python.org/3/library/functions.html) en el lenguaje para construir unos tipos de datos a partir de otros.
+Podemos servirnos de las [funciones integradas](https://docs.python.org/3/library/functions.html) en el lenguaje para construir unos tipos de datos a partir de otros.
 
 ```python
 >>> text = '45'
@@ -169,11 +169,11 @@ True
 True
 >>> bool(' ')  # space
 True
->>> bool((1,2))
+>>> bool((1, 2))
 True
->>> bool([1,2])
+>>> bool([1, 2])
 True
->>> bool({1,2})
+>>> bool({1, 2})
 True
 >>> bool({1: 2})
 True

@@ -4,7 +4,7 @@
 
 1. [Tipos de datos](#1-tipos-de-datos)
    1. [Tipos más usados](#11-tipos-más-usados)
-   2. [Tranformación de tipos](#12-tranformación-de-tipos)
+   2. [Conversión de tipos](#12-conversión-de-tipos)
    3. [Cadenas (Strings)](#13-cadenas-strings)
       1. [Formateo/interpolación de cadenas](#131-formateointerpolación-de-cadenas)
    4. [Tuplas](#14-tuplas)
@@ -121,7 +121,7 @@ name = {1: 2, 'hello': 'world', 'a': 48.34, 48.34: 'a'}  # dictionary
 
 <br>
 
-### 1.2. Tranformación de tipos
+### 1.2. Conversión de tipos
 
 Podemos servirnos de las [funciones integradas](https://docs.python.org/3/library/functions.html) en el lenguaje para construir unos tipos de datos a partir de otros.
 

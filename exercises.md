@@ -62,14 +62,32 @@
     else:
         price = 10
 
-    print(f"Precio de la entrada: {f'{price} €' if price else '¡gratis!'}")
+    print(f"Precio de la entrada: {f'{price} €.' if price else '¡gratis!'}")
     ```
 
     </details>
 
 <br>
 
-2. Los alumnos de un curso se han dividido en dos grupos A y B de acuerdo al sexo y el nombre. El grupo A está formado por las mujeres con un nombre anterior a la M y los hombres con un nombre posterior a la N y el grupo B por el resto. Escribir un programa que pregunte al usuario su nombre y sexo, y muestre por pantalla el grupo que le corresponde.
+2. Pedir por consola un año e imprimir si es bisiesto o no.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    year = int(input('Año: '))
+
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        print('Es bisiesto.')
+    else:
+        print('No es bisiesto.')
+    ```
+
+    </details>
+
+<br>
+
+3. Los alumnos de un curso se han dividido en dos grupos A y B de acuerdo al sexo y el nombre. El grupo A está formado por las mujeres con un nombre anterior a la M y los hombres con un nombre posterior a la N y el grupo B por el resto. Escribir un programa que pregunte al usuario su nombre y sexo, y muestre por consola el grupo que le corresponde.
 
     <details>
     <summary>Solución</summary>
@@ -79,16 +97,16 @@
     sex = input('Introduce tu sexo (M/F): ').upper()
 
     if sex == 'F' and name_first_letter < 'M' or sex == 'M' and name_first_letter > 'M':
-        print('Grupo A')
+        print('Grupo A.')
     else:
-        print('Grupo B')
+        print('Grupo B.')
     ```
 
     </details>
 
 <br>
 
-3. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás el año 2023. Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro.
+4. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás el año 2023. Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro.
 
     <details>
     <summary>Solución</summary>

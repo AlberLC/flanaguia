@@ -1000,7 +1000,7 @@ text = pathlib.Path('file.txt').read_text()
 ```
 Leer bytes:
 ```python
-text = pathlib.Path('file.png').read_bytes()
+data = pathlib.Path('file.png').read_bytes()
 ```
 Escribir texto:
 ```python

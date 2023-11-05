@@ -481,7 +481,7 @@ Funciones de las tuplas:
 
 Las listas son una de las colecciones más útiles del lenguaje, se usan continuamente y estarán presentas en prácticamente cualquier programa Python. Funcionan en base al almacenamiento de objetos en bloques contiguos de memoria, por ello este tipo de estructura permite el acceso eficiente de los elementos mediante un índice que indica la posicion relativa dentro de la lista.
 
-Las [cadenas](#13-cadenas-strings) y las [tuplas](#14-tuplas) también almacenan datos de forma contigua en memoria, pero las primeras almacenan carácteres y, las segundas, aunque almacenan objetos, son colecciones inmutables y más simples. Las listas tienen muchas más herramientas y métodos predefinidos, esto hace que sea algo menos eficientes en memoria en la mayoría de los casos pero, como dijimos en el apartado de las tuplas, sería despreciable.
+Las [cadenas](#13-cadenas-strings) y las [tuplas](#14-tuplas) también almacenan datos de forma contigua en memoria, pero las primeras almacenan caracteres y, las segundas, aunque almacenan objetos, son colecciones inmutables y más simples. Las listas tienen muchas más herramientas y métodos predefinidos, esto hace que sea algo menos eficientes en memoria en la mayoría de los casos pero, como dijimos en el apartado de las tuplas, sería despreciable.
 
 ```python
 >>> elements = [0, 1, 2, 3, 'four', 5, 6, 'seven', 8, 9, 9, 9]
@@ -1173,35 +1173,35 @@ world
 Juan
 bye
 ```
-Acabamos de usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
-
-```python
->>> range(10)
-range(0, 10)
->>> list(range(10))
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
->>> list(range(3, 10))
-[3, 4, 5, 6, 7, 8, 9]
->>> list(range(10, -1, -1))
-[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-```
-
-`range()` sirve para crear un generador de números enteros el cual se puede iterar. En el ejemplo anterior los iteramos creando listas para verlo con más claridad. Esta función tiene 3 parámetros:
-
-- start: empezar desde este valor (**inclusive**)
-- stop: hasta este (**no inclusive**)
-- step: números de pasos o saltos
-
-Si solo se proporciona 1 argumento se interpreta como parámetro `stop` y, por defecto, `start`=0 y `step`=1.
-
-`range()` se comporta igual que el acceso a segmentos de listas mediante [slices](https://docs.python.org/3/glossary.html#term-slice):
-
-```python
->>> list(range(4, 10, 2))
-[4, 6, 8]
->>> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9][4:10:2]
-[4, 6, 8]
-```
+> Acabamos de usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
+> 
+> ```python
+> >>> range(10)
+> range(0, 10)
+> >>> list(range(10))
+> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+> >>> list(range(3, 10))
+> [3, 4, 5, 6, 7, 8, 9]
+> >>> list(range(10, -1, -1))
+> [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+> ```
+> 
+> `range()` sirve para crear un generador de números enteros el cual se puede iterar. En el ejemplo anterior los iteramos creando listas para verlo con más claridad. Esta función tiene 3 parámetros:
+> 
+> - start: empezar desde este valor (**inclusive**)
+> - stop: hasta este (**no inclusive**)
+> - step: números de pasos o saltos
+> 
+> Si solo se proporciona 1 argumento se interpreta como parámetro `stop` y, por defecto, `start`=0 y `step`=1.
+> 
+> `range()` se comporta igual que el acceso a segmentos de listas mediante [slices](https://docs.python.org/3/glossary.html#term-slice):
+> 
+> ```python
+> >>> list(range(4, 10, 2))
+> [4, 6, 8]
+> >>> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9][4:10:2]
+> [4, 6, 8]
+> ```
 
 <br>
 

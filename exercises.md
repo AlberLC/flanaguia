@@ -2,7 +2,6 @@
 
 ### Ideas:
 
-- Es palíndromo.
 - Pedir por consola nombre de fruta y precio por kilo. Luego preguntar cuantos kilos por fruta y al final imprimir coste total.
 
 <br>
@@ -45,6 +44,8 @@
     - `abcba` ➡️ `True`
     - `rallar` ➡️ `True`
     - `reconocer` ➡️ `True`
+
+    <br>
 
     <details>
     <summary>Solución</summary>
@@ -305,6 +306,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - Para `hola` y `adios` ➡️ `False`
     - Para `urnas` y `runa` ➡️ `False`
     - Para `urnas` y `runas` ➡️ `True`
+
+    <br>
 
     <details>
     <summary>Solución</summary>

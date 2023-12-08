@@ -63,6 +63,6 @@ def to_numpy_array(file: str | pathlib.Path | bytes, ) -> numpy.ndarray:
     elif isinstance(file, pathlib.Path):
         return cv2.imread(str(file), cv2.IMREAD_UNCHANGED)
     else:
-        # noinspection PyTypeChecker
+        # noinspection PyArgumentList
         array = numpy.fromstring(file, numpy.uint8)
         return cv2.imdecode(array, cv2.IMREAD_UNCHANGED)

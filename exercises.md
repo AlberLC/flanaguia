@@ -241,7 +241,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     number = input('Introduce un número: ')    
     
-    for digit in sorted(list(number), reverse=True):
+    for digit in number:
         print(f"{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}")
     ```
 

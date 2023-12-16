@@ -249,7 +249,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-3. Usando como base el ejercicio anterior: pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimiran en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
+3. Usando como base el ejercicio anterior: pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
 
     <details>
     <summary>Solución</summary>

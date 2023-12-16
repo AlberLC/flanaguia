@@ -38,11 +38,11 @@ async def run_pokegame(message: discord.Message):
     while True:
         current_pokemons[message.channel.id] = random.choice(pokemons)
         embed = discord.Embed(
-            title="¡Un pokémon salvaje apareció!",
+            title='¡Un pokémon salvaje apareció!',
             description='¡Escribe su nombre para capturarlo!',
             color=discord.Color.from_rgb(*WILD_POKEMON_COLOR)
         )
-        thumbnail_file = discord.File("images/pokeball.png", filename="pokeball.png")
+        thumbnail_file = discord.File('images/pokeball.png', filename='pokeball.png')
         embed.set_thumbnail(url='attachment://pokeball.png')
         image_file = discord.File(fp=io.BytesIO(current_pokemons[message.channel.id]['image']), filename='pokemon.png')
         embed.set_image(url='attachment://pokemon.png')
@@ -54,11 +54,11 @@ async def run_pokegame(message: discord.Message):
 async def show_pokedex(message: discord.Message):
     caught_pokemon_ids = users_pokedex[message.author.id]
     embed = discord.Embed(
-        title=f"Pokédex de {message.author.name}.",
-        description=f"Has atrapado {len(caught_pokemon_ids)} pokémons.",
+        title=f'Pokédex de {message.author.name}.',
+        description=f'Has atrapado {len(caught_pokemon_ids)} pokémons.',
         color=discord.Color.from_rgb(*POKEDEX_COLOR)
     )
-    thumbnail_file = discord.File("images/pokedex.png", filename="pokedex.png")
+    thumbnail_file = discord.File('images/pokedex.png', filename='pokedex.png')
     embed.set_thumbnail(url='attachment://pokedex.png')
     images = (pokemon['image'] for pokemon in pokemons)
     image_file = discord.File(fp=io.BytesIO(image_utils.collection(images, caught_pokemon_ids)), filename='caught_pokemons.png')
@@ -95,7 +95,7 @@ async def on_message(message: discord.Message):
     current_pokemon = current_pokemons[message.channel.id]
     if current_pokemon and current_pokemon['name'].lower() == message.content.strip().lower():
         current_pokemons[message.channel.id] = {}
-        await message.channel.send(f"¡{message.author.name} ha capturado un {current_pokemon['name']}!")
+        await message.channel.send(f'¡{message.author.name} ha capturado un {current_pokemon['name']}!')
         users_pokedex[message.author.id].add(current_pokemon['id'])
 
 

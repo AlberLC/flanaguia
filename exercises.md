@@ -349,9 +349,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 7. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **booleano** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
-    - Para `hola` y `adios` ➡️ `False`
-    - Para `urnas` y `runa` ➡️ `False`
-    - Para `urnas` y `runas` ➡️ `True`
+    - `hola`, `adios` ➡️ `False`
+    - `urnas`, `runa` ➡️ `False`
+    - `urnas`, `runas` ➡️ `True`
 
     <br>
 

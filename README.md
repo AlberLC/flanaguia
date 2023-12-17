@@ -2169,7 +2169,7 @@ finally:
 
 ### 7.1. Atributos
 
-Para crear e inicializar atributos de los objetos definimos una función `__init__`, también llamada constructor. Este constructor es llamado usando el nombre de la clase como si fuera una función: `Person('Juan', 25, '123456789', 'Milo')` nos devolverá un objeto, también llamado instancia, de la clase.
+Para crear e inicializar los atributos de los objetos definimos una función o método `__init__` (constructor) dentro del bloque delimitado por la cláusula `class`. Este constructor es llamado (ejecutado) usando el nombre de la clase como si fuera una función: `Person('Juan', 25, '123456789', 'Milo')` nos devolverá un objeto, también llamado instancia, de la clase.
 
 ```python
 class Person:

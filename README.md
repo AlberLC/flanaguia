@@ -2035,7 +2035,16 @@ o
 
 ## 6. Excepciones
 
-Si no especificamos una excepcion después de la cláusula `except`, capturará todo (no recomendado):
+Usamos las cláusulas `try` y `except` para capturar errores, gestionarlos y ejecutar código como consecuencia:
+
+```python
+try:
+    # code that can fail
+except:
+    # code to execute when the error occurs
+```
+
+Si no especificamos una excepción en la cláusula `except`, capturará todo (no recomendado):
 
 ```python
 elements = [0, 1, 2]
@@ -2071,7 +2080,7 @@ list index out of range
 - end -
 ```
 
-Pero volvemos a capturar un excepción demasiado genérica, nunca vamos a querer eso. Tenemos que intentar capturar siempre la única excepción que esperamos para que no pasen desapercibidos otros errores.
+Pero volvemos a capturar un excepción demasiado genérica, nunca vamos a querer eso. Tenemos que intentar capturar siempre la única **excepción que esperamos** para que no pasen desapercibidos otros errores.
 
 Si miramos el [árbol de excepciones](https://docs.python.org/3/library/exceptions.html#exception-hierarchy) podemos ver todas las que existen. En este caso la excepción que ocurre es `IndexError` puesto que accedemos a la posición 7 de una lista que tiene 3 elementos.
 

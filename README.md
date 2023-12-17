@@ -28,6 +28,8 @@
    6. [Funciones anónimas](#56-funciones-anónimas)
    7. [Funciones generadoras](#57-funciones-generadoras)
 6. [Excepciones](#6-excepciones)
+   1. [Lanzamiento de excepciones](#61-lanzamiento-de-excepciones)
+   2. [Captura de excepciones](#61-captura-de-excepciones)
 7. [Clases](#7-clases)
    1. [Atributos](#71-atributos)
       1. [Propiedades](#711-propiedades)
@@ -1808,7 +1810,7 @@ My name is Ana and I'm 25 years old.
 
 <br>
 
-Podemos forzar la utilización del tipo de argumento que queramos en la definición de la función, aunque es un mecanismo que solo hay que usar si sabes muy bien lo que estas haciendo, ya que limitas el uso de tu función. Si estás empezando con este lenguaje no lo vas a necesitar.
+Podemos forzar la utilización del tipo de argumento que queramos en la definición de la función, aunque es un mecanismo que solo hay que usar si sabes muy bien lo que estas haciendo, ya que limitas el uso de tu función. Si estás empezando con este lenguaje, no lo vas a necesitar.
 
 ```python
 def print_person(name, /, second_name, *, age):
@@ -1959,7 +1961,7 @@ Este es un buen caso donde se ve con claridad que es más cómodo crear una func
 
 ### 5.7. Funciones generadoras
 
-Si simplemente usamos la sentencia `yield`, hacemos que una función se convierta en una función generadora:
+Si simplemente usamos la palabra clave `yield`, hacemos que una función se convierta en una función generadora:
 
 ```python
 def something():
@@ -2006,7 +2008,7 @@ Salida:
 [1, 25, 64, 16, 81, 16]
 ```
 
-Podemos usar la sentencia `yield from` para ayudarnos a devolver valores de otro iterable, ahorrándonos las sentencias `for` y `yield`:
+Podemos usar las palabras claves `yield from` para ayudarnos a devolver valores de otro iterable, ahorrándonos las sentencias `for` y `yield`:
 
 ```python
 def yield_something(elements_):
@@ -2035,13 +2037,122 @@ o
 
 ## 6. Excepciones
 
+Cuando ocurre un error el programa se detiene en la línea que lo generó, no continúa la ejecución normal de la siguiente, sino que eleva o lanza una excepción que, si no se captura, detendrá el programa y se imprimirá por consola su traza (normalmente en rojo) para poder hacer un buen seguimiento del tipo, del lugar y del motivo del error.
+
+Por ejemplo, si intentamos realizar una operación no permitida:
+
+```python
+print(1)
+print(2)
+print(3)
+'hello' / 'world'
+print(4)
+print(5)
+print(6)
+```
+Salida:
+```
+1
+2
+3
+Traceback (most recent call last):
+  File "...\main.py", line 4, in <module>
+    'hello' / 'world'
+    ~~~~~~~~^~~~~~~~~
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+```
+
+La traza del error nos indica que se ha lanzado un excepción de tipo `TypeError` en la línea 4 debido a que no se puede dividir un cadena entre otra: el operador `/` no tiene definido un comportamiento para operandos de tipo cadena.
+
+> Es posible que la traza aparezca en la consola antes que otras salidas realizadas por funciones como `print()` ejecutadas en líneas previas a la que provoca el error. Esto no significa que el orden de ejecución del programa haya cambiado, sino que la consola tiene que mostrar contenido enviado de distintos buffers prácticamente al mismo tiempo y a veces la información de uno llega antes que la del otro. 
+
+Otro ejemplo:
+
+```python
+print(1)
+print(2)
+print(3)
+int('154hello574')
+print(4)
+print(5)
+print(6)
+```
+Salida:
+```
+1
+2
+3
+Traceback (most recent call last):
+  File "...\main.py", line 4, in <module>
+    int('154hello574')
+ValueError: invalid literal for int() with base 10: '154hello574'
+```
+
+Ahora intentamos usar la [función integrada](https://docs.python.org/3/library/functions.html) `int()` para construir un número entero a partir de una cadena, pero como le hemos dado una que no se puede procesar para obtener un número nos lanza un `ValueError`.
+
+<br>
+
+### 5.1. Lanzamiento de excepciones
+
+También llamado elevación de excepciones: es la acción de crear manualmente una excepción y lanzarla (o elevarla). De hecho, para ello usamos la palabra clave `raise`, que significa "elevar" en inglés.
+
+```python
+print(1)
+print(2)
+print(3)
+raise AttributeError
+print(4)
+print(5)
+print(6)
+```
+Salida:
+```
+1
+2
+3
+Traceback (most recent call last):
+  File "...\main.py", line 4, in <module>
+    raise AttributeError
+AttributeError
+```
+
+O con un mensaje personalizado:
+
+```python
+print(1)
+print(2)
+print(3)
+raise AttributeError('one two three')
+print(4)
+print(5)
+print(6)
+```
+Salida:
+```
+1
+2
+3
+Traceback (most recent call last):
+  File "...\main.py", line 4, in <module>
+    raise AttributeError('one two three')
+AttributeError: one two three
+```
+
+> Se usa el término "elevar" porque se entiende que, cuando ejecutamos un programa, la línea que da el error ocurre dentro de una pilla de llamadas de funciones, es decir, si una funcion `function_a()`, llama a `function_b()`, esta a `function_c()` y ahí es donde eleva la excepcion, si no se captura va a detener la ejecucion de `function_c()` y va a redirigir dicha excepción a la función que llamó a esta, o sea, a `function_b()`. Si `function_b()` no la captura, se continuará elevando la excepción a `function_a()`.
+> 
+> Si la excepción nunca es capturada, acabará detieniendo el programa e imprimiendo su traza en la consola.
+
+<br>
+
+### 5.2. Captura de excepciones
+
 Usamos las cláusulas `try` y `except` para capturar errores, gestionarlos y ejecutar código como consecuencia:
 
 ```python
 try:
-    # code that can fail
+    # code that raises exceptions
 except:
-    # code to execute when the error occurs
+    # code to execute when the exception is caught
 ```
 
 Si no especificamos una excepción en la cláusula `except`, capturará todo (no recomendado):
@@ -2059,6 +2170,40 @@ Salida:
 ```
 error
 - end -
+```
+
+Un ejemplo con funciones:
+
+```python
+def function_a():
+    print(1)
+    try:
+        function_b()
+    except:
+        pass
+    print(6)
+
+
+def function_b():
+    print(2)
+    function_c()
+    print(5)
+
+
+def function_c():
+    print(3)
+    raise ValueError
+    print(4)
+
+
+function_a()
+```
+Salida:
+```
+1
+2
+3
+6
 ```
 
 Si queremos trabajar con la excepción que se ha lanzado, la capturamos y creamos un alias con `as`:

@@ -29,7 +29,7 @@
    7. [Funciones generadoras](#57-funciones-generadoras)
 6. [Excepciones](#6-excepciones)
    1. [Lanzamiento de excepciones](#61-lanzamiento-de-excepciones)
-   2. [Captura de excepciones](#61-captura-de-excepciones)
+   2. [Captura de excepciones](#62-captura-de-excepciones)
 7. [Clases](#7-clases)
    1. [Atributos](#71-atributos)
       1. [Propiedades](#711-propiedades)
@@ -2092,7 +2092,7 @@ Ahora intentamos usar la [función integrada](https://docs.python.org/3/library/
 
 <br>
 
-### 5.1. Lanzamiento de excepciones
+### 6.1. Lanzamiento de excepciones
 
 También llamado elevación de excepciones: es la acción de crear manualmente una excepción y lanzarla (o elevarla). De hecho, para ello usamos la palabra clave `raise`, que significa "elevar" en inglés.
 
@@ -2144,7 +2144,7 @@ AttributeError: one two three
 
 <br>
 
-### 5.2. Captura de excepciones
+### 6.2. Captura de excepciones
 
 Usamos las cláusulas `try` y `except` para capturar errores, gestionarlos y ejecutar código como consecuencia:
 

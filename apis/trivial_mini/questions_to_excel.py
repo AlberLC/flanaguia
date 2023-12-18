@@ -27,7 +27,7 @@ async def main():
         if question.author not in AUTHORS or not correct_answers:
             continue
 
-        worksheet[f'{STATEMENT_COLUMN}{current_row}'] = question.statement
+        worksheet[f'{STATEMENT_COLUMN}{current_row}'] = f'{question.author} pregunta: {question.statement}'
         for column, answer in itertools.zip_longest(ANSWER_COLUMNS, question.answers):
             worksheet[f'{column}{current_row}'] = answer.text if answer else None
         worksheet[f'{TIME_COLUMN}{current_row}'] = SECONDS_LIMIT

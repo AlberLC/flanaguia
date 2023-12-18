@@ -5,7 +5,7 @@ import openpyxl
 from models.question import find_questions
 
 FILE_PATH = 'KahootQuizTemplate.xlsx'
-AUTHORS = ['juan']
+AUTHORS = []
 SECONDS_LIMIT = 60
 
 STATEMENT_COLUMN = 'B'

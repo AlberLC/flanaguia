@@ -1841,7 +1841,7 @@ Salida:
 (1, 54, 33, 27, 846, 151, 12, 64, 984)
 ```
 
-`args` es una tupla que contiene todos los argumentos.
+`args` es una tupla que contiene todos los argumentos [empaquetados](#10-empaquetado-y-desempaquetado).
 
 En vez de `args` podemos poner el nombre que queramos pero se usa siempre ese por convenio.
 
@@ -1921,7 +1921,7 @@ Salida:
 3
 ```
 
-Las **funciones anónimas** se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, como explicabamos antes, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
+Las **funciones anónimas** se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
 
 Ahora vamos a ver un uso realista de este tipo de funciones. Vamos a crear una función que busque y devuelva el primer elemento de un iterable `people` que cumpla una condición. Esta condición va a ser aplicada a cada elemento, por lo tanto va a ser una función.
 
@@ -2861,7 +2861,7 @@ Salida:
 <class '__main__.Person'>
 ```
 
-Como vemos, tambíen podemos llamarlo tanto con la clase `Person` directamente como con una instancia de la clase. El primer parámetro, que antes solía ser la instancia y la llamabamos `self`, es es ahora la propia clase y la llamamos `cls`. Efectivamente, por convención en este tipo de métodos se nombra `cls` al primer parámetro como abreviatura de "class".
+Como vemos, también podemos llamarlo tanto con la clase `Person` directamente como con una instancia de la clase. El primer parámetro, que antes solía ser la instancia y la llamabamos `self`, es es ahora la propia clase y la llamamos `cls`. Efectivamente, por convención en este tipo de métodos se nombra `cls` al primer parámetro como abreviatura de "class".
 
 Con `cls` no tenemos acceso a los atributos de instancia como `name` pero podemos hacer cosas:
 
@@ -2872,7 +2872,7 @@ def do_something(cls, name):
     return cls(name)
 ```
 
-Al tener referencia a la clase, podemos llamar otros métodos de ésta (`cls.other_method()`), algo que no podíamos hacer con métodos estáticos con `@staticmethod`. Y tambíen hemos aprovechado `cls` para construir un objeto `Person` con `name` y devolverlo (`return cls(name)`), simulando un constructor.
+Al tener referencia a la clase, podemos llamar otros métodos de ésta (`cls.other_method()`), algo que no podíamos hacer con métodos estáticos con `@staticmethod`. Y también hemos aprovechado `cls` para construir un objeto `Person` con `name` y devolverlo (`return cls(name)`), simulando un constructor.
 
 <br>
 
@@ -3596,7 +3596,7 @@ hello
 
 ## 10. Empaquetado y desempaquetado
 
-Puede aplicarse a cualquier iterable.
+Pueden aplicarse a cualquier iterable.
 
 ```python
 >>> elements = (0, 1, 'hello')
@@ -3653,6 +3653,8 @@ Puede aplicarse a cualquier iterable.
 {0, 1, 2, 3, '🐕', 4, 5, '❤️'}
 ```
 
+> Los conjuntos no tienen un orden definido.
+
 Para empaquetar y desempaquetar diccionarios usamos `**`:
 
 ```python
@@ -3666,7 +3668,7 @@ Para empaquetar y desempaquetar diccionarios usamos `**`:
 
 ### 10.1. Empaquetado y desempaquetado en funciones
 
-Empaquetamos todos los argumentos recibidos en la tupla `args`:
+Podemos empaquetar todos los argumentos recibidos en una tupla `args`:
 
 ```python
 def sum_numbers(*args):
@@ -3684,7 +3686,7 @@ Salida:
 
 <br>
 
-Desempaquetamos antes de llamar la función:
+Podemos también desempaquetar los argumentos antes de llamar la función:
 
 ```python
 def sum_numbers(number_1, number_2):
@@ -3701,7 +3703,7 @@ Salida:
 
 <br>
 
-`print()` puede recibir más de un argumento para imprimir por consola, de hecho puede recibir infinitos y lo que hará será imprimirlos todos separados por un espacio.
+`print()` puede recibir más de un argumento para imprimir por consola. De hecho puede recibir infinitos y lo que hará será imprimirlos todos separados por un espacio.
 
 ```python
 name = 'Mario'
@@ -3728,7 +3730,7 @@ Salida:
 
 <br>
 
-Desempaquetamos los "argumentos nombrados" antes de llamar la función y, en el interior, empaquetamos en el diccionario `kwargs` los "argumentos nombrados" recibidos restantes tras quitar `name` y `age`, ya que estan definidos en los parámetros de la función:
+Ahora con [argumentos nombrados](#54-argumentos-posicionales-y-argumentos-nombrados):
 
 ```python
 def print_person(name, age, **kwargs):
@@ -3745,6 +3747,10 @@ Ana
 25
 {'cat_name': 'Midna', 'dog_name': 'Tingle'}
 ```
+
+Hemos desempaquetado el diccionario antes de llamar la función: al hacer esto las claves y los valores de este se comportarán como argumentos nombrados. En el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en los parámetros de la función.
+
+> Más información sobre `*args` y `**kwargs` en el capítulo [5.5. Número indeterminado de argumentos](#55-número-indeterminado-de-argumentos).
 
 <br>
 

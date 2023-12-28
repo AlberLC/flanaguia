@@ -2263,7 +2263,7 @@ Lo recomendable es poner el menor número de líneas de código dentro del bloqu
 
 Imaginemos que tenemos una funcion `do_something_1()` y otra `do_something_2()`. Ambas pueden (no siempre) lanzar `ValueError`. Queremos ejecutar la segunda solo si la primera se ha ejecutado con éxito y solo queremos capturar si falla la primera.
 
-Si hacemos lo siguiente estamos capturando el posible error de `do_something_2()` y no queremos eso:
+Si hacemos lo siguiente estaremos capturando el posible error de `do_something_2()` y no queremos eso:
 
 ```python
 try:
@@ -2273,7 +2273,7 @@ except ValueError:
     print('ValueError caught!')
 ```
 
-Si hacemos lo siguiente estamos ejecutando siempre `do_something_2()`, falle o no `do_something_1()`, y queríamos que se ejecutara la segunda solo si la primera se ejecutaba con éxito:
+Si hacemos lo siguiente estaremos ejecutando siempre `do_something_2()`, falle o no `do_something_1()`, y queríamos que se ejecutara la segunda solo si la primera se ejecutaba con éxito:
 
 ```python
 try:
@@ -3882,7 +3882,7 @@ name = 'Juan'
 id_ = 12
 ```
 
-No es obligatorio pero si asignamos a `id` algún valor, nos estamos cargando la función y ya no la podremos llamar en ese contexto o ámbito. De hecho podemos comprobarlo con la función `print()`:
+No es obligatorio pero si asignamos a `id` algún valor, nos estaremos cargando la función y ya no la podremos llamar en ese contexto o ámbito. De hecho podemos comprobarlo con la función `print()`:
 
 ```python
 print(1)

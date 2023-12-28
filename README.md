@@ -3778,7 +3778,7 @@ PI = 3.1415926535898
 MAX_SIZE = 128
 ```
 
-- Todo lo demás (variables, funciones, nombre de módulos y paquetes): snake_case en minúsculas.
+- Todo lo demás (variables, funciones, nombres de módulos y paquetes): snake_case en minúsculas.
 ```python
 import random
 

@@ -3832,7 +3832,7 @@ car.brand ✅
 
 <br>
 
-Hay una forma de ocultar aún más un atributo de objeto y es prefijando un doble `_`, pero sigue siendo público.
+Hay una forma de ocultar aún más un atributo de objeto y es prefijando un doble `_`, pero siguiría siendo público.
 
 ```python
 class Car:

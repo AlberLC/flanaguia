@@ -1435,7 +1435,7 @@ Pero ¿cómo itera Python? Cuando Python tiene que iterar un iterable, lo primer
 <range_iterator object at 0x000001C28FF9AF10>
 ```
 
-Este iterador lo podemos usar de igual manera que en los ejemplos anteriores:
+Este iterador lo podemos usar de la misma manera que en los ejemplos anteriores:
 
 ```python
 iterator = iter(range(0, 5, 2))

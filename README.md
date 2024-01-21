@@ -14,7 +14,6 @@
    8. [Rangos](#18-rangos)
    9. [Enumeraciones](#19-enumeraciones)
 2. [Empaquetado y desempaquetado](#2-empaquetado-y-desempaquetado)
-   1. [Empaquetado y desempaquetado en funciones](#21-empaquetado-y-desempaquetado-en-funciones)
 3. [Entrada y salida](#3-entrada-y-salida)
    1. [Consola](#31-consola)
    2. [Archivos](#32-archivos)

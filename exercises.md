@@ -742,7 +742,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return fibonacci(number - 2) + fibonacci(number - 1)
     
     
-    def fibonacci_sequence(n: int, separator: str):
+    def fibonacci_sequence(n: int, separator: str) -> None:
         if n < 0:
             raise ValueError
     
@@ -1103,7 +1103,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     
     class Person:
-        def __init__(self, name: str, age: int):
+        def __init__(self, name: str, age: int) -> None:
             self.name = name.capitalize()
             self.age = age
     
@@ -1116,7 +1116,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     class Vehicle(ABC):
         @abstractmethod
-        def __init__(self, max_passengers: int, plate: str = None):
+        def __init__(self, max_passengers: int, plate: str = None) -> None:
             self.max_passengers = max_passengers
             self.plate = plate if plate else str(random.randint(1111, 9999))
             self._passengers = set()
@@ -1137,7 +1137,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         def __str__(self) -> str:
             return f'{type(self).__name__} ({self.plate}). Passengers: {self.passengers}'
     
-        def add_passenger(self, passenger: Person):
+        def add_passenger(self, passenger: Person) -> None:
             if len(self.passengers) >= self.max_passengers:
                 raise ValueError('Full vehicle')
     
@@ -1155,10 +1155,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         def passengers(self) -> set[Person]:
             return self._passengers
     
-        def remove_passenger(self, passenger: Person):
+        def remove_passenger(self, passenger: Person) -> None:
             self._passengers.discard(passenger)
     
-        def remove_passenger_by_name(self, name: str):
+        def remove_passenger_by_name(self, name: str) -> None:
             try:
                 self.remove_passenger(self.first_passenger(lambda passenger: passenger.name.lower() == name.lower()))
             except StopIteration:
@@ -1166,7 +1166,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     
     class Car(Vehicle):
-        def __init__(self, doors: int, airbags: int, wheel_drive: WheelDrive, max_passengers: int, plate: str = None):
+        def __init__(self, doors: int, airbags: int, wheel_drive: WheelDrive, max_passengers: int, plate: str = None) -> None:
             super().__init__(max_passengers, plate)
             self.doors = doors
             self.airbags = airbags
@@ -1174,7 +1174,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     
     class Train(Vehicle):
-        def __init__(self, wagons: int, max_passengers: int, plate: str = None):
+        def __init__(self, wagons: int, max_passengers: int, plate: str = None) -> None:
             super().__init__(max_passengers, plate)
             self.wagons = wagons
     
@@ -1227,7 +1227,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
    Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
-    def run_tests():
+    def run_tests() -> None:
         ll = LinkedList()
         assert str(ll) == '<>'
         assert len(ll) == 0
@@ -1370,13 +1370,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     
     class Node:
-        def __init__(self, value):
+        def __init__(self, value) -> None:
             self.value: Any = value
             self.next: Node | None = None
     
     
     class LinkedList:
-        def __init__(self):
+        def __init__(self) -> None:
             self.root: Node | None = None
             self.last: Node | None = self.root
             self._length = 0
@@ -1402,7 +1402,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 node = node.next
             return node
     
-        def add(self, value: Any):
+        def add(self, value: Any) -> None:
             if self.last is None:
                 self.root = Node(value)
                 self.last = self.root
@@ -1411,12 +1411,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 self.last = self.last.next
             self._length += 1
     
-        def clear(self):
+        def clear(self) -> None:
             self.root = None
             self.last = self.root
             self._length = 0
     
-        def delete(self, index: int):
+        def delete(self, index: int) -> None:
             if not 0 <= index < self._length:
                 raise IndexError
     
@@ -1442,7 +1442,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
             return self._get_node(index).value
     
-        def insert(self, index: int, value: Any):
+        def insert(self, index: int, value: Any) -> None:
             if self._length == 0:
                 self.add(value)
             else:
@@ -1458,7 +1458,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 self._length += 1
     
     
-    def run_tests():
+    def run_tests() -> None:
         ll = LinkedList()
         assert str(ll) == '<>'
         assert len(ll) == 0
@@ -1639,7 +1639,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
    A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
-    def run_tests():
+    def run_tests() -> None:
         def _1(_11, _1001, _1100101, _0011):
             def _10(_00011):
                 _0101011 = range
@@ -1757,12 +1757,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return [row[column_index] for row in board]
     
     
-    def fill_column_decrement(column_index: int, board: list[list[int]]):
+    def fill_column_decrement(column_index: int, board: list[list[int]]) -> None:
         for i, row in enumerate(board):
             row[column_index] = len(board) - i
     
     
-    def fill_column_increment(column_index: int, board: list[list[int]]):
+    def fill_column_increment(column_index: int, board: list[list[int]]) -> None:
         for i, row in enumerate(board, start=1):
             row[column_index] = i
     
@@ -1790,7 +1790,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             j = 0
     
     
-    def number_in_cross(number: int, row_index: int, column_index: int, board: list[list[int]]):
+    def number_in_cross(number: int, row_index: int, column_index: int, board: list[list[int]]) -> None:
         for i in range(len(board)):
             if i != column_index and board[row_index][i] == number or i != row_index and board[i][column_index] == number:
                 return True
@@ -1798,7 +1798,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return False
     
     
-    def put_init_values(up_rules, down_rules, left_rules, right_rules, board):
+    def put_init_values(up_rules, down_rules, left_rules, right_rules, board) -> None:
         for i in range(len(board)):
             if up_rules[i] == 1:
                 board[0][i] = len(board)
@@ -1859,7 +1859,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return True
     
     
-    def run_tests():
+    def run_tests() -> None:
         def _1(_11, _1001, _1100101, _0011):
             def _10(_00011):
                 _0101011 = range

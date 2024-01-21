@@ -857,7 +857,7 @@ Las enumeraciones son unas herramientas bastantes comunes en numerosos lenguajes
 Los solemos usar siempre que necesitamos definir un comportamiento que depende de una constante. Por ejemplo, si queremos que una función realice una serie de tareas según el color pasado como argumento:
 
 ```python
-def do_something(color: str):
+def do_something(color: str) -> None:
     if color == 'red':
         ...
     elif color == 'blue':
@@ -881,7 +881,7 @@ class Color(Enum):
     BLUE = 3
 
 
-def do_something(color: Color):
+def do_something(color: Color) -> None:
     if color == Color.RED:
         ...
     elif color == Color.GREEN:
@@ -4020,3 +4020,4 @@ Salida:
 Original elements: [0, 1, 2, 3]
 Reversed elements: [3, 2, 1, 0]
 ```
+def print_person(name: str, age: str) -> None:

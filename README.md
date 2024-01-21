@@ -3595,6 +3595,26 @@ Pueden aplicarse a cualquier iterable.
 ```
 
 ```python
+>>> (a, b), (c, d) = [(1, 'one'), (2, 'two')]
+>>> a
+1
+>>> b
+'one'
+>>> c
+2
+>>> d
+'two'
+```
+
+```python
+>>> for key, value in {1: 'one', 2: 'two'}.items():
+...     print(key, value)
+...
+1 one
+2 two
+```
+
+```python
 >>> elements = [0, 1, 2, 3, 4, 5, 6]
 >>> a, b, *c = elements
 >>> a

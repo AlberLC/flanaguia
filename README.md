@@ -1975,7 +1975,7 @@ Mario
 
 `kwargs`, en este caso, es un diccionario que contiene todos los argumentos nombrados restantes.
 
-Igual que con `args`, podemos usar cualquier nombre en vez de `kwags`, pero este es el que se usa por convenio.
+Igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero este es el que se usa por convenio.
 
 <br>
 

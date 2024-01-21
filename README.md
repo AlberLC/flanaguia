@@ -11,14 +11,16 @@
    5. [Listas](#15-listas)
    6. [Conjuntos](#16-conjuntos)
    7. [Diccionarios](#17-diccionarios)
-   8. [Enumeraciones](#18-enumeraciones)
+   8. [Rangos](#18-rangos)
+   9. [Enumeraciones](#19-enumeraciones)
 2. [Entrada y salida](#2-entrada-y-salida)
    1. [Consola](#21-consola)
    2. [Archivos](#22-archivos)
 3. [Condicionales](#3-condicionales)
 4. [Bucles](#4-bucles)
    1. [Listas por comprensión](#41-listas-por-comprensión)
-   2. [Generadores](#42-generadores)
+   2. [Iteradores](#42-iteradores)
+      1. [Generadores](#421-generadores)
 5. [Funciones](#5-funciones)
    1. [Funciones sin argumentos](#51-funciones-sin-argumentos)
    2. [Funciones con argumentos](#52-funciones-con-argumentos)
@@ -598,7 +600,7 @@ Cómo concatenar/fusionar varias listas:
 
 ### 1.6. Conjuntos
 
-Los conjuntos (`set`) son estructuras de datos cuyos elementos se almacenan a través del cáclulo de [hashes](https://es.wikipedia.org/wiki/Funci%C3%B3n_hash). Los elementos que contienen se organizan según su hash, el cual indica en qué posición se guarda en la estructura, por lo tanto el orden de los elementos es arbitrario: por ejemplo, no mantienen el orden de entrada como las listas.
+Los conjuntos (`set`) son colecciones cuyos elementos se almacenan a través del cáclulo de [hashes](https://es.wikipedia.org/wiki/Funci%C3%B3n_hash). Los elementos que contienen se organizan según su hash, el cual indica en qué posición se guarda en la estructura, por lo tanto el orden de los elementos es arbitrario: por ejemplo, no mantienen el orden de entrada como las listas.
 
 Se crean con las llaves `{` `}`. Pero hay que tener en cuenta que este carácter también se usa para crear diccionarios así que cuando escribimos `{}` no estamos creando un conjunto vacío, sino un diccionario vacío.
 
@@ -814,7 +816,41 @@ Nótese que si se introducen varios valores para una misma clave, el último sob
 
 <br>
 
-### 1.8. Enumeraciones
+### 1.8. Rangos
+
+El tipo [range](https://docs.python.org/3/library/stdtypes.html#range) sirve para crear una sucesión de números enteros iterable:
+
+```python
+>>> range(10)
+range(0, 10)
+>>> list(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> list(range(3, 10))
+[3, 4, 5, 6, 7, 8, 9]
+>>> list(range(10, -1, -1))
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+```
+
+`range()` tiene 3 parámetros:
+
+- start: empezar desde este valor (**inclusive**).
+- stop: hasta este (**no inclusive**).
+- step: números de pasos o saltos.
+
+Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por defecto, `start`=0 y `step`=1.
+
+> `range()` se comporta igual que el acceso a segmentos de listas mediante [slices](https://docs.python.org/3/glossary.html#term-slice):
+> 
+> ```python
+> >>> list(range(4, 10, 2))
+> [4, 6, 8]
+> >>> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9][4:10:2]
+> [4, 6, 8]
+> ```
+
+<br>
+
+### 1.9. Enumeraciones
 
 Las enumeraciones son unas herramientas bastantes comunes en numerosos lenguajes de programación que nos sirven para definir un conjunto inmutable de constantes con nombre.
 
@@ -919,8 +955,8 @@ Color.RED
 
 Para trabajar con la consola usamos dos de las llamadas [funciones integradas](https://docs.python.org/3/library/functions.html):
 
-- `print()` salida
-- `input()` entrada
+- `print()` para salida.
+- `input()` para entrada.
 
 ```python
 text = input('Give me a number: ')
@@ -1100,13 +1136,11 @@ while i < 10:
     i += 1
 ```
 
-La forma más utilizada, legible y ajustada a las técnicas de programación modernas para recorrer estructuras o repetir codigo viene dada por los bucles `for`. Con `for` se van a poder resolver el 99% de los casos. Es bueno intentar ir siempre con la mentalidad de hacer cualquier iteración o repetición con `for` por las ventajas que ofrece la potente y flexible sintaxis de Python.
+La forma más utilizada, legible y ajustada a las técnicas de programación modernas para recorrer colecciones o repetir codigo viene dada por los bucles `for`. Con `for` se van a poder resolver el 99% de los casos. Es bueno intentar ir siempre con la mentalidad de hacer cualquier iteración o repetición con `for` por las ventajas que ofrece la potente y flexible sintaxis de Python.
 
 Hay que tener en cuenta que los `for` en Python se podrían comparar con los `foreach` que existen en otros lenguajes donde se tienen un `for` y un `foreach`. Por ejemplo:
 
-<br>
-
-**C#**
+### C#
 
 `for`
 ```cs
@@ -1116,7 +1150,7 @@ for (int i = 0; i < words.Length; i++)
     Console.WriteLine(words[i]);
 }
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
@@ -1134,7 +1168,7 @@ foreach (string word in words)
     Console.WriteLine(word);
 }
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
@@ -1142,16 +1176,14 @@ Juan
 bye
 ```
 
-<br>
-
-**Python**
+### Python
 
 ```python
 words = ['hello', 'world', 'Juan', 'bye']
 for word in words:
     print(word)
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
@@ -1159,55 +1191,25 @@ Juan
 bye
 ```
 
-<br>
+Por lo tanto, en Python, la misión de los `for` es **iterar elementos**.
 
-❌ **Nunca** iterar sobre los elementos de un iterable simulando los antiguos `for` de otros lenguajes:
+Si un programador viene de otro lenguaje es posible que busque hacer los `for` incrementando una variable entera `i`, que use luego para acceder a las posiciones de una colección y acabe haciendo algo innecesario como:
 
 ```python
 words = ['hello', 'world', 'Juan', 'bye']
 for i in range(len(words)):
     print(words[i])
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
 Juan
 bye
 ```
-> Acabamos de usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
-> 
-> ```python
-> >>> range(10)
-> range(0, 10)
-> >>> list(range(10))
-> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-> >>> list(range(3, 10))
-> [3, 4, 5, 6, 7, 8, 9]
-> >>> list(range(10, -1, -1))
-> [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-> ```
-> 
-> `range()` sirve para crear un generador de números enteros el cual se puede iterar. En el ejemplo anterior los iteramos creando listas para verlo con más claridad. Esta función tiene 3 parámetros:
-> 
-> - start: empezar desde este valor (**inclusive**)
-> - stop: hasta este (**no inclusive**)
-> - step: números de pasos o saltos
-> 
-> Si solo se proporciona 1 argumento se interpreta como parámetro `stop` y, por defecto, `start`=0 y `step`=1.
-> 
-> `range()` se comporta igual que el acceso a segmentos de listas mediante [slices](https://docs.python.org/3/glossary.html#term-slice):
-> 
-> ```python
-> >>> list(range(4, 10, 2))
-> [4, 6, 8]
-> >>> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9][4:10:2]
-> [4, 6, 8]
-> ```
+> Acabamos de usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`. Más información en el capítulo [1.8. Rangos](#18-rangos).
 
-<br>
-
-Recapitulando: nunca usar `range` para iterar una colección de elementos.
+Entonces:
 
 ❌
 ```python
@@ -1222,19 +1224,19 @@ for word in words:
     print(word)
 ```
 
-Si se necesita gestionar un índice numérico como contador, se puede usar la función `enumerate` que devuelve un par (índice, elemento):
-```python
-words = ['hello', 'world', 'Juan', 'bye']
-for i, word in enumerate(words):
-    print(i, word)
-```
-Salida por consola:
-```
-0 hello
-1 world
-2 Juan
-3 bye
-```
+> Si se necesita gestionar un índice numérico como contador, se puede usar la función `enumerate` que devuelve un par (índice, elemento):
+> ```python
+> words = ['hello', 'world', 'Juan', 'bye']
+> for i, word in enumerate(words):
+>     print(i, word)
+> ```
+> Salida:
+> ```
+> 0 hello
+> 1 world
+> 2 Juan
+> 3 bye
+> ```
 
 <br>
 
@@ -1252,7 +1254,7 @@ for word in words:
 
 print('- end -')
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
@@ -1275,7 +1277,7 @@ for word in words:
 
 print('- end -')
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
@@ -1294,7 +1296,7 @@ else:
     print('---> else <---')
 print('- end -')
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
@@ -1317,7 +1319,7 @@ else:
     print('---> else <---')
 print('- end -')
 ```
-Salida por consola:
+Salida:
 ```
 hello
 world
@@ -1337,7 +1339,7 @@ else:
     print('---> else <---')
 print('- end -')
 ```
-Salida por consola:
+Salida:
 ```
 ---> else <---
 - end -
@@ -1402,15 +1404,114 @@ Salida:
 
 <br>
 
-### 4.2. Generadores
+### 4.2. Iteradores
 
-¿Cómo podemos definir una sucesión de elementos sin almacenarlos en memoria en una lista u otra estructura? Imaginemos que queremos iterar 1 millón de elementos, pero crear una lista con 1 millón de elementos para iterarlos es demasiado costoso. En estos casos vamos a necesitar generadores, que no son más que "normas" o "reglas" que definen sucesiones de elementos u objetos.
+¿Cómo podemos definir una serie de elementos sin almacenarlos en memoria en una lista u otra estructura? Imaginemos que queremos iterar un millón de elementos, pero crear una lista con un millón de elementos para iterarlos es demasiado costoso. En estos casos vamos a necesitar iteradores, que no son más que objetos creados a partir "normas" o "reglas" que definen sucesiones de elementos u objetos.
 
-Por ejemplo `range()` te devuelve un generador:
+Para entender este concepto vamos a usar [range](#18-rangos). Este tipo almacena tres números enteros: `start`, `stop` y `step`. Un objeto de este tipo se puede iterar:
 
 ```python
->>> range(1_000_000)
-range(0, 1000000)
+for i in range(0, 5, 2):
+    print(i)
+```
+Salida:
+```
+0
+2
+4
+```
+
+También podemos crear una lista a partir de él, lo cual sería otra forma de iterarlo:
+
+```python
+>>> list(range(0, 5, 2))
+[0, 2, 4]
+```
+
+Pero ¿cómo itera Python? Cuando Python tiene que iterar un iterable, lo primero que hace es construir un iterador. Nosotros podemos crear iteradores a partir de iterables con la [función integrada](https://docs.python.org/3/library/functions.html) `iter()`:
+
+```python
+>>> iter(range(0, 5, 2))
+<range_iterator object at 0x000001C28FF9AF10>
+```
+
+Este iterador lo podemos usar de igual manera que en los ejemplos anteriores:
+
+```python
+iterator = iter(range(0, 5, 2))
+for i in iterator:
+    print(i)
+```
+Salida:
+```
+0
+2
+4
+```
+
+<br>
+
+```python
+>>> list(iter(range(0, 5, 2)))
+[0, 2, 4]
+```
+
+El resultado es el mismo. Como es lógico, en estas situaciones es innecesario crear iteradores explícitamente puesto que Python se encarga de crearlos automáticamente.
+
+<br>
+
+Podemos iterar manualmente un iterador con la [función integrada](https://docs.python.org/3/library/functions.html) `next()`:
+
+```python
+>>> iterator = iter(range(0, 5, 2))
+>>> next(iterator)
+0
+>>> next(iterator)
+2
+>>> next(iterator)
+4
+>>> next(iterator)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+```
+
+Cuando la sucesión de elementos llega a su fin se lanza una [excepción](#6-excepciones) `StopIteration`.
+
+Los iteradores son de un solo uso, se consumen:
+
+```python
+>>> iterator = iter(range(0, 5, 2))
+>>> list(iterator)
+[0, 2, 4]
+>>> list(iterator)
+[]
+```
+
+```python
+>>> iterator = iter(range(0, 5, 2))
+>>> next(iterator)
+0
+>>> next(iterator)
+2
+>>> list(iterator)
+[4]
+```
+
+<br>
+
+Una vez entendido lo que son los iteradores, volvamos a nuestro problema del inicio: ¿cómo podemos iterar millones de elementos sin llenar la memoria creando una lista con ellos? Pues con un iterador. Un iterador de pocos elementos va a ocupar en memoria lo mismo que un iterador de muchos elementos, ya que solo son líneas de codigo o lógica que especifican una sucesión, no los elementos en sí:
+
+```python
+>>> import sys
+>>> sys.getsizeof(list(range(1)))
+72
+>>> sys.getsizeof(list(range(1_000_000)))
+8000056
+>>> sys.getsizeof(iter(range(1)))
+32
+>>> sys.getsizeof(iter(range(1_000_000)))
+32
 ```
 
 > En python, los números se pueden separar con `_` por legibilidad. No tienen ningún efecto.
@@ -1419,7 +1520,22 @@ range(0, 1000000)
 > 57462341.1544
 > ```
 
-Un generador de pocos elementos va a ocupar en memoria lo mismo que un generador de muchos elementos, ya que solo son líneas de codigo o lógica que especifican una sucesión, no los elementos en sí.
+<br>
+
+#### 4.2.1. Generadores
+
+Python nos proporciona dos formas de definir nuestras propias sucesiones de elementos:
+
+- Con **expresiones** parecidas a las [listas por comprensión](#41-listas-por-comprensión) pero con **paréntesis**.
+- Con **funciones generadoras** (estas se explicarán en el capítulo [5.7. Funciones generadoras](#57-funciones-generadoras)).
+
+Cualquiera de estas dos formas nos permiten crear **generadores**.
+
+> Un generador es un tipo de iterador (ver el diagrama del apartado [tipos más usados](#11-tipos-más-usados)). Iterador es un concepto más abstracto, sin entrar en detalles: cualquier objeto al que se le pueda hacer `iter()` y `next()` es un iterador.
+
+<br>
+
+Vamos a ver los generadores creados a partir de **expresiones con paréntesis**.
 
 Recordemos las listas por comprensión calculando los cuadrados de unos elementos:
 
@@ -1441,9 +1557,17 @@ Si usamos paréntesis `(` `)` en vez de corchetes `[` `]`, obtenemos un generado
 [1, 25, 64, 16, 81, 16]
 ```
 
-El generador es consumido para generar una lista. Si intentamos volver a consumir el generador consumido:
+Como cualquier iterador, el generador se consume:
 
 ```python
+>>> words = ['hello', 'WORLD', 'ONE', 'MoRe', 'tImE', 'SEE', 'you', 'SOON']
+>>> generator = (f'Upper: {word}' for word in words if word.isupper())
+>>> next(generator)
+'Upper: WORLD'
+>>> next(generator)
+'Upper: ONE'
+>>> list(generator)
+['Upper: SEE', 'Upper: SOON']
 >>> list(generator)
 []
 ```
@@ -1465,41 +1589,6 @@ El generador es consumido para generar una lista. Si intentamos volver a consumi
 > tuple(i ** 2 for i in elements)
 > ```
 > Realmente el generador es lo que hay dentro de los paréntesis. Si ya está agrupado en unos, no hace falta poner otros.
-
-Podemos iterar manualmente un generador (o iterador) con la [función integrada](https://docs.python.org/3/library/functions.html) `next()`:
-
-```python
->>> elements = [1, 5, 8, 4, 9, 4]
->>> generator = (i ** 2 for i in elements)
->>> next(generator)
-1
->>> next(generator)
-25
->>> next(generator)
-64
->>> next(generator)
-16
->>> next(generator)
-81
->>> next(generator)
-16
->>> next(generator)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-StopIteration
-```
-
-> Podemos crear un iterador de cualquier iterable con la [función integrada](https://docs.python.org/3/library/functions.html) `iter()`:
-> ```python
-> >>> elements = [1, 5, 8, 4, 9, 4]
-> >>> iter(elements)
-> <list_iterator object at 0x00000180F515AFE0>
-> >>> next(iter(elements))
-> 1
-> ```
-> Un generador es un iterador. Ver el diagrama del apartado [tipos más usados](#11-tipos-más-usados).
-
-Más tarde veremos las [funciones generadoras](#57-funciones-generadoras).
 
 <br>
 
@@ -1808,20 +1897,18 @@ Salida:
 My name is Ana and I'm 25 years old.
 ```
 
-<br>
-
-Podemos forzar la utilización del tipo de argumento que queramos en la definición de la función, aunque es un mecanismo que solo hay que usar si sabes muy bien lo que estas haciendo, ya que limitas el uso de tu función. Si estás empezando con este lenguaje, no lo vas a necesitar.
-
-```python
-def print_person(name, /, second_name, *, age):
-    print(f"My name is {name} {second_name} and I'm {age} years old.")
-```
-
-Todo argumento a la izquierda de `/` se tendrá que pasar forzosamente como argumento posicional.
-
-Los argumentos entre `/` y `*` podrán pasarse de cualquier manera.
-
-Y los argumentos a la derecha de `*` se tendrán que pasar como argumentos nombrados.
+> Podemos forzar la utilización del tipo de argumento que queramos en la definición de la función, aunque es un mecanismo que solo hay que usar si sabes muy bien lo que estas haciendo, ya que limitas el uso de tu función. Si estás empezando con este lenguaje, no lo vas a necesitar.
+> 
+> ```python
+> def print_person(name, /, second_name, *, age):
+>     print(f"My name is {name} {second_name} and I'm {age} years old.")
+> ```
+> 
+> Todo argumento a la izquierda de `/` se tendrá que pasar forzosamente como argumento posicional.
+> 
+> Los argumentos entre `/` y `*` podrán pasarse de cualquier manera.
+> 
+> Y los argumentos a la derecha de `*` se tendrán que pasar como argumentos nombrados.
 
 <br>
 

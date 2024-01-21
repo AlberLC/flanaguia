@@ -13,39 +13,39 @@
    7. [Diccionarios](#17-diccionarios)
    8. [Rangos](#18-rangos)
    9. [Enumeraciones](#19-enumeraciones)
-2. [Entrada y salida](#2-entrada-y-salida)
-   1. [Consola](#21-consola)
-   2. [Archivos](#22-archivos)
-3. [Condicionales](#3-condicionales)
-4. [Bucles](#4-bucles)
-   1. [Listas por comprensión](#41-listas-por-comprensión)
-   2. [Iteradores](#42-iteradores)
-      1. [Generadores](#421-generadores)
-5. [Funciones](#5-funciones)
-   1. [Funciones sin argumentos](#51-funciones-sin-argumentos)
-   2. [Funciones con argumentos](#52-funciones-con-argumentos)
-   3. [Argumentos por defecto](#53-argumentos-por-defecto)
-   4. [Argumentos posicionales y argumentos nombrados](#54-argumentos-posicionales-y-argumentos-nombrados)
-   5. [Número indeterminado de argumentos](#55-número-indeterminado-de-argumentos)
-   6. [Funciones anónimas](#56-funciones-anónimas)
-   7. [Funciones generadoras](#57-funciones-generadoras)
-6. [Excepciones](#6-excepciones)
-   1. [Lanzamiento de excepciones](#61-lanzamiento-de-excepciones)
-   2. [Captura de excepciones](#62-captura-de-excepciones)
-7. [Clases](#7-clases)
-   1. [Atributos](#71-atributos)
-      1. [Propiedades](#711-propiedades)
-      2. [Atributos estáticos](#712-atributos-estáticos)
-   2. [Métodos](#72-métodos)
-      1. [Métodos especiales](#721-métodos-especiales)
-      2. [Métodos estáticos](#722-métodos-estáticos)
-      3. [Métodos de clase](#723-métodos-de-clase)
-   3. [Herencia](#73-herencia)
-      1. [Clases abstractas](#731-clases-abstractas)
-      2. [Herencia múltiple](#732-herencia-múltiple)
-8. [Importaciones](#8-importaciones)
-9. [Empaquetado y desempaquetado](#9-empaquetado-y-desempaquetado)
-    1. [Empaquetado y desempaquetado en funciones](#91-empaquetado-y-desempaquetado-en-funciones)
+2. [Empaquetado y desempaquetado](#2-empaquetado-y-desempaquetado)
+   1. [Empaquetado y desempaquetado en funciones](#21-empaquetado-y-desempaquetado-en-funciones)
+3. [Entrada y salida](#3-entrada-y-salida)
+   1. [Consola](#31-consola)
+   2. [Archivos](#32-archivos)
+4. [Condicionales](#4-condicionales)
+5. [Bucles](#5-bucles)
+   1. [Listas por comprensión](#51-listas-por-comprensión)
+   2. [Iteradores](#52-iteradores)
+      1. [Generadores](#521-generadores)
+6. [Funciones](#6-funciones)
+   1. [Funciones sin argumentos](#61-funciones-sin-argumentos)
+   2. [Funciones con argumentos](#62-funciones-con-argumentos)
+   3. [Argumentos por defecto](#63-argumentos-por-defecto)
+   4. [Argumentos posicionales y argumentos nombrados](#64-argumentos-posicionales-y-argumentos-nombrados)
+   5. [Número indeterminado de argumentos](#65-número-indeterminado-de-argumentos)
+   6. [Funciones anónimas](#66-funciones-anónimas)
+   7. [Funciones generadoras](#67-funciones-generadoras)
+7. [Excepciones](#7-excepciones)
+   1. [Lanzamiento de excepciones](#71-lanzamiento-de-excepciones)
+   2. [Captura de excepciones](#72-captura-de-excepciones)
+8. [Clases](#8-clases)
+   1. [Atributos](#81-atributos)
+      1. [Propiedades](#811-propiedades)
+      2. [Atributos estáticos](#812-atributos-estáticos)
+   2. [Métodos](#82-métodos)
+      1. [Métodos especiales](#821-métodos-especiales)
+      2. [Métodos estáticos](#822-métodos-estáticos)
+      3. [Métodos de clase](#823-métodos-de-clase)
+   3. [Herencia](#83-herencia)
+      1. [Clases abstractas](#831-clases-abstractas)
+      2. [Herencia múltiple](#832-herencia-múltiple)
+9. [Importaciones](#9-importaciones)    
 10. [Convenciones de estilo](#10-convenciones-de-estilo)
     1. [PascalCase y snake_case](#101-pascalcase-y-snake_case)
     2. [Nombres privados](#102-nombres-privados)
@@ -857,7 +857,7 @@ Las enumeraciones son unas herramientas bastantes comunes en numerosos lenguajes
 Los solemos usar siempre que necesitamos definir un comportamiento que depende de una constante. Por ejemplo, si queremos que una función realice una serie de tareas según el color pasado como argumento:
 
 ```python
-def do_something(color: str) -> None:
+def do_something(color):
     if color == 'red':
         ...
     elif color == 'blue':
@@ -869,7 +869,7 @@ def do_something(color: str) -> None:
 
 Vamos a tener que pasarle una cadena para indicar el color, sin embargo, esto tiene muchos problemas. Para empezar, si usamos cadenas podemos cometer errores ortográficos y escribir `bleu` en vez de `blue`, ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
 
-Las enumeraciones no son más que [clases](#7-clases) que [heredan](#73-herencia) de `Enum`:
+Las enumeraciones no son más que [clases](#8-clases) que [heredan](#83-herencia) de `Enum`:
 
 ```python
 from enum import Enum
@@ -881,7 +881,7 @@ class Color(Enum):
     BLUE = 3
 
 
-def do_something(color: Color) -> None:
+def do_something(color):
     if color == Color.RED:
         ...
     elif color == Color.GREEN:
@@ -891,7 +891,7 @@ def do_something(color: Color) -> None:
     ...
 ```
 
-Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar valores que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los valores de la enumeración. Además, si en un futuro queremos cambiar los valores de la enumeración, no hay que ir buscando en todas las partes del código donde se usan cadenas 'red', 'blue' y 'green' para actualizarlas y mantener la consistencia.
+Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar valores que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los valores de la enumeración. Además, si en un futuro queremos cambiar los valores de la enumeración, no habrá que ir buscando en todas las partes del código donde se usan cadenas 'red', 'blue' y 'green' para actualizarlas y mantener la consistencia.
 
 Las `Enum` relacionan un nombre con un valor. En nuestro último ejemplo relacionamos `RED` con el valor 1, `GREEN` con el 2 y `BLUE` con el 3. Podemos generar valores automáticos de la siguiente manera:
 
@@ -925,7 +925,7 @@ RED
 
 <br>
 
-Búsqueda de enumeraciones por valor:
+Selección de enumeraciones por valor:
 
 ```python
 print(Color(2))
@@ -937,7 +937,7 @@ Color.GREEN
 
 <br>
 
-Búsqueda de enumeraciones por nombre:
+Selección de enumeraciones por cadena:
 
 ```python
 print(Color['RED'])
@@ -949,9 +949,197 @@ Color.RED
 
 <br>
 
-## 2. Entrada y salida
+## 2. Empaquetado y desempaquetado
 
-### 2.1. Consola
+Pueden aplicarse a cualquier iterable.
+
+```python
+>>> elements = (0, 1, 'hello')
+>>> a, b, c = elements
+>>> a
+0
+>>> b
+1
+>>> c
+'hello'
+```
+
+```python
+>>> a, b = [(1, 'one'), (2, 'two')]
+>>> a
+(1, 'one')
+>>> b
+(2, 'two')
+```
+
+```python
+>>> (a, b), (c, d) = [(1, 'one'), (2, 'two')]
+>>> a
+1
+>>> b
+'one'
+>>> c
+2
+>>> d
+'two'
+```
+
+```python
+>>> for key, value in {1: 'one', 2: 'two'}.items():
+...     print(key, value)
+...
+1 one
+2 two
+```
+
+```python
+>>> elements = [0, 1, 2, 3, 4, 5, 6]
+>>> a, b, *c = elements
+>>> a
+0
+>>> b
+1
+>>> c
+[2, 3, 4, 5, 6]
+```
+
+```python
+>>> elements = {0, 1, 2, 3, 4, 5, 6}
+>>> a, b, *c, d = elements
+>>> a
+0
+>>> b
+1
+>>> c
+[2, 3, 4, 5]
+>>> d
+6
+```
+
+```python
+>>> elements_1 = [0, 1, 2]
+>>> elements_2 = {3, 4, 5}
+>>> [elements_1, elements_2]  # not unpacking
+[[0, 1, 2], {3, 4, 5}]
+>>> [*elements_1, *elements_2]  # unpacking
+[0, 1, 2, 3, 4, 5]
+```
+
+```python
+>>> elements_1 = [0, 1, 2]
+>>> elements_2 = {3, 4, 5}
+>>> (*elements_1, *{'hello', 'world'}, *elements_2)
+(0, 1, 2, 'world', 'hello', 3, 4, 5)
+>>> [*elements_1, *elements_2, *('yes', 'no')]
+[0, 1, 2, 3, 4, 5, 'yes', 'no']
+>>> {*['❤️', '🐕'], *elements_1, *elements_2}
+{0, 1, 2, 3, '🐕', 4, 5, '❤️'}
+```
+
+> Los conjuntos no tienen un orden definido.
+
+Para empaquetar y desempaquetar diccionarios usamos `**`:
+
+```python
+>>> dict_1 = {1: 2, 3: 4}
+>>> dict_2 = {'a': 'b', 'c': 'd'}
+>>> {**dict_1, **dict_2}
+{1: 2, 3: 4, 'a': 'b', 'c': 'd'}
+```
+
+<br>
+
+### 2.1. Empaquetado y desempaquetado en funciones
+
+Podemos empaquetar todos los argumentos recibidos en una tupla `args`:
+
+```python
+def sum_numbers(*args):
+    print(args)
+    print(sum(args))
+
+
+sum_numbers(1, 54, 33, 27, 846, 151, 12, 64, 984)
+```
+Salida:
+```
+(1, 54, 33, 27, 846, 151, 12, 64, 984)
+2172
+```
+
+<br>
+
+Podemos también desempaquetar los argumentos antes de llamar la función:
+
+```python
+def sum_numbers(number_1, number_2):
+    return number_1 + number_2
+
+
+numbers = [8, 2]
+print(sum_numbers(*numbers))
+```
+Salida:
+```
+10
+```
+
+<br>
+
+`print()` puede recibir más de un argumento para imprimir por consola. De hecho puede recibir infinitos y lo que hará será imprimirlos todos separados por un espacio.
+
+```python
+name = 'Mario'
+age = 33
+print('My name is', name, "and I'm", age, 'years old.')
+```
+Salida:
+```
+My name is Mario and I'm 33 years old.
+```
+
+Entonces:
+
+```python
+elements = (0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
+print(elements)  # not unpacking (prints the tuple)
+print(*elements)  # unpacking (prints element by element)
+```
+Salida:
+```
+(0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
+0 1 2 3 4 5 hello world 🍮
+```
+
+<br>
+
+Ahora con [argumentos nombrados](#64-argumentos-posicionales-y-argumentos-nombrados):
+
+```python
+def print_person(name, age, **kwargs):
+    print(name)
+    print(age)
+    print(kwargs)
+
+
+print_person(cat_name='Midna', **{'name': 'Ana', 'age': 25, 'dog_name': 'Tingle'})
+```
+Salida:
+```
+Ana
+25
+{'cat_name': 'Midna', 'dog_name': 'Tingle'}
+```
+
+Hemos desempaquetado el diccionario antes de llamar la función: al hacer esto las claves y los valores de este se comportarán como argumentos nombrados. En el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en los parámetros de la función.
+
+> Más información sobre `*args` y `**kwargs` en el capítulo [6.5. Número indeterminado de argumentos](#65-número-indeterminado-de-argumentos).
+
+<br>
+
+## 3. Entrada y salida
+
+### 3.1. Consola
 
 Para trabajar con la consola usamos dos de las llamadas [funciones integradas](https://docs.python.org/3/library/functions.html):
 
@@ -980,7 +1168,7 @@ Nótese que input recibe siempre texto (string).
 
 <br>
 
-### 2.2. Archivos
+### 3.2. Archivos
 
 Para abrir archivos podemos usar `open()`, una [función integrada](https://docs.python.org/3/library/functions.html).
 
@@ -1051,7 +1239,7 @@ pathlib.Path('file.png').write_bytes(b'\x45\x44\x50\x52\x45\x53\x53\x4f')
 
 <br>
 
-## 3. Condicionales
+## 4. Condicionales
 
 ```python
 number = 82
@@ -1119,7 +1307,7 @@ match number, name:
 
 <br>
 
-## 4. Bucles
+## 5. Bucles
 
 En Python muy raramente se necesitan los bucles `while`.
 
@@ -1347,7 +1535,7 @@ Salida:
 
 <br>
 
-### 4.1. Listas por comprensión
+### 5.1. Listas por comprensión
 
 Python recoge ciertas ideas de la programación funcional, trayendo una sintaxis en una sola línea para crear generadores, listas, conjuntos y diccionarios.
 
@@ -1404,7 +1592,7 @@ Salida:
 
 <br>
 
-### 4.2. Iteradores
+### 5.2. Iteradores
 
 ¿Cómo podemos definir una serie de elementos sin almacenarlos en memoria en una lista u otra estructura? Imaginemos que queremos iterar un millón de elementos, pero crear una lista con un millón de elementos para iterarlos es demasiado costoso. En estos casos vamos a necesitar iteradores, que no son más que objetos creados a partir "normas" o "reglas" que definen sucesiones de elementos u objetos.
 
@@ -1476,7 +1664,7 @@ Traceback (most recent call last):
 StopIteration
 ```
 
-Cuando la sucesión de elementos llega a su fin se lanza una [excepción](#6-excepciones) `StopIteration`.
+Cuando la sucesión de elementos llega a su fin se lanza una [excepción](#7-excepciones) `StopIteration`.
 
 Los iteradores son de un solo uso, se consumen:
 
@@ -1522,12 +1710,12 @@ Una vez entendido lo que son los iteradores, volvamos a nuestro problema del ini
 
 <br>
 
-#### 4.2.1. Generadores
+#### 5.2.1. Generadores
 
 Python nos proporciona dos formas de definir nuestras propias sucesiones de elementos:
 
-- Con **expresiones** parecidas a las [listas por comprensión](#41-listas-por-comprensión) pero con **paréntesis**.
-- Con **funciones generadoras** (estas se explicarán en el capítulo [5.7. Funciones generadoras](#57-funciones-generadoras)).
+- Con **expresiones** parecidas a las [listas por comprensión](#51-listas-por-comprensión) pero con **paréntesis**.
+- Con **funciones generadoras** (estas se explicarán en el capítulo [6.7. Funciones generadoras](#67-funciones-generadoras)).
 
 Cualquiera de estas dos formas nos permiten crear **generadores**.
 
@@ -1592,7 +1780,7 @@ Como cualquier iterador, el generador se consume:
 
 <br>
 
-## 5. Funciones
+## 6. Funciones
 
 Las funciones sirven para agrupar código que se va a ejecutar en distintos lugares. Siempre hay que evitar repetir código y, al usar funciones y mantener todo en un mismo lugar, podremos hacer cambios una sola vez y producir un impacto en esos otros lugares donde se llama a la función.
 
@@ -1665,7 +1853,7 @@ Salida:
 
 <br>
 
-### 5.1. Funciones sin argumentos
+### 6.1. Funciones sin argumentos
 
 ```python
 def print_person():
@@ -1722,7 +1910,7 @@ NameError: name 'name' is not defined
 
 <br>
 
-### 5.2. Funciones con argumentos
+### 6.2. Funciones con argumentos
 
 ```python
 def sum_numbers(number_1, number_2):
@@ -1756,7 +1944,7 @@ Salida:
 
 <br>
 
-### 5.3. Argumentos por defecto
+### 6.3. Argumentos por defecto
 
 ```python
 def sum_numbers(number_1, number_2=100):
@@ -1866,7 +2054,7 @@ Ahora sí que estamos creando una lista en el ámbito local de la función cada 
 
 <br>
 
-### 5.4. Argumentos posicionales y argumentos nombrados
+### 6.4. Argumentos posicionales y argumentos nombrados
 
 Imaginemos que tenemos esta función:
 
@@ -1912,7 +2100,7 @@ My name is Ana and I'm 25 years old.
 
 <br>
 
-### 5.5. Número indeterminado de argumentos
+### 6.5. Número indeterminado de argumentos
 
 Cuando definimos nuestra función podemos diseñarla para aceptar un número indeterminado de argumentos, incluso infinitos (si es que alguien lo consigue):
 
@@ -1928,7 +2116,7 @@ Salida:
 (1, 54, 33, 27, 846, 151, 12, 64, 984)
 ```
 
-`args` es una tupla que contiene todos los argumentos [empaquetados](#9-empaquetado-y-desempaquetado).
+`args` es una tupla que contiene todos los argumentos [empaquetados](#2-empaquetado-y-desempaquetado).
 
 En vez de `args` podemos poner el nombre que queramos pero se usa siempre ese por convenio.
 
@@ -1979,7 +2167,7 @@ Igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero est
 
 <br>
 
-### 5.6. Funciones anónimas
+### 6.6. Funciones anónimas
 
 Hasta ahora hemos definido nuestras funciones así:
 
@@ -2046,7 +2234,7 @@ Este es un buen caso donde se ve con claridad que es más cómodo crear una func
 
 <br>
 
-### 5.7. Funciones generadoras
+### 6.7. Funciones generadoras
 
 Si simplemente usamos la palabra clave `yield`, hacemos que una función se convierta en una función generadora:
 
@@ -2122,7 +2310,7 @@ o
 
 <br>
 
-## 6. Excepciones
+## 7. Excepciones
 
 Cuando ocurre un error el programa se detiene en la línea que lo generó, no continúa la ejecución normal de la siguiente, sino que eleva o lanza una excepción que, si no se captura, detendrá el programa y se imprimirá por consola su traza (normalmente en rojo) para poder hacer un buen seguimiento del tipo, del lugar y del motivo del error.
 
@@ -2179,7 +2367,7 @@ Ahora intentamos usar la [función integrada](https://docs.python.org/3/library/
 
 <br>
 
-### 6.1. Lanzamiento de excepciones
+### 7.1. Lanzamiento de excepciones
 
 También llamado elevación de excepciones: es la acción de crear manualmente una excepción y lanzarla (o elevarla). De hecho, para ello usamos la palabra clave `raise`, que significa "elevar" en inglés.
 
@@ -2231,7 +2419,7 @@ AttributeError: one two three
 
 <br>
 
-### 6.2. Captura de excepciones
+### 7.2. Captura de excepciones
 
 Usamos las cláusulas `try` y `except` para capturar errores, gestionarlos y ejecutar código como consecuencia:
 
@@ -2397,9 +2585,9 @@ finally:
 
 <br>
 
-## 7. Clases
+## 8. Clases
 
-### 7.1. Atributos
+### 8.1. Atributos
 
 Para crear e inicializar los atributos de los objetos definimos una función o método `__init__` (constructor) dentro del bloque delimitado por la cláusula `class`. Este constructor es llamado (ejecutado) usando el nombre de la clase como si fuera una función: `Person('Juan', 25, '123456789', 'Milo')` nos devolverá un objeto, también llamado instancia, de la clase.
 
@@ -2458,7 +2646,7 @@ Salida:
 
 <br>
 
-#### 7.1.1. Propiedades
+#### 8.1.1. Propiedades
 
 Las propiedades son comparables a los "getters" y "setters" de otros lenguajes. Sirven para encapsular un acceso "prohibido" o para realizar una serie de pasos o cálculos internos cuando se accede o actualizan atributos de instancias.
 
@@ -2550,7 +2738,7 @@ Vemos como solo definimos en el constructor `self.age` pero también se iniciali
 
 <br>
 
-#### 7.1.2. Atributos estáticos
+#### 8.1.2. Atributos estáticos
 
 Si definimos variables en el cuerpo de la clase, pero fuera de las funciones (métodos), conseguimos un atributo estático. Hay que entenderlos como atributos de clase y no de objeto (o de instancia). Por ejemplo: el atributo `name` de un objeto `ana` puede ser diferente del atributo `name` de un objeto `juan`. Sin embargo, un atributo estático (atributo de clase) de ambos objetos tendrá el mismo valor porque no depende del objeto, sino de la clase, la cual es la misma.
 
@@ -2641,7 +2829,7 @@ Ana 8888
 
 <br>
 
-### 7.2. Métodos
+### 8.2. Métodos
 
 Llamamos métodos a las funciones que residen dentro de las clases. Como en todas las funciones, vamos a recibir un número variable de argumentos según los definamos en la cabecera, sin embargo, en este caso siempre vamos a recibir un argumento, al cual llamamos `self` por convenio. Este `self` es obligatorio y sirve de referencia al objeto en cuestión que estamos manejando.
 
@@ -2717,7 +2905,7 @@ Ana is walking Impa.
 
 <br>
 
-#### 7.2.1. Métodos especiales
+#### 8.2.1. Métodos especiales
 
 Los métodos especiales son aquellos que empiezan con doble `_` y acaban de la misma manera. En ejemplo sería el famoso constructor `__init__`. También son informalmente llamados "magic methods" o "dunder methods" ("dunder": double underscore) y son métodos que permiten a las instancias de una clase interactuar con los operadores y las [funciones integradas](https://docs.python.org/3/library/functions.html).
 
@@ -2758,13 +2946,13 @@ ana = Person('Ana', 35)
 ana_2 = Person('Ana', 35)
 ```
 
-> En el método `__eq__()` hemos utilizado la [función integrada](https://docs.python.org/3/library/functions.html) `isinstance()`. Esta función se utiliza constantemente y sirve para comprobar los tipos de los objetos, teniendo en cuenta, incluso, la [herencia](#73-herencia):
+> En el método `__eq__()` hemos utilizado la [función integrada](https://docs.python.org/3/library/functions.html) `isinstance()`. Esta función se utiliza constantemente y sirve para comprobar los tipos de los objetos, teniendo en cuenta, incluso, la [herencia](#83-herencia):
 > 
 > ✅ `isinstance(elena, Person)`
 > 
 > ❌ `type(elena) == Person`
 >
-> Ambos casos funcionan como esperamos y resuelven a `True` pero es recomendable usar la primera opción debido a la jerarquía de [herencias](#73-herencia).
+> Ambos casos funcionan como esperamos y resuelven a `True` pero es recomendable usar la primera opción debido a la jerarquía de [herencias](#83-herencia).
 
 <br>
 
@@ -2872,7 +3060,7 @@ Juna (0)
 
 <br>
 
-#### 7.2.2. Métodos estáticos
+#### 8.2.2. Métodos estáticos
 
 Al igual que con los atributos estáticos, podemos definir métodos que puedan ser accedidos sin tener que construir un objeto. Para ello nos servimos del decorador `@staticmethod`.
 
@@ -2922,7 +3110,7 @@ Si quitaramos el `@staticmethod`, `number_1` actuaría como el `self` y se conve
 
 <br>
 
-#### 7.2.3. Métodos de clase
+#### 8.2.3. Métodos de clase
 
 Al igual que con los métodos estáticos, existe otro decorador: `@classmethod`. Es un nombre un poco confuso porque los métodos "normales" son métodos de una clase pero los métodos decorados con `@classmethod` se llaman "métodos de clase". Vamos a ver como funcionan:
 
@@ -2963,7 +3151,7 @@ Al tener referencia a la clase, podemos llamar otros métodos de ésta (`cls.oth
 
 <br>
 
-### 7.3. Herencia
+### 8.3. Herencia
 
 La siguiente clase contiene información sobre una persona y su perro:
 
@@ -3089,7 +3277,7 @@ A las clases que están arriba en la jerarquía de herencias se les llama clases
 
 > En otros lenguajes existía el concepto de "interfaz" como una especie de clase con declaraciones de métodos, pero sin implimentación de estos. En esos lenguajes no estaba permitida la herencia de varias clases al mismo tiempo. Se podía heredar de una sola clase pero de infinitas interfaces.
 > 
-> En Python se puede heredar de infinitas clases ([herencia múltiple](#732-herencia-múltiple)) y no existe el concepto de interfaz.
+> En Python se puede heredar de infinitas clases ([herencia múltiple](#832-herencia-múltiple)) y no existe el concepto de interfaz.
 
 En el código anterior apareció un `super().__init__()` que vamos a ignorar por ahora. Miremos el siguiente:
 
@@ -3141,7 +3329,7 @@ Running at 12 km/h.
 Flying at 117 km/h.
 ```
 
-Dejando a un lado que [importamos](#8-importaciones) `random` arriba para usarlo en la [propiedad](#711-propiedades) en `random.randint(*self.speed_range)` y, que usamos también [desempaquetado](#9-empaquetado-y-desempaquetado) con `*`, nos podemos dar cuenta de tres cosas principalmente:
+Dejando a un lado que [importamos](#9-importaciones) `random` arriba para usarlo en la [propiedad](#811-propiedades) en `random.randint(*self.speed_range)` y, que usamos también [desempaquetado](#2-empaquetado-y-desempaquetado) con `*`, nos podemos dar cuenta de tres cosas principalmente:
 
 1. Estamos construyendo caballos, personas y pájaros pero no tenemos ningún constructor `__init__()` definido en esas clases.
 2. Hemos definido el método `move()` en la clase padre `Animal` pero luego ningún objeto, al llamar a dicho método, imprime por consola `Moving...`, sino `Galloping...`, `Running...` y `Flying...`.
@@ -3223,7 +3411,7 @@ Al fin y al cabo, redefinir un método en la clase hija y usar `super()` es como
 
 <br>
 
-#### 7.3.1. Clases abstractas
+#### 8.3.1. Clases abstractas
 
 Una clase abstracta es una clase que nos es útil para englobar lógica común a varias clases hijas y no repetir código, pero que deja de tener sentido que exista por su propia cuenta (construir una instancia u objeto de ella).
 
@@ -3353,7 +3541,7 @@ Si quisiéramos evitar la creación de instancias de una clase abstracta, pero n
 
 <br>
 
-#### 7.3.2. Herencia múltiple
+#### 8.3.2. Herencia múltiple
 
 Imaginemos que tenemos una clase `D` que hereda de `B` y `C`. Y que, tanto `B` como `C`, heredan de `A`:
 
@@ -3508,7 +3696,7 @@ Ahora imprime "on four legs". Hemos accedido al `sprint()` de `C` desde `D`.
 
 <br>
 
-## 8. Importaciones
+## 9. Importaciones
 
 En Python se llaman módulos a los archivos `.py`, es decir, al código fuente. A los directorios se les llama paquetes. Los proyectos se van a estructurar en una serie de módulos que pueden estar contenidos en paquetes, pudiendo haber paquetes dentro otros de paquetes.
 
@@ -3576,194 +3764,6 @@ from package_1.internal_package.internal_module import a as b, function_a as bet
 print(b)
 print(better_name_for_function(3))
 ```
-
-<br>
-
-## 9. Empaquetado y desempaquetado
-
-Pueden aplicarse a cualquier iterable.
-
-```python
->>> elements = (0, 1, 'hello')
->>> a, b, c = elements
->>> a
-0
->>> b
-1
->>> c
-'hello'
-```
-
-```python
->>> a, b = [(1, 'one'), (2, 'two')]
->>> a
-(1, 'one')
->>> b
-(2, 'two')
-```
-
-```python
->>> (a, b), (c, d) = [(1, 'one'), (2, 'two')]
->>> a
-1
->>> b
-'one'
->>> c
-2
->>> d
-'two'
-```
-
-```python
->>> for key, value in {1: 'one', 2: 'two'}.items():
-...     print(key, value)
-...
-1 one
-2 two
-```
-
-```python
->>> elements = [0, 1, 2, 3, 4, 5, 6]
->>> a, b, *c = elements
->>> a
-0
->>> b
-1
->>> c
-[2, 3, 4, 5, 6]
-```
-
-```python
->>> elements = {0, 1, 2, 3, 4, 5, 6}
->>> a, b, *c, d = elements
->>> a
-0
->>> b
-1
->>> c
-[2, 3, 4, 5]
->>> d
-6
-```
-
-```python
->>> elements_1 = [0, 1, 2]
->>> elements_2 = {3, 4, 5}
->>> [elements_1, elements_2]  # not unpacking
-[[0, 1, 2], {3, 4, 5}]
->>> [*elements_1, *elements_2]  # unpacking
-[0, 1, 2, 3, 4, 5]
-```
-
-```python
->>> elements_1 = [0, 1, 2]
->>> elements_2 = {3, 4, 5}
->>> (*elements_1, *{'hello', 'world'}, *elements_2)
-(0, 1, 2, 'world', 'hello', 3, 4, 5)
->>> [*elements_1, *elements_2, *('yes', 'no')]
-[0, 1, 2, 3, 4, 5, 'yes', 'no']
->>> {*['❤️', '🐕'], *elements_1, *elements_2}
-{0, 1, 2, 3, '🐕', 4, 5, '❤️'}
-```
-
-> Los conjuntos no tienen un orden definido.
-
-Para empaquetar y desempaquetar diccionarios usamos `**`:
-
-```python
->>> dict_1 = {1: 2, 3: 4}
->>> dict_2 = {'a': 'b', 'c': 'd'}
->>> {**dict_1, **dict_2}
-{1: 2, 3: 4, 'a': 'b', 'c': 'd'}
-```
-
-<br>
-
-### 9.1. Empaquetado y desempaquetado en funciones
-
-Podemos empaquetar todos los argumentos recibidos en una tupla `args`:
-
-```python
-def sum_numbers(*args):
-    print(args)
-    print(sum(args))
-
-
-sum_numbers(1, 54, 33, 27, 846, 151, 12, 64, 984)
-```
-Salida:
-```
-(1, 54, 33, 27, 846, 151, 12, 64, 984)
-2172
-```
-
-<br>
-
-Podemos también desempaquetar los argumentos antes de llamar la función:
-
-```python
-def sum_numbers(number_1, number_2):
-    return number_1 + number_2
-
-
-numbers = [8, 2]
-print(sum_numbers(*numbers))
-```
-Salida:
-```
-10
-```
-
-<br>
-
-`print()` puede recibir más de un argumento para imprimir por consola. De hecho puede recibir infinitos y lo que hará será imprimirlos todos separados por un espacio.
-
-```python
-name = 'Mario'
-age = 33
-print('My name is', name, "and I'm", age, 'years old.')
-```
-Salida:
-```
-My name is Mario and I'm 33 years old.
-```
-
-Entonces:
-
-```python
-elements = (0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
-print(elements)  # not unpacking (prints the tuple)
-print(*elements)  # unpacking (prints element by element)
-```
-Salida:
-```
-(0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
-0 1 2 3 4 5 hello world 🍮
-```
-
-<br>
-
-Ahora con [argumentos nombrados](#54-argumentos-posicionales-y-argumentos-nombrados):
-
-```python
-def print_person(name, age, **kwargs):
-    print(name)
-    print(age)
-    print(kwargs)
-
-
-print_person(cat_name='Midna', **{'name': 'Ana', 'age': 25, 'dog_name': 'Tingle'})
-```
-Salida:
-```
-Ana
-25
-{'cat_name': 'Midna', 'dog_name': 'Tingle'}
-```
-
-Hemos desempaquetado el diccionario antes de llamar la función: al hacer esto las claves y los valores de este se comportarán como argumentos nombrados. En el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en los parámetros de la función.
-
-> Más información sobre `*args` y `**kwargs` en el capítulo [5.5. Número indeterminado de argumentos](#55-número-indeterminado-de-argumentos).
 
 <br>
 
@@ -3951,7 +3951,7 @@ Reversed elements: [3, 2, 1, 0]
 
 ## 11. Anotaciones de tipos
 
-En Python las anotaciones de tipo son opcionales y producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno.
+En Python las anotaciones de tipo son opcionales y no producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno. En la [documentación](https://docs.python.org/3/library/typing.html) se especifica como anotar todos los tipos de datos.
 
 ```python
 number: int = 5
@@ -3968,6 +3968,9 @@ elements: dict[float, str] = {1.1: 'a', 2.3: 'b', 3.6: 'c', 4.8: 'd'}  # dict of
 def print_person(name: str, age: str) -> None:
     print(f"My name is {name} and I'm {age} years old.")
 ```
+
+<br>
+
 ```python
 def sum_numbers(number_1: int, number_2: int = 5) -> int:
     return number_1 + number_2
@@ -4000,7 +4003,7 @@ En el siguiente ejemplo, mirando las anotaciones y el código, podemos entender 
 from collections.abc import Callable
 
 
-def find(people_: list[dict], condition: Callable) -> dict | None:
+def find(people_: list[dict], condition: Callable[[dict], bool]) -> dict | None:
     for person in people_:
         if condition(person):
             return person
@@ -4038,13 +4041,13 @@ def first_element(elements: Iterable) -> Any:
 
 print(first_element(['hello', 5, (1, 2, 3), {'a', 'b', 'c'}]))
 print(first_element([[1, 2], 'Ana', 5.2485]))
-print(first_element(i for i in range(9) if i % 2 == 0))
+print(first_element(i for i in range(9) if i > 5))
 ```
 Salida:
 ```
 hello
 [1, 2]
-0
+6
 ```
 
 > En el ejemplo anterior hemos usado las [funciones integradas](https://docs.python.org/3/library/functions.html) `next()`, `iter()`, `range()`y `print()`.

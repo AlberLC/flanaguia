@@ -44,13 +44,13 @@
       1. [Clases abstractas](#731-clases-abstractas)
       2. [Herencia múltiple](#732-herencia-múltiple)
 8. [Importaciones](#8-importaciones)
-9. [Anotaciones de tipos](#9-anotaciones-de-tipos)
-10. [Empaquetado y desempaquetado](#10-empaquetado-y-desempaquetado)
-    1. [Empaquetado y desempaquetado en funciones](#101-empaquetado-y-desempaquetado-en-funciones)
-11. [Convenciones de estilo](#11-convenciones-de-estilo)
-    1. [PascalCase y snake_case](#111-pascalcase-y-snake_case)
-    2. [Nombres privados](#112-nombres-privados)
-    3. [Nombres ya existentes](#113-nombres-ya-existentes)
+9. [Empaquetado y desempaquetado](#9-empaquetado-y-desempaquetado)
+    1. [Empaquetado y desempaquetado en funciones](#91-empaquetado-y-desempaquetado-en-funciones)
+10. [Convenciones de estilo](#10-convenciones-de-estilo)
+    1. [PascalCase y snake_case](#101-pascalcase-y-snake_case)
+    2. [Nombres privados](#102-nombres-privados)
+    3. [Nombres ya existentes](#103-nombres-ya-existentes)
+11. [Anotaciones de tipos](#11-anotaciones-de-tipos)
 
 <br>
 
@@ -1928,7 +1928,7 @@ Salida:
 (1, 54, 33, 27, 846, 151, 12, 64, 984)
 ```
 
-`args` es una tupla que contiene todos los argumentos [empaquetados](#10-empaquetado-y-desempaquetado).
+`args` es una tupla que contiene todos los argumentos [empaquetados](#9-empaquetado-y-desempaquetado).
 
 En vez de `args` podemos poner el nombre que queramos pero se usa siempre ese por convenio.
 
@@ -2462,7 +2462,7 @@ Salida:
 
 Las propiedades son comparables a los "getters" y "setters" de otros lenguajes. Sirven para encapsular un acceso "prohibido" o para realizar una serie de pasos o cálculos internos cuando se accede o actualizan atributos de instancias.
 
-Python es muy flexible, y en cuanto a la publicidad o privacidad de los atributos de objetos, todo es público. Existen [convenciones de estilo](#112-nombres-privados) que permiten indicar si un atributo no es recomendable usarse fuera del ámbito interno de la clase ( prefijar con `_` los nombres).
+Python es muy flexible, y en cuanto a la publicidad o privacidad de los atributos de objetos, todo es público. Existen [convenciones de estilo](#102-nombres-privados) que permiten indicar si un atributo no es recomendable usarse fuera del ámbito interno de la clase ( prefijar con `_` los nombres).
 
 Ejemplo sencillo para ver la sintaxis:
 
@@ -3141,7 +3141,7 @@ Running at 12 km/h.
 Flying at 117 km/h.
 ```
 
-Dejando a un lado que [importamos](#8-importaciones) `random` arriba para usarlo en la [propiedad](#711-propiedades) en `random.randint(*self.speed_range)` y, que usamos también [desempaquetado](#10-empaquetado-y-desempaquetado) con `*`, nos podemos dar cuenta de tres cosas principalmente:
+Dejando a un lado que [importamos](#8-importaciones) `random` arriba para usarlo en la [propiedad](#711-propiedades) en `random.randint(*self.speed_range)` y, que usamos también [desempaquetado](#9-empaquetado-y-desempaquetado) con `*`, nos podemos dar cuenta de tres cosas principalmente:
 
 1. Estamos construyendo caballos, personas y pájaros pero no tenemos ningún constructor `__init__()` definido en esas clases.
 2. Hemos definido el método `move()` en la clase padre `Animal` pero luego ningún objeto, al llamar a dicho método, imprime por consola `Moving...`, sino `Galloping...`, `Running...` y `Flying...`.
@@ -3579,109 +3579,7 @@ print(better_name_for_function(3))
 
 <br>
 
-## 9. Anotaciones de tipos
-
-En Python las anotaciones de tipo son opcionales y producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno.
-
-```python
-number: int = 5
-number: float = 5.1
-condition: bool = True
-name: str = 'Juan'
-elements: tuple[int, int, int] = (1, 2, 3)  # tuple of 3 ints (only in the tuples it is necessary to specify the exact size)
-elements: tuple[int, ...] = (1, 2, 3)  # if you don't want to specify the size
-elements: list[str] = ['hello', 'world', 'bye']  # list of strings
-elements: set = {1, 2, 'bye'}  # set of different types
-elements: dict[float, str] = {1.1: 'a', 2.3: 'b', 3.6: 'c', 4.8: 'd'}  # dict of float keys and string values
-
-
-def print_person(name: str, age: str):
-    print(f"My name is {name} and I'm {age} years old.")
-```
-```python
-def sum_numbers(number_1: int, number_2: int = 5) -> int:
-    return number_1 + number_2
-
-
-result = sum_numbers(1.5)
-print(result)
-print(type(result))
-```
-Salida:
-```
-6.5
-<class 'float'>
-```
-
-Según las anotaciones de tipos en `sum_numbers`, está esperando dos números enteros `int` pero podemos introducir también números de punto flotante `float` y funcionaría bien pero devolvería un resultado en punto flotante `float`, mientras que en la anotación está indicado que devolvería `int`. 
-
-Como se dijo anteriormente, esto no produciría ningún error en el programa. Aun así si queremos especificar bien los tipos podríamos hacer esto:
-
-```python
-def sum_numbers(number_1: int | float, number_2: int | float = 5) -> int | float:
-    return number_1 + number_2
-```
-
-<br>
-
-En el siguiente ejemplo, mirando las anotaciones y el código, podemos entender que se va a iterar una lista de diccionarios `people` hasta encontrar (o no) una persona con el nombre `name`.
-
-```python
-from collections.abc import Callable
-
-
-def find(people_: list[dict], condition: Callable) -> dict | None:
-    for person in people_:
-        if condition(person):
-            return person
-
-
-people = [
-    {'id': 1, 'name': 'Juan', 'age': 25},
-    {'id': 21, 'name': 'Elena', 'age': 400},
-    {'id': 452, 'name': 'Ana', 'age': 4},
-    {'id': 75, 'name': 'Alberto', 'age': 72},
-    {'id': 68, 'name': 'Mario', 'age': 30}
-]
-
-print(find(people, lambda person: person['name'] == 'Ana'))
-```
-Salida:
-```
-{'id': 452, 'name': 'Ana', 'age': 4}
-```
-
-Como es posible que no encuentre ninguna persona, lo indicamos con `| None`.
-
-<br>
-
-Otro ejemplo: una función que devuelva el primer elemento (de cualquier tipo) de un iterable.
-
-```python
-from collections.abc import Iterable
-from typing import Any
-
-
-def first_element(elements: Iterable) -> Any:
-    return next(iter(elements))
-
-
-print(first_element(['hello', 5, (1, 2, 3), {'a', 'b', 'c'}]))
-print(first_element([[1, 2], 'Ana', 5.2485]))
-print(first_element(i for i in range(9) if i % 2 == 0))
-```
-Salida:
-```
-hello
-[1, 2]
-0
-```
-
-> En el ejemplo anterior hemos usado las [funciones integradas](https://docs.python.org/3/library/functions.html) `next()`, `iter()`, `range()`y `print()`.
-
-<br>
-
-## 10. Empaquetado y desempaquetado
+## 9. Empaquetado y desempaquetado
 
 Pueden aplicarse a cualquier iterable.
 
@@ -3753,7 +3651,7 @@ Para empaquetar y desempaquetar diccionarios usamos `**`:
 
 <br>
 
-### 10.1. Empaquetado y desempaquetado en funciones
+### 9.1. Empaquetado y desempaquetado en funciones
 
 Podemos empaquetar todos los argumentos recibidos en una tupla `args`:
 
@@ -3841,13 +3739,13 @@ Hemos desempaquetado el diccionario antes de llamar la función: al hacer esto l
 
 <br>
 
-## 11. Convenciones de estilo
+## 10. Convenciones de estilo
 
 Las normas de estilo se rigen por https://peps.python.org/pep-0008/.
 
 <br>
 
-### 11.1. PascalCase y snake_case
+### 10.1. PascalCase y snake_case
 
 - Clases: PascalCase.
 ```python
@@ -3880,7 +3778,7 @@ def do_something():
 
 <br>
 
-### 11.2. Nombres privados
+### 10.2. Nombres privados
 
 Cuando nombramos algo con `_` como prefijo estamos indicando que es un elemento que no se debería tocar fuera de su contexto. Por ejemplo, en un módulo:
 
@@ -3960,7 +3858,7 @@ Esta mecánica no se usa, no es recomendable y no consigue nada especial más al
 
 <br>
 
-### 11.3. Nombres ya existentes
+### 10.3. Nombres ya existentes
 
 Cuando tengamos que dar nombre a algun elemento cuyo nombre ya exista, por ejemplo `id` es una [función integrada](https://docs.python.org/3/library/functions.html), deberíamos poner `_` como sufijo como dice la convención de estilos:
 
@@ -4020,4 +3918,105 @@ Salida:
 Original elements: [0, 1, 2, 3]
 Reversed elements: [3, 2, 1, 0]
 ```
+
+<br>
+
+## 11. Anotaciones de tipos
+
+En Python las anotaciones de tipo son opcionales y producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno.
+
+```python
+number: int = 5
+number: float = 5.1
+condition: bool = True
+name: str = 'Juan'
+elements: tuple[int, int, int] = (1, 2, 3)  # tuple of 3 ints (only in the tuples it is necessary to specify the exact size)
+elements: tuple[int, ...] = (1, 2, 3)  # if you don't want to specify the size
+elements: list[str] = ['hello', 'world', 'bye']  # list of strings
+elements: set = {1, 2, 'bye'}  # set of different types
+elements: dict[float, str] = {1.1: 'a', 2.3: 'b', 3.6: 'c', 4.8: 'd'}  # dict of float keys and string values
+
+
 def print_person(name: str, age: str) -> None:
+    print(f"My name is {name} and I'm {age} years old.")
+```
+```python
+def sum_numbers(number_1: int, number_2: int = 5) -> int:
+    return number_1 + number_2
+
+
+result = sum_numbers(1.5)
+print(result)
+print(type(result))
+```
+Salida:
+```
+6.5
+<class 'float'>
+```
+
+Según las anotaciones de tipos en `sum_numbers`, está esperando dos números enteros `int` pero podemos introducir también números de punto flotante `float` y funcionaría bien pero devolvería un resultado en punto flotante `float`, mientras que en la anotación está indicado que devolvería `int`. 
+
+Como se dijo anteriormente, esto no produciría ningún error en el programa. Aun así si queremos especificar bien los tipos podríamos hacer esto:
+
+```python
+def sum_numbers(number_1: int | float, number_2: int | float = 5) -> int | float:
+    return number_1 + number_2
+```
+
+<br>
+
+En el siguiente ejemplo, mirando las anotaciones y el código, podemos entender que se va a iterar una lista de diccionarios `people` hasta encontrar (o no) una persona con el nombre `name`.
+
+```python
+from collections.abc import Callable
+
+
+def find(people_: list[dict], condition: Callable) -> dict | None:
+    for person in people_:
+        if condition(person):
+            return person
+
+
+people = [
+    {'id': 1, 'name': 'Juan', 'age': 25},
+    {'id': 21, 'name': 'Elena', 'age': 400},
+    {'id': 452, 'name': 'Ana', 'age': 4},
+    {'id': 75, 'name': 'Alberto', 'age': 72},
+    {'id': 68, 'name': 'Mario', 'age': 30}
+]
+
+print(find(people, lambda person: person['name'] == 'Ana'))
+```
+Salida:
+```
+{'id': 452, 'name': 'Ana', 'age': 4}
+```
+
+Como es posible que no encuentre ninguna persona, lo indicamos con `| None`.
+
+<br>
+
+Otro ejemplo: una función que devuelva el primer elemento (de cualquier tipo) de un iterable.
+
+```python
+from collections.abc import Iterable
+from typing import Any
+
+
+def first_element(elements: Iterable) -> Any:
+    return next(iter(elements))
+
+
+print(first_element(['hello', 5, (1, 2, 3), {'a', 'b', 'c'}]))
+print(first_element([[1, 2], 'Ana', 5.2485]))
+print(first_element(i for i in range(9) if i % 2 == 0))
+```
+Salida:
+```
+hello
+[1, 2]
+0
+```
+
+> En el ejemplo anterior hemos usado las [funciones integradas](https://docs.python.org/3/library/functions.html) `next()`, `iter()`, `range()`y `print()`.

@@ -928,6 +928,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         - Archivos sin extensión (no directorios).
         - Archivos que se modificaron hace menos de un año.
 
+        <br>
+
         <details>
         <summary>Solución</summary>
 

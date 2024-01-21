@@ -126,7 +126,7 @@ name = {1: 2, 'hello': 'world', 'a': 48.34, 48.34: 'a'}  # dictionary
 
 ### 1.2. Conversión de tipos
 
-Podemos servirnos de las [funciones integradas](https://docs.python.org/3/library/functions.html) en el lenguaje para construir unos tipos de datos a partir de otros.
+Podemos servirnos de las [funciones integradas](https://docs.python.org/3/library/functions.html) en el lenguaje para construir unos tipos de datos a partir de otros:
 
 ```python
 >>> text = '45'

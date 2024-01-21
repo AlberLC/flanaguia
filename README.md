@@ -3595,6 +3595,14 @@ Pueden aplicarse a cualquier iterable.
 ```
 
 ```python
+>>> a, b = [(1, 'one'), (2, 'two')]
+>>> a
+(1, 'one')
+>>> b
+(2, 'two')
+```
+
+```python
 >>> (a, b), (c, d) = [(1, 'one'), (2, 'two')]
 >>> a
 1

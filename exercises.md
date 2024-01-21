@@ -161,7 +161,7 @@
     <details>
     <summary>Solución</summary>
 
-    a)
+   a)
     ```python
     date = input('Fecha de nacimiento: ')
     year = int(date.split('/')[-1])
@@ -174,7 +174,7 @@
 
     print(f'Este año cumples {2023 - year} años.')
     ```
-    b)
+   b)
     ```python
     import datetime
 
@@ -205,9 +205,11 @@
 - Números impares hasta x.
 - Número es primo/números primos hasta x.
 - Programa que traduzca palabras del siguiente texto. Se introduce por teclado `<palabra>,<traducción>` hasta "fin". Texto:
+
 ```
 Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.
 ```
+
 - Iterar diccionario de datos de alumnos y actualizar estado según nota.
 - Matrices. Imprimir la diagonal. Hacer producto vectorial, etc.
 
@@ -405,12 +407,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ...
     ```
 
-    Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
+   Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
 
     <details>
     <summary>Solución</summary>
 
-    a)
+   a)
     ```python
     date = input('Fecha de nacimiento: ')
     day, month, first_year = (int(number) for number in date.split('/'))
@@ -439,7 +441,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     for i, year in enumerate(range(first_year + 1, 2024), start=1):
         print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
     ```
-    b)
+   b)
     ```python
     import datetime
     
@@ -608,7 +610,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <details>
     <summary>Solución</summary>
 
-    a)
+   a)
     ```python
     def factorial(number: int) -> int:
         if number < 0:
@@ -625,7 +627,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     print(factorial(4))
     print(factorial(-1))
     ```
-    b)
+   b)
     ```python
     def factorial(number: int) -> int:
         if number < 0:
@@ -677,7 +679,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - `(0, [1], (2, ('three', [4.0, {'five'}])))` ➡️ `[0, 1, 2, 'three', 4.0, 'five']`
     - `range(6)` ➡️ `[0, 1, 2, 3, 4, 5]`
 
-    La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
+   La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
 
     <details>
     <summary>Solución</summary>
@@ -711,16 +713,16 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 4. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
-    - `fibonacci_sequence(0, ', ')` ➡️ 
+    - `fibonacci_sequence(0, ', ')` ➡️
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
     - `fibonacci_sequence(3, ', ')` ➡️ `0, 1, 1`
     - `fibonacci_sequence(5, ' - ')` ➡️ `0 - 1 - 1 - 2 - 3`
     - `fibonacci_sequence(11, ' | ')` ➡️ `0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55`
 
-    La sucesión de Fibonacci para `n` negativo debe lanzar un `ValueError`.
+   La sucesión de Fibonacci para `n` negativo debe lanzar un `ValueError`.
 
-    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
-    > ```python
+   > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
+   > ```python
     > >>> ', '.join(['one', 'two', 'three', 'four'])
     > 'one, two, three, four'
     > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
@@ -759,19 +761,219 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+5. Archivos.
 
-    `encode('abc', 1)` ➡️ `'bcd'`
+   En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 
-    Si lo ciframos con desplazamiento `2`:
+    1. Crear una función:
+        - Que tenga dos parámetros: la ruta (`str`) donde se encuentran los archivos y una extensión (`str`) para filtrar aquellos que la tengan (por ejemplo: `.jpg`)
+        - Que devuelva la lista de archivos (`list[Path]`) en ese directorio que tengan dicha extensión.
+        - Sin buscar recursivamente en subdirectorios.
+        - Sin usar listas por comprensión.
 
-    `encode('abc', 2)` ➡️ `'cde'`
+       Probar la función pidiendo por consola la ruta y la extensión e imprimir cada ruta con el número correspondiente tal que:
+        ```
+        1. <ruta>
+        2. <ruta>
+        3. <ruta>
+        ...
+        ```
 
-    En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+        <details>
+        <summary>Solución</summary>
 
-    Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
+        ```python
+        import pathlib
+        
+        
+        def filter_files(path: str, extension: str) -> list[pathlib.Path]:
+            files = []
+            for path in pathlib.Path(path).iterdir():
+                if path.suffix == extension:
+                    files.append(path)
+        
+            return files
+        
+        
+        path_ = input('Ruta: ')
+        extension_ = input('Extensión: ')
+        
+        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+            print(f'{i}. {path_}')
+        ```
 
-    `decode(encode(text, offset), offset) == text` ➡️ `True`
+       > Alternativamente se podrían importar los recursos así: `from pathlib import Path`. De esta manera usaríamos `Path` directamente en vez de `pathlib.Path`. Es preferencia personal elegir que método resulta más descriptivo y cómodo pero ten en cuenta que, cuando se usan muchas bibliotecas, ayuda mucho importar sólo el módulo y luego acceder al recurso excplícitamente como se hace en la solución para saber de donde vienen las cosas.
+
+        </details>
+
+    2. En el ejercicio anterior creamos una lista con todas las rutas `Path` de los archivos que cumplen nuestro filtro. Imaginemos que nuestro directorio contiene millones de archivos: estamos guardando en memoria un objeto `Path` por cada uno de ellos y, como es lógico, eso es bastante problemático. En los casos donde tengamos que procesar muchos elementos y no necesitemos que persistan en el tiempo o no sea posible por las limitaciones de memoria del ordenador tendremos que usar [iteradores](README.md#42-iteradores).
+
+       Con eso en mente: arreglar la función del ejercicio anterior manteniendo los requisitos (menos el valor de retorno `list[Path]`).
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import pathlib
+        from collections.abc import Iterator
+        
+        
+        def filter_files(path: str, extension: str) -> Iterator[pathlib.Path]:
+            for path in pathlib.Path(path).iterdir():
+                if path.suffix == extension:
+                    yield path
+        
+        
+        path_ = input('Ruta: ')
+        extension_ = input('Extensión: ')
+        
+        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+            print(f'{i}. {path_}')
+        ```
+
+       > Alternativamente, en la función generadora se podria declarar este tipo de retorno: ` -> Generator[Path, None, None]:`. Más información en la [documentación](https://docs.python.org/3/library/typing.html#typing.Generator).
+
+        </details>
+
+    3. Olvidemos los iteradores. Volvamos a hacer el ejercicio inicial, pero con listas por comprensión (prohibido usar `append()`).
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import pathlib
+        
+        
+        def filter_files(path: str, extension: str) -> list[pathlib.Path]:
+            return [path for path in pathlib.Path(path).iterdir() if path.suffix == extension]
+        
+        
+        path_ = input('Ruta: ')
+        extension_ = input('Extensión: ')
+        
+        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+            print(f'{i}. {path_}')
+        ```
+
+        </details>
+
+    4. Ahora, en vez de una lista por comprensión, usar un [generador con paréntesis](README.md#421-generadores) (no debería ocupar ni una línea más, ni menos, que el ejercicio anterior).
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import pathlib
+        from collections.abc import Iterator
+        
+        
+        def filter_files(path: str, extension: str) -> Iterator[pathlib.Path]:
+            return (path for path in pathlib.Path(path).iterdir() if path.suffix == extension)
+        
+        
+        path_ = input('Ruta: ')
+        extension_ = input('Extensión: ')
+        
+        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+            print(f'{i}. {path_}')
+        ```
+
+        </details>
+
+    5. Envolver el `for` con el `print(...)` que ponemos al final para probar nuestra función en otra de forma que reciba los `Path` por parámetro.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import pathlib
+        from collections.abc import Iterable, Iterator
+        
+        
+        def filter_files(path: str, extension: str) -> Iterator[pathlib.Path]:
+            return (path for path in pathlib.Path(path).iterdir() if path.suffix == extension)
+        
+        
+        def print_files(paths: Iterable[pathlib]) -> None:
+            for i, path in enumerate(paths, start=1):
+                print(f'{i}. {path}')
+        
+        
+        path_ = input('Ruta: ')
+        extension_ = input('Extensión: ')
+        print_files(filter_files(path_, extension_))
+        ```
+
+       > Es recomdable declarar los tipos de los parámetros lo más ampliamente posible. En nuestro caso vamos a iterar los `Path`, no necesitamos que sea específicamente una lista, un conjunto, un generador, etc., con que sea iterable nos vale. Así hacemos nuestra función más flexible.
+
+        </details>
+
+    6. Por último: queremos poder filtrar los archivos siguiendo otros criterios, añadir flexibilidad al filtro de forma que, desde fuera, se pueda definir que archivos queremos, es decir, el usuario final de la función deberá poder trabajar directamente con los `Path` para poder definir filtros como:
+
+        - Archivos que comiencen por mayúsculas.
+        - Archivos cuya primera letra esté entra la `a` y la `g`.
+        - Archivos que pesen más de 1 MB.
+        - Archivos cuya extensión esté en `{'.png', .flv' .mp4'}`
+        - Cualquier combinación de todas las reglas anteriores.
+        - Cualquier cosa que se le ocurra a quien quiera usar la función y que pueda hacer con los objetos `Path`.
+
+       Por lo tanto el filtro debe ser recibido por parámetro.
+
+       Objetivo: alterar el programa anterior de forma que la función no reciba una extensión por parámetro, sino que reciba "algo" que se pueda aplicar dentro del generador para filtrar los `Path` que nos interesan.
+
+       Probar los siguientes filtros:
+
+        - Archivos que contienen la letra `e` en su nombre y tienen un número impar de letras.
+        - Archivos `.jpg` o `.png` que pesan menos de 1 MB.
+        - Archivos sin extensión (no directorios).
+        - Archivos que se modificaron hace menos de un año.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import datetime
+        import pathlib
+        from collections.abc import Callable, Iterable, Iterator
+        
+        
+        def filter_files(path: str, filter_: Callable[[pathlib.Path], bool]) -> Iterator[pathlib.Path]:
+            return (path for path in pathlib.Path(path).iterdir() if filter_(path))
+        
+        
+        def print_files(paths: Iterable[pathlib]) -> None:
+            for i, path in enumerate(paths, start=1):
+                print(f'{i}. {path}')
+        
+        
+        path_ = input('Ruta: ')
+        print_files(filter_files(path_, lambda path: 'e' in path.name and len(path.name) % 2 != 0))
+        print()
+        print_files(filter_files(path_, lambda path: path.suffix in {'.jpg', '.png'} and path.stat().st_size < 1_000_000))
+        print()
+        print_files(filter_files(path_, lambda path: not path.suffix and path.is_file()))
+        print()
+        minimum_date = datetime.datetime.now() - datetime.timedelta(days=365)
+        print_files(filter_files(path_, lambda path: minimum_date < datetime.datetime.fromtimestamp(path.stat().st_mtime)))
+        ```
+
+        </details>
+
+<br>
+
+6. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+
+   `encode('abc', 1)` ➡️ `'bcd'`
+
+   Si lo ciframos con desplazamiento `2`:
+
+   `encode('abc', 2)` ➡️ `'cde'`
+
+   En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+
+   Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
+
+   `decode(encode(text, offset), offset) == text` ➡️ `True`
 
     <details>
     <summary>Solución</summary>
@@ -812,9 +1014,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
     ```
 
-     Ordenar `elements` por el segundo elemento de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
+   Ordenar `elements` por el segundo elemento de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
 
-    > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#56-funciones-anónimas).
+   > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#56-funciones-anónimas).
 
     <details>
     <summary>Solución</summary>
@@ -837,30 +1039,30 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
    Construir con clases el siguiente escenario:
 
-   1. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
-   2. Una clase `Person`:
-      1. Atributo `name` que siempre tiene que tener la primera en mayúscula y el resto en minúscula aunque el usuario introduzca el nombre mal.
-      2. Atributo `age`.
-      3. Sobrecargar los métodos necesarios para imprimir bonitos los objetos de la clase por consola en todo momento.
-   3. Clases `Vehicle`, `Car` y `Train`:
-      1. Usar clases abstractas si es necesario.
-      2. Las 3 clases tienen que tener estos atributos:
-         1. `max_passenger`: número máximo de pasajeros. 
-         2. `plate`: matrícula de tipo **cadena (`str`)** que, por defecto, si no se introduce nada va a ser un número entre 1111 y 9999 almacenado como texto (es el único parámetro con valor por defecto del ejercicio).
-         3. `_passengers`: un **conjunto** de pasajeros que inicialmente está vacío y no debe nunca sobrepasar el límite. No se puede acceder a este atributo desde fuera de la clase.
-      3. La clase `Car` tiene, además, los atributos `doors`, `airbags` y `wheel_drive`. Este último es el tipo de tracción y solo tiene dos opciones: front y rear (delantera y trasera).
-      4. La clase `Train` tiene, además, un atributo `wagons`.
-      5. Un propiedad `passengers` para acceder a `_passengers`.
-      6. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con los **atributos del primero** y **los pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros.
-      7. `len()` devolverá el número de pasajeros.
-      8. Sobrecargar `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
-      9. Sobrecargar los métodos necesarios para imprimir bonitos los objetos de la clase por consola en todo momento.
-      10. Un método `add_passenger()` que reciba un pasajero por parámetro y lo añada, si puede. Si no, tiene que lanzar un `ValueError`.
-      11. Un método `first_passenger()` que reciba una función de un parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida.
-      12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
-      13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
-      14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
-   4. Crear un vehículo cualquiera, intentar añadirle más personas del máximo, controlar el error e imprimir algo por consola indicando que se ha controlado con éxito.
+    1. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
+    2. Una clase `Person`:
+        1. Atributo `name` que siempre tiene que tener la primera en mayúscula y el resto en minúscula aunque el usuario introduzca el nombre mal.
+        2. Atributo `age`.
+        3. Sobrecargar los métodos necesarios para imprimir bonitos los objetos de la clase por consola en todo momento.
+    3. Clases `Vehicle`, `Car` y `Train`:
+        1. Usar clases abstractas si es necesario.
+        2. Las 3 clases tienen que tener estos atributos:
+            1. `max_passenger`: número máximo de pasajeros.
+            2. `plate`: matrícula de tipo **cadena (`str`)** que, por defecto, si no se introduce nada va a ser un número entre 1111 y 9999 almacenado como texto (es el único parámetro con valor por defecto del ejercicio).
+            3. `_passengers`: un **conjunto** de pasajeros que inicialmente está vacío y no debe nunca sobrepasar el límite. No se puede acceder a este atributo desde fuera de la clase.
+        3. La clase `Car` tiene, además, los atributos `doors`, `airbags` y `wheel_drive`. Este último es el tipo de tracción y solo tiene dos opciones: front y rear (delantera y trasera).
+        4. La clase `Train` tiene, además, un atributo `wagons`.
+        5. Un propiedad `passengers` para acceder a `_passengers`.
+        6. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con los **atributos del primero** y **los pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros.
+        7. `len()` devolverá el número de pasajeros.
+        8. Sobrecargar `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
+        9. Sobrecargar los métodos necesarios para imprimir bonitos los objetos de la clase por consola en todo momento.
+        10. Un método `add_passenger()` que reciba un pasajero por parámetro y lo añada, si puede. Si no, tiene que lanzar un `ValueError`.
+        11. Un método `first_passenger()` que reciba una función de un parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida.
+        12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
+        13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
+        14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
+    4. Crear un vehículo cualquiera, intentar añadirle más personas del máximo, controlar el error e imprimir algo por consola indicando que se ha controlado con éxito.
 
     <br>
 
@@ -1006,23 +1208,23 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
    Crear una lista enlazada con clases:
 
-   1. Llamar a la clase `LinkedList`.
-   2. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
-   3. Sobrecargar los métodos necesarios para imprimir bonitas las listas listas enlazadas según el siguiente formato:
-      1. Lista vacía: `<>`
-      2. Lista con un elemento `'a'`: `<'a'>`
-      3. Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`. 
-   4. Sobrecargar el método necesario para hacer la clase iterable.
-   5. Sobrecargar el método necesario para que la [función integrada](https://docs.python.org/3/library/functions.html) `len()` devuelva el número de elementos que contiene la lista enlazada.
-   6. Método `add(...)` para añadir elementos a la lista.
-   7. Método `get(...)` para obtener el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
-   8. Método `delete(...)` para eliminar el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
-   9. Método `insert(...)` para insertar un elemento en una posición concreta. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
-   10. Método `clear(...)` para vaciar la lista enlazada.
+    1. Llamar a la clase `LinkedList`.
+    2. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
+    3. Sobrecargar los métodos necesarios para imprimir bonitas las listas listas enlazadas según el siguiente formato:
+        1. Lista vacía: `<>`
+        2. Lista con un elemento `'a'`: `<'a'>`
+        3. Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
+    4. Sobrecargar el método necesario para hacer la clase iterable.
+    5. Sobrecargar el método necesario para que la [función integrada](https://docs.python.org/3/library/functions.html) `len()` devuelva el número de elementos que contiene la lista enlazada.
+    6. Método `add(...)` para añadir elementos a la lista.
+    7. Método `get(...)` para obtener el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
+    8. Método `delete(...)` para eliminar el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
+    9. Método `insert(...)` para insertar un elemento en una posición concreta. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
+    10. Método `clear(...)` para vaciar la lista enlazada.
 
     <br>
 
-    Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+   Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
     def run_tests():
@@ -1434,7 +1636,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
    <br>
 
-    A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+   A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
     def run_tests():

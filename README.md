@@ -1136,7 +1136,7 @@ while i < 10:
     i += 1
 ```
 
-La forma más utilizada, legible y ajustada a las técnicas de programación modernas para recorrer colecciones o repetir codigo viene dada por los bucles `for`. Con `for` se van a poder resolver el 99% de los casos. Es bueno intentar ir siempre con la mentalidad de hacer cualquier iteración o repetición con `for` por las ventajas que ofrece la potente y flexible sintaxis de Python.
+La forma más utilizada, legible y ajustada a las técnicas de programación modernas para recorrer colecciones o repetir código viene dada por los bucles `for`. Con `for` se van a poder resolver el 99% de los casos. Es bueno intentar ir siempre con la mentalidad de hacer cualquier iteración o repetición con `for` por las ventajas que ofrece la potente y flexible sintaxis de Python.
 
 Hay que tener en cuenta que los `for` en Python se podrían comparar con los `foreach` que existen en otros lenguajes donde se tienen un `for` y un `foreach`. Por ejemplo:
 
@@ -1500,7 +1500,7 @@ Los iteradores son de un solo uso, se consumen:
 
 <br>
 
-Una vez entendido lo que son los iteradores, volvamos a nuestro problema del inicio: ¿cómo podemos iterar millones de elementos sin llenar la memoria creando una lista con ellos? Pues con un iterador. Un iterador de pocos elementos va a ocupar en memoria lo mismo que un iterador de muchos elementos, ya que solo son líneas de codigo o lógica que especifican una sucesión, no los elementos en sí:
+Una vez entendido lo que son los iteradores, volvamos a nuestro problema del inicio: ¿cómo podemos iterar millones de elementos sin llenar la memoria creando una lista con ellos? Pues con un iterador. Un iterador de pocos elementos va a ocupar en memoria lo mismo que un iterador de muchos elementos, ya que solo son líneas de código o lógica que especifican una sucesión, no los elementos en sí:
 
 ```python
 >>> import sys

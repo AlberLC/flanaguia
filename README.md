@@ -951,7 +951,7 @@ Color.RED
 
 ## 2. Empaquetado y desempaquetado
 
-Pueden aplicarse a cualquier iterable.
+Se aplican a iterables:
 
 ```python
 >>> elements = (0, 1, 'hello')
@@ -1047,93 +1047,7 @@ Para empaquetar y desempaquetar diccionarios usamos `**`:
 {1: 2, 3: 4, 'a': 'b', 'c': 'd'}
 ```
 
-<br>
-
-### 2.1. Empaquetado y desempaquetado en funciones
-
-Podemos empaquetar todos los argumentos recibidos en una tupla `args`:
-
-```python
-def sum_numbers(*args):
-    print(args)
-    print(sum(args))
-
-
-sum_numbers(1, 54, 33, 27, 846, 151, 12, 64, 984)
-```
-Salida:
-```
-(1, 54, 33, 27, 846, 151, 12, 64, 984)
-2172
-```
-
-<br>
-
-Podemos también desempaquetar los argumentos antes de llamar la función:
-
-```python
-def sum_numbers(number_1, number_2):
-    return number_1 + number_2
-
-
-numbers = [8, 2]
-print(sum_numbers(*numbers))
-```
-Salida:
-```
-10
-```
-
-<br>
-
-`print()` puede recibir más de un argumento para imprimir por consola. De hecho puede recibir infinitos y lo que hará será imprimirlos todos separados por un espacio.
-
-```python
-name = 'Mario'
-age = 33
-print('My name is', name, "and I'm", age, 'years old.')
-```
-Salida:
-```
-My name is Mario and I'm 33 years old.
-```
-
-Entonces:
-
-```python
-elements = (0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
-print(elements)  # not unpacking (prints the tuple)
-print(*elements)  # unpacking (prints element by element)
-```
-Salida:
-```
-(0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
-0 1 2 3 4 5 hello world 🍮
-```
-
-<br>
-
-Ahora con [argumentos nombrados](#64-argumentos-posicionales-y-argumentos-nombrados):
-
-```python
-def print_person(name, age, **kwargs):
-    print(name)
-    print(age)
-    print(kwargs)
-
-
-print_person(cat_name='Midna', **{'name': 'Ana', 'age': 25, 'dog_name': 'Tingle'})
-```
-Salida:
-```
-Ana
-25
-{'cat_name': 'Midna', 'dog_name': 'Tingle'}
-```
-
-Hemos desempaquetado el diccionario antes de llamar la función: al hacer esto las claves y los valores de este se comportarán como argumentos nombrados. En el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en los parámetros de la función.
-
-> Más información sobre `*args` y `**kwargs` en el capítulo [6.5. Número indeterminado de argumentos](#65-número-indeterminado-de-argumentos).
+> Estas mecánicas se usan mucho en los parámetros y argumentos de las funciones. Más información en el capítulo [6.5. Número indeterminado de argumentos](#65-número-indeterminado-de-argumentos).
 
 <br>
 
@@ -2118,7 +2032,7 @@ Salida:
 
 `args` es una tupla que contiene todos los argumentos [empaquetados](#2-empaquetado-y-desempaquetado).
 
-En vez de `args` podemos poner el nombre que queramos pero se usa siempre ese por convenio.
+> En vez de `args` podemos poner el nombre que queramos pero se usa siempre ese por convenio.
 
 Vamos a hacer otro ejemplo usando la [función integrada](https://docs.python.org/3/library/functions.html) `sum()`, que suma todos los elementos de un iterable.
 
@@ -2134,6 +2048,46 @@ Salida:
 ```
 2172
 ```
+
+Podemos también desempaquetar los argumentos antes de llamar la función, pero para que tenga sentido nuestra función ya no tendría que tener un número indeterminado de argumentos, sino dos:
+
+```python
+def sum_numbers(number_1, number_2):
+    return number_1 + number_2
+
+
+numbers = [8, 2]
+print(sum_numbers(*numbers))
+```
+Salida:
+```
+10
+```
+
+> `print()` también puede recibir infinitos argumentos y lo que hará será imprimirlos todos separados por un espacio.
+> 
+> ```python
+> name = 'Mario'
+> age = 33
+> print('My name is', name, "and I'm", age, 'years old.')
+> ```
+> Salida:
+> ```
+> My name is Mario and I'm 33 years old.
+> ```
+> 
+> Podemos cambiar el separador de por defecto:
+> 
+> ```python
+> elements = (0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
+> print(elements, sep='---')  # not unpacking (prints the tuple)
+> print(*elements, sep='---')  # unpacking (prints element by element)
+> ```
+> Salida:
+> ```
+> (0, 1, 2, 3, 4, 5, 'hello', 'world', '🍮')
+> 0---1---2---3---4---5---hello---world---🍮
+> ```
 
 <br>
 
@@ -2161,9 +2115,31 @@ Mario
 {'phone': 123456789, 'dni': '12345678X', 'dog_name': 'Gandalf'}
 ```
 
-`kwargs`, en este caso, es un diccionario que contiene todos los argumentos nombrados restantes.
+`kwargs`, en este caso, es un diccionario.
 
-Igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero este es el que se usa por convenio.
+Démonos cuenta de que de todos los argumentos posicionales dados (`54, 12, 1, 2, 3`), `54` va a parar a `number_1`, `12` a `number_2` y el resto (`1, 2, 3`) a `args`. De igual manera, en el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en la cabecera de la función.
+
+> Igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero este es el que se usa por convenio.
+
+También podemos desempaquetar un diccionario antes de llamar la función:
+
+```python
+def print_person(name, age, **kwargs):
+    print(name)
+    print(age)
+    print(kwargs)
+
+
+print_person(cat_name='Midna', **{'name': 'Ana', 'age': 25, 'dog_name': 'Tingle'})
+```
+Salida:
+```
+Ana
+25
+{'cat_name': 'Midna', 'dog_name': 'Tingle'}
+```
+
+Al hacer esto las claves y los valores de este se comportarán como argumentos nombrados. En el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en los parámetros de la función.
 
 <br>
 

@@ -1949,7 +1949,7 @@ Salida:
 
 <br>
 
-Ahora definamos una fución con un número indeterminado de argumentos nombrados también:
+Ahora definamos una función con un número indeterminado de argumentos nombrados también:
 
 ```python
 def print_things(number_1, number_2, *args, name, age, **kwargs):

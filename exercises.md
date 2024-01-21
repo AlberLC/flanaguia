@@ -908,7 +908,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    6. Por último: queremos poder filtrar los archivos siguiendo otros criterios, añadir flexibilidad al filtro de forma que, desde fuera, se pueda definir que archivos queremos, es decir, el usuario final de la función deberá poder trabajar directamente con los `Path` para poder definir filtros como:
+    6. Por último, queremos poder filtrar los archivos siguiendo otros criterios, añadir flexibilidad al filtro de forma que, desde fuera, se pueda definir que archivos queremos, es decir, el usuario final de la función deberá poder trabajar directamente con los `Path` para poder definir filtros como:
 
         - Archivos que comiencen por mayúsculas.
         - Archivos cuya primera letra esté entra la `a` y la `g`.

@@ -1,9 +1,10 @@
 from typing import Annotated
 
-from database import create_object_id, question_collection
-from models.answer import Answer
 from pydantic import BaseModel, BeforeValidator, Field
 from pymongo import ReturnDocument
+
+from database import create_object_id, question_collection
+from models.answer import Answer
 
 
 class Question(BaseModel):

@@ -25,7 +25,7 @@ async def read_questions(author: str | None = None, limit: int | None = None) ->
     return await find_questions(author, limit)
 
 
-@app.patch('/question/{id}')
+@app.put('/question/{id}')
 async def update_question(id: str, question: Question) -> Question:
     question.id = id
     if not (user := await models.question.update_question(question)):

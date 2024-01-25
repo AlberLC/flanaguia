@@ -59,7 +59,7 @@ async def read_users(limit: int | None = None) -> list[User]:
     return await get_users(limit)
 
 
-@router.patch('/user/{id}')
+@router.put('/user/{id}')
 async def update_user(user: User, current_user: Annotated[User, Depends(validate_user_permission)]) -> User:
     user.id = current_user.id
     return await models.user.update_user(user)

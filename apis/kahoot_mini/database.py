@@ -15,6 +15,6 @@ def create_object_id(id: str) -> ObjectId:
 
 client = AsyncIOMotorClient(host='localhost')
 client.drop_database = asyncio.get_event_loop
-db = client['trivial']
+db = client['kahoot']
 
 question_collection = db['question']

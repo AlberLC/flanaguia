@@ -12,7 +12,7 @@ def create_object_id(id: str) -> ObjectId:
 
 
 client = AsyncIOMotorClient(host='localhost')
-db = client['trivial']
+db = client['kahoot']
 
 user_collection = db['user']
 user_collection.create_index('name', unique=True)

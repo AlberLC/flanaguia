@@ -36,7 +36,7 @@
 
 <br>
 
-2. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **booleano** resultante **sin usar sentencias condicionales (if)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
+2. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
 
     - `hola` ➡️ `False`
     - `ojos` ➡️ `False`
@@ -59,7 +59,7 @@
 
 <br>
 
-3. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar bucles (for y while)**.
+3. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar [bucles](README.md#5-bucles)**.
 
     <details>
     <summary>Solución</summary>
@@ -73,7 +73,7 @@
 
 <br>
 
-4. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar bucles (for y while)**.
+4. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar [bucles](README.md#5-bucles)**.
 
     <details>
     <summary>Solución</summary>
@@ -304,7 +304,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Pedir por consola la longitud de un lado de un triángulo e imprimir uno por consola siguiendo el formato dado a continuación. Por ejemplo: para longitud 5:
+5. Pedir por consola la longitud de un lado de un triángulo e imprimir uno por consola siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
 
     ```
     1 
@@ -330,7 +330,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-6. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando bucles** y **sin usar conjuntos**.
+6. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](README.md#5-bucles)** y **sin usar [conjuntos](README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -349,7 +349,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-7. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **booleano** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+7. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
     - `hola`, `adios` ➡️ `False`
     - `urnas`, `runa` ➡️ `False`
@@ -476,7 +476,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Escribir un programa que pida por consola nombres de asingaturas continuamente hasta que se introduzca "fin". Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+10. Escribir un programa que pida por consola nombres de asingaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
     <details>
     <summary>Solución</summary>
@@ -504,7 +504,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Hacer un programa que imprima por consola el nº de veces que aparece cada palabra en el siguiente texto:
+11. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
 
     ```
     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
@@ -605,7 +605,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. Crear una función que devuelva el factorial de un número dado como argumento **usando bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+1. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -648,7 +648,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-2. Crear una función que devuelva el factorial de un número dado como argumento **sin usar bucles**. El factorial de 0 es 1. Y el factorial de un número negativo debe lanzar un `ValueError`.
+2. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -719,7 +719,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - `fibonacci_sequence(5, ' - ')` ➡️ `0 - 1 - 1 - 2 - 3`
     - `fibonacci_sequence(11, ' | ')` ➡️ `0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55`
 
-   La sucesión de Fibonacci para `n` negativo debe lanzar un `ValueError`.
+   La sucesión de Fibonacci para `n` negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
    > ```python
@@ -769,7 +769,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         - Que tenga dos parámetros: la ruta (`str`) donde se encuentran los archivos y una extensión (`str`) para filtrar aquellos que la tengan (por ejemplo: `.jpg`)
         - Que devuelva la lista de archivos (`list[Path]`) en ese directorio que tengan dicha extensión.
         - Sin buscar recursivamente en subdirectorios.
-        - Sin usar listas por comprensión.
+        - Sin usar [listas por comprensión](README.md#51-listas-por-comprensión).
 
        Probar la función pidiendo por consola la ruta y la extensión e imprimir cada ruta con el número correspondiente tal que:
         ```
@@ -835,7 +835,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    3. Olvidemos los iteradores. Volvamos a hacer el ejercicio inicial, pero con listas por comprensión (prohibido usar `append()`).
+    3. Olvidemos los iteradores. Volvamos a hacer el ejercicio inicial, pero con [listas por comprensión](README.md#51-listas-por-comprensión) (prohibido usar `append()`).
 
         <details>
         <summary>Solución</summary>
@@ -857,7 +857,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    4. Ahora, en vez de una lista por comprensión, usar un [generador con paréntesis](README.md#521-generadores) (no debería ocupar ni una línea más, ni menos, que el ejercicio anterior).
+    4. Ahora, en vez de una lista por comprensión, usar un [generador con paréntesis](README.md#521-generadores) (no debería ocupar ni una línea más ni menos que el ejercicio anterior).
 
         <details>
         <summary>Solución</summary>

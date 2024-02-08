@@ -2390,7 +2390,7 @@ AttributeError: one two three
 
 > Se usa el término "elevar" porque se entiende que, cuando ejecutamos un programa, la línea que da el error ocurre dentro de una pila de llamadas de funciones, es decir, si una funcion `function_a()`, llama a `function_b()`, esta a `function_c()` y ahí es donde eleva la excepcion, si no se captura va a detener la ejecucion de `function_c()` y va a redirigir dicha excepción a la función que llamó a esta, o sea, a `function_b()`. Si `function_b()` no la captura, se continuará elevando la excepción a `function_a()`.
 > 
-> Si la excepción nunca es capturada, acabará detieniendo el programa e imprimiendo su traza en la consola.
+> Si la excepción nunca es capturada, acabará deteniendo el programa e imprimiendo su traza en la consola.
 
 <br>
 

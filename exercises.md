@@ -264,11 +264,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     order = int(input('Introduce el orden: '))
     
     if order < 0:
-        digits = sorted(list(number), reverse=True)
+        digits = sorted(number, reverse=True)
     elif order == 0:
         digits = number
     else:
-        digits = sorted(list(number))
+        digits = sorted(number)
     
     for digit in digits:
         print(f"{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}")

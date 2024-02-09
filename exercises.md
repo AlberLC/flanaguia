@@ -244,7 +244,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     number = input('Introduce un número: ')    
     
     for digit in number:
-        print(f"{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}")
+        print(f'{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}')
     ```
 
     </details>
@@ -271,7 +271,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         digits = sorted(number)
     
     for digit in digits:
-        print(f"{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}")
+        print(f'{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}')
     ```
 
     </details>
@@ -370,7 +370,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la partida. El juego continuará para siempre.
+8. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -402,8 +402,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 9. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
     ```
-    "El 18 de junio de 1998 cumpliste 1 año."
-    "El 18 de junio de 1999 cumpliste 2 años."
+    El 18 de junio de 1998 cumpliste 1 año.
+    El 18 de junio de 1999 cumpliste 2 años.
     ...
     ```
 
@@ -476,7 +476,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Escribir un programa que pida por consola nombres de asingaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+10. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
     <details>
     <summary>Solución</summary>
@@ -497,7 +497,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     if len(failed_subjects) > 1:
         print(f"Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.")
     else:
-        print(f"Asignaturas suspensas: {failed_subjects[0]}.")
+        print(f'Asignaturas suspensas: {failed_subjects[0]}.')
     ```
 
     </details>
@@ -553,7 +553,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento, para el lote descolorido. Luego pedir por consola el nº de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
+12. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
     <details>
     <summary>Solución</summary>
@@ -563,12 +563,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     discount = float(input('% de descuento para pelota descolorida: '))
     normal_balls = int(input('Nº de pelotas normales: '))
     colorless_balls = int(input('Nº de pelotas descoloridas: '))
-    
+
     discounted_price = ball_price * discount / 100
-    
+
     while normal_balls or colorless_balls:
         option = input('¿Quieres una pelota normal o descolorida? (N/D): ')
-    
+
         if option.upper() == 'N':
             if normal_balls:
                 print(f'Te va a costar {ball_price} €')
@@ -576,11 +576,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 print(f'Quedan {normal_balls} pelotas normales.')
             else:
                 print('No quedan pelotas normales.')
-        else:
+        elif option.upper() == 'D':
             if colorless_balls:
                 print(f'Te va a costar {discounted_price} €')
                 colorless_balls -= 1
                 print(f'Quedan {colorless_balls} pelotas descoloridas.')
+            else:
+                print('No quedan pelotas descoloridas.')
     ```
 
     </details>
@@ -1304,61 +1306,61 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         assert str(ll) == "<('5', 5)>"
         assert len(ll) == 1
         ll.delete(0)
-        assert str(ll) == "<>"
+        assert str(ll) == '<>'
         assert len(ll) == 0
         ll.clear()
-        assert str(ll) == "<>"
+        assert str(ll) == '<>'
         assert len(ll) == 0
         ll.add(5)
         ll.add(5)
         ll.add(5)
-        assert str(ll) == "<5, 5, 5>"
+        assert str(ll) == '<5, 5, 5>'
         assert len(ll) == 3
         ll.clear()
-        assert str(ll) == "<>"
+        assert str(ll) == '<>'
         assert len(ll) == 0
     
         ll.insert(-1, 'a')
-        assert str(ll) == "<a>"
+        assert str(ll) == '<a>'
         assert len(ll) == 1
         ll.clear()
         assert len(ll) == 0
         ll.insert(24, 'b')
-        assert str(ll) == "<b>"
+        assert str(ll) == '<b>'
         assert len(ll) == 1
         ll.clear()
         ll.insert(0, 'c')
-        assert str(ll) == "<c>"
+        assert str(ll) == '<c>'
         assert len(ll) == 1
         ll.clear()
         ll.add('hola')
         ll.insert(-1, 'x')
-        assert str(ll) == "<x, hola>"
+        assert str(ll) == '<x, hola>'
         assert len(ll) == 2
         ll.delete(0)
         ll.insert(24, 'y')
-        assert str(ll) == "<hola, y>"
+        assert str(ll) == '<hola, y>'
         assert len(ll) == 2
         ll.delete(1)
         ll.insert(0, 'z')
-        assert str(ll) == "<z, hola>"
+        assert str(ll) == '<z, hola>'
         assert len(ll) == 2
         ll.add(1)
         ll.add(2)
         ll.add(3)
         ll.insert(2, 'adios')
-        assert str(ll) == "<z, hola, adios, 1, 2, 3>"
+        assert str(ll) == '<z, hola, adios, 1, 2, 3>'
         assert len(ll) == 6
         ll.insert(len(ll), 'ultimo')
         ll.insert(len(ll) - 1, 'penultimo')
         ll.insert(len(ll) - 2, 'antepenultimo')
-        assert str(ll) == "<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert str(ll) == '<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 9
         ll.insert(4, {1, 2})
-        assert str(ll) == "<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert str(ll) == '<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 10
         ll.insert(1, range(5))
-        assert str(ll) == "<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert str(ll) == '<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 11
     
         print('OK')
@@ -1535,61 +1537,61 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         assert str(ll) == "<('5', 5)>"
         assert len(ll) == 1
         ll.delete(0)
-        assert str(ll) == "<>"
+        assert str(ll) == '<>'
         assert len(ll) == 0
         ll.clear()
-        assert str(ll) == "<>"
+        assert str(ll) == '<>'
         assert len(ll) == 0
         ll.add(5)
         ll.add(5)
         ll.add(5)
-        assert str(ll) == "<5, 5, 5>"
+        assert str(ll) == '<5, 5, 5>'
         assert len(ll) == 3
         ll.clear()
-        assert str(ll) == "<>"
+        assert str(ll) == '<>'
         assert len(ll) == 0
     
         ll.insert(-1, 'a')
-        assert str(ll) == "<a>"
+        assert str(ll) == '<a>'
         assert len(ll) == 1
         ll.clear()
         assert len(ll) == 0
         ll.insert(24, 'b')
-        assert str(ll) == "<b>"
+        assert str(ll) == '<b>'
         assert len(ll) == 1
         ll.clear()
         ll.insert(0, 'c')
-        assert str(ll) == "<c>"
+        assert str(ll) == '<c>'
         assert len(ll) == 1
         ll.clear()
         ll.add('hola')
         ll.insert(-1, 'x')
-        assert str(ll) == "<x, hola>"
+        assert str(ll) == '<x, hola>'
         assert len(ll) == 2
         ll.delete(0)
         ll.insert(24, 'y')
-        assert str(ll) == "<hola, y>"
+        assert str(ll) == '<hola, y>'
         assert len(ll) == 2
         ll.delete(1)
         ll.insert(0, 'z')
-        assert str(ll) == "<z, hola>"
+        assert str(ll) == '<z, hola>'
         assert len(ll) == 2
         ll.add(1)
         ll.add(2)
         ll.add(3)
         ll.insert(2, 'adios')
-        assert str(ll) == "<z, hola, adios, 1, 2, 3>"
+        assert str(ll) == '<z, hola, adios, 1, 2, 3>'
         assert len(ll) == 6
         ll.insert(len(ll), 'ultimo')
         ll.insert(len(ll) - 1, 'penultimo')
         ll.insert(len(ll) - 2, 'antepenultimo')
-        assert str(ll) == "<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert str(ll) == '<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 9
         ll.insert(4, {1, 2})
-        assert str(ll) == "<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert str(ll) == '<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 10
         ll.insert(1, range(5))
-        assert str(ll) == "<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>"
+        assert str(ll) == '<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 11
     
         print('OK')

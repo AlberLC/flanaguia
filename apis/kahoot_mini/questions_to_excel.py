@@ -47,7 +47,9 @@ async def main() -> None:
     entered_questions = set()
     current_row = INITIAL_ROW
     for question in questions:
-        correct_answers = [str(i) for i, answer in enumerate(question.answers[:MAX_ANSWERS], start=1) if answer.is_correct]
+        correct_answers = [
+            str(i) for i, answer in enumerate(question.answers[:MAX_ANSWERS], start=1) if answer.is_correct
+        ]
         question_data = (
             question.author,
             question.statement,

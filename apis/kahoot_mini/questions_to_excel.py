@@ -8,8 +8,7 @@ import openpyxl.worksheet.worksheet
 from models.question import find_questions
 
 FILE_PATH = 'KahootQuizTemplate.xlsx'
-AUTHORS = []
-N_QUESTIONS = 30
+N_QUESTIONS: int | None = None
 SECONDS_LIMIT = 60
 
 STATEMENT_COLUMN = 'B'
@@ -41,13 +40,20 @@ async def main() -> None:
     workbook = openpyxl.load_workbook(FILE_PATH)
     worksheet = workbook.active
 
-    if len(questions := await find_questions()) > N_QUESTIONS:
+    questions = await find_questions()
+    if N_QUESTIONS is not None and len(questions) > N_QUESTIONS:
         questions = random.sample(questions, N_QUESTIONS)
 
+    entered_questions = set()
     current_row = INITIAL_ROW
     for question in questions:
-        correct_answers = [str(i) for i, answer in enumerate(question.answers, start=1) if answer.is_correct]
-        if question.author not in AUTHORS or len(question.answers) < 2 or not correct_answers:
+        correct_answers = [str(i) for i, answer in enumerate(question.answers[:MAX_ANSWERS], start=1) if answer.is_correct]
+        question_data = (
+            question.author,
+            question.statement,
+            tuple(tuple(dict(answer).values()) for answer in question.answers[:MAX_ANSWERS])
+        )
+        if len(question.answers) < 2 or not correct_answers or question_data in entered_questions:
             continue
 
         worksheet[f'{STATEMENT_COLUMN}{current_row}'] = f'{question.author} pregunta: {question.statement}'
@@ -56,6 +62,7 @@ async def main() -> None:
         worksheet[f'{TIME_COLUMN}{current_row}'] = SECONDS_LIMIT
         worksheet[f'{CORRECT_COLUMN}{current_row}'] = ','.join(correct_answers)
 
+        entered_questions.add(question_data)
         current_row += 1
 
     clean_rest(worksheet, current_row)

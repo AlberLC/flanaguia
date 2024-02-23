@@ -882,7 +882,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    5. Envolver el `for` con el `print(...)` que ponemos al final para probar nuestra función en otra de forma que reciba los `Path` por parámetro.
+    5. Envolver el `for` con el `print(...)` que ponemos al final para probar nuestra función en otra, de forma que reciba los `Path` por parámetro.
 
         <details>
         <summary>Solución</summary>

@@ -596,9 +596,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 - Filtrar los números de una lista que son múltiplos de 2 y, luego, los que son múltiplos de 3.
 - Módulo de un vector.
 - Suma de vetores.
-- Área de un círculo y otra el volúmen de un cilindro usando la anterior.
 - Multiplicar sin usar `*` y potencia sin usar `**` o módulos como math.
-- Media de una lista.
+- Área de un círculo y otra el volúmen de un cilindro usando la anterior.
 - Recibir una lista y una función. Devolver la lista tras aplicar a cada elemento dicha función. Números, booleanos, aprobados/suspensos...
 - Que reciba un diccionario y una función y devuelva el diccionario filtrado tras aplicar la función a los valores. Quizás asignaturas aprobadas. O filtrar por `<=`, `>`...
 - Un menú con lista de diccionarios de clientes. Añadir, eliminar, mostrar, listar por x.
@@ -607,7 +606,210 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+1. Sea una función `sum_numbers` que sume una lista de números enteros y devuelva el resultado:
+
+    ```python
+    def sum_numbers(numbers: list[int]) -> int:
+        ...
+    
+    
+    assert sum_numbers([1]) == 1
+    assert sum_numbers([0, 1, 2, 3, 4, 5]) == 15
+    assert sum_numbers([5, 1, 85, 21, 5, 1, 252, 15, 1, 0, 56]) == 442
+    assert sum_numbers([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -165, -1]) == 374
+    assert sum_numbers([]) == 0
+    
+    print('OK')
+    ```
+   
+    Rellenar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `OK` por consola.
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    def sum_numbers(numbers: list[int]) -> int:
+        total = 0
+        for number in numbers:
+            total += number
+    
+        return total
+    
+    
+    assert sum_numbers([1]) == 1
+    assert sum_numbers([0, 1, 2, 3, 4, 5]) == 15
+    assert sum_numbers([5, 1, 85, 21, 5, 1, 252, 15, 1, 0, 56]) == 442
+    assert sum_numbers([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -165, -1]) == 374
+    assert sum_numbers([]) == 0
+    
+    print('OK')
+    ```
+   b)
+    > Usando la [función integrada](https://docs.python.org/3/library/functions.html) `sum()`:
+
+    ```python
+    def sum_numbers(numbers: list[int]) -> int:
+        return sum(numbers)
+    
+    
+    assert sum_numbers([1]) == 1
+    assert sum_numbers([0, 1, 2, 3, 4, 5]) == 15
+    assert sum_numbers([5, 1, 85, 21, 5, 1, 252, 15, 1, 0, 56]) == 442
+    assert sum_numbers([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -165, -1]) == 374
+    assert sum_numbers([]) == 0
+    
+    print('OK')
+    ```
+
+    </details>
+
+<br>
+
+2. Crear una función que devuelva la media de una lista de números enteros. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    assert average([0, 1]) == 0.5
+    assert average([1, 3]) == 2
+    assert average([1, 1, 1, 2, 2, 2]) == 1.5
+    assert average([1, 2, 3, 4, 5, 6, 7]) == 4
+    assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
+    
+    print('OK')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    def average(numbers: list[int]) -> float:
+        return sum(numbers) / len(numbers)
+    
+    
+    assert average([0, 1]) == 0.5
+    assert average([1, 3]) == 2
+    assert average([1, 1, 1, 2, 2, 2]) == 1.5
+    assert average([1, 2, 3, 4, 5, 6, 7]) == 4
+    assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
+    
+    print('OK')
+    ```
+   b)
+    ```python
+    import statistics
+    
+    
+    def average(numbers: list[int]) -> float:
+        return statistics.mean(numbers)
+    
+    
+    assert average([0, 1]) == 0.5
+    assert average([1, 3]) == 2
+    assert average([1, 1, 1, 2, 2, 2]) == 1.5
+    assert average([1, 2, 3, 4, 5, 6, 7]) == 4
+    assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
+    
+    print('OK')
+    ```
+
+    </details>
+
+<br>
+
+3. Crear una función que multiplique dos números enteros y devuelva el resultado **sin usar el operador `*` ni otras funciones ya existentes en el lenguaje**. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    assert multiply(1, 0) == 0
+    assert multiply(1, 5) == 5
+    assert multiply(2, 3) == 6
+    assert multiply(4, 6) == 24
+    assert multiply(9, 9) == 81
+    assert multiply(156, 748) == 116688
+    
+    print('OK')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    def average(numbers: list[int]) -> float:
+        return sum(numbers) / len(numbers)
+    
+    
+    assert average([0, 1]) == 0.5
+    assert average([1, 3]) == 2
+    assert average([1, 1, 1, 2, 2, 2]) == 1.5
+    assert average([1, 2, 3, 4, 5, 6, 7]) == 4
+    assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
+    
+    print('OK')
+    ```
+
+    </details>
+
+<br>
+
+4. Crear una función que calcule la potencia de dos números enteros y devuelva el resultado **sin usar el operador `*` ni el `**` ni otras funciones ya existentes en el lenguaje**. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    assert power(1, 0) == 1
+    assert power(1, 5) == 1
+    assert power(2, 3) == 8
+    assert power(4, 6) == 4096
+    assert power(9, 9) == 387420489
+    assert power(156, 748) == 286549443351127940912310344045265379399803458435563791862649509231216879586336194220793821017373647185528398137999718912683128795377832303403490201379359728778963725712702463720899321651446986307432812286112922967228580960214040125458695767296293492756095590796296252772591364291990138982325685743548631279104099327229955069543312383943928569589500428240235864193352231896378085487701206310482438629978196570600669696176974867295927957162771499932719963782638405872941627163945392132697296159548444339186032772019071612508373347184386809719130025733501976239325432083270617606124112480291078628881717726173272160235619918748740934426750510852059921564202650490333472044279349258704176344258614157450959649432290412661948873317244678184320775559997651598349552153798297229315952888067156171478848685229875195340084118982746553371195570217565399222912887319714437063923000301169199431174634221186253813327520958521863464388914428822386196528155397135516468634450866394412866963150900511750867881496922423196459731944557792051780869298758423806545140278667826504433395868108990488815000032551672311460007973246010385852170542062600416835177910004633677354230797418744082051322584486841250399669246233133287810006784316971050988939252097351751754453069226094037483479404065220228309524776165493035610689065099827326914471595115782429383596669980591989328083380710996308171307342231329766100047312986412629944411588282939893313052319942829030706584636734295943711749021207252714951142354676931287445776741682610756756409826172383898461966942453065292464871485995092675008017851221446856996710750853618091265093397903433961824210436455077318230016
+    
+    print('OK')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    def multiply(a: int, b: int) -> int:
+        result = 0
+        for _ in range(b):
+            result += a
+    
+        return result
+    
+    
+    def power(a: int, b: int) -> int:
+        result = 1
+        for _ in range(b):
+            result *= a
+    
+        return result
+    
+    
+    assert power(1, 0) == 1
+    assert power(1, 5) == 1
+    assert power(2, 3) == 8
+    assert power(4, 6) == 4096
+    assert power(9, 9) == 387420489
+    assert power(156, 748) == 286549443351127940912310344045265379399803458435563791862649509231216879586336194220793821017373647185528398137999718912683128795377832303403490201379359728778963725712702463720899321651446986307432812286112922967228580960214040125458695767296293492756095590796296252772591364291990138982325685743548631279104099327229955069543312383943928569589500428240235864193352231896378085487701206310482438629978196570600669696176974867295927957162771499932719963782638405872941627163945392132697296159548444339186032772019071612508373347184386809719130025733501976239325432083270617606124112480291078628881717726173272160235619918748740934426750510852059921564202650490333472044279349258704176344258614157450959649432290412661948873317244678184320775559997651598349552153798297229315952888067156171478848685229875195340084118982746553371195570217565399222912887319714437063923000301169199431174634221186253813327520958521863464388914428822386196528155397135516468634450866394412866963150900511750867881496922423196459731944557792051780869298758423806545140278667826504433395868108990488815000032551672311460007973246010385852170542062600416835177910004633677354230797418744082051322584486841250399669246233133287810006784316971050988939252097351751754453069226094037483479404065220228309524776165493035610689065099827326914471595115782429383596669980591989328083380710996308171307342231329766100047312986412629944411588282939893313052319942829030706584636734295943711749021207252714951142354676931287445776741682610756756409826172383898461966942453065292464871485995092675008017851221446856996710750853618091265093397903433961824210436455077318230016
+    
+    print('OK')
+    ```
+
+    </details>
+
+<br>
+
+5. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -650,7 +852,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-2. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+6. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -673,7 +875,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-3. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
+7. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
 
     - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
     - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
@@ -713,7 +915,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+8. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
@@ -763,7 +965,77 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Filtrado de archivos.
+9. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+
+   `encode('abc', 1)` ➡️ `'bcd'`
+
+   Si lo ciframos con desplazamiento `2`:
+
+   `encode('abc', 2)` ➡️ `'cde'`
+
+   En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+
+   Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
+
+   `decode(encode(text, offset), offset) == text` ➡️ `True`
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    FIRST_CHARACTER_INDEX = 32
+    ALPHABET_LENGHT = 95
+    
+    
+    def encode(text: str, offset: int) -> str:
+        new_characters = [
+            chr(ord(character) - FIRST_CHARACTER_INDEX + offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
+            for character in text
+        ]
+        return ''.join(new_characters)
+    
+    
+    def decode(text: str, offset: int) -> str:
+        new_characters = [
+            chr(ord(character) - FIRST_CHARACTER_INDEX - offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
+            for character in text
+        ]
+        return ''.join(new_characters)
+    
+    
+    offset = 12
+    text = 'asdASD0123456789!"·!"·"$%&/()=?¿¡\'09876.,:;-_´`+çÇ^¨*{}[]@#54321 sdfklwd'
+    print(decode(encode(text, offset), offset) == text)
+    ```
+
+    </details>
+
+<br>
+
+10. Sea:
+
+    ```python
+    elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
+    ```
+
+   Ordenar `elements` por el segundo elemento de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
+
+   > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#66-funciones-anónimas).
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]
+    
+    print(sorted(elements, key=lambda item: item[1], reverse=True))
+    ```
+
+    </details>
+
+<br>
+
+11. Filtrado de archivos.
 
    En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 
@@ -962,76 +1234,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         ```
 
         </details>
-
-<br>
-
-6. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
-
-   `encode('abc', 1)` ➡️ `'bcd'`
-
-   Si lo ciframos con desplazamiento `2`:
-
-   `encode('abc', 2)` ➡️ `'cde'`
-
-   En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
-
-   Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
-
-   `decode(encode(text, offset), offset) == text` ➡️ `True`
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    FIRST_CHARACTER_INDEX = 32
-    ALPHABET_LENGHT = 95
-    
-    
-    def encode(text: str, offset: int) -> str:
-        new_characters = [
-            chr(ord(character) - FIRST_CHARACTER_INDEX + offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
-            for character in text
-        ]
-        return ''.join(new_characters)
-    
-    
-    def decode(text: str, offset: int) -> str:
-        new_characters = [
-            chr(ord(character) - FIRST_CHARACTER_INDEX - offset % ALPHABET_LENGHT + FIRST_CHARACTER_INDEX)
-            for character in text
-        ]
-        return ''.join(new_characters)
-    
-    
-    offset = 12
-    text = 'asdASD0123456789!"·!"·"$%&/()=?¿¡\'09876.,:;-_´`+çÇ^¨*{}[]@#54321 sdfklwd'
-    print(decode(encode(text, offset), offset) == text)
-    ```
-
-    </details>
-
-<br>
-
-7. Sea:
-
-    ```python
-    elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
-    ```
-
-   Ordenar `elements` por el segundo elemento de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
-
-   > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#66-funciones-anónimas).
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]
-    
-    print(sorted(elements, key=lambda item: item[1], reverse=True))
-    ```
-
-    </details>
 
 <br>
 

@@ -1695,9 +1695,11 @@ Como cualquier iterador, el generador se consume:
 
 ## 6. Funciones
 
-Las funciones sirven para agrupar código que se va a ejecutar en distintos lugares. Siempre hay que evitar repetir código y, al usar funciones y mantener todo en un mismo lugar, podremos hacer cambios una sola vez y producir un impacto en esos otros lugares donde se llama a la función.
+Las funciones sirven para agrupar código que se va a ejecutar en distintos lugares.
 
-Un ejemplo sin usar funciones: imaginemos una aplicación donde tenemos una lista de diccionarios con datos de personas y nos dicen que tenemos que hacer un algoritmo que busque a Juan y a Ana y haga algo con sus datos. En este ejemplo vamos a sumar sus edades e imprimirlo por consola.
+Mientras programamos, constantemente habrá situaciones donde se nos presente un mismo problema una y otra vez. Debemos darnos cuenta de esto y manejarlo como si fuera un subproblema, lo que se llama **modularizar**. Siempre hay que evitar repetir código y, al usar funciones y mantener todo en un mismo lugar, podremos hacer cambios una sola vez y producir un impacto en esos otros lugares donde se llama a la función.
+
+Un ejemplo **sin usar funciones**: imaginemos una aplicación donde tenemos una lista de diccionarios con datos de personas y nos dicen que tenemos que hacer un algoritmo que busque a Juan y a Ana y haga algo con sus datos. En este ejemplo vamos a sumar sus edades e imprimirlo por consola.
 
 ```python
 people = [
@@ -1732,9 +1734,7 @@ Salida:
 29
 ```
 
-Ahora imaginemos que nuestro jefe nos dice que buscar las personas por su nombre es inapropiado porque dos personas pueden tener el mismo nombre y nos pide que busquemos por id. Ahora tendríamos que ir a todas las partes del código donde busquemos por nombre y cambiarlo por id. Este caso es muy sencillo, pero si lo aplicáramos a una aplicación real, acabaríamos con varias zonas del código que debieran hacer lo mismo y resulta que no, porque a alguien se le olvidó cambiar una parte. Es en estos momentos cuando tenemos que usar funciones.
-
-Si queremos devolver un valor en una función usamos `return`. Esta sentencia rompe su ejecución y devuelve lo que tenga a su derecha. Toda función devuelve algo, si no se especifica un `return`, se devuelve `None` automáticamente.
+En este caso nos vendría bien una porción de código independiente que nos resuelva el subproblema de la búsqueda de personas por nombre, o sea, una función:
 
 ```python
 def find_person(name):
@@ -1763,6 +1763,10 @@ Salida:
 ```
 29
 ```
+
+Para devolver un valor en una función usamos `return`. Esta sentencia rompe su ejecución y devuelve lo que tenga a su derecha. Toda función devuelve algo, si no se especifica un `return`, se devuelve `None` automáticamente.
+
+Ahora imaginemos que nuestro jefe nos dice que buscar las personas por su nombre es inapropiado porque dos personas pueden tener el mismo nombre y nos pide que busquemos por id. Si no usáramos funciones tendríamos que ir a todas las partes del código donde busquemos por nombre y cambiarlo por id. Este caso es muy sencillo, pero si lo aplicáramos a una aplicación real, acabaríamos con varias zonas del código que debieran hacer lo mismo y resulta que no, porque a alguien se le olvidó cambiar una parte.
 
 <br>
 

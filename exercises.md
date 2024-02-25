@@ -1016,10 +1016,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. A continuación hay 8 funciones que crean y devuelven diversas listas. El objetivo de este ejercicio es crear [listas por comprensión](README.md#51-listas-por-comprensión) que sean equivalentes a las que devuelven estas funciones. Bajo cada una de ellas hay unos `...` que hay que completar para que el código se ejecute sin errores.
+10. A continuación hay 8 funciones con sufijo `a` que crean y devuelven diversas listas y 8 funciones con sufijo `b` que están vacías. El objetivo de este ejercicio es rellenar las funciones `b` para crear y devolver listas equivalentes a las que devuelven sus hermanas `a`, pero **usando [listas por comprensión](README.md#51-listas-por-comprensión)**, por lo tanto el contenido de las funciones `b` no debe ocupar más de una línea.
 
     ```python
-    def function_1() -> list[int]:
+    def function_1_a() -> list[int]:
         numbers = []
         for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
             numbers.append(number * 2)
@@ -1027,22 +1027,24 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return numbers
     
     
-    assert function_1() == ...
+    def function_1_b() -> list[int]:
+        ...
     
     
-    def function_2() -> list[int]:
+    def function_2_a() -> list[int]:
         numbers = []
-        for number in function_1():
+        for number in function_1_a():
             if number % 3 == 0:
                 numbers.append(number)
     
         return numbers
     
     
-    assert function_2() == ...
+    def function_2_b() -> list[int]:
+        ...
     
     
-    def function_3() -> list[str]:
+    def function_3_a() -> list[str]:
         words = []
         for word in 'Lorem IPSUM DoLoR sit aMeT'.split():
             words.append(word.lower())
@@ -1050,22 +1052,24 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return words
     
     
-    assert function_3() == ...
+    def function_3_b() -> list[str]:
+        ...
     
     
-    def function_4() -> list[str]:
+    def function_4_a() -> list[str]:
         words = []
-        for word in function_3():
+        for word in function_3_a():
             if word[0] in {'a', 'e', 'i', 'o', 'u'}:
                 words.append(word.upper())
     
         return words
     
     
-    assert function_4() == ...
+    def function_4_b() -> list[str]:
+        ...
     
     
-    def function_5() -> list[str]:
+    def function_5_a() -> list[str]:
         characters = []
         for character in 'Lorem IPSUM DoLoR sit aMeT':
             if character.isupper():
@@ -1076,10 +1080,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return characters
     
     
-    assert function_5() == ...
+    def function_5_b() -> list[str]:
+        ...
     
     
-    def function_6() -> list[int | str]:
+    def function_6_a() -> list[int | str]:
         elements = []
         for i in range(10):
             if 2 <= i < 4:
@@ -1090,24 +1095,26 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return elements
     
     
-    assert function_6() == ...
+    def function_6_b() -> list[int | str]:
+        ...
     
     
-    def function_7() -> list[bool]:
+    def function_7_a() -> list[bool]:
         elements = []
-        for i in function_6():
+        for i in function_6_a():
             if isinstance(i, int):
                 elements.append(i % 2 == 0)
     
         return elements
     
     
-    assert function_7() == ...
+    def function_7_b() -> list[bool]:
+        ...
     
     
-    def function_8() -> list[str]:
+    def function_8_a() -> list[str]:
         elements = []
-        for i, element in enumerate(function_6()):
+        for i, element in enumerate(function_6_a()):
             if i < 4:
                 continue
     
@@ -1119,7 +1126,18 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return elements
     
     
-    assert function_8() == ...
+    def function_8_b() -> list[str]:
+        ...
+    
+    
+    assert function_1_a() == function_1_b()
+    assert function_2_a() == function_2_b()
+    assert function_3_a() == function_3_b()
+    assert function_4_a() == function_4_b()
+    assert function_5_a() == function_5_b()
+    assert function_6_a() == function_6_b()
+    assert function_7_a() == function_7_b()
+    assert function_8_a() == function_8_b()
     
     print('OK')
     ```
@@ -1128,7 +1146,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <summary>Solución</summary>
 
     ```python
-    def function_1() -> list[int]:
+    def function_1_a() -> list[int]:
         numbers = []
         for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
             numbers.append(number * 2)
@@ -1136,22 +1154,24 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return numbers
     
     
-    assert function_1() == [number * 2 for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]
+    def function_1_b() -> list[int]:
+        return [number * 2 for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]
     
     
-    def function_2() -> list[int]:
+    def function_2_a() -> list[int]:
         numbers = []
-        for number in function_1():
+        for number in function_1_a():
             if number % 3 == 0:
                 numbers.append(number)
     
         return numbers
     
     
-    assert function_2() == [number for number in function_1() if number % 3 == 0]
+    def function_2_b() -> list[int]:
+        return [number for number in function_1_a() if number % 3 == 0]
     
     
-    def function_3() -> list[str]:
+    def function_3_a() -> list[str]:
         words = []
         for word in 'Lorem IPSUM DoLoR sit aMeT'.split():
             words.append(word.lower())
@@ -1159,22 +1179,24 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return words
     
     
-    assert function_3() == [word.lower() for word in 'Lorem IPSUM DoLoR sit aMeT'.split()]
+    def function_3_b() -> list[str]:
+        return [word.lower() for word in 'Lorem IPSUM DoLoR sit aMeT'.split()]
     
     
-    def function_4() -> list[str]:
+    def function_4_a() -> list[str]:
         words = []
-        for word in function_3():
+        for word in function_3_a():
             if word[0] in {'a', 'e', 'i', 'o', 'u'}:
                 words.append(word.upper())
     
         return words
     
     
-    assert function_4() == [word.upper() for word in function_3() if word[0] in {'a', 'e', 'i', 'o', 'u'}]
+    def function_4_b() -> list[str]:
+        return [word.upper() for word in function_3_a() if word[0] in {'a', 'e', 'i', 'o', 'u'}]
     
     
-    def function_5() -> list[str]:
+    def function_5_a() -> list[str]:
         characters = []
         for character in 'Lorem IPSUM DoLoR sit aMeT':
             if character.isupper():
@@ -1185,10 +1207,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return characters
     
     
-    assert function_5() == ['🔼' if character.isupper() else '🔽' for character in 'Lorem IPSUM DoLoR sit aMeT']
+    def function_5_b() -> list[str]:
+        return ['🔼' if character.isupper() else '🔽' for character in 'Lorem IPSUM DoLoR sit aMeT']
     
     
-    def function_6() -> list[int | str]:
+    def function_6_a() -> list[int | str]:
         elements = []
         for i in range(10):
             if 2 <= i < 4:
@@ -1199,24 +1222,26 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return elements
     
     
-    assert function_6() == ['---' if 2 <= i < 4 else i for i in range(10)]
+    def function_6_b() -> list[int | str]:
+        return ['---' if 2 <= i < 4 else i for i in range(10)]
     
     
-    def function_7() -> list[bool]:
+    def function_7_a() -> list[bool]:
         elements = []
-        for i in function_6():
+        for i in function_6_a():
             if isinstance(i, int):
                 elements.append(i % 2 == 0)
     
         return elements
     
     
-    assert function_7() == [i % 2 == 0 for i in function_6() if isinstance(i, int)]
+    def function_7_b() -> list[bool]:
+        return [i % 2 == 0 for i in function_6_a() if isinstance(i, int)]
     
     
-    def function_8() -> list[str]:
+    def function_8_a() -> list[str]:
         elements = []
-        for i, element in enumerate(function_6()):
+        for i, element in enumerate(function_6_a()):
             if i < 4:
                 continue
     
@@ -1228,7 +1253,18 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return elements
     
     
-    assert function_8() == ['✅' if element % 4 == 0 else '❌' for i, element in enumerate(function_6()) if i >= 4]
+    def function_8_b() -> list[str]:
+        return ['✅' if element % 4 == 0 else '❌' for i, element in enumerate(function_6_a()) if i >= 4]
+    
+    
+    assert function_1_a() == function_1_b()
+    assert function_2_a() == function_2_b()
+    assert function_3_a() == function_3_b()
+    assert function_4_a() == function_4_b()
+    assert function_5_a() == function_5_b()
+    assert function_6_a() == function_6_b()
+    assert function_7_a() == function_7_b()
+    assert function_8_a() == function_8_b()
     
     print('OK')
     ```

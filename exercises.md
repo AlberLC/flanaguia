@@ -597,7 +597,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 - Módulo de un vector.
 - Suma de vetores.
 - Área de un círculo y otra el volúmen de un cilindro usando la anterior.
-- Recibir una lista y una función. Devolver la lista tras aplicar a cada elemento dicha función. Números, booleanos, aprobados/suspensos...
 - Que reciba un diccionario y una función y devuelva el diccionario filtrado tras aplicar la función a los valores. Quizás asignaturas aprobadas. O filtrar por `<=`, `>`...
 - Un menú con lista de diccionarios de clientes. Añadir, eliminar, mostrar, listar por x.
 

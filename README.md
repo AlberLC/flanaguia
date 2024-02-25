@@ -2246,7 +2246,9 @@ Este es un buen caso donde se ve con claridad que es más cómodo crear una func
 
 ### 6.7. Funciones generadoras
 
-Si simplemente usamos la palabra clave `yield`, hacemos que una función se convierta en una función generadora:
+Una función generadora devuelve un generador, lo cual es un tipo de [iterador](#52-iteradores).
+
+Si simplemente usamos la palabra clave `yield` dentro de una función, la convertimos en una función generadora:
 
 ```python
 def something():

@@ -596,7 +596,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 - Filtrar los números de una lista que son múltiplos de 2 y, luego, los que son múltiplos de 3.
 - Módulo de un vector.
 - Suma de vetores.
-- Multiplicar sin usar `*` y potencia sin usar `**` o módulos como math.
 - Área de un círculo y otra el volúmen de un cilindro usando la anterior.
 - Recibir una lista y una función. Devolver la lista tras aplicar a cada elemento dicha función. Números, booleanos, aprobados/suspensos...
 - Que reciba un diccionario y una función y devuelva el diccionario filtrado tras aplicar la función a los valores. Quizás asignaturas aprobadas. O filtrar por `<=`, `>`...
@@ -741,15 +740,20 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     a)
     ```python
-    def average(numbers: list[int]) -> float:
-        return sum(numbers) / len(numbers)
+    def multiply(a: int, b: int) -> int:
+        result = 0
+        for _ in range(b):
+            result += a
+    
+        return result
     
     
-    assert average([0, 1]) == 0.5
-    assert average([1, 3]) == 2
-    assert average([1, 1, 1, 2, 2, 2]) == 1.5
-    assert average([1, 2, 3, 4, 5, 6, 7]) == 4
-    assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
+    assert multiply(1, 0) == 0
+    assert multiply(1, 5) == 5
+    assert multiply(2, 3) == 6
+    assert multiply(4, 6) == 24
+    assert multiply(9, 9) == 81
+    assert multiply(156, 748) == 116688
     
     print('OK')
     ```
@@ -1012,13 +1016,17 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Sea:
+10. 
+
+<br>
+
+11. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
     ```
 
-    Ordenar `elements` por el segundo elemento de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
+    Ordenar `elements` por el **segundo elemento** de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
 
     > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#66-funciones-anónimas).
 
@@ -1035,7 +1043,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Filtrado de archivos.
+12. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 

@@ -1619,9 +1619,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             self.age = age
     
         def __repr__(self) -> str:
-            return str(self)
-    
-        def __str__(self) -> str:
             return f'{self.name} ({self.age})'
     
     
@@ -2301,7 +2298,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             j = 0
     
     
-    def number_in_cross(number: int, row_index: int, column_index: int, board: list[list[int]]) -> None:
+    def number_in_cross(number: int, row_index: int, column_index: int, board: list[list[int]]) -> bool:
         for i in range(len(board)):
             if i != column_index and board[row_index][i] == number or i != row_index and board[i][column_index] == number:
                 return True
@@ -2353,7 +2350,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         left_rules: list[int],
         right_rules: list[int],
         board: list[list[int]]
-    ):
+    ) -> bool:
         for i, row in enumerate(board):
             for j, number in enumerate(row):
                 if (

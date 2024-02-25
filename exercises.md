@@ -1268,7 +1268,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     from typing import Any
     
     
-    def process(numbers: list, something: Callable[[int], Any]) -> None:
+    def process(numbers: list[int], something: Callable[[int], Any]) -> None:
         print([something(number) for number in numbers])
     
     

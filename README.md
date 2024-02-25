@@ -2177,7 +2177,7 @@ Salida:
 
 Las **funciones anónimas** se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
 
-Ahora vamos a ver un uso realista de este tipo de funciones. Vamos a crear una función que busque y devuelva el primer elemento de un iterable `people` que cumpla una condición. Esta condición va a ser aplicada a cada elemento, por lo tanto va a ser una función.
+Ahora vamos a ver un uso realista de este tipo de funciones. Vamos a crear una función que busque y devuelva los elementos de un iterable `people` que cumplan una condición, en concreto vamos a filtrar las personas que tengan 30 años o más. Esta condición va a ser aplicada a cada elemento, por lo tanto va a ser una función.
 
 
 ```python
@@ -2207,6 +2207,37 @@ Salida:
 {'id': 21, 'name': 'Elena', 'age': 400}
 {'id': 75, 'name': 'Alberto', 'age': 72}
 {'id': 68, 'name': 'Mario', 'age': 30}
+```
+
+Hemos obtenido las personas con 30 años o más.
+
+Si quisiéramos otra cosa, por ejemplo, la persona con id 75 solo bastaría cambíar el filtro en la función anónima:
+
+```python
+...
+
+filtered_people = filter_people(people, lambda person: person['id'] == 75)
+for filtered_person in filtered_people:
+    print(filtered_person)
+```
+Salida:
+```
+{'id': 75, 'name': 'Alberto', 'age': 72}
+```
+
+O personas cuyos nombres empiecen por "A":
+
+```python
+...
+
+filtered_people = filter_people(people, lambda person: person['name'].startswith('A'))
+for filtered_person in filtered_people:
+    print(filtered_person)
+```
+Salida:
+```
+{'id': 452, 'name': 'Ana', 'age': 4}
+{'id': 75, 'name': 'Alberto', 'age': 72}
 ```
 
 Este es un buen caso donde se ve con claridad que es más cómodo crear una función anónima que definir una función normal, que no vamos a necesitar nunca más, y luego pasarla como argumento a otra función.

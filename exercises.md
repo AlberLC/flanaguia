@@ -161,7 +161,7 @@
     <details>
     <summary>Solución</summary>
 
-   a)
+    a)
     ```python
     date = input('Fecha de nacimiento: ')
     year = int(date.split('/')[-1])
@@ -174,7 +174,7 @@
 
     print(f'Este año cumples {2023 - year} años.')
     ```
-   b)
+    b)
     ```python
     import datetime
 
@@ -407,12 +407,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ...
     ```
 
-   Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
+    Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
 
     <details>
     <summary>Solución</summary>
 
-   a)
+    a)
     ```python
     date = input('Fecha de nacimiento: ')
     day, month, first_year = (int(number) for number in date.split('/'))
@@ -441,7 +441,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     for i, year in enumerate(range(first_year + 1, 2024), start=1):
         print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
     ```
-   b)
+    b)
     ```python
     import datetime
     
@@ -645,7 +645,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     print('OK')
     ```
-   b)
+    b)
     > Usando la [función integrada](https://docs.python.org/3/library/functions.html) `sum()`:
 
     ```python
@@ -698,7 +698,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     print('OK')
     ```
-   b)
+    b)
     ```python
     import statistics
     
@@ -814,7 +814,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <details>
     <summary>Solución</summary>
 
-   a)
+    a)
     ```python
     def factorial(number: int) -> int:
         if number < 0:
@@ -831,7 +831,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     print(factorial(4))
     print(factorial(-1))
     ```
-   b)
+    b)
     ```python
     def factorial(number: int) -> int:
         if number < 0:
@@ -883,7 +883,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - `(0, [1], (2, ('three', [4.0, {'five'}])))` ➡️ `[0, 1, 2, 'three', 4.0, 'five']`
     - `range(6)` ➡️ `[0, 1, 2, 3, 4, 5]`
 
-   La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
+    La función puede recibir como argumento cualquier iterable, no solo listas, pero el resultado devuelto siempre será una lista.
 
     <details>
     <summary>Solución</summary>
@@ -923,7 +923,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - `fibonacci_sequence(5, ' - ')` ➡️ `0 - 1 - 1 - 2 - 3`
     - `fibonacci_sequence(11, ' | ')` ➡️ `0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55`
 
-   La sucesión de Fibonacci para `n` negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+    La sucesión de Fibonacci para `n` negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
    > ```python
@@ -967,17 +967,17 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 9. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
 
-   `encode('abc', 1)` ➡️ `'bcd'`
+    `encode('abc', 1)` ➡️ `'bcd'`
 
-   Si lo ciframos con desplazamiento `2`:
+    Si lo ciframos con desplazamiento `2`:
 
-   `encode('abc', 2)` ➡️ `'cde'`
+    `encode('abc', 2)` ➡️ `'cde'`
 
-   En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+    En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
 
-   Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
+    Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
 
-   `decode(encode(text, offset), offset) == text` ➡️ `True`
+    `decode(encode(text, offset), offset) == text` ➡️ `True`
 
     <details>
     <summary>Solución</summary>
@@ -1243,7 +1243,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Vehículos.
 
-   Construir con clases el siguiente escenario:
+    Construir con clases el siguiente escenario:
 
     1. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
     2. Una clase `Person`:
@@ -1412,7 +1412,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Lista enlazada.
 
-   Crear una lista enlazada con clases:
+    Crear una lista enlazada con clases:
 
     1. Llamar a la clase `LinkedList`.
     2. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
@@ -1430,7 +1430,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <br>
 
-   Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+    Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
     def run_tests() -> None:
@@ -1812,37 +1812,37 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️☠️☠️ Rascacielos.
 
-   Este ejercicio se basa en el famoso juego de los rascacielos. Este juego tipo puzle tiene similitudes con el sudoku a la hora de colocar los rascacielos en cada celda pero también juega con la perspectiva, es decir, es importante tener en cuenta la cantidad de rascacielos que se pueden ver desde cada lado del tablero.
+    Este ejercicio se basa en el famoso juego de los rascacielos. Este juego tipo puzle tiene similitudes con el sudoku a la hora de colocar los rascacielos en cada celda pero también juega con la perspectiva, es decir, es importante tener en cuenta la cantidad de rascacielos que se pueden ver desde cada lado del tablero.
 
-   La siguiente imagen muestra el inicio del juego, el tablero sin resolver:
+    La siguiente imagen muestra el inicio del juego, el tablero sin resolver:
 
    ![skyscraper.png](md_images/skyscraper.png)
 
-   En este caso la partida es de `4x4` pero podría tener cualquier tamaño `nxn`. Al ser de tamaño `4`, los rascacielos que podremos colocar tendrán una altura entre `1` y `4` (inclusive).
+    En este caso la partida es de `4x4` pero podría tener cualquier tamaño `nxn`. Al ser de tamaño `4`, los rascacielos que podremos colocar tendrán una altura entre `1` y `4` (inclusive).
 
-   No podremos colocar dos rascacielos de la misma altura en una misma fila o columna.
+    No podremos colocar dos rascacielos de la misma altura en una misma fila o columna.
 
-   Los números que aparecen fuera del tablero indican el número de rascacielos que se verían desde esa posición. Vamos a ver la solución de este tablero para tenerlo más claro:
+    Los números que aparecen fuera del tablero indican el número de rascacielos que se verían desde esa posición. Vamos a ver la solución de este tablero para tenerlo más claro:
 
    ![skyscraper_solution.png](md_images/skyscraper_solution.png)
 
-   Los rascacielos altos tapan a los más bajos cuando los miramos desde cierto lado.
+    Los rascacielos altos tapan a los más bajos cuando los miramos desde cierto lado.
 
-   Fijémonos en la tercera columna: como arriba tiene un `4` (el número fuera del tablero), eso significa que en esa columna, desde arriba hacia abajo, se pueden ver todos los rascacielos desde altura `1` hasta `4`, o sea, cuatro rascacielos. Y si miramos en el número de abajo de la misma columna nos daremos cuenta de que es un `1`, porque solo podríamos ver un rascacielos, el de altura `4`, tapando los de altura `3`, `2` y `1`.
+    Fijémonos en la tercera columna: como arriba tiene un `4` (el número fuera del tablero), eso significa que en esa columna, desde arriba hacia abajo, se pueden ver todos los rascacielos desde altura `1` hasta `4`, o sea, cuatro rascacielos. Y si miramos en el número de abajo de la misma columna nos daremos cuenta de que es un `1`, porque solo podríamos ver un rascacielos, el de altura `4`, tapando los de altura `3`, `2` y `1`.
 
-   Entonces, cumpliendo las reglas indicadas en el exterior de tablero y teniendo en cuenta que no se pueden colocar dos rascacielos de misma altura en una misma fila o columna: crear una función `skyscrapers(...)` que reciba las reglas de cada lado del tablero de cualquier tamaño `nxn` en el orden **arriba**, **abajo**, **izquierda** y **derecha** mediante cuatro listas como argumentos y que devuelva una lista de listas representando el tablero resuelto relleno con los números que simbolizan los rascacielos de altura `1` hasta `n`. En el caso de no existir solución posible al tablero con las reglas propuestas, la función debe devolver `None`.
+    Entonces, cumpliendo las reglas indicadas en el exterior de tablero y teniendo en cuenta que no se pueden colocar dos rascacielos de misma altura en una misma fila o columna: crear una función `skyscrapers(...)` que reciba las reglas de cada lado del tablero de cualquier tamaño `nxn` en el orden **arriba**, **abajo**, **izquierda** y **derecha** mediante cuatro listas como argumentos y que devuelva una lista de listas representando el tablero resuelto relleno con los números que simbolizan los rascacielos de altura `1` hasta `n`. En el caso de no existir solución posible al tablero con las reglas propuestas, la función debe devolver `None`.
 
-   Con el tablero del ejemplo sería así:
+    Con el tablero del ejemplo sería así:
 
-   `skyscrapers([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])` ➡️ `[[2, 3, 1, 4], [3, 4, 2, 1], [4, 1, 3, 2], [1, 2, 4, 3]]`
+    `skyscrapers([3, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])` ➡️ `[[2, 3, 1, 4], [3, 4, 2, 1], [4, 1, 3, 2], [1, 2, 4, 3]]`
 
-   Si cambiáramos en las reglas el primer `3` por un `2`, la partida no tendría solución, entonces:
+    Si cambiáramos en las reglas el primer `3` por un `2`, la partida no tendría solución, entonces:
 
-   `skyscrapers([2, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])` ➡️ `None`
+    `skyscrapers([2, 2, 4, 1], [2, 2, 1, 2], [3, 2, 1, 3], [1, 3, 3, 2])` ➡️ `None`
 
-   <br>
+    <br>
 
-   A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+    A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
 
     ```python
     def run_tests() -> None:

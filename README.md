@@ -1325,7 +1325,7 @@ for word in words:
     print(word)
 ```
 
-> Si se necesita gestionar un índice numérico como contador, se puede usar la función `enumerate` que devuelve un par (índice, elemento):
+> Si se necesita gestionar un índice numérico como contador, se puede usar la [función integrada](https://docs.python.org/3/library/functions.html) `enumerate` que devuelve un par (índice, elemento):
 > ```python
 > words = ['hello', 'world', 'Juan', 'bye']
 > for i, word in enumerate(words):

@@ -1016,11 +1016,273 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. 
+10. A continuación hay 8 funciones que crean y devuelven diversas listas. El objetivo de este ejercicio es crear [listas por comprensión](README.md#51-listas-por-comprensión) que sean equivalentes a las que devuelven estas funciones. Bajo cada una de ellas hay unos `...` que hay que completar para que el código se ejecute sin errores.
+
+    ```python
+    def function_1() -> list[int]:
+        numbers = []
+        for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+            numbers.append(number * 2)
+    
+        return numbers
+    
+    
+    assert function_1() == ...
+    
+    
+    def function_2() -> list[int]:
+        numbers = []
+        for number in function_1():
+            if number % 3 == 0:
+                numbers.append(number)
+    
+        return numbers
+    
+    
+    assert function_2() == ...
+    
+    
+    def function_3() -> list[str]:
+        words = []
+        for word in 'Lorem IPSUM DoLoR sit aMeT'.split():
+            words.append(word.lower())
+    
+        return words
+    
+    
+    assert function_3() == ...
+    
+    
+    def function_4() -> list[str]:
+        words = []
+        for word in function_3():
+            if word[0] in {'a', 'e', 'i', 'o', 'u'}:
+                words.append(word.upper())
+    
+        return words
+    
+    
+    assert function_4() == ...
+    
+    
+    def function_5() -> list[str]:
+        characters = []
+        for character in 'Lorem IPSUM DoLoR sit aMeT':
+            if character.isupper():
+                characters.append('🔼')
+            else:
+                characters.append('🔽')
+    
+        return characters
+    
+    
+    assert function_5() == ...
+    
+    
+    def function_6() -> list[int | str]:
+        elements = []
+        for i in range(10):
+            if 2 <= i < 4:
+                elements.append('---')
+            else:
+                elements.append(i)
+    
+        return elements
+    
+    
+    assert function_6() == ...
+    
+    
+    def function_7() -> list[bool]:
+        elements = []
+        for i in function_6():
+            if isinstance(i, int):
+                elements.append(i % 2 == 0)
+    
+        return elements
+    
+    
+    assert function_7() == ...
+    
+    
+    def function_8() -> list[str]:
+        elements = []
+        for i, element in enumerate(function_6()):
+            if i < 4:
+                continue
+    
+            if element % 4 == 0:
+                elements.append('✅')
+            else:
+                elements.append('❌')
+    
+        return elements
+    
+    
+    assert function_8() == ...
+    
+    print('OK')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    def function_1() -> list[int]:
+        numbers = []
+        for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+            numbers.append(number * 2)
+    
+        return numbers
+    
+    
+    assert function_1() == [number * 2 for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]
+    
+    
+    def function_2() -> list[int]:
+        numbers = []
+        for number in function_1():
+            if number % 3 == 0:
+                numbers.append(number)
+    
+        return numbers
+    
+    
+    assert function_2() == [number for number in function_1() if number % 3 == 0]
+    
+    
+    def function_3() -> list[str]:
+        words = []
+        for word in 'Lorem IPSUM DoLoR sit aMeT'.split():
+            words.append(word.lower())
+    
+        return words
+    
+    
+    assert function_3() == [word.lower() for word in 'Lorem IPSUM DoLoR sit aMeT'.split()]
+    
+    
+    def function_4() -> list[str]:
+        words = []
+        for word in function_3():
+            if word[0] in {'a', 'e', 'i', 'o', 'u'}:
+                words.append(word.upper())
+    
+        return words
+    
+    
+    assert function_4() == [word.upper() for word in function_3() if word[0] in {'a', 'e', 'i', 'o', 'u'}]
+    
+    
+    def function_5() -> list[str]:
+        characters = []
+        for character in 'Lorem IPSUM DoLoR sit aMeT':
+            if character.isupper():
+                characters.append('🔼')
+            else:
+                characters.append('🔽')
+    
+        return characters
+    
+    
+    assert function_5() == ['🔼' if character.isupper() else '🔽' for character in 'Lorem IPSUM DoLoR sit aMeT']
+    
+    
+    def function_6() -> list[int | str]:
+        elements = []
+        for i in range(10):
+            if 2 <= i < 4:
+                elements.append('---')
+            else:
+                elements.append(i)
+    
+        return elements
+    
+    
+    assert function_6() == ['---' if 2 <= i < 4 else i for i in range(10)]
+    
+    
+    def function_7() -> list[bool]:
+        elements = []
+        for i in function_6():
+            if isinstance(i, int):
+                elements.append(i % 2 == 0)
+    
+        return elements
+    
+    
+    assert function_7() == [i % 2 == 0 for i in function_6() if isinstance(i, int)]
+    
+    
+    def function_8() -> list[str]:
+        elements = []
+        for i, element in enumerate(function_6()):
+            if i < 4:
+                continue
+    
+            if element % 4 == 0:
+                elements.append('✅')
+            else:
+                elements.append('❌')
+    
+        return elements
+    
+    
+    assert function_8() == ['✅' if element % 4 == 0 else '❌' for i, element in enumerate(function_6()) if i >= 4]
+    
+    print('OK')
+    ```
+
+    </details>
 
 <br>
 
-11. Sea:
+11. Sea el siguiente código:
+
+    ```python
+    from collections.abc import Callable
+    from typing import Any
+    
+    
+    def process(numbers: list, something: Callable[[int], Any]) -> None:
+        print([something(number) for number in numbers])
+    
+    
+    numbers_ = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ...
+    ```
+    
+    Completar `...` **sin usar `print()`** y ejecutar para que en la consola salga:
+
+    ```
+    [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+    [False, True, False, True, False, True, False, True, False, True, False]
+    ['Suspenso', 'Suspenso', 'Suspenso', 'Suspenso', 'Suspenso', 'Aprobado', 'Aprobado', 'Aprobado', 'Aprobado', 'Aprobado', 'Aprobado']
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    from collections.abc import Callable
+    from typing import Any
+    
+    
+    def process(numbers: list, something: Callable[[int], Any]) -> None:
+        print([something(number) for number in numbers])
+    
+    
+    numbers_ = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    process(numbers_, lambda number: number * 3)
+    process(numbers_, lambda number: number % 2 == 0)
+    process(numbers_, lambda number: 'Aprobado' if number >= 5 else 'Suspenso')
+    ```
+
+    </details>
+
+<br>
+
+12. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
@@ -1043,7 +1305,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Filtrado de archivos.
+13. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 

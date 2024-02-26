@@ -370,7 +370,162 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la ronda. El juego continuará para siempre.
+8. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](README.md#51-listas-por-comprensión) que sea equivalente.
+
+    1. <br>
+
+        ```python
+        numbers = []
+        for number in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
+            numbers.append(number * 2)
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        [number * 2 for number in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]]
+        ```
+
+        </details>
+
+    2. <br>
+
+        ```python
+        numbers = []
+        for number in range(10):
+            if number % 3 == 0:
+                numbers.append(number)
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        [number for number in range(10) if number % 3 == 0]
+        ```
+
+        </details>
+
+    3. <br>
+
+        ```python
+        words = []
+        for word in ['Lorem', 'IPSUM', 'DoLoR', 'sit', 'aMeT']:
+            words.append(word.lower())
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        [word.lower() for word in ['Lorem', 'IPSUM', 'DoLoR', 'sit', 'aMeT']]
+        ```
+
+        </details>
+
+    4. <br>
+
+        ```python
+        words = []
+        for word in 'lorem ipsum dolor sit amet'.split():
+            if word[0] in {'a', 'e', 'i', 'o', 'u'}:
+                words.append(word.upper())
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        [word.upper() for word in 'lorem ipsum dolor sit amet'.split() if word[0] in {'a', 'e', 'i', 'o', 'u'}]
+        ```
+
+        </details>
+
+    5. <br>
+
+        ```python
+        characters = []
+        for character in 'Lorem IPSUM DoLoR sit aMeT':
+            if character.isupper():
+                characters.append('🔼')
+            else:
+                characters.append('🔽')
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        ['🔼' if character.isupper() else '🔽' for character in 'Lorem IPSUM DoLoR sit aMeT']
+        ```
+
+        </details>
+
+    6. <br>
+
+        ```python
+        elements = []
+        for i in range(10):
+            if 2 <= i < 4:
+                elements.append('---')
+            else:
+                elements.append(i)
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        ['---' if 2 <= i < 4 else i for i in range(10)]
+        ```
+
+        </details>
+
+    7. <br>
+
+        ```python
+        elements = []
+        for i in [0, 1, 'two', 'three', 4, 5]:
+            if isinstance(i, int):
+                elements.append(i % 2 == 0)
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        [i % 2 == 0 for i in [0, 1, 'two', 'three', 4, 5] if isinstance(i, int)]
+        ```
+
+        </details>
+
+    8. <br>
+
+        ```python
+        elements = []
+        for i, element in enumerate([0, 1, 'two', 'three', 4, 5]):
+            if i < 4:
+                continue
+        
+            if element % 4 == 0:
+                elements.append('✅')
+            else:
+                elements.append('❌')
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        ['✅' if element % 4 == 0 else '❌' for i, element in enumerate([0, 1, 'two', 'three', 4, 5]) if i >= 4]
+        ```
+
+        </details>
+
+<br>
+
+9. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -399,7 +554,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-9. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
+10. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
     ```
     El 18 de junio de 1998 cumpliste 1 año.
@@ -476,7 +631,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+11. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
     <details>
     <summary>Solución</summary>
@@ -504,7 +659,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
+12. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
 
     ```
     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
@@ -553,7 +708,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
+13. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
     <details>
     <summary>Solución</summary>
@@ -621,6 +776,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ```
    
     Rellenar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `OK` por consola.
+    
+    > `assert` es una sentencia que comprueba la veracidad de lo que haya a la derecha. Si es `True` no hace nada, pero si es `False` lanza una [excepción](README.md#7-excepciones).
 
     <details>
     <summary>Solución</summary>
@@ -1015,264 +1172,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. A continuación hay 8 funciones con sufijo `a` que crean y devuelven diversas listas y 8 funciones con sufijo `b` que están vacías. El objetivo de este ejercicio es rellenar las funciones `b` para crear y devolver listas equivalentes a las que devuelven sus hermanas `a`, pero **usando [listas por comprensión](README.md#51-listas-por-comprensión)**, por lo tanto el contenido de las funciones `b` no debe ocupar más de una línea.
-
-    ```python
-    def function_1_a() -> list[int]:
-        numbers = []
-        for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
-            numbers.append(number * 2)
-    
-        return numbers
-    
-    
-    def function_1_b() -> list[int]:
-        ...
-    
-    
-    def function_2_a() -> list[int]:
-        numbers = []
-        for number in function_1_a():
-            if number % 3 == 0:
-                numbers.append(number)
-    
-        return numbers
-    
-    
-    def function_2_b() -> list[int]:
-        ...
-    
-    
-    def function_3_a() -> list[str]:
-        words = []
-        for word in 'Lorem IPSUM DoLoR sit aMeT'.split():
-            words.append(word.lower())
-    
-        return words
-    
-    
-    def function_3_b() -> list[str]:
-        ...
-    
-    
-    def function_4_a() -> list[str]:
-        words = []
-        for word in function_3_a():
-            if word[0] in {'a', 'e', 'i', 'o', 'u'}:
-                words.append(word.upper())
-    
-        return words
-    
-    
-    def function_4_b() -> list[str]:
-        ...
-    
-    
-    def function_5_a() -> list[str]:
-        characters = []
-        for character in 'Lorem IPSUM DoLoR sit aMeT':
-            if character.isupper():
-                characters.append('🔼')
-            else:
-                characters.append('🔽')
-    
-        return characters
-    
-    
-    def function_5_b() -> list[str]:
-        ...
-    
-    
-    def function_6_a() -> list[int | str]:
-        elements = []
-        for i in range(10):
-            if 2 <= i < 4:
-                elements.append('---')
-            else:
-                elements.append(i)
-    
-        return elements
-    
-    
-    def function_6_b() -> list[int | str]:
-        ...
-    
-    
-    def function_7_a() -> list[bool]:
-        elements = []
-        for i in function_6_a():
-            if isinstance(i, int):
-                elements.append(i % 2 == 0)
-    
-        return elements
-    
-    
-    def function_7_b() -> list[bool]:
-        ...
-    
-    
-    def function_8_a() -> list[str]:
-        elements = []
-        for i, element in enumerate(function_6_a()):
-            if i < 4:
-                continue
-    
-            if element % 4 == 0:
-                elements.append('✅')
-            else:
-                elements.append('❌')
-    
-        return elements
-    
-    
-    def function_8_b() -> list[str]:
-        ...
-    
-    
-    assert function_1_a() == function_1_b()
-    assert function_2_a() == function_2_b()
-    assert function_3_a() == function_3_b()
-    assert function_4_a() == function_4_b()
-    assert function_5_a() == function_5_b()
-    assert function_6_a() == function_6_b()
-    assert function_7_a() == function_7_b()
-    assert function_8_a() == function_8_b()
-    
-    print('OK')
-    ```
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    def function_1_a() -> list[int]:
-        numbers = []
-        for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
-            numbers.append(number * 2)
-    
-        return numbers
-    
-    
-    def function_1_b() -> list[int]:
-        return [number * 2 for number in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]
-    
-    
-    def function_2_a() -> list[int]:
-        numbers = []
-        for number in function_1_a():
-            if number % 3 == 0:
-                numbers.append(number)
-    
-        return numbers
-    
-    
-    def function_2_b() -> list[int]:
-        return [number for number in function_1_a() if number % 3 == 0]
-    
-    
-    def function_3_a() -> list[str]:
-        words = []
-        for word in 'Lorem IPSUM DoLoR sit aMeT'.split():
-            words.append(word.lower())
-    
-        return words
-    
-    
-    def function_3_b() -> list[str]:
-        return [word.lower() for word in 'Lorem IPSUM DoLoR sit aMeT'.split()]
-    
-    
-    def function_4_a() -> list[str]:
-        words = []
-        for word in function_3_a():
-            if word[0] in {'a', 'e', 'i', 'o', 'u'}:
-                words.append(word.upper())
-    
-        return words
-    
-    
-    def function_4_b() -> list[str]:
-        return [word.upper() for word in function_3_a() if word[0] in {'a', 'e', 'i', 'o', 'u'}]
-    
-    
-    def function_5_a() -> list[str]:
-        characters = []
-        for character in 'Lorem IPSUM DoLoR sit aMeT':
-            if character.isupper():
-                characters.append('🔼')
-            else:
-                characters.append('🔽')
-    
-        return characters
-    
-    
-    def function_5_b() -> list[str]:
-        return ['🔼' if character.isupper() else '🔽' for character in 'Lorem IPSUM DoLoR sit aMeT']
-    
-    
-    def function_6_a() -> list[int | str]:
-        elements = []
-        for i in range(10):
-            if 2 <= i < 4:
-                elements.append('---')
-            else:
-                elements.append(i)
-    
-        return elements
-    
-    
-    def function_6_b() -> list[int | str]:
-        return ['---' if 2 <= i < 4 else i for i in range(10)]
-    
-    
-    def function_7_a() -> list[bool]:
-        elements = []
-        for i in function_6_a():
-            if isinstance(i, int):
-                elements.append(i % 2 == 0)
-    
-        return elements
-    
-    
-    def function_7_b() -> list[bool]:
-        return [i % 2 == 0 for i in function_6_a() if isinstance(i, int)]
-    
-    
-    def function_8_a() -> list[str]:
-        elements = []
-        for i, element in enumerate(function_6_a()):
-            if i < 4:
-                continue
-    
-            if element % 4 == 0:
-                elements.append('✅')
-            else:
-                elements.append('❌')
-    
-        return elements
-    
-    
-    def function_8_b() -> list[str]:
-        return ['✅' if element % 4 == 0 else '❌' for i, element in enumerate(function_6_a()) if i >= 4]
-    
-    
-    assert function_1_a() == function_1_b()
-    assert function_2_a() == function_2_b()
-    assert function_3_a() == function_3_b()
-    assert function_4_a() == function_4_b()
-    assert function_5_a() == function_5_b()
-    assert function_6_a() == function_6_b()
-    assert function_7_a() == function_7_b()
-    assert function_8_a() == function_8_b()
-    
-    print('OK')
-    ```
-
-    </details>
-
-<br>
-
-11. Sea el siguiente código:
+10. Sea el siguiente código:
 
     ```python
     from collections.abc import Callable
@@ -1317,7 +1217,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Sea:
+11. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
@@ -1340,7 +1240,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-13. Filtrado de archivos.
+12. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 

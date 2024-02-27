@@ -1225,7 +1225,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Ordenar `elements` por el **segundo elemento** de cada tupla **descendentemente** usando la [función integrada](https://docs.python.org/3/library/functions.html) `sorted()` (y sus parámetros `key` y `reverse`) y mostrar el resultado por consola.
 
-    > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar. Podemos usar una [función anónima](README.md#66-funciones-anónimas).
+    > `key` espera una función para ordenar los elementos de forma que devuelva el valor a comparar.
 
     <details>
     <summary>Solución</summary>

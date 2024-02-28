@@ -1245,7 +1245,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     > Para este ejercicio es necesario haber hecho y entendido el ejercicio anterior.
 
-    > Si se complica este ejercicio: revisar los capítulos de la teoría de [funciones](README.md#6-funciones).
+    > Si se complica este ejercicio: revisar los capítulos de la teoría de [funciones](README.md#índice).
 
     1. Se proporcionará código que contiene dos funciones:`function_1()` y `time_it()`.
 

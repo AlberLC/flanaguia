@@ -1172,7 +1172,262 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Sea el siguiente código:
+10. Ejercicio `time_it()`.
+
+    > Si se complica terminar este ejercicio: revisar los capítulos de la teoría de [funciones](README.md#6-funciones).
+
+    1. Se proporcionará código que contiene dos funciones:`function_1()` y `time_it()`.
+
+        - `function_1()` está ya hecha y se encarga de generar una espera aleatoria entre 1 y 3 segundos.
+        - `time_it()` hay que completarla y tiene que servir para calcular cuanto tarda una función en ejecutarse usando la función `perf_counter()` del módulo `time`.
+
+        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_1()` en ejecutarse.
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        
+        
+        def function_1() -> None:
+            time.sleep(random.randint(1, 3))
+        
+        
+        def time_it(...) -> None:
+            ...
+        
+        
+        time_it(...)
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        
+        
+        def function_1() -> None:
+            time.sleep(random.randint(1, 3))
+        
+        
+        def time_it(function: Callable) -> None:
+            start = time.perf_counter()
+            function()
+            print(f'Ha tardado {time.perf_counter() - start} segundos.')
+        
+        
+        time_it(function_1)
+        ```
+
+        </details>
+
+    2. `function_1()` ha evolucionado `function_2()`. Ahora, además, devuelve la suma de tres números enteros recibidos por parámetro.
+
+        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_2()` en ejecutarse y el resultado de la suma (de ahí el `print()` añadido en la última línea).
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        
+        
+        def function_2(a: int, b: int, c: int) -> int:
+            time.sleep(random.randint(1, 3))
+        
+            return a + b + c
+        
+        
+        def time_it(...) -> int:
+            ...
+        
+        
+        print(time_it(...))
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        
+        
+        def function_2(a: int, b: int, c: int) -> int:
+            time.sleep(random.randint(1, 3))
+        
+            return a + b + c
+        
+        
+        def time_it(function: Callable, a: int, b: int, c: int) -> int:
+            start = time.perf_counter()
+        
+            value = function(a, b, c)
+            print(f'Ha tardado {time.perf_counter() - start} segundos.')
+            return value
+        
+        
+        print(time_it(function_2, 5, 2, 7))
+        ```
+
+        </details>
+
+    3. Ahora tenemos todas las funciones anteriores más `function_3()`. Esta genera una espera aleatoria, luego multiplica una cadena de texto por un número (ambos recibidos por parámetro) y termina devolviendo la cadena resultante.
+
+        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos han tardado `function_1()`, `function_2()` y `function_3()` en ejecutarse y sus resultados.
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        from typing import Any
+        
+        
+        def function_1() -> None:
+            time.sleep(random.randint(1, 3))
+        
+        
+        def function_2(a: int, b: int, c: int) -> int:
+            time.sleep(random.randint(1, 3))
+        
+            return a + b + c
+        
+        
+        def function_3(text: str, n: int) -> str:
+            time.sleep(random.randint(1, 3))
+        
+            return text * n
+        
+        
+        def time_it(...) -> Any:
+            ...
+        
+        
+        time_it(function_1)
+        print(time_it(function_2, 5, 2, 7))
+        print(time_it(function_3, 'hola', 3))
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        from typing import Any
+        
+        
+        def function_1() -> None:
+            time.sleep(random.randint(1, 3))
+        
+        
+        def function_2(a: int, b: int, c: int) -> int:
+            time.sleep(random.randint(1, 3))
+        
+            return a + b + c
+        
+        
+        def function_3(text: str, n: int) -> str:
+            time.sleep(random.randint(1, 3))
+        
+            return text * n
+        
+        
+        def time_it(function: Callable, *args: Any) -> Any:
+            start = time.perf_counter()
+        
+            value = function(*args)
+            print(f'Ha tardado {time.perf_counter() - start} segundos.')
+            return value
+        
+        
+        time_it(function_1)
+        print(time_it(function_2, 5, 2, 7))
+        print(time_it(function_3, 'hola', 3))
+        ```
+
+        </details>
+
+    4. Por último: completar donde `...` para conseguir la misma salida del ejercicio anterior con la cabecera de `time_it()` ya definida como sigue:
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        
+        
+        def function_1() -> None:
+            time.sleep(random.randint(1, 3))
+        
+        
+        def function_2(a: int, b: int, c: int) -> int:
+            time.sleep(random.randint(1, 3))
+        
+            return a + b + c
+        
+        
+        def function_3(text: str, n: int) -> str:
+            time.sleep(random.randint(1, 3))
+        
+            return text * n
+        
+        
+        def time_it(function: Callable) -> str:
+            ...
+        
+        
+        time_it(...)
+        print(time_it(...))
+        print(time_it(...))
+        ```
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        import random
+        import time
+        from collections.abc import Callable
+        
+        
+        def function_1() -> None:
+            time.sleep(random.randint(1, 3))
+        
+        
+        def function_2(a: int, b: int, c: int) -> int:
+            time.sleep(random.randint(1, 3))
+        
+            return a + b + c
+        
+        
+        def function_3(text: str, n: int) -> str:
+            time.sleep(random.randint(1, 3))
+        
+            return text * n
+        
+        
+        def time_it(function: Callable) -> str:
+            start = time.perf_counter()
+        
+            value = function()
+            print(f'Ha tardado {time.perf_counter() - start} segundos.')
+            return value
+        
+        
+        time_it(function_1)
+        print(time_it(lambda: function_2(5, 2, 7)))
+        print(time_it(lambda: function_3('hola', 3)))
+        ```
+
+        </details>
+
+<br>
+
+11. Sea el siguiente código:
 
     ```python
     from collections.abc import Callable
@@ -1217,7 +1472,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Sea:
+12. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
@@ -1240,7 +1495,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Filtrado de archivos.
+13. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 

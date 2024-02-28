@@ -1190,6 +1190,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         for number in numbers:  # numbers ➡️ ...
             print(number)  # number ➡️ ...
         f()  # f ➡️ ...
+        ccc()  # ccc ➡️ ...
     
     
     def ccc():
@@ -1222,6 +1223,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         for number in numbers:  # numbers ➡️ local
             print(number)  # number ➡️ local
         f()  # f ➡️ local
+        ccc()  # ccc ➡️ global
     
     
     def ccc():

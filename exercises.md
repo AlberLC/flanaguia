@@ -1959,6 +1959,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         - Al introducir la opción `5` se terminará el programa.
 
+    <br>
+
     <details>
     <summary>Solución</summary>
 

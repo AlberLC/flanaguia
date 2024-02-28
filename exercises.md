@@ -1768,6 +1768,349 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
+15. ☠️ Crear un gestor de clientes por consola.
+
+    - ▶️ Inicio.
+        - Cada cliente se va a gestionar como un diccionario `{'id': <value>, 'name': <value>, 'age': <value>}`.
+        - Los clientes se van a almacenar en una lista global `clients`, es decir, `clients: list[dict] = []` .
+        - Cuando se inicie por primera vez se imprimirá lo siguiente:
+            ```
+            Bienvenido al gestor de clientes.
+            
+            ----- Menú -----
+            1. ➕ Añadir cliente.
+            2. 🔎 Buscar clientes.
+            3. 🔄️ Actualizar cliente.
+            4. 🗑️ Eliminar cliente.
+            5. 🏃🏻 Salir.
+             
+            > 
+            ```
+        - La flecha `>` de abajo es el `input()` para elegir la opción del menú.
+        - Si se introduce una opción inválida se imprimirá otra vez el menú y se volverá a pedir la opción.
+
+    - ➕ Añadir cliente.
+
+        - Una vez introducida la opción `1` el programa pedirá un nombre y una edad.
+            - El nombre puede ser cualquier texto.
+            - La edad tiene que ser un número entero mayor que 0. Si el valor introducido no es válido se repetirá la petición de la edad.
+        - Una vez introducidos los datos correctamente se enviará un mensaje y se preguntará si quiere añadir otro:
+
+            ```
+            > 1
+            Nombre: Juan
+            Edad: 22
+            Cliente añadido exitosamente.
+            
+            ¿Añadir otro? (s/n): 
+            ```
+
+            - Si la opción introducida es distinta de `s` o `n` se repetirá la pregunta.
+            - Si la opción introducida es `s` se repetirá la petición de datos para un nuevo cliente.
+            - Si la opción introducida es `n` se volverá al menú.
+
+    - 🔎 Buscar clientes.
+
+        - Una vez introducida la opción `2` se imprimirá lo siguiente:
+
+            ```
+            > 2
+            🔎🔎🔎 Búsqueda de clientes 🔎🔎🔎
+            ▫️Los filtros se separan por ";".
+            ▫️"exit" para salir.
+            
+            --- Tipos de filtros ---
+            id:<id>
+            name:<name part>
+            age:<age>
+            min:<id|name|age>
+            max:<id|name|age>
+            
+            > 
+            ```
+
+        - Como indica el texto, el programa podrá filtrar clientes mediante unos filtros que se pedirán por consola siguiendo el formato indicado.
+        - Si se introduce `exit` en vez de un filtro, se volverá al menú principal.
+        - Ejemplos de filtros:
+            - `id:2` ➡️ clientes cuyo id sea 2.
+            - `name:Juan` ➡️ clientes cuyo nombre contenga "Juan".
+            - `name:a` ➡️ clientes cuyo nombre contenga "a".
+            - `age:22` ➡️ clientes cuya edad sea 22.
+            - `min:id` ➡️ el cliente de menor id.
+            - `max:age` ➡️ el cliente de mayor edad.
+            - `name:an;age:22;max:id` ➡️ el cliente cuyo nombre contenga "a", cuya edad sea 22 y cuyo id sea el mayor.
+        - Si no se proporciona un filtro o es inválido no se aplicará ningún filtro.
+        - Cada vez que se introduzcan los filtros se imprimirán por consola los clientes filtrados y se volverá a pedir otro filtro.
+            - Por ejemplo, tenemos los siguientes clientes almacenados:
+
+                ```
+                [
+                    {'id': 1, 'name': 'Juan', 'age': 22},
+                    {'id': 2, 'name': 'María', 'age': 43},
+                    {'id': 3, 'name': 'Alberto', 'age': 35},
+                    {'id': 4, 'name': 'Ana', 'age': 22}
+                ]
+                ```
+            
+            - Si se envía un filtro vacío o inválido:
+
+                ```
+                > 
+                {'id': 1, 'name': 'Juan', 'age': 22}
+                {'id': 2, 'name': 'María', 'age': 43}
+                {'id': 3, 'name': 'Alberto', 'age': 35}
+                {'id': 4, 'name': 'Ana', 'age': 22}
+                ```
+            
+            - Otros ejemplos de filtros:
+
+                ```
+                > id:2
+                {'id': 2, 'name': 'María', 'age': 43}
+                ```
+
+                ```
+                > name:Juan
+                {'id': 1, 'name': 'Juan', 'age': 22}
+                ```
+
+                ```
+                > name:a
+                {'id': 1, 'name': 'Juan', 'age': 22}
+                {'id': 2, 'name': 'María', 'age': 43}
+                {'id': 4, 'name': 'Ana', 'age': 22}
+                ```
+
+                ```
+                > age:22
+                {'id': 1, 'name': 'Juan', 'age': 22}
+                {'id': 4, 'name': 'Ana', 'age': 22}
+                ```
+
+                ```
+                > min:id
+                {'id': 1, 'name': 'Juan', 'age': 22}
+                ```
+
+                ```
+                > max:age
+                {'id': 2, 'name': 'María', 'age': 43}
+                ```
+
+                ```
+                > name:a;age:22;max:id
+                {'id': 4, 'name': 'Ana', 'age': 22}
+                ```
+
+    - 🔄️ Actualizar cliente.
+
+        - Una vez introducida la opción `3` el programa pedirá un id.
+            - Si el valor introducido no es un número entero se repetirá la petición.
+        - Si el id introducido no existe se enviará un mensaje y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
+
+            ```
+            > 3
+            Id: 345
+            Cliente no encontrado.
+            
+            Presione ENTER para volver al menú...
+            ```
+
+        - Si el id existe: como cuando añadimos un cliente, se pedirán nombre y edad.
+            - El nombre puede ser cualquier texto.
+            - La edad tiene que ser un número entero mayor que 0. Si el valor introducido no es válido se repetirá la petición de la edad.
+        - Una vez introducidos los datos correctamente se actualizarán los datos el cliente, se enviará un mensaje de éxito y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
+
+            ```
+            > 3
+            Id: 2
+            Nombre: Alberto
+            Edad: 35
+            Cliente actualizado exitosamente.
+                
+            Presione ENTER para volver al menú...
+            ```
+
+    - 🗑️ Eliminar cliente.
+
+        - Una vez introducida la opción `4` el programa pedirá un id.
+            - Si el valor introducido no es un número entero se repetirá la petición.
+        - Si el id introducido no existe se enviará un mensaje y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
+
+            ```
+            > 4
+            Id: 345
+            Cliente no encontrado.
+            
+            Presione ENTER para volver al menú...
+            ```
+
+        - Si el id existe: se eliminará el cliente, se enviará un mensaje de éxito y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
+
+            ```
+            > 4
+            Id: 2
+            Cliente eliminado exitosamente.
+            
+            Presione ENTER para volver al menú...
+            ```
+
+    - 🏃🏻 Salir.
+
+        - Al introducir la opción `5` se terminará el programa.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    from collections.abc import Collection
+    
+    
+    def add_client() -> None:
+        id_ = max((client['id'] for client in clients), default=0)
+    
+        option = None
+        while option != 'n':
+            id_ += 1
+            name = input('Nombre: ')
+            age = age_input('Edad: ')
+    
+            clients.append({'id': id_, 'name': name, 'age': age})
+            print('Cliente añadido exitosamente.\n')
+            option = options_input('¿Añadir otro? (s/n): ', {'s', 'n'})
+    
+    
+    def age_input(prompt: str) -> int:
+        while True:
+            try:
+                age = int(input(prompt))
+            except ValueError:
+                pass
+            else:
+                if age > 0:
+                    return age
+    
+    
+    def client_index_by_id(id_: int) -> int | None:
+        for i, client in enumerate(clients):
+            if client['id'] == id_:
+                return i
+    
+    
+    def delete_client() -> None:
+        id_ = int_input('Id: ')
+        index = client_index_by_id(id_)
+        if index is None:
+            print('Cliente no encontrado.')
+        else:
+            del clients[index]
+            print('Cliente eliminado exitosamente.')
+    
+        input('\nPresione ENTER para volver al menú...')
+    
+    
+    def int_input(prompt: str) -> int:
+        while True:
+            try:
+                option = int(input(prompt))
+            except ValueError:
+                pass
+            else:
+                return option
+    
+    
+    def options_input(prompt: str, options: Collection[str]) -> str:
+        option = None
+        while option not in options:
+            option = input(prompt)
+    
+        return option
+    
+    
+    def search_clients() -> None:
+        def search_clients_(filters: list[str]):
+            filtered_clients = clients.copy()
+            for filter_ in filters:
+                filter_parts = filter_.split(':')
+    
+                match filter_parts:
+                    case 'id' | 'age' as key, value:
+                        try:
+                            value = int(value)
+                        except ValueError:
+                            pass
+                        else:
+                            filtered_clients = [client for client in filtered_clients if client[key] == value]
+                    case 'name', name:
+                        filtered_clients = [client for client in filtered_clients if name in client['name']]
+                    case 'min', 'id' | 'name' | 'age' as key if filtered_clients:
+                        filtered_clients = [min(filtered_clients, key=lambda client: client[key])]
+                    case 'max', 'id' | 'name' | 'age' as key if filtered_clients:
+                        filtered_clients = [max(filtered_clients, key=lambda client: client[key])]
+    
+            for client in filtered_clients:
+                print(client)
+            print()
+    
+        print('🔎🔎🔎 Búsqueda de clientes 🔎🔎🔎\n'
+              '▫️Los filtros se separan por ";".\n'
+              '▫️"exit" para salir.\n'
+              '\n--- Tipos de filtros ---\n'
+              'id:<id>\n'
+              'name:<name part>\n'
+              'age:<age>\n'
+              'min:<id|name|age>\n'
+              'max:<id|name|age>\n')
+    
+        option = input('> ')
+        while option != 'exit':
+            search_clients_(option.split(';'))
+            option = input('> ')
+    
+    
+    def update_client() -> None:
+        id_ = int_input('Id: ')
+        index = client_index_by_id(id_)
+        if index is None:
+            print('Cliente no encontrado.')
+        else:
+            name = input('Nombre: ')
+            age = age_input('Edad: ')
+            clients[index]['name'] = name
+            clients[index]['age'] = age
+            print('Cliente actualizado exitosamente.')
+    
+        input('\nPresione ENTER para volver al menú...')
+    
+    
+    clients: list[dict] = []
+    print('Bienvenido al gestor de clientes.')
+    
+    while True:
+        print(f'\n----- Menú -----\n'
+              f'1. ➕ Añadir cliente.\n'
+              f'2. 🔎 Buscar clientes.\n'
+              f'3. 🔄️ Actualizar cliente.\n'
+              f'4. 🗑️ Eliminar cliente.\n'
+              f'5. 🏃🏻 Salir.\n')
+    
+        match input('> '):
+            case '1':
+                add_client()
+            case '2':
+                search_clients()
+            case '3':
+                update_client()
+            case '4':
+                delete_client()
+            case '5':
+                break
+    ```
+
+    </details>
+
+<br>
+
 ## Clases
 
 ### Ejercicios:

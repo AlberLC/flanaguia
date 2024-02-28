@@ -25,11 +25,12 @@
 6. [Funciones](#6-funciones)
    1. [Funciones sin argumentos](#61-funciones-sin-argumentos)
    2. [Funciones con argumentos](#62-funciones-con-argumentos)
-   3. [Argumentos por defecto](#63-argumentos-por-defecto)
-   4. [Argumentos posicionales y argumentos nombrados](#64-argumentos-posicionales-y-argumentos-nombrados)
-   5. [Número indeterminado de argumentos](#65-número-indeterminado-de-argumentos)
-   6. [Funciones anónimas](#66-funciones-anónimas)
-   7. [Funciones generadoras](#67-funciones-generadoras)
+   3. [Ámbitos](#63-ámbitos)
+   4. [Argumentos por defecto](#64-argumentos-por-defecto)
+   5. [Argumentos posicionales y argumentos nombrados](#65-argumentos-posicionales-y-argumentos-nombrados)
+   6. [Número indeterminado de argumentos](#66-número-indeterminado-de-argumentos)
+   7. [Funciones anónimas](#67-funciones-anónimas)
+   8. [Funciones generadoras](#68-funciones-generadoras)
 7. [Excepciones](#7-excepciones)
    1. [Lanzamiento de excepciones](#71-lanzamiento-de-excepciones)
    2. [Captura de excepciones](#72-captura-de-excepciones)
@@ -1046,7 +1047,7 @@ Para empaquetar y desempaquetar diccionarios usamos `**`:
 {1: 2, 3: 4, 'a': 'b', 'c': 'd'}
 ```
 
-> Estas mecánicas se usan mucho en los parámetros y argumentos de las funciones. Más información en el capítulo [6.5. Número indeterminado de argumentos](#65-número-indeterminado-de-argumentos).
+> Estas mecánicas se usan mucho en los parámetros y argumentos de las funciones. Más información en el capítulo [6.5. Número indeterminado de argumentos](#66-número-indeterminado-de-argumentos).
 
 <br>
 
@@ -1628,7 +1629,7 @@ Una vez entendido lo que son los iteradores, volvamos a nuestro problema del ini
 Python nos proporciona dos formas de definir nuestras propias sucesiones de elementos:
 
 - Con **expresiones** parecidas a las [listas por comprensión](#51-listas-por-comprensión) pero con **paréntesis**.
-- Con **funciones generadoras** (estas se explicarán en el capítulo [6.7. Funciones generadoras](#67-funciones-generadoras)).
+- Con **funciones generadoras** (estas se explicarán en el capítulo [6.7. Funciones generadoras](#68-funciones-generadoras)).
 
 Cualquiera de estas dos formas nos permiten crear **generadores**.
 
@@ -1786,6 +1787,9 @@ Salida:
 My name is Juan and I'm 25 years old.
 ```
 
+Las variables que definimos fuera de cualquier función son denominadas variables globales, residen en el ámbito global. Las definidas dentro de funciones son variables locales.
+> Más información en el capítulo [6.3. Ámbitos](#63-ámbitos).
+
 Podemos usar variables de ámbitos exteriores dentro de la función.
 
 ```python
@@ -1842,7 +1846,6 @@ Salida:
 10
 ```
 
-
 En Python todos los argumentos se pasan por referencia, así que hay que tener en cuenta que, si son objetos mutables, los cambios que les hagamos van a verse reflejados fuera de la función.
 
 ```python
@@ -1861,7 +1864,126 @@ Salida:
 
 <br>
 
-### 6.3. Argumentos por defecto
+### 6.3. Ámbitos
+
+Llamamos ámbito global a todo lo que está a nivel de módulo (archivo `.py`), es decir, fuera de cualquier función. Y ámbito local a lo que existe dentro de una función.
+
+```python
+global_var_1 = 'hello'
+
+
+def function(local_var_1):
+    local_var_2 = 1
+    print(global_var_1)
+    print(local_var_1)
+    print(local_var_2)
+
+
+global_var_2 = 2
+
+function(global_var_1)
+print(global_var_2)
+```
+Salida:
+```
+hello
+hello
+1
+2
+```
+
+El primer `print()` de la función del código anterior usa directamente la variable **global** `global_var_1` e imprime `'hello'`. El segundo imprime también `'hello'`, pero esta vez usa `local_var_1`, una variable de ámbito **local** que sirve de parámetro de la función y que recibe el valor de la llamada `function(global_var_1)`.
+
+Cada función tiene su propio ámbito local independiente:
+
+```python
+def function_1():
+    x = 1
+    print(x)
+
+
+def function_2():
+    y = 1
+    print(x)
+
+
+function_1()
+function_2()
+```
+Salida:
+```
+1
+Traceback (most recent call last):
+  File "main.py", line 165, in <module>
+    function_2()
+  File "main.py", line 161, in function_2
+    print(x)
+          ^
+NameError: name 'x' is not defined
+```
+
+Con la definición y uso de funciones es lo mismo:
+
+```python
+def function_1():
+    print(1)
+
+
+def function_2(function_3):
+    def function_4():
+        print(4)
+
+    print(3)
+    function_1()  # uso de un nombre global
+    function_3()  # uso de un nombre local
+    function_4()  # uso de un nombre local
+
+
+function_1()  # uso de un nombre global
+function_2(function_1)  # uso de un nombre global
+```
+Salida:
+```
+1
+3
+1
+1
+4
+```
+
+Cuidado con redifinir nombres que ya existen en el ámbito global:
+
+```python
+x_1 = 1
+x_2 = 2
+
+
+def function(x_1):
+    x_2 = 'two'
+
+    print(x_1)  # uso de un nombre local
+    print(x_2)  # uso de un nombre local
+
+
+print(x_1)
+print(x_2)
+function(x_1)
+print(x_1)
+print(x_2)
+```
+Salida:
+```
+1
+2
+1
+two
+1
+2
+```
+
+<br>
+
+### 6.4. Argumentos por defecto
 
 ```python
 def sum_numbers(number_1, number_2=100):
@@ -1971,7 +2093,7 @@ Ahora sí que estamos creando una lista en el ámbito local de la función cada 
 
 <br>
 
-### 6.4. Argumentos posicionales y argumentos nombrados
+### 6.5. Argumentos posicionales y argumentos nombrados
 
 Imaginemos que tenemos esta función:
 
@@ -2017,7 +2139,7 @@ My name is Ana and I'm 25 years old.
 
 <br>
 
-### 6.5. Número indeterminado de argumentos
+### 6.6. Número indeterminado de argumentos
 
 Cuando definimos nuestra función podemos diseñarla para aceptar un número indeterminado de argumentos, incluso infinitos (si es que alguien lo consigue):
 
@@ -2146,7 +2268,7 @@ Al hacer esto las claves y los valores de este se comportarán como argumentos n
 
 <br>
 
-### 6.6. Funciones anónimas
+### 6.7. Funciones anónimas
 
 Hasta ahora hemos definido nuestras funciones así:
 
@@ -2244,7 +2366,7 @@ Este es un buen caso donde se ve con claridad que es más cómodo crear una func
 
 <br>
 
-### 6.7. Funciones generadoras
+### 6.8. Funciones generadoras
 
 Una función generadora devuelve un generador, lo cual es un tipo de [iterador](#52-iteradores).
 

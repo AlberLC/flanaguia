@@ -1172,16 +1172,87 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Ejercicio `time_it()`.
+10. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
 
-    > Si se complica terminar este ejercicio: revisar los capítulos de la teoría de [funciones](README.md#6-funciones).
+    > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](README.md#63-ámbitos) de la teoría.
+
+    ```python
+    n = 45
+    word = 'house'
+    
+    
+    def aaa(text, n):
+        print(f'--- {text} ---')  # text ➡️ ...
+        print(n * 2)  # n ➡️ ...
+    
+    
+    def bbb(f, numbers):
+        word = 'car'
+        aaa(word, n)  # aaa ➡️ ... # word ➡️ ... # n ➡️ ...
+        for number in numbers:  # numbers ➡️ ...
+            print(number)  # number ➡️ ...
+        f()  # f ➡️ ...
+    
+    
+    def ccc():
+        def ddd():
+            print(n)  # n ➡️ ...
+    
+        ddd()  # ddd ➡️ ...
+    
+    
+    aaa(word, n)  # aaa ➡️ ... # word ➡️ ... # n ➡️ ...
+    bbb(ccc, [1, 2, 3])  # bbb ➡️ ... # ccc ➡️ ...
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    n = 45
+    word = 'house'
+    
+    
+    def aaa(text, n):
+        print(f'--- {text} ---')  # text ➡️ local
+        print(n * 2)  # n ➡️ local
+    
+    
+    def bbb(f, numbers):
+        word = 'car'
+        aaa(word, n)  # aaa ➡️ global # word ➡️ local # n ➡️ global
+        for number in numbers:  # numbers ➡️ local
+            print(number)  # number ➡️ local
+        f()  # f ➡️ local
+    
+    
+    def ccc():
+        def ddd():
+            print(n)  # n ➡️ global
+    
+        ddd()  # ddd ➡️ local
+    
+    
+    aaa(word, n)  # aaa ➡️ global # word ➡️ global # n ➡️ global
+    bbb(ccc, [1, 2, 3])  # bbb ➡️ global # ccc ➡️ global
+    ```
+
+    </details>
+
+<br>
+
+11. Ejercicio `time_it()`.
+
+    > Para este ejercicio es necesario haber hecho y entendido el ejercicio anterior.
+
+    > Si se complica este ejercicio: revisar los capítulos de la teoría de [funciones](README.md#6-funciones).
 
     1. Se proporcionará código que contiene dos funciones:`function_1()` y `time_it()`.
 
         - `function_1()` está ya hecha y se encarga de generar una espera aleatoria entre 1 y 3 segundos.
         - `time_it()` hay que completarla y tiene que servir para calcular cuanto tarda cualquier función en ejecutarse usando la función `perf_counter()` del módulo `time`.
 
-        Objetivo: completar el código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_1()` en ejecutarse.
+        Objetivo: completar el código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_1()` en ejecutarse **sin usar `function_1()` globalmente dentro de `time_it`**.
 
         ```python
         import random
@@ -1226,7 +1297,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     2. `function_1()` ha evolucionado a `function_2()`. Ahora, además, devuelve la suma de tres números enteros recibidos por parámetro.
 
-        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_2()` en ejecutarse y el resultado de la suma (de ahí el `print()` añadido en la última línea).
+        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_2()` en ejecutarse y el resultado de la suma (de ahí el `print()` añadido en la última línea) **sin usar `function_2()` globalmente dentro de `time_it`**.
 
         ```python
         import random
@@ -1427,7 +1498,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Sea el siguiente código:
+12. Sea el siguiente código:
 
     ```python
     from collections.abc import Callable
@@ -1472,7 +1543,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Sea:
+13. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
@@ -1495,7 +1566,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-13. Filtrado de archivos.
+14. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 

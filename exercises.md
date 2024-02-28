@@ -1179,9 +1179,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     1. Se proporcionará código que contiene dos funciones:`function_1()` y `time_it()`.
 
         - `function_1()` está ya hecha y se encarga de generar una espera aleatoria entre 1 y 3 segundos.
-        - `time_it()` hay que completarla y tiene que servir para calcular cuanto tarda una función en ejecutarse usando la función `perf_counter()` del módulo `time`.
+        - `time_it()` hay que completarla y tiene que servir para calcular cuanto tarda cualquier función en ejecutarse usando la función `perf_counter()` del módulo `time`.
 
-        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_1()` en ejecutarse.
+        Objetivo: completar el código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_1()` en ejecutarse.
 
         ```python
         import random
@@ -1224,7 +1224,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    2. `function_1()` ha evolucionado `function_2()`. Ahora, además, devuelve la suma de tres números enteros recibidos por parámetro.
+    2. `function_1()` ha evolucionado a `function_2()`. Ahora, además, devuelve la suma de tres números enteros recibidos por parámetro.
 
         Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_2()` en ejecutarse y el resultado de la suma (de ahí el `print()` añadido en la última línea).
 
@@ -1275,7 +1275,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    3. Ahora tenemos todas las funciones anteriores más `function_3()`. Esta genera una espera aleatoria, luego multiplica una cadena de texto por un número (ambos recibidos por parámetro) y termina devolviendo la cadena resultante.
+    3. Ahora tenemos todas las funciones anteriores más `function_3()`. Esta genera una espera aleatoria y devuelve la cadena de texto resultante de multiplicar una cadena por un número (ambos recibidos por parámetro).
 
         Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos han tardado `function_1()`, `function_2()` y `function_3()` en ejecutarse y sus resultados.
 

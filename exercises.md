@@ -1770,10 +1770,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 15. ☠️ Crear un gestor de clientes por consola.
 
+    > Para este ejercicio es recomendable saber utilizar [excepciones](README.md#7-excepciones).
+
     - ▶️ Inicio.
         - Cada cliente se va a gestionar como un diccionario `{'id': <value>, 'name': <value>, 'age': <value>}`.
         - Los clientes se van a almacenar en una lista global `clients`, es decir, `clients: list[dict] = []` .
         - Cuando se inicie por primera vez se imprimirá lo siguiente:
+
             ```
             Bienvenido al gestor de clientes.
             
@@ -1786,6 +1789,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
              
             > 
             ```
+
         - La flecha `>` de abajo es el `input()` para elegir la opción del menú.
         - Si se introduce una opción inválida se imprimirá otra vez el menú y se volverá a pedir la opción.
 

@@ -1798,7 +1798,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         - Una vez introducida la opción `1` el programa pedirá un nombre y una edad.
             - El nombre puede ser cualquier texto.
             - La edad tiene que ser un número entero mayor que 0. Si el valor introducido no es válido se repetirá la petición de la edad.
-        - Una vez introducidos los datos correctamente se enviará un mensaje y se preguntará si quiere añadir otro:
+        - Cada cliente tendrá un id generado incrementalmente por el programa. Dicho id será el número que sigue al máximo de todos los ids de los clientes existentes en ese momento.
+        - Una vez introducidos los datos correctamente se almacenará el cliente, se enviará un mensaje y se preguntará si quiere añadir otro:
 
             ```
             > 1

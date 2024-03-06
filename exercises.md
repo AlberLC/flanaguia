@@ -278,7 +278,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Pedir por consola la longitud de un lado de un rombo e imprimir uno por consola siguiendo el formato dado a continuación. Por ejemplo: para longitud 4:
+4. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo: para longitud 4:
 
     ```
        *
@@ -304,7 +304,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Pedir por consola la longitud de un lado de un triángulo e imprimir uno por consola siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
+5. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
 
     ```
     1 
@@ -330,7 +330,97 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-6. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](README.md#5-bucles)** y **sin usar [conjuntos](README.md#16-conjuntos)**.
+6. Pedir por consola el número de niveles (altura) del [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo, para longitud 5:
+
+    - Para altura 0:
+
+        ```
+        ```
+
+    - Para altura 1:
+
+        ```
+        1 
+        ```
+
+    - Para altura 2:
+
+        ```
+         1 
+        1 1 
+        ```
+
+    - Para altura 5:
+
+        ```
+            1 
+           1 1 
+          1 2 1 
+         1 3 3 1 
+        1 4 6 4 1 
+        ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    length = int(input('Introduce la altura del triángulo: '))
+    
+    last_row = [0, 1]
+    for i in range(length):
+        print(' ' * (length - i - 1), end='')
+    
+        row = [0]
+        for j in range(i + 1):
+            number = last_row[j] + last_row[j + 1]
+            print(number, end=' ')
+            row.append(number)
+        row.append(0)
+        print()
+    
+        last_row = row
+    ```
+    b)
+    ```python
+    length = int(input('Introduce la altura del triángulo: '))
+    
+    if length > 0:
+        print(f"{' ' * (length - 1)}1")
+    
+    last_row = []
+    for i in range(1, length):
+        print(f"{' ' * (length - i - 1)}1", end=' ')
+    
+        row = [1]
+        for j in range(i - 1):
+            number = last_row[j] + last_row[j + 1]
+            print(number, end=' ')
+            row.append(number)
+        print(1)
+        row.append(1)
+    
+        last_row = row
+    ```
+    c)
+    ```python
+    import math
+    
+    length = int(input('Introduce la altura del triángulo: '))
+    
+    for i in range(length):
+        print(' ' * (length - i - 1), end='')
+    
+        for j in range(i + 1):
+            print(int(math.factorial(i) / (math.factorial(j) * math.factorial(i - j))), end=' ')
+        print()
+    ```
+
+    </details>
+
+<br>
+
+7. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](README.md#5-bucles)** y **sin usar [conjuntos](README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -349,7 +439,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-7. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+8. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
     - `hola`, `adios` ➡️ `False`
     - `urnas`, `runa` ➡️ `False`
@@ -370,7 +460,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](README.md#51-listas-por-comprensión) que sea equivalente.
+9. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -525,7 +615,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-9. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la ronda. El juego continuará para siempre.
+10. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -554,7 +644,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
+11. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
     ```
     El 18 de junio de 1998 cumpliste 1 año.
@@ -631,7 +721,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+12. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
     <details>
     <summary>Solución</summary>
@@ -659,7 +749,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
+13. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
 
     ```
     Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
@@ -708,7 +798,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-13. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
+14. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
     <details>
     <summary>Solución</summary>

@@ -278,33 +278,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo: para longitud 4:
-
-    ```
-       *
-      ***
-     *****
-    *******
-     *****
-      ***
-       *
-    ```
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    length = int(input('Introduce la longitud del lado del rombo: '))
-    
-    for i in range(-length + 1, length):
-        print(f"{' ' * (abs(i))}{'*' * ((length - abs(i)) * 2 - 1)}")
-    ```
-
-    </details>
-
-<br>
-
-5. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
+4. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
 
     ```
     1 
@@ -324,6 +298,32 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         for j in range(i, 0, -2):
             print(j, end=' ')
         print()
+    ```
+
+    </details>
+
+<br>
+
+5. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo: para longitud 4:
+
+    ```
+       *
+      ***
+     *****
+    *******
+     *****
+      ***
+       *
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    length = int(input('Introduce la longitud del lado del rombo: '))
+    
+    for i in range(-length + 1, length):
+        print(f"{' ' * (abs(i))}{'*' * ((length - abs(i)) * 2 - 1)}")
     ```
 
     </details>

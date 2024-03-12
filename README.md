@@ -1788,6 +1788,7 @@ My name is Juan and I'm 25 years old.
 ```
 
 Las variables que definimos fuera de cualquier función son denominadas variables globales, residen en el ámbito global. Las definidas dentro de funciones son variables locales.
+
 > Más información en el capítulo [6.3. Ámbitos](#63-ámbitos).
 
 Podemos usar variables de ámbitos exteriores dentro de la función.
@@ -1980,6 +1981,40 @@ two
 1
 2
 ```
+
+Si quisiéramos reasignar otro valor a una variable global dentro de una función (aunque no es una buena práctica) necesitaríamos indicarlo usando la palabra reservada `global`:
+
+```python
+x_1 = 1
+x_2 = 2
+
+
+def function(x_1):
+    global x_2
+    
+    x_2 = 'two'
+
+    print(x_1)  # uso de un nombre local
+    print(x_2)  # uso de un nombre global
+
+
+print(x_1)
+print(x_2)
+function(x_1)
+print(x_1)
+print(x_2)
+```
+Salida:
+```
+1
+2
+1
+two
+1
+two
+```
+
+Aquí `x_2` no existe como variable local.
 
 <br>
 
@@ -2721,6 +2756,69 @@ finally:
 
 ## 8. Clases
 
+Los conceptos "clase", "instancia", "atributo", "herencia", "polimorfismo", etc. son comunes a cualquier lenguaje de programación orientado a objetos. Python es uno de ellos.
+
+Básicamente las clases se usan para encapsular datos y funcionalidad, de forma que organice mejor la lógica del programa. Al igual que hacíamos antes con las funciones, estamos modularizando nuestro software de forma que partes concretas de nuestro código resuelvan problemas concretos, solo que ahora no solo manejamos funcionalidad, sino que también datos.
+
+Imaginemos un escenario donde gestionamos un coche, con sus datos y funcionalidad. Hasta ahora lo haríamos así: 
+
+```python
+model = 'Panda'
+color = 'red'
+wheels = 4
+doors = 5
+speed = 80
+
+
+def change_color(new_colour):
+    global color
+
+    color = new_colour
+
+
+def add_wheel():
+    global wheels
+
+    wheels += 1
+
+
+def remove_wheel():
+    global wheels
+
+    wheels -= 1
+
+
+def drive(time):
+    meters_seconds_speed = speed * 3.6
+    print(f'You have traveled {time * meters_seconds_speed / 1000} km.')
+
+
+print(color, wheels)
+change_color('blue')
+add_wheel()
+print(color, wheels)
+remove_wheel()
+remove_wheel()
+remove_wheel()
+print(color, wheels)
+drive(60)
+```
+Salida:
+```
+red 4
+blue 5
+blue 2
+You have traveled 17.28 km.
+```
+
+Como vemos, hemos utilizado funciones para modularizar el código. Por ejemplo, no hemos tenido que repetir código para quitar una rueda tres veces seguidas sino que hemos creado una función que se encargaba de ese problema concreto.
+
+Ese fue el primero paso para ordenar el código, pero existen varios problemas, por ejemplo, tenemos datos sueltos en variables globales que pueden usarse en otros lugares o interferir con el resto del programa, ¿que pasaría si tuviéramos cuarenta coches, tendríamos que añadir `model_1`, `model_2`, `model_3` ...? ¿y si manejaramos también aviones, `color` y `speed` serían de un coche o de un avión? Todo está mezclado y desordenado. Este tipo de cuestiones se resuelven encapsulando datos y funcionalidad en un mismo lugar, es decir, usando **clases**.
+
+Podemos entender una clase como una plantilla que sirve para fabricar objetos de un mismo tipo. Podríamos tener una clase `Car` y una clase `Plane`. Estas clases recogerían los datos en [atributos](#81-atributos) y la funcionalidad en [métodos](#82-métodos).
+
+Una vez tengamos dichas plantillas (las clases) podremos crear un número ilimitado de coches y aviones (**objetos** o **instancias**), los cuales guardan su propio contexto, es decir, si tenemos `car_1` y `car_2` y cambiamos el color de uno, no se cambiará el color del otro puesto que cada objeto coche tiene su propio atributo `color`.
+
 ### 8.1. Atributos
 
 Para crear e inicializar los atributos de los objetos definimos una función o método `__init__` (constructor) dentro del bloque delimitado por la cláusula `class`. Este constructor es llamado (ejecutado) usando el nombre de la clase como si fuera una función: `Person('Juan', 25, '123456789', 'Milo')` nos devolverá un objeto, también llamado instancia, de la clase.
@@ -2753,7 +2851,13 @@ Milo
 None
 ```
 
-Como se muestra, accedemos a los atributos del objeto con el operador `.`.
+El método `__init__()` tiene un parámetro `self`, este sirve como referencia al propio objeto a la hora de usar el constructor, es decir, si escribiéramos `self.name = 'Juan'` estaríamos dandole un valor al atributo `name` del objeto, pero si escribiéramos `name = 'Juan'` estaríamos creando una variable local `name` dentro del método como hacíamos normalmente en las funciones. Un método no es más que una función en una clase.
+
+> Más información sobre `self` en el capítulo [8.2. Métodos](#82-métodos).
+
+<br>
+
+Como vimos en el código anterior, una vez creado el objeto `juan`, accedemos a sus atributos con el operador `.`.
 
 Los atributos de un objeto residen en un diccionario que crea Python internamente. Podemos acceder a él con la [función integrada](https://docs.python.org/3/library/functions.html) `vars()`. Esta función devuelve un diccionario:
 
@@ -2839,7 +2943,7 @@ Pero sería arriesgarse a romper el objeto que estés usando. Si el diseñador d
 
 <br>
 
-Vamos a ver otro ejemplo. Vamos a crear una clase `Person` que mantenga la edad de su perro siempre la mitad de la suya:
+Vamos a ver otro ejemplo. Vamos a crear una clase `Person` que mantenga la edad de su perro siempre a la mitad de la suya:
 
 ```python
 class Person:
@@ -2870,7 +2974,9 @@ Salida:
 50 25
 ```
 
-Vemos como solo definimos en el constructor `self.age` pero también se inicializa `self.dog_age` porque estamos usando el "setter". Luego otra vez cuando hacemos `laura.age = 50`.
+Vemos como solo definimos en el constructor `self.age = age`, pero como hacemos una asignación, se llama al "setter" de `age`, inicializándose también `self.dog_age`.
+
+Luego se llama al "setter" otra vez cuando hacemos `laura.age = 50` y se vuelve a actualizar la edad del perro.
 
 <br>
 
@@ -2969,7 +3075,7 @@ Ana 8888
 
 Llamamos métodos a las funciones que residen dentro de las clases. Como en todas las funciones, vamos a recibir un número variable de argumentos según los definamos en la cabecera, sin embargo, en este caso siempre vamos a recibir un argumento, al cual llamamos `self` por convenio. Este `self` es obligatorio y sirve de referencia al objeto en cuestión que estamos manejando.
 
-Este `self` es comparable al `this` opcional en lenguajes como C# o Java, que también se usaba para acceder a los atributos del propio objeto. En Python es diferente, siempre va a ser necesario utilizar `self` para acceder a un atributo o método de clase. Si no lo hacemos estaremos referenciando una variable local dentro del método. Fijémonos en el método `change_name`:
+Este `self` es comparable al `this` opcional en lenguajes como C# o Java, que también se usaba para acceder a los atributos del propio objeto. En Python es diferente, siempre va a ser necesario utilizar `self` para acceder a un atributo o método de clase. Si no lo hacemos estaríamos referenciando una variable local dentro del método. Fijémonos en el método `change_name`:
 
 ```python
 class Person:

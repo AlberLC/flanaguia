@@ -2736,6 +2736,7 @@ class Person:
 
 
 juan = Person('Juan', 25, '123456789', 'Milo')
+print(juan)
 print(juan.name)
 print(juan.age)
 print(juan.phone)
@@ -2744,6 +2745,7 @@ print(juan.dog_age)
 ```
 Salida:
 ```
+<__main__.Person object at 0x000001ABA492A010>
 Juan
 25
 123456789

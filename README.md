@@ -2819,6 +2819,8 @@ Podemos entender una clase como una plantilla que sirve para fabricar objetos de
 
 Una vez tengamos dichas plantillas (las clases) podremos crear un número ilimitado de coches y aviones (**objetos** o **instancias**), los cuales guardan su propio contexto, es decir, si tenemos `car_1` y `car_2` y cambiamos el color de uno, no se cambiará el color del otro puesto que cada objeto coche tiene su propio atributo `color`.
 
+<br>
+
 ### 8.1. Atributos
 
 Para crear e inicializar los atributos de los objetos definimos una función o método `__init__` (constructor) dentro del bloque delimitado por la cláusula `class`. Este constructor es llamado (ejecutado) usando el nombre de la clase como si fuera una función: `Person('Juan', 25, '123456789', 'Milo')` nos devolverá un objeto, también llamado instancia, de la clase.

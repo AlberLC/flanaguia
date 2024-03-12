@@ -2756,7 +2756,7 @@ finally:
 
 ## 8. Clases
 
-Los conceptos "clase", "instancia", "atributo", "herencia", "polimorfismo", etc. son comunes a cualquier lenguaje de programación orientado a objetos. Python es uno de ellos.
+Los conceptos "clase", "instancia", "atributo", "herencia", etc. son la base de cualquier lenguaje de programación orientado a objetos.
 
 Básicamente las clases se usan para encapsular datos y funcionalidad, mejorando así la estructura del programa. Al igual que hacíamos antes con las funciones, estamos modularizando nuestro software de forma que partes concretas de nuestro código resuelvan problemas concretos, solo que ahora no solo manejamos funcionalidad, sino que también datos.
 

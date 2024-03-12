@@ -2704,7 +2704,9 @@ else:
     do_something_2()
 ```
 
-Y por último tenemos la cláusula `finally`. Todo lo que esté dentro del bloque `finally` se va a ejecutar sí o sí, falle o no falle alguna cosa en el `try` o si se lanza una excepción que no controlemos en ningún `except` y salga de la función o del contexto actual. Esto es útil para asegurar la liberación de recursos sensibles al cierre inesperado del programa.
+Y por último tenemos la cláusula `finally`. Todo lo que esté dentro del bloque `finally` se va a ejecutar sí o sí, falle o no falle alguna cosa en el `try`, se capture o no dicho error o salga de la función o del contexto actual (por ejemplo, con un `return`).
+
+Esto es útil para asegurar la liberación de recursos sensibles al cierre inesperado del programa.
 
 ```python
 try:
@@ -2784,7 +2786,7 @@ Salida:
 
 Las propiedades son comparables a los "getters" y "setters" de otros lenguajes. Sirven para encapsular un acceso "prohibido" o para realizar una serie de pasos o cálculos internos cuando se accede o actualizan atributos de instancias.
 
-Python es muy flexible, y en cuanto a la publicidad o privacidad de los atributos de objetos, todo es público. Existen [convenciones de estilo](#102-nombres-privados) que permiten indicar si un atributo no es recomendable usarse fuera del ámbito interno de la clase ( prefijar con `_` los nombres).
+Python es muy flexible, y en cuanto a la publicidad o privacidad de los atributos de objetos, todo es público. Existen [convenciones de estilo](#102-nombres-privados) que permiten indicar si un atributo no es recomendable usarse fuera del ámbito interno de la clase (prefijar con `_` los nombres).
 
 Ejemplo sencillo para ver la sintaxis:
 

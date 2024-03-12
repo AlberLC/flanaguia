@@ -2704,9 +2704,7 @@ else:
     do_something_2()
 ```
 
-Y por último tenemos la cláusula `finally`. Todo lo que esté dentro del bloque `finally` se va a ejecutar sí o sí, falle o no falle alguna cosa en el `try`, se capture o no dicho error o salga de la función o del contexto actual (por ejemplo, con un `return`).
-
-Esto es útil para asegurar la liberación de recursos sensibles al cierre inesperado del programa.
+Y por último tenemos la cláusula `finally`. Todo lo que esté dentro del bloque `finally` se va a ejecutar sí o sí, falle o no falle alguna cosa en el `try`, se capture o no dicho error o salga de la función o del contexto actual (por ejemplo, con un `return`). Esto es útil para asegurar la liberación de recursos sensibles al cierre inesperado del programa.
 
 ```python
 try:

@@ -2770,10 +2770,10 @@ doors = 5
 speed = 80
 
 
-def change_color(new_colour):
+def change_color(new_color):
     global color
 
-    color = new_colour
+    color = new_color
 
 
 def add_wheel():

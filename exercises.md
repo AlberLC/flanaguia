@@ -576,16 +576,19 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         ```python
         elements = []
-        for i in [0, 1, 'two', 'three', 4, 5]:
-            if isinstance(i, int):
-                elements.append(i % 2 == 0)
+        for element in [0, 1, 'two', 'three', 4, 5]:
+            if isinstance(element, int):
+                if element % 2 == 0:
+                    elements.append('even')
+                else:
+                    elements.append('odd')
         ```
 
         <details>
         <summary>Solución</summary>
 
         ```python
-        [i % 2 == 0 for i in [0, 1, 'two', 'three', 4, 5] if isinstance(i, int)]
+        ['even' if element % 2 == 0 else 'odd' for element in [0, 1, 'two', 'three', 4, 5] if isinstance(element, int)]
         ```
 
         </details>

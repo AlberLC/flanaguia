@@ -1522,6 +1522,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         import random
         import time
         from collections.abc import Callable
+        from typing import Any
         
         
         def function_1() -> None:
@@ -1540,7 +1541,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return text * n
         
         
-        def time_it(function: Callable) -> str:
+        def time_it(function: Callable) -> Any:
             ...
         
         
@@ -1556,6 +1557,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         import random
         import time
         from collections.abc import Callable
+        from typing import Any
         
         
         def function_1() -> None:
@@ -1574,7 +1576,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return text * n
         
         
-        def time_it(function: Callable) -> str:
+        def time_it(function: Callable) -> Any:
             start = time.perf_counter()
         
             value = function()

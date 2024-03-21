@@ -1630,7 +1630,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     numbers_ = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     process(numbers_, lambda number: number * 3)
-    process(numbers_, lambda number: number % 2 == 0)
+    process(numbers_, lambda number: number % 2 != 0)
     process(numbers_, lambda number: 'Aprobado' if number >= 5 else 'Suspenso')
     ```
 

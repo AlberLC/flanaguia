@@ -3130,7 +3130,7 @@ class Person:
         self.dog_name = dog_name
         self.dog_age = dog_age
 
-    def go_outisde(self):
+    def go_outside(self):
         print(f'{self.name} went ouside.')
 
     def walk_dog(self):
@@ -3138,7 +3138,7 @@ class Person:
 
 
 ana = Person('Ana', 20, '123456789', 'Impa')
-ana.go_outisde()
+ana.go_outside()
 ana.walk_dog()
 ```
 Salida:

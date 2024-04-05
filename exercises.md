@@ -1930,6 +1930,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ```
 
         - Como indica el texto, el programa podrá filtrar clientes mediante unos filtros que se pedirán por consola siguiendo el formato indicado.
+        - Se podrán introducir varios filtros a la vez seprándolos con ";", como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
+            - El primer filtro se aplicaría a todos los clientes.
+            - El segundo filtro se aplicaría al resultado del primero.
+            - Y el tercero, al resultado del segundo.
+
+            Por lo tanto, filtrar por `min:id` y luego por `max:id` va a ser lo mismo que filtrar solo por `min:id`.
+
         - Si se introduce `exit` en vez de un filtro, se volverá al menú principal.
         - Ejemplos de filtros:
             - `id:2` ➡️ clientes cuyo id sea 2.
@@ -1939,69 +1946,84 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - `min:id` ➡️ el cliente de menor id.
             - `max:age` ➡️ el cliente de mayor edad.
             - `name:an;age:22;max:id` ➡️ el cliente cuyo nombre contenga "a", cuya edad sea 22 y cuyo id sea el mayor.
-        - Si no hay filtros, o estos no son válidos, no se aplicará ningún filtro. 
-        - Si se introducen varios filtros (usando ";", como se especifica en las intrucciones), se ignorarán los inválidos.
+        - Si no se introducen filtros, o ningún filtro introducido es válido, no se aplicará ningún filtro. 
+        - Si se introducen varios filtros, solo se aplicarán los válidos.
         - Cada vez que se introduzcan los filtros se imprimirán por consola los clientes filtrados y se volverá a pedir otro filtro.
-            - Por ejemplo, tenemos los siguientes clientes almacenados:
 
-                ```
-                [
-                    {'id': 1, 'name': 'Juan', 'age': 22},
-                    {'id': 2, 'name': 'María', 'age': 43},
-                    {'id': 3, 'name': 'Alberto', 'age': 35},
-                    {'id': 4, 'name': 'Ana', 'age': 22}
-                ]
-                ```
+            Por ejemplo, si tuviéramos los siguientes clientes almacenados:
+
+            ```
+            [
+                {'id': 1, 'name': 'Ana', 'age': 22},
+                {'id': 2, 'name': 'María', 'age': 63},
+                {'id': 3, 'name': 'Juan', 'age': 22},
+                {'id': 4, 'name': 'Alberto', 'age': 22},
+                {'id': 5, 'name': 'Elena', 'age': 41}
+            ]
+            ```
             
-            - Si se envía un filtro vacío:
+            Si se introdujera un filtro vacío:
 
-                ```
-                > 
-                {'id': 1, 'name': 'Juan', 'age': 22}
-                {'id': 2, 'name': 'María', 'age': 43}
-                {'id': 3, 'name': 'Alberto', 'age': 35}
-                {'id': 4, 'name': 'Ana', 'age': 22}
-                ```
+            ```
+            > 
+            {'id': 1, 'name': 'Ana', 'age': 22}
+            {'id': 2, 'name': 'María', 'age': 63}
+            {'id': 3, 'name': 'Juan', 'age': 22}
+            {'id': 4, 'name': 'Alberto', 'age': 22}
+            {'id': 5, 'name': 'Elena', 'age': 41}
+            ```
             
-            - Otros ejemplos de filtros:
+            Otros ejemplos de filtros:
 
-                ```
-                > id:2
-                {'id': 2, 'name': 'María', 'age': 43}
-                ```
+            ```
+            > id:4
+            {'id': 4, 'name': 'Alberto', 'age': 22}
+            ```
 
-                ```
-                > name:Juan
-                {'id': 1, 'name': 'Juan', 'age': 22}
-                ```
+            ```
+            > name:Elena
+            {'id': 5, 'name': 'Elena', 'age': 41}
+            ```
 
-                ```
-                > name:a
-                {'id': 1, 'name': 'Juan', 'age': 22}
-                {'id': 2, 'name': 'María', 'age': 43}
-                {'id': 4, 'name': 'Ana', 'age': 22}
-                ```
+            ```
+            > name:a
+            {'id': 1, 'name': 'Ana', 'age': 22}
+            {'id': 2, 'name': 'María', 'age': 63}
+            {'id': 3, 'name': 'Juan', 'age': 22}
+            {'id': 5, 'name': 'Elena', 'age': 41}
+            ```
 
-                ```
-                > age:22
-                {'id': 1, 'name': 'Juan', 'age': 22}
-                {'id': 4, 'name': 'Ana', 'age': 22}
-                ```
+            ```
+            > age:22
+            {'id': 1, 'name': 'Ana', 'age': 22}
+            {'id': 3, 'name': 'Juan', 'age': 22}
+            {'id': 4, 'name': 'Alberto', 'age': 22}
+            ```
 
-                ```
-                > min:id
-                {'id': 1, 'name': 'Juan', 'age': 22}
-                ```
+            ```
+            > min:id
+            {'id': 1, 'name': 'Ana', 'age': 22}
+            ```
 
-                ```
-                > max:age
-                {'id': 2, 'name': 'María', 'age': 43}
-                ```
+            ```
+            > max:age
+            {'id': 2, 'name': 'María', 'age': 63}
+            ```
 
-                ```
-                > name:a;age:22;max:id
-                {'id': 4, 'name': 'Ana', 'age': 22}
-                ```
+            ```
+            > name:a;age:22;max:id
+            {'id': 3, 'name': 'Juan', 'age': 22}
+            ```
+
+            ```
+            > name:a;asdasdasdasd;max:id
+            {'id': 5, 'name': 'Elena', 'age': 41}
+            ```
+
+            ```
+            > min:id;max:id
+            {'id': 1, 'name': 'Ana', 'age': 22}
+            ```
 
     - 🔄️ Actualizar cliente.
 
@@ -2014,13 +2036,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             Id: 345
             Cliente no encontrado.
             
-            Presione ENTER para volver al menú...
+            Presione INTRO para volver al menú...
             ```
 
         - Si el id existe: como cuando añadimos un cliente, se pedirán nombre y edad.
             - El nombre puede ser cualquier texto.
             - La edad tiene que ser un número entero mayor que 0. Si el valor introducido no es válido se repetirá la petición de la edad.
-        - Una vez introducidos los datos correctamente se actualizarán los datos el cliente, se enviará un mensaje de éxito y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
+        - Una vez introducidos los datos correctamente se actualizarán los datos el cliente in situ, es decir, sin eliminar el cliente y añadir uno nuevo. Luego se enviará un mensaje de éxito y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
 
             ```
             > 3
@@ -2029,7 +2051,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             Edad: 35
             Cliente actualizado exitosamente.
                 
-            Presione ENTER para volver al menú...
+            Presione INTRO para volver al menú...
             ```
 
     - 🗑️ Eliminar cliente.
@@ -2043,7 +2065,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             Id: 345
             Cliente no encontrado.
             
-            Presione ENTER para volver al menú...
+            Presione INTRO para volver al menú...
             ```
 
         - Si el id existe: se eliminará el cliente, se enviará un mensaje de éxito y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
@@ -2053,7 +2075,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             Id: 2
             Cliente eliminado exitosamente.
             
-            Presione ENTER para volver al menú...
+            Presione INTRO para volver al menú...
             ```
 
     - 🏃🏻 Salir.
@@ -2084,14 +2106,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     
     def age_input(prompt: str) -> int:
-        while True:
-            try:
-                age = int(input(prompt))
-            except ValueError:
-                pass
-            else:
-                if age > 0:
-                    return age
+        age = 0
+        while age <= 0:
+            age = int_input(prompt)
+    
+        return age
     
     
     def client_index_by_id(id_: int) -> int | None:
@@ -2109,17 +2128,18 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             del clients[index]
             print('Cliente eliminado exitosamente.')
     
-        input('\nPresione ENTER para volver al menú...')
+        input('\nPresione INTRO para volver al menú...')
     
     
     def int_input(prompt: str) -> int:
-        while True:
+        option = None
+        while option is None:
             try:
                 option = int(input(prompt))
             except ValueError:
                 pass
-            else:
-                return option
+    
+        return option
     
     
     def options_input(prompt: str, options: Collection[str]) -> str:
@@ -2186,10 +2206,16 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             clients[index]['age'] = age
             print('Cliente actualizado exitosamente.')
     
-        input('\nPresione ENTER para volver al menú...')
+        input('\nPresione INTRO para volver al menú...')
     
     
-    clients: list[dict] = []
+    clients: list[dict] = [
+        {'id': 1, 'name': 'Ana', 'age': 22},
+        {'id': 2, 'name': 'María', 'age': 63},
+        {'id': 3, 'name': 'Juan', 'age': 22},
+        {'id': 4, 'name': 'Alberto', 'age': 22},
+        {'id': 5, 'name': 'Elena', 'age': 41}
+    ]
     print('Bienvenido al gestor de clientes.')
     
     while True:

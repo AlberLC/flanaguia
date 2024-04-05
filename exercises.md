@@ -1930,14 +1930,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ```
 
         - Como indica el texto, el programa podrá filtrar clientes mediante unos filtros que se pedirán por consola siguiendo el formato indicado.
-        - Se podrán introducir varios filtros a la vez seprándolos con ";", como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
-            - El primer filtro se aplicaría a todos los clientes.
-            - El segundo filtro se aplicaría al resultado del primero.
-            - Y el tercero, al resultado del segundo.
-
-            Por lo tanto, filtrar por `min:id` y luego por `max:id` va a ser lo mismo que filtrar solo por `min:id`.
-
-        - Si se introduce `exit` en vez de un filtro, se volverá al menú principal.
         - Ejemplos de filtros:
             - `id:2` ➡️ clientes cuyo id sea 2.
             - `name:Juan` ➡️ clientes cuyo nombre contenga "Juan".
@@ -1946,6 +1938,14 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - `min:id` ➡️ el cliente de menor id.
             - `max:age` ➡️ el cliente de mayor edad.
             - `name:an;age:22;max:id` ➡️ el cliente cuyo nombre contenga "a", cuya edad sea 22 y cuyo id sea el mayor.
+        - Se podrán introducir varios filtros a la vez seprándolos con ";", como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
+            - El primer filtro se aplicaría a todos los clientes.
+            - El segundo filtro se aplicaría al resultado del primero.
+            - Y el tercero, al resultado del segundo.
+
+            Por lo tanto, filtrar por `min:id` y luego por `max:id` va a ser lo mismo que filtrar solo por `min:id`.
+
+        - Si se introduce `exit` en vez de un filtro, se volverá al menú principal.
         - Si no se introducen filtros, o ningún filtro introducido es válido, no se aplicará ningún filtro. 
         - Si se introducen varios filtros, solo se aplicarán los válidos.
         - Cada vez que se introduzcan los filtros se imprimirán por consola los clientes filtrados y se volverá a pedir otro filtro.

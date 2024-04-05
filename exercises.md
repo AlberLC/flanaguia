@@ -1939,7 +1939,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - `min:id` ➡️ el cliente de menor id.
             - `max:age` ➡️ el cliente de mayor edad.
             - `name:an;age:22;max:id` ➡️ el cliente cuyo nombre contenga "a", cuya edad sea 22 y cuyo id sea el mayor.
-        - Si no se proporciona un filtro o es inválido no se aplicará ningún filtro.
+        - Si no hay filtros, o estos no son válidos, no se aplicará ningún filtro. 
+        - Si se introducen varios filtros (usando ";", como se especifica en las intrucciones), se ignorarán los inválidos.
         - Cada vez que se introduzcan los filtros se imprimirán por consola los clientes filtrados y se volverá a pedir otro filtro.
             - Por ejemplo, tenemos los siguientes clientes almacenados:
 
@@ -1952,7 +1953,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 ]
                 ```
             
-            - Si se envía un filtro vacío o inválido:
+            - Si se envía un filtro vacío:
 
                 ```
                 > 
@@ -2133,6 +2134,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         def search_clients_(filters: list[str]):
             filtered_clients = clients.copy()
             for filter_ in filters:
+                if not filtered_clients:
+                    break
+    
                 filter_parts = filter_.split(':')
     
                 match filter_parts:
@@ -2145,9 +2149,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                             filtered_clients = [client for client in filtered_clients if client[key] == value]
                     case 'name', name:
                         filtered_clients = [client for client in filtered_clients if name in client['name']]
-                    case 'min', 'id' | 'name' | 'age' as key if filtered_clients:
+                    case 'min', 'id' | 'name' | 'age' as key:
                         filtered_clients = [min(filtered_clients, key=lambda client: client[key])]
-                    case 'max', 'id' | 'name' | 'age' as key if filtered_clients:
+                    case 'max', 'id' | 'name' | 'age' as key:
                         filtered_clients = [max(filtered_clients, key=lambda client: client[key])]
     
             for client in filtered_clients:

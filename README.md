@@ -4066,7 +4066,7 @@ def multiply(a, b):
 print(multiply(5, 2))
 ```
 
-Es un ejemplo muy sencillo pero así se indicaría, si importamos `multiply` desde otro módulo, que la función `_calculate` es algo interno que no debería usarse fuera del módulo donde reside originalmente.
+Es un ejemplo muy sencillo, pero así se indicaría, si importáramos `multiply` desde otro módulo, que la función `_calculate` es algo interno que no debería usarse fuera del módulo donde reside originalmente.
 
 Ocurre lo mismo en las clases:
 

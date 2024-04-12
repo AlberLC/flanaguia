@@ -3651,7 +3651,7 @@ class Person(Animal):
 
 Llamábamos directamente al constructor `__init__()` del padre, con la diferencia de que le estábamos pasando argumentos a la función (`move()` no necesitaba argumentos). Con esto conseguíamos delegar el trabajo de definir e inicializar las variables `name` y `age` a la clase padre.
 
-Al fin y al cabo, redefinir un método en la clase hija y usar `super()` es como decir "me interesaba lo que hacías, pero ahora vamos a hacer lo tuyo y, además, lo que programe a continuación".
+Al fin y al cabo, redefinir un método en la clase hija y usar `super()` es como decir "me interesaba lo que hacías, así que vamos a hacer lo tuyo y luego lo nuevo que programe a continuación".
 
 <br>
 

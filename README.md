@@ -4136,7 +4136,7 @@ Esta mecánica no se usa, no es recomendable y no consigue nada especial más al
 
 ### 10.3. Nombres ya existentes
 
-Cuando tengamos que dar nombre a algun elemento cuyo nombre ya exista, por ejemplo `id` es una [función integrada](https://docs.python.org/3/library/functions.html), deberíamos poner `_` como sufijo como dice la convención de estilos:
+Cuando tengamos que dar nombre a algun elemento cuyo nombre ya exista, por ejemplo, `id` es una [función integrada](https://docs.python.org/3/library/functions.html), deberíamos poner `_` como sufijo como dice la convención de estilos:
 
 ```python
 name = 'Juan'

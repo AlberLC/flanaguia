@@ -3655,6 +3655,10 @@ Al fin y al cabo, redefinir un método en la clase hija y usar `super()` es como
 
 <br>
 
+https://github.com/AlberLC/flanaguia/assets/37489786/0cb684f5-6797-4e7b-a42c-feeb564446a3
+
+<br>
+
 #### 8.3.1. Clases abstractas
 
 Una clase abstracta es una clase que nos es útil para englobar lógica común a varias clases hijas y no repetir código, pero que deja de tener sentido que exista por su propia cuenta (construir una instancia u objeto de ella).

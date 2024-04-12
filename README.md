@@ -2984,7 +2984,7 @@ Luego se llama al "setter" otra vez cuando hacemos `laura.age = 50` y se vuelve 
 
 #### 8.1.2. Atributos estáticos
 
-Si definimos variables en el cuerpo de la clase, pero fuera de las funciones (métodos), conseguimos un atributo estático. Hay que entenderlos como atributos de clase y no de objeto (o de instancia). Por ejemplo: el atributo `name` de un objeto `ana` puede ser diferente del atributo `name` de un objeto `juan`. Sin embargo, un atributo estático (atributo de clase) de ambos objetos tendrá el mismo valor porque no depende del objeto, sino de la clase, la cual es la misma.
+Si definimos variables en el cuerpo de la clase, pero fuera de los métodos, conseguimos un atributo estático. Hay que entenderlos como atributos de clase y no de objeto. Por ejemplo: el atributo `name` de un objeto `ana` puede ser diferente del atributo `name` de un objeto `juan`. Sin embargo, un atributo estático (atributo de clase) de ambos objetos tendrá el mismo valor porque no depende del objeto, sino de la clase, la cual es la misma.
 
 Vamos a crear un atributo estático `n_eyes`:
 

@@ -3655,7 +3655,7 @@ Al fin y al cabo, redefinir un método en la clase hija y usar `super()` es como
 
 <br>
 
-https://github.com/AlberLC/flanaguia/assets/37489786/0cb684f5-6797-4e7b-a42c-feeb564446a3
+https://github.com/AlberLC/flanaguia/assets/37489786/6215b12c-940e-452b-bfae-7fa6adad4099
 
 <br>
 

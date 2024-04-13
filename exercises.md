@@ -1516,7 +1516,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    4. Por último: completar donde `...` para conseguir la misma salida del ejercicio anterior con la cabecera de `time_it()` ya definida como sigue:
+    4. Por último: completar `...` para conseguir la misma salida del ejercicio anterior con la cabecera de `time_it()` ya definida como sigue:
 
         ```python
         import random
@@ -1863,7 +1863,651 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-15. ☠️ Crear un gestor de clientes por consola.
+15. Consultas relacionales estilo SQL a colecciones de estudiantes.
+    
+    > No es necesario saber nada de bases de datos.
+
+    > En este ejercicio se usan [enumeraciones](README.md#19-enumeraciones).
+
+    A continuación se proporciona el código esqueleto necesario para realizar el ejercicio:
+
+    ```python
+    import sys
+    from enum import Enum, auto
+    from io import StringIO
+    
+    
+    class Gender(Enum):
+        MALE = auto()
+        FEMALE = auto()
+    
+    
+    def test_students(_01011, _0110):
+        _10010 = AssertionError
+        _011100 = len
+        _110100 = isinstance
+        assert _011100(_01011) == _011100(_0110)
+        _0100001 = list
+        _010101 = set
+        for _1101 in _0110:
+            for _01010, _0111 in _1101.items():
+                if _110100(_0111, _0100001):
+                    _0111 = _010101(_0111)
+                _1101[_01010] = _0111
+    
+        for _00110 in _01011:
+            for _01010, _0111 in _00110.items():
+                if _110100(_0111, _0100001):
+                    _0111 = _010101(_0111)
+                _00110[_01010] = _0111
+    
+            if _00110 in _0110:
+                _0110.remove(_00110)
+            else:
+                raise _10010
+    
+    
+    students = [
+        {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country_id': 3},
+        {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country_id': 2},
+        {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country_id': 4},
+        {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1},
+        {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country_id': 3},
+        {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country_id': 4},
+        {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country_id': 1},
+        {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country_id': 5},
+        {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country_id': 2},
+        {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country_id': 6},
+        {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country_id': 7},
+        {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country_id': 5},
+        {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country_id': 7},
+    ]
+    
+    countries = [
+        {'id': 1, 'name': 'Japan'},
+        {'id': 2, 'name': 'United States'},
+        {'id': 3, 'name': 'China'},
+        {'id': 4, 'name': 'Spain'},
+        {'id': 5, 'name': 'Germany'},
+        {'id': 6, 'name': 'United Kingdom'},
+        {'id': 7, 'name': 'India'}
+    ]
+    
+    subjects = [
+        {'id': 1, 'name': 'Mathematics'},
+        {'id': 2, 'name': 'Literature'},
+        {'id': 3, 'name': 'History'},
+        {'id': 4, 'name': 'Biology'},
+        {'id': 5, 'name': 'Chemistry'},
+        {'id': 6, 'name': 'Computer Science'},
+    ]
+    
+    student_subject_relations = [
+        {'student_id': 7, 'subject_id': 1},
+        {'student_id': 7, 'subject_id': 2},
+        {'student_id': 7, 'subject_id': 5},
+        {'student_id': 18, 'subject_id': 2},
+        {'student_id': 21, 'subject_id': 2},
+        {'student_id': 21, 'subject_id': 4},
+        {'student_id': 25, 'subject_id': 6},
+        {'student_id': 29, 'subject_id': 1},
+        {'student_id': 29, 'subject_id': 6},
+        {'student_id': 30, 'subject_id': 1},
+        {'student_id': 37, 'subject_id': 2},
+        {'student_id': 37, 'subject_id': 3},
+        {'student_id': 52, 'subject_id': 4},
+        {'student_id': 52, 'subject_id': 5},
+        {'student_id': 52, 'subject_id': 6},
+        {'student_id': 61, 'subject_id': 2},
+        {'student_id': 61, 'subject_id': 4},
+        {'student_id': 61, 'subject_id': 5},
+        {'student_id': 66, 'subject_id': 1},
+        {'student_id': 66, 'subject_id': 2},
+        {'student_id': 66, 'subject_id': 3},
+        {'student_id': 79, 'subject_id': 1},
+        {'student_id': 79, 'subject_id': 2},
+        {'student_id': 79, 'subject_id': 3},
+        {'student_id': 79, 'subject_id': 4},
+        {'student_id': 79, 'subject_id': 5},
+        {'student_id': 79, 'subject_id': 6},
+        {'student_id': 85, 'subject_id': 3},
+        {'student_id': 85, 'subject_id': 5},
+        {'student_id': 103, 'subject_id': 4},
+        {'student_id': 103, 'subject_id': 5},
+        {'student_id': 103, 'subject_id': 6}
+    ]
+    ```
+    
+    Podemos observar varias cosas en el código:
+
+    - Una enumeración `Gender` para especificar el género de un estudiante.
+    - Una función `test_students()` que ignoraremos completamente (se usará automáticamente más tarde para las pruebas).
+    - Varias listas de diccionarios (`list[dict]`):
+      - `students`: colección con los datos de todos los estudiantes.
+      - `countries`: colección con los datos de los países.
+      - `subjects`: colección con los datos de las asignaturas.
+      - `student_subject_relations`: colección que relaciona estudiantes con asignaturas.
+    
+    Estas colecciones simulan vagamente unas tablas típicas de bases de datos relacionales (SQL). Por ejemplo, en `students` tenemos los atributos de los estudiantes. Uno de estos atributos es `country_id`, sin embargo, este no proporciona el nombre del país directamente sino que especifica un id que apunta a otro dato en otra coleccion (`countries`). En SQL esto se denomina relación de **uno a muchos**: un pais, muchos estudiantes.
+
+    Por otro lado, la relación de estudiantes-asignaturas es de **muchos a muchos**, por lo tanto se utiliza una colección auxiliar (`student_subject_relations`), la cual indica qué estudiantes estudian qué asignaturas.
+
+    1. Copiar el siguiente código debajo del código esqueleto anterior:
+
+        ```python
+        def find_name_by_id(elements: list[dict], id_: int) -> str | None:
+            ...
+        
+        
+        assert find_name_by_id(students, 7) == '小明'
+        assert find_name_by_id(students, 21) == 'Elena'
+        assert find_name_by_id(countries, 3) == 'China'
+        assert find_name_by_id(subjects, 5) == 'Chemistry'
+        assert find_name_by_id(students, 1) is None
+        
+        print('✅')
+        ```
+    
+        `find_name_by_id()` es una función que recibe por parámetros una colección (`students`, `countries`, etc.) y un id. Luego devuelve el `name` del elemento (de la colección proporcionada) que corresponde con el id recibido. Si el id no existe, devuelve `None`.
+ 
+        `id` ➡️ `name` | `None`
+
+        Objetivo: Completar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def find_name_by_id(elements: list[dict], id_: int) -> str | None:
+            return next((element['name'] for element in elements if element['id'] == id_), None)
+        
+        
+        assert find_name_by_id(students, 7) == '小明'
+        assert find_name_by_id(students, 21) == 'Elena'
+        assert find_name_by_id(countries, 3) == 'China'
+        assert find_name_by_id(subjects, 5) == 'Chemistry'
+        assert find_name_by_id(students, 1) is None
+        
+        print('✅')
+        ```
+
+        </details>
+
+    2. Añadir el siguiente código:
+
+        ```python
+        def find_id_by_name(elements: list[dict], name: str) -> int | None:
+            ...
+        
+        
+        assert find_id_by_name(students, '小明') == 7
+        assert find_id_by_name(students, 'Lìlì') == 29
+        assert find_id_by_name(countries, 'Germany') == 5
+        assert find_id_by_name(subjects, 'History') == 3
+        assert find_id_by_name(students, 'Alberto') is None
+        
+        print('✅')
+        ```
+    
+        `find_id_by_name()` es como la función anterior pero al revés, es decir, devuelve el `id` del elemento (de la colección proporcionada) que corresponde con el nombre recibido. Si el nombre no existe, devuelve `None`.
+
+        `name` ➡️ `id` | `None`.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def find_id_by_name(elements: list[dict], name: str) -> int | None:
+            return next((element['id'] for element in elements if element['name'] == name), None)
+        
+        
+        assert find_id_by_name(students, '小明') == 7
+        assert find_id_by_name(students, 'Lìlì') == 29
+        assert find_id_by_name(countries, 'Germany') == 5
+        assert find_id_by_name(subjects, 'History') == 3
+        assert find_id_by_name(students, 'Alberto') is None
+        
+        print('✅')
+        ```
+
+        </details>
+
+    3. Añadir el siguiente código:
+
+        ```python
+        def select_student(student: dict, keys: list[str]) -> dict:
+            ...
+        
+        
+        assert select_student(
+            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
+            ['id', 'name', 'last_name', 'age', 'gender', 'country', 'subjects']
+        ) == {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']}
+        assert select_student(
+            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
+            ['name', 'last_name', 'gender']
+        ) == {'name': 'Lìlì', 'last_name': 'Lǐ', 'gender': Gender.FEMALE}
+        assert select_student(
+            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle'},
+            ['id', 'last_name']
+        ) == {'id': 52, 'last_name': 'Mülle'}
+        assert select_student(
+            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+            ['age', 'country']
+        ) == {'age': 32, 'country': 'United Kingdom'}
+        assert select_student(
+            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+            []
+        ) == {}
+        assert select_student(
+            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+            ['_']
+        ) == {}
+        
+        print('✅')
+        ```
+    
+        La función `select_student()` recibe por parámetro un estudiante (`dict`) y una lista de claves (`list[str]`) permitidas. Luego devuelve el diccionario `student` filtrado, es decir, conteniendo solo los pares clave:valor según las claves especificadas por `keys`. Por ejemplo:
+
+        `select_student({'id': 1, 'name': 'Juan', 'age': 2}, ['id', 'name'])` ➡️ `{'id': 1, 'name': 'Juan'}`
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def select_student(student: dict, keys: list[str]) -> dict:
+            return {k: v for k, v in student.items() if k in keys}
+        
+        
+        assert select_student(
+            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
+            ['id', 'name', 'last_name', 'age', 'gender', 'country', 'subjects']
+        ) == {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']}
+        assert select_student(
+            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
+            ['name', 'last_name', 'gender']
+        ) == {'name': 'Lìlì', 'last_name': 'Lǐ', 'gender': Gender.FEMALE}
+        assert select_student(
+            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle'},
+            ['id', 'last_name']
+        ) == {'id': 52, 'last_name': 'Mülle'}
+        assert select_student(
+            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+            ['age', 'country']
+        ) == {'age': 32, 'country': 'United Kingdom'}
+        assert select_student(
+            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+            []
+        ) == {}
+        assert select_student(
+            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+            ['_']
+        ) == {}
+        
+        print('✅')
+        ```
+
+        </details>
+
+    4. Añadir el siguiente código:
+
+        ```python
+        def find_students_by_age(min_age: int, max_age: int) -> list[dict]:
+            ...
+        
+        
+        test_students(
+            find_students_by_age(1, 99),
+            [
+                {'name': '小明', 'last_name': '王'},
+                {'name': 'John', 'last_name': 'Smith'},
+                {'name': 'Elena', 'last_name': 'Ruiz'},
+                {'name': '太郎', 'last_name': '佐藤'},
+                {'name': 'Lìlì', 'last_name': 'Lǐ'},
+                {'name': 'Luis', 'last_name': 'López'},
+                {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                {'name': 'Thomas', 'last_name': 'Mülle'},
+                {'name': 'Emily', 'last_name': 'Johnson'},
+                {'name': 'Sarah', 'last_name': 'Taylor'},
+                {'name': 'Rahul', 'last_name': 'Sharma'},
+                {'name': 'Lisa', 'last_name': 'Schmidt'},
+                {'name': 'Priya', 'last_name': 'Patel'}
+            ]
+        )
+        test_students(find_students_by_age(19, 20), [])
+        test_students(
+            find_students_by_age(18, 25),
+            [
+                {'name': 'John', 'last_name': 'Smith'},
+                {'name': '太郎', 'last_name': '佐藤'},
+                {'name': 'Lìlì', 'last_name': 'Lǐ'},
+                {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                {'name': 'Priya', 'last_name': 'Patel'}
+            ]
+        )
+        test_students(
+            find_students_by_age(30, 40),
+            [
+                {'name': 'Elena', 'last_name': 'Ruiz'},
+                {'name': 'Sarah', 'last_name': 'Taylor'}
+            ]
+        )
+        test_students(
+            find_students_by_age(20, 50),
+            [
+                {'name': 'John', 'last_name': 'Smith'},
+                {'name': 'Elena', 'last_name': 'Ruiz'},
+                {'name': '太郎', 'last_name': '佐藤'},
+                {'name': 'Sarah', 'last_name': 'Taylor'},
+                {'name': 'Lisa', 'last_name': 'Schmidt'},
+                {'name': 'Priya', 'last_name': 'Patel'}
+            ]
+        )
+        test_students(
+            find_students_by_age(50, 90),
+            [
+                {'name': 'Luis', 'last_name': 'López'},
+                {'name': 'Thomas', 'last_name': 'Mülle'},
+                {'name': 'Emily', 'last_name': 'Johnson'}
+            ]
+        )
+        
+        print('✅')
+        ```
+    
+        `find_students_by_age()` recibe por parámetro dos números enteros que indican la mínima y la máxima edad.
+
+        La función debe devolver una lista de diccionarios de estudiantes conteniendo únicamente los atributos `name` y `last_name` cuyas edades se comprenden entre el mínimo y el máximo proporcionados (ambos inclusive).
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def find_students_by_age(min_age: int, max_age: int) -> list[dict]:
+            return [
+                select_student(student, ['name', 'last_name'])
+                for student in students if min_age <= student['age'] <= max_age
+            ]
+        
+        
+        test_students(
+            find_students_by_age(1, 99),
+            [
+                {'name': '小明', 'last_name': '王'},
+                {'name': 'John', 'last_name': 'Smith'},
+                {'name': 'Elena', 'last_name': 'Ruiz'},
+                {'name': '太郎', 'last_name': '佐藤'},
+                {'name': 'Lìlì', 'last_name': 'Lǐ'},
+                {'name': 'Luis', 'last_name': 'López'},
+                {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                {'name': 'Thomas', 'last_name': 'Mülle'},
+                {'name': 'Emily', 'last_name': 'Johnson'},
+                {'name': 'Sarah', 'last_name': 'Taylor'},
+                {'name': 'Rahul', 'last_name': 'Sharma'},
+                {'name': 'Lisa', 'last_name': 'Schmidt'},
+                {'name': 'Priya', 'last_name': 'Patel'}
+            ]
+        )
+        test_students(find_students_by_age(19, 20), [])
+        test_students(
+            find_students_by_age(18, 25),
+            [
+                {'name': 'John', 'last_name': 'Smith'},
+                {'name': '太郎', 'last_name': '佐藤'},
+                {'name': 'Lìlì', 'last_name': 'Lǐ'},
+                {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                {'name': 'Priya', 'last_name': 'Patel'}
+            ]
+        )
+        test_students(
+            find_students_by_age(30, 40),
+            [
+                {'name': 'Elena', 'last_name': 'Ruiz'},
+                {'name': 'Sarah', 'last_name': 'Taylor'}
+            ]
+        )
+        test_students(
+            find_students_by_age(20, 50),
+            [
+                {'name': 'John', 'last_name': 'Smith'},
+                {'name': 'Elena', 'last_name': 'Ruiz'},
+                {'name': '太郎', 'last_name': '佐藤'},
+                {'name': 'Sarah', 'last_name': 'Taylor'},
+                {'name': 'Lisa', 'last_name': 'Schmidt'},
+                {'name': 'Priya', 'last_name': 'Patel'}
+            ]
+        )
+        test_students(
+            find_students_by_age(50, 90),
+            [
+                {'name': 'Luis', 'last_name': 'López'},
+                {'name': 'Thomas', 'last_name': 'Mülle'},
+                {'name': 'Emily', 'last_name': 'Johnson'}
+            ]
+        )
+        
+        print('✅')
+        ```
+
+        </details>
+
+    5. Añadir el siguiente código:
+
+        ```python
+        def find_student_country(student_id: int) -> str | None:
+            ...
+        
+        
+        assert find_student_country(7) == 'China'
+        assert find_student_country(8) is None
+        assert find_student_country(30) == 'Spain'
+        assert find_student_country(52) == 'Germany'
+        assert find_student_country(103) == 'India'
+        
+        print('✅')
+        ```
+    
+        `find_student_country()` recibe por parámetro el id de un estudiante y devuelve el nombre de su país. Si el id no existe, devuelve `None`.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def find_student_country(student_id: int) -> str | None:
+            try:
+                student = next(student for student in students if student['id'] == student_id)
+            except StopIteration:
+                return
+        
+            return find_name_by_id(countries, student['country_id'])
+        
+        
+        assert find_student_country(7) == 'China'
+        assert find_student_country(8) is None
+        assert find_student_country(30) == 'Spain'
+        assert find_student_country(52) == 'Germany'
+        assert find_student_country(103) == 'India'
+        
+        print('✅')
+        ```
+
+        </details>
+
+    6. Añadir el siguiente código:
+
+        ```python
+        def students_by_subject_and_gender_count(subject: str, gender: Gender) -> int:
+            ...
+        
+        
+        assert students_by_subject_and_gender_count('Mathematics', Gender.FEMALE) == 2
+        assert students_by_subject_and_gender_count('History', Gender.MALE) == 1
+        assert students_by_subject_and_gender_count('Literature', Gender.FEMALE) == 4
+        assert students_by_subject_and_gender_count('Biology', Gender.MALE) == 2
+        assert students_by_subject_and_gender_count('Chemistry', Gender.FEMALE) == 3
+        
+        print('✅')
+        ```
+    
+        `students_by_subject_and_gender_count()` devuelve el número de estudiantes que estudian la asignatura `subject` y son el género `gender`.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def students_by_subject_and_gender_count(subject: str, gender: Gender) -> int:
+            mathematics_id = find_id_by_name(subjects, subject)
+        
+            student_ids = {
+                relation['student_id']
+                for relation in student_subject_relations
+                if relation['subject_id'] == mathematics_id
+            }
+            count = 0
+            for student_id in student_ids:
+                for student in students:
+                    if student['id'] == student_id and student['gender'] is gender:
+                        count += 1
+        
+            return count
+        
+        
+        assert students_by_subject_and_gender_count('Mathematics', Gender.FEMALE) == 2
+        assert students_by_subject_and_gender_count('History', Gender.MALE) == 1
+        assert students_by_subject_and_gender_count('Literature', Gender.FEMALE) == 4
+        assert students_by_subject_and_gender_count('Biology', Gender.MALE) == 2
+        assert students_by_subject_and_gender_count('Chemistry', Gender.FEMALE) == 3
+        
+        print('✅')
+        ```
+
+        </details>
+
+    7. Nos podemos dar cuenta de que tener los atributos de los estudiantes distribuidos en distintos sitios es muy tedioso a la hora de buscar o relacionar datos.
+
+        Vamos a intentar unir toda la informaciñon de cada alumno en un solo lugar, para ello, deberemos "irrigar" los diccionarios de los estudiantes con los datos que podemos obtener de las otras colecciones, por ejemplo, para el estudiante con id `37`:
+
+        `{'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country_id': 1}`
+
+        ⬇️
+
+        `{'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']}`
+
+        Entonces, añadir el siguiente código:
+
+        ```python
+        ...
+        
+        
+        def join(students_: list[dict]) -> list[dict]:
+            ...
+        
+        
+        test_students(join([]), [])
+        test_students(
+            join([{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1}]),
+            [{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']}]
+        )
+        test_students(join(students), [
+            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
+            {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country': 'United States', 'subjects': ['Literature']},
+            {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country': 'Spain', 'subjects': ['Literature', 'Biology']},
+            {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']},
+            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
+            {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country': 'Spain', 'subjects': ['Mathematics']},
+            {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']},
+            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country': 'Germany', 'subjects': ['Biology', 'Chemistry', 'Computer Science']},
+            {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country': 'United States', 'subjects': ['Literature', 'Biology', 'Chemistry']},
+            {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom', 'subjects': ['Mathematics', 'Literature', 'History']},
+            {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country': 'India', 'subjects': ['Mathematics', 'Literature', 'History', 'Biology', 'Chemistry', 'Computer Science']},
+            {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country': 'Germany', 'subjects': ['History', 'Chemistry']},
+            {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country': 'India', 'subjects': ['Biology', 'Chemistry', 'Computer Science']}
+        ])
+        
+        print('✅')
+        ```
+    
+        `join()` una lista de estudiantes (`list[dict]`) y devuelve dichos estudiantes (`list[dict]`) con la información completa obtenida de todas las fuentes.
+
+        Se puede programar solo en las zonas marcadas con `...` pero no es obligatorio completarlas todas.
+
+        Objetivo: ejecutar el código sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def join_countries(students_: list[dict]) -> list[dict]:
+            new_students = []
+            for student in students_:
+                student = student.copy()
+                student['country'] = find_name_by_id(countries, student['country_id'])
+                del student['country_id']
+                new_students.append(student)
+        
+            return new_students
+        
+        
+        def join_subjects(students_: list[dict]) -> list[dict]:
+            new_students = []
+            for student in students_:
+                student = student.copy()
+        
+                subject_names = []
+                for student_subject_relation in student_subject_relations:
+                    if student_subject_relation['student_id'] == student['id']:
+                        subject_names.append(find_name_by_id(subjects, student_subject_relation['subject_id']))
+                student['subjects'] = subject_names
+                new_students.append(student)
+        
+            return new_students
+        
+        
+        def join(students_: list[dict]) -> list[dict]:
+            return join_subjects(join_countries(students_))
+        
+        
+        test_students(join([]), [])
+        test_students(
+            join([{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1}]),
+            [{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']}]
+        )
+        test_students(join(students), [
+            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
+            {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country': 'United States', 'subjects': ['Literature']},
+            {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country': 'Spain', 'subjects': ['Literature', 'Biology']},
+            {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']},
+            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
+            {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country': 'Spain', 'subjects': ['Mathematics']},
+            {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']},
+            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country': 'Germany', 'subjects': ['Biology', 'Chemistry', 'Computer Science']},
+            {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country': 'United States', 'subjects': ['Literature', 'Biology', 'Chemistry']},
+            {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom', 'subjects': ['Mathematics', 'Literature', 'History']},
+            {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country': 'India', 'subjects': ['Mathematics', 'Literature', 'History', 'Biology', 'Chemistry', 'Computer Science']},
+            {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country': 'Germany', 'subjects': ['History', 'Chemistry']},
+            {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country': 'India', 'subjects': ['Biology', 'Chemistry', 'Computer Science']}
+        ])
+        
+        print('✅')
+        ```
+
+        </details>
+
+#todo work in progress...
+
+<br>
+
+16. ☠️ Crear un gestor de clientes por consola.
 
     > Para este ejercicio es recomendable saber utilizar [excepciones](README.md#7-excepciones).
 

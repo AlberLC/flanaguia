@@ -2437,7 +2437,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         print('✅')
         ```
     
-        `join()` recibe una lista de estudiantes (`list[dict]`) y devuelve dichos estudiantes (`list[dict]`) con la información completa obtenida de todas las fuentes.
+        `join()` recibe una lista de estudiantes (`list[dict]`) y los devuelve con la información completa obtenida de todas las fuentes.
 
         Se puede programar solo en las zonas marcadas con `...` pero no es obligatorio completarlas todas.
 

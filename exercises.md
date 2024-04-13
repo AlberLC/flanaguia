@@ -863,10 +863,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert sum_numbers([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -165, -1]) == 374
     assert sum_numbers([]) == 0
     
-    print('OK')
+    print('✅')
     ```
    
-    Rellenar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `OK` por consola.
+    Rellenar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
     
     > `assert` es una sentencia que comprueba la veracidad de lo que haya a la derecha. Si es `True` no hace nada, pero si es `False` lanza una [excepción](README.md#7-excepciones).
 
@@ -889,7 +889,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert sum_numbers([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -165, -1]) == 374
     assert sum_numbers([]) == 0
     
-    print('OK')
+    print('✅')
     ```
     b)
     > Usando la [función integrada](https://docs.python.org/3/library/functions.html) `sum()`:
@@ -905,7 +905,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert sum_numbers([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -165, -1]) == 374
     assert sum_numbers([]) == 0
     
-    print('OK')
+    print('✅')
     ```
 
     </details>
@@ -924,7 +924,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert average([1, 2, 3, 4, 5, 6, 7]) == 4
     assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
     
-    print('OK')
+    print('✅')
     ```
 
     <details>
@@ -942,7 +942,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert average([1, 2, 3, 4, 5, 6, 7]) == 4
     assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
     
-    print('OK')
+    print('✅')
     ```
     b)
     ```python
@@ -959,7 +959,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert average([1, 2, 3, 4, 5, 6, 7]) == 4
     assert average([99, -2, 651, -215, -5, 15, -2, -5, -5, 9, -1]) == 49
     
-    print('OK')
+    print('✅')
     ```
 
     </details>
@@ -979,7 +979,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert multiply(9, 9) == 81
     assert multiply(156, 748) == 116688
     
-    print('OK')
+    print('✅')
     ```
 
     <details>
@@ -1002,7 +1002,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert multiply(9, 9) == 81
     assert multiply(156, 748) == 116688
     
-    print('OK')
+    print('✅')
     ```
 
     </details>
@@ -1022,7 +1022,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert power(9, 9) == 387420489
     assert power(156, 748) == 286549443351127940912310344045265379399803458435563791862649509231216879586336194220793821017373647185528398137999718912683128795377832303403490201379359728778963725712702463720899321651446986307432812286112922967228580960214040125458695767296293492756095590796296252772591364291990138982325685743548631279104099327229955069543312383943928569589500428240235864193352231896378085487701206310482438629978196570600669696176974867295927957162771499932719963782638405872941627163945392132697296159548444339186032772019071612508373347184386809719130025733501976239325432083270617606124112480291078628881717726173272160235619918748740934426750510852059921564202650490333472044279349258704176344258614157450959649432290412661948873317244678184320775559997651598349552153798297229315952888067156171478848685229875195340084118982746553371195570217565399222912887319714437063923000301169199431174634221186253813327520958521863464388914428822386196528155397135516468634450866394412866963150900511750867881496922423196459731944557792051780869298758423806545140278667826504433395868108990488815000032551672311460007973246010385852170542062600416835177910004633677354230797418744082051322584486841250399669246233133287810006784316971050988939252097351751754453069226094037483479404065220228309524776165493035610689065099827326914471595115782429383596669980591989328083380710996308171307342231329766100047312986412629944411588282939893313052319942829030706584636734295943711749021207252714951142354676931287445776741682610756756409826172383898461966942453065292464871485995092675008017851221446856996710750853618091265093397903433961824210436455077318230016
     
-    print('OK')
+    print('✅')
     ```
 
     <details>
@@ -1053,7 +1053,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     assert power(9, 9) == 387420489
     assert power(156, 748) == 286549443351127940912310344045265379399803458435563791862649509231216879586336194220793821017373647185528398137999718912683128795377832303403490201379359728778963725712702463720899321651446986307432812286112922967228580960214040125458695767296293492756095590796296252772591364291990138982325685743548631279104099327229955069543312383943928569589500428240235864193352231896378085487701206310482438629978196570600669696176974867295927957162771499932719963782638405872941627163945392132697296159548444339186032772019071612508373347184386809719130025733501976239325432083270617606124112480291078628881717726173272160235619918748740934426750510852059921564202650490333472044279349258704176344258614157450959649432290412661948873317244678184320775559997651598349552153798297229315952888067156171478848685229875195340084118982746553371195570217565399222912887319714437063923000301169199431174634221186253813327520958521863464388914428822386196528155397135516468634450866394412866963150900511750867881496922423196459731944557792051780869298758423806545140278667826504433395868108990488815000032551672311460007973246010385852170542062600416835177910004633677354230797418744082051322584486841250399669246233133287810006784316971050988939252097351751754453069226094037483479404065220228309524776165493035610689065099827326914471595115782429383596669980591989328083380710996308171307342231329766100047312986412629944411588282939893313052319942829030706584636734295943711749021207252714951142354676931287445776741682610756756409826172383898461966942453065292464871485995092675008017851221446856996710750853618091265093397903433961824210436455077318230016
     
-    print('OK')
+    print('✅')
     ```
 
     </details>
@@ -2433,7 +2433,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <br>
 
-    Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+    Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `✅`, el ejercicio estará realizado con éxito:
 
     ```python
     def run_tests() -> None:
@@ -2568,7 +2568,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         assert str(ll) == '<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 11
     
-        print('OK')
+        print('✅')
     ```
 
     <details>
@@ -2799,7 +2799,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         assert str(ll) == '<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
         assert len(ll) == 11
     
-        print('OK')
+        print('✅')
     
     
     run_tests()
@@ -2845,7 +2845,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     <br>
 
-    A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `OK`, el ejercicio estará realizado con éxito:
+    A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `✅`, el ejercicio estará realizado con éxito:
 
     ```python
     def run_tests() -> None:
@@ -2894,7 +2894,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
         assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
         
-        print('OK')
+        print('✅')
     ```
 
     <details>
@@ -3114,7 +3114,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
         assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
     
-        print('OK')
+        print('✅')
     
     
     run_tests()

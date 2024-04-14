@@ -2209,7 +2209,7 @@ Salida:
 2172
 ```
 
-Podemos también desempaquetar los argumentos antes de llamar la función, pero para que tenga sentido nuestra función ya no tendría que tener un número indeterminado de argumentos, sino dos:
+Podemos también desempaquetar los argumentos antes de llamar a la función, pero para que tenga sentido nuestra función ya no tendría que tener un número indeterminado de argumentos, sino dos:
 
 ```python
 def sum_numbers(number_1, number_2):
@@ -2281,7 +2281,7 @@ Démonos cuenta de que de todos los argumentos posicionales dados (`54, 12, 1, 2
 
 > Igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero este es el que se usa por convenio.
 
-También podemos desempaquetar un diccionario antes de llamar la función:
+También podemos desempaquetar un diccionario antes de llamar a la función:
 
 ```python
 def print_person(name, age, **kwargs):

@@ -1879,33 +1879,27 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     from enum import Enum, auto
     from io import StringIO
     
-    N_TESTS = 16
-    
     
     def test():
-        def test_students(_01011, _0110):
-            _10010 = AssertionError
-            _011100 = len
-            _110100 = isinstance
-            assert _011100(_01011) == _011100(_0110)
-            _0100001 = list
-            _010101 = set
-            for _1101 in _0110:
-                for _01010, _0111 in _1101.items():
-                    if _110100(_0111, _0100001):
-                        _0111 = _010101(_0111)
-                    _1101[_01010] = _0111
+        def test_students(expected, actual):
+            assert len(expected) == len(actual)
     
-            for _00110 in _01011:
-                for _01010, _0111 in _00110.items():
-                    if _110100(_0111, _0100001):
-                        _0111 = _010101(_0111)
-                    _00110[_01010] = _0111
+            for item in actual:
+                for key, value in item.items():
+                    if isinstance(value, list):
+                        value = set(value)
+                    item[key] = value
     
-                if _00110 in _0110:
-                    _0110.remove(_00110)
+            for item in expected:
+                for key, value in item.items():
+                    if isinstance(value, list):
+                        value = set(value)
+                    item[key] = value
+    
+                if item in actual:
+                    actual.remove(item)
                 else:
-                    raise _10010
+                    raise AssertionError
     
         def test_():
             if 'find_name_by_id' in globals() and not test_results['find_name_by_id']:
@@ -2327,7 +2321,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                             emojis.append('✅')
                         else:
                             emojis.append('❌')
-                    print(f"{''.join(emojis)} {correct_tests}/{N_TESTS} ({correct_tests / N_TESTS:.0%})")
+                    print(f"{''.join(emojis)} {correct_tests}/{len(test_results)} ({correct_tests / len(test_results):.0%})")
     
         test_results = {
             'find_name_by_id': None,

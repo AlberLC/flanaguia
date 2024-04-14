@@ -1869,42 +1869,496 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     > En este ejercicio se usan [enumeraciones](README.md#19-enumeraciones).
 
-    A continuación se proporciona el código esqueleto necesario para realizar el ejercicio:
+    A continuación se proporcionará un fragmento de código muy extenso que será utilizado automáticamente para hacer pruebas. Únicamente tenemos que copiarlo, no hace falta entenderlo ni leerlo.
+
+    <details>
+    <summary>Código</summary>
 
     ```python
     import sys
     from enum import Enum, auto
     from io import StringIO
     
+    N_TESTS = 16
     
+    
+    def test():
+        def test_students(_01011, _0110):
+            _10010 = AssertionError
+            _011100 = len
+            _110100 = isinstance
+            assert _011100(_01011) == _011100(_0110)
+            _0100001 = list
+            _010101 = set
+            for _1101 in _0110:
+                for _01010, _0111 in _1101.items():
+                    if _110100(_0111, _0100001):
+                        _0111 = _010101(_0111)
+                    _1101[_01010] = _0111
+    
+            for _00110 in _01011:
+                for _01010, _0111 in _00110.items():
+                    if _110100(_0111, _0100001):
+                        _0111 = _010101(_0111)
+                    _00110[_01010] = _0111
+    
+                if _00110 in _0110:
+                    _0110.remove(_00110)
+                else:
+                    raise _10010
+    
+        def test_():
+            if 'find_name_by_id' in globals() and not test_results['find_name_by_id']:
+                try:
+                    assert find_name_by_id(students, 7) == '小明'
+                    assert find_name_by_id(students, 21) == 'Elena'
+                    assert find_name_by_id(countries, 3) == 'China'
+                    assert find_name_by_id(subjects, 5) == 'Chemistry'
+                    assert find_name_by_id(students, 1) is None
+                except AssertionError:
+                    print('❌')
+                    test_results['find_name_by_id'] = False
+                else:
+                    print('✅')
+                    test_results['find_name_by_id'] = True
+    
+            if 'find_id_by_name' in globals() and not test_results['find_id_by_name']:
+                try:
+                    assert find_id_by_name(students, '小明') == 7
+                    assert find_id_by_name(students, 'Lìlì') == 29
+                    assert find_id_by_name(countries, 'Germany') == 5
+                    assert find_id_by_name(subjects, 'History') == 3
+                    assert find_id_by_name(students, 'Alberto') is None
+                except AssertionError:
+                    print('❌')
+                    test_results['find_id_by_name'] = False
+                else:
+                    print('✅')
+                    test_results['find_id_by_name'] = True
+    
+            if 'select_student' in globals() and not test_results['select_student']:
+                try:
+                    assert select_student(
+                        {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
+                        ['id', 'name', 'last_name', 'age', 'gender', 'country', 'subjects']
+                    ) == {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']}
+                    assert select_student(
+                        {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
+                        ['name', 'last_name', 'gender']
+                    ) == {'name': 'Lìlì', 'last_name': 'Lǐ', 'gender': Gender.FEMALE}
+                    assert select_student(
+                        {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle'},
+                        ['id', 'last_name']
+                    ) == {'id': 52, 'last_name': 'Mülle'}
+                    assert select_student(
+                        {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+                        ['age', 'country']
+                    ) == {'age': 32, 'country': 'United Kingdom'}
+                    assert select_student(
+                        {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+                        []
+                    ) == {}
+                    assert select_student(
+                        {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
+                        ['_']
+                    ) == {}
+                except AssertionError:
+                    print('❌')
+                    test_results['select_student'] = False
+                else:
+                    print('✅')
+                    test_results['select_student'] = True
+    
+            if 'find_students_by_age' in globals() and not test_results['find_students_by_age']:
+                try:
+                    test_students(
+                        find_students_by_age(1, 99),
+                        [
+                            {'name': '小明', 'last_name': '王'},
+                            {'name': 'John', 'last_name': 'Smith'},
+                            {'name': 'Elena', 'last_name': 'Ruiz'},
+                            {'name': '太郎', 'last_name': '佐藤'},
+                            {'name': 'Lìlì', 'last_name': 'Lǐ'},
+                            {'name': 'Luis', 'last_name': 'López'},
+                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                            {'name': 'Thomas', 'last_name': 'Mülle'},
+                            {'name': 'Emily', 'last_name': 'Johnson'},
+                            {'name': 'Sarah', 'last_name': 'Taylor'},
+                            {'name': 'Rahul', 'last_name': 'Sharma'},
+                            {'name': 'Lisa', 'last_name': 'Schmidt'},
+                            {'name': 'Priya', 'last_name': 'Patel'}
+                        ]
+                    )
+                    test_students(find_students_by_age(19, 20), [])
+                    test_students(
+                        find_students_by_age(18, 25),
+                        [
+                            {'name': 'John', 'last_name': 'Smith'},
+                            {'name': '太郎', 'last_name': '佐藤'},
+                            {'name': 'Lìlì', 'last_name': 'Lǐ'},
+                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                            {'name': 'Priya', 'last_name': 'Patel'}
+                        ]
+                    )
+                    test_students(
+                        find_students_by_age(30, 40),
+                        [
+                            {'name': 'Elena', 'last_name': 'Ruiz'},
+                            {'name': 'Sarah', 'last_name': 'Taylor'}
+                        ]
+                    )
+                    test_students(
+                        find_students_by_age(20, 50),
+                        [
+                            {'name': 'John', 'last_name': 'Smith'},
+                            {'name': 'Elena', 'last_name': 'Ruiz'},
+                            {'name': '太郎', 'last_name': '佐藤'},
+                            {'name': 'Sarah', 'last_name': 'Taylor'},
+                            {'name': 'Lisa', 'last_name': 'Schmidt'},
+                            {'name': 'Priya', 'last_name': 'Patel'}
+                        ]
+                    )
+                    test_students(
+                        find_students_by_age(50, 90),
+                        [
+                            {'name': 'Luis', 'last_name': 'López'},
+                            {'name': 'Thomas', 'last_name': 'Mülle'},
+                            {'name': 'Emily', 'last_name': 'Johnson'}
+                        ]
+                    )
+                except AssertionError:
+                    print('❌')
+                    test_results['find_students_by_age'] = False
+                else:
+                    print('✅')
+                    test_results['find_students_by_age'] = True
+    
+            if 'find_student_country' in globals() and not test_results['find_student_country']:
+                try:
+                    assert find_student_country(7) == 'China'
+                    assert find_student_country(8) is None
+                    assert find_student_country(30) == 'Spain'
+                    assert find_student_country(52) == 'Germany'
+                    assert find_student_country(103) == 'India'
+                except AssertionError:
+                    print('❌')
+                    test_results['find_student_country'] = False
+                else:
+                    print('✅')
+                    test_results['find_student_country'] = True
+    
+            if (
+                'students_by_subject_and_gender_count' in globals()
+                and
+                not test_results['students_by_subject_and_gender_count']
+            ):
+                try:
+                    assert students_by_subject_and_gender_count('Mathematics', Gender.FEMALE) == 2
+                    assert students_by_subject_and_gender_count('History', Gender.MALE) == 1
+                    assert students_by_subject_and_gender_count('Literature', Gender.FEMALE) == 4
+                    assert students_by_subject_and_gender_count('Biology', Gender.MALE) == 2
+                    assert students_by_subject_and_gender_count('Chemistry', Gender.FEMALE) == 3
+                except AssertionError:
+                    print('❌')
+                    test_results['students_by_subject_and_gender_count'] = False
+                else:
+                    print('✅')
+                    test_results['students_by_subject_and_gender_count'] = True
+    
+            if 'join' in globals() and not test_results['join']:
+                try:
+                    test_students(join([]), [])
+                    test_students(
+                        join([{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1}]),
+                        [{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']}]
+                    )
+                    test_students(join(students), [
+                        {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
+                        {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country': 'United States', 'subjects': ['Literature']},
+                        {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country': 'Spain', 'subjects': ['Literature', 'Biology']},
+                        {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']},
+                        {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
+                        {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country': 'Spain', 'subjects': ['Mathematics']},
+                        {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']},
+                        {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country': 'Germany', 'subjects': ['Biology', 'Chemistry', 'Computer Science']},
+                        {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country': 'United States', 'subjects': ['Literature', 'Biology', 'Chemistry']},
+                        {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom', 'subjects': ['Mathematics', 'Literature', 'History']},
+                        {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country': 'India', 'subjects': ['Mathematics', 'Literature', 'History', 'Biology', 'Chemistry', 'Computer Science']},
+                        {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country': 'Germany', 'subjects': ['History', 'Chemistry']},
+                        {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country': 'India', 'subjects': ['Biology', 'Chemistry', 'Computer Science']}
+                    ])
+                except AssertionError:
+                    print('❌')
+                    test_results['join'] = False
+                else:
+                    print('✅')
+                    test_results['join'] = True
+    
+            if 'function_1' in globals() and not test_results['function_1']:
+                try:
+                    test_students(
+                        function_1(['Literature']),
+                        [
+                            {'id': 7, 'name': '小明', 'age': 16},
+                            {'id': 18, 'name': 'John', 'age': 22},
+                            {'id': 79, 'name': 'Rahul', 'age': 17}
+                        ]
+                    )
+                    test_students(
+                        function_1(['Literature', 'Mathematics']),
+                        [
+                            {'id': 7, 'name': '小明', 'age': 16},
+                            {'id': 18, 'name': 'John', 'age': 22},
+                            {'id': 79, 'name': 'Rahul', 'age': 17},
+                            {'id': 30, 'name': 'Luis', 'age': 54}
+                        ]
+                    )
+                    test_students(
+                        function_1(['Biology', 'Chemistry']),
+                        [
+                            {'id': 7, 'name': '小明', 'age': 16},
+                            {'id': 52, 'name': 'Thomas', 'age': 67},
+                            {'id': 79, 'name': 'Rahul', 'age': 17},
+                        ]
+                    )
+                    test_students(
+                        function_1(['Biology', 'Chemistry']),
+                        [
+                            {'id': 7, 'name': '小明', 'age': 16},
+                            {'id': 52, 'name': 'Thomas', 'age': 67},
+                            {'id': 79, 'name': 'Rahul', 'age': 17},
+                        ]
+                    )
+                    test_students(function_1([]), [])
+                except AssertionError:
+                    print('❌')
+                    test_results['function_1'] = False
+                else:
+                    print('✅')
+                    test_results['function_1'] = True
+    
+            if 'function_2' in globals() and not test_results['function_2']:
+                try:
+                    test_students(
+                        function_2(['Literature']),
+                        [
+                            {'name': 'John', 'last_name': 'Smith'},
+                            {'name': 'Elena', 'last_name': 'Ruiz'},
+                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                            {'name': 'Emily', 'last_name': 'Johnson'},
+                            {'name': 'Sarah', 'last_name': 'Taylor'}
+                        ]
+                    )
+                    test_students(
+                        function_2(['Mathematics', 'Computer Science']),
+                        [
+                            {'name': 'Lìlì', 'last_name': 'Lǐ'}
+                        ]
+                    )
+                    test_students(
+                        function_2(['History', 'Literature']),
+                        [
+                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                            {'name': 'Sarah', 'last_name': 'Taylor'}
+                        ]
+                    )
+                    test_students(
+                        function_2(['Biology', 'Chemistry', 'Literature']),
+                        [
+                            {'name': 'Emily', 'last_name': 'Johnson'}
+                        ]
+                    )
+                    test_students(
+                        function_2(['Mathematics', 'Chemistry', 'History', 'Biology', 'Computer Science', 'Literature']),
+                        []
+                    )
+                    test_students(
+                        function_2([]),
+                        [
+                            {'name': 'John', 'last_name': 'Smith'},
+                            {'name': 'Elena', 'last_name': 'Ruiz'},
+                            {'name': '太郎', 'last_name': '佐藤'},
+                            {'name': 'Lìlì', 'last_name': 'Lǐ'},
+                            {'name': 'Luis', 'last_name': 'López'},
+                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
+                            {'name': 'Thomas', 'last_name': 'Mülle'},
+                            {'name': 'Emily', 'last_name': 'Johnson'},
+                            {'name': 'Sarah', 'last_name': 'Taylor'},
+                            {'name': 'Lisa', 'last_name': 'Schmidt'},
+                            {'name': 'Priya', 'last_name': 'Patel'}
+                        ]
+                    )
+                except AssertionError:
+                    print('❌')
+                    test_results['function_2'] = False
+                else:
+                    print('✅')
+                    test_results['function_2'] = True
+    
+            if 'function_3' in globals() and not test_results['function_3']:
+                try:
+                    assert set(function_3()) == {'Lìlì', 'Yumiko', 'Priya'}
+                except AssertionError:
+                    print('❌')
+                    test_results['function_3'] = False
+                else:
+                    print('✅')
+                    test_results['function_3'] = True
+    
+            if 'function_4' in globals() and not test_results['function_4']:
+                try:
+                    assert function_4(0) is None
+                    assert function_4(1) == 30
+                    assert function_4(2) == 85
+                    assert function_4(3) == 103
+                    assert function_4(4) is None
+                    assert function_4(5) is None
+                    assert function_4(6) == 79
+                    assert function_4(7) is None
+                except AssertionError:
+                    print('❌')
+                    test_results['function_4'] = False
+                else:
+                    print('✅')
+                    test_results['function_4'] = True
+    
+            if 'function_5' in globals() and not test_results['function_5']:
+                try:
+                    assert function_5('Biology', ['Spain', 'Germany', 'United Kingdom']) == 2
+                    assert function_5('Literature', ['Spain', 'India', 'United Kingdom']) == 3
+                    assert function_5('_', ['Spain', 'India', 'United Kingdom']) == 0
+                    assert function_5('Literature', ['_', '_']) == 0
+                    assert function_5('History', ['Japan']) == 1
+                    assert function_5('Computer Science', ['India']) == 2
+                    assert function_5('Computer Science', ['India', 'Japan']) == 3
+                    assert function_5('Computer Science', ['India', 'Japan', 'Germany']) == 4
+                except AssertionError:
+                    print('❌')
+                    test_results['function_5'] = False
+                else:
+                    print('✅')
+                    test_results['function_5'] = True
+    
+            if 'function_6' in globals() and not test_results['function_6']:
+                try:
+                    assert function_6() == 3
+                except AssertionError:
+                    print('❌')
+                    test_results['function_6'] = False
+                else:
+                    print('✅')
+                    test_results['function_6'] = True
+    
+            if 'function_7' in globals() and not test_results['function_7']:
+                try:
+                    assert function_7() == sum((25, 67, 17)) / 3
+                except AssertionError:
+                    print('❌')
+                    test_results['function_7'] = False
+                else:
+                    print('✅')
+                    test_results['function_7'] = True
+    
+            if 'function_8' in globals() and not test_results['function_8']:
+                try:
+                    assert function_8() == ['王', 'Lǐ', 'Mülle', 'Schmidt', 'Sharma', 'Patel', '佐藤', 'Suzuki', 'Ruiz',
+                                            'López', 'Taylor', 'Smith', 'Johnson']
+                except AssertionError:
+                    print('❌')
+                    test_results['function_8'] = False
+                else:
+                    print('✅')
+                    test_results['function_8'] = True
+    
+            if 'function_9' in globals() and not test_results['function_9']:
+                buffer = StringIO()
+                stdout = sys.stdout
+                sys.stdout = buffer
+                function_9()
+                sys.stdout = stdout
+                content = buffer.getvalue()
+                print(content, end='')
+                try:
+                    assert content.strip() == '\n'.join(
+                        (
+                            'Mathematics',
+                            '-----------',
+                            'Male: 60%',
+                            'Female: 40%',
+                            '',
+                            'Literature',
+                            '----------',
+                            'Male: 43%',
+                            'Female: 57%',
+                            '',
+                            'History',
+                            '-------',
+                            'Male: 25%',
+                            'Female: 75%',
+                            '',
+                            'Biology',
+                            '-------',
+                            'Male: 40%',
+                            'Female: 60%',
+                            '',
+                            'Chemistry',
+                            '---------',
+                            'Male: 50%',
+                            'Female: 50%',
+                            '',
+                            'Computer Science',
+                            '----------------',
+                            'Male: 60%',
+                            'Female: 40%'
+                        )
+                    )
+                except AssertionError:
+                    print('❌')
+                    test_results['function_9'] = False
+                else:
+                    print('✅')
+                    test_results['function_9'] = True
+                    print()
+                    correct_tests = 0
+                    emojis = []
+                    for test_result in test_results.values():
+                        if test_result:
+                            correct_tests += 1
+                            emojis.append('✅')
+                        else:
+                            emojis.append('❌')
+                    print(f"{''.join(emojis)} {correct_tests}/{N_TESTS} ({correct_tests / N_TESTS:.0%})")
+    
+        test_results = {
+            'find_name_by_id': None,
+            'find_id_by_name': None,
+            'select_student': None,
+            'find_students_by_age': None,
+            'find_student_country': None,
+            'students_by_subject_and_gender_count': None,
+            'join': None,
+            'function_1': None,
+            'function_2': None,
+            'function_3': None,
+            'function_4': None,
+            'function_5': None,
+            'function_6': None,
+            'function_7': None,
+            'function_8': None,
+            'function_9': None
+        }
+    
+        test_()
+    ```
+
+    </details>
+
+    Ahora otro fragmento de código que debemos copiar, pero que no debemos ignorar:
+
+    ```python
     class Gender(Enum):
         MALE = auto()
         FEMALE = auto()
-    
-    
-    def test_students(_01011, _0110):
-        _10010 = AssertionError
-        _011100 = len
-        _110100 = isinstance
-        assert _011100(_01011) == _011100(_0110)
-        _0100001 = list
-        _010101 = set
-        for _1101 in _0110:
-            for _01010, _0111 in _1101.items():
-                if _110100(_0111, _0100001):
-                    _0111 = _010101(_0111)
-                _1101[_01010] = _0111
-    
-        for _00110 in _01011:
-            for _01010, _0111 in _00110.items():
-                if _110100(_0111, _0100001):
-                    _0111 = _010101(_0111)
-                _00110[_01010] = _0111
-    
-            if _00110 in _0110:
-                _0110.remove(_00110)
-            else:
-                raise _10010
     
     
     students = [
@@ -1977,11 +2431,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         {'student_id': 103, 'subject_id': 6}
     ]
     ```
-    
+
     Podemos observar varias cosas en el código:
 
     - Una enumeración `Gender` para especificar el género de un estudiante.
-    - Una función `test_students()` que ignoraremos completamente (se usará automáticamente más tarde para las pruebas).
     - Varias listas de diccionarios (`list[dict]`):
       - `students`: colección con los datos de todos los estudiantes.
       - `countries`: colección con los datos de los países.
@@ -1999,13 +2452,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ...
         
         
-        assert find_name_by_id(students, 7) == '小明'
-        assert find_name_by_id(students, 21) == 'Elena'
-        assert find_name_by_id(countries, 3) == 'China'
-        assert find_name_by_id(subjects, 5) == 'Chemistry'
-        assert find_name_by_id(students, 1) is None
-        
-        print('✅')
+        test()
         ```
     
         `find_name_by_id()` es una función que recibe por parámetros una colección (`students`, `countries`, etc.) y un id. Luego devuelve el `name` del elemento (de la colección proporcionada) que corresponde con el id recibido. Si el id no existe, devuelve `None`.
@@ -2022,13 +2469,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return next((element['name'] for element in elements if element['id'] == id_), None)
         
         
-        assert find_name_by_id(students, 7) == '小明'
-        assert find_name_by_id(students, 21) == 'Elena'
-        assert find_name_by_id(countries, 3) == 'China'
-        assert find_name_by_id(subjects, 5) == 'Chemistry'
-        assert find_name_by_id(students, 1) is None
-        
-        print('✅')
+        test()
         ```
 
         </details>
@@ -2040,15 +2481,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ...
         
         
-        assert find_id_by_name(students, '小明') == 7
-        assert find_id_by_name(students, 'Lìlì') == 29
-        assert find_id_by_name(countries, 'Germany') == 5
-        assert find_id_by_name(subjects, 'History') == 3
-        assert find_id_by_name(students, 'Alberto') is None
-        
-        print('✅')
+        test()
         ```
-    
+
+        Aquí llamamos otra vez a la función `test()`. No hace falta que quitemos la anterior porque es inteligente y solo prueba cada función una vez.
+
         `find_id_by_name()` es como la función anterior pero al revés, es decir, devuelve el `id` del elemento (de la colección proporcionada) que corresponde con el nombre recibido. Si el nombre no existe, devuelve `None`.
 
         `name` ➡️ `id` | `None`.
@@ -2063,13 +2500,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return next((element['id'] for element in elements if element['name'] == name), None)
         
         
-        assert find_id_by_name(students, '小明') == 7
-        assert find_id_by_name(students, 'Lìlì') == 29
-        assert find_id_by_name(countries, 'Germany') == 5
-        assert find_id_by_name(subjects, 'History') == 3
-        assert find_id_by_name(students, 'Alberto') is None
-        
-        print('✅')
+        test()
         ```
 
         </details>
@@ -2081,32 +2512,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ...
         
         
-        assert select_student(
-            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
-            ['id', 'name', 'last_name', 'age', 'gender', 'country', 'subjects']
-        ) == {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']}
-        assert select_student(
-            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
-            ['name', 'last_name', 'gender']
-        ) == {'name': 'Lìlì', 'last_name': 'Lǐ', 'gender': Gender.FEMALE}
-        assert select_student(
-            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle'},
-            ['id', 'last_name']
-        ) == {'id': 52, 'last_name': 'Mülle'}
-        assert select_student(
-            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-            ['age', 'country']
-        ) == {'age': 32, 'country': 'United Kingdom'}
-        assert select_student(
-            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-            []
-        ) == {}
-        assert select_student(
-            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-            ['_']
-        ) == {}
-        
-        print('✅')
+        test()
         ```
     
         La función `select_student()` recibe por parámetro un estudiante (`dict`) y una lista de claves (`list[str]`) permitidas. Luego devuelve el diccionario `student` filtrado, es decir, conteniendo solo los pares clave:valor según las claves especificadas por `keys`. Por ejemplo:
@@ -2123,32 +2529,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return {k: v for k, v in student.items() if k in keys}
         
         
-        assert select_student(
-            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
-            ['id', 'name', 'last_name', 'age', 'gender', 'country', 'subjects']
-        ) == {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']}
-        assert select_student(
-            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
-            ['name', 'last_name', 'gender']
-        ) == {'name': 'Lìlì', 'last_name': 'Lǐ', 'gender': Gender.FEMALE}
-        assert select_student(
-            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle'},
-            ['id', 'last_name']
-        ) == {'id': 52, 'last_name': 'Mülle'}
-        assert select_student(
-            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-            ['age', 'country']
-        ) == {'age': 32, 'country': 'United Kingdom'}
-        assert select_student(
-            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-            []
-        ) == {}
-        assert select_student(
-            {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-            ['_']
-        ) == {}
-        
-        print('✅')
+        test()
         ```
 
         </details>
@@ -2160,63 +2541,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ...
         
         
-        test_students(
-            find_students_by_age(1, 99),
-            [
-                {'name': '小明', 'last_name': '王'},
-                {'name': 'John', 'last_name': 'Smith'},
-                {'name': 'Elena', 'last_name': 'Ruiz'},
-                {'name': '太郎', 'last_name': '佐藤'},
-                {'name': 'Lìlì', 'last_name': 'Lǐ'},
-                {'name': 'Luis', 'last_name': 'López'},
-                {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                {'name': 'Thomas', 'last_name': 'Mülle'},
-                {'name': 'Emily', 'last_name': 'Johnson'},
-                {'name': 'Sarah', 'last_name': 'Taylor'},
-                {'name': 'Rahul', 'last_name': 'Sharma'},
-                {'name': 'Lisa', 'last_name': 'Schmidt'},
-                {'name': 'Priya', 'last_name': 'Patel'}
-            ]
-        )
-        test_students(find_students_by_age(19, 20), [])
-        test_students(
-            find_students_by_age(18, 25),
-            [
-                {'name': 'John', 'last_name': 'Smith'},
-                {'name': '太郎', 'last_name': '佐藤'},
-                {'name': 'Lìlì', 'last_name': 'Lǐ'},
-                {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                {'name': 'Priya', 'last_name': 'Patel'}
-            ]
-        )
-        test_students(
-            find_students_by_age(30, 40),
-            [
-                {'name': 'Elena', 'last_name': 'Ruiz'},
-                {'name': 'Sarah', 'last_name': 'Taylor'}
-            ]
-        )
-        test_students(
-            find_students_by_age(20, 50),
-            [
-                {'name': 'John', 'last_name': 'Smith'},
-                {'name': 'Elena', 'last_name': 'Ruiz'},
-                {'name': '太郎', 'last_name': '佐藤'},
-                {'name': 'Sarah', 'last_name': 'Taylor'},
-                {'name': 'Lisa', 'last_name': 'Schmidt'},
-                {'name': 'Priya', 'last_name': 'Patel'}
-            ]
-        )
-        test_students(
-            find_students_by_age(50, 90),
-            [
-                {'name': 'Luis', 'last_name': 'López'},
-                {'name': 'Thomas', 'last_name': 'Mülle'},
-                {'name': 'Emily', 'last_name': 'Johnson'}
-            ]
-        )
-        
-        print('✅')
+        test()
         ```
     
         `find_students_by_age()` recibe por parámetro dos números enteros que indican la mínima y la máxima edad.
@@ -2236,63 +2561,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ]
         
         
-        test_students(
-            find_students_by_age(1, 99),
-            [
-                {'name': '小明', 'last_name': '王'},
-                {'name': 'John', 'last_name': 'Smith'},
-                {'name': 'Elena', 'last_name': 'Ruiz'},
-                {'name': '太郎', 'last_name': '佐藤'},
-                {'name': 'Lìlì', 'last_name': 'Lǐ'},
-                {'name': 'Luis', 'last_name': 'López'},
-                {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                {'name': 'Thomas', 'last_name': 'Mülle'},
-                {'name': 'Emily', 'last_name': 'Johnson'},
-                {'name': 'Sarah', 'last_name': 'Taylor'},
-                {'name': 'Rahul', 'last_name': 'Sharma'},
-                {'name': 'Lisa', 'last_name': 'Schmidt'},
-                {'name': 'Priya', 'last_name': 'Patel'}
-            ]
-        )
-        test_students(find_students_by_age(19, 20), [])
-        test_students(
-            find_students_by_age(18, 25),
-            [
-                {'name': 'John', 'last_name': 'Smith'},
-                {'name': '太郎', 'last_name': '佐藤'},
-                {'name': 'Lìlì', 'last_name': 'Lǐ'},
-                {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                {'name': 'Priya', 'last_name': 'Patel'}
-            ]
-        )
-        test_students(
-            find_students_by_age(30, 40),
-            [
-                {'name': 'Elena', 'last_name': 'Ruiz'},
-                {'name': 'Sarah', 'last_name': 'Taylor'}
-            ]
-        )
-        test_students(
-            find_students_by_age(20, 50),
-            [
-                {'name': 'John', 'last_name': 'Smith'},
-                {'name': 'Elena', 'last_name': 'Ruiz'},
-                {'name': '太郎', 'last_name': '佐藤'},
-                {'name': 'Sarah', 'last_name': 'Taylor'},
-                {'name': 'Lisa', 'last_name': 'Schmidt'},
-                {'name': 'Priya', 'last_name': 'Patel'}
-            ]
-        )
-        test_students(
-            find_students_by_age(50, 90),
-            [
-                {'name': 'Luis', 'last_name': 'López'},
-                {'name': 'Thomas', 'last_name': 'Mülle'},
-                {'name': 'Emily', 'last_name': 'Johnson'}
-            ]
-        )
-        
-        print('✅')
+        test()
         ```
 
         </details>
@@ -2304,13 +2573,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ...
         
         
-        assert find_student_country(7) == 'China'
-        assert find_student_country(8) is None
-        assert find_student_country(30) == 'Spain'
-        assert find_student_country(52) == 'Germany'
-        assert find_student_country(103) == 'India'
-        
-        print('✅')
+        test()
         ```
     
         `find_student_country()` recibe por parámetro el id de un estudiante y devuelve el nombre de su país. Si el id no existe, devuelve `None`.
@@ -2330,13 +2593,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return find_name_by_id(countries, student['country_id'])
         
         
-        assert find_student_country(7) == 'China'
-        assert find_student_country(8) is None
-        assert find_student_country(30) == 'Spain'
-        assert find_student_country(52) == 'Germany'
-        assert find_student_country(103) == 'India'
-        
-        print('✅')
+        test()
         ```
 
         </details>
@@ -2348,13 +2605,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ...
         
         
-        assert students_by_subject_and_gender_count('Mathematics', Gender.FEMALE) == 2
-        assert students_by_subject_and_gender_count('History', Gender.MALE) == 1
-        assert students_by_subject_and_gender_count('Literature', Gender.FEMALE) == 4
-        assert students_by_subject_and_gender_count('Biology', Gender.MALE) == 2
-        assert students_by_subject_and_gender_count('Chemistry', Gender.FEMALE) == 3
-        
-        print('✅')
+        test()
         ```
     
         `students_by_subject_and_gender_count()` devuelve el número de estudiantes que estudian la asignatura `subject` y son el género `gender`.
@@ -2382,20 +2633,14 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return count
         
         
-        assert students_by_subject_and_gender_count('Mathematics', Gender.FEMALE) == 2
-        assert students_by_subject_and_gender_count('History', Gender.MALE) == 1
-        assert students_by_subject_and_gender_count('Literature', Gender.FEMALE) == 4
-        assert students_by_subject_and_gender_count('Biology', Gender.MALE) == 2
-        assert students_by_subject_and_gender_count('Chemistry', Gender.FEMALE) == 3
-        
-        print('✅')
+        test()
         ```
 
         </details>
 
     7. Nos podemos dar cuenta de que tener los atributos de los estudiantes distribuidos en distintos sitios es muy tedioso a la hora de buscar o relacionar datos.
 
-        Vamos a intentar unir toda la informaciñon de cada alumno en un solo lugar, para ello, deberemos "irrigar" los diccionarios de los estudiantes con los datos que podemos obtener de las otras colecciones, por ejemplo, para el estudiante con id `37`:
+        Vamos a intentar unir toda la información de cada estudiante en un solo lugar, para ello, deberemos inyectar en los diccionarios de los estudiantes los datos que podemos obtener de las otras colecciones. Por ejemplo, para el estudiante con id `37`:
 
         `{'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country_id': 1}`
 
@@ -2413,28 +2658,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ...
         
         
-        test_students(join([]), [])
-        test_students(
-            join([{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1}]),
-            [{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']}]
-        )
-        test_students(join(students), [
-            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
-            {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country': 'United States', 'subjects': ['Literature']},
-            {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country': 'Spain', 'subjects': ['Literature', 'Biology']},
-            {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']},
-            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
-            {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country': 'Spain', 'subjects': ['Mathematics']},
-            {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']},
-            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country': 'Germany', 'subjects': ['Biology', 'Chemistry', 'Computer Science']},
-            {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country': 'United States', 'subjects': ['Literature', 'Biology', 'Chemistry']},
-            {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom', 'subjects': ['Mathematics', 'Literature', 'History']},
-            {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country': 'India', 'subjects': ['Mathematics', 'Literature', 'History', 'Biology', 'Chemistry', 'Computer Science']},
-            {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country': 'Germany', 'subjects': ['History', 'Chemistry']},
-            {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country': 'India', 'subjects': ['Biology', 'Chemistry', 'Computer Science']}
-        ])
-        
-        print('✅')
+        test()
         ```
     
         `join()` recibe una lista de estudiantes (`list[dict]`) y los devuelve con la información completa obtenida de todas las fuentes.
@@ -2468,6 +2692,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                     if student_subject_relation['student_id'] == student['id']:
                         subject_names.append(find_name_by_id(subjects, student_subject_relation['subject_id']))
                 student['subjects'] = subject_names
+        
                 new_students.append(student)
         
             return new_students
@@ -2477,33 +2702,323 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return join_subjects(join_countries(students_))
         
         
-        test_students(join([]), [])
-        test_students(
-            join([{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1}]),
-            [{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']}]
-        )
-        test_students(join(students), [
-            {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
-            {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country': 'United States', 'subjects': ['Literature']},
-            {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country': 'Spain', 'subjects': ['Literature', 'Biology']},
-            {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']},
-            {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
-            {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country': 'Spain', 'subjects': ['Mathematics']},
-            {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']},
-            {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country': 'Germany', 'subjects': ['Biology', 'Chemistry', 'Computer Science']},
-            {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country': 'United States', 'subjects': ['Literature', 'Biology', 'Chemistry']},
-            {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom', 'subjects': ['Mathematics', 'Literature', 'History']},
-            {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country': 'India', 'subjects': ['Mathematics', 'Literature', 'History', 'Biology', 'Chemistry', 'Computer Science']},
-            {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country': 'Germany', 'subjects': ['History', 'Chemistry']},
-            {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country': 'India', 'subjects': ['Biology', 'Chemistry', 'Computer Science']}
-        ])
-        
-        print('✅')
+        test()
         ```
 
         </details>
 
-#todo work in progress...
+    8. Añadir el siguiente código:
+
+        ```python
+        def function_1(subjects_: list[str]) -> list[dict]:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_1()` devuelve los hombres que estudian alguna de las asignaturas proporcionadas por parámetro. Seleccionar solo el id, nombre y edad de cada estudiante.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_1(subjects_: list[str]) -> list[dict]:
+            students_ = join(students)
+            return [
+                select_student(student, ['id', 'name', 'age'])
+                for student in students_
+                if student['gender'] is Gender.MALE and any(subject in student['subjects'] for subject in subjects_)
+            ]
+        
+        
+        test()
+        ```
+
+        </details>
+
+    9. Añadir el siguiente código:
+
+        ```python
+        def function_2(subjects_: list[str]) -> list[dict]:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_2()` devuelve las personas (solo nombres y apellidos) mayores de edad (>= 18) que estudian todas las asignaturas proporcionadas por parámetro.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_2(subjects_: list[str]) -> list[dict]:
+            students_ = join(students)
+            return [
+                select_student(student, ['name', 'last_name'])
+                for student in students_
+                if student['age'] >= 18 and all(subject in student['subjects'] for subject in subjects_)
+            ]
+        
+        
+        test()
+        ```
+
+        </details>
+
+    10. Añadir el siguiente código:
+
+        ```python
+        def function_3() -> list[str]:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_3()` devuelve la lista de los nombres de las mujeres asiáticas.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_3() -> list[str]:
+            students_ = join(students)
+            return [
+                student['name']
+                for student in students_
+                if student['gender'] is Gender.FEMALE and student['country'] in ['India', 'China', 'Japan']
+            ]
+        
+        
+        test()
+        ```
+
+        </details>
+
+    11. Añadir el siguiente código:
+
+        ```python
+        def function_4(subjects_number: int) -> int | None:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_4()` devuelve el id máximo de los estudiantes que tienen el número de asignaturas dado por parámetro. Si no hay estudiantes que cumplan eso, devuelve `None`.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_4(subjects_number: int) -> int | None:
+            students_ = join(students)
+            return max([student['id'] for student in students_ if len(student['subjects']) == subjects_number], default=None)
+        
+        
+        test()
+        ```
+
+        </details>
+
+    12. Añadir el siguiente código:
+
+        ```python
+        def function_5(subject: str, countries_: list[str]) -> int:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_5()` recibe por parámetro una asignatura y una lista de países y devuelve el número de personas de esos países que estudian esa asignatura. 
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_5(subject: str, countries_: list[str]) -> int:
+            students_ = join(students)
+            return len(
+                [student for student in students_ if subject in student['subjects'] and student['country'] in countries_]
+            )
+        
+        
+        test()
+        ```
+
+        </details>
+
+    13. Añadir el siguiente código:
+
+        ```python
+        def function_6() -> int:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_6()` devuelve el número de mujeres no españolas que tienen una `a` en su nombre. 
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_6() -> int:
+            students_ = join(students)
+            return len(
+                [
+                    student
+                    for student in students_
+                    if 'a' in student['name'] and student['gender'] is Gender.FEMALE and student['country'] != 'Spain'
+                ]
+            )
+        
+        
+        test()
+        ```
+
+        </details>
+
+    14. Añadir el siguiente código:
+
+        ```python
+        def function_7() -> float:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_7()` devuelve la edad media de los hombres que estudian `Computer Science`.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_7() -> float:
+            students_ = join(students)
+            student_ages = [
+                student['age']
+                for student in students_
+                if student['gender'] is Gender.MALE and 'Computer Science' in student['subjects']
+            ]
+            return sum(student_ages) / len(student_ages)
+        
+        
+        test()
+        ```
+
+        </details>
+
+    15. Añadir el siguiente código:
+
+        ```python
+        def function_8() -> list[str]:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_8()` devuelve la lista de todos los apellidos ordenados por el nombre del país.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_8() -> list[str]:
+            students_ = join(students)
+            return [student['last_name'] for student in sorted(students_, key=lambda student_: student_['country'])]
+        
+        
+        test()
+        ```
+
+        </details>
+
+    16. Por último, añadir el siguiente código:
+
+        ```python
+        def function_9() -> None:
+            ...
+        
+        
+        test()
+        ```
+    
+        `function_9()` va a imprimir por pantalla el porcentaje de hombres y mujeres que estudian cada asignatura siguiendo el siguiente formato:
+
+        ```
+        Mathematics
+        -----------
+        Male: 60%
+        Female: 40%
+        
+        Literature
+        ----------
+        Male: 43%
+        Female: 57%
+        
+        ...
+        ```
+
+        Fijémonos en que los porcentajes están redondeados y la longitud de cada línea que separa cada nombre de asignatura con sus valores tiene la misma longitud que dicho nombre.
+
+        Objetivo: completar `...` y ejecutar sin errores.
+
+        Esta prueba imprimirá un resumen de todas las pruebas anteriores.
+
+        <details>
+        <summary>Solución</summary>
+
+        ```python
+        def function_9() -> None:
+            students_ = join(students)
+        
+            subject_gender_count = {subject['name']: {'males': 0, 'females': 0} for subject in subjects}
+            for subject, gender_count in subject_gender_count.items():
+                for student in students_:
+                    if subject not in student['subjects']:
+                        continue
+        
+                    if student['gender'] is Gender.MALE:
+                        gender_count['males'] += 1
+                    else:
+                        gender_count['females'] += 1
+        
+            for subject, gender_count in subject_gender_count.items():
+                total = gender_count['males'] + gender_count['females']
+                print(subject)
+                print('-' * len(subject))
+                print(f"Male: {gender_count['males'] / total:.0%}")
+                print(f"Female: {gender_count['females'] / total:.0%}")
+                print()
+        
+        
+        test()
+        ```
+
+        </details>
 
 <br>
 

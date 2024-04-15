@@ -2611,12 +2611,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         ```python
         def students_by_subject_and_gender_count(subject: str, gender: Gender) -> int:
-            mathematics_id = find_id_by_name(subjects, subject)
+            subject_id = find_id_by_name(subjects, subject)
         
             student_ids = {
                 relation['student_id']
                 for relation in student_subject_relations
-                if relation['subject_id'] == mathematics_id
+                if relation['subject_id'] == subject_id
             }
             count = 0
             for student_id in student_ids:

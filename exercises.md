@@ -2980,7 +2980,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         Objetivo: completar `...` y ejecutar sin errores.
 
-        Esta prueba imprimirá un resumen de todas las pruebas anteriores.
+        `test()` hará que esta prueba imprima el resumen de todas las pruebas anteriores.
 
         <details>
         <summary>Solución</summary>

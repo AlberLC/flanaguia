@@ -2453,7 +2453,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
  
         `id` ➡️ `name` | `None`
 
-        Objetivo: Completar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
+        Objetivo: completar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
 
         <details>
         <summary>Solución</summary>

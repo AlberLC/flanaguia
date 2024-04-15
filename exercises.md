@@ -755,7 +755,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 13. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
 
     ```
-    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+    Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!
     ```
 
     <details>
@@ -763,7 +763,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     a)
     ```python
-    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
     
     word_occurrences = {}
     
@@ -779,7 +779,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ```python
     from collections import defaultdict
     
-    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
     
     word_occurrences = defaultdict(int)
     
@@ -792,7 +792,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ```python
     from collections import Counter
     
-    text = 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.'
+    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
     
     print(Counter(text.split()))
     ```
@@ -1872,7 +1872,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     A continuación se proporcionará un fragmento de código muy extenso que será utilizado automáticamente para hacer pruebas. Únicamente tenemos que copiarlo, no hace falta entenderlo ni leerlo.
 
     <details>
-    <summary>Código</summary>
+    <summary>Código de pruebas</summary>
 
     ```python
     import sys
@@ -2435,7 +2435,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
       - `subjects`: colección con los datos de las asignaturas.
       - `student_subject_relations`: colección que relaciona estudiantes con asignaturas.
     
-    Estas colecciones simulan vagamente unas tablas típicas de bases de datos relacionales (SQL). Por ejemplo, en `students` tenemos los atributos de los estudiantes. Uno de estos atributos es `country_id`, sin embargo, este no proporciona el nombre del país directamente sino que especifica un id que apunta a otro dato en otra coleccion (`countries`). En SQL esto se denomina relación de **uno a muchos**: un pais, muchos estudiantes.
+    Estas colecciones simulan vagamente unas tablas típicas de bases de datos relacionales (SQL). Por ejemplo, en `students` tenemos los atributos de los estudiantes. Uno de estos atributos es `country_id`, sin embargo, este no proporciona el nombre del país directamente, sino que especifica un id que apunta a otro dato en otra coleccion (`countries`). En SQL esto se denomina relación de **uno a muchos**: un país, muchos estudiantes.
 
     Por otro lado, la relación de estudiantes-asignaturas es de **muchos a muchos**, por lo tanto se utiliza una colección auxiliar (`student_subject_relations`), la cual indica qué estudiantes estudian qué asignaturas.
 

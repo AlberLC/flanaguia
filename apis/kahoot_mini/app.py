@@ -14,10 +14,10 @@ async def create_question(question: Question) -> Question:
 
 @app.get('/question/{id}')
 async def read_question_by_id(id: str) -> Question:
-    if not (user := await find_question_by_id(id)):
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='User not found')
+    if not (question := await find_question_by_id(id)):
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Question not found')
 
-    return user
+    return question
 
 
 @app.get('/questions')
@@ -28,10 +28,10 @@ async def read_questions(author: str | None = None, limit: int | None = None) ->
 @app.put('/question/{id}')
 async def update_question(id: str, question: Question) -> Question:
     question.id = id
-    if not (user := await models.question.update_question(question)):
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='User not found')
+    if not (question := await models.question.update_question(question)):
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Question not found')
 
-    return user
+    return question
 
 
 @app.delete('/question/{id}')

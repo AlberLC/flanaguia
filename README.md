@@ -2811,7 +2811,7 @@ blue 2
 You have traveled 17.28 km.
 ```
 
-Como vemos, hemos utilizado funciones para modularizar el código. Por ejemplo, no hemos tenido que repetir código para quitar una rueda tres veces seguidas sino que hemos creado una función que se encargaba de ese problema concreto.
+Como vemos, hemos utilizado funciones para modularizar el código. Por ejemplo, no hemos tenido que repetir código para quitar una rueda tres veces seguidas, sino que hemos creado una función que se encargaba de ese problema concreto.
 
 Ese fue el primero paso para ordenar el código, pero existen varios problemas, por ejemplo, tenemos datos sueltos en variables globales que pueden usarse en otros lugares o interferir con el resto del programa, ¿que pasaría si tuviéramos cuarenta coches, tendríamos que añadir `model_1`, `model_2`, `model_3` ...? ¿y si manejaramos también aviones, `color` y `speed` serían de un coche o de un avión? Todo está mezclado y desordenado. Este tipo de cuestiones se resuelven encapsulando datos y funcionalidad en un mismo lugar, es decir, usando **clases**.
 

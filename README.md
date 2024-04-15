@@ -1103,7 +1103,7 @@ with open('file.txt') as file:
 # file is closed here
 ```
 
-No entraremos en detalle pero básicamente la palabra reservada `with` define un gestor de contexto. En este caso mantiene el archivo abierto hasta que sale del bloque y si ocurre cualquier error o sale el programa, Python se encargará de cerrar el archivo correctamente antes de salir.
+No entraremos en detalle pero básicamente la palabra reservada `with` define un gestor de contexto. En este caso mantendrá el archivo abierto hasta que se salga del bloque u ocurra cualquier interrupción del programa (errores, `return`, etc.). Python se encargará de cerrar el archivo correctamente antes de salir.
 
 `open()` tiene varios [parámetros](https://docs.python.org/3/library/functions.html#open), pero los más importantes son `file`, que es el cual indica la ubicación del archivo, y `mode`, con el que le decimos en que modo queremos que abra el archivo (lectura, escritura, texto, bytes, etc.). Si no especificamos el parámetro `mode` por defecto se abrirá en modo lectura de texto.
 

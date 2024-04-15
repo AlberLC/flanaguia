@@ -2449,7 +2449,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         test()
         ```
     
-        `find_name_by_id()` es una función que recibe por parámetros una colección (`students`, `countries`, etc.) y un id. Luego devuelve el `name` del elemento (de la colección proporcionada) que corresponde con el id recibido. Si el id no existe, devuelve `None`.
+        `find_name_by_id()` es una función que recibe por parámetro una colección (`students`, `countries`, etc.) y un id. Luego devuelve el `name` del elemento (de la colección proporcionada) que corresponde con el id recibido. Si el id no existe, devuelve `None`.
  
         `id` ➡️ `name` | `None`
 

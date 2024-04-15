@@ -2634,7 +2634,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     7. Nos podemos dar cuenta de que tener los atributos de los estudiantes distribuidos en distintos sitios es muy tedioso a la hora de buscar o relacionar datos.
 
-        Vamos a intentar unir toda la información de cada estudiante en un solo lugar, para ello, deberemos inyectar en los diccionarios de los estudiantes los datos que podemos obtener de las otras colecciones. Por ejemplo, para el estudiante con id `37`:
+        Vamos a intentar unir toda la información de cada estudiante en un solo lugar, para ello, debemos inyectar en los diccionarios de los estudiantes los datos que podemos obtener de las otras colecciones. Por ejemplo, para el estudiante con id `37`:
 
         `{'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country_id': 1}`
 
@@ -2960,7 +2960,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         test()
         ```
     
-        `function_9()` va a imprimir por pantalla el porcentaje de hombres y mujeres que estudian cada asignatura siguiendo el siguiente formato:
+        `function_9()` imprime por pantalla el porcentaje de hombres y mujeres que estudian cada asignatura siguiendo el siguiente formato:
 
         ```
         Mathematics

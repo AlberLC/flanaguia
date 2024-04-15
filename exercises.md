@@ -2976,7 +2976,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         ...
         ```
 
-        Fijémonos en que los porcentajes están redondeados y la longitud de cada línea que separa cada nombre de asignatura con sus valores tiene la misma longitud que dicho nombre.
+        Fijémonos en que los porcentajes están redondeados y la longitud de las líneas que separan cada nombre de asignatura con sus valores tienen la misma longitud que dichos nombres.
 
         Objetivo: completar `...` y ejecutar sin errores.
 

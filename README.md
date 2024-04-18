@@ -206,7 +206,7 @@ False
 
 <br>
 
-### 1.3. Cadenas (Strings)
+### 1.3. Cadenas (strings)
 
 ```python
 >>> text = 'Hello WORLD'
@@ -216,14 +216,18 @@ False
 'o'
 >>> text[-1]
 'D'
->>> text[2:8]
-'llo WO'
->>> text[2:8:2]
-'loW'
+>>> text[3:9]
+'lo WOR'
+>>> text[:3]
+'Hel'
 >>> text[3:]
 'lo WORLD'
 >>> text[:]
 'Hello WORLD'
+>>> text[::2]
+'HloWRD'
+>>> text[3:9:2]
+'l O'
 >>> text[::-1]
 'DLROW olleH'
 ```

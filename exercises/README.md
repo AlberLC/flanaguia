@@ -1875,10 +1875,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     - Una [enumeración](../README.md#19-enumeraciones) `Gender` para especificar el género de un estudiante.
     - Varias listas de diccionarios (`list[dict]`):
-      - `students`: colección con los datos de todos los estudiantes.
-      - `countries`: colección con los datos de los países.
-      - `subjects`: colección con los datos de las asignaturas.
-      - `student_subject_relations`: colección que relaciona estudiantes con asignaturas.
+        - `students`: colección con los datos de todos los estudiantes.
+        - `countries`: colección con los datos de los países.
+        - `subjects`: colección con los datos de las asignaturas.
+        - `student_subject_relations`: colección que relaciona estudiantes con asignaturas.
     
     Estas colecciones simulan vagamente unas tablas típicas de bases de datos relacionales (SQL). Por ejemplo, en `students` tenemos los atributos de los estudiantes. Uno de estos atributos es `country_id`, sin embargo, este no proporciona el nombre del país directamente, sino que especifica un id que apunta a otro dato en otra coleccion (`countries`). En bases de datos esto se denomina relación de **uno a muchos**: un país, muchos estudiantes.
 

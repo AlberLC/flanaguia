@@ -1890,7 +1890,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Como las funciones están vacías, normalmente los editores/entornos de desarrollo marcarán con una advertencia los parámetros porque no se usan. Si molesta mucho se pueden comentar las funciones que no estemos usando (no afectará a las pruebas).
 
-    Al final de esté módulo se llama a `test()` para realizar las correcciones/pruebas.
+    Al final de este módulo se llama a `test()` para realizar las correcciones/pruebas.
 
     1. `find_name_by_id()`:
 

@@ -1886,7 +1886,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Finalmente tenemos el módulo `main.py`, que es donde vamos a trabajar. Si lo abrimos, veremos una serie de funciones que están incompletas, cada una es un ejercicio. El objetivo es completarlas todas.
 
-    Está permitido hacer cualquier cosa, programar fuera de las regiones marcados con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
+    Está permitido hacer cualquier cosa: programar fuera de las regiones marcados con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
 
     Como las funciones están vacías, normalmente los editores/entornos de desarrollo marcarán con una advertencia los parámetros porque no se usan. Si molesta mucho se pueden comentar las funciones que no estemos usando (no afectará a las pruebas).
 

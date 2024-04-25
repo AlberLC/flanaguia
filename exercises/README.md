@@ -1895,7 +1895,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     1. `find_name_by_id()`:
 
         Esta función recibe por parámetro una colección (`students`, `countries`, etc.) y un id. Luego devuelve el `name` del elemento (de la colección proporcionada) que corresponde con el id recibido. Si el id no existe, devuelve `None`.
- 
+
+        Esta función espera que la colección recibida tenga diccionarios con las claves `id`y `name`. No hay que tener en cuenta el caso de que se le pase una colección que no cumpla dicho formato, como por ejemplo, `student_subject_relations`.
+
         `id` ➡️ `name` | `None`
 
         <details>

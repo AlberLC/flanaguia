@@ -36,7 +36,7 @@
 
 <br>
 
-2. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
+2. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
 
     - `hola` ➡️ `False`
     - `ojos` ➡️ `False`
@@ -59,7 +59,7 @@
 
 <br>
 
-3. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar [bucles](README.md#5-bucles)**.
+3. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar [bucles](../README.md#5-bucles)**.
 
     <details>
     <summary>Solución</summary>
@@ -73,7 +73,7 @@
 
 <br>
 
-4. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar [bucles](README.md#5-bucles)**.
+4. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar [bucles](../README.md#5-bucles)**.
 
     <details>
     <summary>Solución</summary>
@@ -420,7 +420,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-7. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](README.md#5-bucles)** y **sin usar [conjuntos](README.md#16-conjuntos)**.
+7. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles)** y **sin usar [conjuntos](../README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -439,7 +439,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+8. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
     - `hola`, `adios` ➡️ `False`
     - `urnas`, `runa` ➡️ `False`
@@ -460,7 +460,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-9. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](README.md#51-listas-por-comprensión) que sea equivalente.
+9. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -868,7 +868,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
    
     Rellenar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
     
-    > `assert` es una sentencia que comprueba la veracidad de lo que haya a la derecha. Si es `True` no hace nada, pero si es `False` lanza una [excepción](README.md#7-excepciones).
+    > `assert` es una sentencia que comprueba la veracidad de lo que haya a la derecha. Si es `True` no hace nada, pero si es `False` lanza una [excepción](../README.md#7-excepciones).
 
     <details>
     <summary>Solución</summary>
@@ -1060,7 +1060,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+5. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -1103,7 +1103,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-6. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+6. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -1174,7 +1174,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - `fibonacci_sequence(5, ' - ')` ➡️ `0 - 1 - 1 - 2 - 3`
     - `fibonacci_sequence(11, ' | ')` ➡️ `0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55`
 
-    La sucesión de Fibonacci para `n` negativo debe [lanzar](README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+    La sucesión de Fibonacci para `n` negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
    > ```python
@@ -1265,7 +1265,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 10. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
 
-    > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](README.md#63-ámbitos) de la teoría.
+    > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](../README.md#63-ámbitos) de la teoría.
 
     ```python
     n = 45
@@ -1338,7 +1338,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     > Para este ejercicio es necesario haber hecho y entendido el ejercicio anterior.
 
-    > Si se complica este ejercicio: revisar los capítulos de la teoría de [funciones](README.md#índice).
+    > Si se complica este ejercicio: revisar los capítulos de la teoría de [funciones](../README.md#índice).
 
     1. Se proporcionará código que contiene dos funciones:`function_1()` y `time_it()`.
 
@@ -1669,7 +1669,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         - Que tenga dos parámetros: la ruta (`str`) donde se encuentran los archivos y una extensión (`str`) para filtrar aquellos que la tengan (por ejemplo: `.jpg`)
         - Que devuelva la lista de archivos (`list[Path]`) en ese directorio que tengan dicha extensión.
         - Sin buscar recursivamente en subdirectorios.
-        - Sin usar [listas por comprensión](README.md#51-listas-por-comprensión).
+        - Sin usar [listas por comprensión](../README.md#51-listas-por-comprensión).
 
        Probar la función pidiendo por consola la ruta y la extensión e imprimir cada ruta con el número correspondiente tal que:
         ```
@@ -1706,7 +1706,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    2. En el ejercicio anterior creamos una lista con todas las rutas `Path` de los archivos que cumplen nuestro filtro. Imaginemos que nuestro directorio contiene millones de archivos: estamos guardando en memoria un objeto `Path` por cada uno de ellos y, como es lógico, eso es bastante problemático. En los casos donde tengamos que procesar muchos elementos y no necesitemos que persistan en el tiempo o no sea posible por las limitaciones de memoria del ordenador tendremos que usar [iteradores](README.md#52-iteradores).
+    2. En el ejercicio anterior creamos una lista con todas las rutas `Path` de los archivos que cumplen nuestro filtro. Imaginemos que nuestro directorio contiene millones de archivos: estamos guardando en memoria un objeto `Path` por cada uno de ellos y, como es lógico, eso es bastante problemático. En los casos donde tengamos que procesar muchos elementos y no necesitemos que persistan en el tiempo o no sea posible por las limitaciones de memoria del ordenador tendremos que usar [iteradores](../README.md#52-iteradores).
 
        Con eso en mente: arreglar la función del ejercicio anterior manteniendo los requisitos (menos el valor de retorno `list[Path]`).
 
@@ -1735,7 +1735,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    3. Olvidemos los iteradores. Volvamos a hacer el ejercicio inicial, pero con [listas por comprensión](README.md#51-listas-por-comprensión) (prohibido usar `append()`).
+    3. Olvidemos los iteradores. Volvamos a hacer el ejercicio inicial, pero con [listas por comprensión](../README.md#51-listas-por-comprensión) (prohibido usar `append()`).
 
         <details>
         <summary>Solución</summary>
@@ -1757,7 +1757,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         </details>
 
-    4. Ahora, en vez de una lista por comprensión, usar un [generador con paréntesis](README.md#521-generadores) (no debería ocupar ni una línea más ni menos que el ejercicio anterior).
+    4. Ahora, en vez de una lista por comprensión, usar un [generador con paréntesis](../README.md#521-generadores) (no debería ocupar ni una línea más ni menos que el ejercicio anterior).
 
         <details>
         <summary>Solución</summary>
@@ -1867,593 +1867,32 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     > No es necesario saber nada de bases de datos.
 
-    > En este ejercicio se usan [enumeraciones](README.md#19-enumeraciones).
+    Para realizar este grupo de ejercicios es necesario descargar este [zip](15.zip) que contiene los módulos `main.py`, `data.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
-    A continuación se proporcionará un fragmento de código muy extenso que será utilizado automáticamente para hacer pruebas. Únicamente tenemos que copiarlo, no hace falta entenderlo ni leerlo.
+    El módulo `tests.py` contiene código que será utilizado automáticamente para hacer pruebas, no hace falta entenderlo ni leerlo.
 
-    <details>
-    <summary>Código de pruebas</summary>
+    En el módulo `data.py` podremos observar varias cosas:
 
-    ```python
-    import sys
-    from enum import Enum, auto
-    from io import StringIO
-    
-    
-    def test():
-        def test_students(expected, actual):
-            assert len(expected) == len(actual)
-    
-            for item in actual:
-                for key, value in item.items():
-                    if isinstance(value, list):
-                        value = set(value)
-                    item[key] = value
-    
-            for item in expected:
-                for key, value in item.items():
-                    if isinstance(value, list):
-                        value = set(value)
-                    item[key] = value
-    
-                if item in actual:
-                    actual.remove(item)
-                else:
-                    raise AssertionError
-    
-        def test_():
-            if 'find_name_by_id' in globals() and not test_results['find_name_by_id']:
-                try:
-                    assert find_name_by_id(students, 7) == '小明'
-                    assert find_name_by_id(students, 21) == 'Elena'
-                    assert find_name_by_id(countries, 3) == 'China'
-                    assert find_name_by_id(subjects, 5) == 'Chemistry'
-                    assert find_name_by_id(students, 1) is None
-                except AssertionError:
-                    print('❌')
-                    test_results['find_name_by_id'] = False
-                else:
-                    print('✅')
-                    test_results['find_name_by_id'] = True
-    
-            if 'find_id_by_name' in globals() and not test_results['find_id_by_name']:
-                try:
-                    assert find_id_by_name(students, '小明') == 7
-                    assert find_id_by_name(students, 'Lìlì') == 29
-                    assert find_id_by_name(countries, 'Germany') == 5
-                    assert find_id_by_name(subjects, 'History') == 3
-                    assert find_id_by_name(students, 'Alberto') is None
-                except AssertionError:
-                    print('❌')
-                    test_results['find_id_by_name'] = False
-                else:
-                    print('✅')
-                    test_results['find_id_by_name'] = True
-    
-            if 'select_student' in globals() and not test_results['select_student']:
-                try:
-                    assert select_student(
-                        {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
-                        ['id', 'name', 'last_name', 'age', 'gender', 'country', 'subjects']
-                    ) == {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']}
-                    assert select_student(
-                        {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
-                        ['name', 'last_name', 'gender']
-                    ) == {'name': 'Lìlì', 'last_name': 'Lǐ', 'gender': Gender.FEMALE}
-                    assert select_student(
-                        {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle'},
-                        ['id', 'last_name']
-                    ) == {'id': 52, 'last_name': 'Mülle'}
-                    assert select_student(
-                        {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-                        ['age', 'country']
-                    ) == {'age': 32, 'country': 'United Kingdom'}
-                    assert select_student(
-                        {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-                        []
-                    ) == {}
-                    assert select_student(
-                        {'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom'},
-                        ['_']
-                    ) == {}
-                except AssertionError:
-                    print('❌')
-                    test_results['select_student'] = False
-                else:
-                    print('✅')
-                    test_results['select_student'] = True
-    
-            if 'find_students_by_age' in globals() and not test_results['find_students_by_age']:
-                try:
-                    test_students(
-                        find_students_by_age(1, 99),
-                        [
-                            {'name': '小明', 'last_name': '王'},
-                            {'name': 'John', 'last_name': 'Smith'},
-                            {'name': 'Elena', 'last_name': 'Ruiz'},
-                            {'name': '太郎', 'last_name': '佐藤'},
-                            {'name': 'Lìlì', 'last_name': 'Lǐ'},
-                            {'name': 'Luis', 'last_name': 'López'},
-                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                            {'name': 'Thomas', 'last_name': 'Mülle'},
-                            {'name': 'Emily', 'last_name': 'Johnson'},
-                            {'name': 'Sarah', 'last_name': 'Taylor'},
-                            {'name': 'Rahul', 'last_name': 'Sharma'},
-                            {'name': 'Lisa', 'last_name': 'Schmidt'},
-                            {'name': 'Priya', 'last_name': 'Patel'}
-                        ]
-                    )
-                    test_students(find_students_by_age(19, 20), [])
-                    test_students(
-                        find_students_by_age(18, 25),
-                        [
-                            {'name': 'John', 'last_name': 'Smith'},
-                            {'name': '太郎', 'last_name': '佐藤'},
-                            {'name': 'Lìlì', 'last_name': 'Lǐ'},
-                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                            {'name': 'Priya', 'last_name': 'Patel'}
-                        ]
-                    )
-                    test_students(
-                        find_students_by_age(30, 40),
-                        [
-                            {'name': 'Elena', 'last_name': 'Ruiz'},
-                            {'name': 'Sarah', 'last_name': 'Taylor'}
-                        ]
-                    )
-                    test_students(
-                        find_students_by_age(20, 50),
-                        [
-                            {'name': 'John', 'last_name': 'Smith'},
-                            {'name': 'Elena', 'last_name': 'Ruiz'},
-                            {'name': '太郎', 'last_name': '佐藤'},
-                            {'name': 'Sarah', 'last_name': 'Taylor'},
-                            {'name': 'Lisa', 'last_name': 'Schmidt'},
-                            {'name': 'Priya', 'last_name': 'Patel'}
-                        ]
-                    )
-                    test_students(
-                        find_students_by_age(50, 90),
-                        [
-                            {'name': 'Luis', 'last_name': 'López'},
-                            {'name': 'Thomas', 'last_name': 'Mülle'},
-                            {'name': 'Emily', 'last_name': 'Johnson'}
-                        ]
-                    )
-                except AssertionError:
-                    print('❌')
-                    test_results['find_students_by_age'] = False
-                else:
-                    print('✅')
-                    test_results['find_students_by_age'] = True
-    
-            if 'find_student_country' in globals() and not test_results['find_student_country']:
-                try:
-                    assert find_student_country(7) == 'China'
-                    assert find_student_country(8) is None
-                    assert find_student_country(30) == 'Spain'
-                    assert find_student_country(52) == 'Germany'
-                    assert find_student_country(103) == 'India'
-                except AssertionError:
-                    print('❌')
-                    test_results['find_student_country'] = False
-                else:
-                    print('✅')
-                    test_results['find_student_country'] = True
-    
-            if (
-                'students_by_subject_and_gender_count' in globals()
-                and
-                not test_results['students_by_subject_and_gender_count']
-            ):
-                try:
-                    assert students_by_subject_and_gender_count('Mathematics', Gender.FEMALE) == 2
-                    assert students_by_subject_and_gender_count('History', Gender.MALE) == 1
-                    assert students_by_subject_and_gender_count('Literature', Gender.FEMALE) == 4
-                    assert students_by_subject_and_gender_count('Biology', Gender.MALE) == 2
-                    assert students_by_subject_and_gender_count('Chemistry', Gender.FEMALE) == 3
-                except AssertionError:
-                    print('❌')
-                    test_results['students_by_subject_and_gender_count'] = False
-                else:
-                    print('✅')
-                    test_results['students_by_subject_and_gender_count'] = True
-    
-            if 'join' in globals() and not test_results['join']:
-                try:
-                    test_students(join([]), [])
-                    test_students(
-                        join([{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1}]),
-                        [{'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']}]
-                    )
-                    test_students(join(students), [
-                        {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country': 'China', 'subjects': ['Mathematics', 'Literature', 'Chemistry']},
-                        {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country': 'United States', 'subjects': ['Literature']},
-                        {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country': 'Spain', 'subjects': ['Literature', 'Biology']},
-                        {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country': 'Japan', 'subjects': ['Computer Science']},
-                        {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country': 'China', 'subjects': ['Mathematics', 'Computer Science']},
-                        {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country': 'Spain', 'subjects': ['Mathematics']},
-                        {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']},
-                        {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country': 'Germany', 'subjects': ['Biology', 'Chemistry', 'Computer Science']},
-                        {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country': 'United States', 'subjects': ['Literature', 'Biology', 'Chemistry']},
-                        {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country': 'United Kingdom', 'subjects': ['Mathematics', 'Literature', 'History']},
-                        {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country': 'India', 'subjects': ['Mathematics', 'Literature', 'History', 'Biology', 'Chemistry', 'Computer Science']},
-                        {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country': 'Germany', 'subjects': ['History', 'Chemistry']},
-                        {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country': 'India', 'subjects': ['Biology', 'Chemistry', 'Computer Science']}
-                    ])
-                except AssertionError:
-                    print('❌')
-                    test_results['join'] = False
-                else:
-                    print('✅')
-                    test_results['join'] = True
-    
-            if 'function_1' in globals() and not test_results['function_1']:
-                try:
-                    test_students(
-                        function_1(['Literature']),
-                        [
-                            {'id': 7, 'name': '小明', 'age': 16},
-                            {'id': 18, 'name': 'John', 'age': 22},
-                            {'id': 79, 'name': 'Rahul', 'age': 17}
-                        ]
-                    )
-                    test_students(
-                        function_1(['Literature', 'Mathematics']),
-                        [
-                            {'id': 7, 'name': '小明', 'age': 16},
-                            {'id': 18, 'name': 'John', 'age': 22},
-                            {'id': 79, 'name': 'Rahul', 'age': 17},
-                            {'id': 30, 'name': 'Luis', 'age': 54}
-                        ]
-                    )
-                    test_students(
-                        function_1(['Biology', 'Chemistry']),
-                        [
-                            {'id': 7, 'name': '小明', 'age': 16},
-                            {'id': 52, 'name': 'Thomas', 'age': 67},
-                            {'id': 79, 'name': 'Rahul', 'age': 17},
-                        ]
-                    )
-                    test_students(
-                        function_1(['Biology', 'Chemistry']),
-                        [
-                            {'id': 7, 'name': '小明', 'age': 16},
-                            {'id': 52, 'name': 'Thomas', 'age': 67},
-                            {'id': 79, 'name': 'Rahul', 'age': 17},
-                        ]
-                    )
-                    test_students(function_1([]), [])
-                except AssertionError:
-                    print('❌')
-                    test_results['function_1'] = False
-                else:
-                    print('✅')
-                    test_results['function_1'] = True
-    
-            if 'function_2' in globals() and not test_results['function_2']:
-                try:
-                    test_students(
-                        function_2(['Literature']),
-                        [
-                            {'name': 'John', 'last_name': 'Smith'},
-                            {'name': 'Elena', 'last_name': 'Ruiz'},
-                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                            {'name': 'Emily', 'last_name': 'Johnson'},
-                            {'name': 'Sarah', 'last_name': 'Taylor'}
-                        ]
-                    )
-                    test_students(
-                        function_2(['Mathematics', 'Computer Science']),
-                        [
-                            {'name': 'Lìlì', 'last_name': 'Lǐ'}
-                        ]
-                    )
-                    test_students(
-                        function_2(['History', 'Literature']),
-                        [
-                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                            {'name': 'Sarah', 'last_name': 'Taylor'}
-                        ]
-                    )
-                    test_students(
-                        function_2(['Biology', 'Chemistry', 'Literature']),
-                        [
-                            {'name': 'Emily', 'last_name': 'Johnson'}
-                        ]
-                    )
-                    test_students(
-                        function_2(['Mathematics', 'Chemistry', 'History', 'Biology', 'Computer Science', 'Literature']),
-                        []
-                    )
-                    test_students(
-                        function_2([]),
-                        [
-                            {'name': 'John', 'last_name': 'Smith'},
-                            {'name': 'Elena', 'last_name': 'Ruiz'},
-                            {'name': '太郎', 'last_name': '佐藤'},
-                            {'name': 'Lìlì', 'last_name': 'Lǐ'},
-                            {'name': 'Luis', 'last_name': 'López'},
-                            {'name': 'Yumiko', 'last_name': 'Suzuki'},
-                            {'name': 'Thomas', 'last_name': 'Mülle'},
-                            {'name': 'Emily', 'last_name': 'Johnson'},
-                            {'name': 'Sarah', 'last_name': 'Taylor'},
-                            {'name': 'Lisa', 'last_name': 'Schmidt'},
-                            {'name': 'Priya', 'last_name': 'Patel'}
-                        ]
-                    )
-                except AssertionError:
-                    print('❌')
-                    test_results['function_2'] = False
-                else:
-                    print('✅')
-                    test_results['function_2'] = True
-    
-            if 'function_3' in globals() and not test_results['function_3']:
-                try:
-                    assert set(function_3()) == {'Lìlì', 'Yumiko', 'Priya'}
-                except AssertionError:
-                    print('❌')
-                    test_results['function_3'] = False
-                else:
-                    print('✅')
-                    test_results['function_3'] = True
-    
-            if 'function_4' in globals() and not test_results['function_4']:
-                try:
-                    assert function_4(0) is None
-                    assert function_4(1) == 30
-                    assert function_4(2) == 85
-                    assert function_4(3) == 103
-                    assert function_4(4) is None
-                    assert function_4(5) is None
-                    assert function_4(6) == 79
-                    assert function_4(7) is None
-                except AssertionError:
-                    print('❌')
-                    test_results['function_4'] = False
-                else:
-                    print('✅')
-                    test_results['function_4'] = True
-    
-            if 'function_5' in globals() and not test_results['function_5']:
-                try:
-                    assert function_5('Biology', ['Spain', 'Germany', 'United Kingdom']) == 2
-                    assert function_5('Literature', ['Spain', 'India', 'United Kingdom']) == 3
-                    assert function_5('_', ['Spain', 'India', 'United Kingdom']) == 0
-                    assert function_5('Literature', ['_', '_']) == 0
-                    assert function_5('History', ['Japan']) == 1
-                    assert function_5('Computer Science', ['India']) == 2
-                    assert function_5('Computer Science', ['India', 'Japan']) == 3
-                    assert function_5('Computer Science', ['India', 'Japan', 'Germany']) == 4
-                except AssertionError:
-                    print('❌')
-                    test_results['function_5'] = False
-                else:
-                    print('✅')
-                    test_results['function_5'] = True
-    
-            if 'function_6' in globals() and not test_results['function_6']:
-                try:
-                    assert function_6() == 3
-                except AssertionError:
-                    print('❌')
-                    test_results['function_6'] = False
-                else:
-                    print('✅')
-                    test_results['function_6'] = True
-    
-            if 'function_7' in globals() and not test_results['function_7']:
-                try:
-                    assert function_7() == sum((25, 67, 17)) / 3
-                except AssertionError:
-                    print('❌')
-                    test_results['function_7'] = False
-                else:
-                    print('✅')
-                    test_results['function_7'] = True
-    
-            if 'function_8' in globals() and not test_results['function_8']:
-                try:
-                    assert function_8() == ['王', 'Lǐ', 'Mülle', 'Schmidt', 'Sharma', 'Patel', '佐藤', 'Suzuki', 'Ruiz',
-                                            'López', 'Taylor', 'Smith', 'Johnson']
-                except AssertionError:
-                    print('❌')
-                    test_results['function_8'] = False
-                else:
-                    print('✅')
-                    test_results['function_8'] = True
-    
-            if 'function_9' in globals() and not test_results['function_9']:
-                buffer = StringIO()
-                stdout = sys.stdout
-                sys.stdout = buffer
-                function_9()
-                sys.stdout = stdout
-                content = buffer.getvalue()
-                print(content, end='')
-                try:
-                    assert content.strip() == '\n'.join(
-                        (
-                            'Mathematics',
-                            '-----------',
-                            'Male: 60%',
-                            'Female: 40%',
-                            '',
-                            'Literature',
-                            '----------',
-                            'Male: 43%',
-                            'Female: 57%',
-                            '',
-                            'History',
-                            '-------',
-                            'Male: 25%',
-                            'Female: 75%',
-                            '',
-                            'Biology',
-                            '-------',
-                            'Male: 40%',
-                            'Female: 60%',
-                            '',
-                            'Chemistry',
-                            '---------',
-                            'Male: 50%',
-                            'Female: 50%',
-                            '',
-                            'Computer Science',
-                            '----------------',
-                            'Male: 60%',
-                            'Female: 40%'
-                        )
-                    )
-                except AssertionError:
-                    print('❌')
-                    test_results['function_9'] = False
-                else:
-                    print('✅')
-                    test_results['function_9'] = True
-                    print()
-                    correct_tests = 0
-                    emojis = []
-                    for test_result in test_results.values():
-                        if test_result:
-                            correct_tests += 1
-                            emojis.append('✅')
-                        else:
-                            emojis.append('❌')
-                    print(f"{''.join(emojis)} {correct_tests}/{len(test_results)} ({correct_tests / len(test_results):.0%})")
-    
-        test_results = {
-            'find_name_by_id': None,
-            'find_id_by_name': None,
-            'select_student': None,
-            'find_students_by_age': None,
-            'find_student_country': None,
-            'students_by_subject_and_gender_count': None,
-            'join': None,
-            'function_1': None,
-            'function_2': None,
-            'function_3': None,
-            'function_4': None,
-            'function_5': None,
-            'function_6': None,
-            'function_7': None,
-            'function_8': None,
-            'function_9': None
-        }
-    
-        test_()
-    ```
-
-    </details>
-
-    Ahora otro fragmento de código que debemos copiar, pero que no debemos ignorar:
-
-    ```python
-    class Gender(Enum):
-        MALE = auto()
-        FEMALE = auto()
-    
-    
-    students = [
-        {'id': 7, 'name': '小明', 'last_name': '王', 'age': 16, 'gender': Gender.MALE, 'country_id': 3},
-        {'id': 18, 'name': 'John', 'last_name': 'Smith', 'age': 22, 'gender': Gender.MALE, 'country_id': 2},
-        {'id': 21, 'name': 'Elena', 'last_name': 'Ruiz', 'age': 37, 'gender': Gender.FEMALE, 'country_id': 4},
-        {'id': 25, 'name': '太郎', 'last_name': '佐藤', 'age': 25, 'gender': Gender.MALE, 'country_id': 1},
-        {'id': 29, 'name': 'Lìlì', 'last_name': 'Lǐ', 'age': 18, 'gender': Gender.FEMALE, 'country_id': 3},
-        {'id': 30, 'name': 'Luis', 'last_name': 'López', 'age': 54, 'gender': Gender.MALE, 'country_id': 4},
-        {'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country_id': 1},
-        {'id': 52, 'name': 'Thomas', 'last_name': 'Mülle', 'age': 67, 'gender': Gender.MALE, 'country_id': 5},
-        {'id': 61, 'name': 'Emily', 'last_name': 'Johnson', 'age': 55, 'gender': Gender.FEMALE, 'country_id': 2},
-        {'id': 66, 'name': 'Sarah', 'last_name': 'Taylor', 'age': 32, 'gender': Gender.FEMALE, 'country_id': 6},
-        {'id': 79, 'name': 'Rahul', 'last_name': 'Sharma', 'age': 17, 'gender': Gender.MALE, 'country_id': 7},
-        {'id': 85, 'name': 'Lisa', 'last_name': 'Schmidt', 'age': 29, 'gender': Gender.FEMALE, 'country_id': 5},
-        {'id': 103, 'name': 'Priya', 'last_name': 'Patel', 'age': 22, 'gender': Gender.FEMALE, 'country_id': 7},
-    ]
-    
-    countries = [
-        {'id': 1, 'name': 'Japan'},
-        {'id': 2, 'name': 'United States'},
-        {'id': 3, 'name': 'China'},
-        {'id': 4, 'name': 'Spain'},
-        {'id': 5, 'name': 'Germany'},
-        {'id': 6, 'name': 'United Kingdom'},
-        {'id': 7, 'name': 'India'}
-    ]
-    
-    subjects = [
-        {'id': 1, 'name': 'Mathematics'},
-        {'id': 2, 'name': 'Literature'},
-        {'id': 3, 'name': 'History'},
-        {'id': 4, 'name': 'Biology'},
-        {'id': 5, 'name': 'Chemistry'},
-        {'id': 6, 'name': 'Computer Science'},
-    ]
-    
-    student_subject_relations = [
-        {'student_id': 7, 'subject_id': 1},
-        {'student_id': 7, 'subject_id': 2},
-        {'student_id': 7, 'subject_id': 5},
-        {'student_id': 18, 'subject_id': 2},
-        {'student_id': 21, 'subject_id': 2},
-        {'student_id': 21, 'subject_id': 4},
-        {'student_id': 25, 'subject_id': 6},
-        {'student_id': 29, 'subject_id': 1},
-        {'student_id': 29, 'subject_id': 6},
-        {'student_id': 30, 'subject_id': 1},
-        {'student_id': 37, 'subject_id': 2},
-        {'student_id': 37, 'subject_id': 3},
-        {'student_id': 52, 'subject_id': 4},
-        {'student_id': 52, 'subject_id': 5},
-        {'student_id': 52, 'subject_id': 6},
-        {'student_id': 61, 'subject_id': 2},
-        {'student_id': 61, 'subject_id': 4},
-        {'student_id': 61, 'subject_id': 5},
-        {'student_id': 66, 'subject_id': 1},
-        {'student_id': 66, 'subject_id': 2},
-        {'student_id': 66, 'subject_id': 3},
-        {'student_id': 79, 'subject_id': 1},
-        {'student_id': 79, 'subject_id': 2},
-        {'student_id': 79, 'subject_id': 3},
-        {'student_id': 79, 'subject_id': 4},
-        {'student_id': 79, 'subject_id': 5},
-        {'student_id': 79, 'subject_id': 6},
-        {'student_id': 85, 'subject_id': 3},
-        {'student_id': 85, 'subject_id': 5},
-        {'student_id': 103, 'subject_id': 4},
-        {'student_id': 103, 'subject_id': 5},
-        {'student_id': 103, 'subject_id': 6}
-    ]
-    ```
-
-    Podemos observar varias cosas en el código:
-
-    - Una enumeración `Gender` para especificar el género de un estudiante.
+    - Una [enumeración](../README.md#19-enumeraciones) `Gender` para especificar el género de un estudiante.
     - Varias listas de diccionarios (`list[dict]`):
       - `students`: colección con los datos de todos los estudiantes.
       - `countries`: colección con los datos de los países.
       - `subjects`: colección con los datos de las asignaturas.
       - `student_subject_relations`: colección que relaciona estudiantes con asignaturas.
     
-    Estas colecciones simulan vagamente unas tablas típicas de bases de datos relacionales (SQL). Por ejemplo, en `students` tenemos los atributos de los estudiantes. Uno de estos atributos es `country_id`, sin embargo, este no proporciona el nombre del país directamente, sino que especifica un id que apunta a otro dato en otra coleccion (`countries`). En SQL esto se denomina relación de **uno a muchos**: un país, muchos estudiantes.
+    Estas colecciones simulan vagamente unas tablas típicas de bases de datos relacionales (SQL). Por ejemplo, en `students` tenemos los atributos de los estudiantes. Uno de estos atributos es `country_id`, sin embargo, este no proporciona el nombre del país directamente, sino que especifica un id que apunta a otro dato en otra coleccion (`countries`). En bases de datos esto se denomina relación de **uno a muchos**: un país, muchos estudiantes.
 
     Por otro lado, la relación de estudiantes-asignaturas es de **muchos a muchos**, por lo tanto se utiliza una colección auxiliar (`student_subject_relations`), la cual indica qué estudiantes estudian qué asignaturas.
 
-    1. Copiar el siguiente código debajo del código esqueleto anterior:
+    Solo se va a trabajar en el módulo `main.py`. Si lo abrimos, veremos una serie de funciones que están incompletas, cada una es un ejercicio. El objetivo es completarlas todas. Está permitido hacer cualquier cosa, programar fuera de las regiones marcados con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
 
-        ```python
-        def find_name_by_id(elements: list[dict], id_: int) -> str | None:
-            ...
-        
-        
-        test()
-        ```
-    
-        `find_name_by_id()` es una función que recibe por parámetro una colección (`students`, `countries`, etc.) y un id. Luego devuelve el `name` del elemento (de la colección proporcionada) que corresponde con el id recibido. Si el id no existe, devuelve `None`.
+    Como las funciones están vacías, normalmente los editores/entornos de desarrollo marcarán con una advertencia los parámetros porque no se usan. Si molesta mucho se pueden comentar las funciones que no estemos usando (no afectará a las pruebas).
+
+    1. `find_name_by_id()`:
+
+        Esta función recibe por parámetro una colección (`students`, `countries`, etc.) y un id. Luego devuelve el `name` del elemento (de la colección proporcionada) que corresponde con el id recibido. Si el id no existe, devuelve `None`.
  
         `id` ➡️ `name` | `None`
-
-        Objetivo: completar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
 
         <details>
         <summary>Solución</summary>
@@ -2461,30 +1900,15 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         ```python
         def find_name_by_id(elements: list[dict], id_: int) -> str | None:
             return next((element['name'] for element in elements if element['id'] == id_), None)
-        
-        
-        test()
         ```
 
         </details>
 
-    2. Añadir el siguiente código:
+    2. `find_id_by_name()`:
 
-        ```python
-        def find_id_by_name(elements: list[dict], name: str) -> int | None:
-            ...
-        
-        
-        test()
-        ```
-
-        Aquí llamamos otra vez a la función `test()`. No hace falta que quitemos la anterior porque es inteligente y solo prueba cada función una vez.
-
-        `find_id_by_name()` es como la función anterior pero al revés, es decir, devuelve el `id` del elemento (de la colección proporcionada) que corresponde con el nombre recibido. Si el nombre no existe, devuelve `None`.
+        Esta función es como la anterior pero al revés, es decir, devuelve el `id` del elemento (de la colección proporcionada) que corresponde con el nombre recibido. Si el nombre no existe, devuelve `None`.
 
         `name` ➡️ `id` | `None`.
-
-        Objetivo: completar `...` y ejecutar sin errores.
 
         <details>
         <summary>Solución</summary>
@@ -2492,28 +1916,15 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         ```python
         def find_id_by_name(elements: list[dict], name: str) -> int | None:
             return next((element['id'] for element in elements if element['name'] == name), None)
-        
-        
-        test()
         ```
 
         </details>
 
-    3. Añadir el siguiente código:
+    3. `select_student()`:
 
-        ```python
-        def select_student(student: dict, keys: list[str]) -> dict:
-            ...
-        
-        
-        test()
-        ```
-    
-        La función `select_student()` recibe por parámetro un estudiante (`dict`) y una lista de claves (`list[str]`) permitidas. Luego devuelve el diccionario `student` filtrado, es decir, conteniendo solo los pares clave:valor según las claves especificadas por `keys`. Por ejemplo:
+        Esta función recibe por parámetro un estudiante (`dict`) y una lista de claves (`list[str]`) permitidas. Luego devuelve el diccionario `student` filtrado, es decir, conteniendo solo los pares clave:valor según las claves especificadas por `keys`. Por ejemplo:
 
         `select_student({'id': 1, 'name': 'Juan', 'age': 2}, ['id', 'name'])` ➡️ `{'id': 1, 'name': 'Juan'}`
-
-        Objetivo: completar `...` y ejecutar sin errores.
 
         <details>
         <summary>Solución</summary>
@@ -2521,28 +1932,15 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         ```python
         def select_student(student: dict, keys: list[str]) -> dict:
             return {k: v for k, v in student.items() if k in keys}
-        
-        
-        test()
         ```
 
         </details>
 
-    4. Añadir el siguiente código:
+    4. `find_students_by_age()`:
 
-        ```python
-        def find_students_by_age(min_age: int, max_age: int) -> list[dict]:
-            ...
-        
-        
-        test()
-        ```
-    
-        `find_students_by_age()` recibe por parámetro dos números enteros que indican la mínima y la máxima edad.
+        Esta función recibe por parámetro dos números enteros que indican la mínima y la máxima edad.
 
         La función debe devolver una lista de diccionarios de estudiantes conteniendo únicamente los atributos `name` y `last_name` cuyas edades se comprenden entre el mínimo y el máximo proporcionados (ambos inclusive).
-
-        Objetivo: completar `...` y ejecutar sin errores.
 
         <details>
         <summary>Solución</summary>
@@ -2553,26 +1951,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 select_student(student, ['name', 'last_name'])
                 for student in students if min_age <= student['age'] <= max_age
             ]
-        
-        
-        test()
         ```
 
         </details>
 
-    5. Añadir el siguiente código:
+    5. `find_student_country()`:
 
-        ```python
-        def find_student_country(student_id: int) -> str | None:
-            ...
-        
-        
-        test()
-        ```
-    
-        `find_student_country()` recibe por parámetro el id de un estudiante y devuelve el nombre de su país. Si el id no existe, devuelve `None`.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función recibe por parámetro el id de un estudiante y devuelve el nombre de su país. Si el id no existe, devuelve `None`.
 
         <details>
         <summary>Solución</summary>
@@ -2585,26 +1970,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 return
         
             return find_name_by_id(countries, student['country_id'])
-        
-        
-        test()
         ```
 
         </details>
 
-    6. Añadir el siguiente código:
+    6. `students_by_subject_and_gender_count()`:
 
-        ```python
-        def students_by_subject_and_gender_count(subject: str, gender: Gender) -> int:
-            ...
-        
-        
-        test()
-        ```
-    
-        `students_by_subject_and_gender_count()` devuelve el número de estudiantes que estudian la asignatura `subject` y son el género `gender`.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve el número de estudiantes que estudian la asignatura `subject` y son el género `gender`.
 
         <details>
         <summary>Solución</summary>
@@ -2625,9 +1997,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                         count += 1
         
             return count
-        
-        
-        test()
         ```
 
         </details>
@@ -2642,24 +2011,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         `{'id': 37, 'name': 'Yumiko', 'last_name': 'Suzuki', 'age': 18, 'gender': Gender.FEMALE, 'country': 'Japan', 'subjects': ['Literature', 'History']}`
 
-        Entonces, añadir el siguiente código:
-
-        ```python
-        ...
-        
-        
-        def join(students_: list[dict]) -> list[dict]:
-            ...
-        
-        
-        test()
-        ```
-    
-        `join()` recibe una lista de estudiantes (`list[dict]`) y los devuelve con la información completa obtenida de todas las fuentes.
-
-        Se puede programar solo en las zonas marcadas con `...` pero no es obligatorio completarlas todas.
-
-        Objetivo: ejecutar el código sin errores.
+        Esto lo vamos a hacer en la función `join()`, la cual recibe una lista de estudiantes (`list[dict]`) y los devuelve con la información completa obtenida de todas las fuentes.
 
         <details>
         <summary>Solución</summary>
@@ -2694,26 +2046,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         
         def join(students_: list[dict]) -> list[dict]:
             return join_subjects(join_countries(students_))
-        
-        
-        test()
         ```
 
         </details>
 
-    8. Añadir el siguiente código:
+    8. `function_1()`:
 
-        ```python
-        def function_1(subjects_: list[str]) -> list[dict]:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_1()` devuelve los hombres que estudian alguna de las asignaturas proporcionadas por parámetro. Seleccionar solo el id, nombre y edad de cada estudiante.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve los hombres que estudian alguna de las asignaturas proporcionadas por parámetro. Seleccionar solo el id, nombre y edad de cada estudiante.
 
         <details>
         <summary>Solución</summary>
@@ -2726,26 +2065,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 for student in students_
                 if student['gender'] is Gender.MALE and any(subject in student['subjects'] for subject in subjects_)
             ]
-        
-        
-        test()
         ```
 
         </details>
 
-    9. Añadir el siguiente código:
+    9. `function_2()`:
 
-        ```python
-        def function_2(subjects_: list[str]) -> list[dict]:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_2()` devuelve las personas (solo nombres y apellidos) mayores de edad (>= 18) que estudian todas las asignaturas proporcionadas por parámetro.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve las personas (solo nombres y apellidos) mayores de edad (>= 18) que estudian todas las asignaturas proporcionadas por parámetro.
 
         <details>
         <summary>Solución</summary>
@@ -2758,26 +2084,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 for student in students_
                 if student['age'] >= 18 and all(subject in student['subjects'] for subject in subjects_)
             ]
-        
-        
-        test()
         ```
 
         </details>
 
-    10. Añadir el siguiente código:
+    10. `function_3()`:
 
-        ```python
-        def function_3() -> list[str]:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_3()` devuelve la lista de los nombres de las mujeres asiáticas.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve la lista de los nombres de las mujeres asiáticas.
 
         <details>
         <summary>Solución</summary>
@@ -2790,26 +2103,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 for student in students_
                 if student['gender'] is Gender.FEMALE and student['country'] in ['India', 'China', 'Japan']
             ]
-        
-        
-        test()
         ```
 
         </details>
 
-    11. Añadir el siguiente código:
+    11. `function_4()`:
 
-        ```python
-        def function_4(subjects_number: int) -> int | None:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_4()` devuelve el id máximo de los estudiantes que tienen el número de asignaturas dado por parámetro. Si no hay estudiantes que cumplan eso, devuelve `None`.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve el id máximo de los estudiantes que tienen el número de asignaturas dado por parámetro. Si no hay estudiantes que cumplan eso, devuelve `None`.
 
         <details>
         <summary>Solución</summary>
@@ -2818,26 +2118,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         def function_4(subjects_number: int) -> int | None:
             students_ = join(students)
             return max([student['id'] for student in students_ if len(student['subjects']) == subjects_number], default=None)
-        
-        
-        test()
         ```
 
         </details>
 
-    12. Añadir el siguiente código:
+    12. `function_5()`:
 
-        ```python
-        def function_5(subject: str, countries_: list[str]) -> int:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_5()` recibe por parámetro una asignatura y una lista de países y devuelve el número de personas de esos países que estudian esa asignatura. 
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función recibe por parámetro una asignatura y una lista de países y devuelve el número de personas de esos países que estudian esa asignatura. 
 
         <details>
         <summary>Solución</summary>
@@ -2848,26 +2135,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return len(
                 [student for student in students_ if subject in student['subjects'] and student['country'] in countries_]
             )
-        
-        
-        test()
         ```
 
         </details>
 
-    13. Añadir el siguiente código:
+    13. `function_6()`:
 
-        ```python
-        def function_6() -> int:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_6()` devuelve el número de mujeres no españolas que tienen una `a` en su nombre. 
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve el número de mujeres no españolas que tienen una `a` en su nombre. 
 
         <details>
         <summary>Solución</summary>
@@ -2882,26 +2156,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                     if 'a' in student['name'] and student['gender'] is Gender.FEMALE and student['country'] != 'Spain'
                 ]
             )
-        
-        
-        test()
         ```
 
         </details>
 
-    14. Añadir el siguiente código:
+    14. `function_7()`:
 
-        ```python
-        def function_7() -> float:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_7()` devuelve la edad media de los hombres que estudian `Computer Science`.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve la edad media de los hombres que estudian `Computer Science`.
 
         <details>
         <summary>Solución</summary>
@@ -2915,26 +2176,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 if student['gender'] is Gender.MALE and 'Computer Science' in student['subjects']
             ]
             return sum(student_ages) / len(student_ages)
-        
-        
-        test()
         ```
 
         </details>
 
-    15. Añadir el siguiente código:
+    15. `function_8()`:
 
-        ```python
-        def function_8() -> list[str]:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_8()` devuelve la lista de todos los apellidos ordenados por el nombre del país.
-
-        Objetivo: completar `...` y ejecutar sin errores.
+        Esta función devuelve la lista de todos los apellidos ordenados por el nombre del país.
 
         <details>
         <summary>Solución</summary>
@@ -2943,24 +2191,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         def function_8() -> list[str]:
             students_ = join(students)
             return [student['last_name'] for student in sorted(students_, key=lambda student_: student_['country'])]
-        
-        
-        test()
         ```
 
         </details>
 
-    16. Por último, añadir el siguiente código:
+    16. Por último, `function_9()`:
 
-        ```python
-        def function_9() -> None:
-            ...
-        
-        
-        test()
-        ```
-    
-        `function_9()` imprime por pantalla el porcentaje de hombres y mujeres que estudian cada asignatura siguiendo el siguiente formato:
+        Esta función imprime por pantalla el porcentaje de hombres y mujeres que estudian cada asignatura siguiendo el siguiente formato:
 
         ```
         Mathematics
@@ -2977,10 +2214,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         ```
 
         Fijémonos en que los porcentajes están redondeados y la longitud de las líneas que separan cada nombre de asignatura con sus valores tienen la misma longitud que dichos nombres.
-
-        Objetivo: completar `...` y ejecutar sin errores.
-
-        `test()` hará que esta prueba imprima el resumen de todas las pruebas anteriores.
 
         <details>
         <summary>Solución</summary>
@@ -3007,9 +2240,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 print(f"Male: {gender_count['males'] / total:.0%}")
                 print(f"Female: {gender_count['females'] / total:.0%}")
                 print()
-        
-        
-        test()
         ```
 
         </details>
@@ -3018,7 +2248,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 16. ☠️ Crear un gestor de clientes por consola.
 
-    > Para este ejercicio es recomendable saber utilizar [excepciones](README.md#7-excepciones).
+    > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
 
     - ▶️ Inicio.
         - Cada cliente se va a gestionar como un diccionario `{'id': <value>, 'name': <value>, 'age': <value>}`.

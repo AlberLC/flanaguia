@@ -1871,7 +1871,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     El módulo `tests.py` contiene código que será utilizado automáticamente para hacer pruebas, no hace falta entenderlo ni leerlo.
 
-    En el módulo `data.py` podremos observar varias cosas:
+    En el módulo `data.py` podemos observar varias cosas:
 
     - Una [enumeración](../README.md#19-enumeraciones) `Gender` para especificar el género de un estudiante.
     - Varias listas de diccionarios (`list[dict]`):
@@ -1884,9 +1884,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Por otro lado, la relación de estudiantes-asignaturas es de **muchos a muchos**, por lo tanto se utiliza una colección auxiliar (`student_subject_relations`), la cual indica qué estudiantes estudian qué asignaturas.
 
-    Solo se va a trabajar en el módulo `main.py`. Si lo abrimos, veremos una serie de funciones que están incompletas, cada una es un ejercicio. El objetivo es completarlas todas. Está permitido hacer cualquier cosa, programar fuera de las regiones marcados con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
+    Finalmente tenemos el módulo `main.py`, que es donde vamos a trabajar. Si lo abrimos, veremos una serie de funciones que están incompletas, cada una es un ejercicio. El objetivo es completarlas todas.
+
+    Está permitido hacer cualquier cosa, programar fuera de las regiones marcados con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
 
     Como las funciones están vacías, normalmente los editores/entornos de desarrollo marcarán con una advertencia los parámetros porque no se usan. Si molesta mucho se pueden comentar las funciones que no estemos usando (no afectará a las pruebas).
+
+    Al final de esté módulo se llama a `test()` para realizar las correcciones/pruebas.
 
     1. `find_name_by_id()`:
 

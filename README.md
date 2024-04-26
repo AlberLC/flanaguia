@@ -3384,7 +3384,7 @@ Salida:
 <class '__main__.Person'>
 ```
 
-Como vemos, también podemos llamarlo tanto con la clase `Person` directamente como con una instancia de la clase. El primer parámetro, que antes solía ser la instancia y la llamabamos `self`, es es ahora la propia clase y la llamamos `cls`. Efectivamente, por convención en este tipo de métodos se nombra `cls` al primer parámetro como abreviatura de "class".
+Como vemos, también podemos llamarlo tanto con la clase `Person` directamente como con una instancia de la clase. El primer parámetro, que antes solía ser la instancia y la llamabamos `self`, es ahora la propia clase y la llamamos `cls`. Efectivamente, por convención en este tipo de métodos se nombra `cls` al primer parámetro como abreviatura de "class".
 
 Con `cls` no tenemos acceso a los atributos de instancia como `name` pero podemos hacer cosas:
 
@@ -3521,7 +3521,7 @@ Tanto `Dog` como `Person` heredan de `Animal`. En Python se indica con paréntes
 
 `class Person(Animal)`
 
-A las clases que están arriba en la jerarquía de herencias se les llama clases padres y, a las que heredan, clases hijas. En este caso, la clase `Animal` es una clase padre que agrupa toda la lógica de gestión de nombres y edades y todas las clases hijas van a heredar estos atributos y métodos, si los hubiera. Las clases hijas son una extensión de las clases padres, por lo tanto una `Person(Animal)` va a a ser y tener, mínimo, todo lo que sea y tenga `Animal` y, además, todo lo que se defina en `Person`.
+A las clases que están arriba en la jerarquía de herencias se les llama clases padres y, a las que heredan, clases hijas. En este caso, la clase `Animal` es una clase padre que agrupa toda la lógica de gestión de nombres y edades y todas las clases hijas van a heredar estos atributos y métodos, si los hubiera. Las clases hijas son una extensión de las clases padres, por lo tanto una `Person(Animal)` va a ser y tener, mínimo, todo lo que sea y tenga `Animal` y, además, todo lo que se defina en `Person`.
 
 > En otros lenguajes existía el concepto de "interfaz" como una especie de clase con declaraciones de métodos, pero sin implimentación de estos. En esos lenguajes no estaba permitida la herencia de varias clases al mismo tiempo. Se podía heredar de una sola clase pero de infinitas interfaces.
 > 
@@ -3580,7 +3580,7 @@ Flying at 117 km/h.
 Dejando a un lado que [importamos](#9-importaciones) `random` arriba para usarlo en la [propiedad](#811-propiedades) en `random.randint(*self.speed_range)` y, que usamos también [desempaquetado](#2-empaquetado-y-desempaquetado) con `*`, nos podemos dar cuenta de tres cosas principalmente:
 
 1. Estamos construyendo caballos, personas y pájaros pero no tenemos ningún constructor `__init__()` definido en esas clases.
-2. Hemos definido el método `move()` en la clase padre `Animal` pero luego ningún objeto, al llamar a dicho método, imprime por consola `Moving...`, sino `Galloping...`, `Running...` y `Flying...`.
+2. Hemos definido el método `move()` en la clase padre `Animal`, pero luego ningún objeto (al llamar a dicho método) imprime por consola `Moving...`, sino `Galloping...`, `Running...` y `Flying...`.
 3. Cuando usamos `self.speed` en cada `move()`, estamos usando la propiedad `speed` que solo está definida en la clase padre.
 
 Como se explicó anteriormente, las clases hijas tienen **todo** lo que tengan sus clases padres (podemos heredar de varias clases), por lo tanto, `Horse`, `Person` y `Bird` están usando el constructor `__init__()` y la propiedad `speed` de la clase padre.

@@ -2640,7 +2640,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Construir con clases el siguiente escenario:
 
-    1. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
+    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
     2. Una clase `Person`:
         1. Atributo `name` que siempre tiene que tener la primera en mayúscula y el resto en minúscula aunque el usuario introduzca el nombre mal.
         2. Atributo `age`.

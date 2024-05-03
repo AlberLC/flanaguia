@@ -2642,16 +2642,18 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
     2. Una clase `Person`:
-        1. Atributo `name` que siempre tiene que tener la primera en mayúscula y el resto en minúscula aunque el usuario introduzca el nombre mal.
-        2. Atributo `age`.        
-        3. Redefinir un solo método para que las personas sean comparables por su edad en cuanto a "menor que", "mayor que", etc. De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no se considerarían iguales.
-        4. Redefinir los métodos necesarios para imprimir bonitos los objetos de la clase por consola en cualquier situación.
+        1. Atributo `name` de tipo cadena que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
+        2. Atributo `age` de tipo número entero. Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
+        3. Redefinir dos métodos para que las personas sean comparables por su edad en cuanto a "menor que", "mayor que", "menor igual que", "mayor igual que", etc. De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no se considerarían iguales.
+        4. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
+            - para una persona con nombre "Juan" y 10 años ➡️ `Juan (10)`
+            - para una persona con nombre "Ana" y 35 años ➡️ `Ana (35)`
     3. Clases `Vehicle`, `Car` y `Train`:
-        1. Usar clases abstractas si es necesario.
+        1. Usar [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Las 3 clases tienen que tener estos atributos:
-            1. `max_passenger`: número máximo de pasajeros.
-            2. `plate`: matrícula de tipo **cadena (`str`)** que, por defecto, si no se introduce nada va a ser un número entre 1111 y 9999 almacenado como texto (es el único parámetro con valor por defecto del ejercicio).
-            3. `_passengers`: un **conjunto** de pasajeros que inicialmente está vacío y no debe nunca sobrepasar el límite. No se puede acceder a este atributo desde fuera de la clase.
+            1. `max_passenger`: máximo de pasajeros (número entero).
+            2. `plate`: matrícula de tipo **cadena (`str`)** que, por defecto, si no se introduce nada va a ser un número entre 0000 y 9999 almacenado como texto (es el único parámetro con valor por defecto del ejercicio).
+            3. `_passengers`: un **conjunto** de pasajeros que inicialmente está vacío. No se puede acceder a este atributo desde fuera de la clase.
         3. La clase `Car` tiene, además, los atributos `doors`, `airbags` y `wheel_drive`. Este último es el tipo de tracción: una [enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR` (delantera y trasera).
         4. La clase `Train` tiene, además, un atributo `wagons`.
         5. Un propiedad `passengers` para acceder a `_passengers`.
@@ -2659,8 +2661,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         7. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
         8. `len()` devolverá el número de pasajeros.
         9. Redefinir `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
-        10. Redefinir los métodos necesarios para imprimir bonitos los objetos de la clase por consola en cualquier situación.
-        11. Un método `add_passenger()` que reciba un pasajero por parámetro y lo añada, si puede. Si no, tiene que lanzar un `ValueError`.
+        10. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
+            - para un coche con matrícula "0011" sin pasajeros ➡️ `Car_0011. Passengers: set()`
+            - para un coche con matrícula "1234" con un pasajero con nombre "Juan" y 10 años ➡️ `Car_1234. Passengers: {Juan (10)}`
+            - para un tren con matrícula "3210" con dos pasajeras Ana y Elena de 35 y 28 años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
+        11. Un método `add_passenger()` que reciba un pasajero por parámetro y lo añada, si cabe. Si no, tiene que lanzar un `ValueError` con el mensaje `Full vehicle`.
         12. Un método `first_passenger()` que reciba una función de un parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida.
         13. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
         14. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
@@ -2695,11 +2700,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         3. Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
     4. Redefinir el método necesario para hacer la clase iterable.
     5. Redefinir el método necesario para que la [función integrada](https://docs.python.org/3/library/functions.html) `len()` devuelva el número de elementos que contiene la lista enlazada.
-    6. Método `add(...)` para añadir elementos a la lista.
-    7. Método `get(...)` para obtener el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
-    8. Método `delete(...)` para eliminar el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
-    9. Método `insert(...)` para insertar un elemento en una posición concreta. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
-    10. Método `clear(...)` para vaciar la lista enlazada.
+    6. Método `add()` para añadir elementos a la lista.
+    7. Método `get()` para obtener el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
+    8. Método `delete()` para eliminar el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
+    9. Método `insert()` para insertar un elemento en una posición concreta. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
+    10. Método `clear()` para vaciar la lista enlazada.
 
     <br>
 

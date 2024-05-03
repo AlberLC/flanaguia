@@ -2643,27 +2643,28 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
     2. Una clase `Person`:
         1. Atributo `name` que siempre tiene que tener la primera en mayúscula y el resto en minúscula aunque el usuario introduzca el nombre mal.
-        2. Atributo `age`.
-        3. Sobrecargar los métodos necesarios para imprimir bonitos los objetos de la clase por consola en todo momento.
+        2. Atributo `age`.        
+        3. Redefinir un solo método para que las personas sean comparables por su edad en cuanto a "menor que", "mayor que", etc. De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no se considerarían iguales.
+        4. Redefinir los métodos necesarios para imprimir bonitos los objetos de la clase por consola en cualquier situación.
     3. Clases `Vehicle`, `Car` y `Train`:
         1. Usar clases abstractas si es necesario.
         2. Las 3 clases tienen que tener estos atributos:
             1. `max_passenger`: número máximo de pasajeros.
             2. `plate`: matrícula de tipo **cadena (`str`)** que, por defecto, si no se introduce nada va a ser un número entre 1111 y 9999 almacenado como texto (es el único parámetro con valor por defecto del ejercicio).
             3. `_passengers`: un **conjunto** de pasajeros que inicialmente está vacío y no debe nunca sobrepasar el límite. No se puede acceder a este atributo desde fuera de la clase.
-        3. La clase `Car` tiene, además, los atributos `doors`, `airbags` y `wheel_drive`. Este último es el tipo de tracción y solo tiene dos opciones: front y rear (delantera y trasera).
+        3. La clase `Car` tiene, además, los atributos `doors`, `airbags` y `wheel_drive`. Este último es el tipo de tracción: una [enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR` (delantera y trasera).
         4. La clase `Train` tiene, además, un atributo `wagons`.
         5. Un propiedad `passengers` para acceder a `_passengers`.
         6. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con los **atributos del primero** y **los pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros.
-        7. `len()` devolverá el número de pasajeros.
-        8. Sobrecargar `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
-        9. Sobrecargar los métodos necesarios para imprimir bonitos los objetos de la clase por consola en todo momento.
-        10. Un método `add_passenger()` que reciba un pasajero por parámetro y lo añada, si puede. Si no, tiene que lanzar un `ValueError`.
-        11. Un método `first_passenger()` que reciba una función de un parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida.
-        12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
-        13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
-        14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
-    4. Crear un vehículo cualquiera, intentar añadirle más personas del máximo, controlar el error e imprimir algo por consola indicando que se ha controlado con éxito.
+        7. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
+        8. `len()` devolverá el número de pasajeros.
+        9. Redefinir `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
+        10. Redefinir los métodos necesarios para imprimir bonitos los objetos de la clase por consola en cualquier situación.
+        11. Un método `add_passenger()` que reciba un pasajero por parámetro y lo añada, si puede. Si no, tiene que lanzar un `ValueError`.
+        12. Un método `first_passenger()` que reciba una función de un parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida.
+        13. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
+        14. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
+        15. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
 
     <br>
 
@@ -2671,127 +2672,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <summary>Solución</summary>
 
     ```python
-    from __future__ import annotations
-    
-    """
-    ⬆️
-    In some future version this import will not be necessary. This is needed for now to be able to use a class as a type hint within
-    itself (before it was defined):
-    
-    class Vehicle:
-        ...                           ⬇️
-        def __add__(self, other) -> Vehicle:
-            ...
-    
-    If not, they can be indicated with quotes:
-    
-    class Vehicle:
-        ...                            ⬇️
-        def __add__(self, other) -> 'Vehicle':
-            ...   
-    """
-    
-    import random
-    from abc import ABC, abstractmethod
-    from collections.abc import Callable
-    from enum import Enum, auto
-    from typing import Iterator
-    
-    
-    class WheelDrive(Enum):
-        FRONT = auto()
-        REAR = auto()
-    
-    
-    class Person:
-        def __init__(self, name: str, age: int) -> None:
-            self.name = name.capitalize()
-            self.age = age
-    
-        def __repr__(self) -> str:
-            return f'{self.name} ({self.age})'
-    
-    
-    class Vehicle(ABC):
-        @abstractmethod
-        def __init__(self, max_passengers: int, plate: str = None) -> None:
-            self.max_passengers = max_passengers
-            self.plate = plate if plate else str(random.randint(1111, 9999))
-            self._passengers = set()
-    
-        def __add__(self, other) -> Vehicle:
-            new_vehicle = type(self)(**{k: v for k, v in vars(self).items() if k not in ('plate', '_passengers')})
-            for passenger in self.empty() | other.empty():
-                new_vehicle.add_passenger(passenger)
-    
-            return new_vehicle
-    
-        def __iter__(self) -> Iterator[Person]:
-            yield from self.passengers
-    
-        def __len__(self) -> int:
-            return len(self.passengers)
-    
-        def __str__(self) -> str:
-            return f'{type(self).__name__} ({self.plate}). Passengers: {self.passengers}'
-    
-        def add_passenger(self, passenger: Person) -> None:
-            if len(self.passengers) >= self.max_passengers:
-                raise ValueError('Full vehicle')
-    
-            self._passengers.add(passenger)
-    
-        def first_passenger(self, condition: Callable) -> Person:
-            return next(passenger for passenger in self.passengers if condition(passenger))
-    
-        def empty(self) -> set[Person]:
-            passengers = self.passengers.copy()
-            self._passengers.clear()
-            return passengers
-    
-        @property
-        def passengers(self) -> set[Person]:
-            return self._passengers
-    
-        def remove_passenger(self, passenger: Person) -> None:
-            self._passengers.discard(passenger)
-    
-        def remove_passenger_by_name(self, name: str) -> None:
-            try:
-                self.remove_passenger(self.first_passenger(lambda passenger: passenger.name.lower() == name.lower()))
-            except StopIteration:
-                pass
-    
-    
-    class Car(Vehicle):
-        def __init__(self, doors: int, airbags: int, wheel_drive: WheelDrive, max_passengers: int, plate: str = None) -> None:
-            super().__init__(max_passengers, plate)
-            self.doors = doors
-            self.airbags = airbags
-            self.wheel_drive = wheel_drive
-    
-    
-    class Train(Vehicle):
-        def __init__(self, wagons: int, max_passengers: int, plate: str = None) -> None:
-            super().__init__(max_passengers, plate)
-            self.wagons = wagons
-    
-    
-    jorge = Person('Jorge', 24)
-    victoria = Person('Victoria', 21)
-    javier = Person('Javier', 77)
-    elena = Person('Elena', 42)
-    
-    car = Car(5, 2, WheelDrive.FRONT, 3)
-    
-    car.add_passenger(jorge)
-    car.add_passenger(victoria)
-    car.add_passenger(javier)
-    
-    try:
-        car.add_passenger(elena)
-    except ValueError:
-        print('ValueError controlado con éxito.')
+
     ```
 
     </details>
@@ -2808,12 +2689,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     1. Llamar a la clase `LinkedList`.
     2. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
-    3. Sobrecargar los métodos necesarios para imprimir bonitas las listas listas enlazadas según el siguiente formato:
+    3. Redefinir los métodos necesarios para imprimir bonitas las listas listas enlazadas según el siguiente formato:
         1. Lista vacía: `<>`
         2. Lista con un elemento `'a'`: `<'a'>`
         3. Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
-    4. Sobrecargar el método necesario para hacer la clase iterable.
-    5. Sobrecargar el método necesario para que la [función integrada](https://docs.python.org/3/library/functions.html) `len()` devuelva el número de elementos que contiene la lista enlazada.
+    4. Redefinir el método necesario para hacer la clase iterable.
+    5. Redefinir el método necesario para que la [función integrada](https://docs.python.org/3/library/functions.html) `len()` devuelva el número de elementos que contiene la lista enlazada.
     6. Método `add(...)` para añadir elementos a la lista.
     7. Método `get(...)` para obtener el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
     8. Método `delete(...)` para eliminar el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.

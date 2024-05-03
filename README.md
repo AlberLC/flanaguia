@@ -3155,15 +3155,15 @@ Ana is walking Impa.
 
 #### 8.2.1. Métodos especiales
 
-Los métodos especiales son aquellos que empiezan con doble `_` y acaban de la misma manera. En ejemplo sería el famoso constructor `__init__`. También son informalmente llamados "magic methods" o "dunder methods" ("dunder": double underscore) y son métodos que permiten a las instancias de una clase interactuar con los operadores y las [funciones integradas](https://docs.python.org/3/library/functions.html).
+Los métodos especiales son aquellos que empiezan con doble `_` y acaban de la misma manera. Un ejemplo sería el famoso constructor `__init__`. También son informalmente llamados "magic methods" o "dunder methods" ("dunder": double underscore) y son métodos que permiten a las instancias de una clase interactuar con los operadores y las [funciones integradas](https://docs.python.org/3/library/functions.html).
 
-Vamos a crear una clase `Person` que de soporte para:
+Vamos a crear una clase `Person` que de soporte para que:
 
-- la función integrada `len()`: devuelva cuantas letras tiene el nombre.
-- el operador `==`: que devuelva `True` para dos `Person` con los mismos nombre y edad.
-- el operador `+`: devuelva la suma de las edades.
-- el operador `*`: devuelva un nuevo `Person` hijo de dos `Person` cuyo nombre será la mezcla del de los padres.
-- la función integrada `str()`: devuelva una mejor representación del objeto.
+- la función integrada `len()` devuelva cuantas letras tiene el nombre (redefiniendo `__len__()`).
+- el operador `==` devuelva `True` para dos `Person` con los mismos nombre y edad  (redefiniendo `__eq__()`).
+- el operador `+` devuelva la suma de las edades  (redefiniendo `__add__()`).
+- el operador `*` devuelva un nuevo `Person` hijo de dos `Person` cuyo nombre será la mezcla del de los padres  (redefiniendo `__mul__()`).
+- la función integrada `str()` devuelva una mejor representación del objeto  (redefiniendo `__str__()`).
 
 ```python
 class Person:
@@ -3216,9 +3216,10 @@ Ana (35)
 Ana (35)
 ```
 
-La [función integrada](https://docs.python.org/3/library/functions.html) `str()` llama al método `__str__()` de los objetos. Y, si nos fijamos, nos daremos cuenta que cuando imprimimos el objeto con `print()` se aplica implícitamente `str()`.
+La [función integrada](https://docs.python.org/3/library/functions.html) `str()` llama al método `__str__()` de los objetos. Y, si nos fijamos, nos daremos cuenta que, cuando imprimimos el objeto con `print()`, se aplica implícitamente `str()`.
 
 > A veces vamos a ver que redefinir el método `__str__()` no va a ser suficiente para imprimir como queremos nuestro objeto:
+> 
 > ```python
 > juan = Person('Juan', 32)
 > ana = Person('Ana', 35)
@@ -3232,7 +3233,9 @@ La [función integrada](https://docs.python.org/3/library/functions.html) `str()
 > Juan (32)
 > [<__main__.Person object at 0x0000024CA54A3DF0>, <__main__.Person object at 0x0000024CA54A3D90>]
 > ```
-> En estos casos, Python no llama automáticamente a `__str__()`, solo está representando el objeto. Esta representación suele ser más técnica:
+> 
+> En estos casos, Python no llama automáticamente a `__str__()`, sino a `__repr__()`. Esta representación suele ser más técnica:
+> 
 > ```python
 > >>> str('hello')
 > hello
@@ -3249,8 +3252,66 @@ La [función integrada](https://docs.python.org/3/library/functions.html) `str()
 > Juan (32)
 > [Juan (32), Ana (35)]
 > ```
-> Hemos aprovechado que ya tenemos redefinido `__str__()` para llamarlo desde `__repr__()`.
-> > Si no está definido `__str__()`, cuando vayamos a imprimir un objeto, se llamará a `__repr__()` automáticamente. Que es lo que pasaba cuando imprimíamos nuestro objeto antes de redefinir `__str__()`.
+> 
+> Hemos aprovechado que ya tenemos redefinido `__str__()` para llamarlo desde `__repr__()`. Sin embargo, si queremos representar de la misma manera con `__str__()` y `__repr__()`, solo será necesario redefinir `__repr__()`, ya que si no está definido `__str__()` cuando vayamos a imprimir un objeto, se llamará a `__repr__()` automáticamente:
+> 
+> ```python
+> class Person:
+>     def __init__(self, name, age):
+>         self.name = name
+>         self.age = age
+> 
+> 
+> juan = Person('Juan', 32)
+> print(juan)
+> ```
+> Salida:
+> ```
+> <__main__.Person object at 0x00000219F91BC1D0>
+> ```
+> 
+> <br>
+> 
+> ```python
+> class Person:
+>     def __init__(self, name, age):
+>         self.name = name
+>         self.age = age
+> 
+>     def __repr__(self):
+>         return f'REPR: {self.name}'
+> 
+> 
+> juan = Person('Juan', 32)
+> print(juan)
+> ```
+> Salida:
+> ```
+> REPR: Juan
+> ```
+> 
+> <br>
+> 
+> ```python
+> class Person:
+>     def __init__(self, name, age):
+>         self.name = name
+>         self.age = age
+> 
+>     def __repr__(self):
+>         return f'REPR: {self.name}'
+> 
+>     def __str__(self):
+>         return f'STR: {self.name}'
+> 
+> 
+> juan = Person('Juan', 32)
+> print(juan)
+> ```
+> Salida:
+> ```
+> STR: Juan
+> ```
 
 <br>
 
@@ -3276,6 +3337,8 @@ False
 True
 ```
 
+<br>
+
 Usamos `len()`, el cual lo hemos programado para que devuelva el número de letras del nombre:
 
 ```python
@@ -3286,6 +3349,8 @@ Salida:
 3
 ```
 
+<br>
+
 Probamos cómo sumar dos `Person` con el operador `+`:
 
 ```python
@@ -3295,6 +3360,8 @@ Salida:
 ```
 67
 ```
+
+<br>
 
 Y cómo tienen un hijo con el operador `*`:
 

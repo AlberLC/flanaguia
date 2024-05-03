@@ -2807,7 +2807,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     Crear una lista enlazada con clases:
 
     1. Llamar a la clase `LinkedList`.
-    2. Utilizar anotaciones de tipos para los parámetros de los métodos y para los valores de retorno.
+    2. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
     3. Sobrecargar los métodos necesarios para imprimir bonitas las listas listas enlazadas según el siguiente formato:
         1. Lista vacía: `<>`
         2. Lista con un elemento `'a'`: `<'a'>`

@@ -858,7 +858,7 @@ Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por 
 
 Las enumeraciones son unas herramientas bastantes comunes en numerosos lenguajes de programación que nos sirven para definir un conjunto inmutable de constantes con nombre.
 
-Los solemos usar siempre que necesitamos definir un comportamiento que depende de una constante. Por ejemplo, si queremos que una función realice una serie de tareas según el color pasado como argumento:
+Los solemos usar siempre que necesitamos definir un comportamiento que depende de una constante que puede adoptar valores concretos. Por ejemplo, si queremos que una función realice una serie de tareas según el color pasado como argumento:
 
 ```python
 def do_something(color):
@@ -895,7 +895,7 @@ def do_something(color):
     ...
 ```
 
-Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar valores que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los valores de la enumeración. Además, si en un futuro queremos cambiar los valores de la enumeración, no habrá que ir buscando en todas las partes del código donde se usan cadenas 'red', 'blue' y 'green' para actualizarlas y mantener la consistencia.
+Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar nombres que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los miembros de la enumeración. Además, si en un futuro queremos cambiar los miembros de la enumeración, no habrá que ir buscando en todas las partes del código donde se usan cadenas 'red', 'blue' y 'green' para actualizarlas y mantener la consistencia.
 
 Las `Enum` relacionan un nombre con un valor. En nuestro último ejemplo relacionamos `RED` con el valor 1, `GREEN` con el 2 y `BLUE` con el 3. Podemos generar valores automáticos de la siguiente manera:
 
@@ -909,7 +909,7 @@ class Color(Enum):
     BLUE = auto()
 ```
 
-`auto()` genera valores predeterminados. Tiene como primer valor 1 y los siguientes irán incrementándose. En este caso obtenemos el mismo resultado que antes: `RED` = 1, `GREEN` = 2 y `BLUE` = 3.
+`auto()` genera valores predeterminados. Tiene como valor inicial 1 y los siguientes irán incrementándose. En este caso obtenemos el mismo resultado que antes: `RED` = 1, `GREEN` = 2 y `BLUE` = 3.
 
 <br>
 
@@ -929,7 +929,7 @@ RED
 
 <br>
 
-Selección de enumeraciones por valor:
+Selección de miembro por valor:
 
 ```python
 print(Color(2))
@@ -941,7 +941,7 @@ Color.GREEN
 
 <br>
 
-Selección de enumeraciones por cadena:
+Selección de miembro por nombre:
 
 ```python
 print(Color['RED'])

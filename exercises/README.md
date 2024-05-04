@@ -2644,35 +2644,36 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     2. Una clase `Person`:
         1. Atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
-        3. Redefinir dos métodos para que las personas sean comparables por su edad en cuanto a "menor que", "mayor que", "menor igual que", "mayor igual que", etc. De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no se considerarían iguales.
+        3. Redefinir dos métodos para que las personas sean comparables por su edad en cuanto a "menor que", "mayor que", "menor igual que", "mayor igual que", etc. De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal, digamos un `Dog`, y una persona con los mismos nombre y edad no son comparables. En dicho caso se debería lanzar un `TypeError` con el mensaje `'<' not supported between instances of 'Dog' and 'Person'`, cambiando `'<'` con operador apropiado en cada caso.
         4. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
-            - para una persona con nombre "Juan" y 10 años ➡️ `Juan (10)`
-            - para una persona con nombre "Ana" y 35 años ➡️ `Ana (35)`
+            - para una persona con nombre "Juan" y 10 años ➡️ `Juan (10)`.
+            - para una persona con nombre "Ana" y 35 años ➡️ `Ana (35)`.
     3. Clases `Vehicle`, `Car` y `Train`:
         1. Usar [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tienen estos atributos:
             1. `max_passenger`: máximo de pasajeros (número entero).
             2. `plate`: matrícula (cadena) que, por defecto, si no se introduce nada va a ser un número entre 0000 y 9999 almacenado como texto (es el único parámetro con valor por defecto del ejercicio).
-            3. `_passengers`: conjunto de pasajeros (conjunto) que inicialmente está vacío. No se puede acceder a este atributo desde fuera de la clase.
+            3. `_passengers`: conjunto de pasajeros (conjunto) que inicialmente está vacío.
+            4. No se puede acceder a un atributo interno (los que tienen `_` de prefijo) desde fuera de su clase.
         3. Los objetos de la clase `Car` tienen, además, los atributos:
             - `doors`: número de puertas (número entero).
             - `airbags`: número de airbags (número entero).
             - `wheel_drive`: tipo de tracción ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`).
         4. Los objetos de la clase `Train` tienen, además de los comunes `max_passenger`, `plate` y `_passengers`, un atributo `wagons` (número entero).
-        5. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers`.
-        6. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con los **atributos del primero** y **los pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros.
-        7. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
-        8. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
-        9. Redefinir `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
-        10. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
+        5. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers` (solo obtener, no asignar).
+        6. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
+        7. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
+        8. Redefinir `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
+        9. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
             - para un coche con matrícula "0011" sin pasajeros ➡️ `Car_0011. Passengers: set()`
             - para un coche con matrícula "1234" con un pasajero con nombre "Juan" y 10 años ➡️ `Car_1234. Passengers: {Juan (10)}`
             - para un tren con matrícula "3210" con dos pasajeras Ana y Elena de 35 y 28 años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
-        11. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada, si cabe. Si no, tiene que lanzar un `ValueError` con el mensaje `Full vehicle`.
-        12. Un método `first_passenger()` que reciba una función de un parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida.
-        13. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
-        14. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
-        15. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
+        10. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `Full vehicle`.
+        11. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
+        12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
+        13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
+        14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
+        15. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con el **tipo** y los **atributos del primero** y los **pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros. 
 
     <br>
 

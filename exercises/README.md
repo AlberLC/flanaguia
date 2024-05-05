@@ -2644,7 +2644,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `roman` (`True` por defecto), que define el tipo de numeración de la tabla.
 
-    Si queremos detectar fallos granularmente en las anotaciones de tipos podemos usar la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos no cumplan el tipado requerido.
+    Si queremos detectar fallos granularmente en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) podemos usar la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos no cumplan el tipado requerido.
 
     Construir con clases el siguiente escenario en el módulo `main.py`:
 

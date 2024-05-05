@@ -2638,7 +2638,15 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Vehículos.
 
-    Construir con clases el siguiente escenario:
+    Para realizar este ejercicio es necesario descargar este , que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+
+    El módulo `tests.py` contiene el código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
+
+    Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `roman` (`True` por defecto), que define el tipo de numeración de la tabla.
+
+    Si queremos detectar fallos granularmente en las anotaciones de tipos podemos usar la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos no cumplan el tipado requerido.
+
+    Construir con clases el siguiente escenario en el módulo `main.py`:
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
     2. Una clase `Person`:
@@ -2674,7 +2682,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
         13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
         14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
-        15. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con el **tipo** y los **atributos del primero** y los **pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros. 
+        15. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con el **tipo** y los **atributos del primero** y los **pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros.
 
     <br>
 
@@ -2682,7 +2690,142 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <summary>Solución</summary>
 
     ```python
-
+    from __future__ import annotations
+    
+    """
+    ⬆️
+    In some future version this import from above will not be necessary. This is needed for now to be able to use a class as
+    a type hint within itself (before it was defined):
+    
+    class Vehicle:
+        ...                                ⬇️
+        def __add__(self, other: Any) -> Vehicle:
+            ...
+    
+    If not, they can be indicated with quotes:
+    
+    class Vehicle:
+        ...                                 ⬇️
+        def __add__(self, other: Any) -> 'Vehicle':
+            ...
+    """
+    
+    import random
+    from abc import ABC, abstractmethod
+    from collections.abc import Callable, Iterator
+    from enum import Enum, auto
+    from typing import Any
+    
+    from tests import test
+    
+    
+    class WheelDrive(Enum):
+        FRONT = auto()
+        REAR = auto()
+    
+    
+    class Person:
+        def __init__(self, name: str, age: int) -> None:
+            if age <= 0:
+                raise ValueError
+    
+            self.name = name.strip().capitalize()
+            self.age = age
+    
+        def __le__(self, other: Any) -> bool:
+            if not isinstance(other, Person):
+                raise TypeError(
+                    f"'<=' not supported between instances of '{type(self).__name__}' and '{type(other).__name__}'"
+                )
+    
+            return self.age <= other.age
+    
+        def __lt__(self, other: Any) -> bool:
+            if not isinstance(other, Person):
+                raise TypeError(
+                    f"'<' not supported between instances of '{type(self).__name__}' and '{type(other).__name__}'"
+                )
+    
+            return self.age < other.age
+    
+        def __repr__(self) -> str:
+            return f'{self.name} ({self.age})'
+    
+    
+    class Vehicle(ABC):
+        @abstractmethod
+        def __init__(self, max_passengers: int, plate: str = None) -> None:
+            self.max_passengers = max_passengers
+            self.plate = plate if plate else f'{random.randint(0, 9999):0>4}'
+            self._passengers = set()
+    
+        def __add__(self, other: Any) -> Vehicle:
+            new_vehicle = type(self)(**{k: v for k, v in vars(self).items() if k not in ('plate', '_passengers')})
+            for passenger in self.empty() | other.empty():
+                new_vehicle.add_passenger(passenger)
+    
+            return new_vehicle
+    
+        def __eq__(self, other: Any) -> bool:
+            return isinstance(other, Vehicle) and self.plate == other.plate
+    
+        def __iter__(self) -> Iterator[Person]:
+            yield from self.passengers
+    
+        def __len__(self) -> int:
+            return len(self.passengers)
+    
+        def __str__(self) -> str:
+            return f'{type(self).__name__}_{self.plate}. Passengers: {self.passengers}'
+    
+        def add_passenger(self, passenger: Person) -> None:
+            if len(self.passengers) >= self.max_passengers:
+                raise ValueError('Full vehicle')
+    
+            self.passengers.add(passenger)
+    
+        def first_passenger(self, condition: Callable[[Person], bool]) -> Person | None:
+            return next((passenger for passenger in self if condition(passenger)), None)
+    
+        def empty(self) -> set[Person]:
+            passengers = self.passengers.copy()
+            self.passengers.clear()
+            return passengers
+    
+        @property
+        def passengers(self) -> set[Person]:
+            return self._passengers
+    
+        def remove_passenger(self, passenger: Person) -> None:
+            self.passengers.discard(passenger)
+    
+        def remove_passenger_by_name(self, name: str) -> None:
+            if passenger := self.first_passenger(lambda passenger_: passenger_.name.lower() == name.lower()):
+                self.remove_passenger(passenger)
+    
+    
+    class Car(Vehicle):
+        def __init__(
+            self,
+            doors: int,
+            airbags: int,
+            wheel_drive: WheelDrive,
+            max_passengers: int,
+            plate: str = None
+        ) -> None:
+            super().__init__(max_passengers, plate)
+            self.doors = doors
+            self.airbags = airbags
+            self.wheel_drive = wheel_drive
+    
+    
+    class Train(Vehicle):
+        def __init__(self, wagons: int, max_passengers: int, plate: str = None) -> None:
+            super().__init__(max_passengers, plate)
+            self.wagons = wagons
+    
+    
+    test(Person('_', 1), Car(1, 1, WheelDrive.FRONT, 1), Train(1, 1))
     ```
 
     </details>

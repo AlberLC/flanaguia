@@ -2640,11 +2640,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15213209/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
-    El módulo `tests.py` contiene el código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
+    El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
 
     Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `roman` (`True` por defecto), que define el tipo de numeración de la tabla.
 
-    Si queremos detectar fallos granularmente en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) podemos usar la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos no cumplan el tipado requerido.
+    Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
 
     Construir con clases el siguiente escenario en el módulo `main.py`:
 

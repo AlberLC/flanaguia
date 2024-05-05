@@ -2648,17 +2648,18 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         4. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
             - para una persona con nombre "Juan" y 10 años ➡️ `Juan (10)`.
             - para una persona con nombre "Ana" y 35 años ➡️ `Ana (35)`.
+            - cuando se almacenan en una estructura, por ejemplo, una lista ➡️ `[Juan (10), Ana (35)]`.
     3. Clases `Vehicle`, `Car` y `Train`:
-        1. Usar [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
+        1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tienen estos atributos:
             1. `max_passenger`: máximo de pasajeros (número entero).
-            2. `plate`: matrícula (cadena) que, por defecto, si no se introduce nada va a ser un número entre 0000 y 9999 almacenado como texto (es el único parámetro con valor por defecto del ejercicio).
+            2. `plate`: matrícula (cadena) que, por defecto, si no se introduce nada va a ser un número entre 0000 y 9999 almacenado como texto (debe ser el único parámetro con valor por defecto del ejercicio).
             3. `_passengers`: conjunto de pasajeros (conjunto) que inicialmente está vacío.
             4. No se puede acceder a un atributo interno (los que tienen `_` de prefijo) desde fuera de su clase.
         3. Los objetos de la clase `Car` tienen, además, los atributos:
-            - `doors`: número de puertas (número entero).
-            - `airbags`: número de airbags (número entero).
-            - `wheel_drive`: tipo de tracción ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`).
+            1. `doors`: número de puertas (número entero).
+            2. `airbags`: número de airbags (número entero).
+            3. `wheel_drive`: tipo de tracción ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`).
         4. Los objetos de la clase `Train` tienen, además de los comunes `max_passenger`, `plate` y `_passengers`, un atributo `wagons` (número entero).
         5. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers` (solo obtener, no asignar).
         6. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.

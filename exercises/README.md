@@ -2673,7 +2673,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         6. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
         7. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
         8. Redefinir `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
-        9. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
+        9. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola siguiendo el siguiente formato:
             - para un coche con matrícula "0011" sin pasajeros ➡️ `Car_0011. Passengers: set()`
             - para un coche con matrícula "1234" con un pasajero con nombre "Juan" y 10 años ➡️ `Car_1234. Passengers: {Juan (10)}`
             - para un tren con matrícula "3210" con dos pasajeras Ana y Elena de 35 y 28 años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
@@ -2838,7 +2838,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     1. Llamar a la clase `LinkedList`.
     2. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
-    3. Redefinir los métodos necesarios para imprimir bonitas las listas listas enlazadas según el siguiente formato:
+    3. Redefinir los métodos necesarios para imprimir las listas listas enlazadas siguiendo el siguiente formato:
         1. Lista vacía: `<>`
         2. Lista con un elemento `'a'`: `<'a'>`
         3. Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.

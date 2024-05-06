@@ -3905,7 +3905,7 @@ Sprinting on two legs.
 Falling with style!
 ```
 
-Es correcto, pero ¿por qué `sprint()` muestra por consola "on two legs" y no "on four legs"? ¿A qué método se debería llamar si heredo de dos padres que comparten nombres? 
+Es correcto, pero ¿por qué `sprint()` muestra por consola `on two legs` y no `on four legs`? ¿A qué método se debería llamar si heredo de dos padres que comparten nombres? 
 
 Este es el famoso "problema del diamante". La herencia múltiple puede provocar este tipo de situaciones y en Python se implementa así:
 
@@ -4011,7 +4011,7 @@ Sprinting on four legs.
 I am tired now.
 ```
 
-Ahora imprime "on four legs". Hemos accedido al `sprint()` de `C` desde `D`.
+Ahora imprime `on four legs`. Hemos accedido al `sprint()` de `C` desde `D`.
 
 <br>
 

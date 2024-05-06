@@ -618,7 +618,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la ia de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la ia y el resultado de la ronda. El juego continuará para siempre.
+10. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -2652,7 +2652,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     2. Una clase `Person`:
         1. Atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
-        3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__` porque que provocaría problemas de hashes a la hora de almacenar personas en un conjunto). De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
+        3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__()` porque que provocaría problemas de hashes a la hora de almacenar personas en conjuntos). De igual manera, si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
         4. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
             - para una persona con nombre "Juan" y 10 años ➡️ `Juan (10)`.
             - para una persona con nombre "Ana" y 35 años ➡️ `Ana (35)`.

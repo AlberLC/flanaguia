@@ -2652,7 +2652,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     2. Una clase `Person`:
         1. Atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
-        3. Redefinir dos métodos para que las personas sean comparables por su edad en cuanto a "menor que", "mayor que", "menor igual que", "mayor igual que", etc. De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal, digamos un `Dog`, y una persona con los mismos nombre y edad no son comparables. En dicho caso se debería lanzar un `TypeError` con el mensaje `'<' not supported between instances of 'Dog' and 'Person'`, cambiando `'<'` con operador apropiado en cada caso.
+        3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__` porque que provocaría problemas de hashes a la hora de almacenar personas en un conjunto). De igual manera si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
         4. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
             - para una persona con nombre "Juan" y 10 años ➡️ `Juan (10)`.
             - para una persona con nombre "Ana" y 35 años ➡️ `Ana (35)`.
@@ -2660,7 +2660,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     3. Clases `Vehicle`, `Car` y `Train`:
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tienen estos atributos:
-            1. `max_passenger`: máximo de pasajeros (número entero).
+            1. `max_passengers`: máximo de pasajeros (número entero).
             2. `plate`: matrícula (cadena) que, por defecto, si no se introduce nada va a ser un número entre 0000 y 9999 almacenado como texto (debe ser el único parámetro con valor por defecto del ejercicio).
             3. `_passengers`: conjunto de pasajeros (conjunto) que inicialmente está vacío.
             4. No se puede acceder a un atributo interno (los que tienen `_` de prefijo) desde fuera de su clase.
@@ -2668,7 +2668,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             1. `doors`: número de puertas (número entero).
             2. `airbags`: número de airbags (número entero).
             3. `wheel_drive`: tipo de tracción ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`).
-        4. Los objetos de la clase `Train` tienen, además de los comunes `max_passenger`, `plate` y `_passengers`, un atributo `wagons` (número entero).
+        4. Los objetos de la clase `Train` tienen, además de los comunes `max_passengers`, `plate` y `_passengers`, un atributo `wagons` (número entero).
         5. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers` (solo obtener, no asignar).
         6. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
         7. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
@@ -2734,17 +2734,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
         def __le__(self, other: Any) -> bool:
             if not isinstance(other, Person):
-                raise TypeError(
-                    f"'<=' not supported between instances of '{type(self).__name__}' and '{type(other).__name__}'"
-                )
+                return super().__le__(other)
     
             return self.age <= other.age
     
         def __lt__(self, other: Any) -> bool:
             if not isinstance(other, Person):
-                raise TypeError(
-                    f"'<' not supported between instances of '{type(self).__name__}' and '{type(other).__name__}'"
-                )
+                return super().__lt__(other)
     
             return self.age < other.age
     
@@ -3242,7 +3238,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     La siguiente imagen muestra el inicio del juego, el tablero sin resolver:
 
-   ![skyscraper.png](md_images/skyscraper.png)
+   ![skyscraper.png](../md_images/skyscraper.png)
 
     En este caso la partida es de `4x4` pero podría tener cualquier tamaño `nxn`. Al ser de tamaño `4`, los rascacielos que podremos colocar tendrán una altura entre `1` y `4` (inclusive).
 
@@ -3250,7 +3246,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Los números que aparecen fuera del tablero indican el número de rascacielos que se verían desde esa posición. Vamos a ver la solución de este tablero para tenerlo más claro:
 
-   ![skyscraper_solution.png](md_images/skyscraper_solution.png)
+   ![skyscraper_solution.png](../md_images/skyscraper_solution.png)
 
     Los rascacielos altos tapan a los más bajos cuando los miramos desde cierto lado.
 

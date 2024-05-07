@@ -1166,7 +1166,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado por argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+8. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️
     - `fibonacci_sequence(1, ', ')` ➡️ `0`
@@ -2640,15 +2640,15 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15222800/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
-    El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
-
-    Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `roman` (`True` por defecto), que define el tipo de numeración de la tabla.
-
-    Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
+    > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
+    > 
+    > Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `roman` (`True` por defecto), que define el tipo de numeración de la tabla.
+    > 
+    > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
 
     Construir con clases el siguiente escenario en el módulo `main.py`:
 
-    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
+    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
     2. Una clase `Person`:
         1. Atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
@@ -2671,17 +2671,17 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         4. Los objetos de la clase `Train` tienen, además de los comunes `max_passengers`, `plate` y `_passengers`, un atributo `wagons` (número entero).
         5. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers` (solo obtener, no asignar).
         6. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
-        7. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
-        8. Redefinir `__iter__` para hacer la clase iterable de forma que se iteren sobre los pasajeros y, estos, sean devueltos uno a uno.
+        7. Hacer la clase iterable de forma que, cuando se itere un vehículo, los pasajeros sean devueltos uno a uno.
+        8. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
         9. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola siguiendo el siguiente formato:
-            - para un coche con matrícula "0011" sin pasajeros ➡️ `Car_0011. Passengers: set()`
-            - para un coche con matrícula "1234" con un pasajero con nombre "Juan" y 10 años ➡️ `Car_1234. Passengers: {Juan (10)}`
-            - para un tren con matrícula "3210" con dos pasajeras Ana y Elena de 35 y 28 años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
+            - Coche con matrícula "0011" sin pasajeros ➡️ `Car_0011. Passengers: set()`
+            - Coche con matrícula "1234" con un pasajero con nombre "Juan" y 10 años ➡️ `Car_1234. Passengers: {Juan (10)}`
+            - Tren con matrícula "3210" con dos pasajeras Ana y Elena de 35 y 28 años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
         10. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `Full vehicle`.
         11. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
         12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
         13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
-        14. Un método `remove_passenger_by_name()` que reciba por parámetro un nombre de un posible pasajero y lo elimine sin dar error.
+        14. Un método `remove_passenger_by_name()` que reciba por parámetro el nombre de un posible pasajero y lo elimine sin dar error.
         15. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con el **tipo** y los **atributos del primero** y los **pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros.
 
     <br>
@@ -2690,31 +2690,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <summary>Solución</summary>
 
     ```python
-    from __future__ import annotations
-    
-    """
-    ⬆️
-    In some future version this import from above will not be necessary. This is needed for now to be able to use a class as
-    a type hint within itself (before it was defined):
-    
-    class Vehicle:
-        ...                                ⬇️
-        def __add__(self, other: Any) -> Vehicle:
-            ...
-    
-    If not, they can be indicated with quotes:
-    
-    class Vehicle:
-        ...                                 ⬇️
-        def __add__(self, other: Any) -> 'Vehicle':
-            ...
-    """
-    
     import random
     from abc import ABC, abstractmethod
     from collections.abc import Callable, Iterator
     from enum import Enum, auto
-    from typing import Any
+    from typing import Any, Self
     
     from tests import test
     
@@ -2755,7 +2735,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             self.plate = plate if plate else f'{random.randint(0, 9999):0>4}'
             self._passengers = set()
     
-        def __add__(self, other: Any) -> Vehicle:
+        def __add__(self, other: Any) -> Self:
             new_vehicle = type(self)(**{k: v for k, v in vars(self).items() if k not in ('plate', '_passengers')})
             for passenger in self.empty() | other.empty():
                 new_vehicle.add_passenger(passenger)
@@ -2834,28 +2814,26 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Lista enlazada.
 
-    Crear una lista enlazada con clases:
+    Crear una lista enlazada con clases que cumpla, al menos, los siguientes requisitos:
 
-    1. Llamar a la clase `LinkedList`.
-    2. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y para los valores de retorno.
-    3. Redefinir los métodos necesarios para imprimir las listas listas enlazadas siguiendo el siguiente formato:
-        1. Lista vacía: `<>`
-        2. Lista con un elemento `'a'`: `<'a'>`
-        3. Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
-    4. Redefinir el método necesario para hacer la clase iterable.
-    5. Redefinir el método necesario para que la [función integrada](https://docs.python.org/3/library/functions.html) `len()` devuelva el número de elementos que contiene la lista enlazada.
-    6. Método `add()` para añadir elementos a la lista.
-    7. Método `get()` para obtener el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
-    8. Método `delete()` para eliminar el elemento en una posición concreta. Lanza un `IndexError` si el índice dado por argumento es menor que 0 o mayor que el número de elementos contenidos en la lista.
-    9. Método `insert()` para insertar un elemento en una posición concreta. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
-    10. Método `clear()` para vaciar la lista enlazada.
-
-    <br>
+    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
+    2. Una clase `LinkedList`:
+        1. Hacer la clase iterable para iterar sobre los elementos.
+        2. Aplicar `len()` a una lista enlazada devolverá el número de elementos que contiene sin iterarlos.
+        3. Redefinir los métodos necesarios para imprimir las listas enlazadas siguiendo el siguiente formato:
+            - Lista vacía: `<>`
+            - Lista con un elemento `'a'`: `<'a'>`
+            - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
+        4. Un método `add()` que reciba un elemento por parámetro y lo añada a la lista enlazada.
+        5. Un método `get()` que reciba un índice por parámetro y devuelva el elemento en esa posición. Lanza un `IndexError` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
+        6. Un método `delete()` que reciba un índice por parámetro y elimine el elemento en esa posición. Lanza un `IndexError` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
+        7. Un método `insert()` que reciba por parámetro un índice y un elemento y lo inserte en esa posición. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
+        8. Un método `clear()` que vacíe la lista enlazada.
 
     Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `✅`, el ejercicio estará realizado con éxito:
 
     ```python
-    def run_tests() -> None:
+    def test() -> None:
         ll = LinkedList()
         assert str(ll) == '<>'
         assert len(ll) == 0
@@ -2998,8 +2976,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     
     class Node:
-        def __init__(self, value) -> None:
-            self.value: Any = value
+        def __init__(self, element) -> None:
+            self.element: Any = element
             self.next: Node | None = None
     
     
@@ -3012,14 +2990,14 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         def __iter__(self) -> Iterator[Node]:
             node = self.root
             while node:
-                yield node.value
+                yield node.element
                 node = node.next
     
         def __len__(self) -> int:
             return self._length
     
         def __str__(self) -> str:
-            return f"<{', '.join(str(value) for value in self)}>"
+            return f"<{', '.join(str(element) for element in self)}>"
     
         def _get_node(self, index: int) -> Node:
             if index >= self._length:
@@ -3030,12 +3008,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 node = node.next
             return node
     
-        def add(self, value: Any) -> None:
+        def add(self, element: Any) -> None:
             if self.last is None:
-                self.root = Node(value)
+                self.root = Node(element)
                 self.last = self.root
             else:
-                self.last.next = Node(value)
+                self.last.next = Node(element)
                 self.last = self.last.next
             self._length += 1
     
@@ -3068,25 +3046,25 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             if not 0 < index < self._length:
                 raise IndexError
     
-            return self._get_node(index).value
+            return self._get_node(index).element
     
-        def insert(self, index: int, value: Any) -> None:
+        def insert(self, index: int, element: Any) -> None:
             if self._length == 0:
-                self.add(value)
+                self.add(element)
             else:
                 if index <= 0:
-                    node = Node(value)
+                    node = Node(element)
                     node.next = self.root
                     self.root = node
                 else:
                     node = self._get_node(index - 1)
                     next_node = node.next
-                    node.next = Node(value)
+                    node.next = Node(element)
                     node.next.next = next_node
                 self._length += 1
     
     
-    def run_tests() -> None:
+    def test() -> None:
         ll = LinkedList()
         assert str(ll) == '<>'
         assert len(ll) == 0
@@ -3221,7 +3199,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         print('✅')
     
     
-    run_tests()
+    test()
     ```
 
     </details>

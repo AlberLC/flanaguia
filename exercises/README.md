@@ -3245,7 +3245,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     A continuación se proporcionará una función que ejecuta casos de pruebas para tableros desde tamaño `1x1` hasta `6x6`. Está ofuscada para evitar confusiones y sacar ideas involuntariamente para el ejercicio. Si esta función imprime en la consola `✅`, el ejercicio estará realizado con éxito:
 
     ```python
-    def run_tests() -> None:
+    def test() -> None:
         def _1(_11, _1001, _1100101, _0011):
             def _10(_00011):
                 _0101011 = range
@@ -3465,7 +3465,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return True
     
     
-    def run_tests() -> None:
+    def test() -> None:
         def _1(_11, _1001, _1100101, _0011):
             def _10(_00011):
                 _0101011 = range
@@ -3514,7 +3514,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         print('✅')
     
     
-    run_tests()
+    test()
     ```
 
     </details>

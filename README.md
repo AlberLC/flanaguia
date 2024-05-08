@@ -1212,12 +1212,11 @@ match number:
 ```
 
 ```python
-number = 7
-name = 'Alberto'
-match number, name:
-    case 1, 'Juan':
+elements = [7, 'Alberto']
+match elements:
+    case [1, 'Juan']:
         ...
-    case 2, _:
+    case [2, _]:
         ...
     case _:  # default case
         ...

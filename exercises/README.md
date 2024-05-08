@@ -2730,7 +2730,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     class Vehicle(ABC):
         @abstractmethod
-        def __init__(self, max_passengers: int, plate: str = None) -> None:
+        def __init__(self, max_passengers: int, plate: str | None = None) -> None:
             self.max_passengers = max_passengers
             self.plate = plate if plate else f'{random.randint(0, 9999):0>4}'
             self._passengers = set()
@@ -2787,7 +2787,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             airbags: int,
             wheel_drive: WheelDrive,
             max_passengers: int,
-            plate: str = None
+            plate: str | None = None
         ) -> None:
             super().__init__(max_passengers, plate)
             self.doors = doors
@@ -2796,7 +2796,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     
     class Train(Vehicle):
-        def __init__(self, wagons: int, max_passengers: int, plate: str = None) -> None:
+        def __init__(self, wagons: int, max_passengers: int, plate: str | None = None) -> None:
             super().__init__(max_passengers, plate)
             self.wagons = wagons
     

@@ -2816,7 +2816,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - Lista vacía: `<>`
             - Lista con un elemento `'a'`: `<'a'>`
             - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
-        4. Un método `add()` que reciba un elemento por parámetro y lo añada a la lista enlazada.
+        4. Un método `add()` que reciba un elemento por parámetro y lo añada a la lista enlazada en tiempo constante, es decir, tiene que tardar lo mismo tenga la lista pocos elementos o millones.
         5. Un método `get()` que reciba un índice por parámetro y devuelva el elemento en esa posición. Lanza un `IndexError` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
         6. Un método `delete()` que reciba un índice por parámetro y elimine el elemento en esa posición. Lanza un `IndexError` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
         7. Un método `insert()` que reciba por parámetro un índice y un elemento y lo inserte en esa posición. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.

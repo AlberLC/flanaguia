@@ -2546,21 +2546,19 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 if not filtered_clients:
                     break
     
-                filter_parts = filter_.split(':')
-    
-                match filter_parts:
-                    case 'id' | 'age' as key, value:
+                match filter_.split(':'):
+                    case ['id' | 'age' as key, value]:
                         try:
                             value = int(value)
                         except ValueError:
                             pass
                         else:
                             filtered_clients = [client for client in filtered_clients if client[key] == value]
-                    case 'name', name:
+                    case ['name', name]:
                         filtered_clients = [client for client in filtered_clients if name in client['name']]
-                    case 'min', 'id' | 'name' | 'age' as key:
+                    case ['min', 'id' | 'name' | 'age' as key]:
                         filtered_clients = [min(filtered_clients, key=lambda client: client[key])]
-                    case 'max', 'id' | 'name' | 'age' as key:
+                    case ['max', 'id' | 'name' | 'age' as key]:
                         filtered_clients = [max(filtered_clients, key=lambda client: client[key])]
     
             for client in filtered_clients:
@@ -2598,13 +2596,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         input('\nPresione INTRO para volver al menú...')
     
     
-    clients: list[dict] = [
-        {'id': 1, 'name': 'Ana', 'age': 22},
-        {'id': 2, 'name': 'María', 'age': 63},
-        {'id': 3, 'name': 'Juan', 'age': 22},
-        {'id': 4, 'name': 'Alberto', 'age': 22},
-        {'id': 5, 'name': 'Elena', 'age': 41}
-    ]
+    clients: list[dict] = []
     print('Bienvenido al gestor de clientes.')
     
     while True:
@@ -3290,7 +3282,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         assert skyscrapers([3, 1, 1, 2, 3], [1, 1, 3, 3, 2], [3, 2, 2, 3, 1], [3, 4, 2, 1, 3]) is None
         _1([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [3, 3, 1, 2, 3, 2], [2, 2, 3, 1, 4, 5])
         assert skyscrapers([3, 2, 3, 1, 2, 3], [3, 1, 2, 3, 4, 3], [2, 3, 5, 2, 3, 2], [2, 2, 3, 1, 4, 5]) is None
-        
+    
         print('✅')
     ```
 
@@ -3299,8 +3291,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     ```python
     from collections.abc import Iterable
-
-
+    
+    
     def calculate_solution(
         row_index: int,
         column_index: int,
@@ -3404,7 +3396,13 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return False
     
     
-    def put_init_values(up_rules, down_rules, left_rules, right_rules, board) -> None:
+    def put_init_values(
+        up_rules: list[int],
+        down_rules: list[int],
+        left_rules: list[int],
+        right_rules: list[int],
+        board: list[list[int]]
+    ) -> None:
         for i in range(len(board)):
             if up_rules[i] == 1:
                 board[0][i] = len(board)

@@ -4169,7 +4169,7 @@ for i in range(2, 5):
 print('bye')
 ```
 
-Si un día, desarrollando `main.py`, necesitáramos importar un recurso de `functions.py` ocurriría esto:
+Si en algún momento, mientras trabajamos en `main.py`, necesitáramos importar un recurso de `functions.py`, ocurriría esto:
 
 ![main_3.gif](resources/main_3.gif)
 

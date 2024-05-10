@@ -1867,7 +1867,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
     > No es necesario saber nada de bases de datos.
 
-    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15235603/funciones_15.zip), que contiene los módulos `main.py`, `data.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15275947/funciones_15.zip), que contiene los módulos `main.py`, `data.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
     El módulo `tests.py` contiene código que será utilizado automáticamente para hacer pruebas, no hace falta entenderlo ni leerlo.
 
@@ -2630,7 +2630,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Vehículos.
 
-    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15246815/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15275950/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 
@@ -2808,7 +2808,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Lista enlazada.
 
-    Para realizar este ejercicio es necesario descargar este , que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15275962/estructuras_de_datos_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
 

@@ -2821,9 +2821,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         1. Hacer la clase iterable para iterar sobre los elementos.
         2. Aplicar `len()` a una lista enlazada devolverá el número de elementos que contenga en tiempo constante, es decir, tiene que tardar lo mismo tenga pocos elementos o millones.
         3. Redefinir los métodos necesarios para imprimir las listas enlazadas siguiendo el siguiente formato:
-            - Lista vacía: `<>`
-            - Lista con un elemento `'a'`: `<'a'>`
-            - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
+            - Lista vacía: `'<>'`
+            - Lista con un elemento `'a'`: `"<'a'>"`
+            - Lista con los elementos `1`, `2`, `3` y `'hello'`: `"<1, 2, 3, 'hello'>"`.
         4. Un método `add()` que reciba un elemento por parámetro y lo añada al final de la lista enlazada en tiempo constante.
         5. Hacer lo necesario para que se pueda acceder a los elementos con `[]` usando un índice:
             ```python

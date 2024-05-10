@@ -38,12 +38,12 @@
 
 2. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
 
-    - `hola` ➡️ `False`
-    - `ojos` ➡️ `False`
-    - `ojo` ➡️ `True`
-    - `abcba` ➡️ `True`
-    - `rallar` ➡️ `True`
-    - `reconocer` ➡️ `True`
+    - `'hola'` ➡️ `False`
+    - `'ojos'` ➡️ `False`
+    - `'ojo'` ➡️ `True`
+    - `'abcba'` ➡️ `True`
+    - `'rallar'` ➡️ `True`
+    - `'reconocer'` ➡️ `True`
 
     <br>
 
@@ -198,13 +198,13 @@
 
 - Iterar cadena o colecciones y contar o imprimir.
 - Pedir contraseña hasta que sea la correcta.
-- Añadir palabras a una lista hasta "fin" e imprimirla.
+- Añadir palabras a una lista hasta `'fin'` e imprimirla.
 - Sumar números de una lista.
 - Máximo/mínimo manualmente.
 - Convertir una lista de números a sus cuadrados.
 - Números impares hasta x.
 - Número es primo/números primos hasta x.
-- Programa que traduzca palabras del siguiente texto. Se introduce por teclado `<palabra>,<traducción>` hasta "fin". Texto:
+- Programa que traduzca palabras del siguiente texto. Se introduce por teclado `<palabra>,<traducción>` hasta `'fin'`. Texto:
 
 ```
 Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.
@@ -441,9 +441,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 8. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
-    - `hola`, `adios` ➡️ `False`
-    - `urnas`, `runa` ➡️ `False`
-    - `urnas`, `runas` ➡️ `True`
+    - `'hola'`, `'adios'` ➡️ `False`
+    - `'urnas'`, `'runa'` ➡️ `False`
+    - `'urnas'`, `'runas'` ➡️ `True`
 
     <br>
 
@@ -618,7 +618,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea "piedra", "papel" o "tijeras" se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
+10. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -724,7 +724,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `fin`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+12. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
     <details>
     <summary>Solución</summary>
@@ -1169,10 +1169,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 8. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️
-    - `fibonacci_sequence(1, ', ')` ➡️ `0`
-    - `fibonacci_sequence(3, ', ')` ➡️ `0, 1, 1`
-    - `fibonacci_sequence(5, ' - ')` ➡️ `0 - 1 - 1 - 2 - 3`
-    - `fibonacci_sequence(11, ' | ')` ➡️ `0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55`
+    - `fibonacci_sequence(1, ', ')` ➡️ `'0'`
+    - `fibonacci_sequence(3, ', ')` ➡️ `'0, 1, 1'`
+    - `fibonacci_sequence(5, ' - ')` ➡️ `'0 - 1 - 1 - 2 - 3'`
+    - `fibonacci_sequence(11, ' | ')` ➡️ `'0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55'`
 
     La sucesión de Fibonacci para `n` negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
@@ -1811,7 +1811,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     6. Por último, queremos poder filtrar los archivos siguiendo otros criterios, añadir flexibilidad al filtro de forma que, desde fuera, se pueda definir que archivos queremos, es decir, el usuario final de la función deberá poder trabajar directamente con los `Path` para poder definir filtros como:
 
         - Archivos que comiencen por mayúsculas.
-        - Archivos cuya primera letra esté entra la `a` y la `g`.
+        - Archivos cuya primera letra esté entre la `'a'` y la `'g'`.
         - Archivos que pesen más de 1 MB.
         - Archivos cuya extensión esté en `{'.png', .flv' .mp4'}`
         - Cualquier combinación de todas las reglas anteriores.
@@ -1823,7 +1823,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
        Probar los siguientes filtros:
 
-        - Archivos que contienen la letra `e` en su nombre y tienen un número impar de letras.
+        - Archivos que contienen la letra `'e'` en su nombre y tienen un número impar de letras.
         - Archivos `.jpg` o `.png` que pesan menos de 1 MB.
         - Archivos sin extensión (no directorios).
         - Archivos que se modificaron hace menos de un año.
@@ -2147,7 +2147,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     13. `function_6()`:
 
-        Esta función devuelve el número de mujeres no españolas que tienen una `a` en su nombre. 
+        Esta función devuelve el número de mujeres no españolas que tienen una `'a'` en su nombre. 
 
         <details>
         <summary>Solución</summary>
@@ -2294,9 +2294,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ¿Añadir otro? (s/n): 
             ```
 
-            - Si la opción introducida es distinta de `s` o `n` se repetirá la pregunta.
-            - Si la opción introducida es `s` se repetirá la petición de datos para un nuevo cliente.
-            - Si la opción introducida es `n` se volverá al menú.
+            - Si la opción introducida es distinta de `'s'` o `'n'` se repetirá la pregunta.
+            - Si la opción introducida es `'s'` se repetirá la petición de datos para un nuevo cliente.
+            - Si la opción introducida es `'n'` se volverá al menú.
 
     - 🔎 Buscar clientes.
 
@@ -2320,21 +2320,21 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         - Como indica el texto, el programa podrá filtrar clientes mediante unos filtros que se pedirán por consola siguiendo el formato indicado.
         - Ejemplos de filtros:
-            - `id:2` ➡️ clientes cuyo id sea 2.
-            - `name:Juan` ➡️ clientes cuyo nombre contenga "Juan".
-            - `name:a` ➡️ clientes cuyo nombre contenga "a".
-            - `age:22` ➡️ clientes cuya edad sea 22.
-            - `min:id` ➡️ el cliente de menor id.
-            - `max:age` ➡️ el cliente de mayor edad.
-            - `name:an;age:22;max:id` ➡️ el cliente cuyo nombre contenga "a", cuya edad sea 22 y cuyo id sea el mayor.
+            - `'id:2'` ➡️ clientes cuyo id sea `2`.
+            - `'name:Juan'` ➡️ clientes cuyo nombre contenga `'Juan'`.
+            - `'name:a'` ➡️ clientes cuyo nombre contenga `'a'`.
+            - `'age:22'` ➡️ clientes cuya edad sea `22`.
+            - `'min:id'` ➡️ el cliente de menor id.
+            - `'max:age'` ➡️ el cliente de mayor edad.
+            - `'name:an;age:22;max:id'` ➡️ el cliente cuyo nombre contenga `'a'`, cuya edad sea 22 y cuyo id sea el mayor.
         - Se podrán introducir varios filtros a la vez seprándolos con ";", como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
             - El primer filtro se aplicaría a todos los clientes.
             - El segundo filtro se aplicaría al resultado del primero.
             - Y el tercero, al resultado del segundo.
 
-            Por lo tanto, filtrar por `min:id` y luego por `max:id` va a ser lo mismo que filtrar solo por `min:id`.
+            Por lo tanto, filtrar por `'min:id'` y luego por `'max:id'` va a ser lo mismo que filtrar solo por `'min:id'`.
 
-        - Si se introduce `exit` en vez de un filtro, se volverá al menú principal.
+        - Si se introduce `'exit'` en vez de un filtro, se volverá al menú principal.
         - Si no se introducen filtros, o ningún filtro introducido es válido, no se aplicará ningún filtro. 
         - Si se introducen varios filtros, solo se aplicarán los válidos.
         - Cada vez que se introduzcan los filtros se imprimirán por consola los clientes filtrados y se volverá a pedir otro filtro.
@@ -2508,18 +2508,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 return i
     
     
-    def delete_client() -> None:
-        id_ = int_input('Id: ')
-        index = client_index_by_id(id_)
-        if index is None:
-            print('Cliente no encontrado.')
-        else:
-            del clients[index]
-            print('Cliente eliminado exitosamente.')
-    
-        input('\nPresione INTRO para volver al menú...')
-    
-    
     def int_input(prompt: str) -> int:
         option = None
         while option is None:
@@ -2537,6 +2525,18 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             option = input(prompt)
     
         return option
+    
+    
+    def remove_client() -> None:
+        id_ = int_input('Id: ')
+        index = client_index_by_id(id_)
+        if index is None:
+            print('Cliente no encontrado.')
+        else:
+            del clients[index]
+            print('Cliente eliminado exitosamente.')
+    
+        input('\nPresione INTRO para volver al menú...')
     
     
     def search_clients() -> None:
@@ -2615,7 +2615,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             case '3':
                 update_client()
             case '4':
-                delete_client()
+                remove_client()
             case '5':
                 break
     ```
@@ -2638,6 +2638,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     > 
     > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
 
+    > Por la forma en la que se importan los módulos proporcionados, el módulo `main.py` será ejecutado dos veces cuando llamemos a `test()`, por lo tanto, si se quieren crear más pruebas en `main.py` se recomienda comentar la línea donde se llama a `test()` o usar un "main" con [`__name__`](../README.md#91-nombre-especial-__name__) para envolverlas.
+
     Construir con clases el siguiente escenario en el módulo `main.py`:
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
@@ -2646,9 +2648,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
         3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__()` porque provocaría problemas de hashes a la hora de almacenar personas en conjuntos). De igual manera, si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
         4. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
-            - para una persona con nombre "Juan" y 10 años ➡️ `Juan (10)`.
-            - para una persona con nombre "Ana" y 35 años ➡️ `Ana (35)`.
-            - cuando se almacenan en una estructura, por ejemplo, una lista ➡️ `[Juan (10), Ana (35)]`.
+            - para una persona con nombre "Juan" y 10 años ➡️ `'Juan (10)'`.
+            - para una persona con nombre "Ana" y 35 años ➡️ `'Ana (35)'`.
+            - cuando se representa una estructura con personas, por ejemplo, una lista ➡️ `'[Juan (10), Ana (35)]'`.
     3. Clases `Vehicle`, `Car` y `Train`:
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tienen estos atributos:
@@ -2666,9 +2668,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         7. Hacer la clase iterable de forma que, cuando se itere un vehículo, los pasajeros sean devueltos uno a uno.
         8. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
         9. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola siguiendo el siguiente formato:
-            - Coche con matrícula "0011" sin pasajeros ➡️ `Car_0011. Passengers: set()`
-            - Coche con matrícula "1234" con un pasajero con nombre "Juan" y 10 años ➡️ `Car_1234. Passengers: {Juan (10)}`
-            - Tren con matrícula "3210" con dos pasajeras Ana y Elena de 35 y 28 años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
+            - Coche con matrícula `'0011'` sin pasajeros ➡️ `'Car_0011. Passengers: set()'`
+            - Coche con matrícula `'1234'` con un pasajero con nombre `'Juan'` y `10` años ➡️ `'Car_1234. Passengers: {Juan (10)}'`
+            - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `'Train_3210. Passengers: {Ana (35), Elena (28)}'`
         10. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `Full vehicle`.
         11. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
         12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
@@ -2806,159 +2808,44 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Lista enlazada.
 
-    Crear una lista enlazada con clases que cumpla, al menos, los siguientes requisitos:
+    Para realizar este ejercicio es necesario descargar este , que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+
+    > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
+
+    > Por la forma en la que se importan los módulos proporcionados, el módulo `main.py` será ejecutado dos veces cuando llamemos a `test()`, por lo tanto, si se quieren crear más pruebas en `main.py` se recomienda comentar la línea donde se llama a `test()` o usar un "main" con [`__name__`](../README.md#91-nombre-especial-__name__) para envolverlas.
+
+    Crear en el módulo `main.py` una lista enlazada con clases que cumpla, al menos, los siguientes requisitos:
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
     2. Una clase `LinkedList`:
         1. Hacer la clase iterable para iterar sobre los elementos.
-        2. Aplicar `len()` a una lista enlazada devolverá el número de elementos que contiene sin iterarlos.
+        2. Aplicar `len()` a una lista enlazada devolverá el número de elementos que contenga en tiempo constante, es decir, tiene que tardar lo mismo tenga pocos elementos o millones.
         3. Redefinir los métodos necesarios para imprimir las listas enlazadas siguiendo el siguiente formato:
             - Lista vacía: `<>`
             - Lista con un elemento `'a'`: `<'a'>`
             - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
-        4. Un método `add()` que reciba un elemento por parámetro y lo añada a la lista enlazada en tiempo constante, es decir, tiene que tardar lo mismo tenga la lista pocos elementos o millones.
-        5. Un método `get()` que reciba un índice por parámetro y devuelva el elemento en esa posición. Lanza un `IndexError` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
-        6. Un método `delete()` que reciba un índice por parámetro y elimine el elemento en esa posición. Lanza un `IndexError` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
-        7. Un método `insert()` que reciba por parámetro un índice y un elemento y lo inserte en esa posición. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
-        8. Un método `clear()` que vacíe la lista enlazada.
+        4. Un método `add()` que reciba un elemento por parámetro y lo añada al final de la lista enlazada en tiempo constante.
+        5. Hacer lo necesario para que se pueda acceder a los elementos con `[]` usando un índice:
+            ```python
+            linked_list = LinkedList()
+            linked_list.add(1)
+            linked_list.add('hello')
+            linked_list.add(3)
+            print(linked_list[1])
+            ```
+            Salida:
+            ```python
+            hello
+            ```
+            Debe admitir índices negativos como si fuera una lista normal. Si el índice se sale de los límites deberá lanzar un `IndexError` con el mensaje `'list index out of range'`, por ejemplo, para una lista enlazada con dos elementos podremos acceder a los índices `-2`, `-1`, `0` y `1`.
+        6. Un método `get()` que haga lo mismo que el apartado anterior y que tenga los mismos parámetros. Tiene que llamar al código del apartado anterior sin acceder a atributos o métodos internos (los que empiezan con una o varias `_`).
+        7. Hacer lo necesario para que se puedan reemplazar elementos con `[]` usando un índice y asignándoles un valor. También debe admitir números negativos y lanzar `IndexError` con el mensaje `'list index out of range'` si se sale de los límites.
+        8. Un método `set()` que llame al código del apartado anterior (mismos parámetros) sin acceder a atributos o métodos internos.
+        9. Un método `remove()` que reciba un índice por parámetro y elimine el elemento en esa posición. Lanza un `IndexError` con el mensaje `'list index out of range'` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
+        10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) y inserte dicho elemento en la posición indicada por el índice. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
+        11. Un método `clear()` que vacíe la lista enlazada.
 
     Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `✅`, el ejercicio estará realizado con éxito:
-
-    ```python
-    def test() -> None:
-        ll = LinkedList()
-        assert str(ll) == '<>'
-        assert len(ll) == 0
-    
-        ll.add(1)
-        assert str(ll) == '<1>'
-        ll.add(2)
-        assert str(ll) == '<1, 2>'
-        ll.add(3)
-        assert str(ll) == '<1, 2, 3>'
-        assert len(ll) == 3
-    
-        assert 1 in ll
-        assert 2 in ll
-        assert 3 in ll
-        assert 4 not in ll
-    
-        try:
-            ll.delete(-1)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.delete(3)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.delete(24)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        ll.delete(2)
-        assert str(ll) == '<1, 2>'
-        assert len(ll) == 2
-    
-        ll.add('aasdasd')
-        assert str(ll) == '<1, 2, aasdasd>'
-    
-        assert ll.get(1) == 2
-        assert ll.get(2) == 'aasdasd'
-        try:
-            ll.get(-1)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.get(3)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.get(24)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-    
-        ll.add(('5', 5))
-        assert str(ll) == "<1, 2, aasdasd, ('5', 5)>"
-        assert len(ll) == 4
-        ll.delete(1)
-        assert str(ll) == "<1, aasdasd, ('5', 5)>"
-        ll.delete(0)
-        assert str(ll) == "<aasdasd, ('5', 5)>"
-        ll.delete(0)
-        assert str(ll) == "<('5', 5)>"
-        assert len(ll) == 1
-        ll.delete(0)
-        assert str(ll) == '<>'
-        assert len(ll) == 0
-        ll.clear()
-        assert str(ll) == '<>'
-        assert len(ll) == 0
-        ll.add(5)
-        ll.add(5)
-        ll.add(5)
-        assert str(ll) == '<5, 5, 5>'
-        assert len(ll) == 3
-        ll.clear()
-        assert str(ll) == '<>'
-        assert len(ll) == 0
-    
-        ll.insert(-1, 'a')
-        assert str(ll) == '<a>'
-        assert len(ll) == 1
-        ll.clear()
-        assert len(ll) == 0
-        ll.insert(24, 'b')
-        assert str(ll) == '<b>'
-        assert len(ll) == 1
-        ll.clear()
-        ll.insert(0, 'c')
-        assert str(ll) == '<c>'
-        assert len(ll) == 1
-        ll.clear()
-        ll.add('hola')
-        ll.insert(-1, 'x')
-        assert str(ll) == '<x, hola>'
-        assert len(ll) == 2
-        ll.delete(0)
-        ll.insert(24, 'y')
-        assert str(ll) == '<hola, y>'
-        assert len(ll) == 2
-        ll.delete(1)
-        ll.insert(0, 'z')
-        assert str(ll) == '<z, hola>'
-        assert len(ll) == 2
-        ll.add(1)
-        ll.add(2)
-        ll.add(3)
-        ll.insert(2, 'adios')
-        assert str(ll) == '<z, hola, adios, 1, 2, 3>'
-        assert len(ll) == 6
-        ll.insert(len(ll), 'ultimo')
-        ll.insert(len(ll) - 1, 'penultimo')
-        ll.insert(len(ll) - 2, 'antepenultimo')
-        assert str(ll) == '<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>'
-        assert len(ll) == 9
-        ll.insert(4, {1, 2})
-        assert str(ll) == '<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
-        assert len(ll) == 10
-        ll.insert(1, range(5))
-        assert str(ll) == '<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
-        assert len(ll) == 11
-    
-        print('✅')
-    ```
 
     <details>
     <summary>Solución</summary>
@@ -2966,21 +2853,38 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     ```python
     from typing import Any, Iterator
     
+    from tests import test
+    
     
     class Node:
         def __init__(self, element) -> None:
             self.element: Any = element
             self.next: Node | None = None
     
+        def __str__(self) -> str:
+            return str(self.element)
+    
     
     class LinkedList:
         def __init__(self) -> None:
-            self.root: Node | None = None
-            self.last: Node | None = self.root
+            self.first: Node | None = None
+            self.last: Node | None = self.first
             self._length = 0
     
+        def __getitem__(self, index: int) -> Any:
+            if index < 0:
+                index += self._length
+    
+            return self._get_node(index).element
+    
+        def __setitem__(self, index: int, element: Any) -> None:
+            if index < 0:
+                index += self._length
+    
+            self._get_node(index).element = element
+    
         def __iter__(self) -> Iterator[Node]:
-            node = self.root
+            node = self.first
             while node:
                 yield node.element
                 node = node.next
@@ -2989,206 +2893,76 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return self._length
     
         def __str__(self) -> str:
-            return f"<{', '.join(str(element) for element in self)}>"
+            return f"<{', '.join(repr(element) for element in self)}>"
     
         def _get_node(self, index: int) -> Node:
-            if index >= self._length:
-                return self.last
+            if not 0 <= index < self._length:
+                raise IndexError('list index out of range')
     
-            node = self.root
+            node = self.first
             for _ in range(index):
                 node = node.next
+    
             return node
     
         def add(self, element: Any) -> None:
-            if self.last is None:
-                self.root = Node(element)
-                self.last = self.root
+            if not self:
+                self.first = Node(element)
+                self.last = self.first
             else:
                 self.last.next = Node(element)
                 self.last = self.last.next
+    
             self._length += 1
     
         def clear(self) -> None:
-            self.root = None
-            self.last = self.root
+            self.first = None
+            self.last = self.first
             self._length = 0
     
-        def delete(self, index: int) -> None:
-            if not 0 <= index < self._length:
-                raise IndexError
-    
-            if index == 0:
-                try:
-                    self.root = self.root.next
-                except AttributeError:
-                    self.root = None
-                    self.last = self.root
-                self._length -= 1
-            else:
-                previous_node = self._get_node(index - 1)
-                if previous_node.next and previous_node.next.next:
-                    previous_node.next = previous_node.next.next
-                else:
-                    previous_node.next = None
-                    self.last = previous_node
-                self._length -= 1
-    
         def get(self, index: int) -> Any:
-            if not 0 < index < self._length:
-                raise IndexError
-    
-            return self._get_node(index).element
+            return self[index]
     
         def insert(self, index: int, element: Any) -> None:
-            if self._length == 0:
+            if not self:
                 self.add(element)
+                return
+    
+            if index <= 0:
+                node = Node(element)
+                node.next = self.first
+                self.first = node
+            elif index < len(self):
+                previous_node = self._get_node(index - 1)
+                next_node = previous_node.next
+                previous_node.next = Node(element)
+                previous_node.next.next = next_node
             else:
-                if index <= 0:
-                    node = Node(element)
-                    node.next = self.root
-                    self.root = node
+                self.last.next = Node(element)
+                self.last = self.last.next
+    
+            self._length += 1
+    
+        def remove(self, index: int) -> None:
+            if self and index == 0:
+                if self.first.next:
+                    self.first = self.first.next
                 else:
-                    node = self._get_node(index - 1)
-                    next_node = node.next
-                    node.next = Node(element)
-                    node.next.next = next_node
-                self._length += 1
+                    self.first = None
+                    self.last = self.first
+            else:
+                previous_node = self._get_node(index - 1)
+                if not previous_node.next:
+                    raise IndexError('list index out of range')
     
+                previous_node.next = getattr(previous_node.next, 'next', None)
+                if not previous_node.next:
+                    self.last = previous_node
     
-    def test() -> None:
-        ll = LinkedList()
-        assert str(ll) == '<>'
-        assert len(ll) == 0
+            self._length -= 1
     
-        ll.add(1)
-        assert str(ll) == '<1>'
-        ll.add(2)
-        assert str(ll) == '<1, 2>'
-        ll.add(3)
-        assert str(ll) == '<1, 2, 3>'
-        assert len(ll) == 3
-    
-        assert 1 in ll
-        assert 2 in ll
-        assert 3 in ll
-        assert 4 not in ll
-    
-        try:
-            ll.delete(-1)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.delete(3)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.delete(24)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        ll.delete(2)
-        assert str(ll) == '<1, 2>'
-        assert len(ll) == 2
-    
-        ll.add('aasdasd')
-        assert str(ll) == '<1, 2, aasdasd>'
-    
-        assert ll.get(1) == 2
-        assert ll.get(2) == 'aasdasd'
-        try:
-            ll.get(-1)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.get(3)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-        try:
-            ll.get(24)
-        except IndexError:
-            pass
-        else:
-            raise Exception('No lanza IndexError')
-    
-        ll.add(('5', 5))
-        assert str(ll) == "<1, 2, aasdasd, ('5', 5)>"
-        assert len(ll) == 4
-        ll.delete(1)
-        assert str(ll) == "<1, aasdasd, ('5', 5)>"
-        ll.delete(0)
-        assert str(ll) == "<aasdasd, ('5', 5)>"
-        ll.delete(0)
-        assert str(ll) == "<('5', 5)>"
-        assert len(ll) == 1
-        ll.delete(0)
-        assert str(ll) == '<>'
-        assert len(ll) == 0
-        ll.clear()
-        assert str(ll) == '<>'
-        assert len(ll) == 0
-        ll.add(5)
-        ll.add(5)
-        ll.add(5)
-        assert str(ll) == '<5, 5, 5>'
-        assert len(ll) == 3
-        ll.clear()
-        assert str(ll) == '<>'
-        assert len(ll) == 0
-    
-        ll.insert(-1, 'a')
-        assert str(ll) == '<a>'
-        assert len(ll) == 1
-        ll.clear()
-        assert len(ll) == 0
-        ll.insert(24, 'b')
-        assert str(ll) == '<b>'
-        assert len(ll) == 1
-        ll.clear()
-        ll.insert(0, 'c')
-        assert str(ll) == '<c>'
-        assert len(ll) == 1
-        ll.clear()
-        ll.add('hola')
-        ll.insert(-1, 'x')
-        assert str(ll) == '<x, hola>'
-        assert len(ll) == 2
-        ll.delete(0)
-        ll.insert(24, 'y')
-        assert str(ll) == '<hola, y>'
-        assert len(ll) == 2
-        ll.delete(1)
-        ll.insert(0, 'z')
-        assert str(ll) == '<z, hola>'
-        assert len(ll) == 2
-        ll.add(1)
-        ll.add(2)
-        ll.add(3)
-        ll.insert(2, 'adios')
-        assert str(ll) == '<z, hola, adios, 1, 2, 3>'
-        assert len(ll) == 6
-        ll.insert(len(ll), 'ultimo')
-        ll.insert(len(ll) - 1, 'penultimo')
-        ll.insert(len(ll) - 2, 'antepenultimo')
-        assert str(ll) == '<z, hola, adios, 1, 2, 3, antepenultimo, penultimo, ultimo>'
-        assert len(ll) == 9
-        ll.insert(4, {1, 2})
-        assert str(ll) == '<z, hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
-        assert len(ll) == 10
-        ll.insert(1, range(5))
-        assert str(ll) == '<z, range(0, 5), hola, adios, 1, {1, 2}, 2, 3, antepenultimo, penultimo, ultimo>'
-        assert len(ll) == 11
-    
-        print('✅')
+        def set(self, index: int, element: Any) -> None:
+            self[index] = element
     
     
     test()
@@ -3208,7 +2982,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     La siguiente imagen muestra el inicio del juego, el tablero sin resolver:
 
-   ![skyscraper.png](../md_images/skyscraper.png)
+   ![skyscraper.png](../resources/skyscraper.png)
 
     En este caso la partida es de `4x4` pero podría tener cualquier tamaño `nxn`. Al ser de tamaño `4`, los rascacielos que podremos colocar tendrán una altura entre `1` y `4` (inclusive).
 
@@ -3216,7 +2990,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Los números que aparecen fuera del tablero indican el número de rascacielos que se verían desde esa posición. Vamos a ver la solución de este tablero para tenerlo más claro:
 
-   ![skyscraper_solution.png](../md_images/skyscraper_solution.png)
+   ![skyscraper_solution.png](../resources/skyscraper_solution.png)
 
     Los rascacielos altos tapan a los más bajos cuando los miramos desde cierto lado.
 

@@ -3,49 +3,50 @@
 ## Índice
 
 1. [Tipos de datos](#1-tipos-de-datos)
-   1. [Tipos más usados](#11-tipos-más-usados)
-   2. [Conversión de tipos](#12-conversión-de-tipos)
-   3. [Cadenas (Strings)](#13-cadenas-strings)
-      1. [Formateo/interpolación de cadenas](#131-formateointerpolación-de-cadenas)
-   4. [Tuplas](#14-tuplas)
-   5. [Listas](#15-listas)
-   6. [Conjuntos](#16-conjuntos)
-   7. [Diccionarios](#17-diccionarios)
-   8. [Rangos](#18-rangos)
-   9. [Enumeraciones](#19-enumeraciones)
+    1. [Tipos más usados](#11-tipos-más-usados)
+    2. [Conversión de tipos](#12-conversión-de-tipos)
+    3. [Cadenas (Strings)](#13-cadenas-strings)
+        1. [Formateo/interpolación de cadenas](#131-formateointerpolación-de-cadenas)
+    4. [Tuplas](#14-tuplas)
+    5. [Listas](#15-listas)
+    6. [Conjuntos](#16-conjuntos)
+    7. [Diccionarios](#17-diccionarios)
+    8. [Rangos](#18-rangos)
+    9. [Enumeraciones](#19-enumeraciones)
 2. [Empaquetado y desempaquetado](#2-empaquetado-y-desempaquetado)
 3. [Entrada y salida](#3-entrada-y-salida)
-   1. [Consola](#31-consola)
-   2. [Archivos](#32-archivos)
+    1. [Consola](#31-consola)
+    2. [Archivos](#32-archivos)
 4. [Condicionales](#4-condicionales)
 5. [Bucles](#5-bucles)
-   1. [Listas por comprensión](#51-listas-por-comprensión)
-   2. [Iteradores](#52-iteradores)
-      1. [Generadores](#521-generadores)
+    1. [Listas por comprensión](#51-listas-por-comprensión)
+    2. [Iteradores](#52-iteradores)
+        1. [Generadores](#521-generadores)
 6. [Funciones](#6-funciones)
-   1. [Funciones sin argumentos](#61-funciones-sin-argumentos)
-   2. [Funciones con argumentos](#62-funciones-con-argumentos)
-   3. [Ámbitos](#63-ámbitos)
-   4. [Argumentos por defecto](#64-argumentos-por-defecto)
-   5. [Argumentos posicionales y argumentos nombrados](#65-argumentos-posicionales-y-argumentos-nombrados)
-   6. [Número indeterminado de argumentos](#66-número-indeterminado-de-argumentos)
-   7. [Funciones anónimas](#67-funciones-anónimas)
-   8. [Funciones generadoras](#68-funciones-generadoras)
+    1. [Funciones sin argumentos](#61-funciones-sin-argumentos)
+    2. [Funciones con argumentos](#62-funciones-con-argumentos)
+    3. [Ámbitos](#63-ámbitos)
+    4. [Argumentos por defecto](#64-argumentos-por-defecto)
+    5. [Argumentos posicionales y argumentos nombrados](#65-argumentos-posicionales-y-argumentos-nombrados)
+    6. [Número indeterminado de argumentos](#66-número-indeterminado-de-argumentos)
+    7. [Funciones anónimas](#67-funciones-anónimas)
+    8. [Funciones generadoras](#68-funciones-generadoras)
 7. [Excepciones](#7-excepciones)
-   1. [Lanzamiento de excepciones](#71-lanzamiento-de-excepciones)
-   2. [Captura de excepciones](#72-captura-de-excepciones)
+    1. [Lanzamiento de excepciones](#71-lanzamiento-de-excepciones)
+    2. [Captura de excepciones](#72-captura-de-excepciones)
 8. [Clases](#8-clases)
-   1. [Atributos](#81-atributos)
-      1. [Propiedades](#811-propiedades)
-      2. [Atributos estáticos](#812-atributos-estáticos)
-   2. [Métodos](#82-métodos)
-      1. [Métodos especiales](#821-métodos-especiales)
-      2. [Métodos estáticos](#822-métodos-estáticos)
-      3. [Métodos de clase](#823-métodos-de-clase)
-   3. [Herencia](#83-herencia)
-      1. [Clases abstractas](#831-clases-abstractas)
-      2. [Herencia múltiple](#832-herencia-múltiple)
+    1. [Atributos](#81-atributos)
+        1. [Propiedades](#811-propiedades)
+        2. [Atributos estáticos](#812-atributos-estáticos)
+    2. [Métodos](#82-métodos)
+        1. [Métodos especiales](#821-métodos-especiales)
+        2. [Métodos estáticos](#822-métodos-estáticos)
+        3. [Métodos de clase](#823-métodos-de-clase)
+    3. [Herencia](#83-herencia)
+        1. [Clases abstractas](#831-clases-abstractas)
+        2. [Herencia múltiple](#832-herencia-múltiple)
 9. [Importaciones](#9-importaciones)    
+    1. [Nombre especial `__name__`](#91-nombre-especial-__name__)
 10. [Convenciones de estilo](#10-convenciones-de-estilo)
     1. [PascalCase y snake_case](#101-pascalcase-y-snake_case)
     2. [Nombres privados](#102-nombres-privados)
@@ -104,7 +105,7 @@ Python es **dinámico** porque las variables no tienen tipo, sino su contenido. 
 <class 'str'>
 ```
 
-![types_diagram.png](md_images/types_diagram.png)
+![types_diagram.png](resources/types_diagram.png)
 
 <br>
 
@@ -121,7 +122,7 @@ name = {1, 2, 'bye'}  # set
 name = {1: 2, 'hello': 'world', 'a': 48.34, 48.34: 'a'}  # dictionary
 ```
 
-![collections.png](md_images/collections.png)
+![collections.png](resources/collections.png)
 
 <br>
 
@@ -871,7 +872,7 @@ def do_something(color):
     ...
 ```
 
-Vamos a tener que pasarle una cadena para indicar el color, sin embargo, esto tiene muchos problemas. Para empezar, si usamos cadenas podemos cometer errores ortográficos y escribir `bleu` en vez de `blue`, ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
+Vamos a tener que pasarle una cadena para indicar el color, sin embargo, esto tiene muchos problemas. Para empezar, si usamos cadenas podemos cometer errores ortográficos y escribir `'bleu'` en vez de `'blue'`, ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
 
 Las enumeraciones no son más que [clases](#8-clases) que [heredan](#83-herencia) de `Enum`:
 
@@ -1072,7 +1073,7 @@ Consola:
 ```
 Give me a number: 
 ```
-Escribimos en la consola "7":
+Escribimos en la consola `'7'`:
 ```
 Give me a number: 7
 ```
@@ -1533,7 +1534,7 @@ También podemos crear una lista a partir de él, lo cual sería otra forma de i
 [0, 2, 4]
 ```
 
-Pero ¿cómo itera Python? Cuando Python tiene que iterar un iterable, lo primero que hace es construir un iterador. Nosotros podemos crear iteradores a partir de iterables con la [función integrada](https://docs.python.org/3/library/functions.html) `iter()`:
+Pero, ¿cómo itera Python? Cuando Python tiene que iterar un iterable, lo primero que hace es construir un iterador. Nosotros podemos crear iteradores a partir de iterables con la [función integrada](https://docs.python.org/3/library/functions.html) `iter()`:
 
 ```python
 >>> iter(range(0, 5, 2))
@@ -1828,7 +1829,7 @@ Salida:
 My name is Juan and I'm 25 years old.
 
 Traceback (most recent call last):
-  File "main.py", line 9, in <module>
+  File ".../main.py", line 9, in <module>
     print(name)
 NameError: name 'name' is not defined
 ```
@@ -1918,9 +1919,9 @@ Salida:
 ```
 1
 Traceback (most recent call last):
-  File "main.py", line 165, in <module>
+  File ".../main.py", line 165, in <module>
     function_2()
-  File "main.py", line 161, in function_2
+  File ".../main.py", line 161, in function_2
     print(x)
           ^
 NameError: name 'x' is not defined
@@ -2049,7 +2050,7 @@ print(sum_numbers(1))
 ```
 Salida:
 ```
-  File "main.py", line 1
+  File ".../main.py", line 1
     def sum_numbers(number_2=100, number_1):
                                   ^^^^^^^^
 SyntaxError: non-default argument follows default argument
@@ -2280,7 +2281,7 @@ Mario
 
 `kwargs`, en este caso, es un diccionario.
 
-Démonos cuenta de que de todos los argumentos posicionales dados (`54, 12, 1, 2, 3`), `54` va a parar a `number_1`, `12` a `number_2` y el resto (`1, 2, 3`) a `args`. De igual manera, en el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en la cabecera de la función.
+Démonos cuenta de que de todos los argumentos posicionales dados (`54, 12, 1, 2, 3`), `54` va a parar a `number_1`, `12` a `number_2` y, el resto (`1, 2, 3`), a `args`. De igual manera, en el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en la cabecera de la función.
 
 > Igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero este es el que se usa por convenio.
 
@@ -2311,11 +2312,11 @@ Al hacer esto las claves y los valores de este se comportarán como argumentos n
 Hasta ahora hemos definido nuestras funciones así:
 
 ```python
-def func(x):
+def function(x):
     return x + 1
 
 
-print(func(2))
+print(function(2))
 ```
 Salida:
 ```
@@ -2327,15 +2328,15 @@ Salida:
 Ahora vamos a crear nuestra primera **función anónima**, equivalente a la anterior:
 
 ```python
-func = lambda x: x + 1
-print(func(2))
+function = lambda x: x + 1
+print(function(2))
 ```
 Salida:
 ```
 3
 ```
 
-Las **funciones anónimas** se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, no es un buen ejemplo porque estamos asignando un nombre `func` a la función anónima, lo cual es contradictorio.
+Las **funciones anónimas** se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, no es un buen ejemplo porque estamos asignando un nombre `function` a la función anónima, lo cual es contradictorio.
 
 Ahora vamos a ver un uso realista de este tipo de funciones. Vamos a crear una función que busque y devuelva los elementos de un iterable `people` que cumplan una condición, en concreto vamos a filtrar las personas que tengan 30 años o más. Esta condición va a ser aplicada a cada elemento, por lo tanto va a ser una función.
 
@@ -2385,7 +2386,7 @@ Salida:
 {'id': 75, 'name': 'Alberto', 'age': 72}
 ```
 
-O personas cuyos nombres empiecen por "A":
+O personas cuyos nombres empiecen por `'A'`:
 
 ```python
 ...
@@ -2455,7 +2456,7 @@ Salida:
 [1, 25, 64, 16, 81, 16]
 ```
 
-Podemos usar las palabras claves `yield from` para ayudarnos a devolver valores de otro iterable, ahorrándonos las sentencias `for` y `yield`:
+Podemos usar la expresión `yield from` para ayudarnos a devolver valores de otro iterable, ahorrándonos las sentencias `for` y `yield`:
 
 ```python
 def yield_something(elements_):
@@ -2816,7 +2817,7 @@ You have traveled 17.28 km.
 
 Como vemos, hemos utilizado funciones para modularizar el código. Por ejemplo, no hemos tenido que repetir código para quitar una rueda tres veces seguidas, sino que hemos creado una función que se encargaba de ese problema concreto.
 
-Ese fue el primero paso para ordenar el código, pero existen varios problemas, por ejemplo, tenemos datos sueltos en variables globales que pueden usarse en otros lugares o interferir con el resto del programa, ¿que pasaría si tuviéramos cuarenta coches, tendríamos que añadir `model_1`, `model_2`, `model_3` ...? ¿y si manejaramos también aviones, `color` y `speed` serían de un coche o de un avión? Todo está mezclado y desordenado. Este tipo de cuestiones se resuelven encapsulando datos y funcionalidad en un mismo lugar, es decir, usando **clases**.
+Ese fue el primero paso para ordenar el código, pero existen varios problemas. Por ejemplo, tenemos datos sueltos en variables globales que pueden usarse en otros lugares o interferir con el resto del programa. ¿Qué pasaría si tuviéramos cuarenta coches? ¿Tendríamos que añadir `model_1`, `model_2`, `model_3` ...? ¿Y si manejáramos también aviones? ¿`color` y `speed` serían de un coche o de un avión? Todo está mezclado y desordenado. Este tipo de cuestiones se resuelven encapsulando datos y funcionalidad en un mismo lugar, es decir, usando **clases**.
 
 Podemos entender una clase como una plantilla que sirve para fabricar objetos de un mismo tipo. Podríamos tener una clase `Car` y una clase `Plane`. Estas clases recogerían los datos en [atributos](#81-atributos) y la funcionalidad en [métodos](#82-métodos).
 
@@ -3018,7 +3019,7 @@ print(Person.name)
 Salida:
 ```
 Traceback (most recent call last):
-  File "main.py", line 9, in <module>
+  File ".../main.py", line 9, in <module>
     print(Person.name)
 AttributeError: type object 'Person' has no attribute 'name'
 ```
@@ -3796,7 +3797,7 @@ print(unit)
 Salida:
 ```
 Traceback (most recent call last):
-  File "main.py", line 10, in <module>
+  File ".../main.py", line 10, in <module>
     unit = Unit()
 TypeError: Can't instantiate abstract class Unit with abstract method attack
 ```
@@ -3823,7 +3824,7 @@ print(archer)
 Salida:
 ```
 Traceback (most recent call last):
-  File "main.py", line 14, in <module>
+  File ".../main.py", line 14, in <module>
     archer = Archer()
 TypeError: Can't instantiate abstract class Archer with abstract method attack
 ```
@@ -3863,7 +3864,7 @@ Si quisiéramos evitar la creación de instancias de una clase abstracta, pero n
 
 Imaginemos que tenemos una clase `D` que hereda de `B` y `C`. Y que, tanto `B` como `C`, heredan de `A`:
 
-![diamond_inheritance_1.png](md_images/diamond_inheritance_1.png)
+![diamond_inheritance_1.png](resources/diamond_inheritance_1.png)
 
 Vamos a añadirles algunos métodos:
 
@@ -3908,7 +3909,7 @@ Es correcto, pero ¿por qué `sprint()` muestra por consola `on two legs` y no `
 
 Este es el famoso "problema del diamante". La herencia múltiple puede provocar este tipo de situaciones y en Python se implementa así:
 
-![diamond_inheritance_2.png](md_images/diamond_inheritance_2.png)
+![diamond_inheritance_2.png](resources/diamond_inheritance_2.png)
 
 Pero es muy importante entender que el diagrama de la derecha es siempre desde la perspectiva de `D`: cuando existe una clase que hereda de dos, realmente una de esas dos hereda de la otra. En nuestro caso `B` hereda de `C`, pero solamente **cuando estamos en `D`**. Fuera de esta clase, `B` no heredaría nunca de `C`. De hecho hereda de `A` (`class B(A)`).
 
@@ -3963,7 +3964,7 @@ I am tired now.
 
 En la redefinición hemos escrito `super().sprint()`. Recordemos que usamos `super()` para acceder a la clase padre, pero ahora heredamos de dos clases y Python, en nuestro caso, resuelve la jerarquía de herencia asi:
 
-![diamond_inheritance_3.png](md_images/diamond_inheritance_3.png)
+![diamond_inheritance_3.png](resources/diamond_inheritance_3.png)
 
 Así que `super().sprint()` va a ser el `sprint()`de `B`.
 
@@ -4016,7 +4017,9 @@ Ahora imprime `on four legs`. Hemos accedido al `sprint()` de `C` desde `D`.
 
 ## 9. Importaciones
 
-En Python se llaman módulos a los archivos `.py`, es decir, al código fuente. A los directorios se les llama paquetes. Los proyectos se van a estructurar en una serie de módulos que pueden estar contenidos en paquetes, pudiendo haber paquetes dentro otros de paquetes.
+En Python se llaman módulos a los archivos `.py`, es decir, al código fuente. A los directorios o carpetas se les llama paquetes.
+
+Los proyectos se van a estructurar en una serie de módulos que pueden estar contenidos en paquetes, pudiendo haber paquetes dentro otros de paquetes.
 
 Es muy importante separar en un módulos partes de tu programa que tienen poco en común. Agrupar la lógica de tu programa en módulos mejorará la comprensión y mantenibilidad del proyecto.
 
@@ -4027,7 +4030,7 @@ Para importar cualquier elemento de un módulo hay dos formas:
 
 Imaginemos que tenemos un proyecto estructurado de la siguiente manera:
 
-![proyect_structure.png](md_images/proyect_structure.png)
+![project_structure.png](resources/project_structure.png)
 
 Código del módulo `internal_module.py`:
 ```python
@@ -4081,6 +4084,159 @@ from package_1.internal_package.internal_module import a as b, function_a as bet
 
 print(b)
 print(better_name_for_function(3))
+```
+
+<br>
+
+### 9.1. Nombre especial `__name__`
+
+Para iniciar un programa en Python, seleccionamos un módulo y lo ejecutamos. Este módulo es nuestro punto de entrada o módulo principal. Python se encarga de ejecutar cada uno de los módulos necesarios para el funcionamiento de dicho programa, interpretándolos todos por igual.
+
+Por ejemplo, si tuviéramos un módulo `functions.py`:
+
+```python
+def multiply(number_1, number_2):
+    return number_1 * number_2
+
+
+def divide(number_1, number_2):
+    return number_1 / number_2
+```
+
+Y un módulo `main.py`:
+
+```python
+from functions import multiply
+
+
+def add(number_1, number_2):
+    return number_1 + number_2
+
+
+def subtract(number_1, number_2):
+    return number_1 - number_2
+
+
+print(add(2, 5))
+print(multiply(2, 5))
+```
+
+Si ejecutáramos `functions.py`, Python interpretaría cada línea así:
+
+![main_1.gif](resources/main_1.gif)
+
+Y no obtendríamos nada por consola.
+
+Pero si ejecutáramos `main.py`, se interpretaría así:
+
+![main_2.gif](resources/main_2.gif)
+
+Y obtendríamos esta salida:
+
+```
+7
+10
+```
+
+Nos damos cuenta que importar algo no es más que ejecutarlo como haríamos con nuestro módulo principal.
+
+Ahora, imaginemos que `functions.py` tuviera código pensado para ejecutarse como módulo principal:
+
+```python
+elements = []
+
+print('hello')
+
+
+def multiply(number_1, number_2):
+    return number_1 * number_2
+
+
+if 1 < 2:
+    elements.append(1)
+    print('world')
+else:
+    elements.append('two')
+
+
+def divide(number_1, number_2):
+    return number_1 / number_2
+
+
+for i in range(2, 5):
+    elements.append(i)
+
+print('bye')
+```
+
+Si un día, desarrollando `main.py`, necesitáramos importar un recurso de `functions.py` ocurriría esto:
+
+![main_3.gif](resources/main_3.gif)
+
+Con la correspondiente salida:
+
+```
+hello
+world
+bye
+5
+6
+[1, 2, 3, 4]
+```
+
+Entonces, ¿cómo importamos recursos entre módulos sin ejecutar todo el código? La clave está en el uso del nombre especial [`__name__`](https://docs.python.org/3/library/__main__.html). Este nombre está integrado en Python al igual que  `print()` y las otras [funciones integradas](https://docs.python.org/3/library/functions.html). Por lo tanto, se puede acceder a él en cualquier módulo sin necesidad de importar nada. 
+
+
+> Podemos usar la [función integrada](https://docs.python.org/3/library/functions.html) `globals()` para obtener el diccionario con los nombres definidos actualmente en el módulo.
+> 
+> ```python
+> print(globals())
+> ```
+> Salida:
+> ```
+> {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x0000023AF937DB20>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, '__file__': '.../main.py', '__cached__': None}
+> ```
+
+[`__name__`](https://docs.python.org/3/library/__main__.html) nos proporciona el nombre del módulo donde se usa. Sin embargo, cuando se usa en el módulo principal, es decir, en el módulo que sirve de punto de entrada del programa, el valor de `__name__` será siempre `'__main__'`. Esto es útil para controlar el comportamiento de nuestro código dependiendo de si un módulo se está siendo importado desde otro como una biblioteca de funciones o se está ejecutando directamente.
+
+Vamos a simplificar el ejemplo para verlo más claro.
+
+`functions.py`:
+
+```python
+def multiply(number_1, number_2):
+    return number_1 * number_2
+
+
+if __name__ == '__main__':
+    print('hello world')
+```
+
+`main.py`:
+
+```python
+from functions import multiply
+
+
+def add(number_1, number_2):
+    return number_1 + number_2
+
+
+print(add(2, 3))
+print(multiply(2, 3))
+```
+
+Si ejecutamos `functions.py` obtenemos:
+
+```
+hello world
+```
+
+Y si ejecutamos `main.py`:
+
+```
+5
+6
 ```
 
 <br>
@@ -4163,7 +4319,7 @@ car.brand ✅
 
 <br>
 
-Hay una forma de ocultar aún más un atributo de objeto y es prefijando un doble `_`, pero siguiría siendo público.
+Hay una forma de ocultar aún más un atributo de objeto y es prefijando una doble `_`, pero siguiría siendo público.
 
 ```python
 class Car:
@@ -4185,7 +4341,7 @@ print(car.__id)
 Salida:
 ```
 Traceback (most recent call last):
-  File "main.py", line 10, in <module>
+  File ".../main.py", line 10, in <module>
     print(car.__id)
 AttributeError: 'Car' object has no attribute '__id'
 ```
@@ -4224,7 +4380,7 @@ Salida:
 ```
 1
 Traceback (most recent call last):
-  File "main.py", line 3, in <module>
+  File ".../main.py", line 3, in <module>
     print(1)
 TypeError: 'int' object is not callable
 ```

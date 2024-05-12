@@ -1875,6 +1875,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     - Una [enumeración](../README.md#19-enumeraciones) `Gender` para especificar el género de un estudiante.
     - Varias listas de diccionarios (`list[dict]`):
+
         - `students`: colección con los datos de todos los estudiantes.
         - `countries`: colección con los datos de los países.
         - `subjects`: colección con los datos de las asignaturas.
@@ -2257,6 +2258,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
 
     - ▶️ Inicio.
+
         - Cada cliente se va a gestionar como un diccionario `{'id': <value>, 'name': <value>, 'age': <value>}`.
         - Los clientes se van a almacenar en una lista global `clients`, es decir, `clients: list[dict] = []` .
         - Cuando se inicie por primera vez se imprimirá lo siguiente:
@@ -2280,8 +2282,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - ➕ Añadir cliente.
 
         - Una vez introducida la opción `1` el programa pedirá un nombre y una edad.
+
             - El nombre puede ser cualquier texto.
             - La edad tiene que ser un número entero mayor que 0. Si el valor introducido no es válido se repetirá la petición de la edad.
+
         - Cada cliente tendrá un id generado incrementalmente por el programa. Dicho id será el número que sigue al máximo de todos los ids de los clientes existentes en ese momento.
         - Finalmente se almacenará el cliente, se enviará un mensaje y se preguntará si quiere añadir otro:
 
@@ -2320,6 +2324,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
         - Como indica el texto, el programa podrá filtrar clientes mediante unos filtros que se pedirán por consola siguiendo el formato indicado.
         - Ejemplos de filtros:
+
             - `'id:2'` ➡️ clientes cuyo id sea `2`.
             - `'name:Juan'` ➡️ clientes cuyo nombre contenga `'Juan'`.
             - `'name:a'` ➡️ clientes cuyo nombre contenga `'a'`.
@@ -2327,7 +2332,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - `'min:id'` ➡️ el cliente de menor id.
             - `'max:age'` ➡️ el cliente de mayor edad.
             - `'name:an;age:22;max:id'` ➡️ el cliente cuyo nombre contenga `'a'`, cuya edad sea 22 y cuyo id sea el mayor.
+
         - Se podrán introducir varios filtros a la vez seprándolos con ";", como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
+
             - El primer filtro se aplicaría a todos los clientes.
             - El segundo filtro se aplicaría al resultado del primero.
             - Y el tercero, al resultado del segundo.
@@ -2417,7 +2424,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - 🔄️ Actualizar cliente.
 
         - Una vez introducida la opción `3` el programa pedirá un id.
+
             - Si el valor introducido no es un número entero se repetirá la petición.
+
         - Si el id introducido no existe se enviará un mensaje y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
 
             ```
@@ -2429,8 +2438,10 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ```
 
         - Si el id existe: como cuando añadimos un cliente, se pedirán nombre y edad.
+
             - El nombre puede ser cualquier texto.
             - La edad tiene que ser un número entero mayor que 0. Si el valor introducido no es válido se repetirá la petición de la edad.
+
         - Una vez introducidos los datos correctamente se actualizarán los datos el cliente in situ, es decir, sin eliminar el cliente y añadir uno nuevo. Luego se enviará un mensaje de éxito y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
 
             ```
@@ -2446,7 +2457,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     - 🗑️ Eliminar cliente.
 
         - Una vez introducida la opción `4` el programa pedirá un id.
+
             - Si el valor introducido no es un número entero se repetirá la petición.
+
         - Si el id introducido no existe se enviará un mensaje y se esperará a que el usuario esté listo para volver al menú mediante otro `input()`:
 
             ```
@@ -2648,9 +2661,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
         3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__()` porque provocaría problemas de hashes a la hora de almacenar personas en conjuntos). De igual manera, si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
         4. Redefinir los métodos necesarios para imprimir por consola los objetos de la clase en cualquier situación siguiendo el siguiente formato:
+
             - para una persona con nombre `'Juan'` y `10` años ➡️ `Juan (10)`.
             - para una persona con nombre `'Ana'` y `35` años ➡️ `Ana (35)`.
             - cuando se representa una estructura con personas, por ejemplo, una lista ➡️ `[Juan (10), Ana (35)]`.
+
     3. Clases `Vehicle`, `Car` y `Train`:
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tienen estos atributos:
@@ -2669,9 +2684,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         9. Hacer la clase iterable de forma que, cuando se itere un vehículo, los pasajeros sean devueltos uno a uno.
         10. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
         11. Redefinir los métodos necesarios para imprimir por consola los objetos de la clase siguiendo el siguiente formato:
-            - Coche con matrícula `'0011'` sin pasajeros ➡️ `Car_0011. Passengers: set()`
-            - Coche con matrícula `'1234'` con un pasajero con nombre `'Juan'` y `10` años ➡️ `Car_1234. Passengers: {Juan (10)}`
-            - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
+
+            - Coche con matrícula `'0011'` sin pasajeros ➡️ `Car_0011. Passengers: set()`.
+            - Coche con matrícula `'1234'` con un pasajero con nombre `'Juan'` y `10` años ➡️ `Car_1234. Passengers: {Juan (10)}`.
+            - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`.
+
         12. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `Full vehicle`.
         13. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
         14. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
@@ -2818,13 +2835,16 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     Crear en el módulo `main.py` una lista enlazada con clases que cumpla, al menos, los siguientes requisitos:
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
+
     2. Una clase `LinkedList`:
         1. Hacer la clase iterable para iterar sobre los elementos.
         2. Aplicar `len()` a una lista enlazada devolverá el número de elementos que contenga en tiempo constante, es decir, tiene que tardar lo mismo tenga pocos elementos o millones.
         3. Redefinir los métodos necesarios para imprimir por consola las listas enlazadas siguiendo el siguiente formato:
+
             - Lista vacía: `<>`
             - Lista con un elemento `'a'`: `<'a'>`
             - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
+
         4. Un método `add()` que reciba un elemento por parámetro y lo añada al final de la lista enlazada en tiempo constante.
         5. Hacer lo necesario para que se pueda acceder a los elementos usando `[]`:
 
@@ -2839,9 +2859,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ```
             hello
             ```
+
             Debe admitir índices negativos como si fuera una lista normal. Si el índice excede los límites deberá lanzar un `IndexError` con el mensaje `'list index out of range'`, por ejemplo, para una lista enlazada con dos elementos podremos acceder a los índices `-2`, `-1`, `0` y `1`.
+
         6. Un método `get()` que haga lo mismo que el apartado anterior y que tenga los mismos parámetros. Tiene que llamar al código del apartado anterior sin acceder a atributos o métodos internos (los que empiezan con una o varias `_`).
-        7. Hacer lo necesario para que se puedan reemplazar elementos usando `[]`.
+        7. Hacer lo necesario para que se puedan reemplazar elementos usando `[]`:
 
             ```python
             linked_list = LinkedList()
@@ -2855,7 +2877,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ```
             <1, 'bye', 3>
             ```
+
             También debe admitir números negativos y lanzar un `IndexError` con el mensaje `'list index out of range'` si excede los límites.
+
         8. Un método `set()` que llame al código del apartado anterior (mismos parámetros) sin acceder a atributos o métodos internos.
         9. Hacer lo necesario para poder eliminar elementos usando `del` y `[]`:
 
@@ -2871,7 +2895,9 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             ```
             <1, 3>
             ```
+
             También debe admitir números negativos y lanzar un `IndexError` con el mensaje `'list index out of range'` si excede los límites.
+
         10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) y inserte dicho elemento en la posición indicada por el índice. Debe admitir índices negativos como si fuera una lista normal. Si excede los límites, no lanza excepciones. En su lugar, debe insertar el elemento en la posición válida más cercana.
         11. Un método `remove()` que reciba por parámetro un elemento y elimine el primero que encuentre en la lista enlazada. Si no existe, debe lanzar un `ValueError` con el mensaje `'x not in list'`, cambiando `x` por la representación (`repr()`) del objeto.
         12. Un método `clear()` que vacíe la lista enlazada.

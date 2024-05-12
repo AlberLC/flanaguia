@@ -2915,7 +2915,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     <summary>Solución</summary>
 
     ```python
-    from typing import Any, Iterator
+    from collections.abc import Iterator
+    from typing import Any
     
     from tests import test
     

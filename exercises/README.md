@@ -241,10 +241,11 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     CHARACTER_ON = '█'
     CHARACTER_OFF = '▒'
     
-    number = input('Introduce un número: ')    
+    number = input('Introduce un número: ')
     
     for digit in number:
-        print(f'{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}')
+        progress = int(digit)
+        print(f'{digit} {CHARACTER_ON * progress}{CHARACTER_OFF * (9 - progress)}')
     ```
 
     </details>
@@ -304,7 +305,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo: para longitud 4:
+5. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
 
     ```
        *
@@ -2657,6 +2658,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
     2. Una clase `Person`:
+
         1. Atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
         3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__()` porque provocaría problemas de hashes a la hora de almacenar personas en conjuntos). De igual manera, si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
@@ -2667,15 +2669,20 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - cuando se representa una estructura con personas, por ejemplo, una lista ➡️ `[Juan (10), Ana (35)]`.
 
     3. Clases `Vehicle`, `Car` y `Train`:
+
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tienen estos atributos:
+
             1. `max_passengers`: máximo de pasajeros (número entero).
             2. `plate`: matrícula (cadena). Por defecto, si no se introduce nada, va a ser un número generado automáticamente entre `'0000'` y `'9999'` (almacenado como texto). Debe ser el único parámetro con valor por defecto del ejercicio.
             3. `_passengers`: conjunto de pasajeros (conjunto) que inicialmente está vacío.
+
         3. Los objetos de la clase `Car` tienen, además, los atributos:
+
             1. `doors`: número de puertas (número entero).
             2. `airbags`: número de airbags (número entero).
             3. `wheel_drive`: tipo de tracción ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`).
+
         4. Los objetos de la clase `Train` tienen, además de los comunes `max_passengers`, `plate` y `_passengers`, un atributo `wagons` (número entero).
         5. El parámetro `plate` del constructor de la clase `Vehicle` será el único con valor por defecto del ejercicio.
         6. No se puede acceder a un atributo interno (los que tienen `_` de prefijo) desde fuera de su clase.
@@ -2845,6 +2852,8 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - Lista con un elemento `'a'`: `<'a'>`
             - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
 
+            Aviso: en las pruebas se va a almacenar la lista enlazada en sí misma. Si no se implementa correctamente este apartado, puede producirse un error de recursividad infinita cuando se vaya a obtener su representación textual.
+
         4. Un método `add()` que reciba un elemento por parámetro y lo añada al final de la lista enlazada en tiempo constante.
         5. Hacer lo necesario para que se pueda acceder a los elementos usando `[]`:
 
@@ -2940,17 +2949,15 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 index += self._length
     
             if self and index == 0:
-                if self.first.next:
-                    self.first = self.first.next
-                else:
-                    self.first = None
+                self.first = getattr(self.first, 'next', None)
+                if not self.first:
                     self.last = self.first
             else:
                 previous_node = self._get_node(index - 1)
                 if not previous_node.next:
                     raise IndexError('list index out of range')
     
-                previous_node.next = getattr(previous_node.next, 'next', None)
+                previous_node.next = previous_node.next.next
                 if not previous_node.next:
                     self.last = previous_node
     
@@ -2979,12 +2986,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return node
     
         def add(self, element: Any) -> None:
-            if not self:
-                self.first = Node(element)
-                self.last = self.first
-            else:
+            if self:
                 self.last.next = Node(element)
                 self.last = self.last.next
+            else:
+                self.first = Node(element)
+                self.last = self.first
     
             self._length += 1
     
@@ -2997,45 +3004,42 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return self[index]
     
         def insert(self, index: int, element: Any) -> None:
-            if not self:
+            if index < 0:
+                index += self._length
+    
+            if not self or index >= len(self):
                 self.add(element)
                 return
     
             if index <= 0:
-                node = Node(element)
-                node.next = self.first
-                self.first = node
-            elif index < len(self):
+                next_node = self.first
+                self.first = Node(element)
+                self.first.next = next_node
+            else:
                 previous_node = self._get_node(index - 1)
                 next_node = previous_node.next
                 previous_node.next = Node(element)
                 previous_node.next.next = next_node
-            else:
-                self.last.next = Node(element)
-                self.last = self.last.next
     
             self._length += 1
     
         def remove(self, element: Any) -> None:
             node = self.first
             last_node = None
-            while node:
-                if node.element != element:
-                    last_node = node
-                    node = node.next
-                    continue
+            while node and node.element != element:
+                last_node = node
+                node = node.next
     
-                if last_node:
-                    last_node.next = node.next
-                elif self.first.next:
-                    self.first = self.first.next
-                else:
-                    self.first = None
-                    self.last = self.first
-                self._length -= 1
-                break
-            else:
+            if not node:
                 raise ValueError(f'{repr(element)} not in list')
+    
+            if last_node:
+                last_node.next = node.next
+            else:
+                self.first = self.first.next
+                self.last = self.first
+    
+            self._length -= 1
     
         def set(self, index: int, element: Any) -> None:
             self[index] = element

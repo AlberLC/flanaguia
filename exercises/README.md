@@ -2647,36 +2647,37 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         1. Atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
         2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
         3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__()` porque provocaría problemas de hashes a la hora de almacenar personas en conjuntos). De igual manera, si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
-        4. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola en cualquier situación siguiendo el siguiente formato:
-            - para una persona con nombre "Juan" y 10 años ➡️ `'Juan (10)'`.
-            - para una persona con nombre "Ana" y 35 años ➡️ `'Ana (35)'`.
-            - cuando se representa una estructura con personas, por ejemplo, una lista ➡️ `'[Juan (10), Ana (35)]'`.
+        4. Redefinir los métodos necesarios para imprimir por consola los objetos de la clase en cualquier situación siguiendo el siguiente formato:
+            - para una persona con nombre `'Juan'` y `10` años ➡️ `Juan (10)`.
+            - para una persona con nombre `'Ana'` y `35` años ➡️ `Ana (35)`.
+            - cuando se representa una estructura con personas, por ejemplo, una lista ➡️ `[Juan (10), Ana (35)]`.
     3. Clases `Vehicle`, `Car` y `Train`:
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tienen estos atributos:
             1. `max_passengers`: máximo de pasajeros (número entero).
-            2. `plate`: matrícula (cadena) que, por defecto, si no se introduce nada va a ser un número entre 0000 y 9999 almacenado como texto (debe ser el único parámetro con valor por defecto del ejercicio).
+            2. `plate`: matrícula (cadena). Por defecto, si no se introduce nada, va a ser un número generado automáticamente entre `'0000'` y `'9999'` (almacenado como texto). Debe ser el único parámetro con valor por defecto del ejercicio.
             3. `_passengers`: conjunto de pasajeros (conjunto) que inicialmente está vacío.
-            4. No se puede acceder a un atributo interno (los que tienen `_` de prefijo) desde fuera de su clase.
         3. Los objetos de la clase `Car` tienen, además, los atributos:
             1. `doors`: número de puertas (número entero).
             2. `airbags`: número de airbags (número entero).
             3. `wheel_drive`: tipo de tracción ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`).
         4. Los objetos de la clase `Train` tienen, además de los comunes `max_passengers`, `plate` y `_passengers`, un atributo `wagons` (número entero).
-        5. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers` (solo obtener, no asignar).
-        6. Dos vehículos serán comparables con con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con la misma matrícula no se consideran iguales.
-        7. Hacer la clase iterable de forma que, cuando se itere un vehículo, los pasajeros sean devueltos uno a uno.
-        8. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
-        9. Redefinir los métodos necesarios para imprimir los objetos de la clase por consola siguiendo el siguiente formato:
-            - Coche con matrícula `'0011'` sin pasajeros ➡️ `'Car_0011. Passengers: set()'`
-            - Coche con matrícula `'1234'` con un pasajero con nombre `'Juan'` y `10` años ➡️ `'Car_1234. Passengers: {Juan (10)}'`
-            - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `'Train_3210. Passengers: {Ana (35), Elena (28)}'`
-        10. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `Full vehicle`.
-        11. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
-        12. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
-        13. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
-        14. Un método `remove_passenger_by_name()` que reciba por parámetro el nombre de un posible pasajero y lo elimine sin dar error.
-        15. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con el **tipo** y los **atributos del primero** y los **pasajeros de ambos**. Los dos vehículos originales se vaciarán de pasajeros.
+        5. El parámetro `plate` del constructor de la clase `Vehicle` será el único con valor por defecto del ejercicio.
+        6. No se puede acceder a un atributo interno (los que tienen `_` de prefijo) desde fuera de su clase.
+        7. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers` (solo obtener, no asignar).
+        8. Dos vehículos serán comparables con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con una misma matrícula no se consideran iguales.
+        9. Hacer la clase iterable de forma que, cuando se itere un vehículo, los pasajeros sean devueltos uno a uno.
+        10. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
+        11. Redefinir los métodos necesarios para imprimir por consola los objetos de la clase siguiendo el siguiente formato:
+            - Coche con matrícula `'0011'` sin pasajeros ➡️ `Car_0011. Passengers: set()`
+            - Coche con matrícula `'1234'` con un pasajero con nombre `'Juan'` y `10` años ➡️ `Car_1234. Passengers: {Juan (10)}`
+            - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`
+        12. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `Full vehicle`.
+        13. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
+        14. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
+        15. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
+        16. Un método `remove_passenger_by_name()` que reciba por parámetro el nombre de un posible pasajero y lo elimine sin dar error.
+        17. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con matrícula nueva, con el tipo y los atributos del primero (menos la matrícula) y los pasajeros de ambos. Los dos vehículos originales se vaciarán de pasajeros.
 
     <br>
 
@@ -2820,12 +2821,12 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     2. Una clase `LinkedList`:
         1. Hacer la clase iterable para iterar sobre los elementos.
         2. Aplicar `len()` a una lista enlazada devolverá el número de elementos que contenga en tiempo constante, es decir, tiene que tardar lo mismo tenga pocos elementos o millones.
-        3. Redefinir los métodos necesarios para imprimir las listas enlazadas siguiendo el siguiente formato:
-            - Lista vacía: `'<>'`
-            - Lista con un elemento `'a'`: `"<'a'>"`
-            - Lista con los elementos `1`, `2`, `3` y `'hello'`: `"<1, 2, 3, 'hello'>"`.
+        3. Redefinir los métodos necesarios para imprimir por consola las listas enlazadas siguiendo el siguiente formato:
+            - Lista vacía: `<>`
+            - Lista con un elemento `'a'`: `<'a'>`
+            - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
         4. Un método `add()` que reciba un elemento por parámetro y lo añada al final de la lista enlazada en tiempo constante.
-        5. Hacer lo necesario para que se pueda acceder a los elementos con `[]` usando un índice:
+        5. Hacer lo necesario para que se pueda acceder a los elementos usando `[]`:
             ```python
             linked_list = LinkedList()
             linked_list.add(1)
@@ -2834,16 +2835,43 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             print(linked_list[1])
             ```
             Salida:
-            ```python
+            ```
             hello
             ```
-            Debe admitir índices negativos como si fuera una lista normal. Si el índice se sale de los límites deberá lanzar un `IndexError` con el mensaje `'list index out of range'`, por ejemplo, para una lista enlazada con dos elementos podremos acceder a los índices `-2`, `-1`, `0` y `1`.
+            Debe admitir índices negativos como si fuera una lista normal. Si el índice excede los límites deberá lanzar un `IndexError` con el mensaje `'list index out of range'`, por ejemplo, para una lista enlazada con dos elementos podremos acceder a los índices `-2`, `-1`, `0` y `1`.
         6. Un método `get()` que haga lo mismo que el apartado anterior y que tenga los mismos parámetros. Tiene que llamar al código del apartado anterior sin acceder a atributos o métodos internos (los que empiezan con una o varias `_`).
-        7. Hacer lo necesario para que se puedan reemplazar elementos con `[]` usando un índice y asignándoles un valor. También debe admitir números negativos y lanzar `IndexError` con el mensaje `'list index out of range'` si se sale de los límites.
+        7. Hacer lo necesario para que se puedan reemplazar elementos usando `[]`.
+            ```python
+            linked_list = LinkedList()
+            linked_list.add(1)
+            linked_list.add('hello')
+            linked_list.add(3)
+            linked_list[1] = 'bye'
+            print(linked_list)
+            ```
+            Salida:
+            ```
+            <1, 'bye', 3>
+            ```
+            También debe admitir números negativos y lanzar un `IndexError` con el mensaje `'list index out of range'` si excede los límites.
         8. Un método `set()` que llame al código del apartado anterior (mismos parámetros) sin acceder a atributos o métodos internos.
-        9. Un método `remove()` que reciba un índice por parámetro y elimine el elemento en esa posición. Lanza un `IndexError` con el mensaje `'list index out of range'` si el índice dado como argumento es menor que 0 o mayor que el número de elementos contenidos en la lista enlazada.
-        10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) y inserte dicho elemento en la posición indicada por el índice. No lanza excepciones. Si el índice es menor que 0 se inserta al inicio y, si es mayor que el número de elementos, se inserta al final.
-        11. Un método `clear()` que vacíe la lista enlazada.
+        9. Hacer lo necesario para poder eliminar elementos usando `del` y `[]`:
+            ```python
+            linked_list = LinkedList()
+            linked_list.add(1)
+            linked_list.add('hello')
+            linked_list.add(3)
+            del linked_list[1]
+            print(linked_list)
+            ```
+            Salida:
+            ```
+            <1, 3>
+            ```
+            También debe admitir números negativos y lanzar un `IndexError` con el mensaje `'list index out of range'` si excede los límites.
+        10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) y inserte dicho elemento en la posición indicada por el índice. Debe admitir índices negativos como si fuera una lista normal. Si excede los límites, no lanza excepciones. En su lugar, debe insertar el elemento en la posición válida más cercana.
+        11. Un método `remove()` que reciba por parámetro un elemento y elimine el primero que encuentre en la lista enlazada. Si no existe, debe lanzar un `ValueError` con el mensaje `'x not in list'`, cambiando `x` por la representación (`repr()`) del objeto.
+        12. Un método `clear()` que vacíe la lista enlazada.
 
     Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `✅`, el ejercicio estará realizado con éxito:
 
@@ -2860,9 +2888,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         def __init__(self, element) -> None:
             self.element: Any = element
             self.next: Node | None = None
-    
-        def __str__(self) -> str:
-            return str(self.element)
     
     
     class LinkedList:
@@ -2882,6 +2907,27 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
                 index += self._length
     
             self._get_node(index).element = element
+    
+        def __delitem__(self, index: int) -> None:
+            if index < 0:
+                index += self._length
+    
+            if self and index == 0:
+                if self.first.next:
+                    self.first = self.first.next
+                else:
+                    self.first = None
+                    self.last = self.first
+            else:
+                previous_node = self._get_node(index - 1)
+                if not previous_node.next:
+                    raise IndexError('list index out of range')
+    
+                previous_node.next = getattr(previous_node.next, 'next', None)
+                if not previous_node.next:
+                    self.last = previous_node
+    
+            self._length -= 1
     
         def __iter__(self) -> Iterator[Node]:
             node = self.first
@@ -2943,23 +2989,26 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
             self._length += 1
     
-        def remove(self, index: int) -> None:
-            if self and index == 0:
-                if self.first.next:
+        def remove(self, element: Any) -> None:
+            node = self.first
+            last_node = None
+            while node:
+                if node.element != element:
+                    last_node = node
+                    node = node.next
+                    continue
+    
+                if last_node:
+                    last_node.next = node.next
+                elif self.first.next:
                     self.first = self.first.next
                 else:
                     self.first = None
                     self.last = self.first
+                self._length -= 1
+                break
             else:
-                previous_node = self._get_node(index - 1)
-                if not previous_node.next:
-                    raise IndexError('list index out of range')
-    
-                previous_node.next = getattr(previous_node.next, 'next', None)
-                if not previous_node.next:
-                    self.last = previous_node
-    
-            self._length -= 1
+                raise ValueError(f'{repr(element)} not in list')
     
         def set(self, index: int, element: Any) -> None:
             self[index] = element

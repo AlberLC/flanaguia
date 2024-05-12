@@ -1371,7 +1371,7 @@ world
 
 #### Sentencia `continue`
 
-`continue` abandona la iteración actual y continúa con la siguiente, si la hubiera:
+`continue` abandona la iteración actual y continúa con la siguiente, si la hay:
 
 ```python
 words = ['hello', 'world', 'Juan', 'bye']
@@ -1400,6 +1400,7 @@ for word in words:
     print(word)
 else:
     print('---> else <---')
+
 print('- end -')
 ```
 Salida:
@@ -1423,6 +1424,7 @@ for word in words:
     print(word)
 else:
     print('---> else <---')
+
 print('- end -')
 ```
 Salida:
@@ -1443,11 +1445,38 @@ for word in words:
     print(word)
 else:
     print('---> else <---')
+
 print('- end -')
 ```
 Salida:
 ```
 ---> else <---
+- end -
+```
+
+<br>
+
+También se puede usar en los `while`:
+
+```python
+words = ['hello', 'world', 'Juan', 'bye']
+
+i = 0
+while i < len(words):
+    if words[i] == 'Juan':
+        break
+
+    print(words[i])
+    i += 1
+else:
+    print('---> else <---')
+
+print('- end -')
+```
+Salida:
+```
+hello
+world
 - end -
 ```
 
@@ -1633,7 +1662,7 @@ Una vez entendido lo que son los iteradores, volvamos a nuestro problema del ini
 Python nos proporciona dos formas de definir nuestras propias sucesiones de elementos:
 
 - Con **expresiones** parecidas a las [listas por comprensión](#51-listas-por-comprensión) pero con **paréntesis**.
-- Con **funciones generadoras** (estas se explicarán en el capítulo [6.7. Funciones generadoras](#68-funciones-generadoras)).
+- Con **funciones generadoras** (estas se explicarán en el capítulo [6.8. Funciones generadoras](#68-funciones-generadoras)).
 
 Cualquiera de estas dos formas nos permiten crear **generadores**.
 

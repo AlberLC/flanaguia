@@ -2833,7 +2833,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 1. ☠️ Lista enlazada.
 
-    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15285285/estructuras_de_datos_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15285951/estructuras_de_datos_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
 

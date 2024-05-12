@@ -2827,6 +2827,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - Lista con los elementos `1`, `2`, `3` y `'hello'`: `<1, 2, 3, 'hello'>`.
         4. Un método `add()` que reciba un elemento por parámetro y lo añada al final de la lista enlazada en tiempo constante.
         5. Hacer lo necesario para que se pueda acceder a los elementos usando `[]`:
+
             ```python
             linked_list = LinkedList()
             linked_list.add(1)
@@ -2841,6 +2842,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             Debe admitir índices negativos como si fuera una lista normal. Si el índice excede los límites deberá lanzar un `IndexError` con el mensaje `'list index out of range'`, por ejemplo, para una lista enlazada con dos elementos podremos acceder a los índices `-2`, `-1`, `0` y `1`.
         6. Un método `get()` que haga lo mismo que el apartado anterior y que tenga los mismos parámetros. Tiene que llamar al código del apartado anterior sin acceder a atributos o métodos internos (los que empiezan con una o varias `_`).
         7. Hacer lo necesario para que se puedan reemplazar elementos usando `[]`.
+
             ```python
             linked_list = LinkedList()
             linked_list.add(1)
@@ -2856,6 +2858,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             También debe admitir números negativos y lanzar un `IndexError` con el mensaje `'list index out of range'` si excede los límites.
         8. Un método `set()` que llame al código del apartado anterior (mismos parámetros) sin acceder a atributos o métodos internos.
         9. Hacer lo necesario para poder eliminar elementos usando `del` y `[]`:
+
             ```python
             linked_list = LinkedList()
             linked_list.add(1)
@@ -2872,8 +2875,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) y inserte dicho elemento en la posición indicada por el índice. Debe admitir índices negativos como si fuera una lista normal. Si excede los límites, no lanza excepciones. En su lugar, debe insertar el elemento en la posición válida más cercana.
         11. Un método `remove()` que reciba por parámetro un elemento y elimine el primero que encuentre en la lista enlazada. Si no existe, debe lanzar un `ValueError` con el mensaje `'x not in list'`, cambiando `x` por la representación (`repr()`) del objeto.
         12. Un método `clear()` que vacíe la lista enlazada.
-
-    Puedes servirte de la siguiente función para ejecutar pruebas. Si esta función imprime en la consola `✅`, el ejercicio estará realizado con éxito:
 
     <details>
     <summary>Solución</summary>

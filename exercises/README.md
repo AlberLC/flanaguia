@@ -2907,7 +2907,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
             También debe admitir números negativos y lanzar un `IndexError` con el mensaje `'list index out of range'` si excede los límites.
 
-        10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) y inserte dicho elemento en la posición indicada por el índice. Debe admitir índices negativos como si fuera una lista normal. Si excede los límites, no lanza excepciones. En su lugar, debe insertar el elemento en la posición válida más cercana.
+        10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) e inserte dicho elemento en la posición indicada por el índice. Debe admitir índices negativos como si fuera una lista normal. Si excede los límites, no lanza excepciones. En su lugar, debe insertar el elemento en la posición válida más cercana.
         11. Un método `remove()` que reciba por parámetro un elemento y elimine el primero que encuentre en la lista enlazada. Si no existe, debe lanzar un `ValueError` con el mensaje `'x not in list'`, cambiando `x` por la representación (`repr()`) del objeto.
         12. Un método `clear()` que vacíe la lista enlazada.
 

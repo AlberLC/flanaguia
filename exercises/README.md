@@ -2935,22 +2935,22 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
         def __getitem__(self, index: int) -> Any:
             if index < 0:
-                index += self._length
+                index += len(self)
     
             return self._get_node(index).element
     
         def __setitem__(self, index: int, element: Any) -> None:
             if index < 0:
-                index += self._length
+                index += len(self)
     
             self._get_node(index).element = element
     
         def __delitem__(self, index: int) -> None:
             if index < 0:
-                index += self._length
+                index += len(self)
     
             if self and index == 0:
-                self.first = getattr(self.first, 'next', None)
+                self.first = self.first.next
                 if not self.first:
                     self.last = self.first
             else:
@@ -2977,7 +2977,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             return f"<{', '.join(repr(element) for element in self)}>"
     
         def _get_node(self, index: int) -> Node:
-            if not 0 <= index < self._length:
+            if not 0 <= index < len(self):
                 raise IndexError('list index out of range')
     
             node = self.first
@@ -3006,7 +3006,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
         def insert(self, index: int, element: Any) -> None:
             if index < 0:
-                index += self._length
+                index += len(self)
     
             if not self or index >= len(self):
                 self.add(element)

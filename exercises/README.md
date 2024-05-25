@@ -2964,7 +2964,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     
             self._length -= 1
     
-        def __iter__(self) -> Iterator[Node]:
+        def __iter__(self) -> Iterator:
             node = self.first
             while node:
                 yield node.element

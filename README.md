@@ -1543,7 +1543,7 @@ Salida:
 
 ¿Cómo podemos definir una serie de elementos sin almacenarlos en memoria en una lista u otra estructura? Imaginemos que queremos iterar un millón de elementos, pero crear una lista con un millón de elementos para iterarlos es demasiado costoso. En estos casos vamos a necesitar iteradores, que no son más que objetos creados a partir "normas" o "reglas" que definen sucesiones de elementos u objetos.
 
-Para entender este concepto vamos a usar [range](#18-rangos). Este tipo almacena tres números enteros: `start`, `stop` y `step`. Un objeto de este tipo se puede iterar:
+Para entender este concepto vamos a usar [range](#18-rangos). Un objeto de este tipo almacena tres números enteros: `start`, `stop` y `step` y se puede iterar:
 
 ```python
 for i in range(0, 5, 2):

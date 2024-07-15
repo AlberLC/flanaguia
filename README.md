@@ -842,7 +842,7 @@ range(0, 10)
 - stop: hasta este (**no inclusive**).
 - step: números de pasos o saltos.
 
-Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por defecto, `start`=0 y `step`=1.
+Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por defecto, `start` = 0 y `step` = 1.
 
 > `range()` se comporta igual que el acceso a segmentos de listas mediante [slices](https://docs.python.org/3/glossary.html#term-slice):
 > 

@@ -1937,7 +1937,7 @@ def function_1():
 
 
 def function_2():
-    y = 1
+    y = 2
     print(x)
 
 
@@ -1967,7 +1967,7 @@ def function_2(function_3):
     def function_4():
         print(4)
 
-    print(3)
+    print(2)
     function_1()  # uso de un nombre global
     function_3()  # uso de un nombre local
     function_4()  # uso de un nombre local
@@ -1979,7 +1979,7 @@ function_2(function_1)  # uso de un nombre global
 Salida:
 ```
 1
-3
+2
 1
 1
 4

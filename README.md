@@ -1195,9 +1195,9 @@ En el código anterior `print('i')` está dentro de la cláusula o bloque `else`
 
 No es necesario poner paréntesis en las condiciones: 
 
-❌ `if (n<2):`
+❌ `if (n < 2):`
 
-✅ `if n<2:`
+✅ `if n < 2:`
 
 Hasta hace poco no existía una cláusula parecida a los `switch` de otros lenguajes. Python tiene una herramienta mucho más potente llamada [Structural Pattern Matching](https://peps.python.org/pep-0636/) en la cual no se entrará en detalle pero que puede usarse como un `switch` tradicional.
 

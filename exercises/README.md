@@ -217,7 +217,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ### Ejercicios:
 
-1. Escribir por consola la tabla de multiplicar del número que se pida por consola.
+1. Imprimir por consola la tabla de multiplicar del número que se pida por consola.
 
     <details>
     <summary>Solución</summary>

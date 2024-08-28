@@ -95,7 +95,7 @@
     prices = (3.85, 2.99, 2.69, 4.25, 4.50, 4.95, 3.49)
     ```
    
-    Crear un programa que pida por consola el nombre de una fruta y cuántos kilos se quiere comprar e imprima en la consola el coste total (€) **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
+    Crear un programa que pida por consola el nombre de una fruta y cuántos kilos se quiere comprar, e imprima el coste total (€) **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
 
     <details>
     <summary>Solución</summary>

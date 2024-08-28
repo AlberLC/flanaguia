@@ -1,14 +1,8 @@
 ## Variables, tipos, entrada/salida
 
-### Ideas:
-
-- Pedir por consola nombre de fruta y precio por kilo. Luego preguntar cuantos kilos por fruta y al final imprimir coste total.
-
-<br>
-
 ### Ejercicios:
 
-1. Pedir por consola cuánto cuesta y cuánto pesa una caja vacía, así como cuánto cuesta y pesa una muñeca. Luego pedir por consola cuántas muñecas hay por caja y cuántas cajas hay. Imprimir en la consola el coste y peso totales.
+1. Pedir por consola cuánto cuesta y cuánto pesa una caja vacía, así como cuánto cuesta y pesa una muñeca. Luego pedir por consola cuántas muñecas hay por caja y cuántas cajas hay. Imprimir en la consola el coste (€) y peso totales.
 
     <details>
     <summary>Solución</summary>
@@ -36,7 +30,91 @@
 
 <br>
 
-2. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
+2. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar [bucles](../README.md#5-bucles)**.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = input('Introduce un texto: ')
+    print(len(text))
+    ```
+
+    </details>
+
+<br>
+
+3. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar [bucles](../README.md#5-bucles)**.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = input('Introduce un texto: ')
+    print(len(set(text)))
+    ```
+
+    </details>
+
+<br>
+
+4. Tenemos una lista de pelotas de colores con sus respectivos identificadores:
+
+    ```python
+    balls = [('roja', 5), ('azul', 12), ('verde', 27), ('amarilla', 35), ('morada', 44)]
+    ```
+   
+    Crear un programa que pida por consola un identificador e imprima solo su color (sin el identificador) **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Si el identificador introducido no tiene pelota asociada no importa el resultado.
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    balls = [('roja', 5), ('azul', 12), ('verde', 27), ('amarilla', 35), ('morada', 44)]
+    
+    id = int(input('Id: '))
+    print(balls[id // 10][0])
+    ```
+    b)
+    ```python
+    balls = [('roja', 5), ('azul', 12), ('verde', 27), ('amarilla', 35), ('morada', 44)]
+    
+    id = int(input('Id: '))
+    print(balls[int(id / 10)][0])
+    ```
+
+    </details>
+
+<br>
+
+5. Tenemos unas tuplas que dan información sobre el precio por kilo de algunas frutas:
+
+    ```python
+    fruits = ('mandarina', 'plátano', 'manzana', 'pera', 'melocotón', 'uva', 'mango')
+    prices = (3.85, 2.99, 2.69, 4.25, 4.50, 4.95, 3.49)
+    ```
+   
+    Crear un programa que pida por consola el nombre de una fruta y cuántos kilos se quiere comprar e imprima en la consola el coste total (€) **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    fruits = ('mandarina', 'plátano', 'manzana', 'pera', 'melocotón', 'uva', 'mango')
+    prices = (3.85, 2.99, 2.69, 4.25, 4.50, 4.95, 3.49)
+    
+    fruit = input('Fruta: ')
+    kilos = float(input('Kilos: '))
+    index = fruits.index(fruit)
+    print(f'Coste total: {prices[index] * kilos} €')
+    ```
+
+    </details>
+
+<br>
+
+6. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
 
     - `'hola'` ➡️ `False`
     - `'ojos'` ➡️ `False`
@@ -59,41 +137,7 @@
 
 <br>
 
-3. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar [bucles](../README.md#5-bucles)**.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    text = input('Introduce un texto: ')
-    print(len(text))
-    ```
-
-    </details>
-
-<br>
-
-4. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar [bucles](../README.md#5-bucles)**.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    text = input('Introduce un texto: ')
-    print(len(set(text)))
-    ```
-
-    </details>
-
-<br>
-
 ## Condicionales
-
-### Ideas:
-
-- Calculadora
-
-<br>
 
 ### Ejercicios:
 
@@ -112,14 +156,40 @@
     else:
         price = 10
 
-    print(f"Precio de la entrada: {f'{price} €.' if price else '¡gratis!'}")
+    print(f"Precio de la entrada: {f'{price} €' if price else '¡gratis!'}")
     ```
 
     </details>
 
 <br>
 
-2. Pedir por consola un año e imprimir si es bisiesto o no.
+2. Pedir por consola una operación a realizar (`'+'`, `'-'`, `'*'` o `'/'`) y dos números, e imprimir el resultado de aplicarles dicha operación. Si se introduce cualquier otra operación deberá mostrar por consola `Operación no válida.`.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    operation = input('Operación: ')
+    number_1 = int(input('Primer número: '))
+    number_2 = int(input('Segundo número: '))
+    
+    if operation == '+':
+        print(number_1 + number_2)
+    elif operation == '-':
+        print(number_1 - number_2)
+    elif operation == '*':
+        print(number_1 * number_2)
+    elif operation == '/':
+        print(number_1 / number_2)
+    else:
+        print('Operación no válida.')
+    ```
+
+    </details>
+
+<br>
+
+3. Pedir por consola un año e imprimir si es bisiesto o no.
 
     <details>
     <summary>Solución</summary>
@@ -137,7 +207,7 @@
 
 <br>
 
-3. Los alumnos de un curso se han dividido en dos grupos A y B de acuerdo al sexo y el nombre. El grupo A está formado por las mujeres con un nombre anterior a la M y los hombres con un nombre posterior a la N y el grupo B por el resto. Escribir un programa que pregunte al usuario su nombre y sexo, y muestre por consola el grupo que le corresponde.
+4. Los alumnos de un curso se han dividido en dos grupos, A y B, de acuerdo al sexo y al nombre. El grupo A está formado por las mujeres cuyos nombres empiezan por una letra anterior a la M y los hombres cuyos nombres empiezan por N o una letra posterior. El grupo B está formado por el resto. Escribir un programa que pregunte al usuario su nombre y sexo, y muestre por consola el grupo que le corresponde.
 
     <details>
     <summary>Solución</summary>
@@ -146,7 +216,7 @@
     name_first_letter = input('Introduce tu nombre: ')[0].upper()
     sex = input('Introduce tu sexo (M/F): ').upper()
 
-    if sex == 'F' and name_first_letter < 'M' or sex == 'M' and name_first_letter > 'M':
+    if sex == 'F' and name_first_letter < 'M' or sex == 'M' and name_first_letter >= 'N':
         print('Grupo A.')
     else:
         print('Grupo B.')
@@ -156,7 +226,7 @@
 
 <br>
 
-4. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás el año 2023. Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro.
+5. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás el año 2050. Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro. Por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068.
 
     <details>
     <summary>Solución</summary>
@@ -167,12 +237,12 @@
     year = int(date.split('/')[-1])
 
     if year < 1000:
-        if year >= 23:
+        if year >= 69:
             year += 1900
         else:
             year += 2000
 
-    print(f'Este año cumples {2023 - year} años.')
+    print(f'En 2050 cumplirás {2050 - year} años.')
     ```
     b)
     ```python
@@ -185,7 +255,7 @@
     except ValueError:
         year = datetime.datetime.strptime(date, '%d/%m/%Y').year
 
-    print(f'Este año cumples {2023 - year} años.')
+    print(f'En 2050 cumplirás {2050 - year} años.')
     ```
 
     </details>
@@ -648,7 +718,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997` (teniendo en cuenta que el año puede darse en dos o cuatro dígitos) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
+11. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
     ```
     El 18 de junio de 1998 cumpliste 1 año.
@@ -667,7 +737,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
     day, month, first_year = (int(number) for number in date.split('/'))
     
     if first_year < 1000:
-        if first_year >= 23:
+        if first_year >= 69:
             first_year += 1900
         else:
             first_year += 2000

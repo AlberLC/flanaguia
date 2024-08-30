@@ -137,7 +137,7 @@
 
 <br>
 
-7. Imprimir por consola una lista con los números pares del **0** al **20** **sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Solo se tiene este código:
+7. Imprimir por consola una lista con los números pares del **0** al **20** **sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Trabajar con este código como base:
 
     ```python
     elements_a = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -166,7 +166,7 @@
 
 <br>
 
-8. Imprimir por consola una lista con **todos** los números del **0** al **20**. A partir de esa lista, imprimir otra con los números pares y otra con los múltiplos de 3 **sin usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Solo se tiene este código:
+8. Imprimir por consola una lista con **todos** los números del **0** al **20**. A partir de esa lista, imprimir otra con los números pares y otra con los múltiplos de 3 **sin usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Trabajar con este código como base:
 
     ```python
     elements_a = (14, 14, 14, 13, 13, 13, 12, 12, 12, 11, 11, 11, 10, 10, 10, [[0]])

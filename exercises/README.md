@@ -987,7 +987,7 @@
 
 <br>
 
-18. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola: 
+18. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
 
     ```python
     matrix_a = [
@@ -1003,7 +1003,7 @@
     ]
     ```
 
-    El resultado es:
+    El resultado sería:
 
     ```python
     [10, 10, 10]
@@ -1061,7 +1061,7 @@
     ]
     ```
 
-    El resultado es:
+    El resultado sería:
 
     ```python
     [30, 24, 18]

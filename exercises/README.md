@@ -62,7 +62,7 @@
     balls = [('roja', 5), ('azul', 12), ('verde', 27), ('amarilla', 35), ('morada', 44)]
     ```
    
-    Crear un programa que pida por consola un identificador e imprima solo su color (sin el identificador) **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Si el identificador introducido no tiene pelota asociada no importa el resultado.
+    Crear un programa **sin usar [sentencias condicionales](../README.md#4-condicionales)** que pida por consola un identificador e imprima únicamente el color de la pelota asociada, sin mostrar el identificador en la salida. Si el identificador introducido no tiene pelota asociada, no importa el resultado.
 
     <details>
     <summary>Solución</summary>

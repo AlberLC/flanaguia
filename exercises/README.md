@@ -1,3 +1,5 @@
+# Ejercicios de Python
+
 ## Variables, tipos, entrada/salida
 
 1. Pedir por consola cuánto cuesta y cuánto pesa una caja vacía, así como cuánto cuesta y pesa una muñeca. Luego pedir por consola cuántas muñecas hay por caja y cuántas cajas hay. Imprimir en la consola el coste (€) y peso totales.
@@ -62,7 +64,7 @@
     balls = [('roja', 5), ('azul', 12), ('verde', 27), ('amarilla', 35), ('morada', 44)]
     ```
    
-    Crear un programa **sin usar [sentencias condicionales](../README.md#4-condicionales)** que pida por consola un identificador e imprima únicamente el color de la pelota asociada, sin mostrar el identificador en la salida. Si el identificador introducido no tiene pelota asociada, no importa el resultado.
+    Crear un programa **sin usar [sentencias condicionales](../README.md#4-condicionales)** que pida por consola un identificador e imprima únicamente el color asociado, sin mostrar el identificador en la salida. Si el identificador introducido no tiene pelota asociada, no importa el resultado.
 
     <details>
     <summary>Solución</summary>

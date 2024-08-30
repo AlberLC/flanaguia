@@ -710,6 +710,8 @@
     - 7-8 ➡️ `Notable`
     - 9-10 ➡️ `Sobresaliente`
 
+    <br>
+
     > `pprint()` (abreviatura de "pretty-print") es una función importada que imprime estructuras de datos de manera más legible y organizada.
 
     <details>
@@ -752,7 +754,7 @@
     text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
     ```
 
-    Introduce por consola pares `<palabra>,<traducción>` infinitamente hasta que no se introduzca nada, es decir, introducir una cadena vacía. Una vez obtenidos los datos de la consola se sustituirán las palabras por sus respectivas traducciones y se imprimirá el texto resultante.
+    Introduce por consola pares `'<palabra>,<traducción>'` infinitamente hasta que no se introduzca nada, es decir, introducir una cadena vacía. Una vez obtenidos los datos de la consola se sustituirán las palabras por sus respectivas traducciones y se imprimirá el texto resultante.
 
     <details>
     <summary>Solución</summary>

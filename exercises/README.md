@@ -234,8 +234,8 @@
     a)
     ```python
     operation = input('Operación: ')
-    number_1 = int(input('Primer número: '))
-    number_2 = int(input('Segundo número: '))
+    number_1 = float(input('Primer número: '))
+    number_2 = float(input('Segundo número: '))
     
     if operation == '+':
         print(number_1 + number_2)
@@ -251,8 +251,8 @@
     b)
     ```python
     operation = input('Operación: ')
-    number_1 = int(input('Primer número: '))
-    number_2 = int(input('Segundo número: '))
+    number_1 = float(input('Primer número: '))
+    number_2 = float(input('Segundo número: '))
     
     match operation:
         case '+':

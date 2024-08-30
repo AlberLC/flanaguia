@@ -2147,8 +2147,8 @@
 
     La sucesión de Fibonacci para `n` negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
-   > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
-   > ```python
+    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
+    > ```python
     > >>> ', '.join(['one', 'two', 'three', 'four'])
     > 'one, two, three, four'
     > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
@@ -2195,7 +2195,7 @@
 
     `encode('abc', 2)` ➡️ `'cde'`
 
-    En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/)   imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+    En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/) imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
 
     Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
 

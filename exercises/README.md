@@ -231,6 +231,7 @@
     <details>
     <summary>Solución</summary>
 
+    a)
     ```python
     operation = input('Operación: ')
     number_1 = int(input('Primer número: '))
@@ -246,6 +247,24 @@
         print(number_1 / number_2)
     else:
         print('Operación no válida.')
+    ```
+    b)
+    ```python
+    operation = input('Operación: ')
+    number_1 = int(input('Primer número: '))
+    number_2 = int(input('Segundo número: '))
+    
+    match operation:
+        case '+':
+            print(number_1 + number_2)
+        case '-':
+            print(number_1 - number_2)
+        case '*':
+            print(number_1 * number_2)
+        case '/':
+            print(number_1 / number_2)
+        case _:
+            print('Operación no válida.')
     ```
 
     </details>

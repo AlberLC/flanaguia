@@ -1,7 +1,5 @@
 ## Variables, tipos, entrada/salida
 
-### Ejercicios:
-
 1. Pedir por consola cuánto cuesta y cuánto pesa una caja vacía, así como cuánto cuesta y pesa una muñeca. Luego pedir por consola cuántas muñecas hay por caja y cuántas cajas hay. Imprimir en la consola el coste (€) y peso totales.
 
     <details>
@@ -137,9 +135,72 @@
 
 <br>
 
-## Condicionales
+7. Imprimir por consola una lista con los números pares del **0** al **20** **sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Solo se tiene este código:
 
-### Ejercicios:
+    ```python
+    elements_a = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    elements_b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    elements_a = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    elements_b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    
+    print([*elements_a, *elements_b][::2])
+    ```
+    b)
+    ```python
+    elements_a = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    elements_b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    
+    print((list(elements_a) + elements_b)[::2])
+    ```
+
+    </details>
+
+<br>
+
+8. Imprimir por consola una lista con **todos** los números del **0** al **20**. A partir de esa lista, imprimir otra con los números pares y otra con los múltiplos de 3 **sin usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Solo se tiene este código:
+
+    ```python
+    elements_a = (14, 14, 14, 13, 13, 13, 12, 12, 12, 11, 11, 11, 10, 10, 10, [[0]])
+    elements_b = [(5,), 15, '-', 16, None, 17, False, 18, 0.5, 19]
+    elements_c = {9: 1, 8: 2, 7: 3, 6: 4}
+    elements_d = {20}
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    elements_a = (14, 14, 14, 13, 13, 13, 12, 12, 12, 11, 11, 11, 10, 10, 10, [[0]])
+    elements_b = [(5,), 15, '-', 16, None, 17, False, 18, 0.5, 19]
+    elements_c = {9: 1, 8: 2, 7: 3, 6: 4}
+    elements_d = {20}
+    
+    all_elements = [
+        elements_a[-1][0][0],
+        *elements_c.values(),
+        elements_b[0][0],
+        *reversed(elements_c),
+        *elements_a[-2::-3],
+        *elements_b[1::2],
+        *elements_d
+    ]
+    print(all_elements)
+    print(all_elements[::2])
+    print(all_elements[::3])
+    ```
+
+    </details>
+
+<br>
+
+## Condicionales
 
 1. El programa debe preguntar al usuario la edad del cliente y mostrar el precio de una entrada. Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años (inclusive) debe pagar 5 € y si es mayor de 18 años, 10 €.
 
@@ -264,29 +325,6 @@
 
 ## Bucles
 
-### Ideas:
-
-- Iterar cadena o colecciones y contar o imprimir.
-- Pedir contraseña hasta que sea la correcta.
-- Añadir palabras a una lista hasta `'fin'` e imprimirla.
-- Sumar números de una lista.
-- Máximo/mínimo manualmente.
-- Convertir una lista de números a sus cuadrados.
-- Números impares hasta x.
-- Número es primo/números primos hasta x.
-- Programa que traduzca palabras del siguiente texto. Se introduce por teclado `<palabra>,<traducción>` hasta `'fin'`. Texto:
-
-```
-Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.
-```
-
-- Iterar diccionario de datos de alumnos y actualizar estado según nota.
-- Matrices. Imprimir la diagonal. Hacer producto vectorial, etc.
-
-<br>
-
-### Ejercicios:
-
 1. Imprimir por consola la tabla de multiplicar del número que se pida por consola.
 
     <details>
@@ -302,7 +340,36 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-2. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
+2. Pedir por consola una contraseña. Luego pedir de nuevo para confirmarla. Repetir esta segunda petición infinitamente mientras no coincida con la primera. Mostrar la contraseña por consola tras la correcta confirmación.
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    password = input('Introduce una contraseña: ')
+    
+    confirm_password = None
+    while confirm_password != password:
+        confirm_password = input('Confirma la contraseña: ')
+    
+    print(confirm_password)
+    ```
+    b)
+    ```python
+    password = input('Introduce una contraseña: ')
+    
+    while (confirm_password := input('Confirma la contraseña: ')) != password:
+        pass
+    
+    print(confirm_password)
+    ```
+
+    </details>
+
+<br>
+
+3. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
 
     <details>
     <summary>Solución</summary>
@@ -322,7 +389,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-3. Usando como base el ejercicio anterior: pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
+4. Usando como base el ejercicio anterior: pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
 
     <details>
     <summary>Solución</summary>
@@ -349,7 +416,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-4. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
+5. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
 
     ```
     1 
@@ -375,7 +442,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
+6. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
 
     ```
        *
@@ -401,7 +468,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-6. Pedir por consola el número de niveles (altura) del [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
+7. Pedir por consola el número de niveles (altura) del [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
 
     - Para altura 0:
 
@@ -491,7 +558,70 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-7. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles)** y **sin usar [conjuntos](../README.md#16-conjuntos)**.
+8. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    words = []
+    while (word := input('Introduce una palabra: ')) != 'fin':
+        words.append(word)
+    
+    for word in words:
+        print(word)
+    ```
+    b)
+    ```python
+    words = []
+    while True:
+        word = input('Introduce una palabra: ')
+        if word == 'fin':
+            break
+    
+        words.append(word)
+    
+    for word in words:
+        print(word)
+    ```
+
+    </details>
+
+<br>
+
+9. Pedir un número por consola e imprimir una lista con los números impares del **1** al número introducido, inclusive.
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    number = int(input('Impares hasta el: '))
+    
+    odd_numbers = []
+    for i in range(1, number + 1, 2):
+        odd_numbers.append(i)
+    
+    print(odd_numbers)
+    ```
+    b)
+    ```python
+    number = int(input('Impares hasta el: '))
+    
+    odd_numbers = []
+    for i in range(1, number + 1):
+        if i % 2 != 0:
+            odd_numbers.append(i)
+    
+    print(odd_numbers)
+    ```
+
+    </details>
+
+<br>
+
+10. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -510,7 +640,173 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+11. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    numbers = input('Introduce los números: ').split()
+    
+    squared_numbers = []
+    for number in numbers:
+        number = int(number)
+        squared_numbers.append(number ** 2)
+    
+    print(squared_numbers)
+    ```
+
+    </details>
+
+<br>
+
+12. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    numbers = input('Introduce los números: ').split()
+    
+    max_number = float('-inf')
+    for number in numbers:
+        number = int(number)
+        if number > max_number:
+            max_number = number
+    
+    print(max_number)
+    ```
+
+    </details>
+
+<br>
+
+13. Sea el código:
+
+    ```python
+    from pprint import pprint
+    
+    students = [
+        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
+        {'id': 2, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 3, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 4, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 4, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 4, 'name': 'Elena', 'times_taken': 1, 'grade': 5},
+    ]
+    
+    ...
+    
+    pprint(students)
+    ```
+
+    Completar donde `...` para sustituir dentro de `students` las notas numéricas por su equivalente textual, es decir, para:
+
+    - < 5 ➡️ `Suspenso`
+    - 5 ➡️ `Aprobado`
+    - 6 ➡️ `Bien`
+    - 7-8 ➡️ `Notable`
+    - 9-10 ➡️ `Sobresaliente`
+
+    > `pprint()` (abreviatura de "pretty-print") es una función importada que imprime estructuras de datos de manera más legible y organizada.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    from pprint import pprint
+    
+    students = [
+        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
+        {'id': 2, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 3, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 4, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 4, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 4, 'name': 'Elena', 'times_taken': 1, 'grade': 5},
+    ]
+    
+    for student in students:
+        if student['grade'] < 5:
+            student['grade'] = 'Suspenso'
+        elif student['grade'] == 5:
+            student['grade'] = 'Aprobado'
+        elif student['grade'] == 6:
+            student['grade'] = 'Bien'
+        elif student['grade'] <= 8:
+            student['grade'] = 'Notable'
+        else:
+            student['grade'] = 'Sobresaliente'
+    
+    pprint(students)
+    ```
+
+    </details>
+
+<br>
+
+14. Sea el texto:
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    ```
+
+    Introduce por consola pares `<palabra>,<traducción>` infinitamente hasta que no se introduzca nada, es decir, introducir una cadena vacía. Una vez obtenidos los datos de la consola se sustituirán las palabras por sus respectivas traducciones y se imprimirá el texto resultante.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    while pair := input('Introduce traducción: '):
+        text = text.replace(*pair.split(','))
+    
+    print(text)
+    ```
+
+    </details>
+
+<br>
+
+15. Sea el código:
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    ...
+    
+    for original, translation in zip(originals, translations):
+        text = text.replace(original, translation)
+    
+    print(text)
+    ```
+
+    Completar donde `...` para lograr el mismo resultado del ejericio anterior. No se puede añadir ningún `replace()` más ni alterar el texto más allá de lo que hace ese código.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    originals = []
+    translations = []
+    while pair := input('Introduce traducción: '):
+        original, translation = pair.split(',')
+        originals.append(original)
+        translations.append(translation)
+    
+    for original, translation in zip(originals, translations):
+        text = text.replace(original, translation)
+    
+    print(text)
+    ```
+
+    </details>
+
+<br>
+
+16. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
     - `'hola'`, `'adios'` ➡️ `False`
     - `'urnas'`, `'runa'` ➡️ `False`
@@ -531,7 +827,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-9. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
+17. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -689,7 +985,120 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
+18. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola: 
+
+    ```python
+    matrix_a = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    
+    matrix_b = [
+        [9, 8, 7],
+        [6, 5, 4],
+        [3, 2, 1]
+    ]
+    ```
+
+    El resultado es:
+
+    ```python
+    [10, 10, 10]
+    [10, 10, 10]
+    [10, 10, 10]
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    matrix_a = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    
+    matrix_b = [
+        [9, 8, 7],
+        [6, 5, 4],
+        [3, 2, 1]
+    ]
+    
+    matrix_result = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ]
+    
+    for i in range(3):
+        for j in range(3):
+            matrix_result[i][j] = matrix_a[i][j] + matrix_b[i][j]
+    
+    for row in matrix_result:
+        print(row)
+    ```
+
+    </details>
+
+<br>
+
+19. Hacer un programa que multiplique dos matrices cuadradas de cualquier tamaño (ambas del mismo), guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
+
+    ```python
+    matrix_a = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    
+    matrix_b = [
+        [9, 8, 7],
+        [6, 5, 4],
+        [3, 2, 1]
+    ]
+    ```
+
+    El resultado es:
+
+    ```python
+    [30, 24, 18]
+    [84, 69, 54]
+    [138, 114, 90]
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    matrix_a = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    
+    matrix_b = [
+        [9, 8, 7],
+        [6, 5, 4],
+        [3, 2, 1]
+    ]
+    
+    matrix_result = [[0 for _ in range(len(matrix_a))] for _ in range(len(matrix_a))]
+    
+    for i in range(len(matrix_a)):
+        for j in range(len(matrix_a)):
+            for k in range(len(matrix_a)):
+                matrix_result[i][j] += matrix_a[i][k] * matrix_b[k][j]
+    
+    for row in matrix_result:
+        print(row)
+    ```
+
+    </details>
+
+<br>
+
+20. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -718,7 +1127,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
+21. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
     ```
     El 18 de junio de 1998 cumpliste 1 año.
@@ -795,7 +1204,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+22. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
     <details>
     <summary>Solución</summary>
@@ -823,7 +1232,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-13. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
+23. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
 
     ```
     Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!
@@ -872,7 +1281,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-14. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
+24. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
     <details>
     <summary>Solución</summary>
@@ -909,17 +1318,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 <br>
 
 ## Funciones
-
-### Ideas:
-
-- Filtrar los números de una lista que son múltiplos de 2 y, luego, los que son múltiplos de 3.
-- Módulo de un vector.
-- Suma de vetores.
-- Área de un círculo y otra el volúmen de un cilindro usando la anterior.
-
-<br>
-
-### Ejercicios:
 
 1. Sea una función `sum_numbers` que sume una lista de números enteros y devuelva el resultado:
 
@@ -1131,7 +1529,144 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-5. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+5. Crear una función que calcule y devuelva el área de un círculo dado su radio como argumento. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    assert get_circle_area(3) == 28.274333882308138
+    assert get_circle_area(0) == 0
+    assert get_circle_area(0.0001) == 3.141592653589793e-08
+    assert get_circle_area(2.5) == 19.634954084936208
+    assert get_circle_area(10000) == 314159265.3589793
+    
+    print('✅')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import math
+    
+    
+    def get_circle_area(radius: float) -> float:
+        return math.pi * radius ** 2
+    
+    
+    assert get_circle_area(3) == 28.274333882308138
+    assert get_circle_area(0) == 0
+    assert get_circle_area(0.0001) == 3.141592653589793e-08
+    assert get_circle_area(2.5) == 19.634954084936208
+    assert get_circle_area(10000) == 314159265.3589793
+    
+    print('✅')
+    ```
+
+    </details>
+
+<br>
+
+6. Basarse en el ejercicio anterior para crear una función que calcule y devuelva el volumen de un cilindro dado su radio y altura como argumentos sin repetir código. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    import math
+    from unittest import mock
+    
+    
+    ...
+    
+    
+    with mock.patch('__main__.get_circle_area', wraps=get_circle_area) as mock_get_circle_area:
+        assert get_cylinder_volume(2, 10) == 125.66370614359172
+        assert get_cylinder_volume(2.5, 7) == 137.44467859455347
+        assert get_cylinder_volume(0.0001, 0.0001) == 3.141592653589793e-12
+        assert get_cylinder_volume(1.5, 4.5) == 31.808625617596654
+        assert get_cylinder_volume(3.0, 0.0) == 0.0
+        assert get_cylinder_volume(0.0, 5.0) == 0.0
+        assert get_cylinder_volume(1000, 5000) == 15707963267.948965
+        assert mock_get_circle_area.call_args_list == [
+            mock.call(2),
+            mock.call(2.5),
+            mock.call(0.0001),
+            mock.call(1.5),
+            mock.call(3.0),
+            mock.call(0.0),
+            mock.call(1000)
+        ]
+    
+    print('✅')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import math
+    from unittest import mock
+    
+    
+    def get_circle_area(radius: float) -> float:
+        return math.pi * radius ** 2
+    
+    
+    def get_cylinder_volume(radius: float, height: float) -> float:
+        return get_circle_area(radius) * height
+    
+    
+    with mock.patch('__main__.get_circle_area', wraps=get_circle_area) as mock_get_circle_area:
+        assert get_cylinder_volume(2, 10) == 125.66370614359172
+        assert get_cylinder_volume(2.5, 7) == 137.44467859455347
+        assert get_cylinder_volume(0.0001, 0.0001) == 3.141592653589793e-12
+        assert get_cylinder_volume(1.5, 4.5) == 31.808625617596654
+        assert get_cylinder_volume(3.0, 0.0) == 0.0
+        assert get_cylinder_volume(0.0, 5.0) == 0.0
+        assert get_cylinder_volume(1000, 5000) == 15707963267.948965
+        assert mock_get_circle_area.call_args_list == [
+            mock.call(2),
+            mock.call(2.5),
+            mock.call(0.0001),
+            mock.call(1.5),
+            mock.call(3.0),
+            mock.call(0.0),
+            mock.call(1000)
+        ]
+    
+    print('✅')
+    ```
+
+    </details>
+
+<br>
+
+7. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    try:
+        factorial(-1)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    try:
+        factorial(-10)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(10) == 3628800
+    assert factorial(20) == 2432902008176640000
+    
+    print('✅')
+    ```
 
     <details>
     <summary>Solución</summary>
@@ -1150,8 +1685,26 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return result
     
     
-    print(factorial(4))
-    print(factorial(-1))
+    try:
+        factorial(-1)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    try:
+        factorial(-10)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(10) == 3628800
+    assert factorial(20) == 2432902008176640000
+    
+    print('✅')
     ```
     b)
     ```python
@@ -1166,15 +1719,59 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return result
     
     
-    print(factorial(4))
-    print(factorial(-1))
+    try:
+        factorial(-1)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    try:
+        factorial(-10)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(10) == 3628800
+    assert factorial(20) == 2432902008176640000
+    
+    print('✅')
     ```
 
     </details>
 
 <br>
 
-6. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+8. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    try:
+        factorial(-1)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    try:
+        factorial(-10)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(10) == 3628800
+    assert factorial(20) == 2432902008176640000
+    
+    print('✅')
+    ```
 
     <details>
     <summary>Solución</summary>
@@ -1189,15 +1786,318 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
         return number * factorial(number - 1)
     
     
-    print(factorial(7))
-    print(factorial(-1))
+    try:
+        factorial(-1)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    try:
+        factorial(-10)
+    except ValueError:
+        pass
+    else:
+        raise AssertionError
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(10) == 3628800
+    assert factorial(20) == 2432902008176640000
+    
+    print('✅')
     ```
 
     </details>
 
 <br>
 
-7. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
+9. Sea:
+
+    ```python
+    numbers = list(range(30))
+    ```
+
+    Completar el código para agrupar esa lista de números según sus múltiplos de **2, 3, 4, hasta 9**. Imprimir cada grupo en líneas separadas en la consola.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    def filter_multiples(numbers_: list[int], multiple_of: int) -> list:
+        multiples = []
+        for number in numbers_:
+            if number % multiple_of == 0:
+                multiples.append(number)
+    
+        return multiples
+    
+    
+    numbers = list(range(30))
+    
+    for i in range(1, 10):
+        print(filter_multiples(numbers, i))
+    ```
+
+    </details>
+
+<br>
+
+10. Pedir un número `n` por consola e imprimir una lista con los `n` primeros números primos. Se recomienda hacer al menos una función.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    n = int(input('n: '))
+    
+    
+    def is_prime(n_: int) -> bool:
+        if n_ <= 1:
+            return False
+    
+        for i_ in range(2, int(n_ ** (1 / 2)) + 1):
+            if n_ % i_ == 0:
+                return False
+    
+        return True
+    
+    
+    primes = []
+    for i in range(2, n + 1):
+        if is_prime(i):
+            primes.append(i)
+    
+    print(primes)
+    ```
+
+    </details>
+
+<br>
+
+11. Crear una función que reciba una matriz y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'Matriz no cuadrada'`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    try:
+        get_diagonals([[0, 1]])
+    except ValueError as e:
+        assert str(e) == 'Matriz no cuadrada'
+    else:
+        raise AssertionError
+    try:
+        get_diagonals([[0], [1]])
+    except ValueError as e:
+        assert str(e) == 'Matriz no cuadrada'
+    else:
+        raise AssertionError
+    try:
+        get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])
+    except ValueError as e:
+        assert str(e) == 'Matriz no cuadrada'
+    else:
+        raise AssertionError
+    assert get_diagonals([[42]]) == ([42], [42])
+    assert get_diagonals([[1, 2], [3, 4]]) == ([1, 4], [2, 3])
+    assert get_diagonals([[2, 2, 2], [2, 2, 2], [2, 2, 2]]) == ([2, 2, 2], [2, 2, 2])
+    assert get_diagonals([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) == ([1, 5, 9], [3, 5, 7])
+    assert get_diagonals([[9, 8, 7], [6, 5, 4], [3, 2, 1]]) == ([9, 5, 1], [7, 5, 3])
+    assert get_diagonals([[4, -2, 6], [-7, 5, -8], [9, -10, 11]]) == ([4, 5, 11], [6, 5, 9])
+    assert get_diagonals([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]) == ([1, 6, 11, 0], [4, 7, 10, 13])
+    
+    print('✅')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    def get_diagonals(matrix: list[list[int | float]]) -> tuple[list[int | float], list[int | float]]:
+        for row in matrix:
+            if len(row) != len(matrix):
+                raise ValueError('Matriz no cuadrada')
+    
+        main_diagonal = []
+        secondary_diagonal = []
+    
+        for i in range(len(matrix)):
+            main_diagonal.append(matrix[i][i])
+            secondary_diagonal.append(matrix[i][len(matrix) - i - 1])
+    
+        return main_diagonal, secondary_diagonal
+    
+    
+    try:
+        get_diagonals([[0, 1]])
+    except ValueError as e:
+        assert str(e) == 'Matriz no cuadrada'
+    else:
+        raise AssertionError
+    try:
+        get_diagonals([[0], [1]])
+    except ValueError as e:
+        assert str(e) == 'Matriz no cuadrada'
+    else:
+        raise AssertionError
+    try:
+        get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])
+    except ValueError as e:
+        assert str(e) == 'Matriz no cuadrada'
+    else:
+        raise AssertionError
+    assert get_diagonals([[42]]) == ([42], [42])
+    assert get_diagonals([[1, 2], [3, 4]]) == ([1, 4], [2, 3])
+    assert get_diagonals([[2, 2, 2], [2, 2, 2], [2, 2, 2]]) == ([2, 2, 2], [2, 2, 2])
+    assert get_diagonals([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) == ([1, 5, 9], [3, 5, 7])
+    assert get_diagonals([[9, 8, 7], [6, 5, 4], [3, 2, 1]]) == ([9, 5, 1], [7, 5, 3])
+    assert get_diagonals([[4, -2, 6], [-7, 5, -8], [9, -10, 11]]) == ([4, 5, 11], [6, 5, 9])
+    assert get_diagonals([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]) == ([1, 6, 11, 0], [4, 7, 10, 13])
+    
+    print('✅')
+    ```
+
+    </details>
+
+<br>
+
+12. Podemos representar un tablero de [4 en raya](https://en.wikipedia.org/wiki/Connect_Four#/media/File:Connect_Four.gif) con una lista de listas de cadenas donde `'x'` representa un jugador, `'o'` otro y `' '` un espacio vacío. Crear una función que, dado un tablero de cualquier tamaño y forma, devuelva una lista de tuplas indicando las posiciones disponibles para jugar en el próximo turno. Cada tupla debe representar una coordenada `(<fila>, <columna>)` que esté vacía, es decir, una posición válida para que un jugador coloque su ficha. Por ejemplo, para este tablero 3x3:
+
+    ```
+    [
+        ['x', ' ', ' '],
+        ['o', ' ', 'o'],     ➡️     [(1, 1), (0, 2)]
+        ['o', 'x', 'x']
+    ]
+    ```
+
+    Rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    assert get_available_positions([[]]) == []
+    assert get_available_positions([[' ']]) == [(0, 0)]
+    assert get_available_positions([['x']]) == []
+    assert get_available_positions([
+        [' ', ' '],
+        [' ', ' ']
+    ]) == [(1, 0), (1, 1)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ']
+    ]) == [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4)]
+    assert get_available_positions([
+        [' ', ' ', ' ', 'o', ' '],
+        [' ', 'x', 'o', 'x', ' ']
+    ]) == [(1, 0), (0, 1), (0, 2), (1, 4)]
+    assert get_available_positions([
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']
+    ]) == [(2, 0), (2, 1), (2, 2)]
+    assert get_available_positions([
+        [' ', ' ', 'x'],
+        [' ', 'o', 'o'],
+        ['x', 'x', 'o']
+    ]) == [(1, 0), (0, 1)]
+    assert get_available_positions([
+        ['x', ' ', ' '],
+        ['o', ' ', 'o'],
+        ['o', 'x', 'x']
+    ]) == [(1, 1), (0, 2)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+    ]) == [(5, 0), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', 'o', ' ', ' '],
+        [' ', ' ', ' ', ' ', 'o', 'x', ' '],
+        ['o', ' ', ' ', ' ', 'x', 'x', ' '],
+        ['x', ' ', ' ', 'o', 'x', 'o', ' '],
+        ['o', ' ', ' ', 'x', 'o', 'x', 'o'],
+        ['x', 'x', ' ', 'o', 'o', 'o', 'x'],
+    ]) == [(1, 0), (4, 1), (5, 2), (2, 3), (0, 5), (3, 6)]
+    
+    print('✅')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    def get_available_positions(board: list[list[str]]) -> list[tuple[int, int]]:
+        available_positions = []
+        for j in range(len(board[0])):
+            for i in range(len(board) - 1, -1, -1):
+                if board[i][j] == ' ':
+                    available_positions.append((i, j))
+                    break
+    
+        return available_positions
+    
+    
+    assert get_available_positions([[]]) == []
+    assert get_available_positions([[' ']]) == [(0, 0)]
+    assert get_available_positions([['x']]) == []
+    assert get_available_positions([
+        [' ', ' '],
+        [' ', ' ']
+    ]) == [(1, 0), (1, 1)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ']
+    ]) == [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4)]
+    assert get_available_positions([
+        [' ', ' ', ' ', 'o', ' '],
+        [' ', 'x', 'o', 'x', ' ']
+    ]) == [(1, 0), (0, 1), (0, 2), (1, 4)]
+    assert get_available_positions([
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']
+    ]) == [(2, 0), (2, 1), (2, 2)]
+    assert get_available_positions([
+        [' ', ' ', 'x'],
+        [' ', 'o', 'o'],
+        ['x', 'x', 'o']
+    ]) == [(1, 0), (0, 1)]
+    assert get_available_positions([
+        ['x', ' ', ' '],
+        ['o', ' ', 'o'],
+        ['o', 'x', 'x']
+    ]) == [(1, 1), (0, 2)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+    ]) == [(5, 0), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', 'o', ' ', ' '],
+        [' ', ' ', ' ', ' ', 'o', 'x', ' '],
+        ['o', ' ', ' ', ' ', 'x', 'x', ' '],
+        ['x', ' ', ' ', 'o', 'x', 'o', ' '],
+        ['o', ' ', ' ', 'x', 'o', 'x', 'o'],
+        ['x', 'x', ' ', 'o', 'o', 'o', 'x'],
+    ]) == [(1, 0), (4, 1), (5, 2), (2, 3), (0, 5), (3, 6)]
+    
+    print('✅')
+    ```
+
+    </details>
+
+<br>
+
+13. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
 
     - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
     - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
@@ -1237,7 +2137,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-8. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+14. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️
     - `fibonacci_sequence(1, ', ')` ➡️ `'0'`
@@ -1287,7 +2187,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-9. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+15. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
 
     `encode('abc', 1)` ➡️ `'bcd'`
 
@@ -1334,7 +2234,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-10. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
+16. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
 
     > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](../README.md#63-ámbitos) de la teoría.
 
@@ -1405,7 +2305,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-11. Ejercicio `time_it()`.
+17. Ejercicio `time_it()`.
 
     > Para este ejercicio es necesario haber hecho y entendido el ejercicio anterior.
 
@@ -1664,7 +2564,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-12. Sea el siguiente código:
+18. Sea:
 
     ```python
     from collections.abc import Callable
@@ -1709,7 +2609,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-13. Sea:
+19. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
@@ -1732,7 +2632,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-14. Filtrado de archivos.
+20. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 
@@ -1934,7 +2834,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-15. Consultas relacionales estilo SQL a colecciones de estudiantes.
+21. Consultas relacionales estilo SQL a colecciones de estudiantes.
     
     > No es necesario saber nada de bases de datos.
 
@@ -1958,7 +2858,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
     Finalmente tenemos el módulo `main.py`, que es donde vamos a trabajar. Si lo abrimos, veremos una serie de funciones que están incompletas, cada una es un ejercicio. El objetivo es completarlas todas.
 
-    Está permitido programar fuera de las regiones marcados con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
+    Está permitido programar fuera de las regiones marcadas con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
 
     Como las funciones están vacías, normalmente los editores/entornos de desarrollo marcarán con una advertencia los parámetros porque no se usan. Si molesta mucho se pueden comentar las funciones que no estemos usando (no afectará a las pruebas).
 
@@ -2324,7 +3224,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 <br>
 
-16. ☠️ Crear un gestor de clientes por consola.
+22. ☠️ Crear un gestor de clientes por consola.
 
     > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
 
@@ -2710,8 +3610,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 
 ## Clases
 
-### Ejercicios:
-
 1. ☠️ Vehículos.
 
     Para realizar este ejercicio es necesario descargar este [zip](https://github.com/AlberLC/flanaguia/files/15442571/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
@@ -2766,7 +3664,7 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
             - Coche con matrícula `'1234'` con un pasajero con nombre `'Juan'` y `10` años ➡️ `Car_1234. Passengers: {Juan (10)}`.
             - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`.
 
-        12. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `Full vehicle`.
+        12. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `'Full vehicle'`.
         13. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
         14. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
         15. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
@@ -2898,8 +3796,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 <br>
 
 ## Estructuras de datos
-
-### Ejercicios:
 
 1. ☠️ Lista enlazada.
 
@@ -3124,8 +4020,6 @@ Keith recently came back from a trip to Chicago, Illinois. This midwestern metro
 <br>
 
 ## Algoritmos avanzados
-
-### Ejercicios:
 
 1. ☠️☠️☠️ Rascacielos.
 

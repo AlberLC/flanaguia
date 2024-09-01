@@ -137,12 +137,23 @@
 
 <br>
 
-7. Imprimir por consola una lista con los números pares del **0** al **20** **sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Trabajar con este código como base:
+7. Imprimir por consola una lista con los números **pares ordenados** del **0** al **20** teniendo el siguiente código como base:
 
     ```python
     elements_a = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     elements_b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     ```
+
+    Prohibiciones:
+
+    - ❌ Usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
+    - ❌ Usar [bucles](../README.md#5-bucles).
+    - ❌ [Importar](../README.md#9-importaciones).
+    - ❌ Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
+    - ❌ Transformar los números en otros con sumas, restas, etc.
+    - ❌ Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
+
+    <br>
 
     <details>
     <summary>Solución</summary>
@@ -166,7 +177,7 @@
 
 <br>
 
-8. Imprimir por consola una lista con **todos** los números del **0** al **20**. A partir de esa lista, imprimir otra con los números pares y otra con los múltiplos de 3 **sin usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`, ni [bucles](../README.md#5-bucles), ni [importar](../README.md#9-importaciones) nada, ni transformar los números con sumas, restas, etc**. Trabajar con este código como base:
+8. Imprimir por consola una lista con **todos** los números **ordenados** del **0** al **20**. A partir de esa lista, imprimir otra con los números **pares ordenados** y otra con los **múltiplos de 3 ordenados**. Trabajar con el siguiente código como base:
 
     ```python
     elements_a = (14, 14, 14, 13, 13, 13, 12, 12, 12, 11, 11, 11, 10, 10, 10, [[0]])
@@ -174,6 +185,17 @@
     elements_c = {9: 1, 8: 2, 7: 3, 6: 4}
     elements_d = {20}
     ```
+
+    Prohibiciones:
+
+    - ❌ Usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`.
+    - ❌ Usar [bucles](../README.md#5-bucles).
+    - ❌ [Importar](../README.md#9-importaciones).
+    - ❌ Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
+    - ❌ Transformar los números en otros con sumas, restas, etc.
+    - ❌ Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
+
+    <br>
 
     <details>
     <summary>Solución</summary>
@@ -805,6 +827,8 @@
     ```
 
     Completar donde `...` para lograr el mismo resultado del ejericio anterior. No se puede añadir ningún `replace()` más ni alterar el texto más allá de lo que hace ese código.
+
+    > Se ha usado la [función integrada](https://docs.python.org/3/library/functions.html) `zip()`.
 
     <details>
     <summary>Solución</summary>

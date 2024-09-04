@@ -412,7 +412,7 @@
 
 <br>
 
-3. Pedir por consola un número e imprimir por consola el resultado siguiendo esta lógica:
+3. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - `0` ➡️
     - `1` ➡️ `0`

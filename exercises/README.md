@@ -419,12 +419,27 @@
     - `5` ➡️ `01234`
     - `15` ➡️ `012345678901234`
     - `22` ➡️ `0123456789012345678901`
+    - `37` ➡️ `0123456789012345678901234567890123456`
 
     Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**. **Prohibido usar [bucles](../README.md#5-bucles) `while`**.
 
     <details>
     <summary>Solución</summary>
 
+    a)
+    ```python
+    n = int(input('n: '))
+    
+    digit = 0
+    for _ in range(n):
+        if digit >= 10:
+            digit -= 10
+    
+        print(digit, end='')
+    
+        digit += 1
+    ```
+    b)
     ```python
     n = int(input('n: '))
     for i in range(n):
@@ -820,6 +835,8 @@
     - Si introducimos una fuerza de 20, la ruleta avanzará un número aleatorio entre 18 y 22, inclusive.
 
     El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios**, imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
+
+    Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
 
     Premios asignados a cada sector de la ruleta en orden:
 

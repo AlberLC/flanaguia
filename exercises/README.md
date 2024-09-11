@@ -4009,8 +4009,8 @@
     
     
     class Node:
-        def __init__(self, element) -> None:
-            self.element: Any = element
+        def __init__(self, element: Any) -> None:
+            self.element = element
             self.next: Node | None = None
     
     

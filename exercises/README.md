@@ -3934,7 +3934,7 @@
 
 2. ☠️☠️ Ajedrez.
 
-    Para realizar este ejercicio es necesario descargar este [zip](clases_1.zip), que contiene los recursos necesarios y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](clases_2.zip), que contiene los recursos necesarios y descomprimirlos en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 

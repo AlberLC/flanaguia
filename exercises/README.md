@@ -3958,9 +3958,9 @@
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
     2. Crear tres excepciones personalizadas:
-       1. `OutOfBoundsError`: tipo de `IndeError` que tiene como mensaje `'Position must be within board bounds'`.
-       2. `NoPieceError`: tipo de `LookupError` que tiene como mensaje `'There is no piece at position (<row>, <column>)'`, cambiando `<row>` y `<column>` por los respectivos valores del contexto donde se lance.
-       3. `SamePositionError`: tipo de `ValueError` que tiene como mensaje `'The piece is already at the target position'`.
+       1. `OutOfBoundsError`: tipo de `IndeError` que tiene como mensaje `'position must be within board bounds'`.
+       2. `NoPieceError`: tipo de `LookupError` que tiene como mensaje `'there is no piece at position (<row>, <column>)'`, cambiando `<row>` y `<column>` por los respectivos valores del contexto donde se lance.
+       3. `SamePositionError`: tipo de `ValueError` que tiene como mensaje `'the piece is already at the target position'`.
     3. Crear una [enumeración](../README.md#19-enumeraciones) `Color` con:
 
         1. Dos valores: `WHITE` y `BLACK`.

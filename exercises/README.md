@@ -3944,8 +3944,10 @@
     > - `pawn`, `knight`, `bishop`, `rook`, `queen`, `king`, `board`: un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado.
     > - `numbers` (booleano): determina el tipo de numeración de la tabla (`False` por defecto).
     > - `random_boards` (int): determina el número de tableros aleatorios a generar en cada test que lo necesite (`10` por defecto).
-    > - `play_game` (booleano): este ejercicio ejecutará un juego de ajedrez cuya lógica será determinada por el código del ejercicio. Este parámetro controla la ejecución del juego (`True` por defecto). 
+    > - `play_game` (booleano): este ejercicio ejecutará un juego de ajedrez cuya lógica será determinada por el código del ejercicio. Este parámetro controla la ejecución del juego (`True` por defecto).
     > 
+    > <br>
+    >  
     > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
 
     El objetivo de este ejercicio es ganarle una partida de ajedrez a una [IA](https://stockfishchess.org/). Para ello, vamos a tener que programar los [movimientos](https://www.chess.com/es/lessons/movimiento-de-las-piezas) de nuestras piezas, modelar el tablero de ajedrez, definir reglas y situaciones como los jaques, etc. Todo lo que hagamos impactará en el juego. Sin embargo, las piezas de la IA están ya programadas y no se verán afectadas por el código resultado de este ejercicio.

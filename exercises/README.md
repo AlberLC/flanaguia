@@ -1707,15 +1707,16 @@
         assert get_cylinder_volume(3.0, 0.0) == 0.0
         assert get_cylinder_volume(0.0, 5.0) == 0.0
         assert get_cylinder_volume(1000, 5000) == 15707963267.948965
-        assert mock_get_circle_area.call_args_list == [
-            mock.call(2),
-            mock.call(2.5),
-            mock.call(0.0001),
-            mock.call(1.5),
-            mock.call(3.0),
-            mock.call(0.0),
-            mock.call(1000)
-        ]
+    
+    assert mock_get_circle_area.call_args_list == [
+        mock.call(2),
+        mock.call(2.5),
+        mock.call(0.0001),
+        mock.call(1.5),
+        mock.call(3.0),
+        mock.call(0.0),
+        mock.call(1000)
+    ]
     
     print('✅')
     ```
@@ -1744,15 +1745,16 @@
         assert get_cylinder_volume(3.0, 0.0) == 0.0
         assert get_cylinder_volume(0.0, 5.0) == 0.0
         assert get_cylinder_volume(1000, 5000) == 15707963267.948965
-        assert mock_get_circle_area.call_args_list == [
-            mock.call(2),
-            mock.call(2.5),
-            mock.call(0.0001),
-            mock.call(1.5),
-            mock.call(3.0),
-            mock.call(0.0),
-            mock.call(1000)
-        ]
+    
+    assert mock_get_circle_area.call_args_list == [
+        mock.call(2),
+        mock.call(2.5),
+        mock.call(0.0001),
+        mock.call(1.5),
+        mock.call(3.0),
+        mock.call(0.0),
+        mock.call(1000)
+    ]
     
     print('✅')
     ```
@@ -1773,12 +1775,14 @@
         pass
     else:
         raise AssertionError
+    
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
         raise AssertionError
+    
     assert factorial(1) == 1
     assert factorial(2) == 2
     assert factorial(3) == 6
@@ -1812,12 +1816,14 @@
         pass
     else:
         raise AssertionError
+    
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
         raise AssertionError
+    
     assert factorial(1) == 1
     assert factorial(2) == 2
     assert factorial(3) == 6
@@ -1846,12 +1852,14 @@
         pass
     else:
         raise AssertionError
+    
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
         raise AssertionError
+    
     assert factorial(1) == 1
     assert factorial(2) == 2
     assert factorial(3) == 6
@@ -1878,12 +1886,14 @@
         pass
     else:
         raise AssertionError
+    
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
         raise AssertionError
+    
     assert factorial(1) == 1
     assert factorial(2) == 2
     assert factorial(3) == 6
@@ -1913,12 +1923,14 @@
         pass
     else:
         raise AssertionError
+    
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
         raise AssertionError
+    
     assert factorial(1) == 1
     assert factorial(2) == 2
     assert factorial(3) == 6
@@ -1996,7 +2008,7 @@
 
 <br>
 
-11. Crear una función que reciba una matriz y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'Matriz no cuadrada'`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+11. Crear una función que reciba una matriz y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'non-square matrix'`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2005,21 +2017,24 @@
     try:
         get_diagonals([[0, 1]])
     except ValueError as e:
-        assert str(e) == 'Matriz no cuadrada'
+        assert str(e) == 'non-square matrix'
     else:
         raise AssertionError
+    
     try:
         get_diagonals([[0], [1]])
     except ValueError as e:
-        assert str(e) == 'Matriz no cuadrada'
+        assert str(e) == 'non-square matrix'
     else:
         raise AssertionError
+    
     try:
         get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])
     except ValueError as e:
-        assert str(e) == 'Matriz no cuadrada'
+        assert str(e) == 'non-square matrix'
     else:
         raise AssertionError
+    
     assert get_diagonals([[42]]) == ([42], [42])
     assert get_diagonals([[1, 2], [3, 4]]) == ([1, 4], [2, 3])
     assert get_diagonals([[2, 2, 2], [2, 2, 2], [2, 2, 2]]) == ([2, 2, 2], [2, 2, 2])
@@ -2038,7 +2053,7 @@
     def get_diagonals(matrix: list[list[int | float]]) -> tuple[list[int | float], list[int | float]]:
         for row in matrix:
             if len(row) != len(matrix):
-                raise ValueError('Matriz no cuadrada')
+                raise ValueError('non-square matrix')
     
         main_diagonal = []
         secondary_diagonal = []
@@ -2053,21 +2068,24 @@
     try:
         get_diagonals([[0, 1]])
     except ValueError as e:
-        assert str(e) == 'Matriz no cuadrada'
+        assert str(e) == 'non-square matrix'
     else:
         raise AssertionError
+    
     try:
         get_diagonals([[0], [1]])
     except ValueError as e:
-        assert str(e) == 'Matriz no cuadrada'
+        assert str(e) == 'non-square matrix'
     else:
         raise AssertionError
+    
     try:
         get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])
     except ValueError as e:
-        assert str(e) == 'Matriz no cuadrada'
+        assert str(e) == 'non-square matrix'
     else:
         raise AssertionError
+    
     assert get_diagonals([[42]]) == ([42], [42])
     assert get_diagonals([[1, 2], [3, 4]]) == ([1, 4], [2, 3])
     assert get_diagonals([[2, 2, 2], [2, 2, 2], [2, 2, 2]]) == ([2, 2, 2], [2, 2, 2])
@@ -2794,7 +2812,7 @@
             print(f'{i}. {path_}')
         ```
 
-       > Alternativamente se podrían importar los recursos así: `from pathlib import Path`. De esta manera usaríamos `Path` directamente en vez de `pathlib.Path`. Es preferencia personal elegir que método resulta más descriptivo y cómodo pero ten en cuenta que, cuando se usan muchas bibliotecas, ayuda mucho importar sólo el módulo y luego acceder al recurso excplícitamente como se hace en la solución para saber de donde vienen las cosas.
+        > Alternativamente se podrían importar los recursos así: `from pathlib import Path`. De esta manera usaríamos `Path` directamente en vez de `pathlib.Path`. Es preferencia personal elegir que método resulta más descriptivo y cómodo pero ten en cuenta que, cuando se usan muchas bibliotecas, ayuda mucho importar sólo el módulo y luego acceder al recurso explícitamente como se hace en la solución para saber de donde vienen las cosas.
 
         </details>
 
@@ -2823,7 +2841,7 @@
             print(f'{i}. {path_}')
         ```
 
-       > Alternativamente, en la función generadora se podria declarar este tipo de retorno: ` -> Generator[Path, None, None]:`. Más información en la [documentación](https://docs.python.org/3/library/typing.html#typing.Generator).
+        > Alternativamente, en la función generadora se podria declarar este tipo de retorno: ` -> Generator[Path, None, None]:`. Más información en la [documentación](https://docs.python.org/3/library/typing.html#annotating-generators-and-coroutines).
 
         </details>
 
@@ -2896,7 +2914,7 @@
         print_files(filter_files(path_, extension_))
         ```
 
-       > Es recomdable declarar los tipos de los parámetros lo más ampliamente posible. En nuestro caso vamos a iterar los `Path`, no necesitamos que sea específicamente una lista, un conjunto, un generador, etc., con que sea iterable nos vale. Así hacemos nuestra función más flexible.
+        > Es recomdable declarar los tipos de los parámetros lo más ampliamente posible. En nuestro caso vamos a iterar los `Path`, no necesitamos que sea específicamente una lista, un conjunto, un generador, etc., con que sea iterable nos vale. Así hacemos nuestra función más flexible.
 
         </details>
 
@@ -3737,21 +3755,19 @@
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 
-    > Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `roman` (`True` por defecto), que define el tipo de numeración de la tabla.
+    > Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `numbers` (`False` por defecto), que determina el tipo de numeración de la tabla.
     > 
     > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
-
-    > Por la forma en la que se importan los módulos proporcionados, el módulo `main.py` será ejecutado dos veces cuando llamemos a `test()`, por lo tanto, si se quieren crear más pruebas en `main.py` se recomienda comentar la línea donde se llama a `test()` o usar un "main" con [`__name__`](../README.md#91-nombre-especial-__name__) para envolverlas.
 
     Construir con clases el siguiente escenario en el módulo `main.py`:
 
     1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
     2. Una clase `Person`:
 
-        1. Atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
-        2. Atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
+        1. Con un atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
+        2. Con un atributo `age` (número entero). Si se introduce una edad menor o igual que 0 se debe lanzar un `ValueError`.
         3. Redefinir dos métodos para que las personas sean ordenables por su edad (no debemos redefinir `__eq__()` porque provocaría problemas de hashes a la hora de almacenar personas en conjuntos). De igual manera, si tuviéramos una lista de personas, esta debería ser ordenable por la edad de sus integrantes. Hay que tener en cuenta que un hipotético animal y una persona con los mismos nombre y edad no son ordenables. En ese caso, como dichas comparaciones no deberían estar permitidas, los métodos redefinidos deberían comportarse como los métodos originales.
-        4. Redefinir los métodos necesarios para imprimir por consola los objetos de la clase en cualquier situación siguiendo el siguiente formato:
+        4. Redefinir los métodos necesarios para imprimir por consola los objetos de la clase siguiendo el siguiente formato:
 
             - para una persona con nombre `'Juan'` y `10` años ➡️ `Juan (10)`.
             - para una persona con nombre `'Ana'` y `35` años ➡️ `Ana (35)`.
@@ -3760,23 +3776,23 @@
     3. Clases `Vehicle`, `Car` y `Train`:
 
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
-        2. Los objetos de las tres clases tienen estos atributos:
+        2. Los objetos de las tres clases tendrán estos atributos:
 
-            1. `max_passengers`: máximo de pasajeros (número entero).
-            2. `plate`: matrícula (cadena). Por defecto, si no se introduce nada, va a ser un número generado automáticamente entre `'0000'` y `'9999'` (almacenado como texto). Debe ser el único parámetro con valor por defecto del ejercicio.
-            3. `_passengers`: conjunto de pasajeros (conjunto) que inicialmente está vacío.
+            1. `max_passengers` (número entero): máximo de pasajeros.
+            2. `plate` (cadena): matrícula. Por defecto, si no se introduce nada, será un número generado automáticamente entre `'0000'` y `'9999'` (almacenado como texto). Debe ser el único parámetro con valor por defecto del ejercicio.
+            3. `_passengers` (conjunto): conjunto de pasajeros que inicialmente está vacío.
 
-        3. Los objetos de la clase `Car` tienen, además, los atributos:
+        3. Los objetos de la clase `Car` tendrán, además, los atributos:
 
-            1. `doors`: número de puertas (número entero).
-            2. `airbags`: número de airbags (número entero).
-            3. `wheel_drive`: tipo de tracción ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`).
+            1. `doors` (número entero): número de puertas.
+            2. `airbags` (número entero): número de airbags.
+            3. `wheel_drive` ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`): tipo de tracción.
 
-        4. Los objetos de la clase `Train` tienen, además de los comunes `max_passengers`, `plate` y `_passengers`, un atributo `wagons` (número entero).
+        4. Los objetos de la clase `Train` tendrán, además de los comunes `max_passengers`, `plate` y `_passengers`, un atributo `wagons` (número entero).
         5. El parámetro `plate` del constructor de la clase `Vehicle` será el único con valor por defecto del ejercicio.
         6. No se puede acceder a un atributo interno (los que tienen `_` de prefijo) desde fuera de su clase.
-        7. Los vehículos tienen una propiedad `passengers` para acceder a `_passengers` (solo obtener, no asignar).
-        8. Dos vehículos serán comparables con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto con una misma matrícula no se consideran iguales.
+        7. Los vehículos tendrán una propiedad `passengers` (solo obtener, no asignar) que devuelva sus pasajeros.
+        8. Dos vehículos serán comparables con `==` y se considerarán iguales si tienen la misma matrícula. Hay que tener en cuenta que un vehículo y otro tipo de objeto, incluso con los mismos atributos, no deberían considerarse iguales.
         9. Hacer la clase iterable de forma que, cuando se itere un vehículo, los pasajeros sean devueltos uno a uno.
         10. Aplicar `len()` a un vehículo devolverá su número de pasajeros actual.
         11. Redefinir los métodos necesarios para imprimir por consola los objetos de la clase siguiendo el siguiente formato:
@@ -3785,12 +3801,12 @@
             - Coche con matrícula `'1234'` con un pasajero con nombre `'Juan'` y `10` años ➡️ `Car_1234. Passengers: {Juan (10)}`.
             - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`.
 
-        12. Los vehículos tienen un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `'Full vehicle'`.
-        13. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devuelve `None`.
+        12. Los vehículos tendrán un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `'full vehicle'`.
+        13. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devolverá `None`.
         14. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
         15. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
         16. Un método `remove_passenger_by_name()` que reciba por parámetro el nombre de un posible pasajero y lo elimine sin dar error.
-        17. El resultado de sumar dos vehículos con `+` es un nuevo vehículo con matrícula nueva, con el tipo y los atributos del primero (menos la matrícula) y los pasajeros de ambos. Los dos vehículos originales se vaciarán de pasajeros.
+        17. El resultado de sumar dos vehículos con `+` será un nuevo vehículo con matrícula nueva, con el tipo y los atributos del primero (menos la matrícula) y los pasajeros de ambos. Los dos vehículos originales se vaciarán de pasajeros.
 
     <br>
 
@@ -3864,7 +3880,7 @@
     
         def add_passenger(self, passenger: Person) -> None:
             if len(self.passengers) >= self.max_passengers:
-                raise ValueError('Full vehicle')
+                raise ValueError('full vehicle')
     
             self.passengers.add(passenger)
     
@@ -3916,6 +3932,584 @@
 
 <br>
 
+2. ☠️☠️ Ajedrez.
+
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/16956609/clases_1.zip), que contiene los recursos necesarios y descomprimirlos en el directorio donde se vaya a trabajar.
+
+    > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
+    > 
+    > El módulo `main.py` contendrá inicialmente la línea `from __future__ import annotations` para habilitar la evaluación pospuesta de las anotaciones de tipos, lo que permite utilizar referencias adelantadas o evitar problemas con tipos que aún no se han definido en el momento de la anotación. Por ejemplo, si tenemos una clase `A` con un método que devuelve un objeto de `B`, pero la clase `B` aún no está definida, podríamos simplemente definir primero la clase `B`. Sin embargo, ¿qué sucedería si `B` también tiene un método que devuelve un objeto de `A`? Esto generaría una referencia circular, dificultando la definición de ambas clases antes de usarlas en las anotaciones. Esta línea debe ser siempre la primera del módulo.
+    > 
+    > Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función tiene los siguientes parámetros opcionales:
+    > - `pawn`, `knight`, `bishop`, `rook`, `queen`, `king`, `board`: un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado.
+    > - `numbers` (booleano): determina el tipo de numeración de la tabla (`False` por defecto).
+    > - `random_boards` (int): determina el número de tableros aleatorios a generar en cada test que lo necesite (`10` por defecto).
+    > - `play_game` (booleano): este ejercicio ejecutará un juego de ajedrez cuya lógica será determinada por el código del ejercicio. Este parámetro controla la ejecución del juego (`True` por defecto). 
+    > 
+    > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
+
+    El objetivo de este ejercicio es ganarle una partida de ajedrez a una [IA](https://stockfishchess.org/). Para ello, vamos a tener que programar los [movimientos](https://www.chess.com/es/lessons/movimiento-de-las-piezas) de nuestras piezas, modelar el tablero de ajedrez, definir reglas y situaciones como los jaques, etc. Todo lo que hagamos impactará en el juego. Sin embargo, las piezas de la IA están ya programadas y no se verán afectadas por el código resultado de este ejercicio.
+
+    Los tests comprueban que los movimientos de cada pieza sean los correctos, los recogidos en las normas oficiales del juego, excluyendo los [enroques](https://www.chess.com/es/terms/enroque-ajedrez) y las [capturas al paso](https://www.chess.com/es/terms/captura-al-paso-ajedrez), que se han eliminado para simplificar el ejercicio.
+
+    Una vez que se superen todos los tests, se permitirá alterar el código (hacer trampa) para el objetivo final: **hacerle jaque mate a la IA**. Si no, es imposible 🐟.
+
+    Construir con clases el siguiente escenario en el módulo `main.py`:
+
+    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
+    2. Crear tres excepciones personalizadas:
+       1. `OutOfBoundsError`: tipo de `IndeError` que tiene como mensaje `'Position must be within board bounds'`.
+       2. `NoPieceError`: tipo de `LookupError` que tiene como mensaje `'There is no piece at position (<row>, <column>)'`, cambiando `<row>` y `<column>` por los respectivos valores del contexto donde se lance.
+       3. `SamePositionError`: tipo de `ValueError` que tiene como mensaje `'The piece is already at the target position'`.
+    3. Crear una [enumeración](../README.md#19-enumeraciones) `Color` con:
+
+        1. Dos valores: `WHITE` y `BLACK`.
+        2. Una propiedad `opposite` (solo obtener, no asignar) que devuelva el miembro contrario de la enumeración.
+
+    4. Clases de piezas:
+
+        ![chess_diagram.svg](../resources/chess_diagram.svg)
+
+        1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas).
+        2. Todos los objetos de las clases de piezas tendrán estos atributos:
+
+            1. `_color` (enumeración): color de la pieza.
+            2. `row` (número entero): fila en la que se encuentra en el tablero.
+            3. `column` (número entero): columna en la que se encuentra en el tablero.
+            4. `has_moved` (booleano): indica si se ha movido en la partida. Los peones deben mantener la coherencia entre este atributo y los valores de `row` y `column`.
+
+        3. Las piezas correspondientes tendrán un [atributo estático](../README.md#812-atributos-estáticos) `value` que indiquen el valor de cada pieza según la [norma general](https://www.chess.com/es/terms/el-valor-de-las-piezas-de-ajedrez) (número entero).
+        4. Dos piezas del mismo tipo serán comparables y se considerarán iguales si tienen los mismos atributos. Hay que tener en cuenta que una pieza y otro tipo de objeto, incluso con los mismos atributos, no deberían considerarse iguales.
+        5. Cada pieza se representará con su [carácter unicode](https://es.wikipedia.org/wiki/S%C3%ADmbolos_de_ajedrez_en_Unicode). De este modo, al imprimirlas por consola se verán según el siguiente formato:
+
+            - para un caballo blanco ➡️ `♘`.
+            - para alfil negro ➡️ `♝`.
+            - cuando se representa una estructura con piezas, por ejemplo, una lista ➡️ `['♘', '♝']`.
+
+            El método de este apartado deberá ser abstracto en la clase `Piece`.
+
+        6. Las piezas tendrán una propiedad `color` (solo obtener, no asignar) que devuelva su color. 
+        7. Las piezas que hereden de `LinealPiece` tendrán un método `get_lineal_moveset()` (abstracto en la clase `LinealPiece`) con los siguientes parámetros:
+
+            - `board` (tipo `Board`, clase que habrá que crear posteriormente): tablero donde se encuentran.
+            - `directions` (iterable de tuplas de dos números enteros): direcciones en las que la pieza puede moverse. Por ejemplo, ➡️ es `(0, 1)`, ⬆️ es `(-1, 0)`, ↙️ es `(1, -1)`, etc. La idea es implementar el método de la manera más genérica posible en `LinealPiece`, de modo que tanto `AxialPiece` como `DiagonalPiece` solo necesiten especificar las direcciones correspondientes, evitando así la duplicación de código. Tendrá una tupla vacía como valor por defecto.
+            - `limit` (número entero): límite de casillas que puede recorrer en cada dirección. Tendrá `None` como valor por defecto.
+            - `can_capture` (booleano): indicando si puede capturar, en cada dirección, al encontrar una pieza del color contrario. Tendrá `True` como valor por defecto.
+
+            Este método devolverá la lista de posiciones a donde se puede desplazar, ya sea para moverse o capturar, representadas mediante una lista de tuplas de dos números enteros: la fila y la columna.
+
+            > A partir de ahora se entenderá "posiciones" y "casillas" como esa lista de tuplas de dos enteros.
+
+        8. Todas las piezas tendrán un método `get_moveset()` (abstracto en la clase `Piece`) que reciba por parámetro el tablero (`Board`) donde se encuentra y devuelva la lista de posiciones a donde se puede desplazar, ya sea para moverse o capturar.
+        9. Las piezas tendrán un método `is_attacking_to()` que reciba por parámetro el tablero (`Board`) y una pieza, y devuelva un booleano indicando si está atacando a la pieza recibida.
+        10. Un método `move()` que reciba 3 argumentos: el tablero (`Board`), una fila y una columna (números enteros), y se encargue de mover la pieza por el tablero, gestionando sus atributos con coherencia. Si se intenta mover la pieza fuera del tablero se debe lanzar un `OutOfBoundsError`. Si se intenta mover la pieza a su misma posición deberá lanzar un `SamePositionError`. Los peones promocionan a reinas cuando alcanzan el lado contrario del tablero.
+        11. Una propiedad `svg` (abstracta en la clase `Piece`) que devuelva el enlace a su representación vectorial:
+
+            - Peón blanco ➡️ `'https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg'`
+            - Peón negro ➡️ `'https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg'`
+            - Caballo blanco ➡️ `'https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg'`
+            - Caballo negro ➡️ `'https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt45.svg'`
+            - Alfil blanco ➡️ `'https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg'`
+            - Alfil negro ➡️ `'https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg'`
+            - Torre blanca ➡️ `'https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg'`
+            - Torre negra ➡️ `'https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg'`
+            - Reina blanca ➡️ `'https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg'`
+            - Reina negra ➡️ `'https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt45.svg'`
+            - Rey blanco ➡️ `'https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt45.svg'`
+            - Rey negro ➡️ `'https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg'`
+
+            Esta propiedad determinará la representación de las piezas en el juego.
+
+        12. Los reyes tendrán, además:
+
+            1. Un método `iter_checkers()` que reciba por parámetro el tablero y devuelva un iterador de todas las piezas que le hagan jaque.
+            2. Un método `is_in_check()` que reciba por parámetro el tablero y devuelva un booleano indicando si él mismo está en jaque.
+            3. Un método `iter_safe_moveset()` que reciba por parámetro el tablero y devuelva un iterador de las casillas a las que puede desplazarse de forma segura.            
+            4. Un método `is_in_checkmate()` que reciba por parámetro el tablero y devuelva un booleano indicando si él mismo está en jaque.
+
+    5. Clase `Board`:
+
+        1. Los objetos de esta clase tendrán estos atributos:
+
+           1. `_board` (lista de lista de [pieza o `None`]): si no se proporciona una cadena [FEN](https://es.wikipedia.org/wiki/Notaci%C3%B3n_de_Forsyth-Edwards) `fen_board`, se inicializará con todas las casillas a `None`. Esta notación se utiliza para representar el estado actual de una partida de ajedrez y la utilizaremos para cargar tableros fácilmente, es decir, inicializar nuestro `Board`. En esta [web](https://lichess.org/editor) se pueden crear configuraciones de tableros de manera sencilla y exportarlas como cadenas FEN. Solo nos interesa la parte que aparece antes del primer espacio, ya que lo que sigue no representa posiciones, sino otras situaciones de la partida.
+           2. `human_color` (enumeración): color de las piezas que queremos controlar. Tendrá `Color.WHITE` como valor por defecto.
+
+        2. Un método `load_fen()` que reciba por parámetro una cadena FEN y cargue el tablero descrito.
+        3. Evitar repetir código en la carga de tableros.
+        4. Hacer que la clase sea accesible con `[]`, de forma que se pueda tratar el objeto de la clase como si fuera el propio tablero. Por ejemplo, `board[2]` devolvería la tercera fila del tablero.
+        5. Hacer la clase iterable para que el objeto de la clase se comporte como si fuera el propio tablero.
+        6. Aplicar `len()` a un objeto de esta clase devolverá el valor coherente con lo descrito anteriormente.
+        7. Al imprimir un objeto de esta clase con un tablero en su estado inicial en la consola, se verá de la siguiente forma:
+
+            ```
+            ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
+            ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
+            ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ
+            ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ
+            ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ
+            ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ
+            ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙
+            ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖
+            ```
+
+            Si el tablero tuviera la configuración `'3q1bnr/4P3/2bk2B1/7P/3PKr2/p7/P1B3PP/RN3B1R w - - 0 1'`:
+
+            ```
+            ㅤ ㅤ ㅤ ♛ ㅤ ♝ ♞ ♜
+            ㅤ ㅤ ㅤ ㅤ ♙ ㅤ ㅤ ㅤ
+            ㅤ ㅤ ♝ ♚ ㅤ ㅤ ♗ ㅤ
+            ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ♙
+            ㅤ ㅤ ㅤ ♙ ♔ ♜ ㅤ ㅤ
+            ♟ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ ㅤ
+            ♙ ㅤ ♗ ㅤ ㅤ ㅤ ♙ ♙
+            ♖ ♘ ㅤ ㅤ ㅤ ♗ ㅤ ♖
+            ```
+
+            Esos caracteres unicode tienen un ancho especial, para que quede bien se debe sustituir las casillas vacías por `'ㅤ'`, que es un espacio más ancho.
+        8. Un método genérico `iter_pieces[T]()` que reciba por parámetro un color `color` y una clase de pieza `piece_class` y devuelva un iterador de las piezas de ese color y clase. Si no se proporciona un color, deberá coger las piezas de ambos bandos y, si no se especifica la clase de pieza, será `Piece` por defecto. La clase de pieza recibida por parámetro será la que determine el tipo de elemento que devolverá el iterador.
+
+            > Para más información sobre como crear genéricos, consultar la [documentación](https://docs.python.org/3/library/typing.html#generics).
+
+        9. Un método `get_king()` que reciba un color y devuelva el rey de ese color.
+        10. Un método `get_moveset_at()` que reciba una fila y una columna, y devuelva las casillas a las que la pieza en esa posición pueda desplazarse. Si se intenta acceder a una casilla fuera de los límites del tablero, el método deberá lanzar la excepción correspondiente. Si no hay ninguna pieza en la casilla indicada, deberá lanzar un `NoPieceError`.
+        11. Un método `get_score()` que reciba un color y devuelva la suma de los valores de las piezas que permanecen en juego.
+        12. Un método `is_check()` que reciba un color y devuelva un booleano indicando si el bando de ese color esta en jaque.
+        13. Un método `is_checkmate()` que reciba un color y devuelva un booleano indicando si el bando de ese color esta en jaque mate.
+        14. Un método `is_in_bounds()` que reciba una fila y una columna, y devuelva si un booleano indicando si la posición especificada se encuentra dentro de los límites del tablero.
+    6. No se añadirán ni eliminarán parámetros con valores por defecto distintos de los especificados por el ejercicio.
+    7. No se puede acceder a un atributo interno (los que tienen _ de prefijo) desde fuera de su clase. 
+    8. Utilizar `is_in_bounds()` en `Piece.move()`, `LinealPiece.get_lineal_moveset()`, `Pawn.get_moveset()` y `Knight.get_moveset()`. 
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    from __future__ import annotations
+    
+    from abc import ABC, abstractmethod
+    from collections.abc import Iterable, Iterator
+    from enum import Enum, auto
+    from typing import Any, Self
+    
+    from tests import test
+    
+    BOARD_LENGTH = 8
+    
+    
+    class OutOfBoundsError(IndexError):
+        def __init__(self) -> None:
+            super().__init__('position must be within board bounds')
+    
+    
+    class NoPieceError(LookupError):
+        def __init__(self, row: int, column: int) -> None:
+            super().__init__(f'there is no piece at position ({row}, {column})')
+    
+    
+    class SamePositionError(ValueError):
+        def __init__(self) -> None:
+            super().__init__('the piece is already at the target position')
+    
+    
+    class Color(Enum):
+        WHITE = auto()
+        BLACK = auto()
+    
+        @property
+        def opposite(self) -> Self:
+            return Color.BLACK if self is Color.WHITE else Color.WHITE
+    
+    
+    class Piece(ABC):
+        def __init__(self, color: Color, row: int, column: int) -> None:
+            self._color = color
+            self.row = row
+            self.column = column
+            self.has_moved = False
+    
+        def __eq__(self, other: Any) -> bool:
+            return isinstance(other, type(self)) and vars(self) == vars(other) == vars(other)
+    
+        @abstractmethod
+        def __repr__(self) -> str:
+            pass
+    
+        @property
+        def color(self) -> Color:
+            return self._color
+    
+        @abstractmethod
+        def get_moveset(self, board: Board) -> list[tuple[int, int]]:
+            pass
+    
+        def is_attacking_to(self, board: Board, piece: Piece) -> bool:
+            return (piece.row, piece.column) in self.get_moveset(board)
+    
+        def move(self, board: Board, row: int, column: int) -> None:
+            if not board.is_in_bounds(row, column):
+                raise OutOfBoundsError
+    
+            if self.row == row and self.column == column:
+                raise SamePositionError
+    
+            board[self.row][self.column] = None
+            board[row][column] = self
+            self.row = row
+            self.column = column
+            self.has_moved = True
+    
+        @property
+        @abstractmethod
+        def svg(self) -> str:
+            pass
+    
+    
+    class LinealPiece(Piece, ABC):
+        @abstractmethod
+        def get_lineal_moveset(
+            self,
+            board: Board,
+            directions: Iterable[tuple[int, int]] = (),
+            limit: int | None = None,
+            can_capture=True
+        ) -> list[tuple[int, int]]:
+            positions = []
+            if limit is None:
+                limit = len(board)
+    
+            for vertical_direction, horizontal_direction in directions:
+                new_row = self.row
+                new_column = self.column
+                for _ in range(limit):
+                    new_row += vertical_direction
+                    new_column += horizontal_direction
+                    if not board.is_in_bounds(new_row, new_column):
+                        break
+    
+                    if piece := board[new_row][new_column]:
+                        if piece.color != self.color and can_capture:
+                            positions.append((new_row, new_column))
+    
+                        break
+    
+                    positions.append((new_row, new_column))
+    
+            return positions
+    
+    
+    class AxialPiece(LinealPiece, ABC):
+        def get_lineal_moveset(
+            self,
+            board: Board,
+            directions: Iterable[tuple[int, int]] = (),
+            limit: int | None = None,
+            can_capture=True
+        ) -> list[tuple[int, int]]:
+            if not directions:
+                directions = ((-1, 0), (0, 1), (1, 0), (0, -1))
+    
+            return super().get_lineal_moveset(board, directions, limit, can_capture)
+    
+    
+    class DiagonalPiece(LinealPiece, ABC):
+        def get_lineal_moveset(
+            self,
+            board: Board,
+            directions: Iterable[tuple[int, int]] = (),
+            limit: int | None = None,
+            can_capture=True
+        ) -> list[tuple[int, int]]:
+            if not directions:
+                directions = ((-1, 1), (1, 1), (1, -1), (-1, -1))
+    
+            return super().get_lineal_moveset(board, directions, limit, can_capture)
+    
+    
+    class Pawn(AxialPiece):
+        value = 1
+    
+        def __init__(self, color: Color, row: int, column: int) -> None:
+            super().__init__(color, row, column)
+            self.has_moved = color is Color.WHITE and row != 6 or color is Color.BLACK and row != 1
+    
+        def __repr__(self) -> str:
+            return '♙' if self.color is Color.WHITE else '♟'
+    
+        @property
+        def svg(self) -> str:
+            if self.color is Color.WHITE:
+                return 'https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg'
+            else:
+                return 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg'
+    
+        def get_moveset(self, board: Board) -> list[tuple[int, int]]:
+            direction = -1 if self.color is Color.WHITE else 1
+            directions = ((1 * direction, 0),)
+            limit = 1 if self.has_moved else 2
+            positions = super().get_lineal_moveset(board, directions, limit, can_capture=False)
+    
+            for vertical_offset, horizontal_offset in ((direction, -1), (direction, 1)):
+                new_row = self.row + vertical_offset
+                new_column = self.column + horizontal_offset
+                if not board.is_in_bounds(new_row, new_column):
+                    continue
+    
+                piece = board[new_row][new_column]
+                if piece and piece.color != self.color:
+                    positions.append((new_row, new_column))
+    
+            return positions
+    
+        def move(self, board: Board, row: int, column: int) -> None:
+            super().move(board, row, column)
+            if (
+                self.color is Color.WHITE and self.row == 0
+                or
+                self.color is Color.BLACK and self.row == len(board) - 1
+            ):
+                board[self.row][self.column] = Queen(self.color, self.row, self.column)
+    
+    
+    class Knight(Piece):
+        value = 3
+    
+        def __repr__(self) -> str:
+            return '♘' if self.color is Color.WHITE else '♞'
+    
+        @property
+        def svg(self) -> str:
+            if self.color is Color.WHITE:
+                return 'https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg'
+            else:
+                return 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt45.svg'
+    
+        def get_moveset(self, board: Board) -> list[tuple[int, int]]:
+            positions = []
+    
+            for vertical_offset, horizontal_offset in (
+                (-2, -1), (-2, 1), (-1, 2), (1, 2), (2, -1), (2, 1), (-1, -2), (1, -2)
+            ):
+                new_row = self.row + vertical_offset
+                new_column = self.column + horizontal_offset
+                if not board.is_in_bounds(new_row, new_column):
+                    continue
+    
+                piece = board[new_row][new_column]
+                if not piece or piece.color != self.color:
+                    positions.append((new_row, new_column))
+    
+            return positions
+    
+    
+    class Bishop(DiagonalPiece):
+        value = 3
+    
+        def __repr__(self) -> str:
+            return '♗' if self.color is Color.WHITE else '♝'
+    
+        @property
+        def svg(self) -> str:
+            if self.color is Color.WHITE:
+                return 'https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg'
+            else:
+                return 'https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg'
+    
+        def get_moveset(self, board: Board) -> list[tuple[int, int]]:
+            return super().get_lineal_moveset(board)
+    
+    
+    class Rook(AxialPiece):
+        value = 5
+    
+        def __repr__(self) -> str:
+            return '♖' if self.color is Color.WHITE else '♜'
+    
+        @property
+        def svg(self) -> str:
+            if self.color is Color.WHITE:
+                return 'https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg'
+            else:
+                return 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg'
+    
+        def get_moveset(self, board: Board) -> list[tuple[int, int]]:
+            return super().get_lineal_moveset(board)
+    
+    
+    class Queen(AxialPiece, DiagonalPiece):
+        value = 9
+    
+        def __repr__(self) -> str:
+            return '♕' if self.color is Color.WHITE else '♛'
+    
+        @property
+        def svg(self) -> str:
+            if self.color is Color.WHITE:
+                return 'https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg'
+            else:
+                return 'https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt45.svg'
+    
+        def get_moveset(self, board: Board) -> list[tuple[int, int]]:
+            return super().get_lineal_moveset(board) + super(AxialPiece, self).get_lineal_moveset(board)
+    
+    
+    class King(AxialPiece, DiagonalPiece):
+        def __repr__(self) -> str:
+            return '♔' if self.color is Color.WHITE else '♚'
+    
+        @property
+        def svg(self) -> str:
+            if self.color is Color.WHITE:
+                return 'https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt45.svg'
+            else:
+                return 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg'
+    
+        def get_moveset(self, board: Board) -> list[tuple[int, int]]:
+            return super().get_lineal_moveset(board, limit=1) + super(AxialPiece, self).get_lineal_moveset(board, limit=1)
+    
+        def is_in_check(self, board: Board) -> bool:
+            return any(self.iter_checkers(board))
+    
+        def is_in_checkmate(self, board: Board) -> bool:
+            if not self.is_in_check(board):
+                return False
+    
+            if any(self.iter_safe_moveset(board, self)):
+                return False
+    
+            for ally in board.iter_pieces(self.color):
+                if any(self.iter_safe_moveset(board, ally)):
+                    return False
+    
+            return True
+    
+        def iter_checkers(self, board: Board) -> Iterator[Piece]:
+            return (piece for piece in board.iter_pieces(self.color.opposite) if piece.is_attacking_to(board, self))
+    
+        def iter_safe_moveset(self, board: Board, piece: Piece) -> Iterator[tuple[int, int]]:
+            old_position = (piece.row, piece.column)
+            has_moved = piece.has_moved
+    
+            for new_position in piece.get_moveset(board):
+                target_piece = board[new_position[0]][new_position[1]]
+                piece.move(board, new_position[0], new_position[1])
+    
+                is_in_check = self.is_in_check(board)
+    
+                piece.move(board, old_position[0], old_position[1])
+                piece.has_moved = has_moved
+                board[new_position[0]][new_position[1]] = target_piece
+    
+                if not is_in_check:
+                    yield new_position
+    
+    
+    class Board:
+        def __init__(self, fen_board: str | None = None, human_color=Color.WHITE) -> None:
+            if fen_board:
+                self.load_fen(fen_board)
+            else:
+                self._board: list[list[Piece | None]] = [[None for _ in range(BOARD_LENGTH)] for _ in range(BOARD_LENGTH)]
+    
+            self.human_color = human_color
+    
+        def __getitem__(self, index: int) -> list[Piece | None]:
+            return self._board[index]
+    
+        def __iter__(self) -> Iterator[list[Piece | None]]:
+            return (row for row in self._board)
+    
+        def __len__(self) -> int:
+            return len(self._board)
+    
+        def __str__(self) -> str:
+            lines = []
+            for row in self:
+                line = ' '.join(str(piece) if piece else 'ㅤ' for piece in row)
+                lines.append(line)
+    
+            return '\n'.join(lines)
+    
+        def iter_pieces[T](self, color: Color | None = None, piece_class: type[T] = Piece) -> Iterator[T]:
+            for row in self:
+                for piece in row:
+                    if isinstance(piece, piece_class) and (not color or piece.color is color):
+                        yield piece
+    
+        def get_king(self, color: Color) -> King:
+            return next(self.iter_pieces(color, King))
+    
+        def get_moveset_at(self, row: int, column: int) -> list[tuple[int, int]]:
+            if not self.is_in_bounds(row, column):
+                raise OutOfBoundsError
+    
+            if not (piece := self[row][column]):
+                raise NoPieceError(row, column)
+    
+            return piece.get_moveset(self)
+    
+        def get_score(self, color: Color) -> int:
+            return sum(piece.value for piece in self.iter_pieces(color) if hasattr(piece, 'value'))
+    
+        def is_check(self, color: Color) -> bool:
+            return self.get_king(color).is_in_check(self)
+    
+        def is_checkmate(self, color: Color) -> bool:
+            return self.get_king(color).is_in_checkmate(self)
+    
+        def is_in_bounds(self, row: int, column: int) -> bool:
+            return row in range(len(self)) and column in range(len(self))
+    
+        def load_fen(self, fen_board: str) -> None:
+            rows = fen_board.split('/')
+    
+            self._board = []
+    
+            for i, row in enumerate(rows):
+                board_row = []
+                for character in row:
+                    if character == ' ':
+                        break
+                    elif character.isdigit():
+                        board_row.extend([None] * int(character))
+                    else:
+                        board_row.append(fen_character_to_piece(character, i, len(board_row)))
+                self._board.append(board_row)
+    
+    
+    def fen_character_to_piece(character: str, row: int, column: int) -> Piece | None:
+        color = Color.BLACK if character.islower() else Color.WHITE
+    
+        match character.lower():
+            case 'p':
+                return Pawn(color, row, column)
+            case 'n':
+                return Knight(color, row, column)
+            case 'b':
+                return Bishop(color, row, column)
+            case 'r':
+                return Rook(color, row, column)
+            case 'q':
+                return Queen(color, row, column)
+            case 'k':
+                return King(color, row, column)
+    
+    
+    pawn = Pawn(Color.WHITE, 0, 0)
+    knight = Knight(Color.BLACK, 5, 2)
+    bishop = Bishop(Color.WHITE, 7, 3)
+    rook = Rook(Color.BLACK, 1, 6)
+    queen = Queen(Color.WHITE, 2, 0)
+    king = King(Color.BLACK, 7, 4)
+    board_ = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1')
+    test(pawn, knight, bishop, rook, queen, king, board_)
+    ```
+
+    </details>
+
+<br>
+
 ## Estructuras de datos
 
 1. ☠️ Lista enlazada.
@@ -3923,8 +4517,6 @@
     Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/16956622/estructuras_de_datos_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
-
-    > Por la forma en la que se importan los módulos proporcionados, el módulo `main.py` será ejecutado dos veces cuando llamemos a `test()`, por lo tanto, si se quieren crear más pruebas en `main.py` se recomienda comentar la línea donde se llama a `test()` o usar un "main" con [`__name__`](../README.md#91-nombre-especial-__name__) para envolverlas.
 
     Crear en el módulo `main.py` una lista enlazada con clases que cumpla, al menos, los siguientes requisitos:
 
@@ -3994,8 +4586,8 @@
 
             También debe admitir números negativos y lanzar un `IndexError` con el mensaje `'list index out of range'` si excede los límites.
 
-        10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) e inserte dicho elemento en la posición indicada por el índice. Debe admitir índices negativos como si fuera una lista normal. Si excede los límites, no lanza excepciones. En su lugar, debe insertar el elemento en la posición válida más cercana.
-        11. Un método `remove()` que reciba por parámetro un elemento y elimine el primero que encuentre en la lista enlazada. Si no existe, debe lanzar un `ValueError` con el mensaje `'x not in list'`, cambiando `x` por la representación (`repr()`) del objeto.
+        10. Un método `insert()` que reciba por parámetro un índice y un elemento (en ese orden) e inserte dicho elemento en la posición indicada por el índice. Debe admitir índices negativos como si fuera una lista normal. Si excede los límites, no lanza excepciones. En su lugar, deberá insertar el elemento en la posición válida más cercana.
+        11. Un método `remove()` que reciba por parámetro un elemento y elimine el primero que encuentre en la lista enlazada. Si no existe, deberá lanzar un `ValueError` con el mensaje `'<x> not in list'`, cambiando `<x>` por la representación (`repr()`) del objeto.
         12. Un método `clear()` que vacíe la lista enlazada.
 
     <details>

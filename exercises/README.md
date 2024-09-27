@@ -671,7 +671,7 @@
 
 <br>
 
-10. Pedir un número por consola e imprimir una lista con los números impares del **1** al número introducido, inclusive.
+10. Pedir un número por consola e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
 
     <details>
     <summary>Solución</summary>
@@ -681,8 +681,9 @@
     number = int(input('Impares hasta el: '))
     
     odd_numbers = []
-    for i in range(1, number + 1, 2):
-        odd_numbers.append(i)
+    for i in range(1, number + 1):
+        if i % 2 != 0:
+            odd_numbers.append(i)
     
     print(odd_numbers)
     ```
@@ -691,9 +692,8 @@
     number = int(input('Impares hasta el: '))
     
     odd_numbers = []
-    for i in range(1, number + 1):
-        if i % 2 != 0:
-            odd_numbers.append(i)
+    for i in range(1, number + 1, 2):
+        odd_numbers.append(i)
     
     print(odd_numbers)
     ```
@@ -1948,10 +1948,10 @@
 9. Sea:
 
     ```python
-    numbers = list(range(30))
+    numbers = (0, 2, 3, 5, 7, 8, 11, 14, 20, 22, 24, 27, 29, 30, 31, 34, 40, 45, 46, 48)
     ```
 
-    Completar el código para agrupar esa lista de números según los múltiplos de **2, 3, 4, hasta 9**. Imprimir cada grupo en líneas separadas en la consola.
+    Completar el código para agrupar esa lista de números según los múltiplos de **1, 2, 3, 4, hasta 9**. Imprimir cada grupo en líneas separadas en la consola.
 
     <details>
     <summary>Solución</summary>
@@ -1966,7 +1966,7 @@
         return multiples
     
     
-    numbers = list(range(30))
+    numbers = (0, 2, 3, 5, 7, 8, 11, 14, 20, 22, 24, 27, 29, 30, 31, 34, 40, 45, 46, 48)
     
     for i in range(1, 10):
         print(filter_multiples(numbers, i))

@@ -421,7 +421,7 @@
     - `22` ➡️ `0123456789012345678901`
     - `37` ➡️ `0123456789012345678901234567890123456`
 
-    Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**. **Prohibido usar [bucles](../README.md#5-bucles) `while`**.
+    Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**. **Solo se puede usar un bucle**.
 
     <details>
     <summary>Solución</summary>

@@ -745,6 +745,19 @@
     <details>
     <summary>Solución</summary>
 
+    a)
+    ```python
+    numbers = input('Introduce los números: ').split()
+    
+    max_number = int(numbers[0])
+    for number in numbers[1:]:
+        number = int(number)
+        if number > max_number:
+            max_number = number
+    
+    print(max_number)
+    ```
+    b)
     ```python
     numbers = input('Introduce los números: ').split()
     
@@ -756,6 +769,8 @@
     
     print(max_number)
     ```
+    
+    > En muchos lenguajes de programación es posible representar infinitos mediantenúmeros flotantes. Esto se debe a que los estándares como IEEE 754, utilizados en la representación de números en coma flotante, incluyen un valor especial para infinito positivo y negativo.
 
     </details>
 

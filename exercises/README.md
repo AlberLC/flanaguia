@@ -833,7 +833,7 @@
     - Si introducimos una fuerza de 15, la ruleta avanzará un número aleatorio de posiciones entre 13 y 17, inclusive.
     - Si introducimos una fuerza de 20, la ruleta avanzará un número aleatorio entre 18 y 22, inclusive.
 
-    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios**, imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
+    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
 
     Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
 

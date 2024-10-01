@@ -731,8 +731,7 @@
     
     squared_numbers = []
     for number in numbers:
-        number = int(number)
-        squared_numbers.append(number ** 2)
+        squared_numbers.append(int(number) ** 2)
     
     print(squared_numbers)
     ```

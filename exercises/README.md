@@ -428,10 +428,10 @@
 
     a)
     ```python
-    n = int(input('n: '))
+    number = input('Introduce un número: ')
     
     digit = 0
-    for _ in range(n):
+    for _ in range(number):
         if digit >= 10:
             digit -= 10
     
@@ -441,8 +441,8 @@
     ```
     b)
     ```python
-    n = int(input('n: '))
-    for i in range(n):
+    number = input('Introduce un número: ')
+    for i in range(number):
         print(i % 10, end='')
     ```
 

@@ -2184,11 +2184,74 @@
     <details>
     <summary>Solución</summary>
 
+    a)
     ```python
     def get_available_positions(board: list[list[str]]) -> list[tuple[int, int]]:
         available_positions = []
         for j in range(len(board[0])):
             for i in range(len(board) - 1, -1, -1):
+                if board[i][j] == ' ':
+                    available_positions.append((i, j))
+                    break
+    
+        return available_positions
+    
+    
+    assert get_available_positions([[]]) == []
+    assert get_available_positions([[' ']]) == [(0, 0)]
+    assert get_available_positions([['x']]) == []
+    assert get_available_positions([
+        [' ', ' '],
+        [' ', ' ']
+    ]) == [(1, 0), (1, 1)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ']
+    ]) == [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4)]
+    assert get_available_positions([
+        [' ', ' ', ' ', 'o', ' '],
+        [' ', 'x', 'o', 'x', ' ']
+    ]) == [(1, 0), (0, 1), (0, 2), (1, 4)]
+    assert get_available_positions([
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']
+    ]) == [(2, 0), (2, 1), (2, 2)]
+    assert get_available_positions([
+        [' ', ' ', 'x'],
+        [' ', 'o', 'o'],
+        ['x', 'x', 'o']
+    ]) == [(1, 0), (0, 1)]
+    assert get_available_positions([
+        ['x', ' ', ' '],
+        ['o', ' ', 'o'],
+        ['o', 'x', 'x']
+    ]) == [(1, 1), (0, 2)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+    ]) == [(5, 0), (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6)]
+    assert get_available_positions([
+        [' ', ' ', ' ', ' ', 'o', ' ', ' '],
+        [' ', ' ', ' ', ' ', 'o', 'x', ' '],
+        ['o', ' ', ' ', ' ', 'x', 'x', ' '],
+        ['x', ' ', ' ', 'o', 'x', 'o', ' '],
+        ['o', ' ', ' ', 'x', 'o', 'x', 'o'],
+        ['x', 'x', ' ', 'o', 'o', 'o', 'x'],
+    ]) == [(1, 0), (4, 1), (5, 2), (2, 3), (0, 5), (3, 6)]
+    
+    print('✅')
+    ```
+    b)
+    ```python
+    def get_available_positions(board: list[list[str]]) -> list[tuple[int, int]]:
+        available_positions = []
+        for j in range(len(board[0])):
+            for i in reversed(range(len(board))):
                 if board[i][j] == ' ':
                     available_positions.append((i, j))
                     break

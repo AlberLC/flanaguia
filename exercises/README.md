@@ -1951,13 +1951,13 @@
     numbers = (0, 2, 3, 5, 7, 8, 11, 14, 20, 22, 24, 27, 29, 30, 31, 34, 40, 45, 46, 48)
     ```
 
-    Completar el código para agrupar esa lista de números según los múltiplos de **1, 2, 3, 4, hasta 9**. Imprimir cada grupo en líneas separadas en la consola.
+    Completar el código para agrupar esa lista de números según los múltiplos de **1, 2, 3, 4, hasta 9**. Imprimir cada grupo en líneas separadas en la consola. Se recomienda hacer al menos una función.
 
     <details>
     <summary>Solución</summary>
 
     ```python
-    def filter_multiples(numbers_: list[int], multiple_of: int) -> list:
+    def filter_multiples(numbers_: list[int], multiple_of: int) -> list[int]:
         multiples = []
         for number in numbers_:
             if number % multiple_of == 0:

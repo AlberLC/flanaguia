@@ -3914,13 +3914,13 @@
             self.age = age
     
         def __le__(self, other: Any) -> bool:
-            if not isinstance(other, Person):
+            if not isinstance(other, type(self)):
                 return super().__le__(other)
     
             return self.age <= other.age
     
         def __lt__(self, other: Any) -> bool:
-            if not isinstance(other, Person):
+            if not isinstance(other, type(self)):
                 return super().__lt__(other)
     
             return self.age < other.age
@@ -3944,7 +3944,7 @@
             return new_vehicle
     
         def __eq__(self, other: Any) -> bool:
-            return isinstance(other, Vehicle) and self.plate == other.plate
+            return isinstance(other, type(self)) and self.plate == other.plate
     
         def __iter__(self) -> Iterator[Person]:
             yield from self.passengers

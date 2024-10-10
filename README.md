@@ -3456,7 +3456,7 @@ Si quitaramos el `@staticmethod`, `number_1` actuaría como el `self` y se conve
 
 #### 8.2.3. Métodos de clase
 
-Al igual que con los métodos estáticos, existe otro decorador: `@classmethod`. Es un nombre un poco confuso porque los métodos "normales" son métodos de una clase pero los métodos decorados con `@classmethod` se llaman "métodos de clase". Vamos a ver como funcionan:
+Al igual que con los métodos estáticos, existe otro decorador: `@classmethod`. Es un nombre un poco confuso, ya que solemos referirnos a los métodos comunes como "métodos de una clase", pero en Python entran dentro de la categoría de "métodos de instancia" (porque reciben la instancia `self` como primer parámetro). En cambio, estos nuevos métodos decorados con `@classmethod` se llaman "métodos de clase". Vamos a ver como funcionan:
 
 ```python
 class Person:
@@ -3482,7 +3482,7 @@ Salida:
 
 Como vemos, también podemos llamarlo tanto con la clase `Person` directamente como con una instancia de la clase. El primer parámetro, que antes solía ser la instancia y la llamabamos `self`, es ahora la propia clase y la llamamos `cls`. Efectivamente, por convención en este tipo de métodos se nombra `cls` al primer parámetro como abreviatura de "class".
 
-Con `cls` no tenemos acceso a los atributos de instancia como `name` pero podemos hacer cosas:
+Con `cls` no tenemos acceso a los atributos de instancia como `name` pero podemos hacer otras cosas:
 
 ```python
 @classmethod

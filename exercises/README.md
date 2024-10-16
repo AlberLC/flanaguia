@@ -4055,7 +4055,7 @@
             1. `_color` (enumeración): color de la pieza.
             2. `row` (número entero): fila en la que se encuentra en el tablero.
             3. `column` (número entero): columna en la que se encuentra en el tablero.
-            4. `has_moved` (booleano): indica si se ha movido en la partida. Los peones deben mantener la coherencia entre este atributo y los valores de `row` y `column`.
+            4. `has_moved` (booleano): indica si se ha movido en la partida, e inicialmente es `False`. Los peones, en cambio, deben mantener la coherencia entre este atributo y los valores de `row` y `column`.
 
         3. Las piezas correspondientes tendrán un [atributo estático](../README.md#812-atributos-estáticos) `value` que indiquen el valor de cada pieza según la [norma general](https://www.chess.com/es/terms/el-valor-de-las-piezas-de-ajedrez) (número entero).
         4. Dos piezas del mismo tipo serán comparables y se considerarán iguales si tienen los mismos atributos. Hay que tener en cuenta que una pieza y otro tipo de objeto, incluso con los mismos atributos, no deberían considerarse iguales.

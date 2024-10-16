@@ -4156,8 +4156,10 @@
         13. Un método `is_checkmate()` que reciba un color y devuelva un booleano indicando si el bando de ese color esta en jaque mate.
         14. Un método `is_in_bounds()` que reciba una fila y una columna, y devuelva si un booleano indicando si la posición especificada se encuentra dentro de los límites del tablero.
     6. No se añadirán ni eliminarán parámetros con valores por defecto distintos de los especificados por el ejercicio.
-    7. No se puede acceder a un atributo interno (los que tienen _ de prefijo) desde fuera de su clase. 
-    8. Utilizar `is_in_bounds()` en `Piece.move()`, `LinealPiece.get_lineal_moveset()`, `Pawn.get_moveset()` y `Knight.get_moveset()`. 
+    7. No se puede acceder a un atributo interno (los que tienen _ de prefijo) desde fuera de su clase.
+    8. Evitar la duplicación de código en las comparaciones.
+    9. Evitar la duplicación de código en las redefiniciones de los métodos.
+    10. Utilizar `is_in_bounds()` en `Piece.move()`, `LinealPiece.get_lineal_moveset()`, `Pawn.get_moveset()` y `Knight.get_moveset()`.
 
     <br>
 
@@ -4209,7 +4211,7 @@
             self.has_moved = False
     
         def __eq__(self, other: Any) -> bool:
-            return isinstance(other, type(self)) and vars(self) == vars(other) == vars(other)
+            return isinstance(other, type(self)) and vars(self) == vars(other)
     
         @abstractmethod
         def __repr__(self) -> str:

@@ -896,7 +896,7 @@ def do_something(color):
     ...
 ```
 
-Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar nombres que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los miembros de la enumeración. Además, si en un futuro queremos cambiar los miembros de la enumeración, no habrá que ir buscando en todas las partes del código donde se usan cadenas 'red', 'blue' y 'green' para actualizarlas y mantener la consistencia.
+Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar nombres que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los miembros de la enumeración. Además, si en un futuro queremos cambiar los miembros de la enumeración, no habrá que ir buscando en todas las partes del código donde se usan cadenas `'red'`, `'blue'` y `'green'` para actualizarlas y mantener la consistencia.
 
 Las `Enum` relacionan un nombre con un valor. En nuestro último ejemplo relacionamos `RED` con el valor 1, `GREEN` con el 2 y `BLUE` con el 3. Podemos generar valores automáticos de la siguiente manera:
 

@@ -4050,7 +4050,7 @@ En Python se llaman módulos a los archivos `.py`, es decir, al código fuente. 
 
 Los proyectos se van a estructurar en una serie de módulos que pueden estar contenidos en paquetes, pudiendo haber paquetes dentro otros de paquetes.
 
-Es muy importante separar en módulos partes de tu programa que tienen poco en común. Agrupar la lógica de tu programa en módulos mejorará la comprensión y mantenibilidad del proyecto.
+Es muy importante separar en módulos las partes de tu programa que tengan poco en común. Agrupar la lógica de tu programa en módulos mejorará la comprensión y mantenibilidad del proyecto.
 
 Para importar cualquier elemento de un módulo hay dos formas:
 

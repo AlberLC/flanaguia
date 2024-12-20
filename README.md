@@ -4399,7 +4399,7 @@ Cuando tengamos que dar nombre a algun elemento cuyo nombre ya exista deberíamo
 
 ```python
 name = 'Juan'
-id(name)
+print(id(name))
 id_ = 12
 ```
 

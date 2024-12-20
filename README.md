@@ -4050,7 +4050,7 @@ En Python se llaman módulos a los archivos `.py`, es decir, al código fuente. 
 
 Los proyectos se van a estructurar en una serie de módulos que pueden estar contenidos en paquetes, pudiendo haber paquetes dentro otros de paquetes.
 
-Es muy importante separar en un módulos partes de tu programa que tienen poco en común. Agrupar la lógica de tu programa en módulos mejorará la comprensión y mantenibilidad del proyecto.
+Es muy importante separar en módulos partes de tu programa que tienen poco en común. Agrupar la lógica de tu programa en módulos mejorará la comprensión y mantenibilidad del proyecto.
 
 Para importar cualquier elemento de un módulo hay dos formas:
 
@@ -4226,7 +4226,7 @@ Entonces, ¿cómo importamos recursos entre módulos sin ejecutar todo el códig
 > {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <_frozen_importlib_external.SourceFileLoader object at 0x0000023AF937DB20>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, '__file__': '.../main.py', '__cached__': None}
 > ```
 
-[`__name__`](https://docs.python.org/3/library/__main__.html) nos proporciona el nombre del módulo donde se usa. Sin embargo, cuando se usa en el módulo principal, es decir, en el módulo que sirve de punto de entrada del programa, el valor de `__name__` será siempre `'__main__'`. Esto es útil para controlar el comportamiento de nuestro código dependiendo de si un módulo se está siendo importado desde otro como una biblioteca de funciones o se está ejecutando directamente.
+[`__name__`](https://docs.python.org/3/library/__main__.html) nos proporciona el nombre del módulo donde se usa. Sin embargo, cuando se usa en el módulo principal, es decir, en el módulo que sirve de punto de entrada del programa, el valor de `__name__` será siempre `'__main__'`. Esto es útil para controlar el comportamiento de nuestro código dependiendo de si un módulo está siendo importado desde otro como una biblioteca de funciones o se está ejecutando directamente como módulo principal.
 
 Vamos a simplificar el ejemplo para verlo más claro.
 
@@ -4296,15 +4296,19 @@ MAX_SIZE = 128
 
 - Todo lo demás (variables, funciones, nombres de módulos y paquetes): snake_case en minúsculas.
 ```python
-import random
-
-age = random.randint(5, 28)
-name = 'Juan'
-second_name = 'Robles'
+from custom_paths import directory
 
 
-def do_something():
-    pass
+def read_image():
+    if directory.is_relative_to('resources/images'):
+        file_name = 'pretty_landscape'
+        extension = '.jpg'
+        new_path = directory.with_name(file_name).with_suffix(extension)
+
+        return new_path.read_bytes()
+
+
+image = read_image()
 ```
 
 <br>
@@ -4325,7 +4329,7 @@ def multiply(a, b):
 print(multiply(5, 2))
 ```
 
-Es un ejemplo muy sencillo, pero así se indicaría, si importáramos `multiply` desde otro módulo, que la función `_calculate` es algo interno que no debería usarse fuera del módulo donde reside originalmente.
+Es un ejemplo muy sencillo, pero, si importáramos `multiply` desde otro módulo, así se indicaría que la función `_calculate` es algo interno que no debería usarse fuera del módulo donde reside originalmente.
 
 Ocurre lo mismo en las clases:
 
@@ -4391,14 +4395,15 @@ Esta mecánica no se usa, no es recomendable y no consigue nada especial más al
 
 ### 10.3. Nombres ya existentes
 
-Cuando tengamos que dar nombre a algun elemento cuyo nombre ya exista, por ejemplo, `id` es una [función integrada](https://docs.python.org/3/library/functions.html), deberíamos poner `_` como sufijo como dice la convención de estilos:
+Cuando tengamos que dar nombre a algun elemento cuyo nombre ya exista deberíamos poner `_` como sufijo, como dice la convención de estilos. Por ejemplo, `id` es una [función integrada](https://docs.python.org/3/library/functions.html):
 
 ```python
 name = 'Juan'
+id(name)
 id_ = 12
 ```
 
-No es obligatorio pero si asignamos a `id` algún valor, nos estaremos cargando la función y ya no la podremos llamar en ese contexto o ámbito. De hecho podemos comprobarlo con la función `print()`:
+No es obligatorio pero si asignáramos a `id` algún valor, nos estaríamos cargando la función y ya no la podríamos llamar en ese contexto o ámbito. De hecho podemos comprobarlo con la función `print()`:
 
 ```python
 print(1)
@@ -4419,8 +4424,8 @@ Otro ejemplo con funciones:
 ```python
 def reverse_elements(elements):
     elements = list(reversed(elements))
-    print(f'Original elements: {elements}')
-    print(f'Reversed elements: {elements}')  # we lost the reference to the outside elements
+    print(f'Original elements: {elements}')  # we lost the reference to the outside elements
+    print(f'Reversed elements: {elements}')
 
 
 elements = [0, 1, 2, 3]
@@ -4454,7 +4459,10 @@ Reversed elements: [3, 2, 1, 0]
 
 ## 11. Anotaciones de tipos
 
-En Python las anotaciones de tipo son opcionales y no producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno. En la [documentación](https://docs.python.org/3/library/typing.html) se especifica como anotar todos los tipos de datos.
+En Python las anotaciones de tipo son opcionales y no producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno. 
+Su misión es facilitar la escritura de código más predecible y mantenible al permitir conocer los tipos de cada elemento: los parámetros que se reciben, los argumentos que se envían y el tipo del resultado que devuelve una función. Además, el entorno de desarrollo utilizará esta información para advertirnos sobre posibles errores al usar tipos incorrectos y para mejorar las sugerencias de autocompletado.
+
+En la [documentación](https://docs.python.org/3/library/typing.html) se especifica como anotar todos los tipos de datos.
 
 ```python
 number: int = 5
@@ -4464,6 +4472,7 @@ name: str = 'Juan'
 elements: tuple[int, int, int] = (1, 2, 3)  # tuple of 3 ints (only in the tuples it is necessary to specify the exact size)
 elements: tuple[int, ...] = (1, 2, 3)  # if you don't want to specify the size
 elements: list[str] = ['hello', 'world', 'bye']  # list of strings
+elements: set[float] = {1.0, 1.7, 3.4}  # set of floats
 elements: set = {1, 2, 'bye'}  # set of different types
 elements: dict[float, str] = {1.1: 'a', 2.3: 'b', 3.6: 'c', 4.8: 'd'}  # dict of float keys and string values
 
@@ -4479,19 +4488,19 @@ def sum_numbers(number_1: int, number_2: int = 5) -> int:
     return number_1 + number_2
 
 
-result = sum_numbers(1.5)
+result = sum_numbers(1.9999801)
 print(result)
 print(type(result))
 ```
 Salida:
 ```
-6.5
+6.9999801
 <class 'float'>
 ```
 
-Según las anotaciones de tipos en `sum_numbers`, está esperando dos números enteros `int` pero podemos introducir también números de punto flotante `float` y funcionaría bien pero devolvería un resultado en punto flotante `float`, mientras que en la anotación está indicado que devolvería `int`. 
+Según las anotaciones de tipos en `sum_numbers`, está esperando dos números enteros `int` pero podemos introducir también números de punto flotante `float` y funcionaría bien, pero devolvería un resultado en punto flotante `float`, mientras que en la anotación está indicado que devolvería `int`. 
 
-Como se dijo anteriormente, esto no produciría ningún error en el programa. Aun así si queremos especificar bien los tipos podríamos hacer esto:
+Como se dijo anteriormente, esto no produciría ningún error en el programa. Aun así, si queremos especificar bien los tipos podríamos hacer esto:
 
 ```python
 def sum_numbers(number_1: int | float, number_2: int | float = 5) -> int | float:

@@ -1,3 +1,5 @@
+import asyncio
+
 from bson import ObjectId
 from bson.errors import InvalidId
 from fastapi import HTTPException, status
@@ -12,6 +14,8 @@ def create_object_id(id: str) -> ObjectId:
 
 
 client = AsyncIOMotorClient(host='localhost')
-db = client['kahoot']
+client.get_io_loop = asyncio.get_event_loop
+db = client['api_kahoot']
 
-question_collection = db['question']
+user_collection = db['user']
+user_collection.create_index('name', unique=True)

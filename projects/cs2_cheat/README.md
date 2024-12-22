@@ -28,7 +28,7 @@ https://gist.github.com/a2x/6eb033d3c7b9a97fb7e10d2763de0f9f
 
 Preview del [diagrama completo](memory_diagram.drawio):
 
-![memory_diagram_preview](../../resources/memory_diagram_preview.png)
+![memory_diagram_preview](../../markdown_resources/memory_diagram_preview.png)
 
 Necesitamos saber dónde buscar. Y para eso están los famosos “offsets”.
 
@@ -65,7 +65,7 @@ import requests
 general_offsets = requests.get('https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/offsets.json').json()
 general_offsets_text = json.dumps(general_offsets)
 
-general_offsets_path = pathlib.Path('resources/offsets/general_offsets.json')
+general_offsets_path = pathlib.Path('markdown_resources/offsets/general_offsets.json')
 general_offsets_path.write_text(general_offsets_text)
 ```
 
@@ -120,7 +120,7 @@ Todo está muy hardcodeado. Vamos a arreglarlo.
         'general_offsets': 'https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/offsets.json'
     }
     
-    GENERAL_OFFSETS_PATH = pathlib.Path('resources/offsets/general_offsets.json')
+    GENERAL_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/general_offsets.json')
     ```
   
 Vale, pero no queremos el diccionario de los offsets tal cual, vamos a extraer todos los pares clave-valor en otro diccionario.
@@ -204,8 +204,8 @@ Ahora igual con los `client_offsets`, pero solo con los que nos interesan.
         'general_offsets': 'https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/offsets.json'
     }
     
-    CLIENT_OFFSETS_PATH = pathlib.Path('resources/offsets/client_offsets.json')
-    GENERAL_OFFSETS_PATH = pathlib.Path('resources/offsets/general_offsets.json')
+    CLIENT_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/client_offsets.json')
+    GENERAL_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/general_offsets.json')
     
     REQUIRED_OFFSET_CLASSES = {'CBasePlayerController', 'CCSPlayerBase_CameraServices', 'CCSWeaponBaseVData',
                                'CEntityIdentity', 'CEntityInstance', 'CGameSceneNode', 'CGlowProperty',
@@ -291,8 +291,8 @@ Ahora que tenemos los offsets, juntémoslo con lo que hicimos al principio.
         'general_offsets': 'https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/offsets.json'
     }
     
-    CLIENT_OFFSETS_PATH = pathlib.Path('resources/offsets/client_offsets.json')
-    GENERAL_OFFSETS_PATH = pathlib.Path('resources/offsets/general_offsets.json')
+    CLIENT_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/client_offsets.json')
+    GENERAL_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/general_offsets.json')
     
     REQUIRED_OFFSET_CLASSES = {'CBasePlayerController', 'CCSPlayerBase_CameraServices', 'CCSWeaponBaseVData',
                                'CEntityIdentity', 'CEntityInstance', 'CGameSceneNode', 'CGlowProperty',
@@ -426,8 +426,8 @@ pm.write_float(local_player_pawn_address + offsets['m_flFlashMaxAlpha'], 0.0)
         'general_offsets': 'https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/offsets.json'
     }
     
-    CLIENT_OFFSETS_PATH = pathlib.Path('resources/offsets/client_offsets.json')
-    GENERAL_OFFSETS_PATH = pathlib.Path('resources/offsets/general_offsets.json')
+    CLIENT_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/client_offsets.json')
+    GENERAL_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/general_offsets.json')
     
     REQUIRED_OFFSET_CLASSES = {'CBasePlayerController', 'CCSPlayerBase_CameraServices', 'CCSWeaponBaseVData',
                                'CEntityIdentity', 'CEntityInstance', 'CGameSceneNode', 'CGlowProperty',

@@ -4047,7 +4047,7 @@
 
     4. Clases de piezas:
 
-        ![chess_diagram.svg](../resources/chess_diagram.svg)
+        ![chess_diagram.svg](../markdown_resources/chess_diagram.svg)
 
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas).
         2. Todos los objetos de las clases de piezas tendrán estos atributos:
@@ -4821,7 +4821,7 @@
 
     La siguiente imagen muestra el inicio del juego, el tablero sin resolver:
 
-   ![skyscraper.png](../resources/skyscraper.png)
+   ![skyscraper.png](../markdown_resources/skyscraper.png)
 
     En este caso la partida es de `4x4` pero podría tener cualquier tamaño `nxn`. Al ser de tamaño `4`, los rascacielos que podremos colocar tendrán una altura entre `1` y `4` (inclusive).
 
@@ -4829,7 +4829,7 @@
 
     Los números que aparecen fuera del tablero indican el número de rascacielos que se verían desde esa posición. Vamos a ver la solución de este tablero para tenerlo más claro:
 
-   ![skyscraper_solution.png](../resources/skyscraper_solution.png)
+   ![skyscraper_solution.png](../markdown_resources/skyscraper_solution.png)
 
     Los rascacielos altos tapan a los más bajos cuando los miramos desde cierto lado.
 

@@ -28,9 +28,9 @@ ENDPOINTS = {
     'general_offsets': 'https://raw.githubusercontent.com/a2x/cs2-dumper/refs/heads/main/output/offsets.json'
 }
 
-CLIENT_OFFSETS_PATH = pathlib.Path('resources/offsets/client_offsets.json')
-GENERAL_OFFSETS_PATH = pathlib.Path('resources/offsets/general_offsets.json')
-LAST_UPDATE_DATE_PATH = pathlib.Path('resources/offsets/last_update_date.txt')
+CLIENT_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/client_offsets.json')
+GENERAL_OFFSETS_PATH = pathlib.Path('markdown_resources/offsets/general_offsets.json')
+LAST_UPDATE_DATE_PATH = pathlib.Path('markdown_resources/offsets/last_update_date.txt')
 
 REQUIRED_OFFSET_CLASSES = {'CBasePlayerController', 'CCSPlayerBase_CameraServices', 'CCSWeaponBaseVData',
                            'CEntityIdentity', 'CEntityInstance', 'CGameSceneNode', 'CGlowProperty',

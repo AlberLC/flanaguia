@@ -30,7 +30,7 @@ Previsualización del [diagrama completo](memory_diagram.drawio):
 
 ![memory_diagram_preview](../../markdown_resources/memory_diagram_preview.png)
 
-Necesitamos saber donde buscar. Y para eso están los famosos “offsets”.
+Necesitamos saber dónde buscar. Y para eso están los famosos “offsets”.
 
 ## Offsets
 

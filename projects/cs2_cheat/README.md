@@ -26,7 +26,7 @@ Queremos acceder a la información más importante, que suelen ser las entidades
 
 https://gist.github.com/a2x/6eb033d3c7b9a97fb7e10d2763de0f9f
 
-Preview del [diagrama completo](memory_diagram.drawio):
+Previsualización del [diagrama completo](memory_diagram.drawio):
 
 ![memory_diagram_preview](../../markdown_resources/memory_diagram_preview.png)
 

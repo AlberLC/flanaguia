@@ -26,6 +26,10 @@ Queremos acceder a la información más importante, que suelen ser las entidades
 
 https://gist.github.com/a2x/6eb033d3c7b9a97fb7e10d2763de0f9f
 
+Preview del [diagrama completo](../../resources/memory_diagram.drawio):
+
+![memory_diagram_preview](../../resources/memory_diagram_preview.png)
+
 Necesitamos saber dónde buscar. Y para eso están los famosos “offsets”.
 
 ## Offsets

@@ -1083,7 +1083,7 @@ Give me a number: 7
 thank you
 ```
 
-Nótese que input recibe siempre texto (string).
+Nótese que `input()` recibe siempre texto (string).
 
 <br>
 

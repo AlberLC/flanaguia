@@ -432,7 +432,7 @@ Se crean con los paréntesis `(` `)`. Pero hay que tener en cuenta que este car�
 'hello'
 >>> type(elements)
 <class 'str'>
->>> elements = ('hello',)  # note the comma
+>>> elements = ('hello',)  # notice the comma
 >>> elements
 ('hello',)
 >>> type(elements)
@@ -1083,7 +1083,7 @@ Give me a number: 7
 thank you
 ```
 
-Nótese que `input()` recibe siempre texto (string).
+Nótese que `input()` siempre obtiene texto de la consola, es decir, ese `7` que se introduce en la consola se asigna a `text` como una cadena `'7'`.
 
 <br>
 

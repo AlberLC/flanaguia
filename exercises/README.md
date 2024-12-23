@@ -2,7 +2,7 @@
 
 ## Variables, tipos, entrada/salida
 
-1. Pedir por consola cuánto cuesta y cuánto pesa una caja vacía, así como cuánto cuesta y pesa una muñeca. Luego pedir por consola cuántas muñecas hay por caja y cuántas cajas hay. Imprimir en la consola el coste (€) y peso totales.
+1. Pedir por consola cuánto cuesta y cuánto pesa una caja vacía, así como cuánto cuesta y pesa una muñeca. Luego pedir por consola cuántas muñecas hay por caja y cuántas cajas hay. Imprimir en la consola el coste (€) y el peso (g) totales.
 
     <details>
     <summary>Solución</summary>
@@ -12,18 +12,18 @@
     doll_weight = float(input('Peso de una muñeca: '))
     box_price = float(input('Precio de una caja: '))
     box_weight = float(input('Peso de una caja: '))
-    doll_number = int(input('¿Cuántas muñecas hay por caja?: '))
-    box_number = int(input('¿Cuántas cajas hay?: '))
-
-    boxes_price = box_number * box_price
-    boxes_weight = box_number * box_weight
-
-    dolls_price_per_box = doll_number * doll_price
-    dolls_weight_per_bax = doll_number * doll_weight
-
+    dolls_number = int(input('¿Cuántas muñecas hay por caja?: '))
+    boxes_number = int(input('¿Cuántas cajas hay?: '))
+    
+    boxes_price = boxes_number * box_price
+    boxes_weight = boxes_number * box_weight
+    
+    dolls_price_per_box = dolls_number * doll_price
+    dolls_weight_per_box = dolls_number * doll_weight
+    
     print()
-    print(f'Coste total: {boxes_price + box_number * dolls_price_per_box} €')
-    print(f'Peso total: {boxes_weight + box_number * dolls_weight_per_bax} g')
+    print(f'Coste total: {boxes_price + boxes_number * dolls_price_per_box} €')
+    print(f'Peso total: {boxes_weight + boxes_number * dolls_weight_per_box} g')
     ```
 
     </details>

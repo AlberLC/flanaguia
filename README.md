@@ -836,13 +836,13 @@ range(0, 10)
 [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 ```
 
-`range()` tiene 3 parámetros:
+`range()` tiene tres parámetros:
 
 - start: empezar desde este valor (**inclusive**).
 - stop: hasta este (**no inclusive**).
 - step: números de pasos o saltos.
 
-Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por defecto, `start` = 0 y `step` = 1.
+Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por defecto, `start = 0` y `step = 1`.
 
 > `range()` se comporta igual que el acceso a segmentos de listas mediante [slices](https://docs.python.org/3/glossary.html#term-slice):
 > 
@@ -898,7 +898,7 @@ def do_something(color):
 
 Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar nombres que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los miembros de la enumeración. Además, si en un futuro queremos cambiar los miembros de la enumeración, no habrá que ir buscando en todas las partes del código donde se usan cadenas `'red'`, `'blue'` y `'green'` para actualizarlas y mantener la consistencia.
 
-Las `Enum` relacionan un nombre con un valor. En nuestro último ejemplo relacionamos `RED` con el valor 1, `GREEN` con el 2 y `BLUE` con el 3. Podemos generar valores automáticos de la siguiente manera:
+Las `Enum` relacionan un nombre con un valor. En nuestro último ejemplo relacionamos `RED` con el valor `1`, `GREEN` con el `2` y `BLUE` con el `3`. Podemos generar valores automáticos de la siguiente manera:
 
 ```python
 from enum import Enum, auto
@@ -910,7 +910,7 @@ class Color(Enum):
     BLUE = auto()
 ```
 
-`auto()` genera valores predeterminados. Tiene como valor inicial 1 y los siguientes irán incrementándose. En este caso obtenemos el mismo resultado que antes: `RED` = 1, `GREEN` = 2 y `BLUE` = 3.
+`auto()` genera valores predeterminados. Tiene como valor inicial `1` y los siguientes irán incrementándose. En este caso obtenemos el mismo resultado que antes: `RED = 1`, `GREEN = 2` y `BLUE = 3`.
 
 <br>
 
@@ -1189,9 +1189,9 @@ else:
 print('always')
 ```
 
-En Python todos los bloques se indican con el nivel de tabulaciones después de "**:**".
+En Python todos los bloques se indican con el nivel de tabulación después de "**:**".
 
-En el código anterior `print('i')` está dentro de la cláusula o bloque `else` porque tiene 1 tabulación (4 espacios es lo más usado). En cambio `print('always')` está fuera del `else` y se ejecutará siempre sin importar las condicionales. 
+En el código anterior `print('i')` está dentro de la cláusula o bloque `else` porque tiene una tabulación (4 espacios). En cambio `print('always')` está fuera del `else`, sin tabulaciones,  y se ejecutará siempre sin importar las condicionales. 
 
 No es necesario poner paréntesis en las condiciones: 
 
@@ -2539,7 +2539,7 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for /: 'str' and 'str'
 ```
 
-La traza del error nos indica que se ha lanzado un excepción de tipo `TypeError` en la línea 4 debido a que no se puede dividir un cadena entre otra: el operador `/` no tiene definido un comportamiento para operandos de tipo cadena.
+La traza del error nos indica que se ha lanzado un excepción de tipo `TypeError` en la línea `4` debido a que no se puede dividir un cadena entre otra: el operador `/` no tiene definido un comportamiento para operandos de tipo cadena.
 
 > Es posible que la traza aparezca en la consola antes que otras salidas realizadas por funciones como `print()` ejecutadas en líneas previas a la que provoca el error. Esto no significa que el orden de ejecución del programa haya cambiado, sino que la consola tiene que mostrar contenido enviado de distintos buffers prácticamente al mismo tiempo y a veces la información de uno llega antes que la del otro. 
 
@@ -2704,7 +2704,7 @@ list index out of range
 
 Pero volvemos a capturar un excepción demasiado genérica, nunca vamos a querer eso. Tenemos que intentar capturar siempre la única **excepción que esperamos** para que no pasen desapercibidos otros errores.
 
-Si miramos el [árbol de excepciones](https://docs.python.org/3/library/exceptions.html#exception-hierarchy) podemos ver todas las que existen. En este caso la excepción que ocurre es `IndexError` puesto que accedemos a la posición 7 de una lista que tiene 3 elementos.
+Si miramos el [árbol de excepciones](https://docs.python.org/3/library/exceptions.html#exception-hierarchy) podemos ver todas las que existen. En este caso la excepción que ocurre es `IndexError` puesto que accedemos a la posición `7` de una lista que tiene tres elementos.
 
 ```python
 elements = [0, 1, 2]
@@ -3918,7 +3918,7 @@ class D(B, C):
         print('Falling with style!')
 ```
 
-Los objetos de la clase `D` deberían tener 3 métodos: `walk()`, `sprint()` y `fly()`:
+Los objetos de la clase `D` deberían tener tres métodos: `walk()`, `sprint()` y `fly()`:
 
 ```python
 d = D()
@@ -4469,7 +4469,7 @@ number: int = 5
 number: float = 5.1
 condition: bool = True
 name: str = 'Juan'
-elements: tuple[int, int, int] = (1, 2, 3)  # tuple of 3 ints (only in the tuples it is necessary to specify the exact size)
+elements: tuple[int, int, int] = (1, 2, 3)  # tuple of three ints (only in the tuples it is necessary to specify the exact size)
 elements: tuple[int, ...] = (1, 2, 3)  # if you don't want to specify the size
 elements: list[str] = ['hello', 'world', 'bye']  # list of strings
 elements: set[float] = {1.0, 1.7, 3.4}  # set of floats

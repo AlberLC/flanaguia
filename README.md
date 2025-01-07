@@ -1189,7 +1189,7 @@ else:
 print('always')
 ```
 
-En Python todos los bloques se indican con el nivel de tabulación después de "**:**".
+En Python todos los bloques se indican con el nivel de tabulación después de `:`.
 
 En el código anterior `print('i')` está dentro de la cláusula o bloque `else` porque tiene una tabulación (4 espacios). En cambio `print('always')` está fuera del `else`, sin tabulaciones,  y se ejecutará siempre sin importar las condicionales. 
 

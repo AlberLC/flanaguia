@@ -1215,9 +1215,9 @@ match number:
 ```python
 elements = [7, 'Alberto']
 match elements:
-    case [1, 'Juan']:
+    case 1, 'Juan':
         ...
-    case [2, _]:
+    case 2, _:
         ...
     case _:  # default case
         ...

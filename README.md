@@ -59,14 +59,12 @@
 
 Python es un lenguaje de tipado **fuerte** y **dinámico**. A diferencia de otros lenguajes de tipado más débil, en Python cada valor contenido en una variable tienen su tipo y operaciones bien definidas y existen restricciones firmes a la hora de combinar dichos tipos de datos cuando se operan con ellos. En un lenguaje de tipado fuerte cuando se usan tipos distintos en una operación no soportada se produce un error en vez de realizarse transformaciones implícitas de datos.
 
-Ejemplo:
-
-JavaScript
+### JavaScript (weak and dynamic)
 
 ```javascript
->>> 2 + "3"
+>>> 2 + '3'
 '23'
->>> 2 * "3"
+>>> 2 * '3'
 6
 >>> [] + {}
 '[object Object]'
@@ -74,16 +72,16 @@ JavaScript
 0
 ```
 
-Python
+### Python (strong and dynamic)
 
 ```python
->>> 2 + "3"
+>>> 2 + '3'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: unsupported operand type(s) for +: 'int' and 'str'
 ```
 
-Python es **dinámico** porque las variables no tienen tipo, sino su contenido. Una variable no es más que un nombre que apunta o referencia a un valor, el cual siempre tiene tipo. Sin embargo, dicha referencia puede cambiar y apuntar a otro valor (cambia su contenido).
+En Python las variables no tienen tipo, pero su contenido sí. Una variable no es más que un nombre que apunta o referencia a un valor, el cual siempre tiene tipo. Se considera un lenguaje **dinámico** porque dicha referencia puede cambiar y apuntar a otro valor (cambiar su contenido), que puede tener incluso otro tipo.
 
 ```python
 >>> house = 5

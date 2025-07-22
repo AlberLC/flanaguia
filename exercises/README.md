@@ -3747,18 +3747,18 @@
                     break
     
                 match filter_.split(':'):
-                    case ['id' | 'age' as key, value]:
+                    case 'id' | 'age' as key, value:
                         try:
                             value = int(value)
                         except ValueError:
                             pass
                         else:
                             filtered_clients = [client for client in filtered_clients if client[key] == value]
-                    case ['name', name]:
+                    case 'name', name:
                         filtered_clients = [client for client in filtered_clients if name in client['name']]
-                    case ['min', 'id' | 'name' | 'age' as key]:
+                    case 'min', 'id' | 'name' | 'age' as key:
                         filtered_clients = [min(filtered_clients, key=lambda client: client[key])]
-                    case ['max', 'id' | 'name' | 'age' as key]:
+                    case 'max', 'id' | 'name' | 'age' as key:
                         filtered_clients = [max(filtered_clients, key=lambda client: client[key])]
     
             for client in filtered_clients:

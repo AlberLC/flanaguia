@@ -241,7 +241,7 @@
     else:
         price = 10
 
-    print(f"Precio de la entrada: {f'{price} €' if price else '¡gratis!'}")
+    print(f'Precio de la entrada: {f'{price} €' if price else '¡gratis!'}')
     ```
 
     </details>
@@ -542,7 +542,7 @@
     length = int(input('Introduce la longitud del lado del rombo: '))
     
     for i in range(-length + 1, length):
-        print(f"{' ' * (abs(i))}{'*' * ((length - abs(i)) * 2 - 1)}")
+        print(f'{' ' * (abs(i))}{'*' * ((length - abs(i)) * 2 - 1)}')
     ```
 
     </details>
@@ -605,11 +605,11 @@
     length = int(input('Introduce la altura del triángulo: '))
     
     if length > 0:
-        print(f"{' ' * (length - 1)}1")
+        print(f'{' ' * (length - 1)}1')
     
     last_row = []
     for i in range(1, length):
-        print(f"{' ' * (length - i - 1)}1", end=' ')
+        print(f'{' ' * (length - i - 1)}1', end=' ')
     
         row = [1]
         for j in range(i - 1):
@@ -1302,7 +1302,7 @@
     ]
     
     for i, year in enumerate(range(first_year + 1, 2024), start=1):
-        print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
+        print(f'El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.')
     ```
     b)
     ```python
@@ -1332,7 +1332,7 @@
     ]
     
     for i, year in enumerate(range(first_year + 1, 2024), start=1):
-        print(f"El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.")
+        print(f'El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.')
     ```
 
     </details>
@@ -1358,7 +1358,7 @@
             failed_subjects.append(subject)
     
     if len(failed_subjects) > 1:
-        print(f"Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.")
+        print(f'Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.')
     else:
         print(f'Asignaturas suspensas: {failed_subjects[0]}.')
     ```
@@ -3431,8 +3431,8 @@
                 total = gender_count['males'] + gender_count['females']
                 print(subject)
                 print('-' * len(subject))
-                print(f"Male: {gender_count['males'] / total:.0%}")
-                print(f"Female: {gender_count['females'] / total:.0%}")
+                print(f'Male: {gender_count['males'] / total:.0%}')
+                print(f'Female: {gender_count['females'] / total:.0%}')
                 print()
         ```
 
@@ -4734,7 +4734,7 @@
             return self._length
     
         def __str__(self) -> str:
-            return f"<{', '.join(repr(element) for element in self)}>"
+            return f'<{', '.join(repr(element) for element in self)}>'
     
         def _get_node(self, index: int) -> Node:
             if not 0 <= index < len(self):

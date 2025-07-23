@@ -4011,7 +4011,7 @@
 
 2. ☠️☠️ Ajedrez.
 
-    Para realizar este ejercicio es necesario descargar este [zip](clases_2.zip), que contiene los recursos necesarios y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](clases_2.zip), que contiene los recursos necesarios, descomprimirlos en el directorio donde se vaya a trabajar e [instalar las bibliotecas](../README.md#121-instalación-de-paquetes) incluidas en el [`requirements.txt`](../README.md#1211-archivo-requirementstxt).
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 

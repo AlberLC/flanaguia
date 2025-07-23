@@ -4826,8 +4826,8 @@ Este comando guarda todas las dependencias instaladas, junto con sus versiones e
 
 > Otros comandos de `pip`:
 > 
-> - `pip list`: para mostrar en la consola todas las bibliotecas instaladas.
-> - `pip show <package_name>`: muestra los detalles de una biblioteca instalada.
+> - `pip list`: para mostrar en la consola todos los paquetes instalados.
+> - `pip show <package_name>`: muestra los detalles de un paquete instalado.
 
 <br>
 

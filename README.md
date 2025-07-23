@@ -4569,7 +4569,7 @@ hello
 
 ## 12. Gestión de paquetes
 
-Python es uno de los lenguajes más completos en cuanto a funcionalidades integradas. Conocemos sobradamente las [funciones integradas](https://docs.python.org/3/library/functions.html), que ya nos permitían hacer multitud de cosas sin necesidad de importar nada, algo que en otros lenguajes suele ser más engorroso o directamente imposible (te estoy mirando a ti, `Java`). Sin embargo, cuando desarrollamos un programa más especializado, vamos a necesitar importar bibliotecas, que no son más que módulos o conjuntos de módulos organizados en paquetes.
+Python es uno de los lenguajes más completos en cuanto a funcionalidades integradas. Conocemos sobradamente las [funciones integradas](https://docs.python.org/3/library/functions.html), que ya nos permitían hacer multitud de cosas sin necesidad de importar nada, algo que en otros lenguajes suele ser más engorroso o directamente imposible (te estoy mirando a ti, `Java`). Sin embargo, cuando desarrollamos un programa más especializado, vamos a necesitar importar **bibliotecas**, que no son más que módulos o conjuntos de módulos organizados en **paquetes**.
 
 La [biblioteca estándar](https://docs.python.org/3/library/index.html) abarca prácticamente cualquier ámbito que puedas imaginar, sobre todo cuando estás empezando en el mundo de la programación. Cuando comienzas a desarrollar tus primeros proyectos, te das cuenta que no necesitas instalar nada aparte porque la solución a tus problemas está en una biblioteca que ya existe en el lenguaje y solo tienes que importarla.
 

@@ -52,6 +52,10 @@
     2. [Nombres privados](#102-nombres-privados)
     3. [Nombres ya existentes](#103-nombres-ya-existentes)
 11. [Anotaciones de tipos](#11-anotaciones-de-tipos)
+12. [Gestión de paquetes](#12-gestión-de-paquetes)
+    1. [Instalación de paquetes](#121-instalación-de-paquetes)
+        1. [Archivo `requirements.txt`](#1211-archivo-requirementstxt)
+    2. [Entornos virtuales](#122-entornos-virtuales)
 
 <br>
 
@@ -836,9 +840,9 @@ range(0, 10)
 
 `range()` tiene tres parámetros:
 
-- start: empezar desde este valor (**inclusive**).
-- stop: hasta este (**no inclusive**).
-- step: números de pasos o saltos.
+- `start`: empezar desde este valor (**inclusive**).
+- `stop`: hasta este (**no inclusive**).
+- `step`: números de pasos o saltos.
 
 Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por defecto, `start = 0` y `step = 1`.
 
@@ -3186,11 +3190,11 @@ Los métodos especiales son aquellos que empiezan con doble `_` y acaban de la m
 
 Vamos a crear una clase `Person` que de soporte para que:
 
-- la función integrada `len()` devuelva cuantas letras tiene el nombre (redefiniendo `__len__()`).
-- el operador `==` devuelva `True` para dos `Person` con los mismos nombre y edad  (redefiniendo `__eq__()`).
-- el operador `+` devuelva la suma de las edades  (redefiniendo `__add__()`).
-- el operador `*` devuelva un nuevo `Person` hijo de dos `Person` cuyo nombre será la mezcla del de los padres  (redefiniendo `__mul__()`).
-- la función integrada `str()` devuelva una mejor representación del objeto  (redefiniendo `__str__()`).
+- La función integrada `len()` devuelva cuantas letras tiene el nombre (redefiniendo `__len__()`).
+- El operador `==` devuelva `True` para dos `Person` con los mismos nombre y edad  (redefiniendo `__eq__()`).
+- El operador `+` devuelva la suma de las edades  (redefiniendo `__add__()`).
+- El operador `*` devuelva un nuevo `Person` hijo de dos `Person` cuyo nombre será la mezcla del de los padres  (redefiniendo `__mul__()`).
+- La función integrada `str()` devuelva una mejor representación del objeto  (redefiniendo `__str__()`).
 
 ```python
 class Person:
@@ -4457,8 +4461,7 @@ Reversed elements: [3, 2, 1, 0]
 
 ## 11. Anotaciones de tipos
 
-En Python las anotaciones de tipo son opcionales y no producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno. 
-Su misión es facilitar la escritura de código más predecible y mantenible al permitir conocer los tipos de cada elemento: los parámetros que se reciben, los argumentos que se envían y el tipo del resultado que devuelve una función. Además, el entorno de desarrollo utilizará esta información para advertirnos sobre posibles errores al usar tipos incorrectos y para mejorar las sugerencias de autocompletado.
+En Python las anotaciones de tipo son opcionales y no producirán ningún efecto en la ejecución ni provocarán advertencia o error alguno. Su misión es facilitar la escritura de código más predecible y mantenible al permitir conocer los tipos de cada elemento: los parámetros que se reciben, los argumentos que se envían y el tipo del resultado que devuelve una función. Además, el entorno de desarrollo utilizará esta información para advertirnos sobre posibles errores al usar tipos incorrectos y para mejorar las sugerencias de autocompletado.
 
 En la [documentación](https://docs.python.org/3/library/typing.html) se especifica como anotar todos los tipos de datos.
 
@@ -4561,3 +4564,316 @@ hello
 ```
 
 > En el ejemplo anterior hemos usado las [funciones integradas](https://docs.python.org/3/library/functions.html) `next()`, `iter()`, `range()`y `print()`.
+
+<br>
+
+## 12. Gestión de paquetes
+
+Python es uno de los lenguajes más completos en cuanto a funcionalidades integradas. Conocemos sobradamente las [funciones integradas](https://docs.python.org/3/library/functions.html), que ya nos permitían hacer multitud de cosas sin necesidad de importar nada, algo que en otros lenguajes suele ser más engorroso o directamente imposible (te estoy mirando a ti, `Java`). Sin embargo, cuando desarrollamos un programa más especializado, vamos a necesitar importar bibliotecas, que no son más que módulos o conjuntos de módulos organizados en paquetes.
+
+La [biblioteca estándar](https://docs.python.org/3/library/index.html) abarca prácticamente cualquier ámbito que puedas imaginar, sobre todo cuando estás empezando en el mundo de la programación. Cuando comienzas a desarrollar tus primeros proyectos, te das cuenta que no necesitas instalar nada aparte porque la solución a tus problemas está en una biblioteca que ya existe en el lenguaje y solo tienes que importarla.
+
+¿Que queremos suspender la ejecución unos segundos? `time.sleep()`. ¿Manejo de fechas? Paquete `datetime`. ¿Quieres ejecutar comandos del sistema o lanzar otros programas mientras te comunicas con ellos? Usa `subprocess`. Hay muchísimos ejemplos:
+
+- Matemáticas y estadística: `math`, `statistics`
+- Manejo de ficheros y sistema: `os`, `sys`, `pathlib`, `shutil`
+- Serialización: `json`, `pickle`, `csv`
+- Expresiones regulares: `re`
+- Programación concurrente: `threading`, `multiprocessing`, `asyncio`
+- Conexiones de red: `socket`, `http`, `urllib`
+- Bases de datos: `sqlite3`
+- Compresión: `zipfile`, `gzip`
+- Testing: `unittest`, `doctest`
+- Herramientas de desarrollo: `argparse`, `logging`, `inspect`, `functools`, `itertools`
+- Interfaces gráficas: `tkinter`
+
+... y muchas más.
+
+Sin embargo, cuando desarrollamos proyectos reales y complejos, vamos a necesitar bibliotecas externas, herramientas de terceros y frameworks potentes que nos hagan el trabajo mucho más fácil, rápido y mantenible.
+
+> Python es un proyecto comunitario con una de las comunidades más grandes, activas e implicadas del mundo del software. Gracias a esto, existen herramientas muy avanzadas y diversas que permiten abordar cualquier tipo de proyecto, desde los más sencillos hasta los más complejos, sin tener que reinventar la rueda. Además, estas bibliotecas, frameworks y utilidades de terceros están disponibles libremente para que cualquiera pueda usarlas.
+
+**Ejemplos de bibliotecas populares:**
+
+- **Desarrollo web:**
+
+    - `django`: framework web completo.
+    - `flask`: microframework para APIs o sitios ligeros.
+    - `fastapi`: framework moderno y muy rápido para APIs.
+    - `uvicorn`: servidor ASGI ultrarrápido, ideal para frameworks modernos.
+    - `requests`: realización de peticiones HTTP de forma sencilla.
+    - `aiohttp`/`httpx`: realización de peticiones HTTP de forma asíncrona.
+    - `playwright`: automatización y testing de navegadores.
+    - `beautifulsoup4`: scraping web.
+    - `scrapy`: scraping web avanzado.
+
+- **Modelos y bases de datos:**
+
+    - `pydantic`: validación de datos y parsing basado en tipos, usado mucho con `fastapi`.
+    - `sqlalchemy`: ORM y toolkit para bases de datos relacionales.
+    - `pymongo`: acceso a bases de datos MongoDB.
+    - `redis`: cliente oficial de Redis para Python, compatible con la mayoría de las funcionalidades del servidor.
+
+- **Ciencia de datos y machine learning:**
+
+    - `numpy`: álgebra lineal, arrays multidimensionales.
+    - `pandas`: análisis y manipulación de datos.
+    - `matplotlib`: visualización de datos.
+    - `seaborn`: visualización estadística basada en `matplotlib`.
+    - `plotly`: visualización interactiva y avanzada.
+    - `scikit-learn`: machine learning clásico.
+    - `tensorflow`: deep learning.
+    - `torch`: deep learning (PyTorch).
+
+- **Procesamiento de imágenes y vídeo:**
+
+    - `opencv-python`: procesamiento de imágenes y vídeo.
+    - `Pillow`: manipulación de imágenes.
+    - `moviepy`: edición de vídeo.
+
+- **DevOps, sistemas y administración:**
+
+    - `paramiko`: SSH en Python.  
+    - `psutil`: información sobre procesos y uso de recursos.
+    - `fabric`: automatización de tareas de administración.
+    - `pymem`: manipulación de memoria de procesos.
+
+- **Testing y calidad:**
+
+    - `pytest`: framework de testing.
+    - `coverage`: análisis de cobertura de código.
+    - `tox`: testing en múltiples entornos.
+
+- **Interfaces gráficas:**
+
+    - `PySide6`: bindings oficiales de Qt6 para Python; potente, moderno y con soporte completo de Qt.
+    - `PyQt5`: bindings alternativos de Qt5 para Python, similares a `PySide6`.
+    - `kivy`: framework orientado a interfaces táctiles y aplicaciones móviles, también válido para escritorio.
+    - `wxPython`: bindings de la biblioteca nativa wxWidgets; estilo nativo por plataforma.
+    - `dearpygui`: interfaz moderna y acelerada por GPU, ideal para herramientas y prototipos.
+
+- **Desarrollo de bots:**
+
+    - `telethon`: bots y clientes para la API de Telegram.
+    - `discord.py`: bots y clientes para Discord.
+
+- **Automatización, scripting y empaquetado:**
+
+    - `openpyxl`: trabajar con ficheros Excel.
+    - `pyautogui`: automatización de escritorio.
+    - `pyinstaller`: creación de ejecutables multiplataforma.
+    - `yt-dlp`: descarga de vídeos de YouTube y otras plataformas.    
+
+Todas estas bibliotecas son solo una pequeña muestra del enorme ecosistema que tiene Python (un ejemplo podría ser esta [lista colaborativa](https://github.com/vinta/awesome-python)). Existen muchísimas más, para prácticamente cualquier tarea que puedas imaginar.
+
+<br>
+
+### 12.1. Instalación de paquetes
+
+Como mencionamos anteriormente, las bibliotecas en Python no son más que módulos o paquetes de módulos, y en esencia no difieren de los que uno mismo podría desarrollar. De hecho, podrías acceder al código fuente de una biblioteca que desees utilizar, copiarlo directamente en tu proyecto e importarlo como cualquier otro módulo. Sin embargo, este enfoque conlleva numerosos inconvenientes, por ejemplo:
+
+- ¿Qué sucede si necesitas una versión específica de esa biblioteca?
+- ¿Y si varias bibliotecas que usas requieren versiones diferentes e incompatibles entre sí?
+- Si una biblioteca depende de otras (lo que es muy común), ¿cómo sabrías cuáles son esas dependencias? ¿Tendrías que buscarlas, descargarlas e instalarlas manualmente, una por una?
+- ¿Cómo gestionas actualizaciones o parches de seguridad?
+- ¿Cómo evitar duplicar código o tener conflictos entre distintas copias de bibliotecas en distintos proyectos?
+- ¿Y si trabajas en equipo y necesitas asegurarte de que todos usan exactamente las mismas versiones?
+
+Ahora imagina tener que repetir todo este proceso para cada una de las bibliotecas que tu proyecto necesita. La complejidad y el margen de error aumentan rápidamente.
+
+Afortunadamente, en Python contamos con herramientas que automatizan y simplifican todo este proceso: los **gestores de paquetes**, siendo `pip` el oficial y el más utilizado. Estas herramientas se encargan de descargar, instalar y gestionar las bibliotecas (y sus dependencias) de forma automática, asegurando compatibilidad entre versiones y facilitando el mantenimiento de los proyectos.
+
+Vamos a ver un ejemplo en el que haremos una petición a `'https://example.com'` para obtener el contenido de su página web. Para ello, usaremos la biblioteca `requests`, que facilita mucho este tipo de tareas.
+
+```python
+import requests
+
+response = requests.get('https://example.com')
+print(response.text)
+```
+Como aún no la hemos instalado, si intentamos ejecutar el código, obtendremos un error:
+```
+Traceback (most recent call last):
+  File ".../main.py", line 1, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+```
+
+Para instalar bibliotecas en Python solo tenemos que ejecutar un comando en la terminal. Para instalar una biblioteca como `requests`, solo necesitamos escribir:
+
+```
+pip install requests
+```
+
+Volvemos a ejecutar nuestro código. Salida:
+
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    </style>    
+</head>
+
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+```
+
+¡Listo! Ya estamos obteniendo el contenido HTML de la página. `pip` se ha encargado de descargar `requests` junto con todas sus dependencias, y esta biblioteca ha realizado todo el trabajo de conexión HTTP por nosotros: abrir la conexión con el servidor, enviar la solicitud, recibir la respuesta y ponerla a nuestra disposición de forma sencilla.
+
+Detrás de escena, `pip` se conecta con [PyPI (Python Package Index)](https://pypi.org/), que es el repositorio oficial de paquetes para Python. PyPI funciona como una enorme base de datos en línea donde los desarrolladores publican sus bibliotecas, y desde donde `pip` puede descargarlas automáticamente junto con sus versiones compatibles y todas las dependencias necesarias.
+
+¿Y dónde se instala la biblioteca `requests`?
+
+Por defecto, cuando instalas una biblioteca con `pip`, esta no se coloca dentro de la carpeta de tu proyecto, sino que se instala **globalmente** en el entorno del sistema. En una instalación estándar de Python descargada desde la [web oficial](https://www.python.org/), los paquetes se instalan en carpetas específicas del sistema.
+
+Por ejemplo, para Python 3.13:
+
+- En Windows: `C:\Users\<username>\AppData\Local\Programs\Python\Python313\Lib\site-packages`
+- En Linux generalmente se encuentra en: `/usr/local/lib/python3.13/site-packages` o `/usr/lib/python3.13/site-packages`
+
+<br>
+
+#### 12.1.1. Archivo `requirements.txt`
+
+Una vez que hemos instalado las bibliotecas necesarias para nuestro proyecto, es importante poder registrar cuáles son esas bibliotecas y qué versiones estamos utilizando, especialmente si otras personas van a trabajar con nuestro código o si queremos reproducir el entorno en otro equipo. Para eso existe el archivo `requirements.txt`.
+
+> Por convenio se usa ese nombre para el archivo, pero se puede usar cualquier otro.
+
+Este archivo es simplemente una lista de paquetes que especifica qué bibliotecas necesita tu proyecto para funcionar correctamente. Por ejemplo:
+
+```requirements
+numpy
+pandas
+requests
+```
+
+Ahora que tenemos este archivo, cualquier persona (incluyéndote a ti en el futuro) puede instalar todas las dependencias de una sola vez con este comando:
+
+```
+pip install -r requirements.txt
+```
+
+Esto instalará en tu entorno la última versión que exista de cada biblioteca, aunque generalmente es preferible especificar versiones concretas mediante restricciones para asegurar mayor estabilidad:
+
+```requirements
+numpy>=1.24
+pandas<2.3
+requests==2.31.0
+```
+
+Restricciones para versiones:
+
+- `==`: versión exacta.
+- `!=`: cualquier versión excepto la dada.
+- `>`: mayor que.
+- `<`: menor que.
+- `>=`: mayor o igual que.
+- `<=`: menor o igual que.
+- `~=`: Compatible con una versión (mantiene misma versión mayor o menor, según el caso).
+- `===`: Coincidencia exacta del nombre de versión (muy raro, casos especiales).
+
+> Además de estas restricciones, en un `requirements.txt` también se pueden encontrar otras formas de especificar dependencias, como:
+> 
+> - **Extras**: para incluir dependencias opcionales de un paquete, por ejemplo: `requests[security]`
+> - **Marcadores de entorno**: para condicionar la instalación según el sistema operativo, versión de Python u otras variables, por ejemplo: `backports.zoneinfo; python_version < "3.9"`
+> - **Referencias a repositorios o URLs**: para instalar paquetes directamente desde un repositorio Git o una URL, por ejemplo: `git+https://github.com/<user>/<project>.git`
+
+Se puede generar automáticamente el archivo `requirements.txt` a partir del entorno actual ejecutando:
+
+```
+pip freeze > requirements.txt
+```
+
+Este comando guarda todas las dependencias instaladas, junto con sus versiones exactas, en el archivo. Es una manera sencilla y confiable de garantizar que tu proyecto será ejecutable en cualquier entorno con las mismas condiciones.
+
+> Se puede usar el comando
+> 
+> ```
+> pip list
+> ```
+> 
+> para mostrar en la consola todas las bibliotecas instaladas.
+
+<br>
+
+### 12.2. Entornos virtuales
+
+Hasta ahora hemos instalado paquetes directamente en el entorno global de Python del sistema. Cuando todas las bibliotecas se instalan en un único lugar compartido (el entorno global), todos los proyectos usan las mismas versiones de los paquetes. Esto puede generar conflictos, por ejemplo:
+
+- Un proyecto necesita `Django 4.2`, pero otro solo funciona con `Django 3.2`.
+- Actualizas una biblioteca para un proyecto y sin querer rompes otro.
+- Necesitas instalar una versión antigua de una biblioteca que ya no es compatible con otras que tienes.
+- Compartes tu proyecto con alguien más y en su sistema las versiones no coinciden, causando errores.
+
+Este caos crece rápidamente cuanto más proyectos manejas, y hace que mantener el entorno de desarrollo se vuelva difícil, poco predecible e incluso inseguro.
+
+Aquí es donde entran los **entornos virtuales**. Un **entorno virtual** es una especie de "mini instalación aislada" de Python dentro de tu proyecto. Te permite tener tus propias versiones de paquetes, sin interferir con el entorno global ni con otros proyectos, lo cual no solo es una buena práctica, sino la forma **recomendada y profesional** de trabajar con Python.
+
+Crear un entorno virtual es muy sencillo y se puede hacer directamente desde la terminal con un solo comando. Sin embargo, si estás trabajando con un entorno de desarrollo (IDE) como VS Code o PyCharm, la propia herramienta te ofrece facilidades para crearlo automáticamente a través de su interfaz gráfica.
+
+Aun así, es útil saber cómo hacerlo manualmente, ya que te da mayor control y te permite entender qué está ocurriendo por debajo.
+
+Para crear un entorno virtual desde la terminal, simplemente navega hasta la carpeta de tu proyecto y ejecuta:
+
+```
+python -m venv .venv
+```
+
+Este comando indica a tu sistema lo siguiente:
+
+- `python`: ejecuta el intérprete de Python.
+- `-m venv`: ejecuta el módulo `venv` como script principal, que se encarga de crear entornos virtuales.
+- `.venv`: es el argumento que se le pasa al módulo `venv`, indicando el nombre de la carpeta donde se creará el entorno virtual (que comúnmente es `.venv` o `venv`).
+
+Una vez creado, hay que activar el entorno virtual para comenzar a usarlo. Esto cambia el entorno de ejecución de Python para que las bibliotecas se instalen dentro del entorno virtual y no globalmente en el sistema.
+
+- En Windows: `.venv\Scripts\activate`
+- En Linux: `source .venv/bin/activate`
+
+Tras activar tu entorno virtual, tu prompt cambiará y verás que comienza con `(venv)`, indicando que estás trabajando dentro del entorno virtual. Ahora, cualquier instalación que hagas con pip se instalará solo dentro del entorno virtual, sin afectar al resto del sistema.
+
+> Si estás usando un IDE, recuerda seleccionar el entorno virtual como intérprete del proyecto. Esto es fundamental para que el IDE use las bibliotecas instaladas en ese entorno en lugar de las que están en el entorno global del sistema.
+
+Se puede salir del entorno virtual y volver al entorno global de Python ejecutando en la consola:
+
+```
+deactivate
+```

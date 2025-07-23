@@ -4670,7 +4670,7 @@ Todas estas bibliotecas son solo una pequeña muestra del enorme ecosistema que 
 
 ### 12.1. Instalación de paquetes
 
-Como mencionamos anteriormente, las bibliotecas en Python no son más que módulos o paquetes de módulos, y en esencia no difieren de los que uno mismo podría desarrollar. De hecho, podrías acceder al código fuente de una biblioteca que desees utilizar, copiarlo directamente en tu proyecto e importarlo como cualquier otro módulo. Sin embargo, este enfoque conlleva numerosos inconvenientes, por ejemplo:
+Como mencionamos anteriormente, las **bibliotecas** en Python no son más que módulos o **paquetes** de módulos, y en esencia no difieren de los que uno mismo podría desarrollar. De hecho, podrías acceder al código fuente de una biblioteca que desees utilizar, copiarlo directamente en tu proyecto e importarlo como cualquier otro módulo. Sin embargo, este enfoque conlleva numerosos inconvenientes, por ejemplo:
 
 - ¿Qué sucede si necesitas una versión específica de esa biblioteca?
 - ¿Y si varias bibliotecas que usas requieren versiones diferentes e incompatibles entre sí?

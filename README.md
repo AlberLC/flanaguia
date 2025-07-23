@@ -4824,13 +4824,10 @@ pip freeze > requirements.txt
 
 Este comando guarda todas las dependencias instaladas, junto con sus versiones exactas, en el archivo. Es una manera sencilla y confiable de garantizar que tu proyecto será ejecutable en cualquier entorno con las mismas condiciones.
 
-> Se puede usar el comando
+> Otros comandos de `pip`:
 > 
-> ```
-> pip list
-> ```
-> 
-> para mostrar en la consola todas las bibliotecas instaladas.
+> - `pip list`: para mostrar en la consola todas las bibliotecas instaladas.
+> - `pip show <package_name>`: muestra los detalles de una biblioteca instalada.
 
 <br>
 

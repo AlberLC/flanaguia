@@ -4573,7 +4573,7 @@ Python es uno de los lenguajes más completos en cuanto a funcionalidades integr
 
 La [biblioteca estándar](https://docs.python.org/3/library/index.html) abarca prácticamente cualquier ámbito que puedas imaginar, sobre todo cuando estás empezando en el mundo de la programación. Cuando comienzas a desarrollar tus primeros proyectos, te das cuenta que no necesitas instalar nada aparte porque la solución a tus problemas está en una biblioteca que ya existe en el lenguaje y solo tienes que importarla.
 
-¿Que queremos suspender la ejecución unos segundos? `time.sleep()`. ¿Manejo de fechas? Paquete `datetime`. ¿Quieres ejecutar comandos del sistema o lanzar otros programas mientras te comunicas con ellos? Usa `subprocess`. Hay muchísimos ejemplos:
+¿Que queremos suspender la ejecución unos segundos? `time.sleep()`. ¿Manejo de fechas? Paquete `datetime`. ¿Que queremos ejecutar comandos del sistema o lanzar otros programas mientras te comunicas con ellos? Usamos `subprocess`. Hay muchísimos ejemplos:
 
 - Matemáticas y estadística: `math`, `statistics`
 - Manejo de ficheros y sistema: `os`, `sys`, `pathlib`, `shutil`

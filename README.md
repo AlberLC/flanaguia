@@ -4659,10 +4659,10 @@ Sin embargo, cuando desarrollamos proyectos reales y complejos, vamos a necesita
 
 - **Automatización, scripting y empaquetado:**
 
-    - `openpyxl`: trabajar con ficheros Excel.
+    - `openpyxl`: manipulación de ficheros Excel.
     - `pyautogui`: automatización de escritorio.
-    - `pyinstaller`: creación de ejecutables multiplataforma.
     - `yt-dlp`: descarga de vídeos de YouTube y otras plataformas.    
+    - `pyinstaller`: creación de ejecutables multiplataforma.
 
 Todas estas bibliotecas son solo una pequeña muestra del enorme ecosistema que tiene Python (un ejemplo podría ser esta [lista colaborativa](https://github.com/vinta/awesome-python)). Existen muchísimas más, para prácticamente cualquier tarea que puedas imaginar.
 

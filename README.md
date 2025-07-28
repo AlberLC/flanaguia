@@ -4626,14 +4626,13 @@ Aunque Python nos brinda los bloques básicos (y quizá no tan básicos si los c
 ```python
 import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
 
 @app.get('/hello')
 def hello():
-    return JSONResponse({'message': 'Hello from FastAPI!'})
+    return {'message': 'Hello from FastAPI!'}
 
 
 uvicorn.run(app)

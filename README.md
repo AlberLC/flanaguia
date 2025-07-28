@@ -4720,16 +4720,16 @@ Todas estas bibliotecas son solo una pequeña muestra del enorme ecosistema que 
 
 ### 12.1. Instalación de paquetes
 
-Como mencionamos anteriormente, las **bibliotecas** en Python no son más que módulos o **paquetes** de módulos, y en esencia no difieren de los que uno mismo podría desarrollar. De hecho, podrías acceder al código fuente de una biblioteca que desees utilizar, copiarlo directamente en tu proyecto e importarlo como cualquier otro módulo. Sin embargo, este enfoque conlleva numerosos inconvenientes, por ejemplo:
+Como mencionamos anteriormente, las **bibliotecas** en Python no son más que módulos o **paquetes** de módulos, y en esencia no difieren de los que uno mismo podría desarrollar. De hecho, podríamos acceder al código fuente de una biblioteca que deseemos utilizar, copiarlo directamente en nuestro proyecto e importarlo como cualquier otro módulo. Sin embargo, este enfoque conlleva numerosos inconvenientes, por ejemplo:
 
-- ¿Qué sucede si necesitas una versión específica de esa biblioteca?
+- ¿Qué sucede si necesitamos una versión específica de esa biblioteca?
 - ¿Y si varias bibliotecas que usas requieren versiones diferentes e incompatibles entre sí?
-- Si una biblioteca depende de otras (lo que es muy común), ¿cómo sabrías cuáles son esas dependencias? ¿Tendrías que buscarlas, descargarlas e instalarlas manualmente, una por una?
-- ¿Cómo gestionas actualizaciones o parches de seguridad?
-- ¿Cómo evitar duplicar código o tener conflictos entre distintas copias de bibliotecas en distintos proyectos?
-- ¿Y si trabajas en equipo y necesitas asegurarte de que todos usan exactamente las mismas versiones?
+- Si una biblioteca depende de otras (lo que es muy común), ¿cómo sabríamos cuáles son esas dependencias? ¿Tendríamos que buscarlas, descargarlas e instalarlas manualmente, una por una?
+- ¿Cómo gestionamos actualizaciones o parches de seguridad?
+- ¿Cómo evitamos duplicar código o tener conflictos entre distintas copias de bibliotecas en distintos proyectos?
+- ¿Y si trabajamos en equipo y necesitamos asegurarnos de que todos usan exactamente las mismas versiones?
 
-Ahora imagina tener que repetir todo este proceso para cada una de las bibliotecas que tu proyecto necesita. La complejidad y el margen de error aumentan rápidamente.
+Ahora imaginemos tener que repetir todo este proceso para cada una de las bibliotecas que nuestro proyecto necesita. La complejidad y el margen de error aumentan rápidamente.
 
 Afortunadamente, en Python contamos con herramientas que automatizan y simplifican todo este proceso: los **gestores de paquetes**, siendo `pip` el oficial y el más utilizado. Estas herramientas se encargan de descargar, instalar y gestionar las bibliotecas (y sus dependencias) de forma automática, asegurando compatibilidad entre versiones y facilitando el mantenimiento de los proyectos.
 

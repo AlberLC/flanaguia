@@ -4589,7 +4589,57 @@ La [biblioteca estándar](https://docs.python.org/3/library/index.html) abarca p
 
 ... y muchas más.
 
-Sin embargo, cuando desarrollamos proyectos reales y complejos, vamos a necesitar bibliotecas externas, herramientas de terceros y frameworks potentes que nos hagan el trabajo mucho más fácil, rápido y mantenible.
+Sin embargo, cuando desarrollamos proyectos reales y complejos, resulta muy útil apoyarse bibliotecas externas, herramientas de terceros y frameworks potentes que nos hagan el trabajo mucho más fácil, rápido y mantenible. Por ejemplo, construyamos una API:
+
+Es perfectamente posible construir una API sencilla usando solo la biblioteca estándar de Python. Podemos usar módulos como `http.server` para manejar peticiones HTTP, `json` para serializar datos, `sqlite3` para acceder a una base de datos local, y `threading` o `asyncio` si queremos manejar múltiples conexiones:
+
+```python
+import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+
+class SimpleHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        if self.path == '/hello':
+            response = {'message': 'Hello from stdlib!'}
+            response_bytes = json.dumps(response).encode('utf-8')
+
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.send_header('Content-Length', str(len(response_bytes)))
+            self.end_headers()
+            self.wfile.write(response_bytes)
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+
+httpd = HTTPServer(('', 8000), SimpleHandler)
+print('Server running on http://localhost:8000')
+httpd.serve_forever()
+```
+
+Escribir una API de esta forma implica encargarse manualmente de cada detalle: tenemos un método donde recibimos todas las peticiones GET, luego filtramos las rutas a base de `if`, construimos la respuesta serializando el mensaje a JSON y convirtiéndolo en bytes, generamos el código de estado, añadimos las cabeceras... Y todo esto sin contar que no estamos gestionando la entrada de parámetros (ni de ruta, ni de consulta, ni de cuerpo, etc.), ni manejando errores, ni validando nada.
+
+Aunque Python nos brinda los bloques básicos (y quizá no tan básicos si los comparas con otros lenguajes) para poder hacer prácticamente cualquier cosa, suele ser buena idea recurrir a una biblioteca que se encargue de los pormenores. Estaríamos usando otra biblioteca, sí, pero una que hace muchas más cosas por nosotros: estamos subiendo el nivel de abstracción. `fastapi` y `uvicorn` son buenos ejemplo de esto:
+
+```python
+import uvicorn
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+
+app = FastAPI()
+
+
+@app.get('/hello')
+def hello():
+    return JSONResponse({'message': 'Hello from FastAPI!'})
+
+
+uvicorn.run(app)
+```
+
+Aquí, `uvicorn` se encarga de gestionar las conexiones, peticiones y respuestas HTTP a nivel de protocolo y red, mientras que `fastapi` se encarga de manejar las rutas, de serializar JSON, de procesar las cabeceras, de gestionar los errores, de validar automáticamente los datos de entrada y salida, y hasta de generar documentación interactiva en `/docs`, de forma que podemos centrarnos en la lógica de negocio y no en la infraestructura básica.
 
 > Python es un proyecto comunitario con una de las comunidades más grandes, activas e implicadas del mundo del software. Gracias a esto, existen herramientas muy avanzadas y diversas que permiten abordar cualquier tipo de proyecto, desde los más sencillos hasta los más complejos, sin tener que reinventar la rueda. Además, estas bibliotecas, frameworks y utilidades de terceros están disponibles libremente para que cualquiera pueda usarlas.
 

@@ -4621,7 +4621,7 @@ httpd.serve_forever()
 
 Escribir una API de esta forma implica encargarse manualmente de cada detalle: tenemos un método donde recibimos todas las peticiones GET, luego filtramos las rutas a base de `if`, construimos la respuesta serializando el mensaje a JSON y convirtiéndolo en bytes, generamos el código de estado, añadimos las cabeceras... Y todo esto sin contar que no estamos gestionando la entrada de parámetros (ni de ruta, ni de consulta, ni de cuerpo, etc.), ni manejando errores, ni validando nada.
 
-Aunque Python nos brinda los bloques básicos (y quizá no tan básicos si los comparas con otros lenguajes) para poder hacer prácticamente cualquier cosa, suele ser buena idea recurrir a una biblioteca que se encargue de los pormenores. Estaríamos usando otra biblioteca, sí, pero una que hace muchas más cosas por nosotros: estamos subiendo el nivel de abstracción. `fastapi` y `uvicorn` son buenos ejemplo de esto:
+Aunque Python nos brinda los bloques básicos (y quizá no tan básicos si los comparas con otros lenguajes) para poder hacer prácticamente cualquier cosa, suele ser buena idea recurrir a una biblioteca que se encargue de los pormenores. Estaríamos usando otra biblioteca, sí, pero una que hace muchas más cosas por nosotros: estamos subiendo el nivel de abstracción. `fastapi` y `uvicorn` son buenos ejemplos de esto:
 
 ```python
 import uvicorn

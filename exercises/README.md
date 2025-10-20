@@ -1589,7 +1589,6 @@
     <details>
     <summary>Solución</summary>
 
-    a)
     ```python
     def multiply(a: int, b: int) -> int:
         result = 0
@@ -1632,7 +1631,6 @@
     <details>
     <summary>Solución</summary>
 
-    a)
     ```python
     def multiply(a: int, b: int) -> int:
         result = 0

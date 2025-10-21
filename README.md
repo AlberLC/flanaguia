@@ -1137,25 +1137,25 @@ with open('file.png', 'wb') as file:
 
 Finalmente vamos a ver la última alternativa. Es igual de segura que usar los gestores de contexto vistos arriba.
 
-Importamos `pathlib`:
+[Importamos](#9-importaciones) `Path` de `pathlib`:
 ```python
-import pathlib
+from pathlib import Path
 ```
 Leer texto:
 ```python
-text = pathlib.Path('file.txt').read_text()
+text = Path('file.txt').read_text()
 ```
 Leer bytes:
 ```python
-data = pathlib.Path('file.png').read_bytes()
+data = Path('file.png').read_bytes()
 ```
 Escribir texto:
 ```python
-pathlib.Path('file.txt').write_text('hello')
+Path('file.txt').write_text('hello')
 ```
 Escribir bytes:
 ```python
-pathlib.Path('file.png').write_bytes(b'\x45\x44\x50\x52\x45\x53\x53\x4f')
+Path('file.png').write_bytes(b'\x45\x44\x50\x52\x45\x53\x53\x4f')
 ```
 
 <br>

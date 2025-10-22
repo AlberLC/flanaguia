@@ -1,9 +1,8 @@
 import asyncio
 import itertools
-import random
-
 import openpyxl
 import openpyxl.worksheet.worksheet
+import random
 
 from models.user import get_users
 
@@ -65,7 +64,7 @@ async def main() -> None:
         if len(question_data['answers']) < 2 or not correct_answers or question_mark in entered_questions:
             continue
 
-        worksheet[f'{STATEMENT_COLUMN}{current_row}'] = f"{question_data['author']} pregunta: {question_data['statement']}"
+        worksheet[f'{STATEMENT_COLUMN}{current_row}'] = f'{question_data['author']} pregunta: {question_data['statement']}'
         for column, answer in itertools.zip_longest(ANSWER_COLUMNS, question_data['answers'][:MAX_ANSWERS]):
             worksheet[f'{column}{current_row}'] = answer.text if answer else None
         worksheet[f'{TIME_COLUMN}{current_row}'] = SECONDS_LIMIT

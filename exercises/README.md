@@ -1397,6 +1397,8 @@
     4. Las líneas horizontales de la tabla se calcularán en función de su ancho total.
     5. Los `id` tendrán siempre dos dígitos y se rellenarán con ceros a la izquierda cuando sea necesario.
 
+    <br>
+
     > Se recomienda revisar el capítulo [1.3.1. Formateo/interpolación de cadenas](../README.md#131-formateointerpolación-de-cadenas) de la teoría.
 
     <details>

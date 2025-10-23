@@ -58,7 +58,38 @@
 
 <br>
 
-4. Tenemos una lista de pelotas de colores con sus respectivos identificadores:
+4. Las letras de los DNI siguen el siguiente orden:
+
+    ```python
+    DNI_LETTERS = 'TRWAGMYFPDXBNJZSQVHLCKE'
+    ```
+
+    Pedir por consola un número de DNI sin la letra e imprimirlo completo con la letra correspondiente, la cual se calcula a partir del resto de dividir el número del DNI entre la cantidad de letras posibles de forma que:
+
+    - Para número de DNI `'84976260'` ➡️ resto `0` ➡️ letra `'T'` ➡️ DNI completo `'84976260T'`
+    - Para número de DNI `'84976261'` ➡️ resto `1` ➡️ letra `'R'` ➡️ DNI completo `'84976261R'`
+    - Para número de DNI `'77777151'` ➡️ resto `6` ➡️ letra `'Y'` ➡️ DNI completo `'77777151Y'`
+    - Para número de DNI `'25423678'` ➡️ resto `7` ➡️ letra `'F'` ➡️ DNI completo `'25423678F'`
+    - Para número de DNI `'51648515'` ➡️ resto `14` ➡️ letra `'Z'` ➡️ DNI completo `'51648515Z'`
+    - Para número de DNI `'34526265'` ➡️ resto `22` ➡️ letra `'E'` ➡️ DNI completo `'34526265E'`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    DNI_LETTERS = 'TRWAGMYFPDXBNJZSQVHLCKE'
+    
+    dni_number = int(input('Introduce el número del DNI: '))
+    print(f'{dni_number}{DNI_LETTERS[dni_number % len(DNI_LETTERS)]}')
+    ```
+
+    </details>
+
+<br>
+
+5. Tenemos una lista de pelotas de colores con sus respectivos identificadores:
 
     ```python
     balls = [('roja', 5), ('azul', 12), ('verde', 27), ('amarilla', 35), ('morada', 44)]
@@ -88,7 +119,7 @@
 
 <br>
 
-5. Tenemos unas tuplas que dan información sobre el precio por kilo de algunas frutas:
+6. Tenemos unas tuplas que contienen información sobre el precio por kilo de algunas frutas:
 
     ```python
     fruits = ('mandarina', 'plátano', 'manzana', 'pera', 'melocotón', 'uva', 'mango')
@@ -114,7 +145,7 @@
 
 <br>
 
-6. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
+7. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
 
     - `'hola'` ➡️ `False`
     - `'ojos'` ➡️ `False`
@@ -137,7 +168,7 @@
 
 <br>
 
-7. Imprimir por consola una lista con los números **pares ordenados** del **0** al **20** teniendo el siguiente código como base:
+8. Imprimir por consola una lista con los números **pares ordenados** del **0** al **20** teniendo el siguiente código como base:
 
     ```python
     elements_a = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -177,7 +208,7 @@
 
 <br>
 
-8. Imprimir por consola una lista con **todos** los números **ordenados** del **0** al **20**. A partir de esa lista, imprimir otra con los números **pares ordenados** y otra con los **múltiplos de 3 ordenados**. Trabajar con el siguiente código como base:
+9. Imprimir por consola una lista con **todos** los números **ordenados** del **0** al **20**. A partir de esa lista, imprimir otra con los números **pares ordenados** y otra con los **múltiplos de 3 ordenados**. Trabajar con el siguiente código como base:
 
     ```python
     elements_a = (14, 14, 14, 13, 13, 13, 12, 12, 12, 11, 11, 11, 10, 10, 10, [[0]])
@@ -393,6 +424,7 @@
     password = input('Introduce una contraseña: ')
     
     confirm_password = None
+    
     while confirm_password != password:
         confirm_password = input('Confirma la contraseña: ')
     
@@ -414,6 +446,29 @@
 
 3. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
+    - `1523` ➡️ `15555522333`
+    - `2204` ➡️ `22224444`
+    - `41113` ➡️ `4444111333`
+    - `56241` ➡️ `555556666662244441`
+    - `600832` ➡️ `6666668888888833322`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    number = input('Introduce un número: ')
+    for digit in number:
+        print(digit * int(digit), end='')
+    ```
+
+    </details>
+
+<br>
+
+4. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+
     - `0` ➡️
     - `1` ➡️ `0`
     - `5` ➡️ `01234`
@@ -421,14 +476,14 @@
     - `22` ➡️ `0123456789012345678901`
     - `37` ➡️ `0123456789012345678901234567890123456`
 
-    Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**. **Solo se puede usar un bucle**.
+    Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**. **Solo se puede usar un bucle como máximo**.
 
     <details>
     <summary>Solución</summary>
 
     a)
     ```python
-    number = input('Introduce un número: ')
+    number = int(input('Introduce un número: '))
     
     digit = 0
     for _ in range(number):
@@ -441,7 +496,7 @@
     ```
     b)
     ```python
-    number = input('Introduce un número: ')
+    number = int(input('Introduce un número: '))
     for i in range(number):
         print(i % 10, end='')
     ```
@@ -450,7 +505,54 @@
 
 <br>
 
-4. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
+5. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+
+    - `'hola'`, `'adios'` ➡️ `False`
+    - `'urnas'`, `'runa'` ➡️ `False`
+    - `'urnas'`, `'runas'` ➡️ `True`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    word_1 = input('Introduce la primera palabra: ')
+    word_2 = input('Introduce la segunda palabra: ')
+    print(sorted(word_1) == sorted(word_2))
+    ```
+
+    </details>
+
+<br>
+
+6. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+
+    - `1234` ➡️ `3210`
+    - `55` ➡️ `44`
+    - `2233` ➡️ `2211`
+    - `3322` ➡️ `1122`
+    - `787` ➡️ `676`
+    - `1` ➡️ `0`
+    - `222888` ➡️ `777111`
+    - `987654321` ➡️ `012345678`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    number = input('Introduce un número: ')
+    for digit in reversed(number):
+        print(int(digit) - 1, end='')
+    ```
+
+    </details>
+
+<br>
+
+7. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
 
     <details>
     <summary>Solución</summary>
@@ -470,7 +572,7 @@
 
 <br>
 
-5. Usando como base el ejercicio anterior: pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
+8. Usando como base el ejercicio anterior, pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
 
     <details>
     <summary>Solución</summary>
@@ -497,7 +599,7 @@
 
 <br>
 
-6. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
+9. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
 
     ```
     1 
@@ -523,7 +625,7 @@
 
 <br>
 
-7. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
+10. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
 
     ```
        *
@@ -549,7 +651,47 @@
 
 <br>
 
-8. Pedir por consola el número de niveles (altura) del [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
+11. Pedir por consola una palabra e imprimir el resultado según el siguiente ejemplo:
+
+    Entrada:
+    ```
+    Hola
+    ```
+    Salida:
+    ```
+    ---
+    H
+    Ho
+    Hol
+    Hola
+    ola
+    la
+    a
+    ---
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    word = input('Introduce una palabra: ')
+    
+    print('---')
+    
+    for i in range(len(word) - 1):
+        print(word[:i + 1])
+    
+    for i in range(len(word)):
+        print(word[i:])
+    
+    print('---')
+    ```
+
+    </details>
+
+<br>
+
+12. Pedir por consola el número de niveles (altura) de un [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
 
     - Para altura 0:
 
@@ -639,7 +781,389 @@
 
 <br>
 
-9. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
+13. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - `'F% c'` ➡️ `0`
+    - `'FA c'` ➡️ `1`
+    - `'HL3 pR1 mN'` ➡️ `0`
+    - `'HL3 MN pR1'` ➡️ `1`
+    - `'eb YZ8F ZKW'` ➡️ `1`
+    - `'_TS P1S BUU GX. kN4'` ➡️ `1`
+    - `'CP 5 aM K'` ➡️ `2`
+    - `'jM@n TGHK rPq8 VX NLm'` ➡️ `2`
+    - `'nTqR T tGh6V DQPWKM A5'` ➡️ `2`
+    - `'hM7-VR@ N# R WHBN PTZXGJ5 VB'` ➡️ `3`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    words = input('Introduce un texto: ').split()
+    
+    total = 0
+    
+    for word in words:
+        if word.isalpha() and word.isupper():
+            total += 1
+    
+    print(total)
+    ```
+
+    </details>
+
+<br>
+
+14. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - `'a'` ➡️ `1`
+    - `'BB'` ➡️ `4`
+    - `'--- B_B 123'` ➡️ `4`
+    - `'AbC'` ➡️ `6`
+    - `'Ab7ñCÁ'` ➡️ `6`
+    - `'#Dado'` ➡️ `24`
+    - `'Hola5'` ➡️ `36`
+
+    <br>
+
+    > El módulo [string](https://docs.python.org/3/library/string.html) nos puede ayudar en este ejercicio.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import string
+    
+    text = input('Introduce un texto: ')
+    
+    total = 0
+    
+    for letter in text.lower():
+        index = string.ascii_lowercase.find(letter)
+        if index != -1:
+            total += index + 1
+    
+    print(total)
+    ```
+
+    </details>
+
+<br>
+
+15. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - `'ABC'` ➡️ `'DEF'`
+    - `'HELLO'` ➡️ `'MJQQT'`
+    - `'as'` ➡️ `'cu'`
+    - `'wOrLd'` ➡️ `'|TwQi'`
+    - `'.5'` ➡️ `'07'`
+    - `'j'` ➡️ `'k'`
+    - `'.._,#@%'` ➡️ `'55f3*G,'`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = input('Introduce un texto: ')
+    
+    for letter in text:
+        print(chr(ord(letter) + len(text)), end='')
+    ```
+
+    </details>
+
+<br>
+
+16. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - `'Hola'` ➡️ `'HOLA'`
+    - `'Hola Adiós'` ➡️ `'HOLA sóida'`
+    - `'uno dos tres'` ➡️ `'UNO sod TRES'`
+    - `'UNO DOS TRES'` ➡️ `'UNO sod TRES'`
+    - `'Tengo un perro QUE SE LLAMA Francisco.'` ➡️ `'TENGO nu PERRO euq SE amall FRANCISCO.'`
+
+    <br>
+
+    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
+    > ```python
+    > >>> ', '.join(['one', 'two', 'three', 'four'])
+    > 'one, two, three, four'
+    > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
+    > 'one-YEAH-two-YEAH-three-YEAH-four'
+    > ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    text = input('Introduce un texto: ')
+    print(' '.join(word.upper() if i % 2 == 0 else word[::-1].lower() for i, word in enumerate(text.split())))
+    ```
+    b)
+    ```python
+    text = input('Introduce un texto: ')
+    
+    words = []
+    
+    for i, word in enumerate(text.split()):
+        words.append(word.upper() if i % 2 == 0 else word[::-1].lower())
+    
+    print(' '.join(words))
+    ```
+
+    </details>
+
+<br>
+
+17. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
+
+    - `'1 ? 2 = 3'` ➡️ `'+'`
+    - `'10 ? 4 = 6'` ➡️ `'-'`
+    - `'3 ? 9 = 27'` ➡️ `'*'`
+    - `'25 ? 5 = 5'` ➡️ `'/'`
+    - `'3 ? 2 = 0'` ➡️
+
+    **Solo se puede usar una [sentencia condicional](../README.md#4-condicionales) como máximo.**
+
+    > El módulo [operator](https://docs.python.org/3/library/operator.html) nos puede ayudar en este ejercicio.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import operator
+    
+    operation = input('Introduce la operación: ')
+    
+    a, _, b, _, result = operation.split()
+    
+    operators = ((operator.add, '+'), (operator.sub, '-'), (operator.mul, '*'), (operator.truediv, '/'))
+    for operator_function, operator_symbol in operators:
+        if operator_function(float(a), float(b)) == float(result):
+            print(operator_symbol)
+            break
+    ```
+
+    </details>
+
+<br>
+
+18. Dadas unas tuplas que contienen información sobre el número atómico de algunos elementos de la tabla periódica. Por ejemplo:
+
+    ```python
+    elements = ('Hidrógeno', 'Carbono', 'Oxígeno', 'Hierro', 'Cobre', 'Plata', 'Oro')
+    atomic_numbers = (1, 6, 8, 26, 29, 47, 79)
+    ```
+
+    Crear un programa que, para cualquier par de tuplas de elementos y números atómicos, imprima cada elemento junto con su número atómico. Para el ejemplo anterior, la salida sería:
+
+    ```
+    Hidrógeno 1
+    Carbono 6
+    Oxígeno 8
+    Hierro 26
+    Cobre 29
+    Plata 47
+    Oro 79
+    ```
+
+    **No está permitido acceder a los elementos mediante índices (operador `[]`).**
+
+    > Hay una [función integrada](https://docs.python.org/3/library/functions.html) que nos ayuda a iterar varios iterables en paralelo.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    elements = ('Hidrógeno', 'Carbono', 'Oxígeno', 'Hierro', 'Cobre', 'Plata', 'Oro')
+    atomic_numbers = (1, 6, 8, 26, 29, 47, 79)
+    
+    for element, atomic_number in zip(elements, atomic_numbers):
+        print(element, atomic_number)
+    ```
+
+    </details>
+
+<br>
+
+19. Tenemos unas tuplas que contienen información de varias personas:
+
+    ```python
+    ids = (1, 5, 7, 12, 29, 44)
+    names = ('Alberto', 'Ana', 'Laura', 'Jorge', 'Javier', 'Elena')
+    ages = (25, 33, 18, 40, 21, 50)
+    ```
+
+    Crear un programa que imprima los datos de cada persona siguiendo este formato:
+
+    ```
+    1. Alberto (25)
+    5. Ana (33)
+    ...
+    ```
+
+    **No está permitido acceder a los elementos mediante índices (operador `[]`).**
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    ids = (1, 5, 7, 12, 29, 44)
+    names = ('Alberto', 'Ana', 'Laura', 'Jorge', 'Javier', 'Elena')
+    ages = (25, 33, 18, 40, 21, 50)
+    
+    for id, name, age in zip(ids, names, ages):
+        print(f'{id}. {name} ({age})')
+    ```
+
+    </details>
+
+<br>
+
+20. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - Para:
+        ```
+        Hello world
+        ```
+        ⬇️
+        ```
+        H d
+        e l
+        l r
+        l o
+        o w
+           
+        w o
+        o l
+        r l
+        l e
+        d H
+        ```
+    - Para:
+        ```
+        Juanito
+        ```
+        ⬇️
+        ```
+        J o
+        u t
+        a i
+        n n
+        i a
+        t u
+        o J
+        ```
+    - Para:
+        ```
+        Uno dos TRES
+        ```
+        ⬇️
+        ```
+        U S
+        n E
+        o R
+          T
+        d  
+        o s
+        s o
+          d
+        T  
+        R o
+        E n
+        S U
+        ```
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = input('Introduce un texto: ')
+    
+    for a, b in zip(text, reversed(text)):
+        print(a, b)
+    ```
+
+    </details>
+
+<br>
+
+21. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - Para:
+        ```
+        Sol
+        ```
+        ⬇️
+        ```
+        olS
+        lSo
+        Sol
+        ```
+    - Para:
+        ```
+        Hola
+        ```
+        ⬇️
+        ```
+        olaH
+        laHo
+        aHol
+        Hola
+        ```
+    - Para:
+        ```
+        Uno DOS tres
+        ```
+        ⬇️
+        ```
+        no DOS tresU
+        o DOS tresUn
+         DOS tresUno
+        DOS tresUno 
+        OS tresUno D
+        S tresUno DO
+         tresUno DOS
+        tresUno DOS 
+        resUno DOS t
+        esUno DOS tr
+        sUno DOS tre
+        Uno DOS tres
+        ```
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    text = input('Introduce un texto: ')
+    
+    for i, character in enumerate(text, start=1):
+        print(f'{text[i:]}{text[:i]}')
+    ```
+    b)
+    ```python
+    text = input('Introduce un texto: ')
+    
+    for i, character in enumerate(text, start=1):
+        for offset in range(len(text)):
+            print(text[(i + offset) % len(text)], end='')
+        print()
+    ```
+
+    </details>
+
+<br>
+
+22. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
 
     <details>
     <summary>Solución</summary>
@@ -647,6 +1171,7 @@
     a)
     ```python
     words = []
+    
     while (word := input('Introduce una palabra: ')) != 'fin':
         words.append(word)
     
@@ -656,6 +1181,7 @@
     b)
     ```python
     words = []
+    
     while True:
         word = input('Introduce una palabra: ')
         if word == 'fin':
@@ -671,7 +1197,7 @@
 
 <br>
 
-10. Pedir un número por consola e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
+23. Pedir un número por consola e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
 
     <details>
     <summary>Solución</summary>
@@ -681,6 +1207,7 @@
     number = int(input('Impares hasta el: '))
     
     odd_numbers = []
+    
     for i in range(1, number + 1):
         if i % 2 != 0:
             odd_numbers.append(i)
@@ -692,6 +1219,7 @@
     number = int(input('Impares hasta el: '))
     
     odd_numbers = []
+    
     for i in range(1, number + 1, 2):
         odd_numbers.append(i)
     
@@ -702,14 +1230,16 @@
 
 <br>
 
-11. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
+24. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
 
     ```python
     text = input('Introduce un texto: ')
+    
     characters = []
+    
     for character in text:
         if character not in characters:
             characters.append(character)
@@ -721,7 +1251,7 @@
 
 <br>
 
-12. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
+25. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
 
     <details>
     <summary>Solución</summary>
@@ -730,6 +1260,7 @@
     numbers = input('Introduce los números: ').split()
     
     squared_numbers = []
+    
     for number in numbers:
         squared_numbers.append(int(number) ** 2)
     
@@ -740,7 +1271,7 @@
 
 <br>
 
-13. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
+26. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
 
     <details>
     <summary>Solución</summary>
@@ -750,6 +1281,7 @@
     numbers = input('Introduce los números: ').split()
     
     max_number = int(numbers[0])
+    
     for number in numbers[1:]:
         number = int(number)
         if number > max_number:
@@ -762,6 +1294,7 @@
     numbers = input('Introduce los números: ').split()
     
     max_number = float('-inf')
+    
     for number in numbers:
         number = int(number)
         if number > max_number:
@@ -770,32 +1303,32 @@
     print(max_number)
     ```
     
-    > En muchos lenguajes de programación es posible representar infinitos mediantenúmeros flotantes. Esto se debe a que los estándares como IEEE 754, utilizados en la representación de números en coma flotante, incluyen un valor especial para infinito positivo y negativo.
+    > En muchos lenguajes de programación es posible representar infinitos mediante números flotantes. Esto se debe a que los estándares como IEEE 754, utilizados en la representación de números en coma flotante, incluyen un valor especial para infinito positivo y negativo.
 
     </details>
 
 <br>
 
-14. Sea el código:
+27. Sea el código:
 
     ```python
     from pprint import pprint
     
-    students = [
+    math_students = [
         {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
-        {'id': 2, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
-        {'id': 3, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
-        {'id': 4, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
-        {'id': 4, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
-        {'id': 4, 'name': 'Elena', 'times_taken': 1, 'grade': 5},
+        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
     ]
     
     ...
     
-    pprint(students)
+    pprint(math_students, sort_dicts=False)
     ```
 
-    Completar donde `...` para sustituir dentro de `students` las notas numéricas por su equivalente textual, es decir, para:
+    Completar donde `...` para sustituir dentro de `math_students` las notas numéricas por su equivalente textual, es decir, para:
 
     - < 5 ➡️ `Suspenso`
     - 5 ➡️ `Aprobado`
@@ -813,35 +1346,112 @@
     ```python
     from pprint import pprint
     
-    students = [
+    math_students = [
         {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
-        {'id': 2, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
-        {'id': 3, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
-        {'id': 4, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
-        {'id': 4, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
-        {'id': 4, 'name': 'Elena', 'times_taken': 1, 'grade': 5},
+        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
     ]
     
-    for student in students:
-        if student['grade'] < 5:
-            student['grade'] = 'Suspenso'
-        elif student['grade'] == 5:
-            student['grade'] = 'Aprobado'
-        elif student['grade'] == 6:
-            student['grade'] = 'Bien'
-        elif student['grade'] <= 8:
-            student['grade'] = 'Notable'
+    for math_student in math_students:
+        if math_student['grade'] < 5:
+            math_student['grade'] = 'Suspenso'
+        elif math_student['grade'] == 5:
+            math_student['grade'] = 'Aprobado'
+        elif math_student['grade'] == 6:
+            math_student['grade'] = 'Bien'
+        elif math_student['grade'] <= 8:
+            math_student['grade'] = 'Notable'
         else:
-            student['grade'] = 'Sobresaliente'
+            math_student['grade'] = 'Sobresaliente'
     
-    pprint(students)
+    pprint(math_students, sort_dicts=False)
     ```
 
     </details>
 
 <br>
 
-15. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta; en su lugar, simularemos la fuerza mediante números aleatorios.
+28. Usando como base el ejercicio anterior, imprimir una tabla con los datos de los alumnos en el siguiente formato:
+
+    ```
+    -----------------------------------------------------------------
+    |      Id       |     Name      |  Times taken  |     Grade     |
+    -----------------------------------------------------------------
+    |      01       |    Alberto    |       4       |   Suspenso    |
+    |      05       |      Ana      |       2       |     Bien      |
+    |      07       |     Laura     |       4       |   Suspenso    |
+    |      12       |     Jorge     |       3       |    Notable    |
+    |      29       |    Javier     |       1       | Sobresaliente |
+    |      44       |     Elena     |       1       |   Aprobado    |
+    -----------------------------------------------------------------
+    ```
+
+    Requisitos:
+
+    1. El ancho de todas las columnas será el mismo y se calculará dinámicamente a partir de la cadena más larga entre los nombres y las notas. Siempre habrá, como mínimo, un espacio entre los separadores y el contenido de cada celda.
+    2. El contenido de todas las celdas estará centrado.
+    3. Las cabeceras se crearán dinámicamente en base a los datos de los estudiantes. Cada una tendrá la primera letra en mayúscula y, si está formada por más de una palabra, las siguientes irán en minúscula y separadas por espacios.
+    4. Las líneas horizontales de la tabla se calcularán en función de su ancho total.
+    5. Los `id` tendrán siempre dos dígitos y se rellenarán con ceros a la izquierda cuando sea necesario.
+
+    > Se recomienda revisar el capítulo [1.3.1. Formateo/interpolación de cadenas](../README.md#131-formateointerpolación-de-cadenas) de la teoría.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    math_students = [
+        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
+        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
+    ]
+    
+    for math_student in math_students:
+        if math_student['grade'] < 5:
+            math_student['grade'] = 'Suspenso'
+        elif math_student['grade'] == 5:
+            math_student['grade'] = 'Aprobado'
+        elif math_student['grade'] == 6:
+            math_student['grade'] = 'Bien'
+        elif math_student['grade'] <= 8:
+            math_student['grade'] = 'Notable'
+        else:
+            math_student['grade'] = 'Sobresaliente'
+    
+    column_width = max(max(len(math_student['name']), len(math_student['grade'])) for math_student in math_students)
+    header_content = ' | '.join(f'{key.capitalize().replace('_', ' '):^{column_width}}' for key in math_students[0])
+    header = f'| {header_content} |'
+    horizontal_line = '-' * len(header)
+    
+    print(horizontal_line)
+    print(header)
+    print(horizontal_line)
+    
+    for math_student in math_students:
+        row_content = ' | '.join(
+            (
+                f'{f'{math_student['id']:0>2}':^{column_width}}',
+                f'{math_student['name']:^{column_width}}',
+                f'{math_student['times_taken']:^{column_width}}',
+                f'{math_student['grade']:^{column_width}}'
+            )
+        )
+        print(f'| {row_content} |')
+    
+    print(horizontal_line)
+    ```
+
+    </details>
+
+<br>
+
+29. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta; en su lugar, simularemos la fuerza mediante números aleatorios.
 
     Por ejemplo:
 
@@ -877,13 +1487,13 @@
 
 <br>
 
-16. Sea el texto:
+30. Sea el texto:
 
     ```python
     text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
     ```
 
-    Introduce por consola pares `'<palabra>,<traducción>'` infinitamente hasta que no se introduzca nada, es decir, introducir una cadena vacía. Una vez obtenidos los datos de la consola se sustituirán las palabras por sus respectivas traducciones y se imprimirá el texto resultante.
+    Introducir por consola pares `'<palabra>,<traducción>'` infinitamente hasta que no se introduzca nada, es decir, una cadena vacía, e imprimir el texto resultante tras sustituir las palabras por sus respectivas traducciones.
 
     <details>
     <summary>Solución</summary>
@@ -901,7 +1511,7 @@
 
 <br>
 
-17. Sea el código:
+31. Sea el código:
 
     ```python
     text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
@@ -916,8 +1526,6 @@
 
     Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que hace ese código**.
 
-    > Se ha usado la [función integrada](https://docs.python.org/3/library/functions.html) `zip()`.
-
     <details>
     <summary>Solución</summary>
 
@@ -926,6 +1534,7 @@
     
     originals = []
     translations = []
+    
     while pair := input('Introduce traducción: '):
         original, translation = pair.split(',')
         originals.append(original)
@@ -941,28 +1550,7 @@
 
 <br>
 
-18. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
-
-    - `'hola'`, `'adios'` ➡️ `False`
-    - `'urnas'`, `'runa'` ➡️ `False`
-    - `'urnas'`, `'runas'` ➡️ `True`
-
-    <br>
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    word_1 = input('Introduce la primera palabra: ')
-    word_2 = input('Introduce la segunda palabra: ')
-    print(sorted(word_1) == sorted(word_2))
-    ```
-
-    </details>
-
-<br>
-
-19. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
+32. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -1120,7 +1708,7 @@
 
 <br>
 
-20. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
+33. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
 
     ```python
     matrix_a = [
@@ -1178,7 +1766,7 @@
 
 <br>
 
-21. Hacer un programa que multiplique dos matrices cuadradas de cualquier tamaño (ambas del mismo), guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
+34. Hacer un programa que multiplique dos matrices cuadradas de cualquier tamaño (ambas del mismo), guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
 
     ```python
     matrix_a = [
@@ -1233,7 +1821,7 @@
 
 <br>
 
-22. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
+35. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -1262,7 +1850,7 @@
 
 <br>
 
-23. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
+36. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
 
     ```
     El 18 de junio de 1998 cumpliste 1 año.
@@ -1339,7 +1927,7 @@
 
 <br>
 
-24. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+37. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
 
     <details>
     <summary>Solución</summary>
@@ -1367,7 +1955,7 @@
 
 <br>
 
-25. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
+38. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
 
     ```
     Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!
@@ -1416,7 +2004,7 @@
 
 <br>
 
-26. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
+39. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
     <details>
     <summary>Solución</summary>
@@ -1775,7 +2363,54 @@
 
 <br>
 
-7. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+7. Crear una función que reciba una cadena con código y devuelva `True` si los paréntesis están balanceados y `False` en caso contrario, ignorando el resto de caracteres. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    for unbalanced_parentheses in ('()', '((3 ))', '(a(n) dd)', '(a(n)d()((5  5))d)'):
+        assert are_parentheses_balanced(unbalanced_parentheses)
+    
+    for unbalanced_parentheses in (') (', '(2( )', '())', '(4 (())', '(()))', ')() 5(', '))((6', '(a(n)d()) )((( (55))d)'):
+        assert not are_parentheses_balanced(unbalanced_parentheses)
+    
+    print('✅')
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    def are_parentheses_balanced(code: str) -> bool:
+        count = 0
+    
+        for character in code:
+            if character == '(':
+                count += 1
+            elif character == ')':
+                count -= 1
+    
+                if count < 0:
+                    return False
+    
+        return not count
+    
+    
+    for unbalanced_parentheses in ('()', '((3 ))', '(a(n) dd)', '(a(n)d()((5  5))d)'):
+        assert are_parentheses_balanced(unbalanced_parentheses)
+    
+    for unbalanced_parentheses in (') (', '(2( )', '())', '(4 (())', '(()))', ')() 5(', '))((6', '(a(n)d()) )((( (55))d)'):
+        assert not are_parentheses_balanced(unbalanced_parentheses)
+    
+    print('✅')
+    ```
+
+    </details>
+
+<br>
+
+8. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -1886,7 +2521,7 @@
 
 <br>
 
-8. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+9. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -1957,7 +2592,7 @@
 
 <br>
 
-9. Sea:
+10. Sea:
 
     ```python
     numbers = (0, 2, 3, 5, 7, 8, 11, 14, 20, 22, 24, 27, 29, 30, 31, 34, 40, 45, 46, 48)
@@ -1988,7 +2623,7 @@
 
 <br>
 
-10. Pedir un número `n` por consola e imprimir una lista con los `n` primeros números primos. Se recomienda hacer al menos una función.
+11. Pedir un número `n` por consola e imprimir una lista con los `n` primeros números primos. Se recomienda hacer al menos una función.
 
     <details>
     <summary>Solución</summary>
@@ -2020,7 +2655,7 @@
 
 <br>
 
-11. Crear una función que reciba una matriz y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'non-square matrix'`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+12. Crear una función que reciba una matriz y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'non-square matrix'`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2113,7 +2748,7 @@
 
 <br>
 
-12. Podemos representar un tablero de [4 en raya](https://en.wikipedia.org/wiki/Connect_Four#/media/File:Connect_Four.gif) con una lista de listas de cadenas donde `'x'` representa un jugador, `'o'` otro y `' '` un espacio vacío. Crear una función que, dado un tablero de cualquier tamaño y forma, devuelva una lista de tuplas indicando las posiciones disponibles para jugar en el próximo turno. Cada tupla debe representar una coordenada `(<fila>, <columna>)` que esté vacía, es decir, una posición válida para que un jugador coloque su ficha. Por ejemplo, para este tablero 3x3:
+13. Podemos representar un tablero de [4 en raya](https://en.wikipedia.org/wiki/Connect_Four#/media/File:Connect_Four.gif) con una lista de listas de cadenas donde `'x'` representa un jugador, `'o'` otro y `' '` un espacio vacío. Crear una función que, dado un tablero de cualquier tamaño y forma, devuelva una lista de tuplas indicando las posiciones disponibles para jugar en el próximo turno. Cada tupla debe representar una coordenada `(<fila>, <columna>)` que esté vacía, es decir, una posición válida para que un jugador coloque su ficha. Por ejemplo, para este tablero 3x3:
 
     ```
     [
@@ -2186,6 +2821,7 @@
     ```python
     def get_available_positions(board: list[list[str]]) -> list[tuple[int, int]]:
         available_positions = []
+    
         for j in range(len(board[0])):
             for i in range(len(board) - 1, -1, -1):
                 if board[i][j] == ' ':
@@ -2248,6 +2884,7 @@
     ```python
     def get_available_positions(board: list[list[str]]) -> list[tuple[int, int]]:
         available_positions = []
+    
         for j in range(len(board[0])):
             for i in reversed(range(len(board))):
                 if board[i][j] == ' ':
@@ -2311,7 +2948,7 @@
 
 <br>
 
-13. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
+14. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
 
     - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
     - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
@@ -2351,7 +2988,7 @@
 
 <br>
 
-14. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+15. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️
     - `fibonacci_sequence(1, ', ')` ➡️ `'0'`
@@ -2360,14 +2997,6 @@
     - `fibonacci_sequence(11, ' | ')` ➡️ `'0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55'`
 
     La sucesión de Fibonacci para `n` negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
-
-    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
-    > ```python
-    > >>> ', '.join(['one', 'two', 'three', 'four'])
-    > 'one, two, three, four'
-    > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
-    > 'one-YEAH-two-YEAH-three-YEAH-four'
-    > ```
 
     <details>
     <summary>Solución</summary>
@@ -2401,7 +3030,7 @@
 
 <br>
 
-15. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje **sin usar [sentencias condicionales](../README.md#4-condicionales) ni [bucles](../README.md#5-bucles) `while`**. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+16. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje **sin usar [sentencias condicionales](../README.md#4-condicionales) ni [bucles](../README.md#5-bucles) `while`**. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
 
     `encode('abc', 1)` ➡️ `'bcd'`
 
@@ -2409,7 +3038,7 @@
 
     `encode('abc', 2)` ➡️ `'cde'`
 
-    En el ejercicio vamos a usar únicamente los [caracteres ascii](https://elcodigoascii.com.ar/) imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+    En el ejercicio vamos a usar únicamente los [caracteres ASCII](https://elcodigoascii.com.ar/) imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
 
     Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
 
@@ -2448,7 +3077,7 @@
 
 <br>
 
-16. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
+17. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
 
     > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](../README.md#63-ámbitos) de la teoría.
 
@@ -2519,7 +3148,7 @@
 
 <br>
 
-17. Ejercicio `time_it()`.
+18. Ejercicio `time_it()`.
 
     > Para este ejercicio es necesario haber hecho y entendido el ejercicio anterior.
 
@@ -2778,7 +3407,7 @@
 
 <br>
 
-18. Sea:
+19. Sea:
 
     ```python
     from collections.abc import Callable
@@ -2823,7 +3452,7 @@
 
 <br>
 
-19. Sea:
+20. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
@@ -2846,7 +3475,7 @@
 
 <br>
 
-20. Filtrado de archivos.
+21. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 
@@ -2868,26 +3497,27 @@
         <summary>Solución</summary>
 
         ```python
-        import pathlib
+        from pathlib import Path
         
         
-        def filter_files(path: str, extension: str) -> list[pathlib.Path]:
+        def filter_files(directory: str, extension: str) -> list[Path]:
             files = []
-            for path in pathlib.Path(path).iterdir():
+        
+            for path in Path(directory).iterdir():
                 if path.suffix == extension:
                     files.append(path)
         
             return files
         
         
-        path_ = input('Ruta: ')
+        directory_ = input('Ruta: ')
         extension_ = input('Extensión: ')
         
-        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+        for i, path_ in enumerate(filter_files(directory_, extension_), start=1):
             print(f'{i}. {path_}')
         ```
 
-        > Alternativamente se podrían importar los recursos así: `from pathlib import Path`. De esta manera usaríamos `Path` directamente en vez de `pathlib.Path`. Es preferencia personal elegir que método resulta más descriptivo y cómodo pero ten en cuenta que, cuando se usan muchas bibliotecas, ayuda mucho importar sólo el módulo y luego acceder al recurso explícitamente como se hace en la solución para saber de donde vienen las cosas.
+        > Alternativamente, se podría importar el módulo `import pathlib` y usar `Path` desde ahí: `pathlib.Path`. Es preferencia personal decidir qué método resulta más descriptivo y cómodo pero ten en cuenta que, a veces, ayuda mucho importar solo el módulo y luego acceder al recurso explícitamente para saber de donde vienen las cosas, sobre todo cuando se usan muchas bibliotecas.
 
         </details>
 
@@ -2899,20 +3529,20 @@
         <summary>Solución</summary>
 
         ```python
-        import pathlib
         from collections.abc import Iterator
+        from pathlib import Path
         
         
-        def filter_files(path: str, extension: str) -> Iterator[pathlib.Path]:
-            for path in pathlib.Path(path).iterdir():
+        def filter_files(directory: str, extension: str) -> Iterator[Path]:
+            for path in Path(directory).iterdir():
                 if path.suffix == extension:
                     yield path
         
         
-        path_ = input('Ruta: ')
+        directory_ = input('Ruta: ')
         extension_ = input('Extensión: ')
         
-        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+        for i, path_ in enumerate(filter_files(directory_, extension_), start=1):
             print(f'{i}. {path_}')
         ```
 
@@ -2926,17 +3556,17 @@
         <summary>Solución</summary>
 
         ```python
-        import pathlib
+        from pathlib import Path
         
         
-        def filter_files(path: str, extension: str) -> list[pathlib.Path]:
-            return [path for path in pathlib.Path(path).iterdir() if path.suffix == extension]
+        def filter_files(directory: str, extension: str) -> list[Path]:
+            return [path for path in Path(directory).iterdir() if path.suffix == extension]
         
         
-        path_ = input('Ruta: ')
+        directory_ = input('Ruta: ')
         extension_ = input('Extensión: ')
         
-        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+        for i, path_ in enumerate(filter_files(directory_, extension_), start=1):
             print(f'{i}. {path_}')
         ```
 
@@ -2948,18 +3578,18 @@
         <summary>Solución</summary>
 
         ```python
-        import pathlib
         from collections.abc import Iterator
+        from pathlib import Path
         
         
-        def filter_files(path: str, extension: str) -> Iterator[pathlib.Path]:
-            return (path for path in pathlib.Path(path).iterdir() if path.suffix == extension)
+        def filter_files(directory: str, extension: str) -> Iterator[Path]:
+            return (path for path in Path(directory).iterdir() if path.suffix == extension)
         
         
-        path_ = input('Ruta: ')
+        directory_ = input('Ruta: ')
         extension_ = input('Extensión: ')
         
-        for i, path_ in enumerate(filter_files(path_, extension_), start=1):
+        for i, path_ in enumerate(filter_files(directory_, extension_), start=1):
             print(f'{i}. {path_}')
         ```
 
@@ -2971,22 +3601,22 @@
         <summary>Solución</summary>
 
         ```python
-        import pathlib
         from collections.abc import Iterable, Iterator
+        from pathlib import Path
         
         
-        def filter_files(path: str, extension: str) -> Iterator[pathlib.Path]:
-            return (path for path in pathlib.Path(path).iterdir() if path.suffix == extension)
+        def filter_files(directory: str, extension: str) -> Iterator[Path]:
+            return (path for path in Path(directory).iterdir() if path.suffix == extension)
         
         
-        def print_files(paths: Iterable[pathlib]) -> None:
+        def print_files(paths: Iterable[Path]) -> None:
             for i, path in enumerate(paths, start=1):
                 print(f'{i}. {path}')
         
         
-        path_ = input('Ruta: ')
+        directory_ = input('Ruta: ')
         extension_ = input('Extensión: ')
-        print_files(filter_files(path_, extension_))
+        print_files(filter_files(directory_, extension_))
         ```
 
         > Es recomdable declarar los tipos de los parámetros lo más ampliamente posible. En nuestro caso vamos a iterar los `Path`, no necesitamos que sea específicamente una lista, un conjunto, un generador, etc., con que sea iterable nos vale. Así hacemos nuestra función más flexible.
@@ -3020,35 +3650,35 @@
 
         ```python
         import datetime
-        import pathlib
         from collections.abc import Callable, Iterable, Iterator
+        from pathlib import Path
         
         
-        def filter_files(path: str, filter_: Callable[[pathlib.Path], bool]) -> Iterator[pathlib.Path]:
-            return (path for path in pathlib.Path(path).iterdir() if filter_(path))
+        def filter_files(directory: str, filter_: Callable[[Path], bool]) -> Iterator[Path]:
+            return (path for path in Path(directory).iterdir() if filter_(path))
         
         
-        def print_files(paths: Iterable[pathlib]) -> None:
+        def print_files(paths: Iterable[Path]) -> None:
             for i, path in enumerate(paths, start=1):
                 print(f'{i}. {path}')
         
         
-        path_ = input('Ruta: ')
-        print_files(filter_files(path_, lambda path: 'e' in path.name and len(path.name) % 2 != 0))
+        directory_ = input('Ruta: ')
+        print_files(filter_files(directory_, lambda path: 'e' in path.name and len(path.name) % 2 != 0))
         print()
-        print_files(filter_files(path_, lambda path: path.suffix in {'.jpg', '.png'} and path.stat().st_size < 1_000_000))
+        print_files(filter_files(directory_, lambda path: path.suffix in {'.jpg', '.png'} and path.stat().st_size < 1_000_000))
         print()
-        print_files(filter_files(path_, lambda path: not path.suffix and path.is_file()))
+        print_files(filter_files(directory_, lambda path: not path.suffix and path.is_file()))
         print()
         minimum_date = datetime.datetime.now() - datetime.timedelta(days=365)
-        print_files(filter_files(path_, lambda path: minimum_date < datetime.datetime.fromtimestamp(path.stat().st_mtime)))
+        print_files(filter_files(directory_, lambda path: minimum_date < datetime.datetime.fromtimestamp(path.stat().st_mtime)))
         ```
 
         </details>
 
 <br>
 
-21. Consultas relacionales estilo SQL a colecciones de estudiantes.
+22. Consultas relacionales estilo SQL a colecciones de estudiantes.
     
     > No es necesario saber nada de bases de datos.
 
@@ -3211,6 +3841,7 @@
         ```python
         def join_countries(students_: list[dict]) -> list[dict]:
             new_students = []
+        
             for student in students_:
                 student = student.copy()
                 student['country'] = find_name_by_id(countries, student['country_id'])
@@ -3222,6 +3853,7 @@
         
         def join_subjects(students_: list[dict]) -> list[dict]:
             new_students = []
+        
             for student in students_:
                 student = student.copy()
         
@@ -3438,7 +4070,7 @@
 
 <br>
 
-22. ☠️ Crear un gestor de clientes por consola.
+23. ☠️ Crear un gestor de clientes por consola.
 
     > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
 
@@ -4255,6 +4887,7 @@
             can_capture=True
         ) -> list[tuple[int, int]]:
             positions = []
+    
             if limit is None:
                 limit = len(board)
     

@@ -419,6 +419,31 @@ Hello! My name is Juan and I am 1400 years old.
 
 <br>
 
+Esta sintaxis es mucho más potente: podemos usar las [especificaciones de formato](https://docs.python.org/3/library/string.html#formatspec) para definir cómo se presentan los valores. Por ejemplo:
+
+```python
+>>> f'{'hola':<10}'
+'hola      '
+>>> f'{'hola':0>10}'
+'000000hola'
+>>> f'{'hola':-^10}'
+'---hola---'
+>>> f'{3.14159:.2f}'
+'3.14'
+>>> f'{1000000:_}'
+'1_000_000'
+>>> f'{42:#b}'
+'0b101010'
+>>> f'{42:b}'
+'101010'
+>>> f'{42:#x}'
+'0x2a'
+>>> f'{42:x}'
+'2a'
+```
+
+<br>
+
 ### 1.4. Tuplas
 
 Las tuplas son colecciones de elementos inmutables menos potentes y flexibles que las listas, esto le permite un manejo más eficiente de la memoria en la mayoría de los casos. Aunque usar una tupla en vez de una lista en Python sería una microptimización superflua con un impacto despreciable, no está de más pensar en usar una tupla cuando definimos una colección de elementos que sabemos que no va a ser alterada nunca más, ya que nos sobraría toda la sobrecarga que aportan las listas.

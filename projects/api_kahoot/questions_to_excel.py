@@ -1,8 +1,9 @@
 import asyncio
 import itertools
+import random
+
 import openpyxl
 import openpyxl.worksheet.worksheet
-import random
 
 from models.user import get_users
 

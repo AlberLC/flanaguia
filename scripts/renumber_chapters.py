@@ -3,6 +3,7 @@ import shutil
 import zipfile
 from pathlib import Path
 
+CHAPTER_MARKER = '##'
 EXERCISES_PATH = Path('../exercises')
 MARKDOWN_PATH = EXERCISES_PATH / 'README.md'
 
@@ -36,8 +37,8 @@ exercise_number = 0
 
 with open(MARKDOWN_PATH, encoding='utf-8') as file:
     for line in file:
-        if line.lstrip().startswith('##'):
-            current_chapter = line.split('##')[1].strip()
+        if line.lstrip().startswith(CHAPTER_MARKER):
+            current_chapter = line.split(CHAPTER_MARKER)[1].strip()
             exercise_number = 0
 
         if match := re.match(r'\d+', line):

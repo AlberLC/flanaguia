@@ -1649,7 +1649,7 @@
     print(text)
     ```
 
-    Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que hace ese código**.
+    Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que lo hace ese código**.
 
     <details>
     <summary>Solución</summary>

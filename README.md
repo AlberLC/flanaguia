@@ -886,7 +886,7 @@ Si solo se proporciona un argumento se interpreta como parámetro `stop` y, por 
 
 Las enumeraciones son unas herramientas bastantes comunes en numerosos lenguajes de programación que nos sirven para definir un conjunto inmutable de constantes con nombre.
 
-Los solemos usar siempre que necesitamos definir un comportamiento que depende de una constante que puede adoptar valores concretos. Por ejemplo, si queremos que una función realice una serie de tareas según el color pasado como argumento:
+Los solemos usar siempre que necesitamos definir un comportamiento que depende de una constante que puede adoptar valores concretos. Por ejemplo, hasta ahora, si quisiéramos que una función realice una serie de tareas según el color pasado como argumento, haríamos algo así:
 
 ```python
 def do_something(color):
@@ -899,7 +899,7 @@ def do_something(color):
     ...
 ```
 
-Vamos a tener que pasarle una cadena para indicar el color, sin embargo, esto tiene muchos problemas. Para empezar, si usamos cadenas podemos cometer errores ortográficos y escribir `'bleu'` en vez de `'blue'`, ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
+El hecho de que el color sea determinado por una cadena tiene muchos problemas. Para empezar, podemos cometer errores ortográficos y escribir `'bleu'` en vez de `'blue'`, ya que ambos valores son válidos pero solo uno tiene sentido en nuestro contexto.
 
 Las enumeraciones no son más que [clases](#8-clases) que [heredan](#83-herencia) de `Enum`:
 
@@ -922,6 +922,10 @@ def do_something(color):
         ...
     ...
 ```
+
+> En este ejemplo hemos usado `==` para comparar los miembros de la enumeración por similitud con el ejemplo base, pero quizás lo más recomendable en Python sería usar `is`, ya que así se comprueba directamente que se trata del mismo miembro y no solo que los valores son iguales.
+> 
+> Si usamos la enumeración típica `Enum` no habría problema con usar `==`, pero hay que tener en cuenta que esto puede fallar para `IntEnum` o `StrEnum`, donde la comparación por identidad (`is`) no funciona como la comparación por valor (`==`).
 
 Al estar limitando la existencia de constantes mediante la clase `Color`, estamos eliminando la posibilidad de usar nombres que no existen en la enumeración, como pasaba con las cadenas. Esto también posibilita al entorno de desarrollo proporcionar autocompletado para los miembros de la enumeración. Además, si en un futuro queremos cambiar los miembros de la enumeración, no habrá que ir buscando en todas las partes del código donde se usan cadenas `'red'`, `'blue'` y `'green'` para actualizarlas y mantener la consistencia.
 

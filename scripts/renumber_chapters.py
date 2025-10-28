@@ -34,7 +34,7 @@ current_chapter: str | None = None
 previous_exercise_number: int | None = None
 exercise_number = 0
 
-with open(MARKDOWN_PATH, encoding='utf8') as file:
+with open(MARKDOWN_PATH, encoding='utf-8') as file:
     for line in file:
         if line.lstrip().startswith('##'):
             current_chapter = line.split('##')[1].strip()

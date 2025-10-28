@@ -818,91 +818,39 @@
 
 <br>
 
-14. Pedir por consola el número de niveles (altura) de un [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
-
-    - Para altura 0:
-
-        ```
-        ```
-
-    - Para altura 1:
-
-        ```
-        1 
-        ```
-
-    - Para altura 2:
-
-        ```
-         1 
-        1 1 
-        ```
-
-    - Para altura 5:
-
-        ```
-            1 
-           1 1 
-          1 2 1 
-         1 3 3 1 
-        1 4 6 4 1 
-        ```
+14. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
 
     <details>
     <summary>Solución</summary>
 
     a)
     ```python
-    length = int(input('Introduce la altura del triángulo: '))
+    numbers = input('Introduce los números: ').split()
     
-    last_row = [0, 1]
-    for i in range(length):
-        print(' ' * (length - i - 1), end='')
+    max_number = int(numbers[0])
     
-        row = [0]
-        for j in range(i + 1):
-            number = last_row[j] + last_row[j + 1]
-            print(number, end=' ')
-            row.append(number)
-        row.append(0)
-        print()
+    for number in numbers[1:]:
+        number = int(number)
+        if number > max_number:
+            max_number = number
     
-        last_row = row
+    print(max_number)
     ```
     b)
     ```python
-    length = int(input('Introduce la altura del triángulo: '))
+    numbers = input('Introduce los números: ').split()
     
-    if length > 0:
-        print(f'{' ' * (length - 1)}1')
+    max_number = float('-inf')
     
-    last_row = []
-    for i in range(1, length):
-        print(f'{' ' * (length - i - 1)}1', end=' ')
+    for number in numbers:
+        number = int(number)
+        if number > max_number:
+            max_number = number
     
-        row = [1]
-        for j in range(i - 1):
-            number = last_row[j] + last_row[j + 1]
-            print(number, end=' ')
-            row.append(number)
-        print(1)
-        row.append(1)
-    
-        last_row = row
+    print(max_number)
     ```
-    c)
-    ```python
-    import math
     
-    length = int(input('Introduce la altura del triángulo: '))
-    
-    for i in range(length):
-        print(' ' * (length - i - 1), end='')
-    
-        for j in range(i + 1):
-            print(int(math.factorial(i) / (math.factorial(j) * math.factorial(i - j))), end=' ')
-        print()
-    ```
+    > En muchos lenguajes de programación es posible representar infinitos mediante números flotantes. Esto se debe a que los estándares como IEEE 754, utilizados en la representación de números en coma flotante, incluyen un valor especial para infinito positivo y negativo.
 
     </details>
 
@@ -1004,49 +952,7 @@
 
 <br>
 
-18. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
-
-    - `'Hola'` ➡️ `'HOLA'`
-    - `'Hola Adiós'` ➡️ `'HOLA sóida'`
-    - `'uno dos tres'` ➡️ `'UNO sod TRES'`
-    - `'UNO DOS TRES'` ➡️ `'UNO sod TRES'`
-    - `'Tengo un perro QUE SE LLAMA Francisco.'` ➡️ `'TENGO nu PERRO euq SE amall FRANCISCO.'`
-
-    <br>
-
-    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
-    > ```python
-    > >>> ', '.join(['one', 'two', 'three', 'four'])
-    > 'one, two, three, four'
-    > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
-    > 'one-YEAH-two-YEAH-three-YEAH-four'
-    > ```
-
-    <details>
-    <summary>Solución</summary>
-
-    a)
-    ```python
-    text = input('Introduce un texto: ')
-    print(' '.join(word.upper() if i % 2 == 0 else word[::-1].lower() for i, word in enumerate(text.split())))
-    ```
-    b)
-    ```python
-    text = input('Introduce un texto: ')
-    
-    words = []
-    
-    for i, word in enumerate(text.split()):
-        words.append(word.upper() if i % 2 == 0 else word[::-1].lower())
-    
-    print(' '.join(words))
-    ```
-
-    </details>
-
-<br>
-
-19. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
+18. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
 
     - `'1 ? 2 = 3'` ➡️ `'+'`
     - `'10 ? 4 = 6'` ➡️ `'-'`
@@ -1079,7 +985,7 @@
 
 <br>
 
-20. Dadas unas tuplas que contienen información sobre el número atómico de algunos elementos de la tabla periódica. Por ejemplo:
+19. Dadas unas tuplas que contienen información sobre el número atómico de algunos elementos de la tabla periódica. Por ejemplo:
 
     ```python
     elements = ('Hidrógeno', 'Carbono', 'Oxígeno', 'Hierro', 'Cobre', 'Plata', 'Oro')
@@ -1117,7 +1023,7 @@
 
 <br>
 
-21. Tenemos unas tuplas que contienen información de varias personas:
+20. Tenemos unas tuplas que contienen información de varias personas:
 
     ```python
     ids = (1, 5, 7, 12, 29, 44)
@@ -1151,7 +1057,7 @@
 
 <br>
 
-22. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+21. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - Para:
         ```
@@ -1219,7 +1125,7 @@
 
 <br>
 
-23. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+22. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - Para:
         ```
@@ -1286,7 +1192,7 @@
 
 <br>
 
-24. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
+23. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
 
     <details>
     <summary>Solución</summary>
@@ -1320,7 +1226,7 @@
 
 <br>
 
-25. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
+24. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
 
     <details>
     <summary>Solución</summary>
@@ -1353,7 +1259,7 @@
 
 <br>
 
-26. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
+25. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -1374,7 +1280,7 @@
 
 <br>
 
-27. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
+26. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
 
     <details>
     <summary>Solución</summary>
@@ -1394,288 +1300,7 @@
 
 <br>
 
-28. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
-
-    <details>
-    <summary>Solución</summary>
-
-    a)
-    ```python
-    numbers = input('Introduce los números: ').split()
-    
-    max_number = int(numbers[0])
-    
-    for number in numbers[1:]:
-        number = int(number)
-        if number > max_number:
-            max_number = number
-    
-    print(max_number)
-    ```
-    b)
-    ```python
-    numbers = input('Introduce los números: ').split()
-    
-    max_number = float('-inf')
-    
-    for number in numbers:
-        number = int(number)
-        if number > max_number:
-            max_number = number
-    
-    print(max_number)
-    ```
-    
-    > En muchos lenguajes de programación es posible representar infinitos mediante números flotantes. Esto se debe a que los estándares como IEEE 754, utilizados en la representación de números en coma flotante, incluyen un valor especial para infinito positivo y negativo.
-
-    </details>
-
-<br>
-
-29. Sea el código:
-
-    ```python
-    from pprint import pprint
-    
-    math_students = [
-        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
-        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
-        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
-        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
-        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
-        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
-    ]
-    
-    ...
-    
-    pprint(math_students, sort_dicts=False)
-    ```
-
-    Completar donde `...` para sustituir dentro de `math_students` las notas numéricas por su equivalente textual, es decir, para:
-
-    - < 5 ➡️ `Suspenso`
-    - 5 ➡️ `Aprobado`
-    - 6 ➡️ `Bien`
-    - 7-8 ➡️ `Notable`
-    - 9-10 ➡️ `Sobresaliente`
-
-    <br>
-
-    > `pprint()` (abreviatura de "pretty-print") es una función importada que imprime estructuras de datos de manera más legible y organizada.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    from pprint import pprint
-    
-    math_students = [
-        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
-        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
-        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
-        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
-        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
-        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
-    ]
-    
-    for math_student in math_students:
-        if math_student['grade'] < 5:
-            math_student['grade'] = 'Suspenso'
-        elif math_student['grade'] == 5:
-            math_student['grade'] = 'Aprobado'
-        elif math_student['grade'] == 6:
-            math_student['grade'] = 'Bien'
-        elif math_student['grade'] <= 8:
-            math_student['grade'] = 'Notable'
-        else:
-            math_student['grade'] = 'Sobresaliente'
-    
-    pprint(math_students, sort_dicts=False)
-    ```
-
-    </details>
-
-<br>
-
-30. Usando como base el ejercicio anterior, imprimir una tabla con los datos de los alumnos en el siguiente formato:
-
-    ```
-    -----------------------------------------------------------------
-    |      Id       |     Name      |  Times taken  |     Grade     |
-    -----------------------------------------------------------------
-    |      01       |    Alberto    |       4       |   Suspenso    |
-    |      05       |      Ana      |       2       |     Bien      |
-    |      07       |     Laura     |       4       |   Suspenso    |
-    |      12       |     Jorge     |       3       |    Notable    |
-    |      29       |    Javier     |       1       | Sobresaliente |
-    |      44       |     Elena     |       1       |   Aprobado    |
-    -----------------------------------------------------------------
-    ```
-
-    Requisitos:
-
-    1. El ancho de todas las columnas será el mismo y se calculará dinámicamente a partir de la cadena más larga entre los nombres y las notas. Siempre habrá, como mínimo, un espacio entre los separadores y el contenido de cada celda.
-    2. El contenido de todas las celdas estará centrado.
-    3. Las cabeceras se crearán dinámicamente en base a los datos de los estudiantes. Cada una tendrá la primera letra en mayúscula y, si está formada por más de una palabra, las siguientes irán en minúscula y separadas por espacios.
-    4. Las líneas horizontales de la tabla se calcularán en función de su ancho total.
-    5. Los `id` tendrán siempre dos dígitos y se rellenarán con ceros a la izquierda cuando sea necesario.
-
-    <br>
-
-    > Se recomienda revisar el capítulo [1.3.1. Formateo/interpolación de cadenas](../README.md#131-formateointerpolación-de-cadenas) de la teoría.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    math_students = [
-        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
-        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
-        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
-        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
-        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
-        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
-    ]
-    
-    for math_student in math_students:
-        if math_student['grade'] < 5:
-            math_student['grade'] = 'Suspenso'
-        elif math_student['grade'] == 5:
-            math_student['grade'] = 'Aprobado'
-        elif math_student['grade'] == 6:
-            math_student['grade'] = 'Bien'
-        elif math_student['grade'] <= 8:
-            math_student['grade'] = 'Notable'
-        else:
-            math_student['grade'] = 'Sobresaliente'
-    
-    column_width = max(max(len(math_student['name']), len(math_student['grade'])) for math_student in math_students)
-    header_content = ' | '.join(f'{key.capitalize().replace('_', ' '):^{column_width}}' for key in math_students[0])
-    header = f'| {header_content} |'
-    horizontal_line = '-' * len(header)
-    
-    print(horizontal_line)
-    print(header)
-    print(horizontal_line)
-    
-    for math_student in math_students:
-        row_content = ' | '.join(
-            (
-                f'{f'{math_student['id']:0>2}':^{column_width}}',
-                f'{math_student['name']:^{column_width}}',
-                f'{math_student['times_taken']:^{column_width}}',
-                f'{math_student['grade']:^{column_width}}'
-            )
-        )
-        print(f'| {row_content} |')
-    
-    print(horizontal_line)
-    ```
-
-    </details>
-
-<br>
-
-31. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta; en su lugar, simularemos la fuerza mediante números aleatorios.
-
-    Por ejemplo:
-
-    - Si introducimos una fuerza de 15, la ruleta avanzará un número aleatorio de posiciones entre 13 y 17, inclusive.
-    - Si introducimos una fuerza de 20, la ruleta avanzará un número aleatorio entre 18 y 22, inclusive.
-
-    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
-
-    Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
-
-    Premios asignados a cada sector de la ruleta en orden:
-
-    ```python
-    prizes = ['🎁', '📱', '📚', '📷', '💍', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
-    ```
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    import random
-    
-    prizes = ['🎁', '📱', '📚', '📷', '🍆', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
-    
-    position = 0
-    for _ in range(3):
-        force = max(10, int(input('Fuerza: ')))
-        position = (position + random.randint(force - 2, force + 2)) % len(prizes)
-        print(prizes[position])
-    ```
-
-    </details>
-
-<br>
-
-32. Sea el texto:
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    ```
-
-    Introducir por consola pares `'<palabra>,<traducción>'` infinitamente hasta que no se introduzca nada, es decir, una cadena vacía, e imprimir el texto resultante tras sustituir las palabras por sus respectivas traducciones.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    
-    while pair := input('Introduce traducción: '):
-        text = text.replace(*pair.split(','))
-    
-    print(text)
-    ```
-
-    </details>
-
-<br>
-
-33. Sea el código:
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    
-    ...
-    
-    for original, translation in zip(originals, translations):
-        text = text.replace(original, translation)
-    
-    print(text)
-    ```
-
-    Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que lo hace ese código**.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    
-    originals = []
-    translations = []
-    
-    while pair := input('Introduce traducción: '):
-        original, translation = pair.split(',')
-        originals.append(original)
-        translations.append(translation)
-    
-    for original, translation in zip(originals, translations):
-        text = text.replace(original, translation)
-    
-    print(text)
-    ```
-
-    </details>
-
-<br>
-
-34. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
+27. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -1830,6 +1455,391 @@
         ```
 
         </details>
+
+<br>
+
+28. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - `'Hola'` ➡️ `'HOLA'`
+    - `'Hola Adiós'` ➡️ `'HOLA sóida'`
+    - `'uno dos tres'` ➡️ `'UNO sod TRES'`
+    - `'UNO DOS TRES'` ➡️ `'UNO sod TRES'`
+    - `'Tengo un perro QUE SE LLAMA Francisco.'` ➡️ `'TENGO nu PERRO euq SE amall FRANCISCO.'`
+
+    <br>
+
+    > La función `join()` de las cadenas nos puede ayudar en este ejercicio:
+    > ```python
+    > >>> ', '.join(['one', 'two', 'three', 'four'])
+    > 'one, two, three, four'
+    > >>> '-YEAH-'.join(['one', 'two', 'three', 'four'])
+    > 'one-YEAH-two-YEAH-three-YEAH-four'
+    > ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    text = input('Introduce un texto: ')
+    print(' '.join(word.upper() if i % 2 == 0 else word[::-1].lower() for i, word in enumerate(text.split())))
+    ```
+    b)
+    ```python
+    text = input('Introduce un texto: ')
+    
+    words = []
+    
+    for i, word in enumerate(text.split()):
+        words.append(word.upper() if i % 2 == 0 else word[::-1].lower())
+    
+    print(' '.join(words))
+    ```
+
+    </details>
+
+<br>
+
+29. Pedir por consola el número de niveles (altura) de un [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
+
+    - Para altura 0:
+
+        ```
+        ```
+
+    - Para altura 1:
+
+        ```
+        1
+        ```
+
+    - Para altura 2:
+
+        ```
+         1
+        1 1
+        ```
+
+    - Para altura 5:
+
+        ```
+            1
+           1 1
+          1 2 1
+         1 3 3 1
+        1 4 6 4 1
+        ```
+
+    **Sin dejar espacios al final de cada línea:**
+
+    ❌ `'1 2 1 '`
+
+    ✅ `'1 2 1'`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    length = int(input('Introduce la altura del triángulo: '))
+    
+    last_row = [0, 1]
+    for i in range(length):
+        row = [0]
+    
+        for j in range(i + 1):
+            number = last_row[j] + last_row[j + 1]
+            row.append(number)
+    
+        row.append(0)
+    
+        print(f'{' ' * (length - i - 1)}{' '.join(str(k) for k in row[1:-1])}')
+    
+        last_row = row
+    ```
+    b)
+    ```python
+    length = int(input('Introduce la altura del triángulo: '))
+    
+    if length > 0:
+        print(f'{' ' * (length - 1)}1')
+    
+    last_row = []
+    for i in range(1, length):
+        row = [1]
+    
+        for j in range(i - 1):
+            number = last_row[j] + last_row[j + 1]
+            row.append(number)
+    
+        row.append(1)
+    
+        print(f'{' ' * (length - i - 1)}{' '.join(str(k) for k in row)}')
+    
+        last_row = row
+    ```
+    c)
+    ```python
+    import math
+    
+    length = int(input('Introduce la altura del triángulo: '))
+    
+    for i in range(length):
+        row = []
+    
+        for j in range(i + 1):
+            row.append(str(int(math.factorial(i) / (math.factorial(j) * math.factorial(i - j)))))
+    
+        print(f'{' ' * (length - i - 1)}{' '.join(row)}')
+    
+    ```
+
+    </details>
+
+<br>
+
+30. Sea el código:
+
+    ```python
+    from pprint import pprint
+    
+    math_students = [
+        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
+        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
+    ]
+    
+    ...
+    
+    pprint(math_students, sort_dicts=False)
+    ```
+
+    Completar donde `...` para sustituir dentro de `math_students` las notas numéricas por su equivalente textual, es decir, para:
+
+    - < 5 ➡️ `Suspenso`
+    - 5 ➡️ `Aprobado`
+    - 6 ➡️ `Bien`
+    - 7-8 ➡️ `Notable`
+    - 9-10 ➡️ `Sobresaliente`
+
+    <br>
+
+    > `pprint()` (abreviatura de "pretty-print") es una función importada que imprime estructuras de datos de manera más legible y organizada.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    from pprint import pprint
+    
+    math_students = [
+        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
+        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
+    ]
+    
+    for math_student in math_students:
+        if math_student['grade'] < 5:
+            math_student['grade'] = 'Suspenso'
+        elif math_student['grade'] == 5:
+            math_student['grade'] = 'Aprobado'
+        elif math_student['grade'] == 6:
+            math_student['grade'] = 'Bien'
+        elif math_student['grade'] <= 8:
+            math_student['grade'] = 'Notable'
+        else:
+            math_student['grade'] = 'Sobresaliente'
+    
+    pprint(math_students, sort_dicts=False)
+    ```
+
+    </details>
+
+<br>
+
+31. Usando como base el ejercicio anterior, imprimir una tabla con los datos de los alumnos en el siguiente formato:
+
+    ```
+    -----------------------------------------------------------------
+    |      Id       |     Name      |  Times taken  |     Grade     |
+    -----------------------------------------------------------------
+    |      01       |    Alberto    |       4       |   Suspenso    |
+    |      05       |      Ana      |       2       |     Bien      |
+    |      07       |     Laura     |       4       |   Suspenso    |
+    |      12       |     Jorge     |       3       |    Notable    |
+    |      29       |    Javier     |       1       | Sobresaliente |
+    |      44       |     Elena     |       1       |   Aprobado    |
+    -----------------------------------------------------------------
+    ```
+
+    Requisitos:
+
+    1. El ancho de todas las columnas será el mismo y se calculará dinámicamente a partir de la cadena más larga entre los nombres y las notas. Siempre habrá, como mínimo, un espacio entre los separadores y el contenido de cada celda.
+    2. El contenido de todas las celdas estará centrado.
+    3. Las cabeceras se crearán dinámicamente en base a los datos de los estudiantes. Cada una tendrá la primera letra en mayúscula y, si está formada por más de una palabra, las siguientes irán en minúscula y separadas por espacios.
+    4. Las líneas horizontales de la tabla se calcularán en función de su ancho total.
+    5. Los `id` tendrán siempre dos dígitos y se rellenarán con ceros a la izquierda cuando sea necesario.
+
+    <br>
+
+    > Se recomienda revisar el capítulo [1.3.1. Formateo/interpolación de cadenas](../README.md#131-formateointerpolación-de-cadenas) de la teoría.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    math_students = [
+        {'id': 1, 'name': 'Alberto', 'times_taken': 4, 'grade': 3},
+        {'id': 5, 'name': 'Ana', 'times_taken': 2, 'grade': 6},
+        {'id': 7, 'name': 'Laura', 'times_taken': 4, 'grade': 2},
+        {'id': 12, 'name': 'Jorge', 'times_taken': 3, 'grade': 8},
+        {'id': 29, 'name': 'Javier', 'times_taken': 1, 'grade': 9},
+        {'id': 44, 'name': 'Elena', 'times_taken': 1, 'grade': 5}
+    ]
+    
+    for math_student in math_students:
+        if math_student['grade'] < 5:
+            math_student['grade'] = 'Suspenso'
+        elif math_student['grade'] == 5:
+            math_student['grade'] = 'Aprobado'
+        elif math_student['grade'] == 6:
+            math_student['grade'] = 'Bien'
+        elif math_student['grade'] <= 8:
+            math_student['grade'] = 'Notable'
+        else:
+            math_student['grade'] = 'Sobresaliente'
+    
+    column_width = max(max(len(math_student['name']), len(math_student['grade'])) for math_student in math_students)
+    header_content = ' | '.join(f'{key.capitalize().replace('_', ' '):^{column_width}}' for key in math_students[0])
+    header = f'| {header_content} |'
+    horizontal_line = '-' * len(header)
+    
+    print(horizontal_line)
+    print(header)
+    print(horizontal_line)
+    
+    for math_student in math_students:
+        row_content = ' | '.join(
+            (
+                f'{f'{math_student['id']:0>2}':^{column_width}}',
+                f'{math_student['name']:^{column_width}}',
+                f'{math_student['times_taken']:^{column_width}}',
+                f'{math_student['grade']:^{column_width}}'
+            )
+        )
+        print(f'| {row_content} |')
+    
+    print(horizontal_line)
+    ```
+
+    </details>
+
+<br>
+
+32. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta; en su lugar, simularemos la fuerza mediante números aleatorios.
+
+    Por ejemplo:
+
+    - Si introducimos una fuerza de 15, la ruleta avanzará un número aleatorio de posiciones entre 13 y 17, inclusive.
+    - Si introducimos una fuerza de 20, la ruleta avanzará un número aleatorio entre 18 y 22, inclusive.
+
+    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
+
+    Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
+
+    Premios asignados a cada sector de la ruleta en orden:
+
+    ```python
+    prizes = ['🎁', '📱', '📚', '📷', '💍', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import random
+    
+    prizes = ['🎁', '📱', '📚', '📷', '🍆', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
+    
+    position = 0
+    for _ in range(3):
+        force = max(10, int(input('Fuerza: ')))
+        position = (position + random.randint(force - 2, force + 2)) % len(prizes)
+        print(prizes[position])
+    ```
+
+    </details>
+
+<br>
+
+33. Sea el texto:
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    ```
+
+    Introducir por consola pares `'<palabra>,<traducción>'` infinitamente hasta que no se introduzca nada, es decir, una cadena vacía, e imprimir el texto resultante tras sustituir las palabras por sus respectivas traducciones.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    while pair := input('Introduce traducción: '):
+        text = text.replace(*pair.split(','))
+    
+    print(text)
+    ```
+
+    </details>
+
+<br>
+
+34. Sea el código:
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    ...
+    
+    for original, translation in zip(originals, translations):
+        text = text.replace(original, translation)
+    
+    print(text)
+    ```
+
+    Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que lo hace ese código**.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    originals = []
+    translations = []
+    
+    while pair := input('Introduce traducción: '):
+        original, translation = pair.split(',')
+        originals.append(original)
+        translations.append(translation)
+    
+    for original, translation in zip(originals, translations):
+        text = text.replace(original, translation)
+    
+    print(text)
+    ```
+
+    </details>
 
 <br>
 

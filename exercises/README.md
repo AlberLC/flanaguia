@@ -3549,14 +3549,14 @@
     from typing import Any
     
     
-    def process(numbers: list, something: Callable[[int], Any]) -> None:
+    def process(numbers: list[int], something: Callable[[int], Any]) -> None:
         print([something(number) for number in numbers])
     
     
     numbers_ = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     ...
     ```
-    
+
     Completar `...` **sin usar `print()`** y ejecutar para que en la consola salga:
 
     ```

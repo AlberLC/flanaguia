@@ -4780,8 +4780,6 @@
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 
-    > El módulo `main.py` contendrá inicialmente la línea `from __future__ import annotations` para habilitar la evaluación pospuesta de las anotaciones de tipos, lo que permite utilizar referencias adelantadas o evitar problemas con tipos que aún no se han definido en el momento de la anotación. Por ejemplo, si tenemos una clase `A` con un método que devuelve un objeto de `B`, pero la clase `B` aún no está definida, podríamos simplemente definir primero la clase `B`. Sin embargo, ¿qué sucedería si `B` también tiene un método que devuelve un objeto de `A`? Esto generaría una referencia circular, dificultando la definición de ambas clases antes de usarlas en las anotaciones. Esta línea debe ser siempre la primera del módulo.
-    > 
     > Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función tiene los siguientes parámetros opcionales:
     > - `pawn`, `knight`, `bishop`, `rook`, `queen`, `king`, `board`: un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado.
     > - `numbers` (booleano): determina el tipo de numeración de la tabla (`False` por defecto).
@@ -4932,8 +4930,6 @@
     <summary>Solución</summary>
 
     ```python
-    from __future__ import annotations
-    
     from abc import ABC, abstractmethod
     from collections.abc import Iterable, Iterator
     from enum import Enum, auto

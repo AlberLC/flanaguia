@@ -2877,7 +2877,7 @@ You have traveled 17.28 km.
 
 Como vemos, hemos utilizado funciones para modularizar el código. Por ejemplo, no hemos tenido que repetir código para quitar una rueda tres veces seguidas, sino que hemos creado una función que se encargaba de ese problema concreto.
 
-Ese fue el primero paso para ordenar el código, pero existen varios problemas. Por ejemplo, tenemos datos sueltos en variables globales que pueden usarse en otros lugares o interferir con el resto del programa. ¿Qué pasaría si tuviéramos cuarenta coches? ¿Tendríamos que añadir `model_1`, `model_2`, `model_3` ...? ¿Y si manejáramos también aviones? ¿`color` y `speed` serían de un coche o de un avión? Todo está mezclado y desordenado. Este tipo de cuestiones se resuelven encapsulando datos y funcionalidad en un mismo lugar, es decir, usando **clases**.
+Ese fue el primer paso para ordenar el código, pero existen varios problemas. Por ejemplo, tenemos datos sueltos en variables globales que pueden usarse en otros lugares o interferir con el resto del programa. ¿Qué pasaría si tuviéramos cuarenta coches? ¿Tendríamos que añadir `model_1`, `model_2`, `model_3` ...? ¿Y si manejáramos también aviones? ¿`color` y `speed` serían de un coche o de un avión? Todo está mezclado y desordenado. Este tipo de cuestiones se resuelven encapsulando datos y funcionalidad en un mismo lugar, es decir, usando **clases**.
 
 Podemos entender una clase como una plantilla que sirve para fabricar objetos de un mismo tipo. Podríamos tener una clase `Car` y una clase `Plane`. Estas clases recogerían los datos en [atributos](#81-atributos) y la funcionalidad en [métodos](#82-métodos).
 
@@ -2956,7 +2956,7 @@ Salida:
 
 Las propiedades son comparables a los "getters" y "setters" de otros lenguajes. Sirven para encapsular un acceso "prohibido" o para realizar una serie de pasos o cálculos internos cuando se accede o actualizan atributos de instancias.
 
-Python es muy flexible, y en cuanto a la publicidad o privacidad de los atributos de objetos, todo es público. Existen [convenciones de estilo](#102-nombres-privados) que permiten indicar si un atributo no es recomendable usarse fuera del ámbito interno de la clase (prefijar con `_` los nombres).
+Python es muy flexible, y en cuanto a la publicidad o privacidad de los atributos de objetos, todo es público. Aunque existen [convenciones de estilo](#102-nombres-privados) que permiten indicar si un atributo no es recomendable usarse fuera del ámbito interno de la clase (prefijar con `_` los nombres).
 
 Ejemplo sencillo para ver la sintaxis:
 

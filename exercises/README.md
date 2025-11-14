@@ -3817,7 +3817,7 @@
     
     > No es necesario saber nada de bases de datos.
 
-    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/user-attachments/files/23181238/funciones_22.zip), que contiene los módulos `main.py`, `data.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/user-attachments/files/23547048/funciones_22.zip), que contiene los módulos `main.py`, `data.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
     El módulo `tests.py` contiene código que será utilizado automáticamente para hacer pruebas, no hace falta entenderlo ni leerlo.
 
@@ -4593,7 +4593,7 @@
 
 1. ☠️ Vehículos.
 
-    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/21373355/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/23547064/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 

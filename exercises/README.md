@@ -3664,11 +3664,11 @@
         <summary>Solución</summary>
 
         ```python
-        from collections.abc import Iterator
+        from collections.abc import Generator
         from pathlib import Path
         
         
-        def filter_files(directory: str, extension: str) -> Iterator[Path]:
+        def filter_files(directory: str, extension: str) -> Generator[Path]:
             for path in Path(directory).iterdir():
                 if path.suffix == extension:
                     yield path
@@ -3681,7 +3681,7 @@
             print(f'{i}. {path_}')
         ```
 
-        > Alternativamente, en la función generadora se podria declarar este tipo de retorno: ` -> Generator[Path, None, None]:`. Más información en la [documentación](https://docs.python.org/3/library/typing.html#annotating-generators-and-coroutines).
+        > Alternativamente, en la función generadora se podria declarar este tipo de retorno: `-> Iterator[Path]:`. Más información en la [documentación](https://docs.python.org/3/library/typing.html#annotating-generators-and-coroutines).
 
         </details>
 
@@ -3713,11 +3713,11 @@
         <summary>Solución</summary>
 
         ```python
-        from collections.abc import Iterator
+        from collections.abc import Generator
         from pathlib import Path
         
         
-        def filter_files(directory: str, extension: str) -> Iterator[Path]:
+        def filter_files(directory: str, extension: str) -> Generator[Path]:
             return (path for path in Path(directory).iterdir() if path.suffix == extension)
         
         
@@ -3736,11 +3736,11 @@
         <summary>Solución</summary>
 
         ```python
-        from collections.abc import Iterable, Iterator
+        from collections.abc import Generator, Iterable
         from pathlib import Path
         
         
-        def filter_files(directory: str, extension: str) -> Iterator[Path]:
+        def filter_files(directory: str, extension: str) -> Generator[Path]:
             return (path for path in Path(directory).iterdir() if path.suffix == extension)
         
         
@@ -3785,11 +3785,11 @@
 
         ```python
         import datetime
-        from collections.abc import Callable, Iterable, Iterator
+        from collections.abc import Callable, Generator, Iterable
         from pathlib import Path
         
         
-        def filter_files(directory: str, filter_: Callable[[Path], bool]) -> Iterator[Path]:
+        def filter_files(directory: str, filter_: Callable[[Path], bool]) -> Generator[Path]:
             return (path for path in Path(directory).iterdir() if filter_(path))
         
         
@@ -4658,7 +4658,7 @@
     ```python
     import random
     from abc import ABC, abstractmethod
-    from collections.abc import Callable, Iterator
+    from collections.abc import Callable, Generator
     from enum import Enum, auto
     from typing import Any, Self
     
@@ -4711,7 +4711,7 @@
         def __eq__(self, other: Any) -> bool:
             return isinstance(other, type(self)) and self.plate == other.plate
     
-        def __iter__(self) -> Iterator[Person]:
+        def __iter__(self) -> Generator[Person]:
             yield from self.passengers
     
         def __len__(self) -> int:
@@ -4931,7 +4931,7 @@
 
     ```python
     from abc import ABC, abstractmethod
-    from collections.abc import Iterable, Iterator
+    from collections.abc import Generator, Iterable
     from enum import Enum, auto
     from typing import Any, Self
     
@@ -5227,10 +5227,10 @@
     
             return True
     
-        def iter_checkers(self, board: Board) -> Iterator[Piece]:
+        def iter_checkers(self, board: Board) -> Generator[Piece]:
             return (piece for piece in board.iter_pieces(self.color.opposite) if piece.is_attacking_to(board, self))
     
-        def iter_safe_moveset(self, board: Board, piece: Piece) -> Iterator[tuple[int, int]]:
+        def iter_safe_moveset(self, board: Board, piece: Piece) -> Generator[tuple[int, int]]:
             old_position = (piece.row, piece.column)
             has_moved = piece.has_moved
     
@@ -5260,7 +5260,7 @@
         def __getitem__(self, index: int) -> list[Piece | None]:
             return self._board[index]
     
-        def __iter__(self) -> Iterator[list[Piece | None]]:
+        def __iter__(self) -> Generator[list[Piece | None]]:
             return (row for row in self._board)
     
         def __len__(self) -> int:
@@ -5274,7 +5274,7 @@
     
             return '\n'.join(lines)
     
-        def iter_pieces[T](self, color: Color | None = None, piece_class: type[T] = Piece) -> Iterator[T]:
+        def iter_pieces[T](self, color: Color | None = None, piece_class: type[T] = Piece) -> Generator[T]:
             for row in self:
                 for piece in row:
                     if isinstance(piece, piece_class) and (not color or piece.color is color):
@@ -5437,7 +5437,7 @@
     <summary>Solución</summary>
 
     ```python
-    from collections.abc import Iterator
+    from collections.abc import Generator
     from typing import Any
     
     from tests import test
@@ -5486,7 +5486,7 @@
     
             self._length -= 1
     
-        def __iter__(self) -> Iterator:
+        def __iter__(self) -> Generator:
             node = self.first
             while node:
                 yield node.element

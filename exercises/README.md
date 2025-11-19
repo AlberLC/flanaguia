@@ -3173,7 +3173,7 @@
 
     `encode('abc', 2)` ➡️ `'cde'`
 
-    En el ejercicio vamos a usar únicamente los [caracteres ASCII](https://elcodigoascii.com.ar/) imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente carácteres dentro de ese rango.
+    En el ejercicio vamos a usar únicamente los [caracteres ASCII](https://elcodigoascii.com.ar/) imprimibles (del 32 al 126) como alfabeto, es decir, del `' '` al `'~'`, así que los textos cifrados van a contener solamente caracteres dentro de ese rango.
 
     Teniendo esto en cuenta: desarrollar dos funciones que reciban dos argumentos, el texto y el desplazamiento, de forma que siempre se cumpla:
 
@@ -3817,7 +3817,7 @@
     
     > No es necesario saber nada de bases de datos.
 
-    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/user-attachments/files/23547048/funciones_22.zip), que contiene los módulos `main.py`, `data.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/user-attachments/files/23547048/funciones_22.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
 
     El módulo `tests.py` contiene código que será utilizado automáticamente para hacer pruebas, no hace falta entenderlo ni leerlo.
 
@@ -4593,7 +4593,7 @@
 
 1. ☠️ Vehículos.
 
-    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/23547064/clases_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/23547064/clases_1.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 
@@ -4776,7 +4776,7 @@
 
 2. ☠️☠️ Ajedrez.
 
-    Para realizar este ejercicio es necesario descargar este [zip](clases_2.zip), que contiene los recursos necesarios, descomprimirlos en el directorio donde se vaya a trabajar e [instalar las bibliotecas](../README.md#121-instalación-de-paquetes) incluidas en el [`requirements.txt`](../README.md#1211-archivo-requirementstxt).
+    Para realizar este ejercicio es necesario descargar este [zip](clases_2.zip), que contiene los recursos necesarios, descomprimirlo en el directorio donde se vaya a trabajar e [instalar las bibliotecas](../README.md#121-instalación-de-paquetes) incluidas en el [`requirements.txt`](../README.md#1211-archivo-requirementstxt).
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 
@@ -5357,7 +5357,7 @@
 
 1. ☠️ Lista enlazada.
 
-    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/21373388/estructuras_de_datos_1.zip), que contiene los módulos `main.py` y `tests.py` y descomprimirlos en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/21373388/estructuras_de_datos_1.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
 

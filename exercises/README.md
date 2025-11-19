@@ -1,6 +1,18 @@
 # Ejercicios de Python
 
-## Variables, tipos, entrada/salida
+## Índice
+
+1. [Variables, tipos, entrada/salida](#1-variables-tipos-entradasalida)
+2. [Condicionales](#2-condicionales)
+3. [Bucles](#3-bucles)
+4. [Funciones](#4-funciones)
+5. [Clases](#5-clases)
+6. [Estructuras de datos](#6-estructuras-de-datos)
+7. [Algoritmos avanzados](#7-algoritmos-avanzados)
+
+<br>
+
+## 1. Variables, tipos, entrada/salida
 
 1. Pedir por consola cuánto cuesta y cuánto pesa una caja vacía, así como cuánto cuesta y pesa una muñeca. Luego pedir por consola cuántas muñecas hay por caja y cuántas cajas hay. Imprimir en la consola el coste (€) y el peso (g) totales.
 
@@ -255,7 +267,7 @@
 
 <br>
 
-## Condicionales
+## 2. Condicionales
 
 1. El programa debe preguntar al usuario la edad del cliente y mostrar el precio de una entrada. Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años (inclusive) debe pagar 5 € y si es mayor de 18 años, 10 €.
 
@@ -397,7 +409,7 @@
 
 <br>
 
-## Bucles
+## 3. Bucles
 
 1. Imprimir por consola la tabla de multiplicar del número que se pida por consola.
 
@@ -2175,7 +2187,7 @@
 
 <br>
 
-## Funciones
+## 4. Funciones
 
 1. Sea una función `sum_numbers` que sume una lista de números enteros y devuelva el resultado:
 
@@ -4589,7 +4601,7 @@
 
 <br>
 
-## Clases
+## 5. Clases
 
 1. ☠️ Vehículos.
 
@@ -5353,7 +5365,7 @@
 
 <br>
 
-## Estructuras de datos
+## 6. Estructuras de datos
 
 1. ☠️ Lista enlazada.
 
@@ -5575,7 +5587,7 @@
 
 <br>
 
-## Algoritmos avanzados
+## 7. Algoritmos avanzados
 
 1. ☠️☠️☠️ Rascacielos.
 

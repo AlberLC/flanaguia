@@ -2068,11 +2068,11 @@
     <summary>Solución</summary>
 
     ```python
-    subject = input('Introduce una asignatura ("fin" para terminar): ')
+    subject = input("Introduce una asignatura ('fin' para terminar): ")
     subjects = []
     while subject != 'fin':
         subjects.append(subject)
-        subject = input('Introduce una asignatura ("fin" para terminar): ')
+        subject = input("Introduce una asignatura ('fin' para terminar): ")
     
     failed_subjects = []
     for subject in subjects:
@@ -4261,8 +4261,8 @@
             ```
             > 2
             🔎🔎🔎 Búsqueda de clientes 🔎🔎🔎
-            ▫️Los filtros se separan por ";".
-            ▫️"exit" para salir.
+            ▫️Los filtros se separan por ';'.
+            ▫️'exit' para salir.
             
             --- Tipos de filtros ---
             id:<id>
@@ -4285,7 +4285,7 @@
             - `'max:age'` ➡️ el cliente de mayor edad.
             - `'name:an;age:22;max:id'` ➡️ el cliente cuyo nombre contenga `'a'`, cuya edad sea 22 y cuyo id sea el mayor.
 
-        - Se podrán introducir varios filtros a la vez seprándolos con ";", como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
+        - Se podrán introducir varios filtros a la vez seprándolos con `';'`, como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
 
             - El primer filtro se aplicaría a todos los clientes.
             - El segundo filtro se aplicaría al resultado del primero.
@@ -4531,8 +4531,8 @@
             print()
     
         print('🔎🔎🔎 Búsqueda de clientes 🔎🔎🔎\n'
-              '▫️Los filtros se separan por ";".\n'
-              '▫️"exit" para salir.\n'
+              "▫️Los filtros se separan por ';'.\n"
+              "▫️'exit' para salir.\n"
               '\n--- Tipos de filtros ---\n'
               'id:<id>\n'
               'name:<name part>\n'

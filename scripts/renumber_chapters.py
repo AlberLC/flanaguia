@@ -31,20 +31,22 @@ def rename_zip(exercise_directory_name: str, new_exercise_number: int) -> None:
 
 
 lines = []
+chapter_pattern = re.compile(fr'{CHAPTER_MARKER}[\s*\d.]*(.*)')
+exercise_number_pattern = re.compile(r'^\d+')
 current_chapter: str | None = None
 previous_exercise_number: int | None = None
 exercise_number = 0
 
 with open(MARKDOWN_PATH, encoding='utf-8') as file:
     for line in file:
-        if line.lstrip().startswith(CHAPTER_MARKER):
-            current_chapter = line.split(CHAPTER_MARKER)[1].strip()
+        if match := re.match(chapter_pattern, line):
+            current_chapter = match.group(1).strip()
             exercise_number = 0
 
-        if match := re.match(r'\d+', line):
+        if match := re.match(exercise_number_pattern, line):
             previous_exercise_number = int(match.group())
             exercise_number += 1
-            line = re.sub(r'^\d+', str(exercise_number), line)
+            line = re.sub(exercise_number_pattern, str(exercise_number), line)
 
         if exercise_number != previous_exercise_number and '[zip]' in line:
             rename_zip(f'{current_chapter.lower().replace(' ', '_')}_{previous_exercise_number}', exercise_number)

@@ -4295,7 +4295,7 @@
             - `'age:22'` ➡️ clientes cuya edad sea `22`.
             - `'min:id'` ➡️ el cliente de menor id.
             - `'max:age'` ➡️ el cliente de mayor edad.
-            - `'name:an;age:22;max:id'` ➡️ el cliente cuyo nombre contenga `'a'`, cuya edad sea 22 y cuyo id sea el mayor.
+            - `'name:a;age:22;max:id'` ➡️ el cliente cuyo nombre contenga `'a'`, cuya edad sea 22 y cuyo id sea el mayor.
 
         - Se podrán introducir varios filtros a la vez seprándolos con `';'`, como se especifica en las intrucciones. Estos filtros se aplicarán uno detrás del otro, es decir, si tuviéramos tres filtros:
 

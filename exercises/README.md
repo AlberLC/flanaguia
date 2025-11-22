@@ -4225,7 +4225,7 @@
 
     1. La primera función debe devolver unos datos de posición de todos los asteroides que **se dirigen a la Tierra**.
 
-        Para obtener esos datos, te han recomendado que uses el servicio del telescopio [NEOWISE](https://en.wikipedia.org/wiki/Wide-field_Infrared_Survey_Explorer), un telescopio espacial de campo amplio de la [NASA](https://es.wikipedia.org/wiki/NASA) que orbita por encima de la atmósfera terrestre y está especializado en escanear grandes sectores del cielo de manera eficiente. Para ello, importa la función `scan_subregion()` del módulo `neowise`, que recibe por parámetro una tupla de dos números enteros `(<fila>, <columna>)`, indicando la subregión a escanear, y devuelve el resultado en bytes codificados en [Base64](https://es.wikipedia.org/wiki/Base64).
+        Para obtener esos datos, te han recomendado que uses el servicio del telescopio [NEOWISE](https://en.wikipedia.org/wiki/Wide-field_Infrared_Survey_Explorer), un telescopio espacial de campo amplio de la [NASA](https://es.wikipedia.org/wiki/NASA) que orbita por encima de la atmósfera terrestre y está especializado en escanear grandes sectores del cielo de manera eficiente. Para ello, importa la función `scan_subregion()` del módulo `neowise`, que recibe por parámetro una tupla de dos números enteros `(<fila>, <columna>)`, indicando la subregión a escanear, y devuelve el resultado en `bytes` codificados en [Base64](https://es.wikipedia.org/wiki/Base64).
 
         > Python proporciona las funciones necesarias en el módulo [base64](https://docs.python.org/3/library/base64.html).
 
@@ -4300,7 +4300,7 @@
         - Para `3` ➡️ `'11'`
         - Para `5` ➡️ `'101'`
 
-        Tabla de tipos de composición de asteroides:
+        #### Tabla de tipos de composición de asteroides:
 
         | ID  | Tipo de Composición |
         |:---:|---------------------|
@@ -4332,6 +4332,13 @@
     import laboratory
     import neowise
     
+    DANGEROUS_COMPOSITION_IDS = {3, 5}
+    MAX_DIAMETER_KM = 500
+    MAX_VELOCITY_KMS = 10
+    POSITION_DATA_SEPARATOR = ';'
+    POSITIONS_DATA_SEPARATOR = '&#'
+    POSITIONS_DATA_STRIP_CHARS = '#&'
+    
     
     def get_asteroid_position_data() -> Generator[dict[str, Any]]:
         for i in range(neowise.REGION_SIZE):
@@ -4339,8 +4346,11 @@
                 if not (encoded_data := neowise.scan_subregion((i, j))):
                     continue
     
-                for asteroid_raw_data in base64.b64decode(encoded_data).decode().strip('#&').split('&#'):
-                    id, x, y, distance_au, velocity_kms, on_collision_course = asteroid_raw_data.split(';')
+                asteroids_raw_data = base64.b64decode(encoded_data).decode().strip(POSITIONS_DATA_STRIP_CHARS)
+                for asteroid_raw_data in asteroids_raw_data.split(POSITIONS_DATA_SEPARATOR):
+                    id, x, y, distance_au, velocity_kms, on_collision_course = asteroid_raw_data.split(
+                        POSITION_DATA_SEPARATOR
+                    )
     
                     if on_collision_course == 'True':
                         yield {
@@ -4384,11 +4394,11 @@
         )
     
         if (
-            asteroid_data['diameter_km'] >= 500
+            asteroid_data['diameter_km'] > MAX_DIAMETER_KM
             and
-            asteroid_data['velocity_kms'] >= 10
+            asteroid_data['velocity_kms'] > MAX_VELOCITY_KMS
             and
-            asteroid_data['composition_id'] in {3, 5}
+            asteroid_data['composition_id'] in DANGEROUS_COMPOSITION_IDS
         ):
             asteroid_interception_system.calculate_trajectory(
                 asteroid_data['id'],

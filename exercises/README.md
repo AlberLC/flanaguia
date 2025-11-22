@@ -4219,7 +4219,7 @@
 
 23. Asteroides.
 
-    Para realizar este ejercicio es necesario descargar este , que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/23690286/funciones_23.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
 
     Un laboratorio astronómico de la [Agencia Espacial Europea (ESA)](https://es.wikipedia.org/wiki/Agencia_Espacial_Europea) sospecha de una región del espacio donde podrían haber asteroides peligrosos para la humanidad. Esta región ha sido dividida en subregiones mediante filas y columnas. El laboratorio te ha pedido que desarrolles dos funciones que recopilen datos sobre asteroides que podrían acabar con la vida en la Tierra:
 

@@ -189,12 +189,12 @@
 
     Prohibiciones:
 
-    - ❌ Usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
-    - ❌ Usar [bucles](../README.md#5-bucles).
-    - ❌ [Importar](../README.md#9-importaciones).
-    - ❌ Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
-    - ❌ Transformar los números en otros con sumas, restas, etc.
-    - ❌ Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
+    - 🚫 Usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
+    - 🚫 Usar [bucles](../README.md#5-bucles).
+    - 🚫 [Importar](../README.md#9-importaciones).
+    - 🚫 Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
+    - 🚫 Transformar los números en otros con sumas, restas, etc.
+    - 🚫 Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
 
     <br>
 
@@ -231,12 +231,12 @@
 
     Prohibiciones:
 
-    - ❌ Usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`.
-    - ❌ Usar [bucles](../README.md#5-bucles).
-    - ❌ [Importar](../README.md#9-importaciones).
-    - ❌ Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
-    - ❌ Transformar los números en otros con sumas, restas, etc.
-    - ❌ Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
+    - 🚫 Usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`.
+    - 🚫 Usar [bucles](../README.md#5-bucles).
+    - 🚫 [Importar](../README.md#9-importaciones).
+    - 🚫 Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
+    - 🚫 Transformar los números en otros con sumas, restas, etc.
+    - 🚫 Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
 
     <br>
 
@@ -3826,7 +3826,7 @@
 <br>
 
 22. Consultas relacionales estilo SQL a colecciones de estudiantes.
-    
+
     > No es necesario saber nada de bases de datos.
 
     Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/user-attachments/files/23547048/funciones_22.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
@@ -4217,7 +4217,195 @@
 
 <br>
 
-23. ☠️ Crear un gestor de clientes por consola.
+23. Asteroides.
+
+    Para realizar este ejercicio es necesario descargar este , que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
+
+    Un laboratorio astronómico de la [Agencia Espacial Europea (ESA)](https://es.wikipedia.org/wiki/Agencia_Espacial_Europea) sospecha de una región del espacio donde podrían haber asteroides peligrosos para la humanidad. Esta región ha sido dividida en subregiones mediante filas y columnas. El laboratorio te ha pedido que desarrolles dos funciones que recopilen datos sobre asteroides que podrían acabar con la vida en la Tierra:
+
+    1. La primera función debe devolver unos datos de posición de todos los asteroides que **se dirigen a la Tierra**.
+
+        Para obtener esos datos, te han recomendado que uses el servicio del telescopio [NEOWISE](https://en.wikipedia.org/wiki/Wide-field_Infrared_Survey_Explorer), un telescopio espacial de campo amplio de la [NASA](https://es.wikipedia.org/wiki/NASA) que orbita por encima de la atmósfera terrestre y está especializado en escanear grandes sectores del cielo de manera eficiente. Para ello, importa la función `scan_subregion()` del módulo `neowise`, que recibe por parámetro una tupla de dos números enteros `(<fila>, <columna>)`, indicando la subregión a escanear, y devuelve el resultado en bytes codificados en [Base64](https://es.wikipedia.org/wiki/Base64).
+
+        > Python proporciona las funciones necesarias en el módulo [base64](https://docs.python.org/3/library/base64.html).
+
+        NEOWISE tarda en escanear una subregión dos meses (`neowise.scan_subregion()` lo simulará tardando dos segundos).
+
+        Se puede importar la constante `REGION_SIZE` del módulo `neowise`, que indica el número de filas y columnas de la región.
+
+        Este telescopio proporciona los siguientes datos de cada asteroide encontrado:
+
+        - **id** (`id`): identificador del asteroide.
+        - **x** (`float`): coordenada horizontal en el cielo.
+        - **y** (`float`): coordenada vertical en el cielo.
+        - **distance_au** (`float`): distancia a la Tierra en unidades astronómicas.
+        - **velocity_kms** (`float`): velocidad en km/s.
+        - **on_collision_course** (`bool`): si se dirige a la Tierra o no.
+
+        El resultado de `neowise.scan_subregion()` contendrá los datos de cada asteroide de la subregión en `bytes` con el formato `#datos_asteroide_1&#datos_asteroide_2&#datos_asteroide_3&...`. Los datos de cada asteroide estarán separados por `';'` y se presentarán en el orden `id;x;y;distance_au;velocity_kms;on_collision_course`.
+
+        La función a desarrollar deberá devolver un diccionario `{'id': ..., 'x': ..., 'y': ..., 'distance_au': ..., 'velocity_kms': ...}` por cada asteroide que **se dirija a la Tierra**.
+
+        Una vez terminada la función, deberá ser entregada al laboratorio de la ESA mediante la función `add_asteroid_position_data_getter()` del módulo `laboratory`, la cual espera por parámetro tu función, es decir, una función sin parámetros que devuelva un `Iterable[dict[str, Any]]]`.
+
+        > Que espere un `Iterable` no implica que tengas que anotar tu función como si devolviera un `Iterable`. Es más descriptivo indicar el tipo exacto que devuelve tu función, aunque otros solo necesiten que sea `Iterable`. 
+
+        Verás un mensaje con un `✅` si lo has realizado correctamente o una excepción en caso contrario.
+
+    2. La segunda función deberá usar los datos recibidos por la primera y extenderlos con datos de radiación de los asteroides.
+
+        Para estos tipos de datos te han recomenado uno de los telescopios terrestres más grandes del mundo: el [Gran Telescopio Canarias (GTC)](https://es.wikipedia.org/wiki/Gran_Telescopio_Canarias). Es un telescopio de campo estrecho con instrumentación espectroscópica de alta resolución que permite identificar la composición mineral de un asteroide. Para usar los servicios de este telescopio, importa la función `observe_asteroid()` del módulo `gtc`, que recibe por parámetro el `id`, la coordenada horizontal `x` y la coordenada vertical `y` del asteroide, y devuelve el resultado en una cadena [JSON](https://es.wikipedia.org/wiki/JSON).
+
+        > Python proporciona las funciones necesarias en el módulo [json](https://docs.python.org/3/library/json.html).
+
+        GTC tarda en observar un asteroide un mes (`gtc.observe_asteroid()` lo simulará tardando un segundo).
+
+        Este telescopio proporciona los siguientes datos de cada asteroide:
+
+        - **id** (`int`): identificador del asteroide.
+        - **albedo** (`float`): fracción de luz reflejada por la superficie del asteroide.
+        - **temperature** (`float`): temperatura superficial del asteroide en [kelvin](https://es.wikipedia.org/wiki/Kelvin).
+        - **absorption_spectrum** (`list[tuple[int, float]]`): datos que representan el espectro de absorción del asteroide.
+
+        La función a desarrollar deberá devolver, para cada asteroide, un diccionario que extienda los datos ya existentes con los obtenidos mediante `gtc.observe_asteroid()`.
+
+        Una vez terminada la función, deberá ser entregada al laboratorio de la ESA mediante la función `add_asteroid_radiation_data_getter()` del módulo `laboratory`, la cual espera por parámetro tu función, es decir, una función sin parámetros que devuelva un `Iterable[dict[str, Any]]]`.
+
+        Verás un mensaje con un `✅` si lo has realizado correctamente o una excepción en caso contrario.
+
+    Un asteroide peligroso se acerca a la Tierra e impactará dentro de cuatro años. Los expertos sospechan que podría encontrarse en las subregiones más próximas a la posición `(0, 0)`, por lo que es prioritario localizarlo cuanto antes. Tu tarea consiste en detectar cuál de los asteroides registrados es una amenaza catastrófica para posteriormente destruirlo.
+
+    Se considera que un asteroide es catastrófico si cumple simultáneamente estas condiciones:
+
+    - Tiene más de 500 km de diámetro.
+    - Viaja a más de 10 km/s.
+    - Su composición es metálica o rocosa.
+
+    Para obtener la información adicional que permitirá confirmar estas características, el laboratorio (módulo `laboratory`) pone a tu disposición dos funciones:
+
+    - `calculate_diameter(id: int, albedo: float) -> str`:
+
+        El laboratorio calcula el diámetro mediante la reflectividad de la luz (albedo) y actualiza sus registros sobre el asteroide. El sistema que se encarga de hacer los cálculos tiene actualmente un problema técnico y devuelve **la parte entera del resultado `float`** en una cadena en formato hexadecimal, es decir:
+
+        - Para `764.8442` ➡️ `'2fc.8442'`
+        - Para `1587.6167` ➡️ `'633.6167'`
+        - Para `894.3025` ➡️ `'37e.3025'`
+        - Para `955.218` ➡️ `'3bb.218'`
+
+    - `determine_asteroid_composition(id: int, temperature: float, absorption_spectrum: list[tuple[int, float]]) -> str`:
+
+        El laboratorio determina la composición mediante los datos de radiación y actualiza sus registros sobre el asteroide. Al ser tan antiguo, su sistema devuelve el identificador del tipo de composición `int` en una cadena binaria:
+
+        - Para `1` ➡️ `'1'`
+        - Para `3` ➡️ `'11'`
+        - Para `5` ➡️ `'101'`
+
+        Tabla de tipos de composición de asteroides:
+
+        | ID  | Tipo de Composición |
+        |:---:|---------------------|
+        |  1  | Carbonácea          |
+        |  2  | Cometaria           |
+        |  3  | Metálica            |
+        |  4  | Pila de escombros   |
+        |  5  | Rocosa              |
+
+    Una vez identificado el asteroide catastrófico, se procederá a activar el protocolo de interceptación. El sistema de armamento emplea estas funciones del módulo `asteroid_interception_system`:
+
+    - `calculate_trajectory(id: int, x: float, y: float, distance_au: float, velocity_kms: float) -> None`
+    - `load_weapon() -> None`
+    - `fire_weapon() -> None`
+
+    ⚠️ Solo se permiten definir **dos funciones** en este ejercicio. Cada función de los módulos `neowise`, `gtc`, `laboratory` y `asteroid_interception_system` solo puede aparecer **una vez** en la solución.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import base64
+    import json
+    from collections.abc import Generator
+    from typing import Any
+    
+    import asteroid_interception_system
+    import gtc
+    import laboratory
+    import neowise
+    
+    
+    def get_asteroid_position_data() -> Generator[dict[str, Any]]:
+        for i in range(neowise.REGION_SIZE):
+            for j in range(neowise.REGION_SIZE):
+                if not (encoded_data := neowise.scan_subregion((i, j))):
+                    continue
+    
+                for asteroid_raw_data in base64.b64decode(encoded_data).decode().strip('#&').split('&#'):
+                    id, x, y, distance_au, velocity_kms, on_collision_course = asteroid_raw_data.split(';')
+    
+                    if on_collision_course == 'True':
+                        yield {
+                            'id': int(id),
+                            'x': float(x),
+                            'y': float(y),
+                            'distance_au': float(distance_au),
+                            'velocity_kms': float(velocity_kms)
+                        }
+    
+    
+    def get_asteroid_radiation_data() -> Generator[dict[str, Any]]:
+        for asteroid_position_data in get_asteroid_position_data():
+            yield (
+                asteroid_position_data
+                |
+                json.loads(gtc.observe_asteroid(
+                    asteroid_position_data['id'],
+                    asteroid_position_data['x'],
+                    asteroid_position_data['y'])
+                )
+            )
+    
+    
+    laboratory.add_asteroid_position_data_getter(get_asteroid_position_data)
+    laboratory.add_asteroid_radiation_data_getter(get_asteroid_radiation_data)
+    
+    for asteroid_data in get_asteroid_radiation_data():
+        integer_part, decimal_part = laboratory.calculate_diameter(
+            asteroid_data['id'],
+            asteroid_data['albedo']
+        ).split('.')
+        asteroid_data['diameter_km'] = float(f'{int(integer_part, 16)}.{decimal_part}')
+        asteroid_data['composition_id'] = int(
+            laboratory.determine_asteroid_composition(
+                asteroid_data['id'],
+                asteroid_data['temperature'],
+                asteroid_data['absorption_spectrum']
+            ),
+            2
+        )
+    
+        if (
+            asteroid_data['diameter_km'] >= 500
+            and
+            asteroid_data['velocity_kms'] >= 10
+            and
+            asteroid_data['composition_id'] in {3, 5}
+        ):
+            asteroid_interception_system.calculate_trajectory(
+                asteroid_data['id'],
+                asteroid_data['x'],
+                asteroid_data['y'],
+                asteroid_data['distance_au'],
+                asteroid_data['velocity_kms']
+            )
+            asteroid_interception_system.load_weapon()
+            asteroid_interception_system.fire_weapon()
+    ```
+
+    </details>
+
+<br>
+
+24. ☠️ Crear un gestor de clientes por consola.
 
     > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
 

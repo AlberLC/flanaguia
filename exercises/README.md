@@ -4235,7 +4235,7 @@
 
         Este telescopio proporciona los siguientes datos de cada asteroide encontrado:
 
-        - **id** (`id`): identificador del asteroide.
+        - **id** (`int`): identificador del asteroide.
         - **x** (`float`): coordenada horizontal en el cielo.
         - **y** (`float`): coordenada vertical en el cielo.
         - **distance_au** (`float`): distancia a la Tierra en unidades astronómicas.
@@ -4273,7 +4273,7 @@
 
         Verás un mensaje con un `✅` si lo has realizado correctamente o una excepción en caso contrario.
 
-    Un asteroide peligroso se acerca a la Tierra e impactará dentro de cuatro años. Los expertos sospechan que podría encontrarse en las subregiones más próximas a la posición `(0, 0)`, por lo que es prioritario localizarlo cuanto antes. Tu tarea consiste en detectar cuál de los asteroides registrados es una amenaza catastrófica para posteriormente destruirlo.
+    Un asteroide peligroso se acerca a la Tierra e impactará dentro de cuatro años, suponiendo una amenaza catastrófica. Los expertos sospechan que podría encontrarse en las subregiones más próximas a la posición `(0, 0)`, por lo que es prioritario localizarlo cuanto antes. Tu misión es detectarlo y destruirlo antes de que llegue a la Tierra.
 
     Se considera que un asteroide es catastrófico si cumple simultáneamente estas condiciones:
 
@@ -4281,11 +4281,13 @@
     - Viaja a más de 10 km/s.
     - Su composición es metálica o rocosa.
 
-    Para obtener la información adicional que permitirá confirmar estas características, el laboratorio (módulo `laboratory`) pone a tu disposición dos funciones:
+    Para obtener la información adicional que permitirá confirmar estas características, el laboratorio (módulo `laboratory`) pone a tu disposición estas dos funciones:
 
     - `calculate_diameter(id: int, albedo: float) -> str`:
 
-        El laboratorio calcula el diámetro mediante la reflectividad de la luz (albedo) y actualiza sus registros sobre el asteroide. El sistema que se encarga de hacer los cálculos tiene actualmente un problema técnico y devuelve **la parte entera del resultado `float`** en una cadena en formato hexadecimal, es decir:
+        El laboratorio calcula el diámetro mediante la reflectividad de la luz (albedo) y actualiza sus registros sobre el asteroide.
+
+        El sistema encargado de hacer los cálculos devuelve el diámetro en km `float` como una cadena. Sin embargo, debido a un problema técnico, actualmente retorna **la parte entera en formato hexadecimal**, es decir:
 
         - Para `764.8442` ➡️ `'2fc.8442'`
         - Para `1587.6167` ➡️ `'633.6167'`
@@ -4294,7 +4296,7 @@
 
     - `determine_asteroid_composition(id: int, temperature: float, absorption_spectrum: list[tuple[int, float]]) -> str`:
 
-        El laboratorio determina la composición mediante los datos de radiación y actualiza sus registros sobre el asteroide. Al ser tan antiguo, su sistema devuelve el identificador del tipo de composición `int` en una cadena binaria:
+        El laboratorio determina la composición mediante los datos de radiación y actualiza sus registros sobre el asteroide. Al ser tan antiguo, su sistema devuelve el identificador del tipo de composición `int` como una cadena binaria:
 
         - Para `1` ➡️ `'1'`
         - Para `3` ➡️ `'11'`

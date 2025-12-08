@@ -926,8 +926,9 @@
     
     total = 0
     
-    for letter in text.lower():
-        index = string.ascii_lowercase.find(letter)
+    for character in text.lower():
+        index = string.ascii_lowercase.find(character)
+    
         if index != -1:
             total += index + 1
     
@@ -956,8 +957,8 @@
     ```python
     text = input('Introduce un texto: ')
     
-    for letter in text:
-        print(chr(ord(letter) + len(text)), end='')
+    for character in text:
+        print(chr(ord(character) + len(text)), end='')
     ```
 
     </details>

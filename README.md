@@ -1202,7 +1202,7 @@ if number == 82:  # compares the value of two objects
     print('a')
 elif number != 82:
     print('b')
-elif number is condition_1:  # compares the memory reference of two objects
+elif number is 82:  # compares the memory reference of two objects
     print('c')
 elif number in numbers:
     print('d')

@@ -373,7 +373,7 @@
 
 <br>
 
-5. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás el año 2050. Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro. Por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068.
+5. Escribir un programa que reciba tu fecha de nacimiento por consola con formato `12/05/97` o `12/05/1997` y que imprima por consola cuantos años cumplirás el año 2050. Hay que tener en cuenta que el año puede darse en dos dígitos o en cuatro. Por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068.
 
     <details>
     <summary>Solución</summary>
@@ -411,22 +411,7 @@
 
 ## 3. Bucles
 
-1. Imprimir por consola la tabla de multiplicar del número que se pida por consola.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    number = int(input('Tabla del: '))
-    for i in range(1, 11):
-        print(f'{number} * {i} = {number * i}')
-    ```
-
-    </details>
-
-<br>
-
-2. Pedir por consola una contraseña. Luego pedir de nuevo para confirmarla. Repetir esta segunda petición infinitamente mientras no coincida con la primera. Mostrar la contraseña por consola tras la correcta confirmación.
+1. Pedir por consola una contraseña. Luego pedir de nuevo para confirmarla. Repetir esta segunda petición infinitamente mientras no coincida con la primera. Mostrar la contraseña por consola tras la correcta confirmación.
 
     <details>
     <summary>Solución</summary>
@@ -456,30 +441,23 @@
 
 <br>
 
-3. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
-
-    - `1523` ➡️ `15555522333`
-    - `2204` ➡️ `22224444`
-    - `41113` ➡️ `4444111333`
-    - `56241` ➡️ `555556666662244441`
-    - `600832` ➡️ `6666668888888833322`
-
-    <br>
+2. Imprimir por consola la tabla de multiplicar del número que se pida por consola.
 
     <details>
     <summary>Solución</summary>
 
     ```python
-    number = input('Introduce un número: ')
-    for digit in number:
-        print(digit * int(digit), end='')
+    number = int(input('Tabla del: '))
+    
+    for i in range(1, 11):
+        print(f'{number} * {i} = {number * i}')
     ```
 
     </details>
 
 <br>
 
-4. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+3. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - `0` ➡️
     - `1` ➡️ `0`
@@ -509,6 +487,7 @@
     b)
     ```python
     number = int(input('Introduce un número: '))
+    
     for i in range(number):
         print(i % 10, end='')
     ```
@@ -517,37 +496,13 @@
 
 <br>
 
-5. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+4. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
-    - `'hola'`, `'adios'` ➡️ `False`
-    - `'urnas'`, `'runa'` ➡️ `False`
-    - `'urnas'`, `'runas'` ➡️ `True`
-
-    <br>
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    word_1 = input('Introduce la primera palabra: ')
-    word_2 = input('Introduce la segunda palabra: ')
-    print(sorted(word_1) == sorted(word_2))
-    ```
-
-    </details>
-
-<br>
-
-6. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
-
-    - `1234` ➡️ `3210`
-    - `55` ➡️ `44`
-    - `2233` ➡️ `2211`
-    - `3322` ➡️ `1122`
-    - `787` ➡️ `676`
-    - `1` ➡️ `0`
-    - `222888` ➡️ `777111`
-    - `987654321` ➡️ `012345678`
+    - `1523` ➡️ `15555522333`
+    - `2204` ➡️ `22224444`
+    - `41113` ➡️ `4444111333`
+    - `56241` ➡️ `555556666662244441`
+    - `600832` ➡️ `6666668888888833322`
 
     <br>
 
@@ -555,63 +510,17 @@
     <summary>Solución</summary>
 
     ```python
-    number = input('Introduce un número: ')
-    for digit in reversed(number):
-        print(int(digit) - 1, end='')
-    ```
-
-    </details>
-
-<br>
-
-7. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    CHARACTER_ON = '█'
-    CHARACTER_OFF = '▒'
-    
     number = input('Introduce un número: ')
     
     for digit in number:
-        progress = int(digit)
-        print(f'{digit} {CHARACTER_ON * progress}{CHARACTER_OFF * (9 - progress)}')
+        print(digit * int(digit), end='')
     ```
 
     </details>
 
 <br>
 
-8. Usando como base el ejercicio anterior, pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    CHARACTER_ON = '█'
-    CHARACTER_OFF = '▒'
-    
-    number = input('Introduce un número: ')
-    order = int(input('Introduce el orden: '))
-    
-    if order < 0:
-        digits = sorted(number, reverse=True)
-    elif order == 0:
-        digits = number
-    else:
-        digits = sorted(number)
-    
-    for digit in digits:
-        print(f'{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}')
-    ```
-
-    </details>
-
-<br>
-
-9. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+5. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - `1` ➡️ `1`
     - `10` ➡️ `12345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910`
@@ -643,7 +552,7 @@
 
 <br>
 
-10. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
+6. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
 
     ```
     1 
@@ -669,7 +578,33 @@
 
 <br>
 
-11. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+7. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
+
+    ```
+       *
+      ***
+     *****
+    *******
+     *****
+      ***
+       *
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    length = int(input('Introduce la longitud del lado del rombo: '))
+    
+    for i in range(-length + 1, length):
+        print(f'{' ' * (abs(i))}{'*' * ((length - abs(i)) * 2 - 1)}')
+    ```
+
+    </details>
+
+<br>
+
+8. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - Para:
         ```
@@ -730,33 +665,196 @@
 
 <br>
 
-12. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
+9. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
-    ```
-       *
-      ***
-     *****
-    *******
-     *****
-      ***
-       *
-    ```
+    - `'ABC'` ➡️ `'DEF'`
+    - `'HELLO'` ➡️ `'MJQQT'`
+    - `'as'` ➡️ `'cu'`
+    - `'wOrLd'` ➡️ `'|TwQi'`
+    - `'.5'` ➡️ `'07'`
+    - `'j'` ➡️ `'k'`
+    - `'.._,#@%'` ➡️ `'55f3*G,'`
+
+    <br>
 
     <details>
     <summary>Solución</summary>
 
     ```python
-    length = int(input('Introduce la longitud del lado del rombo: '))
+    text = input('Introduce un texto: ')
     
-    for i in range(-length + 1, length):
-        print(f'{' ' * (abs(i))}{'*' * ((length - abs(i)) * 2 - 1)}')
+    for character in text:
+        print(chr(ord(character) + len(text)), end='')
     ```
 
     </details>
 
 <br>
 
-13. Pedir por consola un texto e imprimir el resultado según el siguiente ejemplo:
+10. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+
+    - `1234` ➡️ `3210`
+    - `55` ➡️ `44`
+    - `2233` ➡️ `2211`
+    - `3322` ➡️ `1122`
+    - `787` ➡️ `676`
+    - `1` ➡️ `0`
+    - `222888` ➡️ `777111`
+    - `987654321` ➡️ `012345678`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    number = input('Introduce un número: ')
+    
+    for digit in reversed(number):
+        print(int(digit) - 1, end='')
+    ```
+
+    </details>
+
+<br>
+
+11. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+
+    - `'hola'`, `'adios'` ➡️ `False`
+    - `'urnas'`, `'runa'` ➡️ `False`
+    - `'urnas'`, `'runas'` ➡️ `True`
+
+    <br>
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    word_1 = input('Introduce la primera palabra: ')
+    word_2 = input('Introduce la segunda palabra: ')
+    
+    print(sorted(word_1) == sorted(word_2))
+    ```
+
+    </details>
+
+<br>
+
+12. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    CHARACTER_ON = '█'
+    CHARACTER_OFF = '▒'
+    
+    number = input('Introduce un número: ')
+    
+    for digit in number:
+        progress = int(digit)
+        print(f'{digit} {CHARACTER_ON * progress}{CHARACTER_OFF * (9 - progress)}')
+    ```
+
+    </details>
+
+<br>
+
+13. Usando como base el ejercicio anterior, pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    CHARACTER_ON = '█'
+    CHARACTER_OFF = '▒'
+    
+    number = input('Introduce un número: ')
+    order = int(input('Introduce el orden: '))
+    
+    if order < 0:
+        digits = sorted(number, reverse=True)
+    elif order == 0:
+        digits = number
+    else:
+        digits = sorted(number)
+    
+    for digit in digits:
+        print(f'{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}')
+    ```
+
+    </details>
+
+<br>
+
+14. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+
+    - Para:
+        ```
+        Sol
+        ```
+        ⬇️
+        ```
+        olS
+        lSo
+        Sol
+        ```
+    - Para:
+        ```
+        Hola
+        ```
+        ⬇️
+        ```
+        olaH
+        laHo
+        aHol
+        Hola
+        ```
+    - Para:
+        ```
+        Uno DOS tres
+        ```
+        ⬇️
+        ```
+        no DOS tresU
+        o DOS tresUn
+         DOS tresUno
+        DOS tresUno 
+        OS tresUno D
+        S tresUno DO
+         tresUno DOS
+        tresUno DOS 
+        resUno DOS t
+        esUno DOS tr
+        sUno DOS tre
+        Uno DOS tres
+        ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    text = input('Introduce un texto: ')
+    
+    for i, character in enumerate(text, start=1):
+        print(f'{text[i:]}{text[:i]}')
+    ```
+    b)
+    ```python
+    text = input('Introduce un texto: ')
+    
+    for i, character in enumerate(text, start=1):
+        for offset in range(len(text)):
+            print(text[(i + offset) % len(text)], end='')
+        print()
+    ```
+
+    </details>
+
+<br>
+
+15. Pedir por consola un texto e imprimir el resultado según el siguiente ejemplo:
 
     Entrada:
     ```
@@ -830,7 +928,7 @@
 
 <br>
 
-14. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
+16. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
 
     <details>
     <summary>Solución</summary>
@@ -843,6 +941,7 @@
     
     for number in numbers[1:]:
         number = int(number)
+    
         if number > max_number:
             max_number = number
     
@@ -856,19 +955,20 @@
     
     for number in numbers:
         number = int(number)
+    
         if number > max_number:
             max_number = number
     
     print(max_number)
     ```
-    
+
     > En muchos lenguajes de programación es posible representar infinitos mediante números flotantes. Esto se debe a que los estándares como IEEE 754, utilizados en la representación de números en coma flotante, incluyen un valor especial para infinito positivo y negativo.
 
     </details>
 
 <br>
 
-15. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+17. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'F% c'` ➡️ `0`
     - `'FA c'` ➡️ `1`
@@ -902,7 +1002,7 @@
 
 <br>
 
-16. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+18. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'a'` ➡️ `1`
     - `'BB'` ➡️ `4`
@@ -939,33 +1039,45 @@
 
 <br>
 
-17. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+19. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta; en su lugar, simularemos la fuerza mediante números aleatorios.
 
-    - `'ABC'` ➡️ `'DEF'`
-    - `'HELLO'` ➡️ `'MJQQT'`
-    - `'as'` ➡️ `'cu'`
-    - `'wOrLd'` ➡️ `'|TwQi'`
-    - `'.5'` ➡️ `'07'`
-    - `'j'` ➡️ `'k'`
-    - `'.._,#@%'` ➡️ `'55f3*G,'`
+    Por ejemplo:
 
-    <br>
+    - Si introducimos una fuerza de 15, la ruleta avanzará un número aleatorio de posiciones entre 13 y 17, inclusive.
+    - Si introducimos una fuerza de 20, la ruleta avanzará un número aleatorio entre 18 y 22, inclusive.
+
+    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
+
+    Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
+
+    Premios asignados a cada sector de la ruleta en orden:
+
+    ```python
+    prizes = ['🎁', '📱', '📚', '📷', '💍', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
+    ```
+
+    > El módulo [random](https://docs.python.org/3/library/random.html) contiene recursos necesarios para este ejercicio.
 
     <details>
     <summary>Solución</summary>
 
     ```python
-    text = input('Introduce un texto: ')
+    import random
     
-    for character in text:
-        print(chr(ord(character) + len(text)), end='')
+    prizes = ['🎁', '📱', '📚', '📷', '🍆', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
+    
+    position = 0
+    for _ in range(3):
+        force = max(10, int(input('Fuerza: ')))
+        position = (position + random.randint(force - 2, force + 2)) % len(prizes)
+        print(prizes[position])
     ```
 
     </details>
 
 <br>
 
-18. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
+20. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
 
     - `'1 ? 2 = 3'` ➡️ `'+'`
     - `'10 ? 4 = 6'` ➡️ `'-'`
@@ -998,7 +1110,57 @@
 
 <br>
 
-19. Dadas unas tuplas que contienen información sobre el número atómico de algunos elementos de la tabla periódica. Por ejemplo:
+21. Escribir un programa que reciba tu fecha de nacimiento por consola con formato `12/05/97` o `12/05/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta el año pasado, inclusive. Por ejemplo, para `12/05/1997`:
+
+    ```
+    El 12 de mayo de 1998 cumpliste 1 año.
+    El 12 de mayo de 1999 cumpliste 2 años.
+    ...
+    ```
+
+    Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
+
+    > El módulo [datetime](https://docs.python.org/3/library/datetime.html) contiene recursos necesarios para este ejercicio.
+
+    > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import datetime
+    
+    raw_date = input('Fecha de nacimiento: ')
+    
+    try:
+        date = datetime.datetime.strptime(raw_date, '%d/%m/%y')
+    except ValueError:
+        date = datetime.datetime.strptime(raw_date, '%d/%m/%Y')
+    
+    month_names = [
+        'enero',
+        'febrero',
+        'marzo',
+        'abril',
+        'mayo',
+        'junio',
+        'julio',
+        'agosto',
+        'septiembre',
+        'octubre',
+        'noviembre',
+        'diciembre'
+    ]
+    
+    for i, year in enumerate(range(date.year + 1, datetime.datetime.now().year), start=1):
+        print(f'El {date.day} de {month_names[date.month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.')
+    ```
+
+    </details>
+
+<br>
+
+22. Dadas unas tuplas que contienen información sobre el número atómico de algunos elementos de la tabla periódica. Por ejemplo:
 
     ```python
     elements = ('Hidrógeno', 'Carbono', 'Oxígeno', 'Hierro', 'Cobre', 'Plata', 'Oro')
@@ -1036,7 +1198,7 @@
 
 <br>
 
-20. Tenemos unas tuplas que contienen información de varias personas:
+23. Tenemos unas tuplas que contienen información de varias personas:
 
     ```python
     ids = (1, 5, 7, 12, 29, 44)
@@ -1070,7 +1232,7 @@
 
 <br>
 
-21. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+24. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - Para:
         ```
@@ -1138,74 +1300,7 @@
 
 <br>
 
-22. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
-
-    - Para:
-        ```
-        Sol
-        ```
-        ⬇️
-        ```
-        olS
-        lSo
-        Sol
-        ```
-    - Para:
-        ```
-        Hola
-        ```
-        ⬇️
-        ```
-        olaH
-        laHo
-        aHol
-        Hola
-        ```
-    - Para:
-        ```
-        Uno DOS tres
-        ```
-        ⬇️
-        ```
-        no DOS tresU
-        o DOS tresUn
-         DOS tresUno
-        DOS tresUno 
-        OS tresUno D
-        S tresUno DO
-         tresUno DOS
-        tresUno DOS 
-        resUno DOS t
-        esUno DOS tr
-        sUno DOS tre
-        Uno DOS tres
-        ```
-
-    <details>
-    <summary>Solución</summary>
-
-    a)
-    ```python
-    text = input('Introduce un texto: ')
-    
-    for i, character in enumerate(text, start=1):
-        print(f'{text[i:]}{text[:i]}')
-    ```
-    b)
-    ```python
-    text = input('Introduce un texto: ')
-    
-    for i, character in enumerate(text, start=1):
-        for offset in range(len(text)):
-            print(text[(i + offset) % len(text)], end='')
-        print()
-    ```
-
-    </details>
-
-<br>
-
-23. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
+25. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
 
     <details>
     <summary>Solución</summary>
@@ -1239,7 +1334,7 @@
 
 <br>
 
-24. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
+26. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
 
     <details>
     <summary>Solución</summary>
@@ -1272,7 +1367,7 @@
 
 <br>
 
-25. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
+27. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -1293,7 +1388,7 @@
 
 <br>
 
-26. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
+28. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
 
     <details>
     <summary>Solución</summary>
@@ -1313,7 +1408,119 @@
 
 <br>
 
-27. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
+29. Sea el texto:
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    ```
+
+    Introducir por consola pares `'<palabra>,<traducción>'` infinitamente hasta que no se introduzca nada, es decir, una cadena vacía, e imprimir el texto resultante tras sustituir las palabras por sus respectivas traducciones.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    while pair := input('Introduce traducción: '):
+        text = text.replace(*pair.split(','))
+    
+    print(text)
+    ```
+
+    </details>
+
+<br>
+
+30. Sea el código:
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    ...
+    
+    for original, translation in zip(originals, translations):
+        text = text.replace(original, translation)
+    
+    print(text)
+    ```
+
+    Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que lo hace ese código**.
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
+    
+    originals = []
+    translations = []
+    
+    while pair := input('Introduce traducción: '):
+        original, translation = pair.split(',')
+        originals.append(original)
+        translations.append(translation)
+    
+    for original, translation in zip(originals, translations):
+        text = text.replace(original, translation)
+    
+    print(text)
+    ```
+
+    </details>
+
+<br>
+
+31. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
+
+    ```
+    Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
+    
+    word_occurrences = {}
+    
+    for word in text.split():
+        if word in word_occurrences:
+            word_occurrences[word] += 1
+        else:
+            word_occurrences[word] = 1
+    
+    print(word_occurrences)
+    ```
+    b)
+    ```python
+    from collections import defaultdict
+    
+    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
+    
+    word_occurrences = defaultdict(int)
+    
+    for word in text.split():
+        word_occurrences[word] += 1
+    
+    print(word_occurrences)
+    ```
+    c)
+    ```python
+    from collections import Counter
+    
+    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
+    
+    print(Counter(text.split()))
+    ```
+
+    </details>
+
+<br>
+
+32. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -1471,7 +1678,7 @@
 
 <br>
 
-28. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+33. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'Hola'` ➡️ `'HOLA'`
     - `'Hola Adiós'` ➡️ `'HOLA sóida'`
@@ -1513,7 +1720,7 @@
 
 <br>
 
-29. Pedir por consola el número de niveles (altura) de un [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
+34. Pedir por consola el número de niveles (altura) de un [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
 
     - Para altura 0:
 
@@ -1613,7 +1820,7 @@
 
 <br>
 
-30. Sea el código:
+35. Sea el código:
 
     ```python
     from pprint import pprint
@@ -1678,7 +1885,7 @@
 
 <br>
 
-31. Usando como base el ejercicio anterior, imprimir una tabla con los datos de los alumnos en el siguiente formato:
+36. Usando como base el ejercicio anterior, imprimir una tabla con los datos de los alumnos en el siguiente formato:
 
     ```
     -----------------------------------------------------------------
@@ -1757,106 +1964,7 @@
 
 <br>
 
-32. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta; en su lugar, simularemos la fuerza mediante números aleatorios.
-
-    Por ejemplo:
-
-    - Si introducimos una fuerza de 15, la ruleta avanzará un número aleatorio de posiciones entre 13 y 17, inclusive.
-    - Si introducimos una fuerza de 20, la ruleta avanzará un número aleatorio entre 18 y 22, inclusive.
-
-    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
-
-    Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
-
-    Premios asignados a cada sector de la ruleta en orden:
-
-    ```python
-    prizes = ['🎁', '📱', '📚', '📷', '💍', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
-    ```
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    import random
-    
-    prizes = ['🎁', '📱', '📚', '📷', '🍆', '🚗', '🪇', '💻', '🧸', '💰', '📺', '💎', '🧻', '🛫', '🚢', '🚀', '💣']
-    
-    position = 0
-    for _ in range(3):
-        force = max(10, int(input('Fuerza: ')))
-        position = (position + random.randint(force - 2, force + 2)) % len(prizes)
-        print(prizes[position])
-    ```
-
-    </details>
-
-<br>
-
-33. Sea el texto:
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    ```
-
-    Introducir por consola pares `'<palabra>,<traducción>'` infinitamente hasta que no se introduzca nada, es decir, una cadena vacía, e imprimir el texto resultante tras sustituir las palabras por sus respectivas traducciones.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    
-    while pair := input('Introduce traducción: '):
-        text = text.replace(*pair.split(','))
-    
-    print(text)
-    ```
-
-    </details>
-
-<br>
-
-34. Sea el código:
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    
-    ...
-    
-    for original, translation in zip(originals, translations):
-        text = text.replace(original, translation)
-    
-    print(text)
-    ```
-
-    Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que lo hace ese código**.
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
-    
-    originals = []
-    translations = []
-    
-    while pair := input('Introduce traducción: '):
-        original, translation = pair.split(',')
-        originals.append(original)
-        translations.append(translation)
-    
-    for original, translation in zip(originals, translations):
-        text = text.replace(original, translation)
-    
-    print(text)
-    ```
-
-    </details>
-
-<br>
-
-35. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
+37. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
 
     ```python
     matrix_a = [
@@ -1914,7 +2022,7 @@
 
 <br>
 
-36. Hacer un programa que multiplique dos matrices cuadradas de cualquier tamaño (ambas del mismo), guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
+38. Hacer un programa que multiplique dos matrices cuadradas de cualquier tamaño (ambas del mismo), guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
 
     ```python
     matrix_a = [
@@ -1969,7 +2077,36 @@
 
 <br>
 
-37. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
+39. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    subject = input("Introduce una asignatura ('fin' para terminar): ")
+    
+    subjects = []
+    while subject != 'fin':
+        subjects.append(subject)
+        subject = input("Introduce una asignatura ('fin' para terminar): ")
+    
+    failed_subjects = []
+    for subject in subjects:
+        grade = float(input(f'Introduce la nota de {subject}: '))
+        if grade < 5:
+            failed_subjects.append(subject)
+    
+    if len(failed_subjects) > 1:
+        print(f'Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.')
+    else:
+        print(f'Asignaturas suspensas: {failed_subjects[0]}.')
+    ```
+
+    </details>
+
+<br>
+
+40. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
 
     <details>
     <summary>Solución</summary>
@@ -1992,160 +2129,6 @@
             print(f'La IA eligió {ai_play}. Perdiste.')
         else:
             print(f'La IA eligió {ai_play}. ¡Ganaste!')
-    ```
-
-    </details>
-
-<br>
-
-38. Escribir un programa que reciba tu fecha de nacimiento por consola con un formato como `18/6/97` o `18/6/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta 2023, inclusive. Por ejemplo, para `18/6/1997`:
-
-    ```
-    El 18 de junio de 1998 cumpliste 1 año.
-    El 18 de junio de 1999 cumpliste 2 años.
-    ...
-    ```
-
-    Nótese que cuando se cumple 1 año se indica en singular y, para más años, en plural. Además sustituimos el número de mes por su nombre.
-
-    <details>
-    <summary>Solución</summary>
-
-    a)
-    ```python
-    date = input('Fecha de nacimiento: ')
-    day, month, first_year = (int(number) for number in date.split('/'))
-    
-    if first_year < 1000:
-        if first_year >= 69:
-            first_year += 1900
-        else:
-            first_year += 2000
-    
-    month_names = [
-        'enero',
-        'febrero',
-        'marzo',
-        'abril',
-        'mayo',
-        'junio',
-        'julio',
-        'agosto',
-        'septiembre',
-        'octubre',
-        'noviembre',
-        'diciembre'
-    ]
-    
-    for i, year in enumerate(range(first_year + 1, 2024), start=1):
-        print(f'El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.')
-    ```
-    b)
-    ```python
-    import datetime
-    
-    date = input('Fecha de nacimiento: ')
-    day, month, first_year = (int(number) for number in date.split('/'))
-    
-    try:
-        first_year = datetime.datetime.strptime(date, '%d/%m/%y').year
-    except ValueError:
-        first_year = datetime.datetime.strptime(date, '%d/%m/%Y').year
-    
-    month_names = [
-        'enero',
-        'febrero',
-        'marzo',
-        'abril',
-        'mayo',
-        'junio',
-        'julio',
-        'agosto',
-        'septiembre',
-        'octubre',
-        'noviembre',
-        'diciembre'
-    ]
-    
-    for i, year in enumerate(range(first_year + 1, 2024), start=1):
-        print(f'El {day} de {month_names[month - 1]} de {year} cumpliste {i} año{'' if i == 1 else 's'}.')
-    ```
-
-    </details>
-
-<br>
-
-39. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
-
-    <details>
-    <summary>Solución</summary>
-
-    ```python
-    subject = input("Introduce una asignatura ('fin' para terminar): ")
-    subjects = []
-    while subject != 'fin':
-        subjects.append(subject)
-        subject = input("Introduce una asignatura ('fin' para terminar): ")
-    
-    failed_subjects = []
-    for subject in subjects:
-        grade = float(input(f'Introduce la nota de {subject}: '))
-        if grade < 5:
-            failed_subjects.append(subject)
-    
-    if len(failed_subjects) > 1:
-        print(f'Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.')
-    else:
-        print(f'Asignaturas suspensas: {failed_subjects[0]}.')
-    ```
-
-    </details>
-
-<br>
-
-40. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
-
-    ```
-    Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!
-    ```
-
-    <details>
-    <summary>Solución</summary>
-
-    a)
-    ```python
-    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
-    
-    word_occurrences = {}
-    
-    for word in text.split():
-        if word in word_occurrences:
-            word_occurrences[word] += 1
-        else:
-            word_occurrences[word] = 1
-    
-    print(word_occurrences)
-    ```
-    b)
-    ```python
-    from collections import defaultdict
-    
-    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
-    
-    word_occurrences = defaultdict(int)
-    
-    for word in text.split():
-        word_occurrences[word] += 1
-    
-    print(word_occurrences)
-    ```
-    c)
-    ```python
-    from collections import Counter
-    
-    text = 'Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!'
-    
-    print(Counter(text.split()))
     ```
 
     </details>

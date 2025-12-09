@@ -1991,6 +1991,7 @@
     <details>
     <summary>Solución</summary>
 
+    a)
     ```python
     matrix_a = [
         [1, 2, 3],
@@ -2014,6 +2015,24 @@
         for j in range(3):
             matrix_result[i][j] = matrix_a[i][j] + matrix_b[i][j]
     
+    for row in matrix_result:
+        print(row)
+    ```
+    b)
+    ```python
+    matrix_a = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+    
+    matrix_b = [
+        [9, 8, 7],
+        [6, 5, 4],
+        [3, 2, 1]
+    ]
+    
+    matrix_result = [[matrix_a[i][j] + matrix_b[i][j] for j in range(3)] for i in range(3)]
     for row in matrix_result:
         print(row)
     ```
@@ -2097,9 +2116,11 @@
             failed_subjects.append(subject)
     
     if len(failed_subjects) > 1:
-        print(f'Asignaturas suspensas: {', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}.')
+        formatted_failed_subjects = f'{', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}'
     else:
-        print(f'Asignaturas suspensas: {failed_subjects[0]}.')
+        formatted_failed_subjects = failed_subjects[0]
+    
+    print(f'Asignaturas suspensas: {formatted_failed_subjects}.')
     ```
 
     </details>
@@ -2145,12 +2166,12 @@
     discount = float(input('% de descuento para pelota descolorida: '))
     normal_balls = int(input('Nº de pelotas normales: '))
     colorless_balls = int(input('Nº de pelotas descoloridas: '))
-
-    discounted_price = ball_price * discount / 100
-
+    
+    discounted_price = ball_price - ball_price * discount / 100
+    
     while normal_balls or colorless_balls:
         option = input('¿Quieres una pelota normal o descolorida? (N/D): ')
-
+    
         if option.upper() == 'N':
             if normal_balls:
                 print(f'Te va a costar {ball_price} €')

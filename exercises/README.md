@@ -546,13 +546,13 @@
 
     - `'_Az=sd'` ➡️
     - `'cVGWyvFb'` ➡️
-    - `'y]t nEAeQ0W'` ➡️ `0`
-    - `'CF2SafGf$#'` ➡️ `2`
-    - `'b1tJE(|XP9w'` ➡️ `19`
-    - `'-npa5jFg-aP6'` ➡️ `56`
-    - `'blW48&8F<'` ➡️ `488`
-    - `'etp60F0!4a'` ➡️ `6004`
-    - `'L7ED^@BI&78f3p.'` ➡️ `7783`
+    - `'y]t nEAeQ0W'` ➡️ `'0'`
+    - `'CF2SafGf$#'` ➡️ `'2'`
+    - `'b1tJE(|XP9w'` ➡️ `'19'`
+    - `'-npa5jFg-aP6'` ➡️ `'56'`
+    - `'blW48&8F<'` ➡️ `'488'`
+    - `'etp60F0!4a'` ➡️ `'6004'`
+    - `'L7ED^@BI&78f3p.'` ➡️ `'7783'`
 
     <br>
 
@@ -573,11 +573,11 @@
 
 6. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
-    - `'A'` ➡️ ``B``
-    - `'ABCD'` ➡️ ``E``
-    - `'MGPBUAFVCDE'` ➡️ ``H``
-    - `'ABCDEFGHIJKLMNOPQRTUVWXYZ'` ➡️ ``S``
-    - `'ABCDEFGHIJKLMNOPQRSTUVWXY'` ➡️ ``Z``
+    - `'A'` ➡️ `'B'`
+    - `'ABCD'` ➡️ `'E'`
+    - `'MGPBUAFVCDE'` ➡️ `'H'`
+    - `'ABCDEFGHIJKLMNOPQRTUVWXYZ'` ➡️ `'S'`
+    - `'ABCDEFGHIJKLMNOPQRSTUVWXY'` ➡️ `'Z'`
     - `'ABCDEFGHIJKLMNOPQRSTUVWXYZ'` ➡️
 
     <br>

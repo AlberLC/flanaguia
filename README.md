@@ -4834,9 +4834,9 @@ Volvemos a ejecutar nuestro código. Salida:
 </html>
 ```
 
-¡Listo! Ya estamos obteniendo el contenido HTML de la página. `pip` se ha encargado de descargar `requests` junto con todas sus dependencias, y esta biblioteca ha realizado todo el trabajo de conexión HTTP por nosotros: abrir la conexión con el servidor, enviar la solicitud, recibir la respuesta y ponerla a nuestra disposición de forma sencilla.
+¡Listo! Ya estamos obteniendo el contenido HTML de la página. `pip` se ha encargado de descargar `requests` junto con todas sus dependencias y esta biblioteca ha realizado todo el trabajo de conexión HTTP por nosotros: abrir la conexión con el servidor, enviar la solicitud, recibir la respuesta y ponerla a nuestra disposición de forma sencilla.
 
-Internamente, `pip` se conecta con [PyPI (Python Package Index)](https://pypi.org/), que es el repositorio oficial de paquetes para Python. PyPI funciona como una enorme base de datos en línea donde los desarrolladores publican sus bibliotecas, y desde donde `pip` puede descargarlas automáticamente junto con sus versiones compatibles y todas las dependencias necesarias.
+Internamente, `pip` se conecta con [PyPI (Python Package Index)](https://pypi.org/), que es el repositorio oficial de paquetes de Python. PyPI funciona como una enorme base de datos en línea donde los desarrolladores publican sus bibliotecas, y desde donde `pip` puede descargarlas automáticamente junto con sus versiones compatibles y todas las dependencias necesarias.
 
 ¿Y dónde se instala la biblioteca `requests`?
 

@@ -4777,7 +4777,7 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'requests'
 ```
 
-Para instalar bibliotecas en Python solo tenemos que ejecutar un comando en la terminal. Para instalar una biblioteca como `requests`, solo necesitamos escribir:
+Para instalar bibliotecas en Python solo tenemos que ejecutar un comando en la terminal. En este caso, para instalar `requests`, solo necesitamos escribir:
 
 ```
 pip install requests

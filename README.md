@@ -4938,14 +4938,14 @@ Este comando indica a tu sistema lo siguiente:
 - `-m venv`: ejecuta el módulo `venv` como script principal, que se encarga de crear entornos virtuales.
 - `.venv`: es el argumento que se le pasa al módulo `venv`, indicando el nombre de la carpeta donde se creará el entorno virtual (que comúnmente es `.venv` o `venv`).
 
-Una vez creado, hay que activar el entorno virtual para comenzar a usarlo. Esto cambia el entorno de ejecución de Python para que las bibliotecas se instalen dentro del entorno virtual y no globalmente en el sistema.
+Una vez creado, hay que activar el entorno virtual para comenzar a usarlo:
 
 - En Windows: `.venv\Scripts\activate`
 - En Linux: `source .venv/bin/activate`
 
-Tras activar tu entorno virtual, tu prompt cambiará y verás que comienza con `(venv)`, indicando que estás trabajando dentro del entorno virtual. Ahora, cualquier instalación que hagas con pip se instalará solo dentro del entorno virtual, sin afectar al resto del sistema.
+Tras activar tu entorno virtual, tu prompt cambiará y verás que comienza con `(venv)`, indicando que estás trabajando dentro del entorno virtual, es decir, estarás usando el Python del entorno virtual y todas las bibliotecas que instales con `pip` residirán ahí, y no globalmente en el sistema.
 
-> Si estás usando un IDE, recuerda seleccionar el entorno virtual como intérprete del proyecto. Esto es fundamental para que el IDE use las bibliotecas instaladas en ese entorno en lugar de las que están en el entorno global del sistema.
+> Si estás usando un IDE, recuerda seleccionar el entorno virtual como intérprete del proyecto. Esto es fundamental para que el IDE use las bibliotecas instaladas en ese entorno en lugar de las que están en el entorno global.
 
 Se puede salir del entorno virtual y volver al entorno global de Python ejecutando en la consola:
 

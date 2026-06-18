@@ -132,6 +132,8 @@
 
     Crear un programa **sin usar [sentencias condicionales](../README.md#4-condicionales)** que pida por consola un identificador e imprima únicamente el color asociado, sin mostrar el identificador en la salida. Si el identificador introducido no tiene pelota asociada, no importa el resultado.
 
+    > Este ejercicio es más un acertijo que un caso realista. No hay que intentar crear una solución general que funcione para cualquier lista de pelotas, sino solo para esa lista concreta.
+
     <details>
     <summary>Solución</summary>
 

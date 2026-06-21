@@ -2341,9 +2341,9 @@ Mario
 
 `kwargs`, en este caso, es un diccionario.
 
-Démonos cuenta de que de todos los argumentos posicionales dados (`54, 12, 1, 2, 3`), `54` va a parar a `number_1`, `12` a `number_2` y, el resto (`1, 2, 3`), a `args`. De igual manera, en el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en la cabecera de la función.
+Observemos que, de todos los argumentos posicionales dados (`54, 12, 1, 2, 3`), `54` va a parar a `number_1`, `12` a `number_2` y el resto (`1, 2, 3`) a `args`. Asimismo, aquellos argumentos nombrados que no coincidan con los parámetros definidos en la cabecera de la función (`name` y `age`) se empaquetarán en el diccionario `kwargs`.
 
-> Igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero este es el que se usa por convenio.
+> Al igual que con `args`, podemos usar cualquier nombre en vez de `kwargs`, pero este es el que se usa por convenio.
 
 También podemos desempaquetar un diccionario antes de llamar a la función:
 
@@ -2363,7 +2363,7 @@ Ana
 {'cat_name': 'Midna', 'dog_name': 'Tingle'}
 ```
 
-Al hacer esto las claves y los valores de este se comportarán como argumentos nombrados. En el interior de la función hemos empaquetado en el diccionario `kwargs` los argumentos nombrados recibidos restantes tras quitar `name` y `age`, ya que están definidos en los parámetros de la función.
+Al hacer esto, sus claves y valores se comportarán como argumentos nombrados.
 
 <br>
 

@@ -256,7 +256,7 @@
 
     Prohibiciones:
 
-    - 🚫 Usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` y `sorted()`.
+    - 🚫 Usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` o `sorted()`.
     - 🚫 Usar [bucles](../README.md#5-bucles).
     - 🚫 [Importar](../README.md#9-importaciones).
     - 🚫 Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
@@ -2318,38 +2318,76 @@
 
 <br>
 
-45. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato: `Asignaturas suspensas: Lengua, Matemáticas y Física.`
+45. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato:
+
+    - Para ninguna asignatura suspensa ➡️ `'No hay asignaturas suspensas.'`
+    - Para una asignatura suspensa ➡️ `'Asignaturas suspensas: Historia.'`
+    - Para varias asignaturas suspensas ➡️ `'Asignaturas suspensas: Lengua, Matemáticas y Física.'`
+
+    <br>
 
     <details>
     <summary>Solución</summary>
 
+    a)
     ```python
-    subject = input("Introduce una asignatura ('fin' para terminar): ")
-    
     subjects = []
-    while subject != 'fin':
+    
+    while True:
+        subject = input('Introduce una asignatura ("fin" para terminar): ')
+    
+        if subject == 'fin':
+            break
+    
         subjects.append(subject)
-        subject = input("Introduce una asignatura ('fin' para terminar): ")
     
     failed_subjects = []
+    
     for subject in subjects:
         grade = float(input(f'Introduce la nota de {subject}: '))
         if grade < 5:
             failed_subjects.append(subject)
     
-    if len(failed_subjects) > 1:
-        formatted_failed_subjects = f'{', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}'
-    else:
-        formatted_failed_subjects = failed_subjects[0]
+    if failed_subjects:
+        if len(failed_subjects) == 1:
+            formatted_failed_subjects = failed_subjects[0]
+        else:
+            formatted_failed_subjects = f'{', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}'
     
-    print(f'Asignaturas suspensas: {formatted_failed_subjects}.')
+        print(f'Asignaturas suspensas: {formatted_failed_subjects}.')
+    else:
+        print('No hay asignaturas suspensas.')
+    ```
+    b)
+    ```python
+    subjects = []
+    
+    while (subject := input('Introduce una asignatura ("fin" para terminar): ')) != 'fin':
+        subjects.append(subject)
+    
+    failed_subjects = []
+    
+    for subject in subjects:
+        grade = float(input(f'Introduce la nota de {subject}: '))
+        if grade < 5:
+            failed_subjects.append(subject)
+    
+    if failed_subjects:
+        if len(failed_subjects) == 1:
+            formatted_failed_subjects = failed_subjects[0]
+        else:
+            formatted_failed_subjects = f'{', '.join(failed_subjects[:-1])} y {failed_subjects[-1]}'
+    
+        print(f'Asignaturas suspensas: {formatted_failed_subjects}.')
+    else:
+        print('No hay asignaturas suspensas.')
     ```
 
     </details>
 
 <br>
 
-46. Programar un juego de piedra, papel y tijeras en el que se pide tu jugada por consola y se genera la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada por consola que no sea `'piedra'`, `'papel'` o `'tijeras'` se debe repetir la petición por consola. Al obtener la respuesta se imprimirá por consola que opción escogió la IA y el resultado de la ronda. El juego continuará para siempre.
+46. Programar un juego de piedra, papel y tijeras infinito en el que se pida tu jugada por consola y se genere la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada que no sea `'piedra'`, `'papel'` o `'tijeras'` se deberá repetir la petición por consola. Al obtener la respuesta se imprimirá por consola qué opción escogió la IA y el resultado de la ronda, para luego continuar con la siguiente. Resolver este ejercicio usando como máximo **dos `if`, un `elif`, un `else` y ningún `and` ni `or`**.
 
     <details>
     <summary>Solución</summary>
@@ -2361,6 +2399,7 @@
     
     while True:
         human_play = input('Elige tu jugada (piedra/papel/tijeras): ')
+    
         if human_play not in options:
             continue
     
@@ -2554,6 +2593,7 @@
     ```python
     def multiply(a: int, b: int) -> int:
         result = 0
+    
         for _ in range(b):
             result += a
     
@@ -2596,6 +2636,7 @@
     ```python
     def multiply(a: int, b: int) -> int:
         result = 0
+    
         for _ in range(b):
             result += a
     
@@ -2604,6 +2645,7 @@
     
     def power(a: int, b: int) -> int:
         result = 1
+    
         for _ in range(b):
             result = multiply(result, a)
     
@@ -2824,6 +2866,7 @@
             raise ValueError
     
         result = 1
+    
         while number > 1:
             result *= number
             number -= 1
@@ -2861,6 +2904,7 @@
             raise ValueError
     
         result = 1
+    
         for i in range(2, number + 1):
             result *= i
     
@@ -2932,6 +2976,7 @@
     def factorial(number: int) -> int:
         if number < 0:
             raise ValueError
+    
         if number <= 1:
             return 1
     
@@ -2980,6 +3025,7 @@
     ```python
     def filter_multiples(numbers_: list[int], multiple_of: int) -> list[int]:
         multiples = []
+    
         for number in numbers_:
             if number % multiple_of == 0:
                 multiples.append(number)
@@ -3018,6 +3064,7 @@
     
     
     primes = []
+    
     for i in range(2, n + 1):
         if is_prime(i):
             primes.append(i)

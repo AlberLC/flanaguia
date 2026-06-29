@@ -1237,14 +1237,14 @@
 
 <br>
 
-24. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta; en su lugar, simularemos la fuerza mediante números aleatorios.
+24. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta. En su lugar, simularemos la fuerza mediante números aleatorios.
 
     Por ejemplo:
 
     - Si introducimos una fuerza de 15, la ruleta avanzará un número aleatorio de posiciones entre 13 y 17, inclusive.
     - Si introducimos una fuerza de 20, la ruleta avanzará un número aleatorio entre 18 y 22, inclusive.
 
-    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**; si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima, se le puede dar muchas vueltas a la ruleta.
+    El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**. Si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima (se le puede dar muchas vueltas a la ruleta de una sola tirada).
 
     Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
 

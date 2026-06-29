@@ -4724,11 +4724,11 @@ Aquí, `uvicorn` se encarga de gestionar las conexiones, peticiones y respuestas
 
 - **Interfaces gráficas:**
 
-    - `PySide6`: bindings oficiales de Qt6 para Python; potente, moderno y con soporte completo de Qt.
+    - `PySide6`: bindings oficiales de Qt6 para Python. Potente, moderno y con soporte completo de Qt.
     - `PyQt5`: bindings alternativos de Qt5 para Python, similares a `PySide6`.
     - `kivy`: framework orientado a interfaces táctiles y aplicaciones móviles, también válido para escritorio.
-    - `wxPython`: bindings de la biblioteca nativa wxWidgets; estilo nativo por plataforma.
-    - `dearpygui`: interfaz moderna y acelerada por GPU, ideal para herramientas y prototipos.
+    - `wxPython`: bindings de la biblioteca nativa wxWidgets. Ofrece un estilo nativo en cada plataforma.
+    - `dearpygui`: interfaz moderna y acelerada por GPU. Ideal para herramientas y prototipos.
 
 - **Desarrollo de bots:**
 

@@ -1361,7 +1361,7 @@ for word in words:
     print(word)
 ```
 
-> Si se necesita gestionar un índice numérico como contador, se puede usar la [función integrada](https://docs.python.org/3/library/functions.html) `enumerate` que devuelve un par (índice, elemento):
+> Si se necesita gestionar un índice numérico junto con el elemento de la colección, se puede usar la [función integrada](https://docs.python.org/3/library/functions.html) `enumerate` que devuelve pares (índice, elemento):
 > ```python
 > words = ['hello', 'world', 'Juan', 'bye']
 > for i, word in enumerate(words):
@@ -2398,12 +2398,12 @@ Salida:
 
 Las **funciones anónimas** se definen en una sola línea con la palabra reservada `lambda`. Usan como argumentos los especificados a la izquierda de los `:` y devuelven lo que esté a la derecha de los `:`  sin usar `return`. Sin embargo, no es un buen ejemplo porque estamos asignando un nombre `function` a la función anónima, lo cual es contradictorio.
 
-Ahora vamos a ver un uso realista de este tipo de funciones. Vamos a crear una función que busque y devuelva los elementos de un iterable `people` que cumplan una condición, en concreto vamos a filtrar las personas que tengan 30 años o más. Esta condición va a ser aplicada a cada elemento, por lo tanto va a ser una función.
-
+Ahora vamos a ver un uso realista de este tipo de funciones. Vamos a crear una función que busque y devuelva los elementos de un iterable `people` que cumplan una condición. Concretamente, vamos a filtrar las personas que tengan 30 años o más. Esta condición, que se aplicará a cada elemento, la vamos a definir como una función.
 
 ```python
 def filter_people(people_, condition):
     filtered_people_ = []
+
     for person in people_:
         if condition(person):
             filtered_people_.append(person)

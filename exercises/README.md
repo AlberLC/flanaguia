@@ -741,8 +741,8 @@
     ```python
     number = int(input('Introduce un número: '))
     
-    for i in tuple(range(1, number + 1)) * number:
-        print(i, end='')
+    for current_number in tuple(range(1, number + 1)) * number:
+        print(current_number, end='')
     ```
 
     </details>
@@ -768,6 +768,7 @@
     for i in range(1, height * 2, 2):
         for j in range(i, 0, -2):
             print(j, end=' ')
+    
         print()
     ```
 
@@ -977,7 +978,8 @@
         digits = sorted(number)
     
     for digit in digits:
-        print(f'{digit} {CHARACTER_ON * int(digit)}{CHARACTER_OFF * (9 - int(digit))}')
+        progress = int(digit)
+        print(f'{digit} {CHARACTER_ON * progress}{CHARACTER_OFF * (9 - progress)}')
     ```
 
     </details>
@@ -1034,14 +1036,14 @@
     ```python
     text = input('Introduce un texto: ')
     
-    for i, character in enumerate(text, start=1):
+    for i in range(1, len(text) + 1):
         print(f'{text[i:]}{text[:i]}')
     ```
     b)
     ```python
     text = input('Introduce un texto: ')
     
-    for i, character in enumerate(text, start=1):
+    for i in range(1, len(text) + 1):
         for offset in range(len(text)):
             print(text[(i + offset) % len(text)], end='')
     
@@ -1276,9 +1278,9 @@
 25. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
 
     - `'1 ? 2 = 3'` ➡️ `'+'`
-    - `'10 ? 4 = 6'` ➡️ `'-'`
+    - `'10.5 ? 4.5 = 6.0'` ➡️ `'-'`
     - `'3 ? 9 = 27'` ➡️ `'*'`
-    - `'25 ? 5 = 5'` ➡️ `'/'`
+    - `'25 ? 5 = 5.0'` ➡️ `'/'`
     - `'3 ? 2 = 0'` ➡️
 
     **Solo se puede usar una [sentencia condicional](../README.md#4-condicionales) como máximo.**

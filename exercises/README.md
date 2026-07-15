@@ -643,7 +643,101 @@
 
 <br>
 
-8. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+8. Pedir por consola un número romano e imprimir su valor numérico.
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    ROMAN_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    
+    roman_number = input('Introduce un número romano: ')
+    
+    total = 0
+    
+    for i in range(len(roman_number) - 1):
+        current_value = ROMAN_VALUES[roman_number[i]]
+    
+        if current_value < ROMAN_VALUES[roman_number[i + 1]]:
+            total -= current_value
+        else:
+            total += current_value
+    
+    total += ROMAN_VALUES[roman_number[-1]]
+    
+    print(total)
+    ```
+    b)
+    ```python
+    ROMAN_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    
+    roman_number = input('Introduce un número romano: ')
+    
+    total = 0
+    
+    for i in range(1, len(roman_number)):
+        previous_value = ROMAN_VALUES[roman_number[i - 1]]
+    
+        if previous_value < ROMAN_VALUES[roman_number[i]]:
+            total -= previous_value
+        else:
+            total += previous_value
+    
+    total += ROMAN_VALUES[roman_number[-1]]
+    
+    print(total)
+    ```
+    c)
+    ```python
+    ROMAN_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    
+    roman_number = input('Introduce un número romano: ')
+    
+    previous_value = ROMAN_VALUES[roman_number[0]]
+    total = 0
+    
+    for character in roman_number[1:]:
+        current_value = ROMAN_VALUES[character]
+    
+        if previous_value < current_value:
+            total -= previous_value
+        else:
+            total += previous_value
+    
+        previous_value = current_value
+    
+    total += previous_value
+    
+    print(total)
+    ```
+    d)
+    ```python
+    ROMAN_VALUES = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    
+    roman_number = input('Introduce un número romano: ')
+    
+    previous_value = 0
+    total = 0
+    
+    for character in reversed(roman_number):
+        current_value = ROMAN_VALUES[character]
+    
+        if current_value < previous_value:
+            total -= current_value
+        else:
+            total += current_value
+    
+        previous_value = current_value
+    
+    print(total)
+    ```
+
+    </details>
+
+<br>
+
+9. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'VERDE'` ➡️ `1`
     - `'VERDE verde VERDE'` ➡️ `1`
@@ -693,7 +787,7 @@
 
 <br>
 
-9. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+10. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - `1523` ➡️ `15555522333`
     - `2204` ➡️ `22224444`
@@ -717,7 +811,7 @@
 
 <br>
 
-10. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+11. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - `1` ➡️ `1`
     - `10` ➡️ `12345678910123456789101234567891012345678910123456789101234567891012345678910123456789101234567891012345678910`
@@ -749,7 +843,7 @@
 
 <br>
 
-11. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
+12. Pedir por consola la longitud de un lado de un triángulo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 5:
 
     ```
     1 
@@ -776,7 +870,7 @@
 
 <br>
 
-12. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
+13. Pedir por consola la longitud de un lado de un rombo e imprimir uno siguiendo el formato dado a continuación. Por ejemplo, para longitud 4:
 
     ```
        *
@@ -802,7 +896,7 @@
 
 <br>
 
-13. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+14. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - Para:
         ```
@@ -863,7 +957,7 @@
 
 <br>
 
-14. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+15. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'ABC'` ➡️ `'DEF'`
     - `'HELLO'` ➡️ `'MJQQT'`
@@ -889,7 +983,7 @@
 
 <br>
 
-15. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
+16. Pedir por consola un número e imprimir el resultado siguiendo esta lógica:
 
     - `1234` ➡️ `3210`
     - `55` ➡️ `44`
@@ -916,7 +1010,7 @@
 
 <br>
 
-16. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+17. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
     - `'hola'`, `'adios'` ➡️ `False`
     - `'urnas'`, `'runa'` ➡️ `False`
@@ -938,7 +1032,7 @@
 
 <br>
 
-17. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
+18. Pedir por consola un número cuyos dígitos vamos a iterar para imprimir, según el valor de cada uno de ellos, una barra de progreso con los caracteres █ y ▒. Por ejemplo, si tuviéramos el número `41752`, iteraríamos cada dígito (empezando por el `4`), entonces imprimiríamos por consola `4 `████▒▒▒▒▒. Luego en la siguiente fila imprimiríamos `1 `█▒▒▒▒▒▒▒▒ y así sucesivamente hasta `2 `██▒▒▒▒▒▒▒.
 
     <details>
     <summary>Solución</summary>
@@ -958,7 +1052,7 @@
 
 <br>
 
-18. Usando como base el ejercicio anterior, pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
+19. Usando como base el ejercicio anterior, pedir por consola otro número. Si este número es mayor que `0`, las barras de progreso se imprimirán en orden ascendente, si es menor que `0`, en orden descendente, y si es igual a `0`, en orden de aparición (como en el ejercicio anterior).
 
     <details>
     <summary>Solución</summary>
@@ -986,7 +1080,7 @@
 
 <br>
 
-19. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+20. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - Para:
         ```
@@ -1054,7 +1148,7 @@
 
 <br>
 
-20. Pedir por consola un texto e imprimir el resultado según el siguiente ejemplo:
+21. Pedir por consola un texto e imprimir el resultado según el siguiente ejemplo:
 
     Entrada:
     ```
@@ -1128,7 +1222,7 @@
 
 <br>
 
-21. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
+22. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir el máximo sin usar la [función integrada](https://docs.python.org/3/library/functions.html) `max()`. 
 
     <details>
     <summary>Solución</summary>
@@ -1168,7 +1262,7 @@
 
 <br>
 
-22. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+23. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'F% c'` ➡️ `0`
     - `'FA c'` ➡️ `1`
@@ -1202,7 +1296,7 @@
 
 <br>
 
-23. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+24. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'a'` ➡️ `1`
     - `'BB'` ➡️ `4`
@@ -1237,7 +1331,7 @@
 
 <br>
 
-24. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta. En su lugar, simularemos la fuerza mediante números aleatorios.
+25. Imaginemos que estamos participando en un concurso en el que debemos girar una ruleta para ganar premios. El objetivo es girar la ruleta **tres veces**, eligiendo nosotros la fuerza del giro en cada ocasión. La fuerza del giro se introducirá por consola, pero no se aplicará de manera exacta. En su lugar, simularemos la fuerza mediante números aleatorios.
 
     Por ejemplo:
 
@@ -1275,7 +1369,7 @@
 
 <br>
 
-25. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
+26. Pedir por consola una operación matemática con el siguiente formato e imprimir el operador faltante:
 
     - `'1 ? 2 = 3'` ➡️ `'+'`
     - `'10.5 ? 4.5 = 6.0'` ➡️ `'-'`
@@ -1308,7 +1402,7 @@
 
 <br>
 
-26. Escribir un programa que reciba tu fecha de nacimiento por consola con formato `12/05/97` o `12/05/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta el año pasado, inclusive. Por ejemplo, para `12/05/1997`:
+27. Escribir un programa que reciba tu fecha de nacimiento por consola con formato `12/05/97` o `12/05/1997`, teniendo en cuenta que el año puede darse en dos o cuatro dígitos (por ejemplo, Python asigna los valores 69–99 a 1969–1999 y los valores 0–68 a 2000–2068) y que imprima por consola una línea por año cumplido hasta el año pasado, inclusive. Por ejemplo, para `12/05/1997`:
 
     ```
     El 12 de mayo de 1998 cumpliste 1 año.
@@ -1358,7 +1452,7 @@
 
 <br>
 
-27. Dadas unas tuplas que contienen información sobre el número atómico de algunos elementos de la tabla periódica. Por ejemplo:
+28. Dadas unas tuplas que contienen información sobre el número atómico de algunos elementos de la tabla periódica. Por ejemplo:
 
     ```python
     elements = ('Hidrógeno', 'Carbono', 'Oxígeno', 'Hierro', 'Cobre', 'Plata', 'Oro')
@@ -1396,7 +1490,7 @@
 
 <br>
 
-28. Tenemos unas tuplas que contienen información de varias personas:
+29. Tenemos unas tuplas que contienen información de varias personas:
 
     ```python
     ids = (1, 5, 7, 12, 29, 44)
@@ -1430,7 +1524,7 @@
 
 <br>
 
-29. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+30. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - Para:
         ```
@@ -1498,7 +1592,7 @@
 
 <br>
 
-30. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
+31. Pedir por consola palabras infinitamente hasta que se introduzca `'fin'`. Luego imprimir cada una de esas palabras en una línea diferente.
 
     <details>
     <summary>Solución</summary>
@@ -1532,7 +1626,7 @@
 
 <br>
 
-31. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
+32. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
 
     <details>
     <summary>Solución</summary>
@@ -1565,7 +1659,7 @@
 
 <br>
 
-32. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
+33. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -1586,7 +1680,7 @@
 
 <br>
 
-33. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
+34. Pedir por consola una serie de números enteros (negativos y positivos) separados por espacios e imprimir la lista de sus cuadrados.
 
     <details>
     <summary>Solución</summary>
@@ -1606,7 +1700,7 @@
 
 <br>
 
-34. Sea el texto:
+35. Sea el texto:
 
     ```python
     text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
@@ -1630,7 +1724,7 @@
 
 <br>
 
-35. Sea el código:
+36. Sea el código:
 
     ```python
     text = 'Keith recently came back from a trip to Chicago, Illinois. This midwestern metropolis is found along the shore of Lake Michigan. During his visit, Keith spent a lot of time exploring the city to visit important landmarks and monuments.'
@@ -1669,7 +1763,7 @@
 
 <br>
 
-36. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
+37. Hacer un programa que imprima por consola el número de veces que aparece cada palabra en el siguiente texto:
 
     ```
     Lorem ipsum dolor sit amet. Et magni enim quo odit pariatur cum voluptatibus temporibus. Quo molestiae tempore qui magni necessitatibus ut sunt nisi est suscipit ullam non voluptatem omnis. Et autem quia et voluptatem mollitia et quam atque. Est consequatur eius non quam nostrum ab quos internos qui incidunt voluptatem. Non harum aperiam et voluptas ipsam aut porro corrupti ut laborum exercitationem eum quidem incidunt est architecto harum. Cum vero voluptatem et culpa reiciendis et dolorum cupiditate et alias expedita. Vel magnam quam in fugiat fugit qui illum provident nam assumenda quia ut labore doloremque id excepturi asperiores sed explicabo expedita! Non amet deleniti id excepturi eaque eum internos velit ut commodi quia non tenetur dolorem!
@@ -1718,7 +1812,7 @@
 
 <br>
 
-37. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
+38. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -1876,7 +1970,7 @@
 
 <br>
 
-38. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+39. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `''` ➡️ `'...'`
     - `'NO'` ➡️ `'...'`
@@ -1911,7 +2005,7 @@
 
 <br>
 
-39. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
+40. Pedir por consola un texto e imprimir el resultado siguiendo esta lógica:
 
     - `'Hola'` ➡️ `'HOLA'`
     - `'Hola Adiós'` ➡️ `'HOLA sóida'`
@@ -1945,7 +2039,7 @@
 
 <br>
 
-40. Pedir por consola el número de niveles (altura) de un [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
+41. Pedir por consola el número de niveles (altura) de un [triángulo de Pascal o de Tartaglia](https://es.wikipedia.org/wiki/Tri%C3%A1ngulo_de_Pascal) e imprimirlo por consola. Por ejemplo:
 
     - Para altura 0:
 
@@ -2044,7 +2138,7 @@
 
 <br>
 
-41. Sea el código:
+42. Sea el código:
 
     ```python
     from pprint import pprint
@@ -2109,7 +2203,7 @@
 
 <br>
 
-42. Usando como base el ejercicio anterior, imprimir una tabla con los datos de los alumnos en el siguiente formato:
+43. Usando como base el ejercicio anterior, imprimir una tabla con los datos de los alumnos en el siguiente formato:
 
     ```
     -----------------------------------------------------------------
@@ -2188,7 +2282,7 @@
 
 <br>
 
-43. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
+44. Hacer un programa que sume las dos matrices proporcionadas, guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
 
     ```python
     matrix_a = [
@@ -2265,7 +2359,7 @@
 
 <br>
 
-44. Hacer un programa que multiplique dos matrices cuadradas de cualquier tamaño (ambas del mismo), guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
+45. Hacer un programa que multiplique dos matrices cuadradas de cualquier tamaño (ambas del mismo), guarde el resultado en una matriz resultado y la imprima fila por fila en la consola. Por ejemplo, para las siguientes matrices:
 
     ```python
     matrix_a = [
@@ -2320,7 +2414,7 @@
 
 <br>
 
-45. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato:
+46. Escribir un programa que pida por consola nombres de asignaturas continuamente hasta que se introduzca `'fin'`. Luego el programa preguntará la nota para cada asignatura y terminará imprimiendo las asignaturas que queden suspensas siguiendo el siguiente formato:
 
     - Para ninguna asignatura suspensa ➡️ `'No hay asignaturas suspensas.'`
     - Para una asignatura suspensa ➡️ `'Asignaturas suspensas: Historia.'`
@@ -2389,7 +2483,7 @@
 
 <br>
 
-46. Programar un juego de piedra, papel y tijeras infinito en el que se pida tu jugada por consola y se genere la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada que no sea `'piedra'`, `'papel'` o `'tijeras'` se deberá repetir la petición por consola. Al obtener la respuesta se imprimirá por consola qué opción escogió la IA y el resultado de la ronda, para luego continuar con la siguiente. Resolver este ejercicio usando como máximo **dos `if`, un `elif`, un `else` y ningún `and` ni `or`**.
+47. Programar un juego de piedra, papel y tijeras infinito en el que se pida tu jugada por consola y se genere la jugada de la IA de manera aleatoria. Mientras el usuario proporcione una entrada que no sea `'piedra'`, `'papel'` o `'tijeras'` se deberá repetir la petición por consola. Al obtener la respuesta se imprimirá por consola qué opción escogió la IA y el resultado de la ronda, para luego continuar con la siguiente. Resolver este ejercicio usando como máximo **dos `if`, un `elif`, un `else` y ningún `and` ni `or`**.
 
     <details>
     <summary>Solución</summary>
@@ -2419,7 +2513,7 @@
 
 <br>
 
-47. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
+48. En una tienda de deportes ha habido un lote de pelotas descoloridas que se tienen que vender con descuento. Crear un programa que pida por consola el precio de una pelota y su descuento para el lote descolorido. Luego pedir por consola el número de pelotas normales y descoloridas que hay en la tienda. Mientras queden pelotas en la tienda: preguntar por consola si quiere comprar una pelota normal o una descolorida e imprimir por consola lo que le va a costar al cliente (y la pelota contará ya como vendida).
 
     <details>
     <summary>Solución</summary>

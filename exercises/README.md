@@ -4953,7 +4953,7 @@
 
     > No es necesario saber nada de bases de datos.
 
-    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/user-attachments/files/23547048/funciones_22.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
+    Para realizar este grupo de ejercicios es necesario descargar este [zip](https://github.com/user-attachments/files/30437710/funciones_26.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
 
     El módulo `tests.py` contiene código que será utilizado automáticamente para hacer pruebas, no hace falta entenderlo ni leerlo.
 
@@ -5343,7 +5343,7 @@
 
 27. Asteroides.
 
-    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/23690286/funciones_23.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
+    Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/30437722/funciones_27.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
 
     Un laboratorio astronómico de la [Agencia Espacial Europea (ESA)](https://es.wikipedia.org/wiki/Agencia_Espacial_Europea) sospecha de una región del espacio donde podrían haber asteroides peligrosos para la humanidad. Esta región ha sido dividida en subregiones mediante filas y columnas. El laboratorio te ha pedido que desarrolles dos funciones que recopilen datos sobre asteroides que podrían acabar con la vida en la Tierra:
 

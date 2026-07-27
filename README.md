@@ -107,7 +107,7 @@ En Python las variables no tienen tipo, pero su contenido sí. Una variable no e
 <class 'str'>
 ```
 
-![types_diagram.png](markdown_resources/types_diagram.png)
+![types_diagram.png](/markdown_resources/types_diagram.png)
 
 <br>
 
@@ -124,7 +124,7 @@ name = {1, 2, 'bye'}  # set
 name = {1: 2, 'hello': 'world', 'a': 48.34, 48.34: 'a'}  # dictionary
 ```
 
-![collections.png](markdown_resources/collections.png)
+![collections.png](/markdown_resources/collections.png)
 
 <br>
 
@@ -3924,7 +3924,7 @@ Si quisiéramos evitar la creación de instancias de una clase abstracta, pero n
 
 Imaginemos que tenemos una clase `D` que hereda de `B` y `C`. Y que, tanto `B` como `C`, heredan de `A`:
 
-![diamond_inheritance_1.png](markdown_resources/diamond_inheritance_1.png)
+![diamond_inheritance_1.png](/markdown_resources/diamond_inheritance_1.png)
 
 Vamos a añadirles algunos métodos:
 
@@ -3969,7 +3969,7 @@ Es correcto, pero ¿por qué `sprint()` muestra por consola `on two legs` y no `
 
 Este es el famoso "problema del diamante". La herencia múltiple puede provocar este tipo de situaciones y en Python se implementa así:
 
-![diamond_inheritance_2.png](markdown_resources/diamond_inheritance_2.png)
+![diamond_inheritance_2.png](/markdown_resources/diamond_inheritance_2.png)
 
 Pero es muy importante entender que el diagrama de la derecha es siempre desde la perspectiva de `D`: cuando existe una clase que hereda de dos, realmente una de esas dos hereda de la otra. En nuestro caso `B` hereda de `C`, pero solamente **cuando estamos en `D`**. Fuera de esta clase, `B` no heredaría nunca de `C`. De hecho hereda de `A` (`class B(A)`).
 
@@ -4024,7 +4024,7 @@ I am tired now.
 
 En la redefinición hemos escrito `super().sprint()`. Recordemos que usamos `super()` para acceder a la clase padre, pero ahora heredamos de dos clases y Python, en nuestro caso, resuelve la jerarquía de herencia asi:
 
-![diamond_inheritance_3.png](markdown_resources/diamond_inheritance_3.png)
+![diamond_inheritance_3.png](/markdown_resources/diamond_inheritance_3.png)
 
 Así que `super().sprint()` va a ser el `sprint()`de `B`.
 
@@ -4090,7 +4090,7 @@ Para importar cualquier elemento de un módulo hay dos formas:
 
 Imaginemos que tenemos un proyecto estructurado de la siguiente manera:
 
-![project_structure.png](markdown_resources/project_structure.png)
+![project_structure.png](/markdown_resources/project_structure.png)
 
 Código del módulo `internal_module.py`:
 ```python
@@ -4183,13 +4183,13 @@ print(multiply(2, 5))
 
 Si ejecutáramos `functions.py`, Python interpretaría cada línea así:
 
-![main_1.gif](markdown_resources/main_1.gif)
+![main_1.gif](/markdown_resources/main_1.gif)
 
 Y no obtendríamos nada por consola.
 
 Pero si ejecutáramos `main.py`, se interpretaría así:
 
-![main_2.gif](markdown_resources/main_2.gif)
+![main_2.gif](/markdown_resources/main_2.gif)
 
 Y obtendríamos esta salida:
 
@@ -4231,7 +4231,7 @@ print('bye')
 
 Si en algún momento, mientras trabajamos en `main.py`, necesitáramos importar algún recurso de `functions.py`, ocurriría esto:
 
-![main_3.gif](markdown_resources/main_3.gif)
+![main_3.gif](/markdown_resources/main_3.gif)
 
 Con la correspondiente salida:
 

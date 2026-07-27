@@ -1737,7 +1737,7 @@
     print(text)
     ```
 
-    Completar donde `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que lo hace ese código**.
+    Completar donde aparece `...` para lograr el mismo resultado del ejericio anterior **sin añadir ningún `replace()` más ni alterar el texto más allá de lo que lo hace ese código**.
 
     <details>
     <summary>Solución</summary>
@@ -2157,7 +2157,7 @@
     pprint(math_students, sort_dicts=False)
     ```
 
-    Completar donde `...` para sustituir dentro de `math_students` las notas numéricas por su equivalente textual, es decir, para:
+    Completar donde aparece `...` para sustituir dentro de `math_students` las notas numéricas por su equivalente textual, es decir, para:
 
     - < 5 ➡️ `Suspenso`
     - 5 ➡️ `Aprobado`
@@ -2567,7 +2567,7 @@
     print('✅')
     ```
    
-    Rellenar el código donde `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
+    Completar el código donde aparece `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
     
     > `assert` es una sentencia que comprueba la veracidad de lo que haya a la derecha. Si es `True` no hace nada, pero si es `False` lanza una [excepción](../README.md#7-excepciones).
 
@@ -2614,7 +2614,7 @@
 
 <br>
 
-2. Crear una función que devuelva la media de una lista de números enteros. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+2. Crear una función que devuelva la media de una lista de números enteros. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2668,7 +2668,7 @@
 
 <br>
 
-3. Crear una función que multiplique dos números enteros y devuelva el resultado **sin usar el operador `*` ni otras funciones ya existentes en el lenguaje**. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+3. Crear una función que multiplique dos números enteros y devuelva el resultado **sin usar el operador `*` ni otras funciones ya existentes en el lenguaje**. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2711,7 +2711,7 @@
 
 <br>
 
-4. Crear una función que calcule la potencia de dos números enteros y devuelva el resultado **sin usar el operador `*` ni el `**` ni otras funciones ya existentes en el lenguaje**. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+4. Crear una función que calcule la potencia de dos números enteros y devuelva el resultado **sin usar el operador `*` ni el `**` ni otras funciones ya existentes en el lenguaje**. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2763,7 +2763,7 @@
 
 <br>
 
-5. Crear una función que calcule y devuelva el área de un círculo dado su radio como argumento. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+5. Crear una función que calcule y devuelva el área de un círculo dado su radio como argumento. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2802,7 +2802,7 @@
 
 <br>
 
-6. Basarse en el ejercicio anterior para crear una función que calcule y devuelva el volumen de un cilindro dado su radio y altura como argumentos sin repetir código. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+6. Basarse en el ejercicio anterior para crear una función que calcule y devuelva el volumen de un cilindro dado su radio y altura como argumentos sin repetir código. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     import math
@@ -2876,7 +2876,7 @@
 
 <br>
 
-7. Crear una función que reciba una cadena con código y devuelva `True` si los paréntesis están balanceados y `False` en caso contrario, ignorando el resto de caracteres. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+7. Crear una función que reciba un texto y devuelva `True` si los paréntesis están balanceados y `False` en caso contrario, ignorando el resto de caracteres. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2923,7 +2923,7 @@
 
 <br>
 
-8. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+8. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -2934,14 +2934,14 @@
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-1)')
     
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-10)')
     
     assert factorial(1) == 1
     assert factorial(2) == 2
@@ -2976,14 +2976,14 @@
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-1)')
     
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-10)')
     
     assert factorial(1) == 1
     assert factorial(2) == 2
@@ -3013,14 +3013,14 @@
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-1)')
     
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-10)')
     
     assert factorial(1) == 1
     assert factorial(2) == 2
@@ -3036,7 +3036,7 @@
 
 <br>
 
-9. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+9. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -3047,14 +3047,14 @@
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-1)')
     
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-10)')
     
     assert factorial(1) == 1
     assert factorial(2) == 2
@@ -3085,14 +3085,14 @@
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-1)')
     
     try:
         factorial(-10)
     except ValueError:
         pass
     else:
-        raise AssertionError
+        raise AssertionError('factorial(-10)')
     
     assert factorial(1) == 1
     assert factorial(2) == 2
@@ -3173,7 +3173,7 @@
 
 <br>
 
-12. Crear una función que reciba una matriz y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'non-square matrix'`. Para ello rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+12. Crear una función que reciba una matriz de números enteros y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'non-square matrix'`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -3184,21 +3184,21 @@
     except ValueError as e:
         assert str(e) == 'non-square matrix'
     else:
-        raise AssertionError
+        raise AssertionError('get_diagonals([[0, 1]])')
     
     try:
         get_diagonals([[0], [1]])
     except ValueError as e:
         assert str(e) == 'non-square matrix'
     else:
-        raise AssertionError
+        raise AssertionError('get_diagonals([[0], [1]])')
     
     try:
         get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])
     except ValueError as e:
         assert str(e) == 'non-square matrix'
     else:
-        raise AssertionError
+        raise AssertionError('get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])')
     
     assert get_diagonals([[42]]) == ([42], [42])
     assert get_diagonals([[1, 2], [3, 4]]) == ([1, 4], [2, 3])
@@ -3215,7 +3215,7 @@
     <summary>Solución</summary>
 
     ```python
-    def get_diagonals(matrix: list[list[int | float]]) -> tuple[list[int | float], list[int | float]]:
+    def get_diagonals(matrix: list[list[int]]) -> tuple[list[int], list[int]]:
         for row in matrix:
             if len(row) != len(matrix):
                 raise ValueError('non-square matrix')
@@ -3235,21 +3235,21 @@
     except ValueError as e:
         assert str(e) == 'non-square matrix'
     else:
-        raise AssertionError
+        raise AssertionError('get_diagonals([[0, 1]])')
     
     try:
         get_diagonals([[0], [1]])
     except ValueError as e:
         assert str(e) == 'non-square matrix'
     else:
-        raise AssertionError
+        raise AssertionError('get_diagonals([[0], [1]])')
     
     try:
         get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])
     except ValueError as e:
         assert str(e) == 'non-square matrix'
     else:
-        raise AssertionError
+        raise AssertionError('get_diagonals([[0, 1, 2], [0, 1, 2], [0, 1, 2, 3]])')
     
     assert get_diagonals([[42]]) == ([42], [42])
     assert get_diagonals([[1, 2], [3, 4]]) == ([1, 4], [2, 3])
@@ -3276,7 +3276,7 @@
     ]
     ```
 
-    Rellenar el siguiente código donde `...` y ejecutarlo sin errores:
+    Completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -3466,7 +3466,760 @@
 
 <br>
 
-14. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
+14. Crear una función `rotate_matrix()` que reciba una matriz cuadrada representada mediante una lista de listas de números enteros y la rote 90 grados en el sentido de las agujas del reloj, modificando la propia matriz (la función no devuelve nada).
+
+    ![matrix_rotation.svg](/markdown_resources/matrix_rotation.svg)
+
+    Completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    def test() -> None:
+        matrix = [
+            [42]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [42]
+        ]
+    
+        matrix = [
+            [5, 2],
+            [3, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [3, 5],
+            [9, 2]
+        ]
+    
+        matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [7, 4, 1],
+            [8, 5, 2],
+            [9, 6, 3]
+        ]
+    
+        matrix = [
+            [5, 1, 9, 11],
+            [2, 4, 8, 10],
+            [13, 3, 6, 7],
+            [15, 14, 12, 16]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [15, 13, 2, 5],
+            [14, 3, 4, 1],
+            [12, 6, 8, 9],
+            [16, 7, 10, 11]
+        ]
+    
+        matrix = [
+            [93, 77, 29, 95, 97],
+            [45, 7, 88, 6, 75],
+            [5, 83, 42, 68, 10],
+            [24, 14, 3, 13, 95],
+            [18, 84, 34, 61, 29]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [18, 24, 5, 45, 93],
+            [84, 14, 83, 7, 77],
+            [34, 3, 42, 88, 29],
+            [61, 13, 68, 6, 95],
+            [29, 95, 10, 75, 97]
+        ]
+    
+        print('✅ La función modifica la matriz correctamente.')
+    
+    
+    test()
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    a)
+    ```python
+    def rotate_matrix(matrix: list[list[int]]) -> None:
+        size = len(matrix)
+        rotated = [[0] * size for _ in range(size)]
+    
+        for i in range(size):
+            for j in range(size):
+                rotated[j][size - 1 - i] = matrix[i][j]
+    
+        for i in range(size):
+            matrix[i][:] = rotated[i]
+    
+    
+    def test() -> None:
+        matrix = [
+            [42]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [42]
+        ]
+    
+        matrix = [
+            [5, 2],
+            [3, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [3, 5],
+            [9, 2]
+        ]
+    
+        matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [7, 4, 1],
+            [8, 5, 2],
+            [9, 6, 3]
+        ]
+    
+        matrix = [
+            [5, 1, 9, 11],
+            [2, 4, 8, 10],
+            [13, 3, 6, 7],
+            [15, 14, 12, 16]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [15, 13, 2, 5],
+            [14, 3, 4, 1],
+            [12, 6, 8, 9],
+            [16, 7, 10, 11]
+        ]
+    
+        matrix = [
+            [93, 77, 29, 95, 97],
+            [45, 7, 88, 6, 75],
+            [5, 83, 42, 68, 10],
+            [24, 14, 3, 13, 95],
+            [18, 84, 34, 61, 29]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [18, 24, 5, 45, 93],
+            [84, 14, 83, 7, 77],
+            [34, 3, 42, 88, 29],
+            [61, 13, 68, 6, 95],
+            [29, 95, 10, 75, 97]
+        ]
+    
+        print('✅ La función modifica la matriz correctamente.')
+    
+    
+    test()
+    ```
+    b)
+    ```python
+    def rotate_matrix(matrix: list[list[int]]) -> None:
+        matrix[:] = [list(row) for row in zip(*reversed(matrix))]
+    
+    
+    def test() -> None:
+        matrix = [
+            [42]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [42]
+        ]
+    
+        matrix = [
+            [5, 2],
+            [3, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [3, 5],
+            [9, 2]
+        ]
+    
+        matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [7, 4, 1],
+            [8, 5, 2],
+            [9, 6, 3]
+        ]
+    
+        matrix = [
+            [5, 1, 9, 11],
+            [2, 4, 8, 10],
+            [13, 3, 6, 7],
+            [15, 14, 12, 16]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [15, 13, 2, 5],
+            [14, 3, 4, 1],
+            [12, 6, 8, 9],
+            [16, 7, 10, 11]
+        ]
+    
+        matrix = [
+            [93, 77, 29, 95, 97],
+            [45, 7, 88, 6, 75],
+            [5, 83, 42, 68, 10],
+            [24, 14, 3, 13, 95],
+            [18, 84, 34, 61, 29]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [18, 24, 5, 45, 93],
+            [84, 14, 83, 7, 77],
+            [34, 3, 42, 88, 29],
+            [61, 13, 68, 6, 95],
+            [29, 95, 10, 75, 97]
+        ]
+    
+        print('✅ La función modifica la matriz correctamente.')
+    
+    
+    test()
+    ```
+
+    </details>
+
+<br>
+
+15. En el ejercicio anterior bastaba con obtener el resultado correcto. Ahora la rotación debe realizarse sin crear una matriz auxiliar para hacer un uso eficiente de la memoria. Prueba primero si tu implementación anterior supera esta nueva prueba. Si no es así, intenta encontrar otra solución.
+
+    > La solución propuesta tiene menos de diez líneas de código. Fíjate con atención en los ejemplos e intenta descubrir qué transformaciones se aplican siempre sobre la matriz para obtener el resultado final. Si te encuentras realizando muchos cálculos de índices, sumas, restas o casos especiales, probablemente no hayas identificado todavía el patrón y exista una solución más sencilla.
+
+    Completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
+
+    ```python
+    import tracemalloc
+    
+    
+    ...
+    
+    
+    def test() -> None:
+        matrix_size = 1000
+        max_extra_memory = 1000
+    
+        matrix = [
+            [42]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [42]
+        ]
+    
+        matrix = [
+            [5, 2],
+            [3, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [3, 5],
+            [9, 2]
+        ]
+    
+        matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [7, 4, 1],
+            [8, 5, 2],
+            [9, 6, 3]
+        ]
+    
+        matrix = [
+            [5, 1, 9, 11],
+            [2, 4, 8, 10],
+            [13, 3, 6, 7],
+            [15, 14, 12, 16]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [15, 13, 2, 5],
+            [14, 3, 4, 1],
+            [12, 6, 8, 9],
+            [16, 7, 10, 11]
+        ]
+    
+        matrix = [
+            [93, 77, 29, 95, 97],
+            [45, 7, 88, 6, 75],
+            [5, 83, 42, 68, 10],
+            [24, 14, 3, 13, 95],
+            [18, 84, 34, 61, 29]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [18, 24, 5, 45, 93],
+            [84, 14, 83, 7, 77],
+            [34, 3, 42, 88, 29],
+            [61, 13, 68, 6, 95],
+            [29, 95, 10, 75, 97]
+        ]
+    
+        print('✅ La función modifica la matriz correctamente.')
+    
+        matrix = [[i * matrix_size + j for j in range(matrix_size)] for i in range(matrix_size)]
+    
+        tracemalloc.start()
+        rotate_matrix(matrix)
+        _, memory_peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+    
+        if memory_peak < max_extra_memory:
+            print('✅ La implementación cumple el requisito de memoria.')
+        else:
+            print('❌ Se ha usado demasiada memoria.')
+    
+    
+    test()
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import tracemalloc
+    
+    
+    def rotate_matrix(matrix: list[list[int]]) -> None:
+        for i in range(len(matrix)):
+            for j in range(i + 1, len(matrix)):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    
+        for row in matrix:
+            row.reverse()
+    
+    
+    def test() -> None:
+        matrix_size = 1000
+        max_extra_memory = 1000
+    
+        matrix = [
+            [42]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [42]
+        ]
+    
+        matrix = [
+            [5, 2],
+            [3, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [3, 5],
+            [9, 2]
+        ]
+    
+        matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [7, 4, 1],
+            [8, 5, 2],
+            [9, 6, 3]
+        ]
+    
+        matrix = [
+            [5, 1, 9, 11],
+            [2, 4, 8, 10],
+            [13, 3, 6, 7],
+            [15, 14, 12, 16]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [15, 13, 2, 5],
+            [14, 3, 4, 1],
+            [12, 6, 8, 9],
+            [16, 7, 10, 11]
+        ]
+    
+        matrix = [
+            [93, 77, 29, 95, 97],
+            [45, 7, 88, 6, 75],
+            [5, 83, 42, 68, 10],
+            [24, 14, 3, 13, 95],
+            [18, 84, 34, 61, 29]
+        ]
+        rotate_matrix(matrix)
+        assert matrix == [
+            [18, 24, 5, 45, 93],
+            [84, 14, 83, 7, 77],
+            [34, 3, 42, 88, 29],
+            [61, 13, 68, 6, 95],
+            [29, 95, 10, 75, 97]
+        ]
+    
+        print('✅ La función modifica la matriz correctamente.')
+    
+        matrix = [[i * matrix_size + j for j in range(matrix_size)] for i in range(matrix_size)]
+    
+        tracemalloc.start()
+        rotate_matrix(matrix)
+        _, memory_peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+    
+        if memory_peak < max_extra_memory:
+            print('✅ La implementación cumple el requisito de memoria.')
+        else:
+            print('❌ Se ha usado demasiada memoria.')
+    
+    
+    test()
+    ```
+
+    </details>
+
+<br>
+
+16. Contenedor con mayor cantidad de agua.
+
+    Crear una función `find_max_water()` que reciba una lista de números enteros no negativos, donde cada elemento represente la altura de una pared vertical. Las paredes aparecen en el mismo orden que en la lista y no pueden cambiar de posición.
+
+    La función debe devolver la **máxima cantidad de agua** que puede almacenar un contenedor formado por dos de esas paredes. Al elegir dos paredes, las demás se ignoran: no forman parte del contenedor ni interfieren con el agua almacenada. Únicamente sirven como posibles candidatas para ser elegidas, siempre conservando su posición original.
+
+    ![max_water_container.svg](/markdown_resources/max_water_container.svg)
+
+    > Aunque en la realidad la cantidad de agua se mediría como un volumen, en este ejercicio se considera el área del contenedor, es decir, la distancia entre las dos paredes multiplicada por la altura del agua.
+
+    Si alguna altura es negativa, debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+
+    Completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
+
+    ```python
+    ...
+    
+    
+    def test() -> None:
+        try:
+            find_max_water([1, 2, 3, 0])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([1, 2, 3, 0])')
+    
+        try:
+            find_max_water([-1])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([-1])')
+    
+        try:
+            find_max_water([20, -10, 5])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([20, -10, 5])')
+    
+        print('✅ La validación de la entrada es correcta.')
+    
+        assert find_max_water([]) == 0
+        assert find_max_water([1]) == 0
+        assert find_max_water([99]) == 0
+        assert find_max_water([1, 2]) == 1
+        assert find_max_water([1, 5, 7, 2, 5, 3, 6, 2, 3]) == 25
+        assert find_max_water([1, 5, 9, 2, 5, 3, 8, 2, 3]) == 32
+        assert find_max_water([1, 7, 6, 2, 5, 4, 8, 3, 10]) == 49
+        assert find_max_water([2, 3, 4, 5, 18, 17, 6]) == 17
+        assert find_max_water([5, 3, 30, 29, 6]) == 29
+    
+        print('✅ La función devuelve el resultado esperado.')
+    
+    
+    test()
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    def find_max_water(wall_heights: list[int]) -> int:
+        if any(height <= 0 for height in wall_heights):
+            raise ValueError('Wall heights cannot be negative')
+    
+        max_water = 0
+    
+        for i in range(len(wall_heights)):
+            for j in range(i + 1, len(wall_heights)):
+                current_water = min(wall_heights[i], wall_heights[j]) * (j - i)
+    
+                if current_water > max_water:
+                    max_water = current_water
+    
+        return max_water
+    
+    
+    def test() -> None:
+        try:
+            find_max_water([1, 2, 3, 0])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([1, 2, 3, 0])')
+    
+        try:
+            find_max_water([-1])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([-1])')
+    
+        try:
+            find_max_water([20, -10, 5])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([20, -10, 5])')
+    
+        print('✅ La validación de la entrada es correcta.')
+    
+        assert find_max_water([]) == 0
+        assert find_max_water([1]) == 0
+        assert find_max_water([99]) == 0
+        assert find_max_water([1, 2]) == 1
+        assert find_max_water([1, 5, 7, 2, 5, 3, 6, 2, 3]) == 25
+        assert find_max_water([1, 5, 9, 2, 5, 3, 8, 2, 3]) == 32
+        assert find_max_water([1, 7, 6, 2, 5, 4, 8, 3, 10]) == 49
+        assert find_max_water([2, 3, 4, 5, 18, 17, 6]) == 17
+        assert find_max_water([5, 3, 30, 29, 6]) == 29
+    
+        print('✅ La función devuelve el resultado esperado.')
+    
+    
+    test()
+    ```
+
+    </details>
+
+<br>
+
+17. Contenedor con mayor cantidad de agua (eficiente).
+
+    En el ejercicio anterior bastaba con obtener el resultado correcto. Ahora, además, se espera una solución eficiente. Prueba primero si tu implementación anterior supera esta nueva prueba. Si no es así, intenta encontrar otra solución.
+
+    Afronta el problema como lo haría una persona: antes de probar todas las posibilidades, piensa si existe una estrategia lógica que permita descartar muchas de ellas sin necesidad de comprobarlas una a una.
+
+    Completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
+
+    ```python
+    import random
+    import statistics
+    import time
+    
+    ...
+    
+    
+    def test() -> None:
+        expected_growth_ratio = 2
+        max_wall_count = 2000
+        max_wall_height = 10000
+        min_wall_height = 1
+        growth_tolerance_factor = 1.1
+    
+        try:
+            find_max_water([1, 2, 3, 0])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([1, 2, 3, 0])')
+    
+        try:
+            find_max_water([-1])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([-1])')
+    
+        try:
+            find_max_water([20, -10, 5])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([20, -10, 5])')
+    
+        print('✅ La validación de la entrada es correcta.')
+    
+        assert find_max_water([]) == 0
+        assert find_max_water([1]) == 0
+        assert find_max_water([99]) == 0
+        assert find_max_water([1, 2]) == 1
+        assert find_max_water([1, 5, 7, 2, 5, 3, 6, 2, 3]) == 25
+        assert find_max_water([1, 5, 9, 2, 5, 3, 8, 2, 3]) == 32
+        assert find_max_water([1, 7, 6, 2, 5, 4, 8, 3, 10]) == 49
+        assert find_max_water([2, 3, 4, 5, 18, 17, 6]) == 17
+        assert find_max_water([5, 3, 30, 29, 6]) == 29
+    
+        print('✅ La función devuelve el resultado esperado.')
+    
+        wall_count = 100
+    
+        wall_heights = [random.randint(min_wall_height, max_wall_height) for _ in range(wall_count)]
+    
+        start_time = time.perf_counter()
+        find_max_water(wall_heights)
+        previous_duration = time.perf_counter() - start_time
+    
+        growth_ratios = []
+        wall_count *= expected_growth_ratio
+    
+        while wall_count <= max_wall_count:
+            wall_heights = [random.randint(min_wall_height, max_wall_height) for _ in range(wall_count)]
+    
+            start_time = time.perf_counter()
+            find_max_water(wall_heights)
+            current_duration = time.perf_counter() - start_time
+    
+            growth_ratios.append(current_duration / previous_duration)
+            previous_duration = current_duration
+            wall_count *= expected_growth_ratio
+    
+        if statistics.median(growth_ratios) <= expected_growth_ratio * growth_tolerance_factor:
+            print('✅ La implementación cumple el rendimiento esperado.')
+        else:
+            print('❌ La implementación no cumple el rendimiento esperado.')
+    
+    
+    test()
+    ```
+
+    <details>
+    <summary>Solución</summary>
+
+    ```python
+    import random
+    import statistics
+    import time
+    
+    
+    def find_max_water(wall_heights: list[int]) -> int:
+        if any(height <= 0 for height in wall_heights):
+            raise ValueError('Wall heights cannot be negative')
+    
+        max_water = 0
+        left = 0
+        right = len(wall_heights) - 1
+    
+        while left < right:
+            current_water = min(wall_heights[left], wall_heights[right]) * (right - left)
+    
+            if current_water > max_water:
+                max_water = current_water
+    
+            if wall_heights[left] < wall_heights[right]:
+                left += 1
+            else:
+                right -= 1
+    
+        return max_water
+    
+    
+    def test() -> None:
+        expected_growth_ratio = 2
+        max_wall_count = 2000
+        max_wall_height = 10000
+        min_wall_height = 1
+        growth_tolerance_factor = 1.1
+    
+        try:
+            find_max_water([1, 2, 3, 0])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([1, 2, 3, 0])')
+    
+        try:
+            find_max_water([-1])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([-1])')
+    
+        try:
+            find_max_water([20, -10, 5])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('find_max_water([20, -10, 5])')
+    
+        print('✅ La validación de la entrada es correcta.')
+    
+        assert find_max_water([]) == 0
+        assert find_max_water([1]) == 0
+        assert find_max_water([99]) == 0
+        assert find_max_water([1, 2]) == 1
+        assert find_max_water([1, 5, 7, 2, 5, 3, 6, 2, 3]) == 25
+        assert find_max_water([1, 5, 9, 2, 5, 3, 8, 2, 3]) == 32
+        assert find_max_water([1, 7, 6, 2, 5, 4, 8, 3, 10]) == 49
+        assert find_max_water([2, 3, 4, 5, 18, 17, 6]) == 17
+        assert find_max_water([5, 3, 30, 29, 6]) == 29
+    
+        print('✅ La función devuelve el resultado esperado.')
+    
+        wall_count = 100
+    
+        wall_heights = [random.randint(min_wall_height, max_wall_height) for _ in range(wall_count)]
+    
+        start_time = time.perf_counter()
+        find_max_water(wall_heights)
+        previous_duration = time.perf_counter() - start_time
+    
+        growth_ratios = []
+        wall_count *= expected_growth_ratio
+    
+        while wall_count <= max_wall_count:
+            wall_heights = [random.randint(min_wall_height, max_wall_height) for _ in range(wall_count)]
+    
+            start_time = time.perf_counter()
+            find_max_water(wall_heights)
+            current_duration = time.perf_counter() - start_time
+    
+            growth_ratios.append(current_duration / previous_duration)
+            previous_duration = current_duration
+            wall_count *= expected_growth_ratio
+    
+        if statistics.median(growth_ratios) <= expected_growth_ratio * growth_tolerance_factor:
+            print('✅ La implementación cumple el rendimiento esperado.')
+        else:
+            print('❌ La implementación no cumple el rendimiento esperado.')
+    
+    
+    test()
+    ```
+
+    </details>
+
+<br>
+
+18. Crear una función que aplane una lista (u otro iterable). Una lista puede tener otras listas y demás estructuras como tuplas, conjuntos, etc., por lo tanto, aplanar una lista consiste en conseguir como resultado otra con los elementos que contenía originalmente más aquellos contenidos en esas estructuras o colecciones internas. Por ejemplo:
 
     - `[0, 1, 2, [3, 4, 5]]` ➡️ `[0, 1, 2, 3, 4, 5]`
     - `[{'hello', 'bye'}, 45, 'text']` ➡️ `['hello', 'bye', 45, 'text']`
@@ -3506,7 +4259,7 @@
 
 <br>
 
-15. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
+19. Crear una función que imprima por consola los `n` primeros números de la sucesión de Fibonacci separados por el separador dado como argumento. Esta sucesión es la siguiente: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...`. Los dos primeros números son `0` y `1` y cada número posterior es el resultado de la suma de los dos anteriores. Entonces:
 
     - `fibonacci_sequence(0, ', ')` ➡️
     - `fibonacci_sequence(1, ', ')` ➡️ `'0'`
@@ -3548,7 +4301,7 @@
 
 <br>
 
-16. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje **sin usar [sentencias condicionales](../README.md#4-condicionales) ni [bucles](../README.md#5-bucles) `while`**. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+20. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje **sin usar [sentencias condicionales](../README.md#4-condicionales) ni [bucles](../README.md#5-bucles) `while`**. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
 
     `encode('abc', 1)` ➡️ `'bcd'`
 
@@ -3595,7 +4348,7 @@
 
 <br>
 
-17. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
+21. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
 
     > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](../README.md#63-ámbitos) de la teoría.
 
@@ -3666,7 +4419,7 @@
 
 <br>
 
-18. Ejercicio `time_it()`.
+22. Ejercicio `time_it()`.
 
     > Para este ejercicio es necesario haber hecho y entendido el ejercicio anterior.
 
@@ -3677,7 +4430,7 @@
         - `function_1()` está ya hecha y se encarga de generar una espera aleatoria entre 1 y 3 segundos.
         - `time_it()` hay que completarla y tiene que servir para calcular cuanto tarda cualquier función en ejecutarse usando la función `perf_counter()` del módulo `time`.
 
-        Objetivo: completar el código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_1()` en ejecutarse **sin usar `function_1()` globalmente dentro de `time_it`**.
+        Objetivo: completar el código donde aparece `...` de forma que se imprima por consola cuantos segundos ha tardado `function_1()` en ejecutarse **sin usar `function_1()` globalmente dentro de `time_it`**.
 
         ```python
         import random
@@ -3722,7 +4475,7 @@
 
     2. `function_1()` ha evolucionado a `function_2()`. Ahora, además, devuelve la suma de tres números enteros recibidos por parámetro.
 
-        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos ha tardado `function_2()` en ejecutarse y el resultado de la suma (de ahí el `print()` añadido en la última línea) **sin usar `function_2()` globalmente dentro de `time_it`**.
+        Objetivo: completar el siguiente código donde aparece `...` de forma que se imprima por consola cuantos segundos ha tardado `function_2()` en ejecutarse y el resultado de la suma (de ahí el `print()` añadido en la última línea) **sin usar `function_2()` globalmente dentro de `time_it`**.
 
         ```python
         import random
@@ -3773,7 +4526,7 @@
 
     3. Ahora tenemos todas las funciones anteriores más `function_3()`. Esta genera una espera aleatoria y devuelve la cadena de texto resultante de multiplicar una cadena por un número (ambos recibidos por parámetro).
 
-        Objetivo: completar el siguiente código donde `...` de forma que se imprima por consola cuantos segundos han tardado `function_1()`, `function_2()` y `function_3()` en ejecutarse y sus resultados.
+        Objetivo: completar el siguiente código donde aparece `...` de forma que se imprima por consola cuantos segundos han tardado `function_1()`, `function_2()` y `function_3()` en ejecutarse y sus resultados.
 
         ```python
         import random
@@ -3925,7 +4678,7 @@
 
 <br>
 
-19. Sea:
+23. Sea:
 
     ```python
     from collections.abc import Callable
@@ -3970,7 +4723,7 @@
 
 <br>
 
-20. Sea:
+24. Sea:
 
     ```python
     elements = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five'), (6, 'six'), (7, 'seven')]   
@@ -3993,7 +4746,7 @@
 
 <br>
 
-21. Filtrado de archivos.
+25. Filtrado de archivos.
 
     En el siguiente grupo de ejercicios vamos a utilizar varias técnicas para navegar por los archivos de nuestro ordenador. Vamos a usar diversos recursos de la biblioteca [pathlib](https://docs.python.org/3/library/pathlib.html) (`import pathlib`), que viene ya instalada con el lenguaje, para iterar los archivos como objetos `Path`.
 
@@ -4113,7 +4866,7 @@
 
         </details>
 
-    5. Envolver el `for` con el `print(...)` que ponemos al final para probar nuestra función en otra, de forma que reciba los `Path` por parámetro.
+    5. Mover el `for` que imprime los archivos a una función nueva que reciba los `Path` por parámetro. Después, utilizar esa función para mostrar el resultado de `filter_files()`.
 
         <details>
         <summary>Solución</summary>
@@ -4188,15 +4941,15 @@
         print()
         print_files(filter_files(directory_, lambda path: not path.suffix and path.is_file()))
         print()
-        minimum_date = datetime.datetime.now() - datetime.timedelta(days=365)
-        print_files(filter_files(directory_, lambda path: minimum_date < datetime.datetime.fromtimestamp(path.stat().st_mtime)))
+        min_date = datetime.datetime.now() - datetime.timedelta(days=365)
+        print_files(filter_files(directory_, lambda path: min_date < datetime.datetime.fromtimestamp(path.stat().st_mtime)))
         ```
 
         </details>
 
 <br>
 
-22. Consultas relacionales estilo SQL a colecciones de estudiantes.
+26. Consultas relacionales estilo SQL a colecciones de estudiantes.
 
     > No es necesario saber nada de bases de datos.
 
@@ -4588,7 +5341,7 @@
 
 <br>
 
-23. Asteroides.
+27. Asteroides.
 
     Para realizar este ejercicio es necesario descargar este [zip](https://github.com/user-attachments/files/23690286/funciones_23.zip), que contiene los módulos necesarios, y descomprimirlo en el directorio donde se vaya a trabajar.
 
@@ -4644,7 +5397,7 @@
 
         Verás un mensaje con un `✅` si lo has realizado correctamente o una excepción en caso contrario.
 
-    Un asteroide peligroso se acerca a la Tierra e impactará dentro de cuatro años, suponiendo una amenaza catastrófica. Los expertos sospechan que podría encontrarse en las subregiones más próximas a la posición `(0, 0)`, por lo que es prioritario localizarlo cuanto antes. Tu misión es detectarlo y destruirlo antes de que llegue a la Tierra.
+    Un asteroide peligroso se acerca a la Tierra e impactará dentro de cuatro años, suponiendo una amenaza catastrófica, por lo que es prioritario localizarlo cuanto antes. Los expertos sospechan que podría encontrarse en las subregiones más próximas a la posición `(0, 0)`. Tu misión es detectarlo y destruirlo antes de que llegue a la Tierra.
 
     Se considera que un asteroide es catastrófico si cumple simultáneamente estas condiciones:
 
@@ -4788,7 +5541,7 @@
 
 <br>
 
-24. ☠️ Crear un gestor de clientes por consola.
+28. ☠️ Crear un gestor de clientes por consola.
 
     > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
 
@@ -5182,7 +5935,7 @@
     > 
     > Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `numbers` (`False` por defecto), que determina el tipo de numeración de la tabla.
     > 
-    > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
+    > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan las reglas de tipado.
 
     Construir con clases el siguiente escenario en el módulo `main.py`:
 
@@ -5227,7 +5980,7 @@
             - Tren con matrícula `'3210'` con dos pasajeras `'Ana'` y `'Elena'` de `35` y `28` años respectivamente ➡️ `Train_3210. Passengers: {Ana (35), Elena (28)}`.
 
         12. Los vehículos tendrán un método `add_passenger()` que reciba un pasajero por parámetro y lo añada si cabe, si no, deberá lanzar un `ValueError` con el mensaje `'full vehicle'`.
-        13. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero que la cumpla con la función recibida. Si ningún pasajero la cumple, devolverá `None`.
+        13. Un método `first_passenger()` que reciba una función por parámetro que reciba, a su vez, un pasajero por parámetro y devuelva un booleano. `first_passenger()` tiene que devolver el primer pasajero para el que la función recibida devuelva `True`. Si ningún pasajero la cumple, devolverá `None`.
         14. Un método `empty()` que vacíe el conjunto de los pasajeros y los devuelva hacia fuera de la función.
         15. Un método `remove_passenger()` que reciba un pasajero por parámetro y lo descarte del conjunto. Si no está no da error.
         16. Un método `remove_passenger_by_name()` que reciba por parámetro el nombre de un posible pasajero y lo elimine sin dar error.
@@ -5393,7 +6146,7 @@
 
     4. Clases de piezas:
 
-        ![chess_diagram.svg](../markdown_resources/chess_diagram.svg)
+        ![chess_diagram.svg](/markdown_resources/chess_diagram.svg)
 
         1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas).
         2. Todos los objetos de las clases de piezas tendrán estos atributos:
@@ -6166,7 +6919,7 @@
 
     La siguiente imagen muestra el inicio del juego, el tablero sin resolver:
 
-   ![skyscraper.png](../markdown_resources/skyscraper.png)
+   ![skyscraper.png](/markdown_resources/skyscraper.png)
 
     En este caso la partida es de `4x4` pero podría tener cualquier tamaño `nxn`. Al ser de tamaño `4`, los rascacielos que podremos colocar tendrán una altura entre `1` y `4` (inclusive).
 
@@ -6174,13 +6927,13 @@
 
     Los números que aparecen fuera del tablero indican el número de rascacielos que se verían desde esa posición. Vamos a ver la solución de este tablero para tenerlo más claro:
 
-   ![skyscraper_solution.png](../markdown_resources/skyscraper_solution.png)
+   ![skyscraper_solution.png](/markdown_resources/skyscraper_solution.png)
 
     Los rascacielos altos tapan a los más bajos cuando los miramos desde cierto lado.
 
     Fijémonos en la tercera columna: como arriba tiene un `4` (el número fuera del tablero), eso significa que en esa columna, desde arriba hacia abajo, se pueden ver todos los rascacielos desde altura `1` hasta `4`, o sea, cuatro rascacielos. Y si miramos en el número de abajo de la misma columna nos daremos cuenta de que es un `1`, porque solo podríamos ver un rascacielos, el de altura `4`, tapando los de altura `3`, `2` y `1`.
 
-    Entonces, cumpliendo las reglas indicadas en el exterior de tablero y teniendo en cuenta que no se pueden colocar dos rascacielos de misma altura en una misma fila o columna: crear una función `skyscrapers(...)` que reciba las reglas de cada lado del tablero de cualquier tamaño `nxn` en el orden **arriba**, **abajo**, **izquierda** y **derecha** mediante cuatro listas como argumentos y que devuelva una lista de listas representando el tablero resuelto relleno con los números que simbolizan los rascacielos de altura `1` hasta `n`. En el caso de no existir solución posible al tablero con las reglas propuestas, la función debe devolver `None`.
+    Entonces, cumpliendo las reglas indicadas en el exterior de tablero y teniendo en cuenta que no se pueden colocar dos rascacielos de misma altura en una misma fila o columna: crear una función `skyscrapers()` que reciba las reglas de cada lado del tablero de cualquier tamaño `nxn` en el orden **arriba**, **abajo**, **izquierda** y **derecha** mediante cuatro listas como argumentos y que devuelva una lista de listas representando el tablero resuelto relleno con los números que simbolizan los rascacielos de altura `1` hasta `n`. En el caso de no existir solución posible al tablero con las reglas propuestas, la función debe devolver `None`.
 
     Con el tablero del ejemplo sería así:
 

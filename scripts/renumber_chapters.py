@@ -1,56 +1,72 @@
 import re
-import shutil
 import zipfile
 from pathlib import Path
 
-CHAPTER_MARKER = '##'
+CHAPTER_PATTERN = re.compile(r'##\s*\d*\.?\s*(.*)')
+EXERCISE_DIRECTORY_PATTERN = re.compile(r'_\d+$')
+EXERCISE_NUMBER_PATTERN = re.compile(r'^\d+')
 EXERCISES_PATH = Path('../exercises')
 MARKDOWN_PATH = EXERCISES_PATH / 'README.md'
 
 
-def rename_zip(exercise_directory_name: str, new_exercise_number: int) -> None:
-    previous_exercise_directory = EXERCISES_PATH / exercise_directory_name
-    previous_zip_path = previous_exercise_directory.with_suffix('.zip')
+def main() -> None:
+    lines = []
+    current_chapter = ''
+    previous_exercise_number = 0
+    exercise_number = 0
+    new_zip_paths = []
+
+    with open(MARKDOWN_PATH, encoding='utf-8') as file:
+        for line in file:
+            if match := CHAPTER_PATTERN.match(line):
+                current_chapter = match.group(1).strip()
+                exercise_number = 0
+
+            if match := EXERCISE_NUMBER_PATTERN.match(line):
+                previous_exercise_number = int(match.group())
+                exercise_number += 1
+                line = EXERCISE_NUMBER_PATTERN.sub(str(exercise_number), line)
+
+            if exercise_number != previous_exercise_number and '[zip]' in line:
+                if new_zip_path := rename_zip(
+                    f'{current_chapter.lower().replace(' ', '_')}_{previous_exercise_number}',
+                    exercise_number
+                ):
+                    new_zip_paths.append(new_zip_path)
+
+            lines.append(line)
+
+    for new_zip_path in new_zip_paths:
+        new_zip_path.rename(new_zip_path.with_stem(new_zip_path.stem.removesuffix('_')))
+
+    MARKDOWN_PATH.write_text(''.join(lines), encoding='utf-8', newline='\n')
+
+
+def rename_zip(previous_exercise_directory_name: str, new_exercise_number: int) -> Path | None:
+    previous_zip_path = (EXERCISES_PATH / previous_exercise_directory_name).with_suffix('.zip')
 
     if not previous_zip_path.is_file():
         return
 
-    with zipfile.ZipFile(previous_zip_path) as zip_file:
-        zip_file.extractall(EXERCISES_PATH)
+    new_exercise_directory_name = EXERCISE_DIRECTORY_PATTERN.sub(
+        f'_{new_exercise_number}',
+        previous_exercise_directory_name
+    )
+    new_zip_path = EXERCISES_PATH / f'{new_exercise_directory_name}_.zip'
 
-    new_exercise_directory = Path(re.sub(r'_\d+$', f'_{new_exercise_number}', str(previous_exercise_directory)))
-    new_zip_path = new_exercise_directory.with_suffix('.zip')
+    with zipfile.ZipFile(previous_zip_path) as previous_zip_file, zipfile.ZipFile(new_zip_path, 'w') as new_zip_file:
+        for zip_info in previous_zip_file.infolist():
+            data = previous_zip_file.read(zip_info.filename)
+            zip_info.filename = zip_info.filename.replace(
+                previous_exercise_directory_name,
+                new_exercise_directory_name,
+                count=1
+            )
+            new_zip_file.writestr(zip_info, data)
 
-    with zipfile.ZipFile(new_zip_path, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-        for path in previous_exercise_directory.rglob('*'):
-            if path.is_file():
-                zip_file.write(path, new_exercise_directory.name / path.relative_to(previous_exercise_directory))
-
-    shutil.rmtree(previous_exercise_directory)
     previous_zip_path.unlink()
 
+    return new_zip_path
 
-lines = []
-chapter_pattern = re.compile(fr'{CHAPTER_MARKER}[\s*\d.]*(.*)')
-exercise_number_pattern = re.compile(r'^\d+')
-current_chapter: str | None = None
-previous_exercise_number: int | None = None
-exercise_number = 0
 
-with open(MARKDOWN_PATH, encoding='utf-8') as file:
-    for line in file:
-        if match := re.match(chapter_pattern, line):
-            current_chapter = match.group(1).strip()
-            exercise_number = 0
-
-        if match := re.match(exercise_number_pattern, line):
-            previous_exercise_number = int(match.group())
-            exercise_number += 1
-            line = re.sub(exercise_number_pattern, str(exercise_number), line)
-
-        if exercise_number != previous_exercise_number and '[zip]' in line:
-            rename_zip(f'{current_chapter.lower().replace(' ', '_')}_{previous_exercise_number}', exercise_number)
-
-        lines.append(line)
-
-MARKDOWN_PATH.write_text(''.join(lines), encoding='utf-8', newline='\n')
+main()

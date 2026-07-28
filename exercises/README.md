@@ -3703,7 +3703,7 @@
 
 <br>
 
-15. En el ejercicio anterior bastaba con obtener el resultado correcto. Ahora la rotación debe realizarse sin crear una matriz auxiliar para hacer un uso eficiente de la memoria. Prueba primero si tu implementación anterior supera esta nueva prueba. Si no es así, intenta encontrar otra solución.
+15. En el ejercicio anterior bastaba con obtener el resultado correcto. Ahora la rotación debe realizarse sin crear una matriz auxiliar para hacer un uso eficiente de la memoria. Prueba primero si tu implementación anterior supera este nuevo caso. Si no es así, intenta encontrar otra solución.
 
     > La solución propuesta tiene menos de diez líneas de código. Fíjate con atención en los ejemplos e intenta descubrir qué transformaciones se aplican siempre sobre la matriz para obtener el resultado final. Si te encuentras realizando muchos cálculos de índices, sumas, restas o casos especiales, probablemente no hayas identificado todavía el patrón y exista una solución más sencilla.
 
@@ -4024,9 +4024,9 @@
 
 17. Contenedor con mayor cantidad de agua (eficiente).
 
-    En el ejercicio anterior bastaba con obtener el resultado correcto. Ahora, además, se espera una solución eficiente. Prueba primero si tu implementación anterior supera esta nueva prueba. Si no es así, intenta encontrar otra solución.
+    En el ejercicio anterior bastaba con obtener el resultado correcto. Ahora, además, se espera una solución eficiente. Prueba primero si tu implementación anterior supera este nuevo caso. Si no es así, intenta encontrar otra solución.
 
-    Afronta el problema como lo haría una persona: antes de probar todas las posibilidades, piensa si existe una estrategia lógica que permita descartar muchas de ellas sin necesidad de comprobarlas una a una.
+    > Afronta el problema como lo haría una persona: antes de probar todas las posibilidades, piensa si existe una estrategia lógica que permita descartar muchas de ellas sin necesidad de comprobarlas una a una.
 
     Completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 

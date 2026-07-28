@@ -42,7 +42,7 @@
 
 <br>
 
-2. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar [bucles](../README.md#5-bucles)**.
+2. Pedir por consola un texto e imprimir el número de caracteres que contiene **sin usar [bucles](/README.md#5-bucles)**.
 
     <details>
     <summary>Solución</summary>
@@ -56,7 +56,7 @@
 
 <br>
 
-3. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar [bucles](../README.md#5-bucles)**.
+3. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **sin usar [bucles](/README.md#5-bucles)**.
 
     <details>
     <summary>Solución</summary>
@@ -130,7 +130,7 @@
     balls = [('roja', 5), ('azul', 12), ('verde', 27), ('amarilla', 35), ('morada', 44)]
     ```
 
-    Crear un programa **sin usar [sentencias condicionales](../README.md#4-condicionales)** que pida por consola un identificador e imprima únicamente el color asociado, sin mostrar el identificador en la salida. Si el identificador introducido no tiene pelota asociada, no importa el resultado.
+    Crear un programa **sin usar [sentencias condicionales](/README.md#4-condicionales)** que pida por consola un identificador e imprima únicamente el color asociado, sin mostrar el identificador en la salida. Si el identificador introducido no tiene pelota asociada, no importa el resultado.
 
     > Este ejercicio es más un acertijo que un caso realista. No hay que intentar crear una solución general que funcione para cualquier lista de pelotas, sino solo para esa lista concreta.
 
@@ -163,7 +163,7 @@
     prices = (3.85, 2.99, 2.69, 4.25, 4.50, 4.95, 3.49)
     ```
    
-    Crear un programa que pida por consola el nombre de una fruta y cuántos kilos se quiere comprar, e imprima el coste total (€) **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
+    Crear un programa que pida por consola el nombre de una fruta y cuántos kilos se quiere comprar, e imprima el coste total (€) **sin usar [sentencias condicionales](/README.md#4-condicionales)**.
 
     <details>
     <summary>Solución</summary>
@@ -182,7 +182,7 @@
 
 <br>
 
-8. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](../README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
+8. Comprobar si una palabra recibida por consola es un **palíndromo** e imprimir el **[booleano](/README.md#11-tipos-más-usados)** resultante **sin usar [sentencias condicionales](/README.md#4-condicionales)**. Un **palíndromo** es un texto que se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo:
 
     - `'hola'` ➡️ `False`
     - `'ojos'` ➡️ `False`
@@ -215,8 +215,8 @@
     Prohibiciones:
 
     - 🚫 Usar la [función integrada](https://docs.python.org/3/library/functions.html) `range()`.
-    - 🚫 Usar [bucles](../README.md#5-bucles).
-    - 🚫 [Importar](../README.md#9-importaciones).
+    - 🚫 Usar [bucles](/README.md#5-bucles).
+    - 🚫 [Importar](/README.md#9-importaciones).
     - 🚫 Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
     - 🚫 Transformar los números en otros con sumas, restas, etc.
     - 🚫 Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
@@ -257,8 +257,8 @@
     Prohibiciones:
 
     - 🚫 Usar las [funciones integradas](https://docs.python.org/3/library/functions.html) `range()` o `sorted()`.
-    - 🚫 Usar [bucles](../README.md#5-bucles).
-    - 🚫 [Importar](../README.md#9-importaciones).
+    - 🚫 Usar [bucles](/README.md#5-bucles).
+    - 🚫 [Importar](/README.md#9-importaciones).
     - 🚫 Añadir números manualmente. Por ejemplo: `[0, 2, 4, ...]`.
     - 🚫 Transformar los números en otros con sumas, restas, etc.
     - 🚫 Abusar del acceso individual. Por ejemplo: `[elements_a[0], elements_a[2], elements_a[4], ...]`.
@@ -613,7 +613,7 @@
     - `22` ➡️ `0123456789012345678901`
     - `37` ➡️ `0123456789012345678901234567890123456`
 
-    Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**. **Solo se puede usar un [bucle](../README.md#5-bucles) como máximo**.
+    Resolver este ejercicio dos veces: una **usando [sentencias condicionales](/README.md#4-condicionales)** y otra **sin ellas**. **Solo se puede usar un [bucle](/README.md#5-bucles) como máximo**.
 
     <details>
     <summary>Solución</summary>
@@ -1010,7 +1010,7 @@
 
 <br>
 
-17. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](../README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
+17. Comprobar si dos palabras recibidas por consola son **anagramas** entre sí e imprimir el **[booleano](/README.md#11-tipos-más-usados)** resultante. Una palabra se considera **anagrama** de otra si contienen los mismos caracteres sin importar el orden. Por ejemplo:
 
     - `'hola'`, `'adios'` ➡️ `False`
     - `'urnas'`, `'runa'` ➡️ `False`
@@ -1169,9 +1169,9 @@
 
     Resolver este ejercicio tres veces:
 
-    1. Usando **dos [bucles](../README.md#5-bucles)** y **ninguna [sentencia condicional](../README.md#4-condicionales)**.
-    2. Usando **un [bucle](../README.md#5-bucles)** y **una [sentencia condicional](../README.md#4-condicionales)**.
-    3. Usando **un [bucle](../README.md#5-bucles)** y **ninguna [sentencia condicional](../README.md#4-condicionales)**.
+    1. Usando **dos [bucles](/README.md#5-bucles)** y **ninguna [sentencia condicional](/README.md#4-condicionales)**.
+    2. Usando **un [bucle](/README.md#5-bucles)** y **una [sentencia condicional](/README.md#4-condicionales)**.
+    3. Usando **un [bucle](/README.md#5-bucles)** y **ninguna [sentencia condicional](/README.md#4-condicionales)**.
 
     <br>
 
@@ -1340,7 +1340,7 @@
 
     El programa debe permitirnos girar la ruleta **tres veces** para obtener **tres premios** (pueden repetirse), imprimiendo el premio correspondiente cada vez. La posición de la ruleta debe mantenerse entre cada tirada. La fuerza mínima de giro es **10**. Si se introduce un número menor, se debe considerar como si fuera **10**. No hay fuerza máxima (se le puede dar muchas vueltas a la ruleta de una sola tirada).
 
-    Realizar el ejercicio **sin usar [sentencias condicionales](../README.md#4-condicionales)**.
+    Realizar el ejercicio **sin usar [sentencias condicionales](/README.md#4-condicionales)**.
 
     Premios asignados a cada sector de la ruleta en orden:
 
@@ -1377,7 +1377,7 @@
     - `'25 ? 5 = 5.0'` ➡️ `'/'`
     - `'3 ? 2 = 0'` ➡️
 
-    **Solo se puede usar una [sentencia condicional](../README.md#4-condicionales) como máximo.**
+    **Solo se puede usar una [sentencia condicional](/README.md#4-condicionales) como máximo.**
 
     > El módulo [operator](https://docs.python.org/3/library/operator.html) nos puede ayudar en este ejercicio.
 
@@ -1414,7 +1414,7 @@
 
     > El módulo [datetime](https://docs.python.org/3/library/datetime.html) contiene recursos necesarios para este ejercicio.
 
-    > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
+    > Para este ejercicio es recomendable saber utilizar [excepciones](/README.md#7-excepciones).
 
     <details>
     <summary>Solución</summary>
@@ -1626,7 +1626,7 @@
 
 <br>
 
-32. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](../README.md#4-condicionales)** y otra **sin ellas**.
+32. Pedir por consola un número e imprimir una lista con los números impares del **1** al número introducido, inclusive. Resolver este ejercicio dos veces: una **usando [sentencias condicionales](/README.md#4-condicionales)** y otra **sin ellas**.
 
     <details>
     <summary>Solución</summary>
@@ -1659,7 +1659,7 @@
 
 <br>
 
-33. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](../README.md#5-bucles) y sin usar [conjuntos](../README.md#16-conjuntos)**.
+33. Pedir por consola un texto e imprimir el número de caracteres **distintos** que contiene **usando [bucles](/README.md#5-bucles) y sin usar [conjuntos](/README.md#16-conjuntos)**.
 
     <details>
     <summary>Solución</summary>
@@ -1812,7 +1812,7 @@
 
 <br>
 
-38. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](../README.md#51-listas-por-comprensión) que sea equivalente.
+38. A continuación se mostrarán unos fragmentos de código que crean listas. El objetivo de este ejercicio es convertir cada caso en una [lista por comprensión](/README.md#51-listas-por-comprensión) que sea equivalente.
 
     1. <br>
 
@@ -2228,7 +2228,7 @@
 
     <br>
 
-    > Se recomienda revisar el capítulo [1.3.1. Formateo/interpolación de cadenas](../README.md#131-formateointerpolación-de-cadenas) de la teoría.
+    > Se recomienda revisar el capítulo [1.3.1. Formateo/interpolación de cadenas](/README.md#131-formateointerpolación-de-cadenas) de la teoría.
 
     <details>
     <summary>Solución</summary>
@@ -2569,7 +2569,7 @@
    
     Completar el código donde aparece `...` para que, al ejecutarlo, no se produzca ningún error y se imprima `✅` por consola.
     
-    > `assert` es una sentencia que comprueba la veracidad de lo que haya a la derecha. Si es `True` no hace nada, pero si es `False` lanza una [excepción](../README.md#7-excepciones).
+    > `assert` es una sentencia que comprueba la veracidad de lo que haya a la derecha. Si es `True` no hace nada, pero si es `False` lanza una [excepción](/README.md#7-excepciones).
 
     <details>
     <summary>Solución</summary>
@@ -2923,7 +2923,7 @@
 
 <br>
 
-8. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
+8. Crear una función que devuelva el factorial de un número dado como argumento **usando [bucles](/README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](/README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -3036,7 +3036,7 @@
 
 <br>
 
-9. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](../README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
+9. Crear una función que devuelva el factorial de un número dado como argumento **sin usar [bucles](/README.md#5-bucles)**. El factorial de 0 es 1. Y el factorial de un número negativo debe [lanzar](/README.md#71-lanzamiento-de-excepciones) un `ValueError`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -3173,7 +3173,7 @@
 
 <br>
 
-12. Crear una función que reciba una matriz de números enteros y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'non-square matrix'`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
+12. Crear una función que reciba una matriz de números enteros y devuelva dos listas, cada una con los elementos de cada diagonal. Si la matriz no es cuadrada debe [lanzar](/README.md#71-lanzamiento-de-excepciones) un `ValueError` con el mensaje `'non-square matrix'`. Para ello, completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
     ```python
     ...
@@ -3910,7 +3910,7 @@
 
     > Aunque en la realidad la cantidad de agua se mediría como un volumen, en este ejercicio se considera el área del contenedor, es decir, la distancia entre las dos paredes multiplicada por la altura del agua.
 
-    Si alguna altura es negativa, debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+    Si alguna altura es negativa, debe [lanzar](/README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     Completar el siguiente código donde aparece `...` y ejecutarlo sin errores:
 
@@ -4267,7 +4267,7 @@
     - `fibonacci_sequence(5, ' - ')` ➡️ `'0 - 1 - 1 - 2 - 3'`
     - `fibonacci_sequence(11, ' | ')` ➡️ `'0 | 1 | 1 | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55'`
 
-    La sucesión de Fibonacci para `n` negativo debe [lanzar](../README.md#71-lanzamiento-de-excepciones) un `ValueError`.
+    La sucesión de Fibonacci para `n` negativo debe [lanzar](/README.md#71-lanzamiento-de-excepciones) un `ValueError`.
 
     <details>
     <summary>Solución</summary>
@@ -4301,7 +4301,7 @@
 
 <br>
 
-20. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje **sin usar [sentencias condicionales](../README.md#4-condicionales) ni [bucles](../README.md#5-bucles) `while`**. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
+20. Crear dos funciones que simulen el [cifrado césar](https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar) y posterior descifrado de un mensaje **sin usar [sentencias condicionales](/README.md#4-condicionales) ni [bucles](/README.md#5-bucles) `while`**. Este cifrado consiste básicamente en cambiar cada símbolo de un texto por otro que le sigue a cierta distancia en el alfabeto. Por ejemplo, si ciframos el texto `'abc'` con un desplazamiento `1`:
 
     `encode('abc', 1)` ➡️ `'bcd'`
 
@@ -4350,7 +4350,7 @@
 
 21. Sustituir los `...` de los comentarios del siguiente códido por `local` o `global` según el ámbito del nombre/recurso usado:
 
-    > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](../README.md#63-ámbitos) de la teoría.
+    > Para este ejercicio es necesario entender el capítulo [6.3. Ámbitos](/README.md#63-ámbitos) de la teoría.
 
     ```python
     n = 45
@@ -4423,7 +4423,7 @@
 
     > Para este ejercicio es necesario haber hecho y entendido el ejercicio anterior.
 
-    > Si se complica este ejercicio: revisar los capítulos de la teoría de [funciones](../README.md#índice).
+    > Si se complica este ejercicio: revisar los capítulos de la teoría de [funciones](/README.md#índice).
 
     1. Se proporcionará código que contiene dos funciones:`function_1()` y `time_it()`.
 
@@ -4754,7 +4754,7 @@
         - Que tenga dos parámetros: la ruta (`str`) donde se encuentran los archivos y una extensión (`str`) para filtrar aquellos que la tengan (por ejemplo: `.jpg`)
         - Que devuelva la lista de archivos (`list[Path]`) en ese directorio que tengan dicha extensión.
         - Sin buscar recursivamente en subdirectorios.
-        - Sin usar [listas por comprensión](../README.md#51-listas-por-comprensión).
+        - Sin usar [listas por comprensión](/README.md#51-listas-por-comprensión).
 
        Probar la función pidiendo por consola la ruta y la extensión e imprimir cada ruta con el número correspondiente tal que:
         ```
@@ -4792,7 +4792,7 @@
 
         </details>
 
-    2. En el ejercicio anterior creamos una lista con todas las rutas `Path` de los archivos que cumplen nuestro filtro. Imaginemos que nuestro directorio contiene millones de archivos: estamos guardando en memoria un objeto `Path` por cada uno de ellos y, como es lógico, eso es bastante problemático. En los casos donde tengamos que procesar muchos elementos y no necesitemos que persistan en el tiempo o no sea posible por las limitaciones de memoria del ordenador tendremos que usar [iteradores](../README.md#52-iteradores).
+    2. En el ejercicio anterior creamos una lista con todas las rutas `Path` de los archivos que cumplen nuestro filtro. Imaginemos que nuestro directorio contiene millones de archivos: estamos guardando en memoria un objeto `Path` por cada uno de ellos y, como es lógico, eso es bastante problemático. En los casos donde tengamos que procesar muchos elementos y no necesitemos que persistan en el tiempo o no sea posible por las limitaciones de memoria del ordenador tendremos que usar [iteradores](/README.md#52-iteradores).
 
        Con eso en mente: arreglar la función del ejercicio anterior manteniendo los requisitos (menos el valor de retorno `list[Path]`).
 
@@ -4821,7 +4821,7 @@
 
         </details>
 
-    3. Olvidemos los iteradores. Volvamos a hacer el ejercicio inicial, pero con [listas por comprensión](../README.md#51-listas-por-comprensión) (prohibido usar `append()`).
+    3. Olvidemos los iteradores. Volvamos a hacer el ejercicio inicial, pero con [listas por comprensión](/README.md#51-listas-por-comprensión) (prohibido usar `append()`).
 
         <details>
         <summary>Solución</summary>
@@ -4843,7 +4843,7 @@
 
         </details>
 
-    4. Ahora, en vez de una lista por comprensión, usar un [generador con paréntesis](../README.md#521-generadores) (no debería ocupar ni una línea más ni menos que el ejercicio anterior).
+    4. Ahora, en vez de una lista por comprensión, usar un [generador con paréntesis](/README.md#521-generadores) (no debería ocupar ni una línea más ni menos que el ejercicio anterior).
 
         <details>
         <summary>Solución</summary>
@@ -4959,7 +4959,7 @@
 
     En el módulo `data.py` podemos observar varias cosas:
 
-    - Una [enumeración](../README.md#19-enumeraciones) `Gender` para especificar el género de un estudiante.
+    - Una [enumeración](/README.md#19-enumeraciones) `Gender` para especificar el género de un estudiante.
     - Varias listas de diccionarios (`list[dict]`):
 
         - `students`: colección con los datos de todos los estudiantes.
@@ -4973,7 +4973,7 @@
 
     Finalmente tenemos el módulo `main.py`, que es donde vamos a trabajar. Si lo abrimos, veremos una serie de funciones que están incompletas, cada una es un ejercicio. El objetivo es completarlas todas.
 
-    Está permitido programar fuera de las regiones marcadas con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](../README.md#9-importaciones) recursos de `data.py`.
+    Está permitido programar fuera de las regiones marcadas con `...`, definir otras funciones, importar bibliotecas, etc., de hecho, será necesario [importar](/README.md#9-importaciones) recursos de `data.py`.
 
     Como las funciones están vacías, normalmente los editores/entornos de desarrollo marcarán con una advertencia los parámetros porque no se usan. Si molesta mucho se pueden comentar las funciones que no estemos usando (no afectará a las pruebas).
 
@@ -5543,7 +5543,7 @@
 
 28. ☠️ Crear un gestor de clientes por consola.
 
-    > Para este ejercicio es recomendable saber utilizar [excepciones](../README.md#7-excepciones).
+    > Para este ejercicio es recomendable saber utilizar [excepciones](/README.md#7-excepciones).
 
     - ▶️ Inicio.
 
@@ -5935,11 +5935,11 @@
     > 
     > Este ejercicio pedírá definir unas clases según unos requisitos. Para probar dichas clases podremos crear objetos y pasarlos como argumentos a `test()`. Esta función recibe opcionalmente un objeto de cada clase para extraer su información, comprobar cuantos requisitos del ejercicio se han completado con éxito e imprimir por consola una tabla resultado. Adicionalmente, admite un argumento booleano `numbers` (`False` por defecto), que determina el tipo de numeración de la tabla.
     > 
-    > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan las reglas de tipado.
+    > Podemos detectar fallos en las [anotaciones de tipos](/README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan las reglas de tipado.
 
     Construir con clases el siguiente escenario en el módulo `main.py`:
 
-    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
+    1. Utilizar [anotaciones de tipos](/README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
     2. Una clase `Person`:
 
         1. Con un atributo `name` (cadena) que siempre tiene que tener la primera en mayúscula, el resto en minúscula y ningún espacio al principio o al final aunque el usuario lo introduzca mal al usar el constructor.
@@ -5953,7 +5953,7 @@
 
     3. Clases `Vehicle`, `Car` y `Train`:
 
-        1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
+        1. Modelar usando [clases abstractas](/README.md#831-clases-abstractas) y evitar que se puedan crear objetos de ellas.
         2. Los objetos de las tres clases tendrán estos atributos:
 
             1. `max_passengers` (número entero): máximo de pasajeros.
@@ -5964,7 +5964,7 @@
 
             1. `doors` (número entero): número de puertas.
             2. `airbags` (número entero): número de airbags.
-            3. `wheel_drive` ([enumeración](../README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`): tipo de tracción.
+            3. `wheel_drive` ([enumeración](/README.md#19-enumeraciones) `WheelDrive` que tiene dos valores: `FRONT` y `REAR`): tipo de tracción.
 
         4. Los objetos de la clase `Train` tendrán, además de los comunes `max_passengers`, `plate` y `_passengers`, un atributo `wagons` (número entero).
         5. El parámetro `plate` del constructor de la clase `Vehicle` será el único con valor por defecto del ejercicio.
@@ -6112,7 +6112,7 @@
 
 2. ☠️☠️ Ajedrez.
 
-    Para realizar este ejercicio es necesario descargar este [zip](clases_2.zip), que contiene los recursos necesarios, descomprimirlo en el directorio donde se vaya a trabajar e [instalar las bibliotecas](../README.md#121-instalación-de-paquetes) incluidas en el [`requirements.txt`](../README.md#1211-archivo-requirementstxt).
+    Para realizar este ejercicio es necesario descargar este [zip](clases_2.zip), que contiene los recursos necesarios, descomprimirlo en el directorio donde se vaya a trabajar e [instalar las bibliotecas](/README.md#121-instalación-de-paquetes) incluidas en el [`requirements.txt`](/README.md#1211-archivo-requirementstxt).
 
     > El módulo `tests.py` contiene código de pruebas. No hace falta entenderlo ni leerlo pero necesitaremos importar la función `test()` en `main.py` para corregir/probar nuestro código.
     > 
@@ -6124,7 +6124,7 @@
     > 
     > <br>
     > 
-    > Podemos detectar fallos en las [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
+    > Podemos detectar fallos en las [anotaciones de tipos](/README.md#11-anotaciones-de-tipos) con más precisión usando la función `test_type_hints()`. Esta imprimirá una lista más detallada con los métodos que no cumplan con las reglas de tipado.
 
     El objetivo de este ejercicio es ganarle una partida de ajedrez a una [IA](https://stockfishchess.org/). Para ello, vamos a tener que programar los [movimientos](https://www.chess.com/es/lessons/movimiento-de-las-piezas) de nuestras piezas, modelar el tablero de ajedrez, definir reglas y situaciones como los jaques, etc. Todo lo que hagamos impactará en el juego. Sin embargo, las piezas de la IA están ya programadas y no se verán afectadas por el código resultado de este ejercicio.
 
@@ -6134,12 +6134,12 @@
 
     Construir con clases el siguiente escenario en el módulo `main.py`:
 
-    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
+    1. Utilizar [anotaciones de tipos](/README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
     2. Crear tres excepciones personalizadas:
        1. `OutOfBoundsError`: tipo de `IndexError` que tiene como mensaje `'position must be within board bounds'`.
        2. `NoPieceError`: tipo de `LookupError` que tiene como mensaje `'there is no piece at position (<row>, <column>)'`, cambiando `<row>` y `<column>` por los respectivos valores del contexto donde se lance.
        3. `SamePositionError`: tipo de `ValueError` que tiene como mensaje `'the piece is already at the target position'`.
-    3. Crear una [enumeración](../README.md#19-enumeraciones) `Color` con:
+    3. Crear una [enumeración](/README.md#19-enumeraciones) `Color` con:
 
         1. Dos valores: `WHITE` y `BLACK`.
         2. Una propiedad `opposite` (solo obtener, no asignar) que devuelva el miembro contrario de la enumeración.
@@ -6148,7 +6148,7 @@
 
         ![chess_diagram.svg](/markdown_resources/chess_diagram.svg)
 
-        1. Modelar usando [clases abstractas](../README.md#831-clases-abstractas).
+        1. Modelar usando [clases abstractas](/README.md#831-clases-abstractas).
         2. Todos los objetos de las clases de piezas tendrán estos atributos:
 
             1. `_color` (enumeración): color de la pieza.
@@ -6156,7 +6156,7 @@
             3. `column` (número entero): columna en la que se encuentra en el tablero.
             4. `has_moved` (booleano): indica si se ha movido en la partida, e inicialmente es `False`. Los peones, en cambio, deben mantener la coherencia entre este atributo y los valores de `row` y `column`.
 
-        3. Las piezas correspondientes tendrán un [atributo estático](../README.md#812-atributos-estáticos) `value` que indiquen el valor de cada pieza según la [norma general](https://www.chess.com/es/terms/el-valor-de-las-piezas-de-ajedrez) (número entero).
+        3. Las piezas correspondientes tendrán un [atributo estático](/README.md#812-atributos-estáticos) `value` que indiquen el valor de cada pieza según la [norma general](https://www.chess.com/es/terms/el-valor-de-las-piezas-de-ajedrez) (número entero).
         4. Dos piezas del mismo tipo serán comparables y se considerarán iguales si tienen los mismos atributos. Hay que tener en cuenta que una pieza y otro tipo de objeto, incluso con los mismos atributos, no deberían considerarse iguales.
         5. Cada pieza se representará con su [carácter unicode](https://es.wikipedia.org/wiki/S%C3%ADmbolos_de_ajedrez_en_Unicode). De este modo, al imprimirlas por consola se verán según el siguiente formato:
 
@@ -6699,7 +6699,7 @@
 
     Crear en el módulo `main.py` una lista enlazada con clases que cumpla, al menos, los siguientes requisitos:
 
-    1. Utilizar [anotaciones de tipos](../README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
+    1. Utilizar [anotaciones de tipos](/README.md#11-anotaciones-de-tipos) para los parámetros de los métodos y los valores de retorno.
 
     2. Una clase `LinkedList`:
         1. Hacer la clase iterable para iterar sobre los elementos.
